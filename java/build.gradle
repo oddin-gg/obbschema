@@ -6,10 +6,6 @@ plugins {
     id 'com.google.protobuf' version '0.9.1'
 }
 
-
-def gitVersionDetails = versionDetails()
-version gitVersionDetails.lastTag.replace('v', '')
-
 group 'com.oddin.obb'
 
 sourceCompatibility = 1.8
