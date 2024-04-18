@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package obb;
+
+option go_package = "oddin.gg/obb";
+option java_package = "com.oddin.obb";
+
+import "google/protobuf/timestamp.proto";
+
+// StreamKeepalive is used for keeping alive open client, server or bidirectional stream.
+message StreamKeepalive {
+  google.protobuf.Timestamp timestamp = 1;
+}

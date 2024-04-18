@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package obb;
+
+option go_package = "oddin.gg/obb";
+option java_package = "com.oddin.obb";
+
+import "obb/markets.proto";
+import "obb/session.proto";
+import "obb/popular.proto";
+
+service obb {
+  rpc Markets (MarketRequest) returns (MarketResponse);
+  rpc Session (stream SessionRequest) returns (stream SessionResponse);
+  rpc PopularCombinations (PopularCombinationRequest) returns (PopularCombinationResponse);
+}

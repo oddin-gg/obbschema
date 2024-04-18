@@ -1,0 +1,123 @@
+syntax = "proto3";
+
+package obb;
+
+option go_package = "oddin.gg/obb";
+option java_package = "com.oddin.obb";
+
+import "obb/commons.proto";
+
+message SessionRejectReason {
+  enum Code {
+    // Not a valid value. Used for blocking 0 as invalid state.
+    CODE_UNSPECIFIED = 0;
+
+    // We are having internal problems.
+    CODE_INTERNAL = 1;
+
+    // Session is not valid.
+    CODE_INVALID_ARGUMENT = 2;
+
+    // Session contains invalid market combination
+    CODE_INVALID_MARKET_COMBINATION = 3;
+  }
+
+  // Reason code.
+  Code code = 1;
+
+  // Message describing a reason.
+  string message = 2;
+}
+
+message InvalidSessionReason {
+  enum Code {
+    // Not a valid value. Used for blocking 0 as invalid state.
+    CODE_UNSPECIFIED = 0;
+
+    // We are having internal problems.
+    CODE_INTERNAL = 1;
+
+    // Session is not valid.
+    CODE_INVALID_ARGUMENT = 2;
+
+    // Session is expired.
+    CODE_EXPIRED = 3;
+
+    // Session not found in our system.
+    CODE_NOT_FOUND = 4;
+  }
+
+  // Reason code.
+  Code code = 1;
+
+  // Message describing a reason.
+  string message = 2;
+}
+
+enum SessionStatus {
+  // Not a valid value. Used for blocking 0 as invalid state.
+  SESSION_STATUS_UNSPECIFIED = 0;
+  SESSION_STATUS_VALID = 1;
+  SESSION_STATUS_INVALID = 2;
+}
+
+message SessionRequest {
+  oneof data {
+    SessionCreate create = 1;
+    StreamKeepalive keepalive = 2;
+    SessionInfo info = 3;
+  }
+}
+
+message SessionResponse {
+  oneof data {
+    SessionCreateState create = 1;
+    StreamKeepalive keepalive = 2;
+    SessionInfoState info = 3;
+  }
+}
+
+message SessionCreate {
+  string request_id = 1;
+  // e.g. “od:match:1234/1/1?map=1&way=two”
+  repeated string selection_ids = 2;
+}
+
+message SessionCreateState {
+  string request_id = 1;
+  string session_id = 2;
+  repeated SessionSelection selections = 3;
+  repeated SessionMarket markets = 4;
+  // Information about rejection reason.
+  SessionRejectReason reject_reason = 5;
+}
+
+message SessionSelection {
+  string selection_id = 1;
+  // Odds multiplied by 10000 and rounded to uint value.
+  uint64 odds = 2;
+}
+
+message SessionMarket {
+  uint32 market_id = 1;
+  string specifiers = 2;
+  repeated SessionMarketOutcome outcomes = 3;
+}
+
+message SessionMarketOutcome {
+  uint32 outcome_id = 1;
+  // Odds multiplied by 10000 and rounded to uint value.
+  uint64 odds = 2;
+}
+
+message SessionInfo {
+  string request_id = 1;
+  string session_id = 2;
+  repeated SessionSelection selections = 3;
+}
+
+message SessionInfoState {
+  string request_id = 1;
+  InvalidSessionReason invalid_reason = 2;
+  SessionStatus status = 3;
+}

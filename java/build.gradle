@@ -1,0 +1,58 @@
+plugins {
+    id 'java'
+    id 'java-library'
+    id 'com.palantir.git-version' version '0.12.2'
+    id 'maven-publish'
+    id 'com.google.protobuf' version '0.9.1'
+}
+
+
+def gitVersionDetails = versionDetails()
+version gitVersionDetails.lastTag.replace('v', '')
+
+group 'com.oddin.obb'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+java {
+    withSourcesJar()
+}
+
+protobuf {
+    protoc {
+        artifact = "com.google.protobuf:protoc:3.21.7"
+    }
+    plugins {
+        grpc {
+            artifact = 'io.grpc:protoc-gen-grpc-java:1.54.0'
+        }
+    }
+    generateProtoTasks {
+        all()*.plugins {
+            grpc {}
+        }
+    }
+}
+
+dependencies {
+    def grpcVersion = '1.54.0'
+
+    runtimeOnly group: 'io.grpc', name: 'grpc-netty-shaded', version: grpcVersion
+    implementation group: 'io.grpc', name: 'grpc-netty-shaded', version: grpcVersion
+    implementation group: 'io.grpc', name: 'grpc-protobuf', version: grpcVersion
+    implementation group: 'io.grpc', name: 'grpc-stub', version: grpcVersion
+    compileOnly group: 'org.apache.tomcat', name: 'annotations-api', version: '6.0.53' // necessary for Java 9+
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+}
