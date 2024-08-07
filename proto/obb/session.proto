@@ -18,7 +18,7 @@ message SessionRejectReason {
     // Session is not valid.
     CODE_INVALID_ARGUMENT = 2;
 
-    // Session contains invalid market combination
+    // Session contains invalid market combination.
     CODE_INVALID_MARKET_COMBINATION = 3;
   }
 
@@ -57,7 +57,11 @@ message InvalidSessionReason {
 enum SessionStatus {
   // Not a valid value. Used for blocking 0 as invalid state.
   SESSION_STATUS_UNSPECIFIED = 0;
+
+  // The session is valid and can still be used.
   SESSION_STATUS_VALID = 1;
+
+  // Session is not valid anymore.
   SESSION_STATUS_INVALID = 2;
 }
 
@@ -78,46 +82,86 @@ message SessionResponse {
 }
 
 message SessionCreate {
+  // Bookmaker unique request ID. Required format: ^[a-zA-Z0-9\-_]*$
+  // Doesn't allow characters other than lowercase letters, uppercase letters, digits (0-9), underscores (_), and dashes (-).
   string request_id = 1;
+
+  // List of desired selections to include in the new session.
+  // Format: "<event_id>/<market_id>/<outcome_id>?<market_specifier>"
   // e.g. “od:match:1234/1/1?map=1&way=two”
   repeated string selection_ids = 2;
 }
 
 message SessionCreateState {
+  // The bookmaker's unique request ID was sent in the creation request.
   string request_id = 1;
+
+  // Session ID created by operator.
   string session_id = 2;
+
+  // List of selections used in the current session.
   repeated SessionSelection selections = 3;
+
+  // Available markets for the new session with the current session selections.
   repeated SessionMarket markets = 4;
+
   // Information about rejection reason.
   SessionRejectReason reject_reason = 5;
+
+  // Final odds for the selected combination of picks.
+  // Odds multiplied by 10000 and rounded to uint value.
+  uint64 odds = 6;
 }
 
 message SessionSelection {
+  // Format: "<event_id>/<market_id>/<outcome_id>?<market_specifier>"
+  // e.g. “od:match:1234/1/1?map=1&way=two”
   string selection_id = 1;
-  // Odds multiplied by 10000 and rounded to uint value.
-  uint64 odds = 2;
 }
 
 message SessionMarket {
+  // The ID using the same values as our odds feed in XML.
   uint32 market_id = 1;
+
+  // The specifier is using the same values as our odds feed in XML.
+  // e.g. "variant=way:three|way=three|map=1"
   string specifiers = 2;
+
+  // List of available outcomes for the market.
   repeated SessionMarketOutcome outcomes = 3;
 }
 
 message SessionMarketOutcome {
-  uint32 outcome_id = 1;
+  // The ID using the same values as our odds feed in <outcome> XML tag.
+  // e.g. "10" for classic market or "od:player:123" for dynamic markets.
+  string outcome_id = 1;
+
   // Odds multiplied by 10000 and rounded to uint value.
   uint64 odds = 2;
 }
 
 message SessionInfo {
+  // The bookmaker's unique request ID was sent in the creation request.
   string request_id = 1;
+
+  // Session ID created by operator.
   string session_id = 2;
+
+  // List of selections used for the OBB combination.
   repeated SessionSelection selections = 3;
+
+  // Final odds for the selected combination of picks.
+  // Odds multiplied by 10000 and rounded to uint value.
+  uint64 odds = 4;
 }
 
 message SessionInfoState {
+  // The bookmaker's unique request ID was sent in the creation request.
   string request_id = 1;
+
+  // It will provide more detailed information about why the session is no longer valid.
   InvalidSessionReason invalid_reason = 2;
+
+  // Session status. If the session is not valid, read the `invalid_reason`.
   SessionStatus status = 3;
 }
