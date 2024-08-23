@@ -5,18 +5,19 @@ package obb;
 option go_package = "oddin.gg/obb";
 option java_package = "com.oddin.obb";
 
-// MarketRequest is used as request for Markets RPC call
-message AvailableEventMarketsRequest {
+// AvailableMarketsRequest is used as request for Markets RPC call
+message AvailableMarketsRequest {
   // Event ID URN - e.g "od:match:xx"
-  string event_id = 1;
+  string event_urn = 1;
 }
 
-message AvailableEventMarketsResponse {
+// AvailableMarketsResponse is used as response for AvailableMarketsRequest RPC call
+message AvailableMarketsResponse {
   // List of available markets
-  repeated AvailableEventMarket markets = 1;
+  repeated AvailableMarket markets = 1;
 }
 
-message AvailableEventMarket {
+message AvailableMarket {
   // The ID using the same values as our odds feed in XML.
   uint32 market_id = 1;
 

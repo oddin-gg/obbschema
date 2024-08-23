@@ -11,7 +11,7 @@ import "obb/popular.proto";
 
 service obb {
   // Used to retrieve a list of available markets for a given event.
-  rpc AvailableEventMarkets (AvailableEventMarketsRequest) returns (AvailableEventMarketsResponse);
+  rpc AvailableMarkets (AvailableMarketsRequest) returns (AvailableMarketsResponse);
 
   // Used to manage OBB sessions, including creating and retrieving information about them.
   rpc Session (stream SessionRequest) returns (stream SessionResponse);
