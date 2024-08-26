@@ -64,10 +64,6 @@ enum SessionStatus {
 }
 
 message SessionCreateRequest {
-  // Bookmaker unique request ID. Required format: ^[a-zA-Z0-9\-_]*$
-  // Doesn't allow characters other than lowercase letters, uppercase letters, digits (0-9), underscores (_), and dashes (-).
-  string request_id = 1;
-
   // List of desired selections to include in the new session.
   // Format: "<event_id>/<market_id>/<outcome_id>?<market_specifier>"
   // e.g. “od:match:1234/1/1?map=1&way=two”
@@ -75,24 +71,21 @@ message SessionCreateRequest {
 }
 
 message SessionCreateResponse {
-  // The bookmaker's unique request ID was sent in the creation request.
-  string request_id = 1;
-
   // Session ID created by operator.
-  string session_id = 2;
+  string session_id = 1;
 
   // List of selections used in the current session.
-  repeated SessionSelection selections = 3;
+  repeated SessionSelection selections = 2;
 
   // Available markets for the new session with the current session selections.
-  repeated SessionMarket markets = 4;
+  repeated SessionMarket markets = 3;
 
   // Information about rejection reason.
-  SessionRejectReason reject_reason = 5;
+  SessionRejectReason reject_reason = 4;
 
   // Final odds for the selected combination of picks.
   // Odds multiplied by 10000 and rounded to uint value.
-  uint64 odds = 6;
+  uint64 odds = 5;
 }
 
 message SessionSelection {
