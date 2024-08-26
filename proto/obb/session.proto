@@ -65,23 +65,7 @@ enum SessionStatus {
   SESSION_STATUS_INVALID = 2;
 }
 
-message SessionRequest {
-  oneof data {
-    SessionCreate create = 1;
-    StreamKeepalive keepalive = 2;
-    SessionInfo info = 3;
-  }
-}
-
-message SessionResponse {
-  oneof data {
-    SessionCreateState create = 1;
-    StreamKeepalive keepalive = 2;
-    SessionInfoState info = 3;
-  }
-}
-
-message SessionCreate {
+message SessionCreateRequest {
   // Bookmaker unique request ID. Required format: ^[a-zA-Z0-9\-_]*$
   // Doesn't allow characters other than lowercase letters, uppercase letters, digits (0-9), underscores (_), and dashes (-).
   string request_id = 1;
@@ -92,7 +76,7 @@ message SessionCreate {
   repeated string selection_ids = 2;
 }
 
-message SessionCreateState {
+message SessionCreateResponse {
   // The bookmaker's unique request ID was sent in the creation request.
   string request_id = 1;
 
@@ -140,28 +124,22 @@ message SessionMarketOutcome {
   uint64 odds = 2;
 }
 
-message SessionInfo {
-  // The bookmaker's unique request ID was sent in the creation request.
-  string request_id = 1;
-
+message SessionInfoRequest {
   // Session ID created by operator.
-  string session_id = 2;
+  string session_id = 1;
 
   // List of selections used for the OBB combination.
-  repeated SessionSelection selections = 3;
+  repeated SessionSelection selections = 2;
 
   // Final odds for the selected combination of picks.
   // Odds multiplied by 10000 and rounded to uint value.
-  uint64 odds = 4;
+  uint64 odds = 3;
 }
 
-message SessionInfoState {
-  // The bookmaker's unique request ID was sent in the creation request.
-  string request_id = 1;
-
+message SessionInfoResponse {
   // It will provide more detailed information about why the session is no longer valid.
-  InvalidSessionReason invalid_reason = 2;
+  InvalidSessionReason invalid_reason = 1;
 
   // Session status. If the session is not valid, read the `invalid_reason`.
-  SessionStatus status = 3;
+  SessionStatus status = 2;
 }
