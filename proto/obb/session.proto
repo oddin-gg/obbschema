@@ -128,9 +128,12 @@ message SessionInfoRequest {
 }
 
 message SessionInfoResponse {
+  // Session ID created by operator.
+  string session_id = 1;
+
   // It will provide more detailed information about why the session is no longer valid.
-  InvalidSessionReason invalid_reason = 1;
+  InvalidSessionReason invalid_reason = 2;
 
   // Session status. If the session is not valid, read the `invalid_reason`.
-  SessionStatus status = 2;
+  SessionStatus status = 3;
 }
