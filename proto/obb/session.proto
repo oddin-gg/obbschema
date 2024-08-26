@@ -5,8 +5,6 @@ package obb;
 option go_package = "oddin.gg/obb";
 option java_package = "com.oddin.obb";
 
-import "obb/commons.proto";
-
 message SessionRejectReason {
   enum Code {
     // Not a valid value. Used for blocking 0 as invalid state.
