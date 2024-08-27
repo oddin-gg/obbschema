@@ -71,19 +71,19 @@ message SessionCreateRequest {
 }
 
 message SessionCreateResponse {
-  message CreatedSession {
+  message SessionCreated {
     // List of selections used in the current session.
     repeated SessionSelection selections = 1;
 
-    // Available markets for the new session with the current session selections.
-    repeated SessionMarket markets = 2;
-
     // Final odds for the selected combination of picks.
     // Odds multiplied by 10000 and rounded to uint value.
-    uint64 odds = 3;
+    uint64 odds = 2;
+
+    // Available markets for the new session with the current session selections.
+    repeated SessionMarket available_markets = 3;
   }
 
-  message RejectedSession {
+  message SessionRejected {
     // Information about rejection reason.
     SessionRejectReason reason = 1;
   }
@@ -93,10 +93,10 @@ message SessionCreateResponse {
 
   oneof status {
     // Successfully created session information.
-    CreatedSession created = 2;
+    SessionCreated created = 2;
 
     // Session creation was rejected.
-    RejectedSession rejected = 3;
+    SessionRejected rejected = 3;
   }
 }
 
