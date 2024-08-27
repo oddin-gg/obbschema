@@ -71,21 +71,33 @@ message SessionCreateRequest {
 }
 
 message SessionCreateResponse {
+  message CreatedSession {
+    // List of selections used in the current session.
+    repeated SessionSelection selections = 1;
+
+    // Available markets for the new session with the current session selections.
+    repeated SessionMarket markets = 2;
+
+    // Final odds for the selected combination of picks.
+    // Odds multiplied by 10000 and rounded to uint value.
+    uint64 odds = 3;
+  }
+
+  message RejectedSession {
+    // Information about rejection reason.
+    SessionRejectReason reason = 1;
+  }
+
   // Session ID created by operator.
   string session_id = 1;
 
-  // List of selections used in the current session.
-  repeated SessionSelection selections = 2;
+  oneof status {
+    // Successfully created session information.
+    CreatedSession created = 2;
 
-  // Available markets for the new session with the current session selections.
-  repeated SessionMarket markets = 3;
-
-  // Information about rejection reason.
-  SessionRejectReason reject_reason = 4;
-
-  // Final odds for the selected combination of picks.
-  // Odds multiplied by 10000 and rounded to uint value.
-  uint64 odds = 5;
+    // Session creation was rejected.
+    RejectedSession rejected = 3;
+  }
 }
 
 message SessionSelection {
@@ -128,12 +140,22 @@ message SessionInfoRequest {
 }
 
 message SessionInfoResponse {
+  message ValidSession {
+  }
+
+  message InvalidSession {
+    // It will provide more detailed information about why the session is no longer valid.
+    InvalidSessionReason reason = 1;
+  }
+
   // Session ID created by operator.
   string session_id = 1;
 
-  // It will provide more detailed information about why the session is no longer valid.
-  InvalidSessionReason invalid_reason = 2;
+  oneof status {
+    // The session is valid and can still be used.
+    ValidSession valid = 2;
 
-  // Session status. If the session is not valid, read the `invalid_reason`.
-  SessionStatus status = 3;
+    // Session is not valid anymore.
+    InvalidSession invalid = 3;
+  }
 }
