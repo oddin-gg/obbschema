@@ -5,8 +5,6 @@ package obb;
 option go_package = "oddin.gg/obb";
 option java_package = "com.oddin.obb";
 
-import "obb/commons.proto";
-
 message SessionRejectReason {
   enum Code {
     // Not a valid value. Used for blocking 0 as invalid state.
@@ -18,7 +16,7 @@ message SessionRejectReason {
     // Session is not valid.
     CODE_INVALID_ARGUMENT = 2;
 
-    // Session contains invalid market combination
+    // Session contains invalid market combination.
     CODE_INVALID_MARKET_COMBINATION = 3;
   }
 
@@ -57,67 +55,107 @@ message InvalidSessionReason {
 enum SessionStatus {
   // Not a valid value. Used for blocking 0 as invalid state.
   SESSION_STATUS_UNSPECIFIED = 0;
+
+  // The session is valid and can still be used.
   SESSION_STATUS_VALID = 1;
+
+  // Session is not valid anymore.
   SESSION_STATUS_INVALID = 2;
 }
 
-message SessionRequest {
-  oneof data {
-    SessionCreate create = 1;
-    StreamKeepalive keepalive = 2;
-    SessionInfo info = 3;
-  }
-}
-
-message SessionResponse {
-  oneof data {
-    SessionCreateState create = 1;
-    StreamKeepalive keepalive = 2;
-    SessionInfoState info = 3;
-  }
-}
-
-message SessionCreate {
-  string request_id = 1;
+message SessionCreateRequest {
+  // List of desired selections to include in the new session.
+  // Format: "<event_id>/<market_id>/<outcome_id>?<market_specifier>"
   // e.g. “od:match:1234/1/1?map=1&way=two”
   repeated string selection_ids = 2;
 }
 
-message SessionCreateState {
-  string request_id = 1;
-  string session_id = 2;
-  repeated SessionSelection selections = 3;
-  repeated SessionMarket markets = 4;
-  // Information about rejection reason.
-  SessionRejectReason reject_reason = 5;
+message SessionCreateResponse {
+  message SessionCreated {
+    // List of selections used in the current session.
+    repeated SessionSelection selections = 1;
+
+    // Final odds for the selected combination of picks.
+    // Odds multiplied by 10000 and rounded to uint value.
+    uint64 odds = 2;
+
+    // Available markets for the new session with the current session selections.
+    repeated SessionMarket available_markets = 3;
+  }
+
+  message SessionRejected {
+    // Information about rejection reason.
+    SessionRejectReason reason = 1;
+  }
+
+  // Session ID created by operator.
+  string session_id = 1;
+
+  oneof status {
+    // Successfully created session information.
+    SessionCreated created = 2;
+
+    // Session creation was rejected.
+    SessionRejected rejected = 3;
+  }
 }
 
 message SessionSelection {
+  // Format: "<event_id>/<market_id>/<outcome_id>?<market_specifier>"
+  // e.g. “od:match:1234/1/1?map=1&way=two”
   string selection_id = 1;
-  // Odds multiplied by 10000 and rounded to uint value.
-  uint64 odds = 2;
 }
 
 message SessionMarket {
+  // The ID using the same values as our odds feed in XML.
   uint32 market_id = 1;
+
+  // The specifier is using the same values as our odds feed in XML.
+  // e.g. "variant=way:three|way=three|map=1"
   string specifiers = 2;
+
+  // List of available outcomes for the market.
   repeated SessionMarketOutcome outcomes = 3;
 }
 
 message SessionMarketOutcome {
-  uint32 outcome_id = 1;
+  // The ID using the same values as our odds feed in <outcome> XML tag.
+  // e.g. "10" for classic market or "od:player:123" for dynamic markets.
+  string outcome_id = 1;
+
   // Odds multiplied by 10000 and rounded to uint value.
   uint64 odds = 2;
 }
 
-message SessionInfo {
-  string request_id = 1;
-  string session_id = 2;
-  repeated SessionSelection selections = 3;
+message SessionInfoRequest {
+  // Session ID created by operator.
+  string session_id = 1;
+
+  // List of selections used for the OBB combination.
+  repeated SessionSelection selections = 2;
+
+  // Final odds for the selected combination of picks.
+  // Odds multiplied by 10000 and rounded to uint value.
+  uint64 odds = 3;
 }
 
-message SessionInfoState {
-  string request_id = 1;
-  InvalidSessionReason invalid_reason = 2;
-  SessionStatus status = 3;
+message SessionInfoResponse {
+  message ValidSession {
+  }
+
+  message InvalidSession {
+    // It will provide more detailed information about why the session is no longer valid.
+    InvalidSessionReason reason = 1;
+  }
+
+  // Session ID created by operator.
+  string session_id = 1;
+
+  oneof status {
+    // The session is valid and can still be used.
+    ValidSession valid = 2;
+
+    // Session is not valid anymore.
+    InvalidSession invalid = 3;
+  }
 }

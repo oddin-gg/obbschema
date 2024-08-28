@@ -11,10 +11,15 @@ message PopularCombinationRequest {
 }
 
 message PopularCombinationResponse {
+  // List of popular markets for OBB combinations.
   repeated PopularCombinationMarket markets = 1;
 }
 
 message PopularCombinationMarket {
+  // The ID using the same values as our odds feed in XML.
   uint32 market_id = 1;
+
+  // The specifier is using the same values as our odds feed in XML.
+  // Example: "variant=way:three|way=three|map=1"
   string specifiers = 2;
 }

@@ -3,49 +3,49 @@
 
 import * as jspb from "google-protobuf";
 
-export class MarketRequest extends jspb.Message {
-  getEventId(): string;
-  setEventId(value: string): void;
+export class AvailableMarketsRequest extends jspb.Message {
+  getEventUrn(): string;
+  setEventUrn(value: string): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): MarketRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: MarketRequest): MarketRequest.AsObject;
+  toObject(includeInstance?: boolean): AvailableMarketsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: AvailableMarketsRequest): AvailableMarketsRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: MarketRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): MarketRequest;
-  static deserializeBinaryFromReader(message: MarketRequest, reader: jspb.BinaryReader): MarketRequest;
+  static serializeBinaryToWriter(message: AvailableMarketsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AvailableMarketsRequest;
+  static deserializeBinaryFromReader(message: AvailableMarketsRequest, reader: jspb.BinaryReader): AvailableMarketsRequest;
 }
 
-export namespace MarketRequest {
+export namespace AvailableMarketsRequest {
   export type AsObject = {
-    eventId: string,
+    eventUrn: string,
   }
 }
 
-export class MarketResponse extends jspb.Message {
+export class AvailableMarketsResponse extends jspb.Message {
   clearMarketsList(): void;
-  getMarketsList(): Array<Market>;
-  setMarketsList(value: Array<Market>): void;
-  addMarkets(value?: Market, index?: number): Market;
+  getMarketsList(): Array<AvailableMarket>;
+  setMarketsList(value: Array<AvailableMarket>): void;
+  addMarkets(value?: AvailableMarket, index?: number): AvailableMarket;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): MarketResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: MarketResponse): MarketResponse.AsObject;
+  toObject(includeInstance?: boolean): AvailableMarketsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: AvailableMarketsResponse): AvailableMarketsResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: MarketResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): MarketResponse;
-  static deserializeBinaryFromReader(message: MarketResponse, reader: jspb.BinaryReader): MarketResponse;
+  static serializeBinaryToWriter(message: AvailableMarketsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AvailableMarketsResponse;
+  static deserializeBinaryFromReader(message: AvailableMarketsResponse, reader: jspb.BinaryReader): AvailableMarketsResponse;
 }
 
-export namespace MarketResponse {
+export namespace AvailableMarketsResponse {
   export type AsObject = {
-    marketsList: Array<Market.AsObject>,
+    marketsList: Array<AvailableMarket.AsObject>,
   }
 }
 
-export class Market extends jspb.Message {
+export class AvailableMarket extends jspb.Message {
   getMarketId(): number;
   setMarketId(value: number): void;
 
@@ -53,16 +53,16 @@ export class Market extends jspb.Message {
   setSpecifiers(value: string): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): Market.AsObject;
-  static toObject(includeInstance: boolean, msg: Market): Market.AsObject;
+  toObject(includeInstance?: boolean): AvailableMarket.AsObject;
+  static toObject(includeInstance: boolean, msg: AvailableMarket): AvailableMarket.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: Market, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): Market;
-  static deserializeBinaryFromReader(message: Market, reader: jspb.BinaryReader): Market;
+  static serializeBinaryToWriter(message: AvailableMarket, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AvailableMarket;
+  static deserializeBinaryFromReader(message: AvailableMarket, reader: jspb.BinaryReader): AvailableMarket;
 }
 
-export namespace Market {
+export namespace AvailableMarket {
   export type AsObject = {
     marketId: number,
     specifiers: string,

@@ -10,7 +10,15 @@ import "obb/session.proto";
 import "obb/popular.proto";
 
 service obb {
-  rpc Markets (MarketRequest) returns (MarketResponse);
-  rpc Session (stream SessionRequest) returns (stream SessionResponse);
-  rpc PopularCombinations (PopularCombinationRequest) returns (PopularCombinationResponse);
+  // Used to retrieve a list of available markets for a given event.
+  rpc AvailableMarkets (AvailableMarketsRequest) returns (AvailableMarketsResponse);
+
+  // Used for session creation.
+  rpc SessionCreate (SessionCreateRequest) returns (SessionCreateResponse);
+
+  // Used for extraction info about desired session based on session id.
+  rpc SessionInfo (SessionInfoRequest) returns (SessionInfoResponse);
+
+  // Used to get popular combinations of selections.
+  rpc PopularCombination (PopularCombinationRequest) returns (PopularCombinationResponse);
 }

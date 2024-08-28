@@ -14,8 +14,8 @@ public final class Markets {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface MarketRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:obb.MarketRequest)
+  public interface AvailableMarketsRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:obb.AvailableMarketsRequest)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -23,46 +23,46 @@ public final class Markets {
      * Event ID URN - e.g "od:match:xx"
      * </pre>
      *
-     * <code>string event_id = 1;</code>
-     * @return The eventId.
+     * <code>string event_urn = 1;</code>
+     * @return The eventUrn.
      */
-    java.lang.String getEventId();
+    java.lang.String getEventUrn();
     /**
      * <pre>
      * Event ID URN - e.g "od:match:xx"
      * </pre>
      *
-     * <code>string event_id = 1;</code>
-     * @return The bytes for eventId.
+     * <code>string event_urn = 1;</code>
+     * @return The bytes for eventUrn.
      */
     com.google.protobuf.ByteString
-        getEventIdBytes();
+        getEventUrnBytes();
   }
   /**
    * <pre>
-   * MarketRequest is used as request for Markets RPC call
+   * AvailableMarketsRequest is used as request for Markets RPC call
    * </pre>
    *
-   * Protobuf type {@code obb.MarketRequest}
+   * Protobuf type {@code obb.AvailableMarketsRequest}
    */
-  public static final class MarketRequest extends
+  public static final class AvailableMarketsRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:obb.MarketRequest)
-      MarketRequestOrBuilder {
+      // @@protoc_insertion_point(message_implements:obb.AvailableMarketsRequest)
+      AvailableMarketsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use MarketRequest.newBuilder() to construct.
-    private MarketRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use AvailableMarketsRequest.newBuilder() to construct.
+    private AvailableMarketsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private MarketRequest() {
-      eventId_ = "";
+    private AvailableMarketsRequest() {
+      eventUrn_ = "";
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new MarketRequest();
+      return new AvailableMarketsRequest();
     }
 
     @java.lang.Override
@@ -70,82 +70,39 @@ public final class Markets {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private MarketRequest(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              eventId_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.oddin.obb.Markets.internal_static_obb_MarketRequest_descriptor;
+      return com.oddin.obb.Markets.internal_static_obb_AvailableMarketsRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.oddin.obb.Markets.internal_static_obb_MarketRequest_fieldAccessorTable
+      return com.oddin.obb.Markets.internal_static_obb_AvailableMarketsRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.oddin.obb.Markets.MarketRequest.class, com.oddin.obb.Markets.MarketRequest.Builder.class);
+              com.oddin.obb.Markets.AvailableMarketsRequest.class, com.oddin.obb.Markets.AvailableMarketsRequest.Builder.class);
     }
 
-    public static final int EVENT_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object eventId_;
+    public static final int EVENT_URN_FIELD_NUMBER = 1;
+    private volatile java.lang.Object eventUrn_;
     /**
      * <pre>
      * Event ID URN - e.g "od:match:xx"
      * </pre>
      *
-     * <code>string event_id = 1;</code>
-     * @return The eventId.
+     * <code>string event_urn = 1;</code>
+     * @return The eventUrn.
      */
     @java.lang.Override
-    public java.lang.String getEventId() {
-      java.lang.Object ref = eventId_;
+    public java.lang.String getEventUrn() {
+      java.lang.Object ref = eventUrn_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        eventId_ = s;
+        eventUrn_ = s;
         return s;
       }
     }
@@ -154,18 +111,18 @@ public final class Markets {
      * Event ID URN - e.g "od:match:xx"
      * </pre>
      *
-     * <code>string event_id = 1;</code>
-     * @return The bytes for eventId.
+     * <code>string event_urn = 1;</code>
+     * @return The bytes for eventUrn.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getEventIdBytes() {
-      java.lang.Object ref = eventId_;
+        getEventUrnBytes() {
+      java.lang.Object ref = eventUrn_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        eventId_ = b;
+        eventUrn_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -186,10 +143,10 @@ public final class Markets {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(eventId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, eventId_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(eventUrn_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, eventUrn_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -198,10 +155,10 @@ public final class Markets {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(eventId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, eventId_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(eventUrn_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, eventUrn_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -211,14 +168,14 @@ public final class Markets {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.oddin.obb.Markets.MarketRequest)) {
+      if (!(obj instanceof com.oddin.obb.Markets.AvailableMarketsRequest)) {
         return super.equals(obj);
       }
-      com.oddin.obb.Markets.MarketRequest other = (com.oddin.obb.Markets.MarketRequest) obj;
+      com.oddin.obb.Markets.AvailableMarketsRequest other = (com.oddin.obb.Markets.AvailableMarketsRequest) obj;
 
-      if (!getEventId()
-          .equals(other.getEventId())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getEventUrn()
+          .equals(other.getEventUrn())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -229,76 +186,76 @@ public final class Markets {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + EVENT_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getEventId().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (37 * hash) + EVENT_URN_FIELD_NUMBER;
+      hash = (53 * hash) + getEventUrn().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static com.oddin.obb.Markets.MarketRequest parseFrom(
+    public static com.oddin.obb.Markets.AvailableMarketsRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.obb.Markets.MarketRequest parseFrom(
+    public static com.oddin.obb.Markets.AvailableMarketsRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.obb.Markets.MarketRequest parseFrom(
+    public static com.oddin.obb.Markets.AvailableMarketsRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.obb.Markets.MarketRequest parseFrom(
+    public static com.oddin.obb.Markets.AvailableMarketsRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.obb.Markets.MarketRequest parseFrom(byte[] data)
+    public static com.oddin.obb.Markets.AvailableMarketsRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.obb.Markets.MarketRequest parseFrom(
+    public static com.oddin.obb.Markets.AvailableMarketsRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.obb.Markets.MarketRequest parseFrom(java.io.InputStream input)
+    public static com.oddin.obb.Markets.AvailableMarketsRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.oddin.obb.Markets.MarketRequest parseFrom(
+    public static com.oddin.obb.Markets.AvailableMarketsRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.oddin.obb.Markets.MarketRequest parseDelimitedFrom(java.io.InputStream input)
+    public static com.oddin.obb.Markets.AvailableMarketsRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.oddin.obb.Markets.MarketRequest parseDelimitedFrom(
+    public static com.oddin.obb.Markets.AvailableMarketsRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.oddin.obb.Markets.MarketRequest parseFrom(
+    public static com.oddin.obb.Markets.AvailableMarketsRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.oddin.obb.Markets.MarketRequest parseFrom(
+    public static com.oddin.obb.Markets.AvailableMarketsRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -311,7 +268,7 @@ public final class Markets {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.oddin.obb.Markets.MarketRequest prototype) {
+    public static Builder newBuilder(com.oddin.obb.Markets.AvailableMarketsRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -328,47 +285,42 @@ public final class Markets {
     }
     /**
      * <pre>
-     * MarketRequest is used as request for Markets RPC call
+     * AvailableMarketsRequest is used as request for Markets RPC call
      * </pre>
      *
-     * Protobuf type {@code obb.MarketRequest}
+     * Protobuf type {@code obb.AvailableMarketsRequest}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:obb.MarketRequest)
-        com.oddin.obb.Markets.MarketRequestOrBuilder {
+        // @@protoc_insertion_point(builder_implements:obb.AvailableMarketsRequest)
+        com.oddin.obb.Markets.AvailableMarketsRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.oddin.obb.Markets.internal_static_obb_MarketRequest_descriptor;
+        return com.oddin.obb.Markets.internal_static_obb_AvailableMarketsRequest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.oddin.obb.Markets.internal_static_obb_MarketRequest_fieldAccessorTable
+        return com.oddin.obb.Markets.internal_static_obb_AvailableMarketsRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.oddin.obb.Markets.MarketRequest.class, com.oddin.obb.Markets.MarketRequest.Builder.class);
+                com.oddin.obb.Markets.AvailableMarketsRequest.class, com.oddin.obb.Markets.AvailableMarketsRequest.Builder.class);
       }
 
-      // Construct using com.oddin.obb.Markets.MarketRequest.newBuilder()
+      // Construct using com.oddin.obb.Markets.AvailableMarketsRequest.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        eventId_ = "";
+        eventUrn_ = "";
 
         return this;
       }
@@ -376,17 +328,17 @@ public final class Markets {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.oddin.obb.Markets.internal_static_obb_MarketRequest_descriptor;
+        return com.oddin.obb.Markets.internal_static_obb_AvailableMarketsRequest_descriptor;
       }
 
       @java.lang.Override
-      public com.oddin.obb.Markets.MarketRequest getDefaultInstanceForType() {
-        return com.oddin.obb.Markets.MarketRequest.getDefaultInstance();
+      public com.oddin.obb.Markets.AvailableMarketsRequest getDefaultInstanceForType() {
+        return com.oddin.obb.Markets.AvailableMarketsRequest.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.oddin.obb.Markets.MarketRequest build() {
-        com.oddin.obb.Markets.MarketRequest result = buildPartial();
+      public com.oddin.obb.Markets.AvailableMarketsRequest build() {
+        com.oddin.obb.Markets.AvailableMarketsRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -394,9 +346,9 @@ public final class Markets {
       }
 
       @java.lang.Override
-      public com.oddin.obb.Markets.MarketRequest buildPartial() {
-        com.oddin.obb.Markets.MarketRequest result = new com.oddin.obb.Markets.MarketRequest(this);
-        result.eventId_ = eventId_;
+      public com.oddin.obb.Markets.AvailableMarketsRequest buildPartial() {
+        com.oddin.obb.Markets.AvailableMarketsRequest result = new com.oddin.obb.Markets.AvailableMarketsRequest(this);
+        result.eventUrn_ = eventUrn_;
         onBuilt();
         return result;
       }
@@ -435,21 +387,21 @@ public final class Markets {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.oddin.obb.Markets.MarketRequest) {
-          return mergeFrom((com.oddin.obb.Markets.MarketRequest)other);
+        if (other instanceof com.oddin.obb.Markets.AvailableMarketsRequest) {
+          return mergeFrom((com.oddin.obb.Markets.AvailableMarketsRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.oddin.obb.Markets.MarketRequest other) {
-        if (other == com.oddin.obb.Markets.MarketRequest.getDefaultInstance()) return this;
-        if (!other.getEventId().isEmpty()) {
-          eventId_ = other.eventId_;
+      public Builder mergeFrom(com.oddin.obb.Markets.AvailableMarketsRequest other) {
+        if (other == com.oddin.obb.Markets.AvailableMarketsRequest.getDefaultInstance()) return this;
+        if (!other.getEventUrn().isEmpty()) {
+          eventUrn_ = other.eventUrn_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -464,36 +416,54 @@ public final class Markets {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.oddin.obb.Markets.MarketRequest parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                eventUrn_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.oddin.obb.Markets.MarketRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
-      private java.lang.Object eventId_ = "";
+      private java.lang.Object eventUrn_ = "";
       /**
        * <pre>
        * Event ID URN - e.g "od:match:xx"
        * </pre>
        *
-       * <code>string event_id = 1;</code>
-       * @return The eventId.
+       * <code>string event_urn = 1;</code>
+       * @return The eventUrn.
        */
-      public java.lang.String getEventId() {
-        java.lang.Object ref = eventId_;
+      public java.lang.String getEventUrn() {
+        java.lang.Object ref = eventUrn_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          eventId_ = s;
+          eventUrn_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -504,17 +474,17 @@ public final class Markets {
        * Event ID URN - e.g "od:match:xx"
        * </pre>
        *
-       * <code>string event_id = 1;</code>
-       * @return The bytes for eventId.
+       * <code>string event_urn = 1;</code>
+       * @return The bytes for eventUrn.
        */
       public com.google.protobuf.ByteString
-          getEventIdBytes() {
-        java.lang.Object ref = eventId_;
+          getEventUrnBytes() {
+        java.lang.Object ref = eventUrn_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          eventId_ = b;
+          eventUrn_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -525,17 +495,17 @@ public final class Markets {
        * Event ID URN - e.g "od:match:xx"
        * </pre>
        *
-       * <code>string event_id = 1;</code>
-       * @param value The eventId to set.
+       * <code>string event_urn = 1;</code>
+       * @param value The eventUrn to set.
        * @return This builder for chaining.
        */
-      public Builder setEventId(
+      public Builder setEventUrn(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        eventId_ = value;
+        eventUrn_ = value;
         onChanged();
         return this;
       }
@@ -544,12 +514,12 @@ public final class Markets {
        * Event ID URN - e.g "od:match:xx"
        * </pre>
        *
-       * <code>string event_id = 1;</code>
+       * <code>string event_urn = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearEventId() {
+      public Builder clearEventUrn() {
         
-        eventId_ = getDefaultInstance().getEventId();
+        eventUrn_ = getDefaultInstance().getEventUrn();
         onChanged();
         return this;
       }
@@ -558,18 +528,18 @@ public final class Markets {
        * Event ID URN - e.g "od:match:xx"
        * </pre>
        *
-       * <code>string event_id = 1;</code>
-       * @param value The bytes for eventId to set.
+       * <code>string event_urn = 1;</code>
+       * @param value The bytes for eventUrn to set.
        * @return This builder for chaining.
        */
-      public Builder setEventIdBytes(
+      public Builder setEventUrnBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        eventId_ = value;
+        eventUrn_ = value;
         onChanged();
         return this;
       }
@@ -586,87 +556,122 @@ public final class Markets {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:obb.MarketRequest)
+      // @@protoc_insertion_point(builder_scope:obb.AvailableMarketsRequest)
     }
 
-    // @@protoc_insertion_point(class_scope:obb.MarketRequest)
-    private static final com.oddin.obb.Markets.MarketRequest DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:obb.AvailableMarketsRequest)
+    private static final com.oddin.obb.Markets.AvailableMarketsRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.oddin.obb.Markets.MarketRequest();
+      DEFAULT_INSTANCE = new com.oddin.obb.Markets.AvailableMarketsRequest();
     }
 
-    public static com.oddin.obb.Markets.MarketRequest getDefaultInstance() {
+    public static com.oddin.obb.Markets.AvailableMarketsRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<MarketRequest>
-        PARSER = new com.google.protobuf.AbstractParser<MarketRequest>() {
+    private static final com.google.protobuf.Parser<AvailableMarketsRequest>
+        PARSER = new com.google.protobuf.AbstractParser<AvailableMarketsRequest>() {
       @java.lang.Override
-      public MarketRequest parsePartialFrom(
+      public AvailableMarketsRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MarketRequest(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
-    public static com.google.protobuf.Parser<MarketRequest> parser() {
+    public static com.google.protobuf.Parser<AvailableMarketsRequest> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<MarketRequest> getParserForType() {
+    public com.google.protobuf.Parser<AvailableMarketsRequest> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.oddin.obb.Markets.MarketRequest getDefaultInstanceForType() {
+    public com.oddin.obb.Markets.AvailableMarketsRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface MarketResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:obb.MarketResponse)
+  public interface AvailableMarketsResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:obb.AvailableMarketsResponse)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .obb.Market markets = 1;</code>
+     * <pre>
+     * List of available markets
+     * </pre>
+     *
+     * <code>repeated .obb.AvailableMarket markets = 1;</code>
      */
-    java.util.List<com.oddin.obb.Markets.Market> 
+    java.util.List<com.oddin.obb.Markets.AvailableMarket> 
         getMarketsList();
     /**
-     * <code>repeated .obb.Market markets = 1;</code>
+     * <pre>
+     * List of available markets
+     * </pre>
+     *
+     * <code>repeated .obb.AvailableMarket markets = 1;</code>
      */
-    com.oddin.obb.Markets.Market getMarkets(int index);
+    com.oddin.obb.Markets.AvailableMarket getMarkets(int index);
     /**
-     * <code>repeated .obb.Market markets = 1;</code>
+     * <pre>
+     * List of available markets
+     * </pre>
+     *
+     * <code>repeated .obb.AvailableMarket markets = 1;</code>
      */
     int getMarketsCount();
     /**
-     * <code>repeated .obb.Market markets = 1;</code>
+     * <pre>
+     * List of available markets
+     * </pre>
+     *
+     * <code>repeated .obb.AvailableMarket markets = 1;</code>
      */
-    java.util.List<? extends com.oddin.obb.Markets.MarketOrBuilder> 
+    java.util.List<? extends com.oddin.obb.Markets.AvailableMarketOrBuilder> 
         getMarketsOrBuilderList();
     /**
-     * <code>repeated .obb.Market markets = 1;</code>
+     * <pre>
+     * List of available markets
+     * </pre>
+     *
+     * <code>repeated .obb.AvailableMarket markets = 1;</code>
      */
-    com.oddin.obb.Markets.MarketOrBuilder getMarketsOrBuilder(
+    com.oddin.obb.Markets.AvailableMarketOrBuilder getMarketsOrBuilder(
         int index);
   }
   /**
-   * Protobuf type {@code obb.MarketResponse}
+   * <pre>
+   * AvailableMarketsResponse is used as response for AvailableMarketsRequest RPC call
+   * </pre>
+   *
+   * Protobuf type {@code obb.AvailableMarketsResponse}
    */
-  public static final class MarketResponse extends
+  public static final class AvailableMarketsResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:obb.MarketResponse)
-      MarketResponseOrBuilder {
+      // @@protoc_insertion_point(message_implements:obb.AvailableMarketsResponse)
+      AvailableMarketsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use MarketResponse.newBuilder() to construct.
-    private MarketResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use AvailableMarketsResponse.newBuilder() to construct.
+    private AvailableMarketsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private MarketResponse() {
+    private AvailableMarketsResponse() {
       markets_ = java.util.Collections.emptyList();
     }
 
@@ -674,7 +679,7 @@ public final class Markets {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new MarketResponse();
+      return new AvailableMarketsResponse();
     }
 
     @java.lang.Override
@@ -682,105 +687,75 @@ public final class Markets {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private MarketResponse(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                markets_ = new java.util.ArrayList<com.oddin.obb.Markets.Market>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              markets_.add(
-                  input.readMessage(com.oddin.obb.Markets.Market.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          markets_ = java.util.Collections.unmodifiableList(markets_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.oddin.obb.Markets.internal_static_obb_MarketResponse_descriptor;
+      return com.oddin.obb.Markets.internal_static_obb_AvailableMarketsResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.oddin.obb.Markets.internal_static_obb_MarketResponse_fieldAccessorTable
+      return com.oddin.obb.Markets.internal_static_obb_AvailableMarketsResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.oddin.obb.Markets.MarketResponse.class, com.oddin.obb.Markets.MarketResponse.Builder.class);
+              com.oddin.obb.Markets.AvailableMarketsResponse.class, com.oddin.obb.Markets.AvailableMarketsResponse.Builder.class);
     }
 
     public static final int MARKETS_FIELD_NUMBER = 1;
-    private java.util.List<com.oddin.obb.Markets.Market> markets_;
+    private java.util.List<com.oddin.obb.Markets.AvailableMarket> markets_;
     /**
-     * <code>repeated .obb.Market markets = 1;</code>
+     * <pre>
+     * List of available markets
+     * </pre>
+     *
+     * <code>repeated .obb.AvailableMarket markets = 1;</code>
      */
     @java.lang.Override
-    public java.util.List<com.oddin.obb.Markets.Market> getMarketsList() {
+    public java.util.List<com.oddin.obb.Markets.AvailableMarket> getMarketsList() {
       return markets_;
     }
     /**
-     * <code>repeated .obb.Market markets = 1;</code>
+     * <pre>
+     * List of available markets
+     * </pre>
+     *
+     * <code>repeated .obb.AvailableMarket markets = 1;</code>
      */
     @java.lang.Override
-    public java.util.List<? extends com.oddin.obb.Markets.MarketOrBuilder> 
+    public java.util.List<? extends com.oddin.obb.Markets.AvailableMarketOrBuilder> 
         getMarketsOrBuilderList() {
       return markets_;
     }
     /**
-     * <code>repeated .obb.Market markets = 1;</code>
+     * <pre>
+     * List of available markets
+     * </pre>
+     *
+     * <code>repeated .obb.AvailableMarket markets = 1;</code>
      */
     @java.lang.Override
     public int getMarketsCount() {
       return markets_.size();
     }
     /**
-     * <code>repeated .obb.Market markets = 1;</code>
+     * <pre>
+     * List of available markets
+     * </pre>
+     *
+     * <code>repeated .obb.AvailableMarket markets = 1;</code>
      */
     @java.lang.Override
-    public com.oddin.obb.Markets.Market getMarkets(int index) {
+    public com.oddin.obb.Markets.AvailableMarket getMarkets(int index) {
       return markets_.get(index);
     }
     /**
-     * <code>repeated .obb.Market markets = 1;</code>
+     * <pre>
+     * List of available markets
+     * </pre>
+     *
+     * <code>repeated .obb.AvailableMarket markets = 1;</code>
      */
     @java.lang.Override
-    public com.oddin.obb.Markets.MarketOrBuilder getMarketsOrBuilder(
+    public com.oddin.obb.Markets.AvailableMarketOrBuilder getMarketsOrBuilder(
         int index) {
       return markets_.get(index);
     }
@@ -802,7 +777,7 @@ public final class Markets {
       for (int i = 0; i < markets_.size(); i++) {
         output.writeMessage(1, markets_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -815,7 +790,7 @@ public final class Markets {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, markets_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -825,14 +800,14 @@ public final class Markets {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.oddin.obb.Markets.MarketResponse)) {
+      if (!(obj instanceof com.oddin.obb.Markets.AvailableMarketsResponse)) {
         return super.equals(obj);
       }
-      com.oddin.obb.Markets.MarketResponse other = (com.oddin.obb.Markets.MarketResponse) obj;
+      com.oddin.obb.Markets.AvailableMarketsResponse other = (com.oddin.obb.Markets.AvailableMarketsResponse) obj;
 
       if (!getMarketsList()
           .equals(other.getMarketsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -847,74 +822,74 @@ public final class Markets {
         hash = (37 * hash) + MARKETS_FIELD_NUMBER;
         hash = (53 * hash) + getMarketsList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static com.oddin.obb.Markets.MarketResponse parseFrom(
+    public static com.oddin.obb.Markets.AvailableMarketsResponse parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.obb.Markets.MarketResponse parseFrom(
+    public static com.oddin.obb.Markets.AvailableMarketsResponse parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.obb.Markets.MarketResponse parseFrom(
+    public static com.oddin.obb.Markets.AvailableMarketsResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.obb.Markets.MarketResponse parseFrom(
+    public static com.oddin.obb.Markets.AvailableMarketsResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.obb.Markets.MarketResponse parseFrom(byte[] data)
+    public static com.oddin.obb.Markets.AvailableMarketsResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.obb.Markets.MarketResponse parseFrom(
+    public static com.oddin.obb.Markets.AvailableMarketsResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.obb.Markets.MarketResponse parseFrom(java.io.InputStream input)
+    public static com.oddin.obb.Markets.AvailableMarketsResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.oddin.obb.Markets.MarketResponse parseFrom(
+    public static com.oddin.obb.Markets.AvailableMarketsResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.oddin.obb.Markets.MarketResponse parseDelimitedFrom(java.io.InputStream input)
+    public static com.oddin.obb.Markets.AvailableMarketsResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.oddin.obb.Markets.MarketResponse parseDelimitedFrom(
+    public static com.oddin.obb.Markets.AvailableMarketsResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.oddin.obb.Markets.MarketResponse parseFrom(
+    public static com.oddin.obb.Markets.AvailableMarketsResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.oddin.obb.Markets.MarketResponse parseFrom(
+    public static com.oddin.obb.Markets.AvailableMarketsResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -927,7 +902,7 @@ public final class Markets {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.oddin.obb.Markets.MarketResponse prototype) {
+    public static Builder newBuilder(com.oddin.obb.Markets.AvailableMarketsResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -943,67 +918,66 @@ public final class Markets {
       return builder;
     }
     /**
-     * Protobuf type {@code obb.MarketResponse}
+     * <pre>
+     * AvailableMarketsResponse is used as response for AvailableMarketsRequest RPC call
+     * </pre>
+     *
+     * Protobuf type {@code obb.AvailableMarketsResponse}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:obb.MarketResponse)
-        com.oddin.obb.Markets.MarketResponseOrBuilder {
+        // @@protoc_insertion_point(builder_implements:obb.AvailableMarketsResponse)
+        com.oddin.obb.Markets.AvailableMarketsResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.oddin.obb.Markets.internal_static_obb_MarketResponse_descriptor;
+        return com.oddin.obb.Markets.internal_static_obb_AvailableMarketsResponse_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.oddin.obb.Markets.internal_static_obb_MarketResponse_fieldAccessorTable
+        return com.oddin.obb.Markets.internal_static_obb_AvailableMarketsResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.oddin.obb.Markets.MarketResponse.class, com.oddin.obb.Markets.MarketResponse.Builder.class);
+                com.oddin.obb.Markets.AvailableMarketsResponse.class, com.oddin.obb.Markets.AvailableMarketsResponse.Builder.class);
       }
 
-      // Construct using com.oddin.obb.Markets.MarketResponse.newBuilder()
+      // Construct using com.oddin.obb.Markets.AvailableMarketsResponse.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getMarketsFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
         if (marketsBuilder_ == null) {
           markets_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          markets_ = null;
           marketsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.oddin.obb.Markets.internal_static_obb_MarketResponse_descriptor;
+        return com.oddin.obb.Markets.internal_static_obb_AvailableMarketsResponse_descriptor;
       }
 
       @java.lang.Override
-      public com.oddin.obb.Markets.MarketResponse getDefaultInstanceForType() {
-        return com.oddin.obb.Markets.MarketResponse.getDefaultInstance();
+      public com.oddin.obb.Markets.AvailableMarketsResponse getDefaultInstanceForType() {
+        return com.oddin.obb.Markets.AvailableMarketsResponse.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.oddin.obb.Markets.MarketResponse build() {
-        com.oddin.obb.Markets.MarketResponse result = buildPartial();
+      public com.oddin.obb.Markets.AvailableMarketsResponse build() {
+        com.oddin.obb.Markets.AvailableMarketsResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -1011,8 +985,8 @@ public final class Markets {
       }
 
       @java.lang.Override
-      public com.oddin.obb.Markets.MarketResponse buildPartial() {
-        com.oddin.obb.Markets.MarketResponse result = new com.oddin.obb.Markets.MarketResponse(this);
+      public com.oddin.obb.Markets.AvailableMarketsResponse buildPartial() {
+        com.oddin.obb.Markets.AvailableMarketsResponse result = new com.oddin.obb.Markets.AvailableMarketsResponse(this);
         int from_bitField0_ = bitField0_;
         if (marketsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
@@ -1061,16 +1035,16 @@ public final class Markets {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.oddin.obb.Markets.MarketResponse) {
-          return mergeFrom((com.oddin.obb.Markets.MarketResponse)other);
+        if (other instanceof com.oddin.obb.Markets.AvailableMarketsResponse) {
+          return mergeFrom((com.oddin.obb.Markets.AvailableMarketsResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.oddin.obb.Markets.MarketResponse other) {
-        if (other == com.oddin.obb.Markets.MarketResponse.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.oddin.obb.Markets.AvailableMarketsResponse other) {
+        if (other == com.oddin.obb.Markets.AvailableMarketsResponse.getDefaultInstance()) return this;
         if (marketsBuilder_ == null) {
           if (!other.markets_.isEmpty()) {
             if (markets_.isEmpty()) {
@@ -1097,7 +1071,7 @@ public final class Markets {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1112,37 +1086,67 @@ public final class Markets {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.oddin.obb.Markets.MarketResponse parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                com.oddin.obb.Markets.AvailableMarket m =
+                    input.readMessage(
+                        com.oddin.obb.Markets.AvailableMarket.parser(),
+                        extensionRegistry);
+                if (marketsBuilder_ == null) {
+                  ensureMarketsIsMutable();
+                  markets_.add(m);
+                } else {
+                  marketsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.oddin.obb.Markets.MarketResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
 
-      private java.util.List<com.oddin.obb.Markets.Market> markets_ =
+      private java.util.List<com.oddin.obb.Markets.AvailableMarket> markets_ =
         java.util.Collections.emptyList();
       private void ensureMarketsIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          markets_ = new java.util.ArrayList<com.oddin.obb.Markets.Market>(markets_);
+          markets_ = new java.util.ArrayList<com.oddin.obb.Markets.AvailableMarket>(markets_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.oddin.obb.Markets.Market, com.oddin.obb.Markets.Market.Builder, com.oddin.obb.Markets.MarketOrBuilder> marketsBuilder_;
+          com.oddin.obb.Markets.AvailableMarket, com.oddin.obb.Markets.AvailableMarket.Builder, com.oddin.obb.Markets.AvailableMarketOrBuilder> marketsBuilder_;
 
       /**
-       * <code>repeated .obb.Market markets = 1;</code>
+       * <pre>
+       * List of available markets
+       * </pre>
+       *
+       * <code>repeated .obb.AvailableMarket markets = 1;</code>
        */
-      public java.util.List<com.oddin.obb.Markets.Market> getMarketsList() {
+      public java.util.List<com.oddin.obb.Markets.AvailableMarket> getMarketsList() {
         if (marketsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(markets_);
         } else {
@@ -1150,7 +1154,11 @@ public final class Markets {
         }
       }
       /**
-       * <code>repeated .obb.Market markets = 1;</code>
+       * <pre>
+       * List of available markets
+       * </pre>
+       *
+       * <code>repeated .obb.AvailableMarket markets = 1;</code>
        */
       public int getMarketsCount() {
         if (marketsBuilder_ == null) {
@@ -1160,9 +1168,13 @@ public final class Markets {
         }
       }
       /**
-       * <code>repeated .obb.Market markets = 1;</code>
+       * <pre>
+       * List of available markets
+       * </pre>
+       *
+       * <code>repeated .obb.AvailableMarket markets = 1;</code>
        */
-      public com.oddin.obb.Markets.Market getMarkets(int index) {
+      public com.oddin.obb.Markets.AvailableMarket getMarkets(int index) {
         if (marketsBuilder_ == null) {
           return markets_.get(index);
         } else {
@@ -1170,10 +1182,14 @@ public final class Markets {
         }
       }
       /**
-       * <code>repeated .obb.Market markets = 1;</code>
+       * <pre>
+       * List of available markets
+       * </pre>
+       *
+       * <code>repeated .obb.AvailableMarket markets = 1;</code>
        */
       public Builder setMarkets(
-          int index, com.oddin.obb.Markets.Market value) {
+          int index, com.oddin.obb.Markets.AvailableMarket value) {
         if (marketsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1187,10 +1203,14 @@ public final class Markets {
         return this;
       }
       /**
-       * <code>repeated .obb.Market markets = 1;</code>
+       * <pre>
+       * List of available markets
+       * </pre>
+       *
+       * <code>repeated .obb.AvailableMarket markets = 1;</code>
        */
       public Builder setMarkets(
-          int index, com.oddin.obb.Markets.Market.Builder builderForValue) {
+          int index, com.oddin.obb.Markets.AvailableMarket.Builder builderForValue) {
         if (marketsBuilder_ == null) {
           ensureMarketsIsMutable();
           markets_.set(index, builderForValue.build());
@@ -1201,9 +1221,13 @@ public final class Markets {
         return this;
       }
       /**
-       * <code>repeated .obb.Market markets = 1;</code>
+       * <pre>
+       * List of available markets
+       * </pre>
+       *
+       * <code>repeated .obb.AvailableMarket markets = 1;</code>
        */
-      public Builder addMarkets(com.oddin.obb.Markets.Market value) {
+      public Builder addMarkets(com.oddin.obb.Markets.AvailableMarket value) {
         if (marketsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1217,10 +1241,14 @@ public final class Markets {
         return this;
       }
       /**
-       * <code>repeated .obb.Market markets = 1;</code>
+       * <pre>
+       * List of available markets
+       * </pre>
+       *
+       * <code>repeated .obb.AvailableMarket markets = 1;</code>
        */
       public Builder addMarkets(
-          int index, com.oddin.obb.Markets.Market value) {
+          int index, com.oddin.obb.Markets.AvailableMarket value) {
         if (marketsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1234,10 +1262,14 @@ public final class Markets {
         return this;
       }
       /**
-       * <code>repeated .obb.Market markets = 1;</code>
+       * <pre>
+       * List of available markets
+       * </pre>
+       *
+       * <code>repeated .obb.AvailableMarket markets = 1;</code>
        */
       public Builder addMarkets(
-          com.oddin.obb.Markets.Market.Builder builderForValue) {
+          com.oddin.obb.Markets.AvailableMarket.Builder builderForValue) {
         if (marketsBuilder_ == null) {
           ensureMarketsIsMutable();
           markets_.add(builderForValue.build());
@@ -1248,10 +1280,14 @@ public final class Markets {
         return this;
       }
       /**
-       * <code>repeated .obb.Market markets = 1;</code>
+       * <pre>
+       * List of available markets
+       * </pre>
+       *
+       * <code>repeated .obb.AvailableMarket markets = 1;</code>
        */
       public Builder addMarkets(
-          int index, com.oddin.obb.Markets.Market.Builder builderForValue) {
+          int index, com.oddin.obb.Markets.AvailableMarket.Builder builderForValue) {
         if (marketsBuilder_ == null) {
           ensureMarketsIsMutable();
           markets_.add(index, builderForValue.build());
@@ -1262,10 +1298,14 @@ public final class Markets {
         return this;
       }
       /**
-       * <code>repeated .obb.Market markets = 1;</code>
+       * <pre>
+       * List of available markets
+       * </pre>
+       *
+       * <code>repeated .obb.AvailableMarket markets = 1;</code>
        */
       public Builder addAllMarkets(
-          java.lang.Iterable<? extends com.oddin.obb.Markets.Market> values) {
+          java.lang.Iterable<? extends com.oddin.obb.Markets.AvailableMarket> values) {
         if (marketsBuilder_ == null) {
           ensureMarketsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -1277,7 +1317,11 @@ public final class Markets {
         return this;
       }
       /**
-       * <code>repeated .obb.Market markets = 1;</code>
+       * <pre>
+       * List of available markets
+       * </pre>
+       *
+       * <code>repeated .obb.AvailableMarket markets = 1;</code>
        */
       public Builder clearMarkets() {
         if (marketsBuilder_ == null) {
@@ -1290,7 +1334,11 @@ public final class Markets {
         return this;
       }
       /**
-       * <code>repeated .obb.Market markets = 1;</code>
+       * <pre>
+       * List of available markets
+       * </pre>
+       *
+       * <code>repeated .obb.AvailableMarket markets = 1;</code>
        */
       public Builder removeMarkets(int index) {
         if (marketsBuilder_ == null) {
@@ -1303,16 +1351,24 @@ public final class Markets {
         return this;
       }
       /**
-       * <code>repeated .obb.Market markets = 1;</code>
+       * <pre>
+       * List of available markets
+       * </pre>
+       *
+       * <code>repeated .obb.AvailableMarket markets = 1;</code>
        */
-      public com.oddin.obb.Markets.Market.Builder getMarketsBuilder(
+      public com.oddin.obb.Markets.AvailableMarket.Builder getMarketsBuilder(
           int index) {
         return getMarketsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .obb.Market markets = 1;</code>
+       * <pre>
+       * List of available markets
+       * </pre>
+       *
+       * <code>repeated .obb.AvailableMarket markets = 1;</code>
        */
-      public com.oddin.obb.Markets.MarketOrBuilder getMarketsOrBuilder(
+      public com.oddin.obb.Markets.AvailableMarketOrBuilder getMarketsOrBuilder(
           int index) {
         if (marketsBuilder_ == null) {
           return markets_.get(index);  } else {
@@ -1320,9 +1376,13 @@ public final class Markets {
         }
       }
       /**
-       * <code>repeated .obb.Market markets = 1;</code>
+       * <pre>
+       * List of available markets
+       * </pre>
+       *
+       * <code>repeated .obb.AvailableMarket markets = 1;</code>
        */
-      public java.util.List<? extends com.oddin.obb.Markets.MarketOrBuilder> 
+      public java.util.List<? extends com.oddin.obb.Markets.AvailableMarketOrBuilder> 
            getMarketsOrBuilderList() {
         if (marketsBuilder_ != null) {
           return marketsBuilder_.getMessageOrBuilderList();
@@ -1331,33 +1391,45 @@ public final class Markets {
         }
       }
       /**
-       * <code>repeated .obb.Market markets = 1;</code>
+       * <pre>
+       * List of available markets
+       * </pre>
+       *
+       * <code>repeated .obb.AvailableMarket markets = 1;</code>
        */
-      public com.oddin.obb.Markets.Market.Builder addMarketsBuilder() {
+      public com.oddin.obb.Markets.AvailableMarket.Builder addMarketsBuilder() {
         return getMarketsFieldBuilder().addBuilder(
-            com.oddin.obb.Markets.Market.getDefaultInstance());
+            com.oddin.obb.Markets.AvailableMarket.getDefaultInstance());
       }
       /**
-       * <code>repeated .obb.Market markets = 1;</code>
+       * <pre>
+       * List of available markets
+       * </pre>
+       *
+       * <code>repeated .obb.AvailableMarket markets = 1;</code>
        */
-      public com.oddin.obb.Markets.Market.Builder addMarketsBuilder(
+      public com.oddin.obb.Markets.AvailableMarket.Builder addMarketsBuilder(
           int index) {
         return getMarketsFieldBuilder().addBuilder(
-            index, com.oddin.obb.Markets.Market.getDefaultInstance());
+            index, com.oddin.obb.Markets.AvailableMarket.getDefaultInstance());
       }
       /**
-       * <code>repeated .obb.Market markets = 1;</code>
+       * <pre>
+       * List of available markets
+       * </pre>
+       *
+       * <code>repeated .obb.AvailableMarket markets = 1;</code>
        */
-      public java.util.List<com.oddin.obb.Markets.Market.Builder> 
+      public java.util.List<com.oddin.obb.Markets.AvailableMarket.Builder> 
            getMarketsBuilderList() {
         return getMarketsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.oddin.obb.Markets.Market, com.oddin.obb.Markets.Market.Builder, com.oddin.obb.Markets.MarketOrBuilder> 
+          com.oddin.obb.Markets.AvailableMarket, com.oddin.obb.Markets.AvailableMarket.Builder, com.oddin.obb.Markets.AvailableMarketOrBuilder> 
           getMarketsFieldBuilder() {
         if (marketsBuilder_ == null) {
           marketsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.oddin.obb.Markets.Market, com.oddin.obb.Markets.Market.Builder, com.oddin.obb.Markets.MarketOrBuilder>(
+              com.oddin.obb.Markets.AvailableMarket, com.oddin.obb.Markets.AvailableMarket.Builder, com.oddin.obb.Markets.AvailableMarketOrBuilder>(
                   markets_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -1379,62 +1451,87 @@ public final class Markets {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:obb.MarketResponse)
+      // @@protoc_insertion_point(builder_scope:obb.AvailableMarketsResponse)
     }
 
-    // @@protoc_insertion_point(class_scope:obb.MarketResponse)
-    private static final com.oddin.obb.Markets.MarketResponse DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:obb.AvailableMarketsResponse)
+    private static final com.oddin.obb.Markets.AvailableMarketsResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.oddin.obb.Markets.MarketResponse();
+      DEFAULT_INSTANCE = new com.oddin.obb.Markets.AvailableMarketsResponse();
     }
 
-    public static com.oddin.obb.Markets.MarketResponse getDefaultInstance() {
+    public static com.oddin.obb.Markets.AvailableMarketsResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<MarketResponse>
-        PARSER = new com.google.protobuf.AbstractParser<MarketResponse>() {
+    private static final com.google.protobuf.Parser<AvailableMarketsResponse>
+        PARSER = new com.google.protobuf.AbstractParser<AvailableMarketsResponse>() {
       @java.lang.Override
-      public MarketResponse parsePartialFrom(
+      public AvailableMarketsResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MarketResponse(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
-    public static com.google.protobuf.Parser<MarketResponse> parser() {
+    public static com.google.protobuf.Parser<AvailableMarketsResponse> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<MarketResponse> getParserForType() {
+    public com.google.protobuf.Parser<AvailableMarketsResponse> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.oddin.obb.Markets.MarketResponse getDefaultInstanceForType() {
+    public com.oddin.obb.Markets.AvailableMarketsResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface MarketOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:obb.Market)
+  public interface AvailableMarketOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:obb.AvailableMarket)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * The ID using the same values as our odds feed in XML.
+     * </pre>
+     *
      * <code>uint32 market_id = 1;</code>
      * @return The marketId.
      */
     int getMarketId();
 
     /**
+     * <pre>
+     * The specifier is using the same values as our odds feed in XML.
+     * e.g. "variant=way:three|way=three|map=1"
+     * </pre>
+     *
      * <code>string specifiers = 2;</code>
      * @return The specifiers.
      */
     java.lang.String getSpecifiers();
     /**
+     * <pre>
+     * The specifier is using the same values as our odds feed in XML.
+     * e.g. "variant=way:three|way=three|map=1"
+     * </pre>
+     *
      * <code>string specifiers = 2;</code>
      * @return The bytes for specifiers.
      */
@@ -1442,18 +1539,18 @@ public final class Markets {
         getSpecifiersBytes();
   }
   /**
-   * Protobuf type {@code obb.Market}
+   * Protobuf type {@code obb.AvailableMarket}
    */
-  public static final class Market extends
+  public static final class AvailableMarket extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:obb.Market)
-      MarketOrBuilder {
+      // @@protoc_insertion_point(message_implements:obb.AvailableMarket)
+      AvailableMarketOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use Market.newBuilder() to construct.
-    private Market(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use AvailableMarket.newBuilder() to construct.
+    private AvailableMarket(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private Market() {
+    private AvailableMarket() {
       specifiers_ = "";
     }
 
@@ -1461,7 +1558,7 @@ public final class Markets {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new Market();
+      return new AvailableMarket();
     }
 
     @java.lang.Override
@@ -1469,70 +1566,26 @@ public final class Markets {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private Market(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              marketId_ = input.readUInt32();
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              specifiers_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.oddin.obb.Markets.internal_static_obb_Market_descriptor;
+      return com.oddin.obb.Markets.internal_static_obb_AvailableMarket_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.oddin.obb.Markets.internal_static_obb_Market_fieldAccessorTable
+      return com.oddin.obb.Markets.internal_static_obb_AvailableMarket_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.oddin.obb.Markets.Market.class, com.oddin.obb.Markets.Market.Builder.class);
+              com.oddin.obb.Markets.AvailableMarket.class, com.oddin.obb.Markets.AvailableMarket.Builder.class);
     }
 
     public static final int MARKET_ID_FIELD_NUMBER = 1;
     private int marketId_;
     /**
+     * <pre>
+     * The ID using the same values as our odds feed in XML.
+     * </pre>
+     *
      * <code>uint32 market_id = 1;</code>
      * @return The marketId.
      */
@@ -1544,6 +1597,11 @@ public final class Markets {
     public static final int SPECIFIERS_FIELD_NUMBER = 2;
     private volatile java.lang.Object specifiers_;
     /**
+     * <pre>
+     * The specifier is using the same values as our odds feed in XML.
+     * e.g. "variant=way:three|way=three|map=1"
+     * </pre>
+     *
      * <code>string specifiers = 2;</code>
      * @return The specifiers.
      */
@@ -1561,6 +1619,11 @@ public final class Markets {
       }
     }
     /**
+     * <pre>
+     * The specifier is using the same values as our odds feed in XML.
+     * e.g. "variant=way:three|way=three|map=1"
+     * </pre>
+     *
      * <code>string specifiers = 2;</code>
      * @return The bytes for specifiers.
      */
@@ -1599,7 +1662,7 @@ public final class Markets {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(specifiers_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, specifiers_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1615,7 +1678,7 @@ public final class Markets {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(specifiers_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, specifiers_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1625,16 +1688,16 @@ public final class Markets {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.oddin.obb.Markets.Market)) {
+      if (!(obj instanceof com.oddin.obb.Markets.AvailableMarket)) {
         return super.equals(obj);
       }
-      com.oddin.obb.Markets.Market other = (com.oddin.obb.Markets.Market) obj;
+      com.oddin.obb.Markets.AvailableMarket other = (com.oddin.obb.Markets.AvailableMarket) obj;
 
       if (getMarketId()
           != other.getMarketId()) return false;
       if (!getSpecifiers()
           .equals(other.getSpecifiers())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1649,74 +1712,74 @@ public final class Markets {
       hash = (53 * hash) + getMarketId();
       hash = (37 * hash) + SPECIFIERS_FIELD_NUMBER;
       hash = (53 * hash) + getSpecifiers().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static com.oddin.obb.Markets.Market parseFrom(
+    public static com.oddin.obb.Markets.AvailableMarket parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.obb.Markets.Market parseFrom(
+    public static com.oddin.obb.Markets.AvailableMarket parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.obb.Markets.Market parseFrom(
+    public static com.oddin.obb.Markets.AvailableMarket parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.obb.Markets.Market parseFrom(
+    public static com.oddin.obb.Markets.AvailableMarket parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.obb.Markets.Market parseFrom(byte[] data)
+    public static com.oddin.obb.Markets.AvailableMarket parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.obb.Markets.Market parseFrom(
+    public static com.oddin.obb.Markets.AvailableMarket parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.obb.Markets.Market parseFrom(java.io.InputStream input)
+    public static com.oddin.obb.Markets.AvailableMarket parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.oddin.obb.Markets.Market parseFrom(
+    public static com.oddin.obb.Markets.AvailableMarket parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.oddin.obb.Markets.Market parseDelimitedFrom(java.io.InputStream input)
+    public static com.oddin.obb.Markets.AvailableMarket parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.oddin.obb.Markets.Market parseDelimitedFrom(
+    public static com.oddin.obb.Markets.AvailableMarket parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.oddin.obb.Markets.Market parseFrom(
+    public static com.oddin.obb.Markets.AvailableMarket parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.oddin.obb.Markets.Market parseFrom(
+    public static com.oddin.obb.Markets.AvailableMarket parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1729,7 +1792,7 @@ public final class Markets {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.oddin.obb.Markets.Market prototype) {
+    public static Builder newBuilder(com.oddin.obb.Markets.AvailableMarket prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -1745,39 +1808,34 @@ public final class Markets {
       return builder;
     }
     /**
-     * Protobuf type {@code obb.Market}
+     * Protobuf type {@code obb.AvailableMarket}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:obb.Market)
-        com.oddin.obb.Markets.MarketOrBuilder {
+        // @@protoc_insertion_point(builder_implements:obb.AvailableMarket)
+        com.oddin.obb.Markets.AvailableMarketOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.oddin.obb.Markets.internal_static_obb_Market_descriptor;
+        return com.oddin.obb.Markets.internal_static_obb_AvailableMarket_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.oddin.obb.Markets.internal_static_obb_Market_fieldAccessorTable
+        return com.oddin.obb.Markets.internal_static_obb_AvailableMarket_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.oddin.obb.Markets.Market.class, com.oddin.obb.Markets.Market.Builder.class);
+                com.oddin.obb.Markets.AvailableMarket.class, com.oddin.obb.Markets.AvailableMarket.Builder.class);
       }
 
-      // Construct using com.oddin.obb.Markets.Market.newBuilder()
+      // Construct using com.oddin.obb.Markets.AvailableMarket.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -1792,17 +1850,17 @@ public final class Markets {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.oddin.obb.Markets.internal_static_obb_Market_descriptor;
+        return com.oddin.obb.Markets.internal_static_obb_AvailableMarket_descriptor;
       }
 
       @java.lang.Override
-      public com.oddin.obb.Markets.Market getDefaultInstanceForType() {
-        return com.oddin.obb.Markets.Market.getDefaultInstance();
+      public com.oddin.obb.Markets.AvailableMarket getDefaultInstanceForType() {
+        return com.oddin.obb.Markets.AvailableMarket.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.oddin.obb.Markets.Market build() {
-        com.oddin.obb.Markets.Market result = buildPartial();
+      public com.oddin.obb.Markets.AvailableMarket build() {
+        com.oddin.obb.Markets.AvailableMarket result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -1810,8 +1868,8 @@ public final class Markets {
       }
 
       @java.lang.Override
-      public com.oddin.obb.Markets.Market buildPartial() {
-        com.oddin.obb.Markets.Market result = new com.oddin.obb.Markets.Market(this);
+      public com.oddin.obb.Markets.AvailableMarket buildPartial() {
+        com.oddin.obb.Markets.AvailableMarket result = new com.oddin.obb.Markets.AvailableMarket(this);
         result.marketId_ = marketId_;
         result.specifiers_ = specifiers_;
         onBuilt();
@@ -1852,16 +1910,16 @@ public final class Markets {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.oddin.obb.Markets.Market) {
-          return mergeFrom((com.oddin.obb.Markets.Market)other);
+        if (other instanceof com.oddin.obb.Markets.AvailableMarket) {
+          return mergeFrom((com.oddin.obb.Markets.AvailableMarket)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.oddin.obb.Markets.Market other) {
-        if (other == com.oddin.obb.Markets.Market.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.oddin.obb.Markets.AvailableMarket other) {
+        if (other == com.oddin.obb.Markets.AvailableMarket.getDefaultInstance()) return this;
         if (other.getMarketId() != 0) {
           setMarketId(other.getMarketId());
         }
@@ -1869,7 +1927,7 @@ public final class Markets {
           specifiers_ = other.specifiers_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1884,22 +1942,49 @@ public final class Markets {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.oddin.obb.Markets.Market parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                marketId_ = input.readUInt32();
+
+                break;
+              } // case 8
+              case 18: {
+                specifiers_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.oddin.obb.Markets.Market) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
       private int marketId_ ;
       /**
+       * <pre>
+       * The ID using the same values as our odds feed in XML.
+       * </pre>
+       *
        * <code>uint32 market_id = 1;</code>
        * @return The marketId.
        */
@@ -1908,6 +1993,10 @@ public final class Markets {
         return marketId_;
       }
       /**
+       * <pre>
+       * The ID using the same values as our odds feed in XML.
+       * </pre>
+       *
        * <code>uint32 market_id = 1;</code>
        * @param value The marketId to set.
        * @return This builder for chaining.
@@ -1919,6 +2008,10 @@ public final class Markets {
         return this;
       }
       /**
+       * <pre>
+       * The ID using the same values as our odds feed in XML.
+       * </pre>
+       *
        * <code>uint32 market_id = 1;</code>
        * @return This builder for chaining.
        */
@@ -1931,6 +2024,11 @@ public final class Markets {
 
       private java.lang.Object specifiers_ = "";
       /**
+       * <pre>
+       * The specifier is using the same values as our odds feed in XML.
+       * e.g. "variant=way:three|way=three|map=1"
+       * </pre>
+       *
        * <code>string specifiers = 2;</code>
        * @return The specifiers.
        */
@@ -1947,6 +2045,11 @@ public final class Markets {
         }
       }
       /**
+       * <pre>
+       * The specifier is using the same values as our odds feed in XML.
+       * e.g. "variant=way:three|way=three|map=1"
+       * </pre>
+       *
        * <code>string specifiers = 2;</code>
        * @return The bytes for specifiers.
        */
@@ -1964,6 +2067,11 @@ public final class Markets {
         }
       }
       /**
+       * <pre>
+       * The specifier is using the same values as our odds feed in XML.
+       * e.g. "variant=way:three|way=three|map=1"
+       * </pre>
+       *
        * <code>string specifiers = 2;</code>
        * @param value The specifiers to set.
        * @return This builder for chaining.
@@ -1979,6 +2087,11 @@ public final class Markets {
         return this;
       }
       /**
+       * <pre>
+       * The specifier is using the same values as our odds feed in XML.
+       * e.g. "variant=way:three|way=three|map=1"
+       * </pre>
+       *
        * <code>string specifiers = 2;</code>
        * @return This builder for chaining.
        */
@@ -1989,6 +2102,11 @@ public final class Markets {
         return this;
       }
       /**
+       * <pre>
+       * The specifier is using the same values as our odds feed in XML.
+       * e.g. "variant=way:three|way=three|map=1"
+       * </pre>
+       *
        * <code>string specifiers = 2;</code>
        * @param value The bytes for specifiers to set.
        * @return This builder for chaining.
@@ -2017,61 +2135,72 @@ public final class Markets {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:obb.Market)
+      // @@protoc_insertion_point(builder_scope:obb.AvailableMarket)
     }
 
-    // @@protoc_insertion_point(class_scope:obb.Market)
-    private static final com.oddin.obb.Markets.Market DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:obb.AvailableMarket)
+    private static final com.oddin.obb.Markets.AvailableMarket DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.oddin.obb.Markets.Market();
+      DEFAULT_INSTANCE = new com.oddin.obb.Markets.AvailableMarket();
     }
 
-    public static com.oddin.obb.Markets.Market getDefaultInstance() {
+    public static com.oddin.obb.Markets.AvailableMarket getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<Market>
-        PARSER = new com.google.protobuf.AbstractParser<Market>() {
+    private static final com.google.protobuf.Parser<AvailableMarket>
+        PARSER = new com.google.protobuf.AbstractParser<AvailableMarket>() {
       @java.lang.Override
-      public Market parsePartialFrom(
+      public AvailableMarket parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Market(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
-    public static com.google.protobuf.Parser<Market> parser() {
+    public static com.google.protobuf.Parser<AvailableMarket> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<Market> getParserForType() {
+    public com.google.protobuf.Parser<AvailableMarket> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.oddin.obb.Markets.Market getDefaultInstanceForType() {
+    public com.oddin.obb.Markets.AvailableMarket getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_obb_MarketRequest_descriptor;
+    internal_static_obb_AvailableMarketsRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_obb_MarketRequest_fieldAccessorTable;
+      internal_static_obb_AvailableMarketsRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_obb_MarketResponse_descriptor;
+    internal_static_obb_AvailableMarketsResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_obb_MarketResponse_fieldAccessorTable;
+      internal_static_obb_AvailableMarketsResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_obb_Market_descriptor;
+    internal_static_obb_AvailableMarket_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_obb_Market_fieldAccessorTable;
+      internal_static_obb_AvailableMarket_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -2081,33 +2210,34 @@ public final class Markets {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021obb/markets.proto\022\003obb\"!\n\rMarketReques" +
-      "t\022\020\n\010event_id\030\001 \001(\t\".\n\016MarketResponse\022\034\n" +
-      "\007markets\030\001 \003(\0132\013.obb.Market\"/\n\006Market\022\021\n" +
-      "\tmarket_id\030\001 \001(\r\022\022\n\nspecifiers\030\002 \001(\tB\035\n\r" +
-      "com.oddin.obbZ\014oddin.gg/obbb\006proto3"
+      "\n\021obb/markets.proto\022\003obb\",\n\027AvailableMar" +
+      "ketsRequest\022\021\n\tevent_urn\030\001 \001(\t\"A\n\030Availa" +
+      "bleMarketsResponse\022%\n\007markets\030\001 \003(\0132\024.ob" +
+      "b.AvailableMarket\"8\n\017AvailableMarket\022\021\n\t" +
+      "market_id\030\001 \001(\r\022\022\n\nspecifiers\030\002 \001(\tB\035\n\rc" +
+      "om.oddin.obbZ\014oddin.gg/obbb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_obb_MarketRequest_descriptor =
+    internal_static_obb_AvailableMarketsRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_obb_MarketRequest_fieldAccessorTable = new
+    internal_static_obb_AvailableMarketsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_obb_MarketRequest_descriptor,
-        new java.lang.String[] { "EventId", });
-    internal_static_obb_MarketResponse_descriptor =
+        internal_static_obb_AvailableMarketsRequest_descriptor,
+        new java.lang.String[] { "EventUrn", });
+    internal_static_obb_AvailableMarketsResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_obb_MarketResponse_fieldAccessorTable = new
+    internal_static_obb_AvailableMarketsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_obb_MarketResponse_descriptor,
+        internal_static_obb_AvailableMarketsResponse_descriptor,
         new java.lang.String[] { "Markets", });
-    internal_static_obb_Market_descriptor =
+    internal_static_obb_AvailableMarket_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_obb_Market_fieldAccessorTable = new
+    internal_static_obb_AvailableMarket_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_obb_Market_descriptor,
+        internal_static_obb_AvailableMarket_descriptor,
         new java.lang.String[] { "MarketId", "Specifiers", });
   }
 

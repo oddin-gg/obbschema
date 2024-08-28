@@ -28,10 +28,18 @@ public final class Session {
      */
     SESSION_STATUS_UNSPECIFIED(0),
     /**
+     * <pre>
+     * The session is valid and can still be used.
+     * </pre>
+     *
      * <code>SESSION_STATUS_VALID = 1;</code>
      */
     SESSION_STATUS_VALID(1),
     /**
+     * <pre>
+     * Session is not valid anymore.
+     * </pre>
+     *
      * <code>SESSION_STATUS_INVALID = 2;</code>
      */
     SESSION_STATUS_INVALID(2),
@@ -47,10 +55,18 @@ public final class Session {
      */
     public static final int SESSION_STATUS_UNSPECIFIED_VALUE = 0;
     /**
+     * <pre>
+     * The session is valid and can still be used.
+     * </pre>
+     *
      * <code>SESSION_STATUS_VALID = 1;</code>
      */
     public static final int SESSION_STATUS_VALID_VALUE = 1;
     /**
+     * <pre>
+     * Session is not valid anymore.
+     * </pre>
+     *
      * <code>SESSION_STATUS_INVALID = 2;</code>
      */
     public static final int SESSION_STATUS_INVALID_VALUE = 2;
@@ -211,55 +227,6 @@ public final class Session {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SessionRejectReason(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-              int rawValue = input.readEnum();
-
-              code_ = rawValue;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              message_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return com.oddin.obb.Session.internal_static_obb_SessionRejectReason_descriptor;
@@ -304,7 +271,7 @@ public final class Session {
       CODE_INVALID_ARGUMENT(2),
       /**
        * <pre>
-       * Session contains invalid market combination
+       * Session contains invalid market combination.
        * </pre>
        *
        * <code>CODE_INVALID_MARKET_COMBINATION = 3;</code>
@@ -339,7 +306,7 @@ public final class Session {
       public static final int CODE_INVALID_ARGUMENT_VALUE = 2;
       /**
        * <pre>
-       * Session contains invalid market combination
+       * Session contains invalid market combination.
        * </pre>
        *
        * <code>CODE_INVALID_MARKET_COMBINATION = 3;</code>
@@ -524,7 +491,7 @@ public final class Session {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -540,7 +507,7 @@ public final class Session {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -558,7 +525,7 @@ public final class Session {
       if (code_ != other.code_) return false;
       if (!getMessage()
           .equals(other.getMessage())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -573,7 +540,7 @@ public final class Session {
       hash = (53 * hash) + code_;
       hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
       hash = (53 * hash) + getMessage().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -690,18 +657,13 @@ public final class Session {
 
       // Construct using com.oddin.obb.Session.SessionRejectReason.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -793,7 +755,7 @@ public final class Session {
           message_ = other.message_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -808,17 +770,40 @@ public final class Session {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.oddin.obb.Session.SessionRejectReason parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                code_ = input.readEnum();
+
+                break;
+              } // case 8
+              case 18: {
+                message_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.oddin.obb.Session.SessionRejectReason) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1024,7 +1009,18 @@ public final class Session {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SessionRejectReason(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1115,55 +1111,6 @@ public final class Session {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private InvalidSessionReason(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-              int rawValue = input.readEnum();
-
-              code_ = rawValue;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              message_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -1446,7 +1393,7 @@ public final class Session {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1462,7 +1409,7 @@ public final class Session {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1480,7 +1427,7 @@ public final class Session {
       if (code_ != other.code_) return false;
       if (!getMessage()
           .equals(other.getMessage())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1495,7 +1442,7 @@ public final class Session {
       hash = (53 * hash) + code_;
       hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
       hash = (53 * hash) + getMessage().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1612,18 +1559,13 @@ public final class Session {
 
       // Construct using com.oddin.obb.Session.InvalidSessionReason.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -1715,7 +1657,7 @@ public final class Session {
           message_ = other.message_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1730,17 +1672,40 @@ public final class Session {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.oddin.obb.Session.InvalidSessionReason parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                code_ = input.readEnum();
+
+                break;
+              } // case 8
+              case 18: {
+                message_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.oddin.obb.Session.InvalidSessionReason) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1946,7 +1911,18 @@ public final class Session {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new InvalidSessionReason(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1966,2376 +1942,14 @@ public final class Session {
 
   }
 
-  public interface SessionRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:obb.SessionRequest)
+  public interface SessionCreateRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:obb.SessionCreateRequest)
       com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>.obb.SessionCreate create = 1;</code>
-     * @return Whether the create field is set.
-     */
-    boolean hasCreate();
-    /**
-     * <code>.obb.SessionCreate create = 1;</code>
-     * @return The create.
-     */
-    com.oddin.obb.Session.SessionCreate getCreate();
-    /**
-     * <code>.obb.SessionCreate create = 1;</code>
-     */
-    com.oddin.obb.Session.SessionCreateOrBuilder getCreateOrBuilder();
-
-    /**
-     * <code>.obb.StreamKeepalive keepalive = 2;</code>
-     * @return Whether the keepalive field is set.
-     */
-    boolean hasKeepalive();
-    /**
-     * <code>.obb.StreamKeepalive keepalive = 2;</code>
-     * @return The keepalive.
-     */
-    com.oddin.obb.Commons.StreamKeepalive getKeepalive();
-    /**
-     * <code>.obb.StreamKeepalive keepalive = 2;</code>
-     */
-    com.oddin.obb.Commons.StreamKeepaliveOrBuilder getKeepaliveOrBuilder();
-
-    /**
-     * <code>.obb.SessionInfo info = 3;</code>
-     * @return Whether the info field is set.
-     */
-    boolean hasInfo();
-    /**
-     * <code>.obb.SessionInfo info = 3;</code>
-     * @return The info.
-     */
-    com.oddin.obb.Session.SessionInfo getInfo();
-    /**
-     * <code>.obb.SessionInfo info = 3;</code>
-     */
-    com.oddin.obb.Session.SessionInfoOrBuilder getInfoOrBuilder();
-
-    public com.oddin.obb.Session.SessionRequest.DataCase getDataCase();
-  }
-  /**
-   * Protobuf type {@code obb.SessionRequest}
-   */
-  public static final class SessionRequest extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:obb.SessionRequest)
-      SessionRequestOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use SessionRequest.newBuilder() to construct.
-    private SessionRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private SessionRequest() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new SessionRequest();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private SessionRequest(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              com.oddin.obb.Session.SessionCreate.Builder subBuilder = null;
-              if (dataCase_ == 1) {
-                subBuilder = ((com.oddin.obb.Session.SessionCreate) data_).toBuilder();
-              }
-              data_ =
-                  input.readMessage(com.oddin.obb.Session.SessionCreate.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.oddin.obb.Session.SessionCreate) data_);
-                data_ = subBuilder.buildPartial();
-              }
-              dataCase_ = 1;
-              break;
-            }
-            case 18: {
-              com.oddin.obb.Commons.StreamKeepalive.Builder subBuilder = null;
-              if (dataCase_ == 2) {
-                subBuilder = ((com.oddin.obb.Commons.StreamKeepalive) data_).toBuilder();
-              }
-              data_ =
-                  input.readMessage(com.oddin.obb.Commons.StreamKeepalive.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.oddin.obb.Commons.StreamKeepalive) data_);
-                data_ = subBuilder.buildPartial();
-              }
-              dataCase_ = 2;
-              break;
-            }
-            case 26: {
-              com.oddin.obb.Session.SessionInfo.Builder subBuilder = null;
-              if (dataCase_ == 3) {
-                subBuilder = ((com.oddin.obb.Session.SessionInfo) data_).toBuilder();
-              }
-              data_ =
-                  input.readMessage(com.oddin.obb.Session.SessionInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.oddin.obb.Session.SessionInfo) data_);
-                data_ = subBuilder.buildPartial();
-              }
-              dataCase_ = 3;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.oddin.obb.Session.internal_static_obb_SessionRequest_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.oddin.obb.Session.internal_static_obb_SessionRequest_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.oddin.obb.Session.SessionRequest.class, com.oddin.obb.Session.SessionRequest.Builder.class);
-    }
-
-    private int dataCase_ = 0;
-    private java.lang.Object data_;
-    public enum DataCase
-        implements com.google.protobuf.Internal.EnumLite,
-            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-      CREATE(1),
-      KEEPALIVE(2),
-      INFO(3),
-      DATA_NOT_SET(0);
-      private final int value;
-      private DataCase(int value) {
-        this.value = value;
-      }
-      /**
-       * @param value The number of the enum to look for.
-       * @return The enum associated with the given number.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static DataCase valueOf(int value) {
-        return forNumber(value);
-      }
-
-      public static DataCase forNumber(int value) {
-        switch (value) {
-          case 1: return CREATE;
-          case 2: return KEEPALIVE;
-          case 3: return INFO;
-          case 0: return DATA_NOT_SET;
-          default: return null;
-        }
-      }
-      public int getNumber() {
-        return this.value;
-      }
-    };
-
-    public DataCase
-    getDataCase() {
-      return DataCase.forNumber(
-          dataCase_);
-    }
-
-    public static final int CREATE_FIELD_NUMBER = 1;
-    /**
-     * <code>.obb.SessionCreate create = 1;</code>
-     * @return Whether the create field is set.
-     */
-    @java.lang.Override
-    public boolean hasCreate() {
-      return dataCase_ == 1;
-    }
-    /**
-     * <code>.obb.SessionCreate create = 1;</code>
-     * @return The create.
-     */
-    @java.lang.Override
-    public com.oddin.obb.Session.SessionCreate getCreate() {
-      if (dataCase_ == 1) {
-         return (com.oddin.obb.Session.SessionCreate) data_;
-      }
-      return com.oddin.obb.Session.SessionCreate.getDefaultInstance();
-    }
-    /**
-     * <code>.obb.SessionCreate create = 1;</code>
-     */
-    @java.lang.Override
-    public com.oddin.obb.Session.SessionCreateOrBuilder getCreateOrBuilder() {
-      if (dataCase_ == 1) {
-         return (com.oddin.obb.Session.SessionCreate) data_;
-      }
-      return com.oddin.obb.Session.SessionCreate.getDefaultInstance();
-    }
-
-    public static final int KEEPALIVE_FIELD_NUMBER = 2;
-    /**
-     * <code>.obb.StreamKeepalive keepalive = 2;</code>
-     * @return Whether the keepalive field is set.
-     */
-    @java.lang.Override
-    public boolean hasKeepalive() {
-      return dataCase_ == 2;
-    }
-    /**
-     * <code>.obb.StreamKeepalive keepalive = 2;</code>
-     * @return The keepalive.
-     */
-    @java.lang.Override
-    public com.oddin.obb.Commons.StreamKeepalive getKeepalive() {
-      if (dataCase_ == 2) {
-         return (com.oddin.obb.Commons.StreamKeepalive) data_;
-      }
-      return com.oddin.obb.Commons.StreamKeepalive.getDefaultInstance();
-    }
-    /**
-     * <code>.obb.StreamKeepalive keepalive = 2;</code>
-     */
-    @java.lang.Override
-    public com.oddin.obb.Commons.StreamKeepaliveOrBuilder getKeepaliveOrBuilder() {
-      if (dataCase_ == 2) {
-         return (com.oddin.obb.Commons.StreamKeepalive) data_;
-      }
-      return com.oddin.obb.Commons.StreamKeepalive.getDefaultInstance();
-    }
-
-    public static final int INFO_FIELD_NUMBER = 3;
-    /**
-     * <code>.obb.SessionInfo info = 3;</code>
-     * @return Whether the info field is set.
-     */
-    @java.lang.Override
-    public boolean hasInfo() {
-      return dataCase_ == 3;
-    }
-    /**
-     * <code>.obb.SessionInfo info = 3;</code>
-     * @return The info.
-     */
-    @java.lang.Override
-    public com.oddin.obb.Session.SessionInfo getInfo() {
-      if (dataCase_ == 3) {
-         return (com.oddin.obb.Session.SessionInfo) data_;
-      }
-      return com.oddin.obb.Session.SessionInfo.getDefaultInstance();
-    }
-    /**
-     * <code>.obb.SessionInfo info = 3;</code>
-     */
-    @java.lang.Override
-    public com.oddin.obb.Session.SessionInfoOrBuilder getInfoOrBuilder() {
-      if (dataCase_ == 3) {
-         return (com.oddin.obb.Session.SessionInfo) data_;
-      }
-      return com.oddin.obb.Session.SessionInfo.getDefaultInstance();
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (dataCase_ == 1) {
-        output.writeMessage(1, (com.oddin.obb.Session.SessionCreate) data_);
-      }
-      if (dataCase_ == 2) {
-        output.writeMessage(2, (com.oddin.obb.Commons.StreamKeepalive) data_);
-      }
-      if (dataCase_ == 3) {
-        output.writeMessage(3, (com.oddin.obb.Session.SessionInfo) data_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (dataCase_ == 1) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, (com.oddin.obb.Session.SessionCreate) data_);
-      }
-      if (dataCase_ == 2) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, (com.oddin.obb.Commons.StreamKeepalive) data_);
-      }
-      if (dataCase_ == 3) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, (com.oddin.obb.Session.SessionInfo) data_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.oddin.obb.Session.SessionRequest)) {
-        return super.equals(obj);
-      }
-      com.oddin.obb.Session.SessionRequest other = (com.oddin.obb.Session.SessionRequest) obj;
-
-      if (!getDataCase().equals(other.getDataCase())) return false;
-      switch (dataCase_) {
-        case 1:
-          if (!getCreate()
-              .equals(other.getCreate())) return false;
-          break;
-        case 2:
-          if (!getKeepalive()
-              .equals(other.getKeepalive())) return false;
-          break;
-        case 3:
-          if (!getInfo()
-              .equals(other.getInfo())) return false;
-          break;
-        case 0:
-        default:
-      }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      switch (dataCase_) {
-        case 1:
-          hash = (37 * hash) + CREATE_FIELD_NUMBER;
-          hash = (53 * hash) + getCreate().hashCode();
-          break;
-        case 2:
-          hash = (37 * hash) + KEEPALIVE_FIELD_NUMBER;
-          hash = (53 * hash) + getKeepalive().hashCode();
-          break;
-        case 3:
-          hash = (37 * hash) + INFO_FIELD_NUMBER;
-          hash = (53 * hash) + getInfo().hashCode();
-          break;
-        case 0:
-        default:
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.oddin.obb.Session.SessionRequest parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.oddin.obb.Session.SessionRequest parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.oddin.obb.Session.SessionRequest parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.oddin.obb.Session.SessionRequest parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.oddin.obb.Session.SessionRequest parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.oddin.obb.Session.SessionRequest parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.oddin.obb.Session.SessionRequest parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.oddin.obb.Session.SessionRequest parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.oddin.obb.Session.SessionRequest parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.oddin.obb.Session.SessionRequest parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.oddin.obb.Session.SessionRequest parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.oddin.obb.Session.SessionRequest parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.oddin.obb.Session.SessionRequest prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code obb.SessionRequest}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:obb.SessionRequest)
-        com.oddin.obb.Session.SessionRequestOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.oddin.obb.Session.internal_static_obb_SessionRequest_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.oddin.obb.Session.internal_static_obb_SessionRequest_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.oddin.obb.Session.SessionRequest.class, com.oddin.obb.Session.SessionRequest.Builder.class);
-      }
-
-      // Construct using com.oddin.obb.Session.SessionRequest.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        dataCase_ = 0;
-        data_ = null;
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.oddin.obb.Session.internal_static_obb_SessionRequest_descriptor;
-      }
-
-      @java.lang.Override
-      public com.oddin.obb.Session.SessionRequest getDefaultInstanceForType() {
-        return com.oddin.obb.Session.SessionRequest.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.oddin.obb.Session.SessionRequest build() {
-        com.oddin.obb.Session.SessionRequest result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.oddin.obb.Session.SessionRequest buildPartial() {
-        com.oddin.obb.Session.SessionRequest result = new com.oddin.obb.Session.SessionRequest(this);
-        if (dataCase_ == 1) {
-          if (createBuilder_ == null) {
-            result.data_ = data_;
-          } else {
-            result.data_ = createBuilder_.build();
-          }
-        }
-        if (dataCase_ == 2) {
-          if (keepaliveBuilder_ == null) {
-            result.data_ = data_;
-          } else {
-            result.data_ = keepaliveBuilder_.build();
-          }
-        }
-        if (dataCase_ == 3) {
-          if (infoBuilder_ == null) {
-            result.data_ = data_;
-          } else {
-            result.data_ = infoBuilder_.build();
-          }
-        }
-        result.dataCase_ = dataCase_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.oddin.obb.Session.SessionRequest) {
-          return mergeFrom((com.oddin.obb.Session.SessionRequest)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.oddin.obb.Session.SessionRequest other) {
-        if (other == com.oddin.obb.Session.SessionRequest.getDefaultInstance()) return this;
-        switch (other.getDataCase()) {
-          case CREATE: {
-            mergeCreate(other.getCreate());
-            break;
-          }
-          case KEEPALIVE: {
-            mergeKeepalive(other.getKeepalive());
-            break;
-          }
-          case INFO: {
-            mergeInfo(other.getInfo());
-            break;
-          }
-          case DATA_NOT_SET: {
-            break;
-          }
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.oddin.obb.Session.SessionRequest parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.oddin.obb.Session.SessionRequest) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int dataCase_ = 0;
-      private java.lang.Object data_;
-      public DataCase
-          getDataCase() {
-        return DataCase.forNumber(
-            dataCase_);
-      }
-
-      public Builder clearData() {
-        dataCase_ = 0;
-        data_ = null;
-        onChanged();
-        return this;
-      }
-
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.oddin.obb.Session.SessionCreate, com.oddin.obb.Session.SessionCreate.Builder, com.oddin.obb.Session.SessionCreateOrBuilder> createBuilder_;
-      /**
-       * <code>.obb.SessionCreate create = 1;</code>
-       * @return Whether the create field is set.
-       */
-      @java.lang.Override
-      public boolean hasCreate() {
-        return dataCase_ == 1;
-      }
-      /**
-       * <code>.obb.SessionCreate create = 1;</code>
-       * @return The create.
-       */
-      @java.lang.Override
-      public com.oddin.obb.Session.SessionCreate getCreate() {
-        if (createBuilder_ == null) {
-          if (dataCase_ == 1) {
-            return (com.oddin.obb.Session.SessionCreate) data_;
-          }
-          return com.oddin.obb.Session.SessionCreate.getDefaultInstance();
-        } else {
-          if (dataCase_ == 1) {
-            return createBuilder_.getMessage();
-          }
-          return com.oddin.obb.Session.SessionCreate.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.obb.SessionCreate create = 1;</code>
-       */
-      public Builder setCreate(com.oddin.obb.Session.SessionCreate value) {
-        if (createBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          data_ = value;
-          onChanged();
-        } else {
-          createBuilder_.setMessage(value);
-        }
-        dataCase_ = 1;
-        return this;
-      }
-      /**
-       * <code>.obb.SessionCreate create = 1;</code>
-       */
-      public Builder setCreate(
-          com.oddin.obb.Session.SessionCreate.Builder builderForValue) {
-        if (createBuilder_ == null) {
-          data_ = builderForValue.build();
-          onChanged();
-        } else {
-          createBuilder_.setMessage(builderForValue.build());
-        }
-        dataCase_ = 1;
-        return this;
-      }
-      /**
-       * <code>.obb.SessionCreate create = 1;</code>
-       */
-      public Builder mergeCreate(com.oddin.obb.Session.SessionCreate value) {
-        if (createBuilder_ == null) {
-          if (dataCase_ == 1 &&
-              data_ != com.oddin.obb.Session.SessionCreate.getDefaultInstance()) {
-            data_ = com.oddin.obb.Session.SessionCreate.newBuilder((com.oddin.obb.Session.SessionCreate) data_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            data_ = value;
-          }
-          onChanged();
-        } else {
-          if (dataCase_ == 1) {
-            createBuilder_.mergeFrom(value);
-          }
-          createBuilder_.setMessage(value);
-        }
-        dataCase_ = 1;
-        return this;
-      }
-      /**
-       * <code>.obb.SessionCreate create = 1;</code>
-       */
-      public Builder clearCreate() {
-        if (createBuilder_ == null) {
-          if (dataCase_ == 1) {
-            dataCase_ = 0;
-            data_ = null;
-            onChanged();
-          }
-        } else {
-          if (dataCase_ == 1) {
-            dataCase_ = 0;
-            data_ = null;
-          }
-          createBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.obb.SessionCreate create = 1;</code>
-       */
-      public com.oddin.obb.Session.SessionCreate.Builder getCreateBuilder() {
-        return getCreateFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.obb.SessionCreate create = 1;</code>
-       */
-      @java.lang.Override
-      public com.oddin.obb.Session.SessionCreateOrBuilder getCreateOrBuilder() {
-        if ((dataCase_ == 1) && (createBuilder_ != null)) {
-          return createBuilder_.getMessageOrBuilder();
-        } else {
-          if (dataCase_ == 1) {
-            return (com.oddin.obb.Session.SessionCreate) data_;
-          }
-          return com.oddin.obb.Session.SessionCreate.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.obb.SessionCreate create = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.oddin.obb.Session.SessionCreate, com.oddin.obb.Session.SessionCreate.Builder, com.oddin.obb.Session.SessionCreateOrBuilder> 
-          getCreateFieldBuilder() {
-        if (createBuilder_ == null) {
-          if (!(dataCase_ == 1)) {
-            data_ = com.oddin.obb.Session.SessionCreate.getDefaultInstance();
-          }
-          createBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.oddin.obb.Session.SessionCreate, com.oddin.obb.Session.SessionCreate.Builder, com.oddin.obb.Session.SessionCreateOrBuilder>(
-                  (com.oddin.obb.Session.SessionCreate) data_,
-                  getParentForChildren(),
-                  isClean());
-          data_ = null;
-        }
-        dataCase_ = 1;
-        onChanged();;
-        return createBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.oddin.obb.Commons.StreamKeepalive, com.oddin.obb.Commons.StreamKeepalive.Builder, com.oddin.obb.Commons.StreamKeepaliveOrBuilder> keepaliveBuilder_;
-      /**
-       * <code>.obb.StreamKeepalive keepalive = 2;</code>
-       * @return Whether the keepalive field is set.
-       */
-      @java.lang.Override
-      public boolean hasKeepalive() {
-        return dataCase_ == 2;
-      }
-      /**
-       * <code>.obb.StreamKeepalive keepalive = 2;</code>
-       * @return The keepalive.
-       */
-      @java.lang.Override
-      public com.oddin.obb.Commons.StreamKeepalive getKeepalive() {
-        if (keepaliveBuilder_ == null) {
-          if (dataCase_ == 2) {
-            return (com.oddin.obb.Commons.StreamKeepalive) data_;
-          }
-          return com.oddin.obb.Commons.StreamKeepalive.getDefaultInstance();
-        } else {
-          if (dataCase_ == 2) {
-            return keepaliveBuilder_.getMessage();
-          }
-          return com.oddin.obb.Commons.StreamKeepalive.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.obb.StreamKeepalive keepalive = 2;</code>
-       */
-      public Builder setKeepalive(com.oddin.obb.Commons.StreamKeepalive value) {
-        if (keepaliveBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          data_ = value;
-          onChanged();
-        } else {
-          keepaliveBuilder_.setMessage(value);
-        }
-        dataCase_ = 2;
-        return this;
-      }
-      /**
-       * <code>.obb.StreamKeepalive keepalive = 2;</code>
-       */
-      public Builder setKeepalive(
-          com.oddin.obb.Commons.StreamKeepalive.Builder builderForValue) {
-        if (keepaliveBuilder_ == null) {
-          data_ = builderForValue.build();
-          onChanged();
-        } else {
-          keepaliveBuilder_.setMessage(builderForValue.build());
-        }
-        dataCase_ = 2;
-        return this;
-      }
-      /**
-       * <code>.obb.StreamKeepalive keepalive = 2;</code>
-       */
-      public Builder mergeKeepalive(com.oddin.obb.Commons.StreamKeepalive value) {
-        if (keepaliveBuilder_ == null) {
-          if (dataCase_ == 2 &&
-              data_ != com.oddin.obb.Commons.StreamKeepalive.getDefaultInstance()) {
-            data_ = com.oddin.obb.Commons.StreamKeepalive.newBuilder((com.oddin.obb.Commons.StreamKeepalive) data_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            data_ = value;
-          }
-          onChanged();
-        } else {
-          if (dataCase_ == 2) {
-            keepaliveBuilder_.mergeFrom(value);
-          }
-          keepaliveBuilder_.setMessage(value);
-        }
-        dataCase_ = 2;
-        return this;
-      }
-      /**
-       * <code>.obb.StreamKeepalive keepalive = 2;</code>
-       */
-      public Builder clearKeepalive() {
-        if (keepaliveBuilder_ == null) {
-          if (dataCase_ == 2) {
-            dataCase_ = 0;
-            data_ = null;
-            onChanged();
-          }
-        } else {
-          if (dataCase_ == 2) {
-            dataCase_ = 0;
-            data_ = null;
-          }
-          keepaliveBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.obb.StreamKeepalive keepalive = 2;</code>
-       */
-      public com.oddin.obb.Commons.StreamKeepalive.Builder getKeepaliveBuilder() {
-        return getKeepaliveFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.obb.StreamKeepalive keepalive = 2;</code>
-       */
-      @java.lang.Override
-      public com.oddin.obb.Commons.StreamKeepaliveOrBuilder getKeepaliveOrBuilder() {
-        if ((dataCase_ == 2) && (keepaliveBuilder_ != null)) {
-          return keepaliveBuilder_.getMessageOrBuilder();
-        } else {
-          if (dataCase_ == 2) {
-            return (com.oddin.obb.Commons.StreamKeepalive) data_;
-          }
-          return com.oddin.obb.Commons.StreamKeepalive.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.obb.StreamKeepalive keepalive = 2;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.oddin.obb.Commons.StreamKeepalive, com.oddin.obb.Commons.StreamKeepalive.Builder, com.oddin.obb.Commons.StreamKeepaliveOrBuilder> 
-          getKeepaliveFieldBuilder() {
-        if (keepaliveBuilder_ == null) {
-          if (!(dataCase_ == 2)) {
-            data_ = com.oddin.obb.Commons.StreamKeepalive.getDefaultInstance();
-          }
-          keepaliveBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.oddin.obb.Commons.StreamKeepalive, com.oddin.obb.Commons.StreamKeepalive.Builder, com.oddin.obb.Commons.StreamKeepaliveOrBuilder>(
-                  (com.oddin.obb.Commons.StreamKeepalive) data_,
-                  getParentForChildren(),
-                  isClean());
-          data_ = null;
-        }
-        dataCase_ = 2;
-        onChanged();;
-        return keepaliveBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.oddin.obb.Session.SessionInfo, com.oddin.obb.Session.SessionInfo.Builder, com.oddin.obb.Session.SessionInfoOrBuilder> infoBuilder_;
-      /**
-       * <code>.obb.SessionInfo info = 3;</code>
-       * @return Whether the info field is set.
-       */
-      @java.lang.Override
-      public boolean hasInfo() {
-        return dataCase_ == 3;
-      }
-      /**
-       * <code>.obb.SessionInfo info = 3;</code>
-       * @return The info.
-       */
-      @java.lang.Override
-      public com.oddin.obb.Session.SessionInfo getInfo() {
-        if (infoBuilder_ == null) {
-          if (dataCase_ == 3) {
-            return (com.oddin.obb.Session.SessionInfo) data_;
-          }
-          return com.oddin.obb.Session.SessionInfo.getDefaultInstance();
-        } else {
-          if (dataCase_ == 3) {
-            return infoBuilder_.getMessage();
-          }
-          return com.oddin.obb.Session.SessionInfo.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.obb.SessionInfo info = 3;</code>
-       */
-      public Builder setInfo(com.oddin.obb.Session.SessionInfo value) {
-        if (infoBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          data_ = value;
-          onChanged();
-        } else {
-          infoBuilder_.setMessage(value);
-        }
-        dataCase_ = 3;
-        return this;
-      }
-      /**
-       * <code>.obb.SessionInfo info = 3;</code>
-       */
-      public Builder setInfo(
-          com.oddin.obb.Session.SessionInfo.Builder builderForValue) {
-        if (infoBuilder_ == null) {
-          data_ = builderForValue.build();
-          onChanged();
-        } else {
-          infoBuilder_.setMessage(builderForValue.build());
-        }
-        dataCase_ = 3;
-        return this;
-      }
-      /**
-       * <code>.obb.SessionInfo info = 3;</code>
-       */
-      public Builder mergeInfo(com.oddin.obb.Session.SessionInfo value) {
-        if (infoBuilder_ == null) {
-          if (dataCase_ == 3 &&
-              data_ != com.oddin.obb.Session.SessionInfo.getDefaultInstance()) {
-            data_ = com.oddin.obb.Session.SessionInfo.newBuilder((com.oddin.obb.Session.SessionInfo) data_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            data_ = value;
-          }
-          onChanged();
-        } else {
-          if (dataCase_ == 3) {
-            infoBuilder_.mergeFrom(value);
-          }
-          infoBuilder_.setMessage(value);
-        }
-        dataCase_ = 3;
-        return this;
-      }
-      /**
-       * <code>.obb.SessionInfo info = 3;</code>
-       */
-      public Builder clearInfo() {
-        if (infoBuilder_ == null) {
-          if (dataCase_ == 3) {
-            dataCase_ = 0;
-            data_ = null;
-            onChanged();
-          }
-        } else {
-          if (dataCase_ == 3) {
-            dataCase_ = 0;
-            data_ = null;
-          }
-          infoBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.obb.SessionInfo info = 3;</code>
-       */
-      public com.oddin.obb.Session.SessionInfo.Builder getInfoBuilder() {
-        return getInfoFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.obb.SessionInfo info = 3;</code>
-       */
-      @java.lang.Override
-      public com.oddin.obb.Session.SessionInfoOrBuilder getInfoOrBuilder() {
-        if ((dataCase_ == 3) && (infoBuilder_ != null)) {
-          return infoBuilder_.getMessageOrBuilder();
-        } else {
-          if (dataCase_ == 3) {
-            return (com.oddin.obb.Session.SessionInfo) data_;
-          }
-          return com.oddin.obb.Session.SessionInfo.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.obb.SessionInfo info = 3;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.oddin.obb.Session.SessionInfo, com.oddin.obb.Session.SessionInfo.Builder, com.oddin.obb.Session.SessionInfoOrBuilder> 
-          getInfoFieldBuilder() {
-        if (infoBuilder_ == null) {
-          if (!(dataCase_ == 3)) {
-            data_ = com.oddin.obb.Session.SessionInfo.getDefaultInstance();
-          }
-          infoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.oddin.obb.Session.SessionInfo, com.oddin.obb.Session.SessionInfo.Builder, com.oddin.obb.Session.SessionInfoOrBuilder>(
-                  (com.oddin.obb.Session.SessionInfo) data_,
-                  getParentForChildren(),
-                  isClean());
-          data_ = null;
-        }
-        dataCase_ = 3;
-        onChanged();;
-        return infoBuilder_;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:obb.SessionRequest)
-    }
-
-    // @@protoc_insertion_point(class_scope:obb.SessionRequest)
-    private static final com.oddin.obb.Session.SessionRequest DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.oddin.obb.Session.SessionRequest();
-    }
-
-    public static com.oddin.obb.Session.SessionRequest getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<SessionRequest>
-        PARSER = new com.google.protobuf.AbstractParser<SessionRequest>() {
-      @java.lang.Override
-      public SessionRequest parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SessionRequest(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<SessionRequest> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<SessionRequest> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.oddin.obb.Session.SessionRequest getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface SessionResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:obb.SessionResponse)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>.obb.SessionCreateState create = 1;</code>
-     * @return Whether the create field is set.
-     */
-    boolean hasCreate();
-    /**
-     * <code>.obb.SessionCreateState create = 1;</code>
-     * @return The create.
-     */
-    com.oddin.obb.Session.SessionCreateState getCreate();
-    /**
-     * <code>.obb.SessionCreateState create = 1;</code>
-     */
-    com.oddin.obb.Session.SessionCreateStateOrBuilder getCreateOrBuilder();
-
-    /**
-     * <code>.obb.StreamKeepalive keepalive = 2;</code>
-     * @return Whether the keepalive field is set.
-     */
-    boolean hasKeepalive();
-    /**
-     * <code>.obb.StreamKeepalive keepalive = 2;</code>
-     * @return The keepalive.
-     */
-    com.oddin.obb.Commons.StreamKeepalive getKeepalive();
-    /**
-     * <code>.obb.StreamKeepalive keepalive = 2;</code>
-     */
-    com.oddin.obb.Commons.StreamKeepaliveOrBuilder getKeepaliveOrBuilder();
-
-    /**
-     * <code>.obb.SessionInfoState info = 3;</code>
-     * @return Whether the info field is set.
-     */
-    boolean hasInfo();
-    /**
-     * <code>.obb.SessionInfoState info = 3;</code>
-     * @return The info.
-     */
-    com.oddin.obb.Session.SessionInfoState getInfo();
-    /**
-     * <code>.obb.SessionInfoState info = 3;</code>
-     */
-    com.oddin.obb.Session.SessionInfoStateOrBuilder getInfoOrBuilder();
-
-    public com.oddin.obb.Session.SessionResponse.DataCase getDataCase();
-  }
-  /**
-   * Protobuf type {@code obb.SessionResponse}
-   */
-  public static final class SessionResponse extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:obb.SessionResponse)
-      SessionResponseOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use SessionResponse.newBuilder() to construct.
-    private SessionResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private SessionResponse() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new SessionResponse();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private SessionResponse(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              com.oddin.obb.Session.SessionCreateState.Builder subBuilder = null;
-              if (dataCase_ == 1) {
-                subBuilder = ((com.oddin.obb.Session.SessionCreateState) data_).toBuilder();
-              }
-              data_ =
-                  input.readMessage(com.oddin.obb.Session.SessionCreateState.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.oddin.obb.Session.SessionCreateState) data_);
-                data_ = subBuilder.buildPartial();
-              }
-              dataCase_ = 1;
-              break;
-            }
-            case 18: {
-              com.oddin.obb.Commons.StreamKeepalive.Builder subBuilder = null;
-              if (dataCase_ == 2) {
-                subBuilder = ((com.oddin.obb.Commons.StreamKeepalive) data_).toBuilder();
-              }
-              data_ =
-                  input.readMessage(com.oddin.obb.Commons.StreamKeepalive.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.oddin.obb.Commons.StreamKeepalive) data_);
-                data_ = subBuilder.buildPartial();
-              }
-              dataCase_ = 2;
-              break;
-            }
-            case 26: {
-              com.oddin.obb.Session.SessionInfoState.Builder subBuilder = null;
-              if (dataCase_ == 3) {
-                subBuilder = ((com.oddin.obb.Session.SessionInfoState) data_).toBuilder();
-              }
-              data_ =
-                  input.readMessage(com.oddin.obb.Session.SessionInfoState.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.oddin.obb.Session.SessionInfoState) data_);
-                data_ = subBuilder.buildPartial();
-              }
-              dataCase_ = 3;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.oddin.obb.Session.internal_static_obb_SessionResponse_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.oddin.obb.Session.internal_static_obb_SessionResponse_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.oddin.obb.Session.SessionResponse.class, com.oddin.obb.Session.SessionResponse.Builder.class);
-    }
-
-    private int dataCase_ = 0;
-    private java.lang.Object data_;
-    public enum DataCase
-        implements com.google.protobuf.Internal.EnumLite,
-            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-      CREATE(1),
-      KEEPALIVE(2),
-      INFO(3),
-      DATA_NOT_SET(0);
-      private final int value;
-      private DataCase(int value) {
-        this.value = value;
-      }
-      /**
-       * @param value The number of the enum to look for.
-       * @return The enum associated with the given number.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static DataCase valueOf(int value) {
-        return forNumber(value);
-      }
-
-      public static DataCase forNumber(int value) {
-        switch (value) {
-          case 1: return CREATE;
-          case 2: return KEEPALIVE;
-          case 3: return INFO;
-          case 0: return DATA_NOT_SET;
-          default: return null;
-        }
-      }
-      public int getNumber() {
-        return this.value;
-      }
-    };
-
-    public DataCase
-    getDataCase() {
-      return DataCase.forNumber(
-          dataCase_);
-    }
-
-    public static final int CREATE_FIELD_NUMBER = 1;
-    /**
-     * <code>.obb.SessionCreateState create = 1;</code>
-     * @return Whether the create field is set.
-     */
-    @java.lang.Override
-    public boolean hasCreate() {
-      return dataCase_ == 1;
-    }
-    /**
-     * <code>.obb.SessionCreateState create = 1;</code>
-     * @return The create.
-     */
-    @java.lang.Override
-    public com.oddin.obb.Session.SessionCreateState getCreate() {
-      if (dataCase_ == 1) {
-         return (com.oddin.obb.Session.SessionCreateState) data_;
-      }
-      return com.oddin.obb.Session.SessionCreateState.getDefaultInstance();
-    }
-    /**
-     * <code>.obb.SessionCreateState create = 1;</code>
-     */
-    @java.lang.Override
-    public com.oddin.obb.Session.SessionCreateStateOrBuilder getCreateOrBuilder() {
-      if (dataCase_ == 1) {
-         return (com.oddin.obb.Session.SessionCreateState) data_;
-      }
-      return com.oddin.obb.Session.SessionCreateState.getDefaultInstance();
-    }
-
-    public static final int KEEPALIVE_FIELD_NUMBER = 2;
-    /**
-     * <code>.obb.StreamKeepalive keepalive = 2;</code>
-     * @return Whether the keepalive field is set.
-     */
-    @java.lang.Override
-    public boolean hasKeepalive() {
-      return dataCase_ == 2;
-    }
-    /**
-     * <code>.obb.StreamKeepalive keepalive = 2;</code>
-     * @return The keepalive.
-     */
-    @java.lang.Override
-    public com.oddin.obb.Commons.StreamKeepalive getKeepalive() {
-      if (dataCase_ == 2) {
-         return (com.oddin.obb.Commons.StreamKeepalive) data_;
-      }
-      return com.oddin.obb.Commons.StreamKeepalive.getDefaultInstance();
-    }
-    /**
-     * <code>.obb.StreamKeepalive keepalive = 2;</code>
-     */
-    @java.lang.Override
-    public com.oddin.obb.Commons.StreamKeepaliveOrBuilder getKeepaliveOrBuilder() {
-      if (dataCase_ == 2) {
-         return (com.oddin.obb.Commons.StreamKeepalive) data_;
-      }
-      return com.oddin.obb.Commons.StreamKeepalive.getDefaultInstance();
-    }
-
-    public static final int INFO_FIELD_NUMBER = 3;
-    /**
-     * <code>.obb.SessionInfoState info = 3;</code>
-     * @return Whether the info field is set.
-     */
-    @java.lang.Override
-    public boolean hasInfo() {
-      return dataCase_ == 3;
-    }
-    /**
-     * <code>.obb.SessionInfoState info = 3;</code>
-     * @return The info.
-     */
-    @java.lang.Override
-    public com.oddin.obb.Session.SessionInfoState getInfo() {
-      if (dataCase_ == 3) {
-         return (com.oddin.obb.Session.SessionInfoState) data_;
-      }
-      return com.oddin.obb.Session.SessionInfoState.getDefaultInstance();
-    }
-    /**
-     * <code>.obb.SessionInfoState info = 3;</code>
-     */
-    @java.lang.Override
-    public com.oddin.obb.Session.SessionInfoStateOrBuilder getInfoOrBuilder() {
-      if (dataCase_ == 3) {
-         return (com.oddin.obb.Session.SessionInfoState) data_;
-      }
-      return com.oddin.obb.Session.SessionInfoState.getDefaultInstance();
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (dataCase_ == 1) {
-        output.writeMessage(1, (com.oddin.obb.Session.SessionCreateState) data_);
-      }
-      if (dataCase_ == 2) {
-        output.writeMessage(2, (com.oddin.obb.Commons.StreamKeepalive) data_);
-      }
-      if (dataCase_ == 3) {
-        output.writeMessage(3, (com.oddin.obb.Session.SessionInfoState) data_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (dataCase_ == 1) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, (com.oddin.obb.Session.SessionCreateState) data_);
-      }
-      if (dataCase_ == 2) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, (com.oddin.obb.Commons.StreamKeepalive) data_);
-      }
-      if (dataCase_ == 3) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, (com.oddin.obb.Session.SessionInfoState) data_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.oddin.obb.Session.SessionResponse)) {
-        return super.equals(obj);
-      }
-      com.oddin.obb.Session.SessionResponse other = (com.oddin.obb.Session.SessionResponse) obj;
-
-      if (!getDataCase().equals(other.getDataCase())) return false;
-      switch (dataCase_) {
-        case 1:
-          if (!getCreate()
-              .equals(other.getCreate())) return false;
-          break;
-        case 2:
-          if (!getKeepalive()
-              .equals(other.getKeepalive())) return false;
-          break;
-        case 3:
-          if (!getInfo()
-              .equals(other.getInfo())) return false;
-          break;
-        case 0:
-        default:
-      }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      switch (dataCase_) {
-        case 1:
-          hash = (37 * hash) + CREATE_FIELD_NUMBER;
-          hash = (53 * hash) + getCreate().hashCode();
-          break;
-        case 2:
-          hash = (37 * hash) + KEEPALIVE_FIELD_NUMBER;
-          hash = (53 * hash) + getKeepalive().hashCode();
-          break;
-        case 3:
-          hash = (37 * hash) + INFO_FIELD_NUMBER;
-          hash = (53 * hash) + getInfo().hashCode();
-          break;
-        case 0:
-        default:
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.oddin.obb.Session.SessionResponse parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.oddin.obb.Session.SessionResponse parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.oddin.obb.Session.SessionResponse parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.oddin.obb.Session.SessionResponse parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.oddin.obb.Session.SessionResponse parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.oddin.obb.Session.SessionResponse parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.oddin.obb.Session.SessionResponse parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.oddin.obb.Session.SessionResponse parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.oddin.obb.Session.SessionResponse parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.oddin.obb.Session.SessionResponse parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.oddin.obb.Session.SessionResponse parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.oddin.obb.Session.SessionResponse parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.oddin.obb.Session.SessionResponse prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code obb.SessionResponse}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:obb.SessionResponse)
-        com.oddin.obb.Session.SessionResponseOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.oddin.obb.Session.internal_static_obb_SessionResponse_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.oddin.obb.Session.internal_static_obb_SessionResponse_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.oddin.obb.Session.SessionResponse.class, com.oddin.obb.Session.SessionResponse.Builder.class);
-      }
-
-      // Construct using com.oddin.obb.Session.SessionResponse.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        dataCase_ = 0;
-        data_ = null;
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.oddin.obb.Session.internal_static_obb_SessionResponse_descriptor;
-      }
-
-      @java.lang.Override
-      public com.oddin.obb.Session.SessionResponse getDefaultInstanceForType() {
-        return com.oddin.obb.Session.SessionResponse.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.oddin.obb.Session.SessionResponse build() {
-        com.oddin.obb.Session.SessionResponse result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.oddin.obb.Session.SessionResponse buildPartial() {
-        com.oddin.obb.Session.SessionResponse result = new com.oddin.obb.Session.SessionResponse(this);
-        if (dataCase_ == 1) {
-          if (createBuilder_ == null) {
-            result.data_ = data_;
-          } else {
-            result.data_ = createBuilder_.build();
-          }
-        }
-        if (dataCase_ == 2) {
-          if (keepaliveBuilder_ == null) {
-            result.data_ = data_;
-          } else {
-            result.data_ = keepaliveBuilder_.build();
-          }
-        }
-        if (dataCase_ == 3) {
-          if (infoBuilder_ == null) {
-            result.data_ = data_;
-          } else {
-            result.data_ = infoBuilder_.build();
-          }
-        }
-        result.dataCase_ = dataCase_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.oddin.obb.Session.SessionResponse) {
-          return mergeFrom((com.oddin.obb.Session.SessionResponse)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.oddin.obb.Session.SessionResponse other) {
-        if (other == com.oddin.obb.Session.SessionResponse.getDefaultInstance()) return this;
-        switch (other.getDataCase()) {
-          case CREATE: {
-            mergeCreate(other.getCreate());
-            break;
-          }
-          case KEEPALIVE: {
-            mergeKeepalive(other.getKeepalive());
-            break;
-          }
-          case INFO: {
-            mergeInfo(other.getInfo());
-            break;
-          }
-          case DATA_NOT_SET: {
-            break;
-          }
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.oddin.obb.Session.SessionResponse parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.oddin.obb.Session.SessionResponse) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int dataCase_ = 0;
-      private java.lang.Object data_;
-      public DataCase
-          getDataCase() {
-        return DataCase.forNumber(
-            dataCase_);
-      }
-
-      public Builder clearData() {
-        dataCase_ = 0;
-        data_ = null;
-        onChanged();
-        return this;
-      }
-
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.oddin.obb.Session.SessionCreateState, com.oddin.obb.Session.SessionCreateState.Builder, com.oddin.obb.Session.SessionCreateStateOrBuilder> createBuilder_;
-      /**
-       * <code>.obb.SessionCreateState create = 1;</code>
-       * @return Whether the create field is set.
-       */
-      @java.lang.Override
-      public boolean hasCreate() {
-        return dataCase_ == 1;
-      }
-      /**
-       * <code>.obb.SessionCreateState create = 1;</code>
-       * @return The create.
-       */
-      @java.lang.Override
-      public com.oddin.obb.Session.SessionCreateState getCreate() {
-        if (createBuilder_ == null) {
-          if (dataCase_ == 1) {
-            return (com.oddin.obb.Session.SessionCreateState) data_;
-          }
-          return com.oddin.obb.Session.SessionCreateState.getDefaultInstance();
-        } else {
-          if (dataCase_ == 1) {
-            return createBuilder_.getMessage();
-          }
-          return com.oddin.obb.Session.SessionCreateState.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.obb.SessionCreateState create = 1;</code>
-       */
-      public Builder setCreate(com.oddin.obb.Session.SessionCreateState value) {
-        if (createBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          data_ = value;
-          onChanged();
-        } else {
-          createBuilder_.setMessage(value);
-        }
-        dataCase_ = 1;
-        return this;
-      }
-      /**
-       * <code>.obb.SessionCreateState create = 1;</code>
-       */
-      public Builder setCreate(
-          com.oddin.obb.Session.SessionCreateState.Builder builderForValue) {
-        if (createBuilder_ == null) {
-          data_ = builderForValue.build();
-          onChanged();
-        } else {
-          createBuilder_.setMessage(builderForValue.build());
-        }
-        dataCase_ = 1;
-        return this;
-      }
-      /**
-       * <code>.obb.SessionCreateState create = 1;</code>
-       */
-      public Builder mergeCreate(com.oddin.obb.Session.SessionCreateState value) {
-        if (createBuilder_ == null) {
-          if (dataCase_ == 1 &&
-              data_ != com.oddin.obb.Session.SessionCreateState.getDefaultInstance()) {
-            data_ = com.oddin.obb.Session.SessionCreateState.newBuilder((com.oddin.obb.Session.SessionCreateState) data_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            data_ = value;
-          }
-          onChanged();
-        } else {
-          if (dataCase_ == 1) {
-            createBuilder_.mergeFrom(value);
-          }
-          createBuilder_.setMessage(value);
-        }
-        dataCase_ = 1;
-        return this;
-      }
-      /**
-       * <code>.obb.SessionCreateState create = 1;</code>
-       */
-      public Builder clearCreate() {
-        if (createBuilder_ == null) {
-          if (dataCase_ == 1) {
-            dataCase_ = 0;
-            data_ = null;
-            onChanged();
-          }
-        } else {
-          if (dataCase_ == 1) {
-            dataCase_ = 0;
-            data_ = null;
-          }
-          createBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.obb.SessionCreateState create = 1;</code>
-       */
-      public com.oddin.obb.Session.SessionCreateState.Builder getCreateBuilder() {
-        return getCreateFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.obb.SessionCreateState create = 1;</code>
-       */
-      @java.lang.Override
-      public com.oddin.obb.Session.SessionCreateStateOrBuilder getCreateOrBuilder() {
-        if ((dataCase_ == 1) && (createBuilder_ != null)) {
-          return createBuilder_.getMessageOrBuilder();
-        } else {
-          if (dataCase_ == 1) {
-            return (com.oddin.obb.Session.SessionCreateState) data_;
-          }
-          return com.oddin.obb.Session.SessionCreateState.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.obb.SessionCreateState create = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.oddin.obb.Session.SessionCreateState, com.oddin.obb.Session.SessionCreateState.Builder, com.oddin.obb.Session.SessionCreateStateOrBuilder> 
-          getCreateFieldBuilder() {
-        if (createBuilder_ == null) {
-          if (!(dataCase_ == 1)) {
-            data_ = com.oddin.obb.Session.SessionCreateState.getDefaultInstance();
-          }
-          createBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.oddin.obb.Session.SessionCreateState, com.oddin.obb.Session.SessionCreateState.Builder, com.oddin.obb.Session.SessionCreateStateOrBuilder>(
-                  (com.oddin.obb.Session.SessionCreateState) data_,
-                  getParentForChildren(),
-                  isClean());
-          data_ = null;
-        }
-        dataCase_ = 1;
-        onChanged();;
-        return createBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.oddin.obb.Commons.StreamKeepalive, com.oddin.obb.Commons.StreamKeepalive.Builder, com.oddin.obb.Commons.StreamKeepaliveOrBuilder> keepaliveBuilder_;
-      /**
-       * <code>.obb.StreamKeepalive keepalive = 2;</code>
-       * @return Whether the keepalive field is set.
-       */
-      @java.lang.Override
-      public boolean hasKeepalive() {
-        return dataCase_ == 2;
-      }
-      /**
-       * <code>.obb.StreamKeepalive keepalive = 2;</code>
-       * @return The keepalive.
-       */
-      @java.lang.Override
-      public com.oddin.obb.Commons.StreamKeepalive getKeepalive() {
-        if (keepaliveBuilder_ == null) {
-          if (dataCase_ == 2) {
-            return (com.oddin.obb.Commons.StreamKeepalive) data_;
-          }
-          return com.oddin.obb.Commons.StreamKeepalive.getDefaultInstance();
-        } else {
-          if (dataCase_ == 2) {
-            return keepaliveBuilder_.getMessage();
-          }
-          return com.oddin.obb.Commons.StreamKeepalive.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.obb.StreamKeepalive keepalive = 2;</code>
-       */
-      public Builder setKeepalive(com.oddin.obb.Commons.StreamKeepalive value) {
-        if (keepaliveBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          data_ = value;
-          onChanged();
-        } else {
-          keepaliveBuilder_.setMessage(value);
-        }
-        dataCase_ = 2;
-        return this;
-      }
-      /**
-       * <code>.obb.StreamKeepalive keepalive = 2;</code>
-       */
-      public Builder setKeepalive(
-          com.oddin.obb.Commons.StreamKeepalive.Builder builderForValue) {
-        if (keepaliveBuilder_ == null) {
-          data_ = builderForValue.build();
-          onChanged();
-        } else {
-          keepaliveBuilder_.setMessage(builderForValue.build());
-        }
-        dataCase_ = 2;
-        return this;
-      }
-      /**
-       * <code>.obb.StreamKeepalive keepalive = 2;</code>
-       */
-      public Builder mergeKeepalive(com.oddin.obb.Commons.StreamKeepalive value) {
-        if (keepaliveBuilder_ == null) {
-          if (dataCase_ == 2 &&
-              data_ != com.oddin.obb.Commons.StreamKeepalive.getDefaultInstance()) {
-            data_ = com.oddin.obb.Commons.StreamKeepalive.newBuilder((com.oddin.obb.Commons.StreamKeepalive) data_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            data_ = value;
-          }
-          onChanged();
-        } else {
-          if (dataCase_ == 2) {
-            keepaliveBuilder_.mergeFrom(value);
-          }
-          keepaliveBuilder_.setMessage(value);
-        }
-        dataCase_ = 2;
-        return this;
-      }
-      /**
-       * <code>.obb.StreamKeepalive keepalive = 2;</code>
-       */
-      public Builder clearKeepalive() {
-        if (keepaliveBuilder_ == null) {
-          if (dataCase_ == 2) {
-            dataCase_ = 0;
-            data_ = null;
-            onChanged();
-          }
-        } else {
-          if (dataCase_ == 2) {
-            dataCase_ = 0;
-            data_ = null;
-          }
-          keepaliveBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.obb.StreamKeepalive keepalive = 2;</code>
-       */
-      public com.oddin.obb.Commons.StreamKeepalive.Builder getKeepaliveBuilder() {
-        return getKeepaliveFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.obb.StreamKeepalive keepalive = 2;</code>
-       */
-      @java.lang.Override
-      public com.oddin.obb.Commons.StreamKeepaliveOrBuilder getKeepaliveOrBuilder() {
-        if ((dataCase_ == 2) && (keepaliveBuilder_ != null)) {
-          return keepaliveBuilder_.getMessageOrBuilder();
-        } else {
-          if (dataCase_ == 2) {
-            return (com.oddin.obb.Commons.StreamKeepalive) data_;
-          }
-          return com.oddin.obb.Commons.StreamKeepalive.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.obb.StreamKeepalive keepalive = 2;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.oddin.obb.Commons.StreamKeepalive, com.oddin.obb.Commons.StreamKeepalive.Builder, com.oddin.obb.Commons.StreamKeepaliveOrBuilder> 
-          getKeepaliveFieldBuilder() {
-        if (keepaliveBuilder_ == null) {
-          if (!(dataCase_ == 2)) {
-            data_ = com.oddin.obb.Commons.StreamKeepalive.getDefaultInstance();
-          }
-          keepaliveBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.oddin.obb.Commons.StreamKeepalive, com.oddin.obb.Commons.StreamKeepalive.Builder, com.oddin.obb.Commons.StreamKeepaliveOrBuilder>(
-                  (com.oddin.obb.Commons.StreamKeepalive) data_,
-                  getParentForChildren(),
-                  isClean());
-          data_ = null;
-        }
-        dataCase_ = 2;
-        onChanged();;
-        return keepaliveBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.oddin.obb.Session.SessionInfoState, com.oddin.obb.Session.SessionInfoState.Builder, com.oddin.obb.Session.SessionInfoStateOrBuilder> infoBuilder_;
-      /**
-       * <code>.obb.SessionInfoState info = 3;</code>
-       * @return Whether the info field is set.
-       */
-      @java.lang.Override
-      public boolean hasInfo() {
-        return dataCase_ == 3;
-      }
-      /**
-       * <code>.obb.SessionInfoState info = 3;</code>
-       * @return The info.
-       */
-      @java.lang.Override
-      public com.oddin.obb.Session.SessionInfoState getInfo() {
-        if (infoBuilder_ == null) {
-          if (dataCase_ == 3) {
-            return (com.oddin.obb.Session.SessionInfoState) data_;
-          }
-          return com.oddin.obb.Session.SessionInfoState.getDefaultInstance();
-        } else {
-          if (dataCase_ == 3) {
-            return infoBuilder_.getMessage();
-          }
-          return com.oddin.obb.Session.SessionInfoState.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.obb.SessionInfoState info = 3;</code>
-       */
-      public Builder setInfo(com.oddin.obb.Session.SessionInfoState value) {
-        if (infoBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          data_ = value;
-          onChanged();
-        } else {
-          infoBuilder_.setMessage(value);
-        }
-        dataCase_ = 3;
-        return this;
-      }
-      /**
-       * <code>.obb.SessionInfoState info = 3;</code>
-       */
-      public Builder setInfo(
-          com.oddin.obb.Session.SessionInfoState.Builder builderForValue) {
-        if (infoBuilder_ == null) {
-          data_ = builderForValue.build();
-          onChanged();
-        } else {
-          infoBuilder_.setMessage(builderForValue.build());
-        }
-        dataCase_ = 3;
-        return this;
-      }
-      /**
-       * <code>.obb.SessionInfoState info = 3;</code>
-       */
-      public Builder mergeInfo(com.oddin.obb.Session.SessionInfoState value) {
-        if (infoBuilder_ == null) {
-          if (dataCase_ == 3 &&
-              data_ != com.oddin.obb.Session.SessionInfoState.getDefaultInstance()) {
-            data_ = com.oddin.obb.Session.SessionInfoState.newBuilder((com.oddin.obb.Session.SessionInfoState) data_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            data_ = value;
-          }
-          onChanged();
-        } else {
-          if (dataCase_ == 3) {
-            infoBuilder_.mergeFrom(value);
-          }
-          infoBuilder_.setMessage(value);
-        }
-        dataCase_ = 3;
-        return this;
-      }
-      /**
-       * <code>.obb.SessionInfoState info = 3;</code>
-       */
-      public Builder clearInfo() {
-        if (infoBuilder_ == null) {
-          if (dataCase_ == 3) {
-            dataCase_ = 0;
-            data_ = null;
-            onChanged();
-          }
-        } else {
-          if (dataCase_ == 3) {
-            dataCase_ = 0;
-            data_ = null;
-          }
-          infoBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.obb.SessionInfoState info = 3;</code>
-       */
-      public com.oddin.obb.Session.SessionInfoState.Builder getInfoBuilder() {
-        return getInfoFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.obb.SessionInfoState info = 3;</code>
-       */
-      @java.lang.Override
-      public com.oddin.obb.Session.SessionInfoStateOrBuilder getInfoOrBuilder() {
-        if ((dataCase_ == 3) && (infoBuilder_ != null)) {
-          return infoBuilder_.getMessageOrBuilder();
-        } else {
-          if (dataCase_ == 3) {
-            return (com.oddin.obb.Session.SessionInfoState) data_;
-          }
-          return com.oddin.obb.Session.SessionInfoState.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.obb.SessionInfoState info = 3;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.oddin.obb.Session.SessionInfoState, com.oddin.obb.Session.SessionInfoState.Builder, com.oddin.obb.Session.SessionInfoStateOrBuilder> 
-          getInfoFieldBuilder() {
-        if (infoBuilder_ == null) {
-          if (!(dataCase_ == 3)) {
-            data_ = com.oddin.obb.Session.SessionInfoState.getDefaultInstance();
-          }
-          infoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.oddin.obb.Session.SessionInfoState, com.oddin.obb.Session.SessionInfoState.Builder, com.oddin.obb.Session.SessionInfoStateOrBuilder>(
-                  (com.oddin.obb.Session.SessionInfoState) data_,
-                  getParentForChildren(),
-                  isClean());
-          data_ = null;
-        }
-        dataCase_ = 3;
-        onChanged();;
-        return infoBuilder_;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:obb.SessionResponse)
-    }
-
-    // @@protoc_insertion_point(class_scope:obb.SessionResponse)
-    private static final com.oddin.obb.Session.SessionResponse DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.oddin.obb.Session.SessionResponse();
-    }
-
-    public static com.oddin.obb.Session.SessionResponse getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<SessionResponse>
-        PARSER = new com.google.protobuf.AbstractParser<SessionResponse>() {
-      @java.lang.Override
-      public SessionResponse parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SessionResponse(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<SessionResponse> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<SessionResponse> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.oddin.obb.Session.SessionResponse getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface SessionCreateOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:obb.SessionCreate)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string request_id = 1;</code>
-     * @return The requestId.
-     */
-    java.lang.String getRequestId();
-    /**
-     * <code>string request_id = 1;</code>
-     * @return The bytes for requestId.
-     */
-    com.google.protobuf.ByteString
-        getRequestIdBytes();
 
     /**
      * <pre>
+     * List of desired selections to include in the new session.
+     * Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
      * e.g. “od:match:1234/1/1?map=1&amp;way=two”
      * </pre>
      *
@@ -4346,6 +1960,8 @@ public final class Session {
         getSelectionIdsList();
     /**
      * <pre>
+     * List of desired selections to include in the new session.
+     * Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
      * e.g. “od:match:1234/1/1?map=1&amp;way=two”
      * </pre>
      *
@@ -4355,6 +1971,8 @@ public final class Session {
     int getSelectionIdsCount();
     /**
      * <pre>
+     * List of desired selections to include in the new session.
+     * Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
      * e.g. “od:match:1234/1/1?map=1&amp;way=two”
      * </pre>
      *
@@ -4365,6 +1983,8 @@ public final class Session {
     java.lang.String getSelectionIds(int index);
     /**
      * <pre>
+     * List of desired selections to include in the new session.
+     * Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
      * e.g. “od:match:1234/1/1?map=1&amp;way=two”
      * </pre>
      *
@@ -4376,19 +1996,18 @@ public final class Session {
         getSelectionIdsBytes(int index);
   }
   /**
-   * Protobuf type {@code obb.SessionCreate}
+   * Protobuf type {@code obb.SessionCreateRequest}
    */
-  public static final class SessionCreate extends
+  public static final class SessionCreateRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:obb.SessionCreate)
-      SessionCreateOrBuilder {
+      // @@protoc_insertion_point(message_implements:obb.SessionCreateRequest)
+      SessionCreateRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use SessionCreate.newBuilder() to construct.
-    private SessionCreate(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use SessionCreateRequest.newBuilder() to construct.
+    private SessionCreateRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private SessionCreate() {
-      requestId_ = "";
+    private SessionCreateRequest() {
       selectionIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
@@ -4396,7 +2015,7 @@ public final class Session {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new SessionCreate();
+      return new SessionCreateRequest();
     }
 
     @java.lang.Override
@@ -4404,117 +2023,25 @@ public final class Session {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SessionCreate(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              requestId_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                selectionIds_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              selectionIds_.add(s);
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          selectionIds_ = selectionIds_.getUnmodifiableView();
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.oddin.obb.Session.internal_static_obb_SessionCreate_descriptor;
+      return com.oddin.obb.Session.internal_static_obb_SessionCreateRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.oddin.obb.Session.internal_static_obb_SessionCreate_fieldAccessorTable
+      return com.oddin.obb.Session.internal_static_obb_SessionCreateRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.oddin.obb.Session.SessionCreate.class, com.oddin.obb.Session.SessionCreate.Builder.class);
-    }
-
-    public static final int REQUEST_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object requestId_;
-    /**
-     * <code>string request_id = 1;</code>
-     * @return The requestId.
-     */
-    @java.lang.Override
-    public java.lang.String getRequestId() {
-      java.lang.Object ref = requestId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        requestId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string request_id = 1;</code>
-     * @return The bytes for requestId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getRequestIdBytes() {
-      java.lang.Object ref = requestId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        requestId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+              com.oddin.obb.Session.SessionCreateRequest.class, com.oddin.obb.Session.SessionCreateRequest.Builder.class);
     }
 
     public static final int SELECTION_IDS_FIELD_NUMBER = 2;
     private com.google.protobuf.LazyStringList selectionIds_;
     /**
      * <pre>
+     * List of desired selections to include in the new session.
+     * Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
      * e.g. “od:match:1234/1/1?map=1&amp;way=two”
      * </pre>
      *
@@ -4527,6 +2054,8 @@ public final class Session {
     }
     /**
      * <pre>
+     * List of desired selections to include in the new session.
+     * Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
      * e.g. “od:match:1234/1/1?map=1&amp;way=two”
      * </pre>
      *
@@ -4538,6 +2067,8 @@ public final class Session {
     }
     /**
      * <pre>
+     * List of desired selections to include in the new session.
+     * Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
      * e.g. “od:match:1234/1/1?map=1&amp;way=two”
      * </pre>
      *
@@ -4550,6 +2081,8 @@ public final class Session {
     }
     /**
      * <pre>
+     * List of desired selections to include in the new session.
+     * Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
      * e.g. “od:match:1234/1/1?map=1&amp;way=two”
      * </pre>
      *
@@ -4576,13 +2109,10 @@ public final class Session {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, requestId_);
-      }
       for (int i = 0; i < selectionIds_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, selectionIds_.getRaw(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -4591,9 +2121,6 @@ public final class Session {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, requestId_);
-      }
       {
         int dataSize = 0;
         for (int i = 0; i < selectionIds_.size(); i++) {
@@ -4602,7 +2129,7 @@ public final class Session {
         size += dataSize;
         size += 1 * getSelectionIdsList().size();
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -4612,16 +2139,14 @@ public final class Session {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.oddin.obb.Session.SessionCreate)) {
+      if (!(obj instanceof com.oddin.obb.Session.SessionCreateRequest)) {
         return super.equals(obj);
       }
-      com.oddin.obb.Session.SessionCreate other = (com.oddin.obb.Session.SessionCreate) obj;
+      com.oddin.obb.Session.SessionCreateRequest other = (com.oddin.obb.Session.SessionCreateRequest) obj;
 
-      if (!getRequestId()
-          .equals(other.getRequestId())) return false;
       if (!getSelectionIdsList()
           .equals(other.getSelectionIdsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -4632,80 +2157,78 @@ public final class Session {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getRequestId().hashCode();
       if (getSelectionIdsCount() > 0) {
         hash = (37 * hash) + SELECTION_IDS_FIELD_NUMBER;
         hash = (53 * hash) + getSelectionIdsList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static com.oddin.obb.Session.SessionCreate parseFrom(
+    public static com.oddin.obb.Session.SessionCreateRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.obb.Session.SessionCreate parseFrom(
+    public static com.oddin.obb.Session.SessionCreateRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.obb.Session.SessionCreate parseFrom(
+    public static com.oddin.obb.Session.SessionCreateRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.obb.Session.SessionCreate parseFrom(
+    public static com.oddin.obb.Session.SessionCreateRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.obb.Session.SessionCreate parseFrom(byte[] data)
+    public static com.oddin.obb.Session.SessionCreateRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.obb.Session.SessionCreate parseFrom(
+    public static com.oddin.obb.Session.SessionCreateRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.obb.Session.SessionCreate parseFrom(java.io.InputStream input)
+    public static com.oddin.obb.Session.SessionCreateRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.oddin.obb.Session.SessionCreate parseFrom(
+    public static com.oddin.obb.Session.SessionCreateRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.oddin.obb.Session.SessionCreate parseDelimitedFrom(java.io.InputStream input)
+    public static com.oddin.obb.Session.SessionCreateRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.oddin.obb.Session.SessionCreate parseDelimitedFrom(
+    public static com.oddin.obb.Session.SessionCreateRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.oddin.obb.Session.SessionCreate parseFrom(
+    public static com.oddin.obb.Session.SessionCreateRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.oddin.obb.Session.SessionCreate parseFrom(
+    public static com.oddin.obb.Session.SessionCreateRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -4718,7 +2241,7 @@ public final class Session {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.oddin.obb.Session.SessionCreate prototype) {
+    public static Builder newBuilder(com.oddin.obb.Session.SessionCreateRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -4734,45 +2257,38 @@ public final class Session {
       return builder;
     }
     /**
-     * Protobuf type {@code obb.SessionCreate}
+     * Protobuf type {@code obb.SessionCreateRequest}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:obb.SessionCreate)
-        com.oddin.obb.Session.SessionCreateOrBuilder {
+        // @@protoc_insertion_point(builder_implements:obb.SessionCreateRequest)
+        com.oddin.obb.Session.SessionCreateRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.oddin.obb.Session.internal_static_obb_SessionCreate_descriptor;
+        return com.oddin.obb.Session.internal_static_obb_SessionCreateRequest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.oddin.obb.Session.internal_static_obb_SessionCreate_fieldAccessorTable
+        return com.oddin.obb.Session.internal_static_obb_SessionCreateRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.oddin.obb.Session.SessionCreate.class, com.oddin.obb.Session.SessionCreate.Builder.class);
+                com.oddin.obb.Session.SessionCreateRequest.class, com.oddin.obb.Session.SessionCreateRequest.Builder.class);
       }
 
-      // Construct using com.oddin.obb.Session.SessionCreate.newBuilder()
+      // Construct using com.oddin.obb.Session.SessionCreateRequest.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        requestId_ = "";
-
         selectionIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
@@ -4781,17 +2297,17 @@ public final class Session {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.oddin.obb.Session.internal_static_obb_SessionCreate_descriptor;
+        return com.oddin.obb.Session.internal_static_obb_SessionCreateRequest_descriptor;
       }
 
       @java.lang.Override
-      public com.oddin.obb.Session.SessionCreate getDefaultInstanceForType() {
-        return com.oddin.obb.Session.SessionCreate.getDefaultInstance();
+      public com.oddin.obb.Session.SessionCreateRequest getDefaultInstanceForType() {
+        return com.oddin.obb.Session.SessionCreateRequest.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.oddin.obb.Session.SessionCreate build() {
-        com.oddin.obb.Session.SessionCreate result = buildPartial();
+      public com.oddin.obb.Session.SessionCreateRequest build() {
+        com.oddin.obb.Session.SessionCreateRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -4799,10 +2315,9 @@ public final class Session {
       }
 
       @java.lang.Override
-      public com.oddin.obb.Session.SessionCreate buildPartial() {
-        com.oddin.obb.Session.SessionCreate result = new com.oddin.obb.Session.SessionCreate(this);
+      public com.oddin.obb.Session.SessionCreateRequest buildPartial() {
+        com.oddin.obb.Session.SessionCreateRequest result = new com.oddin.obb.Session.SessionCreateRequest(this);
         int from_bitField0_ = bitField0_;
-        result.requestId_ = requestId_;
         if (((bitField0_ & 0x00000001) != 0)) {
           selectionIds_ = selectionIds_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -4846,20 +2361,16 @@ public final class Session {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.oddin.obb.Session.SessionCreate) {
-          return mergeFrom((com.oddin.obb.Session.SessionCreate)other);
+        if (other instanceof com.oddin.obb.Session.SessionCreateRequest) {
+          return mergeFrom((com.oddin.obb.Session.SessionCreateRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.oddin.obb.Session.SessionCreate other) {
-        if (other == com.oddin.obb.Session.SessionCreate.getDefaultInstance()) return this;
-        if (!other.getRequestId().isEmpty()) {
-          requestId_ = other.requestId_;
-          onChanged();
-        }
+      public Builder mergeFrom(com.oddin.obb.Session.SessionCreateRequest other) {
+        if (other == com.oddin.obb.Session.SessionCreateRequest.getDefaultInstance()) return this;
         if (!other.selectionIds_.isEmpty()) {
           if (selectionIds_.isEmpty()) {
             selectionIds_ = other.selectionIds_;
@@ -4870,7 +2381,7 @@ public final class Session {
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -4885,96 +2396,39 @@ public final class Session {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.oddin.obb.Session.SessionCreate parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 18: {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureSelectionIdsIsMutable();
+                selectionIds_.add(s);
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.oddin.obb.Session.SessionCreate) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
-
-      private java.lang.Object requestId_ = "";
-      /**
-       * <code>string request_id = 1;</code>
-       * @return The requestId.
-       */
-      public java.lang.String getRequestId() {
-        java.lang.Object ref = requestId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          requestId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string request_id = 1;</code>
-       * @return The bytes for requestId.
-       */
-      public com.google.protobuf.ByteString
-          getRequestIdBytes() {
-        java.lang.Object ref = requestId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          requestId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string request_id = 1;</code>
-       * @param value The requestId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRequestId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        requestId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string request_id = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRequestId() {
-        
-        requestId_ = getDefaultInstance().getRequestId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string request_id = 1;</code>
-       * @param value The bytes for requestId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRequestIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        requestId_ = value;
-        onChanged();
-        return this;
-      }
 
       private com.google.protobuf.LazyStringList selectionIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureSelectionIdsIsMutable() {
@@ -4985,6 +2439,8 @@ public final class Session {
       }
       /**
        * <pre>
+       * List of desired selections to include in the new session.
+       * Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
        * e.g. “od:match:1234/1/1?map=1&amp;way=two”
        * </pre>
        *
@@ -4997,6 +2453,8 @@ public final class Session {
       }
       /**
        * <pre>
+       * List of desired selections to include in the new session.
+       * Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
        * e.g. “od:match:1234/1/1?map=1&amp;way=two”
        * </pre>
        *
@@ -5008,6 +2466,8 @@ public final class Session {
       }
       /**
        * <pre>
+       * List of desired selections to include in the new session.
+       * Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
        * e.g. “od:match:1234/1/1?map=1&amp;way=two”
        * </pre>
        *
@@ -5020,6 +2480,8 @@ public final class Session {
       }
       /**
        * <pre>
+       * List of desired selections to include in the new session.
+       * Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
        * e.g. “od:match:1234/1/1?map=1&amp;way=two”
        * </pre>
        *
@@ -5033,6 +2495,8 @@ public final class Session {
       }
       /**
        * <pre>
+       * List of desired selections to include in the new session.
+       * Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
        * e.g. “od:match:1234/1/1?map=1&amp;way=two”
        * </pre>
        *
@@ -5053,6 +2517,8 @@ public final class Session {
       }
       /**
        * <pre>
+       * List of desired selections to include in the new session.
+       * Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
        * e.g. “od:match:1234/1/1?map=1&amp;way=two”
        * </pre>
        *
@@ -5072,6 +2538,8 @@ public final class Session {
       }
       /**
        * <pre>
+       * List of desired selections to include in the new session.
+       * Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
        * e.g. “od:match:1234/1/1?map=1&amp;way=two”
        * </pre>
        *
@@ -5089,6 +2557,8 @@ public final class Session {
       }
       /**
        * <pre>
+       * List of desired selections to include in the new session.
+       * Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
        * e.g. “od:match:1234/1/1?map=1&amp;way=two”
        * </pre>
        *
@@ -5103,6 +2573,8 @@ public final class Session {
       }
       /**
        * <pre>
+       * List of desired selections to include in the new session.
+       * Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
        * e.g. “od:match:1234/1/1?map=1&amp;way=two”
        * </pre>
        *
@@ -5134,173 +2606,158 @@ public final class Session {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:obb.SessionCreate)
+      // @@protoc_insertion_point(builder_scope:obb.SessionCreateRequest)
     }
 
-    // @@protoc_insertion_point(class_scope:obb.SessionCreate)
-    private static final com.oddin.obb.Session.SessionCreate DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:obb.SessionCreateRequest)
+    private static final com.oddin.obb.Session.SessionCreateRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.oddin.obb.Session.SessionCreate();
+      DEFAULT_INSTANCE = new com.oddin.obb.Session.SessionCreateRequest();
     }
 
-    public static com.oddin.obb.Session.SessionCreate getDefaultInstance() {
+    public static com.oddin.obb.Session.SessionCreateRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<SessionCreate>
-        PARSER = new com.google.protobuf.AbstractParser<SessionCreate>() {
+    private static final com.google.protobuf.Parser<SessionCreateRequest>
+        PARSER = new com.google.protobuf.AbstractParser<SessionCreateRequest>() {
       @java.lang.Override
-      public SessionCreate parsePartialFrom(
+      public SessionCreateRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SessionCreate(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
-    public static com.google.protobuf.Parser<SessionCreate> parser() {
+    public static com.google.protobuf.Parser<SessionCreateRequest> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<SessionCreate> getParserForType() {
+    public com.google.protobuf.Parser<SessionCreateRequest> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.oddin.obb.Session.SessionCreate getDefaultInstanceForType() {
+    public com.oddin.obb.Session.SessionCreateRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface SessionCreateStateOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:obb.SessionCreateState)
+  public interface SessionCreateResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:obb.SessionCreateResponse)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string request_id = 1;</code>
-     * @return The requestId.
-     */
-    java.lang.String getRequestId();
-    /**
-     * <code>string request_id = 1;</code>
-     * @return The bytes for requestId.
-     */
-    com.google.protobuf.ByteString
-        getRequestIdBytes();
-
-    /**
-     * <code>string session_id = 2;</code>
+     * <pre>
+     * Session ID created by operator.
+     * </pre>
+     *
+     * <code>string session_id = 1;</code>
      * @return The sessionId.
      */
     java.lang.String getSessionId();
     /**
-     * <code>string session_id = 2;</code>
+     * <pre>
+     * Session ID created by operator.
+     * </pre>
+     *
+     * <code>string session_id = 1;</code>
      * @return The bytes for sessionId.
      */
     com.google.protobuf.ByteString
         getSessionIdBytes();
 
     /**
-     * <code>repeated .obb.SessionSelection selections = 3;</code>
+     * <pre>
+     * Successfully created session information.
+     * </pre>
+     *
+     * <code>.obb.SessionCreateResponse.SessionCreated created = 2;</code>
+     * @return Whether the created field is set.
      */
-    java.util.List<com.oddin.obb.Session.SessionSelection> 
-        getSelectionsList();
+    boolean hasCreated();
     /**
-     * <code>repeated .obb.SessionSelection selections = 3;</code>
+     * <pre>
+     * Successfully created session information.
+     * </pre>
+     *
+     * <code>.obb.SessionCreateResponse.SessionCreated created = 2;</code>
+     * @return The created.
      */
-    com.oddin.obb.Session.SessionSelection getSelections(int index);
+    com.oddin.obb.Session.SessionCreateResponse.SessionCreated getCreated();
     /**
-     * <code>repeated .obb.SessionSelection selections = 3;</code>
+     * <pre>
+     * Successfully created session information.
+     * </pre>
+     *
+     * <code>.obb.SessionCreateResponse.SessionCreated created = 2;</code>
      */
-    int getSelectionsCount();
-    /**
-     * <code>repeated .obb.SessionSelection selections = 3;</code>
-     */
-    java.util.List<? extends com.oddin.obb.Session.SessionSelectionOrBuilder> 
-        getSelectionsOrBuilderList();
-    /**
-     * <code>repeated .obb.SessionSelection selections = 3;</code>
-     */
-    com.oddin.obb.Session.SessionSelectionOrBuilder getSelectionsOrBuilder(
-        int index);
-
-    /**
-     * <code>repeated .obb.SessionMarket markets = 4;</code>
-     */
-    java.util.List<com.oddin.obb.Session.SessionMarket> 
-        getMarketsList();
-    /**
-     * <code>repeated .obb.SessionMarket markets = 4;</code>
-     */
-    com.oddin.obb.Session.SessionMarket getMarkets(int index);
-    /**
-     * <code>repeated .obb.SessionMarket markets = 4;</code>
-     */
-    int getMarketsCount();
-    /**
-     * <code>repeated .obb.SessionMarket markets = 4;</code>
-     */
-    java.util.List<? extends com.oddin.obb.Session.SessionMarketOrBuilder> 
-        getMarketsOrBuilderList();
-    /**
-     * <code>repeated .obb.SessionMarket markets = 4;</code>
-     */
-    com.oddin.obb.Session.SessionMarketOrBuilder getMarketsOrBuilder(
-        int index);
+    com.oddin.obb.Session.SessionCreateResponse.SessionCreatedOrBuilder getCreatedOrBuilder();
 
     /**
      * <pre>
-     * Information about rejection reason.
+     * Session creation was rejected.
      * </pre>
      *
-     * <code>.obb.SessionRejectReason reject_reason = 5;</code>
-     * @return Whether the rejectReason field is set.
+     * <code>.obb.SessionCreateResponse.SessionRejected rejected = 3;</code>
+     * @return Whether the rejected field is set.
      */
-    boolean hasRejectReason();
+    boolean hasRejected();
     /**
      * <pre>
-     * Information about rejection reason.
+     * Session creation was rejected.
      * </pre>
      *
-     * <code>.obb.SessionRejectReason reject_reason = 5;</code>
-     * @return The rejectReason.
+     * <code>.obb.SessionCreateResponse.SessionRejected rejected = 3;</code>
+     * @return The rejected.
      */
-    com.oddin.obb.Session.SessionRejectReason getRejectReason();
+    com.oddin.obb.Session.SessionCreateResponse.SessionRejected getRejected();
     /**
      * <pre>
-     * Information about rejection reason.
+     * Session creation was rejected.
      * </pre>
      *
-     * <code>.obb.SessionRejectReason reject_reason = 5;</code>
+     * <code>.obb.SessionCreateResponse.SessionRejected rejected = 3;</code>
      */
-    com.oddin.obb.Session.SessionRejectReasonOrBuilder getRejectReasonOrBuilder();
+    com.oddin.obb.Session.SessionCreateResponse.SessionRejectedOrBuilder getRejectedOrBuilder();
+
+    public com.oddin.obb.Session.SessionCreateResponse.StatusCase getStatusCase();
   }
   /**
-   * Protobuf type {@code obb.SessionCreateState}
+   * Protobuf type {@code obb.SessionCreateResponse}
    */
-  public static final class SessionCreateState extends
+  public static final class SessionCreateResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:obb.SessionCreateState)
-      SessionCreateStateOrBuilder {
+      // @@protoc_insertion_point(message_implements:obb.SessionCreateResponse)
+      SessionCreateResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use SessionCreateState.newBuilder() to construct.
-    private SessionCreateState(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use SessionCreateResponse.newBuilder() to construct.
+    private SessionCreateResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private SessionCreateState() {
-      requestId_ = "";
+    private SessionCreateResponse() {
       sessionId_ = "";
-      selections_ = java.util.Collections.emptyList();
-      markets_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new SessionCreateState();
+      return new SessionCreateResponse();
     }
 
     @java.lang.Override
@@ -5308,148 +2765,2193 @@ public final class Session {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SessionCreateState(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              requestId_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              sessionId_ = s;
-              break;
-            }
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                selections_ = new java.util.ArrayList<com.oddin.obb.Session.SessionSelection>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              selections_.add(
-                  input.readMessage(com.oddin.obb.Session.SessionSelection.parser(), extensionRegistry));
-              break;
-            }
-            case 34: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                markets_ = new java.util.ArrayList<com.oddin.obb.Session.SessionMarket>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              markets_.add(
-                  input.readMessage(com.oddin.obb.Session.SessionMarket.parser(), extensionRegistry));
-              break;
-            }
-            case 42: {
-              com.oddin.obb.Session.SessionRejectReason.Builder subBuilder = null;
-              if (rejectReason_ != null) {
-                subBuilder = rejectReason_.toBuilder();
-              }
-              rejectReason_ = input.readMessage(com.oddin.obb.Session.SessionRejectReason.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(rejectReason_);
-                rejectReason_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          selections_ = java.util.Collections.unmodifiableList(selections_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          markets_ = java.util.Collections.unmodifiableList(markets_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.oddin.obb.Session.internal_static_obb_SessionCreateState_descriptor;
+      return com.oddin.obb.Session.internal_static_obb_SessionCreateResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.oddin.obb.Session.internal_static_obb_SessionCreateState_fieldAccessorTable
+      return com.oddin.obb.Session.internal_static_obb_SessionCreateResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.oddin.obb.Session.SessionCreateState.class, com.oddin.obb.Session.SessionCreateState.Builder.class);
+              com.oddin.obb.Session.SessionCreateResponse.class, com.oddin.obb.Session.SessionCreateResponse.Builder.class);
     }
 
-    public static final int REQUEST_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object requestId_;
-    /**
-     * <code>string request_id = 1;</code>
-     * @return The requestId.
-     */
-    @java.lang.Override
-    public java.lang.String getRequestId() {
-      java.lang.Object ref = requestId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        requestId_ = s;
-        return s;
-      }
+    public interface SessionCreatedOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:obb.SessionCreateResponse.SessionCreated)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <pre>
+       * List of selections used in the current session.
+       * </pre>
+       *
+       * <code>repeated .obb.SessionSelection selections = 1;</code>
+       */
+      java.util.List<com.oddin.obb.Session.SessionSelection> 
+          getSelectionsList();
+      /**
+       * <pre>
+       * List of selections used in the current session.
+       * </pre>
+       *
+       * <code>repeated .obb.SessionSelection selections = 1;</code>
+       */
+      com.oddin.obb.Session.SessionSelection getSelections(int index);
+      /**
+       * <pre>
+       * List of selections used in the current session.
+       * </pre>
+       *
+       * <code>repeated .obb.SessionSelection selections = 1;</code>
+       */
+      int getSelectionsCount();
+      /**
+       * <pre>
+       * List of selections used in the current session.
+       * </pre>
+       *
+       * <code>repeated .obb.SessionSelection selections = 1;</code>
+       */
+      java.util.List<? extends com.oddin.obb.Session.SessionSelectionOrBuilder> 
+          getSelectionsOrBuilderList();
+      /**
+       * <pre>
+       * List of selections used in the current session.
+       * </pre>
+       *
+       * <code>repeated .obb.SessionSelection selections = 1;</code>
+       */
+      com.oddin.obb.Session.SessionSelectionOrBuilder getSelectionsOrBuilder(
+          int index);
+
+      /**
+       * <pre>
+       * Final odds for the selected combination of picks.
+       * Odds multiplied by 10000 and rounded to uint value.
+       * </pre>
+       *
+       * <code>uint64 odds = 2;</code>
+       * @return The odds.
+       */
+      long getOdds();
+
+      /**
+       * <pre>
+       * Available markets for the new session with the current session selections.
+       * </pre>
+       *
+       * <code>repeated .obb.SessionMarket available_markets = 3;</code>
+       */
+      java.util.List<com.oddin.obb.Session.SessionMarket> 
+          getAvailableMarketsList();
+      /**
+       * <pre>
+       * Available markets for the new session with the current session selections.
+       * </pre>
+       *
+       * <code>repeated .obb.SessionMarket available_markets = 3;</code>
+       */
+      com.oddin.obb.Session.SessionMarket getAvailableMarkets(int index);
+      /**
+       * <pre>
+       * Available markets for the new session with the current session selections.
+       * </pre>
+       *
+       * <code>repeated .obb.SessionMarket available_markets = 3;</code>
+       */
+      int getAvailableMarketsCount();
+      /**
+       * <pre>
+       * Available markets for the new session with the current session selections.
+       * </pre>
+       *
+       * <code>repeated .obb.SessionMarket available_markets = 3;</code>
+       */
+      java.util.List<? extends com.oddin.obb.Session.SessionMarketOrBuilder> 
+          getAvailableMarketsOrBuilderList();
+      /**
+       * <pre>
+       * Available markets for the new session with the current session selections.
+       * </pre>
+       *
+       * <code>repeated .obb.SessionMarket available_markets = 3;</code>
+       */
+      com.oddin.obb.Session.SessionMarketOrBuilder getAvailableMarketsOrBuilder(
+          int index);
     }
     /**
-     * <code>string request_id = 1;</code>
-     * @return The bytes for requestId.
+     * Protobuf type {@code obb.SessionCreateResponse.SessionCreated}
      */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getRequestIdBytes() {
-      java.lang.Object ref = requestId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        requestId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
+    public static final class SessionCreated extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:obb.SessionCreateResponse.SessionCreated)
+        SessionCreatedOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use SessionCreated.newBuilder() to construct.
+      private SessionCreated(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
       }
+      private SessionCreated() {
+        selections_ = java.util.Collections.emptyList();
+        availableMarkets_ = java.util.Collections.emptyList();
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new SessionCreated();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.oddin.obb.Session.internal_static_obb_SessionCreateResponse_SessionCreated_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.oddin.obb.Session.internal_static_obb_SessionCreateResponse_SessionCreated_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.oddin.obb.Session.SessionCreateResponse.SessionCreated.class, com.oddin.obb.Session.SessionCreateResponse.SessionCreated.Builder.class);
+      }
+
+      public static final int SELECTIONS_FIELD_NUMBER = 1;
+      private java.util.List<com.oddin.obb.Session.SessionSelection> selections_;
+      /**
+       * <pre>
+       * List of selections used in the current session.
+       * </pre>
+       *
+       * <code>repeated .obb.SessionSelection selections = 1;</code>
+       */
+      @java.lang.Override
+      public java.util.List<com.oddin.obb.Session.SessionSelection> getSelectionsList() {
+        return selections_;
+      }
+      /**
+       * <pre>
+       * List of selections used in the current session.
+       * </pre>
+       *
+       * <code>repeated .obb.SessionSelection selections = 1;</code>
+       */
+      @java.lang.Override
+      public java.util.List<? extends com.oddin.obb.Session.SessionSelectionOrBuilder> 
+          getSelectionsOrBuilderList() {
+        return selections_;
+      }
+      /**
+       * <pre>
+       * List of selections used in the current session.
+       * </pre>
+       *
+       * <code>repeated .obb.SessionSelection selections = 1;</code>
+       */
+      @java.lang.Override
+      public int getSelectionsCount() {
+        return selections_.size();
+      }
+      /**
+       * <pre>
+       * List of selections used in the current session.
+       * </pre>
+       *
+       * <code>repeated .obb.SessionSelection selections = 1;</code>
+       */
+      @java.lang.Override
+      public com.oddin.obb.Session.SessionSelection getSelections(int index) {
+        return selections_.get(index);
+      }
+      /**
+       * <pre>
+       * List of selections used in the current session.
+       * </pre>
+       *
+       * <code>repeated .obb.SessionSelection selections = 1;</code>
+       */
+      @java.lang.Override
+      public com.oddin.obb.Session.SessionSelectionOrBuilder getSelectionsOrBuilder(
+          int index) {
+        return selections_.get(index);
+      }
+
+      public static final int ODDS_FIELD_NUMBER = 2;
+      private long odds_;
+      /**
+       * <pre>
+       * Final odds for the selected combination of picks.
+       * Odds multiplied by 10000 and rounded to uint value.
+       * </pre>
+       *
+       * <code>uint64 odds = 2;</code>
+       * @return The odds.
+       */
+      @java.lang.Override
+      public long getOdds() {
+        return odds_;
+      }
+
+      public static final int AVAILABLE_MARKETS_FIELD_NUMBER = 3;
+      private java.util.List<com.oddin.obb.Session.SessionMarket> availableMarkets_;
+      /**
+       * <pre>
+       * Available markets for the new session with the current session selections.
+       * </pre>
+       *
+       * <code>repeated .obb.SessionMarket available_markets = 3;</code>
+       */
+      @java.lang.Override
+      public java.util.List<com.oddin.obb.Session.SessionMarket> getAvailableMarketsList() {
+        return availableMarkets_;
+      }
+      /**
+       * <pre>
+       * Available markets for the new session with the current session selections.
+       * </pre>
+       *
+       * <code>repeated .obb.SessionMarket available_markets = 3;</code>
+       */
+      @java.lang.Override
+      public java.util.List<? extends com.oddin.obb.Session.SessionMarketOrBuilder> 
+          getAvailableMarketsOrBuilderList() {
+        return availableMarkets_;
+      }
+      /**
+       * <pre>
+       * Available markets for the new session with the current session selections.
+       * </pre>
+       *
+       * <code>repeated .obb.SessionMarket available_markets = 3;</code>
+       */
+      @java.lang.Override
+      public int getAvailableMarketsCount() {
+        return availableMarkets_.size();
+      }
+      /**
+       * <pre>
+       * Available markets for the new session with the current session selections.
+       * </pre>
+       *
+       * <code>repeated .obb.SessionMarket available_markets = 3;</code>
+       */
+      @java.lang.Override
+      public com.oddin.obb.Session.SessionMarket getAvailableMarkets(int index) {
+        return availableMarkets_.get(index);
+      }
+      /**
+       * <pre>
+       * Available markets for the new session with the current session selections.
+       * </pre>
+       *
+       * <code>repeated .obb.SessionMarket available_markets = 3;</code>
+       */
+      @java.lang.Override
+      public com.oddin.obb.Session.SessionMarketOrBuilder getAvailableMarketsOrBuilder(
+          int index) {
+        return availableMarkets_.get(index);
+      }
+
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        for (int i = 0; i < selections_.size(); i++) {
+          output.writeMessage(1, selections_.get(i));
+        }
+        if (odds_ != 0L) {
+          output.writeUInt64(2, odds_);
+        }
+        for (int i = 0; i < availableMarkets_.size(); i++) {
+          output.writeMessage(3, availableMarkets_.get(i));
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        for (int i = 0; i < selections_.size(); i++) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(1, selections_.get(i));
+        }
+        if (odds_ != 0L) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt64Size(2, odds_);
+        }
+        for (int i = 0; i < availableMarkets_.size(); i++) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(3, availableMarkets_.get(i));
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof com.oddin.obb.Session.SessionCreateResponse.SessionCreated)) {
+          return super.equals(obj);
+        }
+        com.oddin.obb.Session.SessionCreateResponse.SessionCreated other = (com.oddin.obb.Session.SessionCreateResponse.SessionCreated) obj;
+
+        if (!getSelectionsList()
+            .equals(other.getSelectionsList())) return false;
+        if (getOdds()
+            != other.getOdds()) return false;
+        if (!getAvailableMarketsList()
+            .equals(other.getAvailableMarketsList())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (getSelectionsCount() > 0) {
+          hash = (37 * hash) + SELECTIONS_FIELD_NUMBER;
+          hash = (53 * hash) + getSelectionsList().hashCode();
+        }
+        hash = (37 * hash) + ODDS_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getOdds());
+        if (getAvailableMarketsCount() > 0) {
+          hash = (37 * hash) + AVAILABLE_MARKETS_FIELD_NUMBER;
+          hash = (53 * hash) + getAvailableMarketsList().hashCode();
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.oddin.obb.Session.SessionCreateResponse.SessionCreated parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.oddin.obb.Session.SessionCreateResponse.SessionCreated parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.oddin.obb.Session.SessionCreateResponse.SessionCreated parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.oddin.obb.Session.SessionCreateResponse.SessionCreated parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.oddin.obb.Session.SessionCreateResponse.SessionCreated parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.oddin.obb.Session.SessionCreateResponse.SessionCreated parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.oddin.obb.Session.SessionCreateResponse.SessionCreated parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.oddin.obb.Session.SessionCreateResponse.SessionCreated parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.oddin.obb.Session.SessionCreateResponse.SessionCreated parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static com.oddin.obb.Session.SessionCreateResponse.SessionCreated parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.oddin.obb.Session.SessionCreateResponse.SessionCreated parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.oddin.obb.Session.SessionCreateResponse.SessionCreated parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(com.oddin.obb.Session.SessionCreateResponse.SessionCreated prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code obb.SessionCreateResponse.SessionCreated}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:obb.SessionCreateResponse.SessionCreated)
+          com.oddin.obb.Session.SessionCreateResponse.SessionCreatedOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return com.oddin.obb.Session.internal_static_obb_SessionCreateResponse_SessionCreated_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.oddin.obb.Session.internal_static_obb_SessionCreateResponse_SessionCreated_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.oddin.obb.Session.SessionCreateResponse.SessionCreated.class, com.oddin.obb.Session.SessionCreateResponse.SessionCreated.Builder.class);
+        }
+
+        // Construct using com.oddin.obb.Session.SessionCreateResponse.SessionCreated.newBuilder()
+        private Builder() {
+
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          if (selectionsBuilder_ == null) {
+            selections_ = java.util.Collections.emptyList();
+          } else {
+            selections_ = null;
+            selectionsBuilder_.clear();
+          }
+          bitField0_ = (bitField0_ & ~0x00000001);
+          odds_ = 0L;
+
+          if (availableMarketsBuilder_ == null) {
+            availableMarkets_ = java.util.Collections.emptyList();
+          } else {
+            availableMarkets_ = null;
+            availableMarketsBuilder_.clear();
+          }
+          bitField0_ = (bitField0_ & ~0x00000002);
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return com.oddin.obb.Session.internal_static_obb_SessionCreateResponse_SessionCreated_descriptor;
+        }
+
+        @java.lang.Override
+        public com.oddin.obb.Session.SessionCreateResponse.SessionCreated getDefaultInstanceForType() {
+          return com.oddin.obb.Session.SessionCreateResponse.SessionCreated.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.oddin.obb.Session.SessionCreateResponse.SessionCreated build() {
+          com.oddin.obb.Session.SessionCreateResponse.SessionCreated result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.oddin.obb.Session.SessionCreateResponse.SessionCreated buildPartial() {
+          com.oddin.obb.Session.SessionCreateResponse.SessionCreated result = new com.oddin.obb.Session.SessionCreateResponse.SessionCreated(this);
+          int from_bitField0_ = bitField0_;
+          if (selectionsBuilder_ == null) {
+            if (((bitField0_ & 0x00000001) != 0)) {
+              selections_ = java.util.Collections.unmodifiableList(selections_);
+              bitField0_ = (bitField0_ & ~0x00000001);
+            }
+            result.selections_ = selections_;
+          } else {
+            result.selections_ = selectionsBuilder_.build();
+          }
+          result.odds_ = odds_;
+          if (availableMarketsBuilder_ == null) {
+            if (((bitField0_ & 0x00000002) != 0)) {
+              availableMarkets_ = java.util.Collections.unmodifiableList(availableMarkets_);
+              bitField0_ = (bitField0_ & ~0x00000002);
+            }
+            result.availableMarkets_ = availableMarkets_;
+          } else {
+            result.availableMarkets_ = availableMarketsBuilder_.build();
+          }
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.setField(field, value);
+        }
+        @java.lang.Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+        @java.lang.Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.oddin.obb.Session.SessionCreateResponse.SessionCreated) {
+            return mergeFrom((com.oddin.obb.Session.SessionCreateResponse.SessionCreated)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(com.oddin.obb.Session.SessionCreateResponse.SessionCreated other) {
+          if (other == com.oddin.obb.Session.SessionCreateResponse.SessionCreated.getDefaultInstance()) return this;
+          if (selectionsBuilder_ == null) {
+            if (!other.selections_.isEmpty()) {
+              if (selections_.isEmpty()) {
+                selections_ = other.selections_;
+                bitField0_ = (bitField0_ & ~0x00000001);
+              } else {
+                ensureSelectionsIsMutable();
+                selections_.addAll(other.selections_);
+              }
+              onChanged();
+            }
+          } else {
+            if (!other.selections_.isEmpty()) {
+              if (selectionsBuilder_.isEmpty()) {
+                selectionsBuilder_.dispose();
+                selectionsBuilder_ = null;
+                selections_ = other.selections_;
+                bitField0_ = (bitField0_ & ~0x00000001);
+                selectionsBuilder_ = 
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                     getSelectionsFieldBuilder() : null;
+              } else {
+                selectionsBuilder_.addAllMessages(other.selections_);
+              }
+            }
+          }
+          if (other.getOdds() != 0L) {
+            setOdds(other.getOdds());
+          }
+          if (availableMarketsBuilder_ == null) {
+            if (!other.availableMarkets_.isEmpty()) {
+              if (availableMarkets_.isEmpty()) {
+                availableMarkets_ = other.availableMarkets_;
+                bitField0_ = (bitField0_ & ~0x00000002);
+              } else {
+                ensureAvailableMarketsIsMutable();
+                availableMarkets_.addAll(other.availableMarkets_);
+              }
+              onChanged();
+            }
+          } else {
+            if (!other.availableMarkets_.isEmpty()) {
+              if (availableMarketsBuilder_.isEmpty()) {
+                availableMarketsBuilder_.dispose();
+                availableMarketsBuilder_ = null;
+                availableMarkets_ = other.availableMarkets_;
+                bitField0_ = (bitField0_ & ~0x00000002);
+                availableMarketsBuilder_ = 
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                     getAvailableMarketsFieldBuilder() : null;
+              } else {
+                availableMarketsBuilder_.addAllMessages(other.availableMarkets_);
+              }
+            }
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10: {
+                  com.oddin.obb.Session.SessionSelection m =
+                      input.readMessage(
+                          com.oddin.obb.Session.SessionSelection.parser(),
+                          extensionRegistry);
+                  if (selectionsBuilder_ == null) {
+                    ensureSelectionsIsMutable();
+                    selections_.add(m);
+                  } else {
+                    selectionsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 10
+                case 16: {
+                  odds_ = input.readUInt64();
+
+                  break;
+                } // case 16
+                case 26: {
+                  com.oddin.obb.Session.SessionMarket m =
+                      input.readMessage(
+                          com.oddin.obb.Session.SessionMarket.parser(),
+                          extensionRegistry);
+                  if (availableMarketsBuilder_ == null) {
+                    ensureAvailableMarketsIsMutable();
+                    availableMarkets_.add(m);
+                  } else {
+                    availableMarketsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 26
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+        private int bitField0_;
+
+        private java.util.List<com.oddin.obb.Session.SessionSelection> selections_ =
+          java.util.Collections.emptyList();
+        private void ensureSelectionsIsMutable() {
+          if (!((bitField0_ & 0x00000001) != 0)) {
+            selections_ = new java.util.ArrayList<com.oddin.obb.Session.SessionSelection>(selections_);
+            bitField0_ |= 0x00000001;
+           }
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.oddin.obb.Session.SessionSelection, com.oddin.obb.Session.SessionSelection.Builder, com.oddin.obb.Session.SessionSelectionOrBuilder> selectionsBuilder_;
+
+        /**
+         * <pre>
+         * List of selections used in the current session.
+         * </pre>
+         *
+         * <code>repeated .obb.SessionSelection selections = 1;</code>
+         */
+        public java.util.List<com.oddin.obb.Session.SessionSelection> getSelectionsList() {
+          if (selectionsBuilder_ == null) {
+            return java.util.Collections.unmodifiableList(selections_);
+          } else {
+            return selectionsBuilder_.getMessageList();
+          }
+        }
+        /**
+         * <pre>
+         * List of selections used in the current session.
+         * </pre>
+         *
+         * <code>repeated .obb.SessionSelection selections = 1;</code>
+         */
+        public int getSelectionsCount() {
+          if (selectionsBuilder_ == null) {
+            return selections_.size();
+          } else {
+            return selectionsBuilder_.getCount();
+          }
+        }
+        /**
+         * <pre>
+         * List of selections used in the current session.
+         * </pre>
+         *
+         * <code>repeated .obb.SessionSelection selections = 1;</code>
+         */
+        public com.oddin.obb.Session.SessionSelection getSelections(int index) {
+          if (selectionsBuilder_ == null) {
+            return selections_.get(index);
+          } else {
+            return selectionsBuilder_.getMessage(index);
+          }
+        }
+        /**
+         * <pre>
+         * List of selections used in the current session.
+         * </pre>
+         *
+         * <code>repeated .obb.SessionSelection selections = 1;</code>
+         */
+        public Builder setSelections(
+            int index, com.oddin.obb.Session.SessionSelection value) {
+          if (selectionsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureSelectionsIsMutable();
+            selections_.set(index, value);
+            onChanged();
+          } else {
+            selectionsBuilder_.setMessage(index, value);
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * List of selections used in the current session.
+         * </pre>
+         *
+         * <code>repeated .obb.SessionSelection selections = 1;</code>
+         */
+        public Builder setSelections(
+            int index, com.oddin.obb.Session.SessionSelection.Builder builderForValue) {
+          if (selectionsBuilder_ == null) {
+            ensureSelectionsIsMutable();
+            selections_.set(index, builderForValue.build());
+            onChanged();
+          } else {
+            selectionsBuilder_.setMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * List of selections used in the current session.
+         * </pre>
+         *
+         * <code>repeated .obb.SessionSelection selections = 1;</code>
+         */
+        public Builder addSelections(com.oddin.obb.Session.SessionSelection value) {
+          if (selectionsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureSelectionsIsMutable();
+            selections_.add(value);
+            onChanged();
+          } else {
+            selectionsBuilder_.addMessage(value);
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * List of selections used in the current session.
+         * </pre>
+         *
+         * <code>repeated .obb.SessionSelection selections = 1;</code>
+         */
+        public Builder addSelections(
+            int index, com.oddin.obb.Session.SessionSelection value) {
+          if (selectionsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureSelectionsIsMutable();
+            selections_.add(index, value);
+            onChanged();
+          } else {
+            selectionsBuilder_.addMessage(index, value);
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * List of selections used in the current session.
+         * </pre>
+         *
+         * <code>repeated .obb.SessionSelection selections = 1;</code>
+         */
+        public Builder addSelections(
+            com.oddin.obb.Session.SessionSelection.Builder builderForValue) {
+          if (selectionsBuilder_ == null) {
+            ensureSelectionsIsMutable();
+            selections_.add(builderForValue.build());
+            onChanged();
+          } else {
+            selectionsBuilder_.addMessage(builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * List of selections used in the current session.
+         * </pre>
+         *
+         * <code>repeated .obb.SessionSelection selections = 1;</code>
+         */
+        public Builder addSelections(
+            int index, com.oddin.obb.Session.SessionSelection.Builder builderForValue) {
+          if (selectionsBuilder_ == null) {
+            ensureSelectionsIsMutable();
+            selections_.add(index, builderForValue.build());
+            onChanged();
+          } else {
+            selectionsBuilder_.addMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * List of selections used in the current session.
+         * </pre>
+         *
+         * <code>repeated .obb.SessionSelection selections = 1;</code>
+         */
+        public Builder addAllSelections(
+            java.lang.Iterable<? extends com.oddin.obb.Session.SessionSelection> values) {
+          if (selectionsBuilder_ == null) {
+            ensureSelectionsIsMutable();
+            com.google.protobuf.AbstractMessageLite.Builder.addAll(
+                values, selections_);
+            onChanged();
+          } else {
+            selectionsBuilder_.addAllMessages(values);
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * List of selections used in the current session.
+         * </pre>
+         *
+         * <code>repeated .obb.SessionSelection selections = 1;</code>
+         */
+        public Builder clearSelections() {
+          if (selectionsBuilder_ == null) {
+            selections_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000001);
+            onChanged();
+          } else {
+            selectionsBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * List of selections used in the current session.
+         * </pre>
+         *
+         * <code>repeated .obb.SessionSelection selections = 1;</code>
+         */
+        public Builder removeSelections(int index) {
+          if (selectionsBuilder_ == null) {
+            ensureSelectionsIsMutable();
+            selections_.remove(index);
+            onChanged();
+          } else {
+            selectionsBuilder_.remove(index);
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * List of selections used in the current session.
+         * </pre>
+         *
+         * <code>repeated .obb.SessionSelection selections = 1;</code>
+         */
+        public com.oddin.obb.Session.SessionSelection.Builder getSelectionsBuilder(
+            int index) {
+          return getSelectionsFieldBuilder().getBuilder(index);
+        }
+        /**
+         * <pre>
+         * List of selections used in the current session.
+         * </pre>
+         *
+         * <code>repeated .obb.SessionSelection selections = 1;</code>
+         */
+        public com.oddin.obb.Session.SessionSelectionOrBuilder getSelectionsOrBuilder(
+            int index) {
+          if (selectionsBuilder_ == null) {
+            return selections_.get(index);  } else {
+            return selectionsBuilder_.getMessageOrBuilder(index);
+          }
+        }
+        /**
+         * <pre>
+         * List of selections used in the current session.
+         * </pre>
+         *
+         * <code>repeated .obb.SessionSelection selections = 1;</code>
+         */
+        public java.util.List<? extends com.oddin.obb.Session.SessionSelectionOrBuilder> 
+             getSelectionsOrBuilderList() {
+          if (selectionsBuilder_ != null) {
+            return selectionsBuilder_.getMessageOrBuilderList();
+          } else {
+            return java.util.Collections.unmodifiableList(selections_);
+          }
+        }
+        /**
+         * <pre>
+         * List of selections used in the current session.
+         * </pre>
+         *
+         * <code>repeated .obb.SessionSelection selections = 1;</code>
+         */
+        public com.oddin.obb.Session.SessionSelection.Builder addSelectionsBuilder() {
+          return getSelectionsFieldBuilder().addBuilder(
+              com.oddin.obb.Session.SessionSelection.getDefaultInstance());
+        }
+        /**
+         * <pre>
+         * List of selections used in the current session.
+         * </pre>
+         *
+         * <code>repeated .obb.SessionSelection selections = 1;</code>
+         */
+        public com.oddin.obb.Session.SessionSelection.Builder addSelectionsBuilder(
+            int index) {
+          return getSelectionsFieldBuilder().addBuilder(
+              index, com.oddin.obb.Session.SessionSelection.getDefaultInstance());
+        }
+        /**
+         * <pre>
+         * List of selections used in the current session.
+         * </pre>
+         *
+         * <code>repeated .obb.SessionSelection selections = 1;</code>
+         */
+        public java.util.List<com.oddin.obb.Session.SessionSelection.Builder> 
+             getSelectionsBuilderList() {
+          return getSelectionsFieldBuilder().getBuilderList();
+        }
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.oddin.obb.Session.SessionSelection, com.oddin.obb.Session.SessionSelection.Builder, com.oddin.obb.Session.SessionSelectionOrBuilder> 
+            getSelectionsFieldBuilder() {
+          if (selectionsBuilder_ == null) {
+            selectionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.oddin.obb.Session.SessionSelection, com.oddin.obb.Session.SessionSelection.Builder, com.oddin.obb.Session.SessionSelectionOrBuilder>(
+                    selections_,
+                    ((bitField0_ & 0x00000001) != 0),
+                    getParentForChildren(),
+                    isClean());
+            selections_ = null;
+          }
+          return selectionsBuilder_;
+        }
+
+        private long odds_ ;
+        /**
+         * <pre>
+         * Final odds for the selected combination of picks.
+         * Odds multiplied by 10000 and rounded to uint value.
+         * </pre>
+         *
+         * <code>uint64 odds = 2;</code>
+         * @return The odds.
+         */
+        @java.lang.Override
+        public long getOdds() {
+          return odds_;
+        }
+        /**
+         * <pre>
+         * Final odds for the selected combination of picks.
+         * Odds multiplied by 10000 and rounded to uint value.
+         * </pre>
+         *
+         * <code>uint64 odds = 2;</code>
+         * @param value The odds to set.
+         * @return This builder for chaining.
+         */
+        public Builder setOdds(long value) {
+          
+          odds_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Final odds for the selected combination of picks.
+         * Odds multiplied by 10000 and rounded to uint value.
+         * </pre>
+         *
+         * <code>uint64 odds = 2;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearOdds() {
+          
+          odds_ = 0L;
+          onChanged();
+          return this;
+        }
+
+        private java.util.List<com.oddin.obb.Session.SessionMarket> availableMarkets_ =
+          java.util.Collections.emptyList();
+        private void ensureAvailableMarketsIsMutable() {
+          if (!((bitField0_ & 0x00000002) != 0)) {
+            availableMarkets_ = new java.util.ArrayList<com.oddin.obb.Session.SessionMarket>(availableMarkets_);
+            bitField0_ |= 0x00000002;
+           }
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.oddin.obb.Session.SessionMarket, com.oddin.obb.Session.SessionMarket.Builder, com.oddin.obb.Session.SessionMarketOrBuilder> availableMarketsBuilder_;
+
+        /**
+         * <pre>
+         * Available markets for the new session with the current session selections.
+         * </pre>
+         *
+         * <code>repeated .obb.SessionMarket available_markets = 3;</code>
+         */
+        public java.util.List<com.oddin.obb.Session.SessionMarket> getAvailableMarketsList() {
+          if (availableMarketsBuilder_ == null) {
+            return java.util.Collections.unmodifiableList(availableMarkets_);
+          } else {
+            return availableMarketsBuilder_.getMessageList();
+          }
+        }
+        /**
+         * <pre>
+         * Available markets for the new session with the current session selections.
+         * </pre>
+         *
+         * <code>repeated .obb.SessionMarket available_markets = 3;</code>
+         */
+        public int getAvailableMarketsCount() {
+          if (availableMarketsBuilder_ == null) {
+            return availableMarkets_.size();
+          } else {
+            return availableMarketsBuilder_.getCount();
+          }
+        }
+        /**
+         * <pre>
+         * Available markets for the new session with the current session selections.
+         * </pre>
+         *
+         * <code>repeated .obb.SessionMarket available_markets = 3;</code>
+         */
+        public com.oddin.obb.Session.SessionMarket getAvailableMarkets(int index) {
+          if (availableMarketsBuilder_ == null) {
+            return availableMarkets_.get(index);
+          } else {
+            return availableMarketsBuilder_.getMessage(index);
+          }
+        }
+        /**
+         * <pre>
+         * Available markets for the new session with the current session selections.
+         * </pre>
+         *
+         * <code>repeated .obb.SessionMarket available_markets = 3;</code>
+         */
+        public Builder setAvailableMarkets(
+            int index, com.oddin.obb.Session.SessionMarket value) {
+          if (availableMarketsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureAvailableMarketsIsMutable();
+            availableMarkets_.set(index, value);
+            onChanged();
+          } else {
+            availableMarketsBuilder_.setMessage(index, value);
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * Available markets for the new session with the current session selections.
+         * </pre>
+         *
+         * <code>repeated .obb.SessionMarket available_markets = 3;</code>
+         */
+        public Builder setAvailableMarkets(
+            int index, com.oddin.obb.Session.SessionMarket.Builder builderForValue) {
+          if (availableMarketsBuilder_ == null) {
+            ensureAvailableMarketsIsMutable();
+            availableMarkets_.set(index, builderForValue.build());
+            onChanged();
+          } else {
+            availableMarketsBuilder_.setMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * Available markets for the new session with the current session selections.
+         * </pre>
+         *
+         * <code>repeated .obb.SessionMarket available_markets = 3;</code>
+         */
+        public Builder addAvailableMarkets(com.oddin.obb.Session.SessionMarket value) {
+          if (availableMarketsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureAvailableMarketsIsMutable();
+            availableMarkets_.add(value);
+            onChanged();
+          } else {
+            availableMarketsBuilder_.addMessage(value);
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * Available markets for the new session with the current session selections.
+         * </pre>
+         *
+         * <code>repeated .obb.SessionMarket available_markets = 3;</code>
+         */
+        public Builder addAvailableMarkets(
+            int index, com.oddin.obb.Session.SessionMarket value) {
+          if (availableMarketsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureAvailableMarketsIsMutable();
+            availableMarkets_.add(index, value);
+            onChanged();
+          } else {
+            availableMarketsBuilder_.addMessage(index, value);
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * Available markets for the new session with the current session selections.
+         * </pre>
+         *
+         * <code>repeated .obb.SessionMarket available_markets = 3;</code>
+         */
+        public Builder addAvailableMarkets(
+            com.oddin.obb.Session.SessionMarket.Builder builderForValue) {
+          if (availableMarketsBuilder_ == null) {
+            ensureAvailableMarketsIsMutable();
+            availableMarkets_.add(builderForValue.build());
+            onChanged();
+          } else {
+            availableMarketsBuilder_.addMessage(builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * Available markets for the new session with the current session selections.
+         * </pre>
+         *
+         * <code>repeated .obb.SessionMarket available_markets = 3;</code>
+         */
+        public Builder addAvailableMarkets(
+            int index, com.oddin.obb.Session.SessionMarket.Builder builderForValue) {
+          if (availableMarketsBuilder_ == null) {
+            ensureAvailableMarketsIsMutable();
+            availableMarkets_.add(index, builderForValue.build());
+            onChanged();
+          } else {
+            availableMarketsBuilder_.addMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * Available markets for the new session with the current session selections.
+         * </pre>
+         *
+         * <code>repeated .obb.SessionMarket available_markets = 3;</code>
+         */
+        public Builder addAllAvailableMarkets(
+            java.lang.Iterable<? extends com.oddin.obb.Session.SessionMarket> values) {
+          if (availableMarketsBuilder_ == null) {
+            ensureAvailableMarketsIsMutable();
+            com.google.protobuf.AbstractMessageLite.Builder.addAll(
+                values, availableMarkets_);
+            onChanged();
+          } else {
+            availableMarketsBuilder_.addAllMessages(values);
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * Available markets for the new session with the current session selections.
+         * </pre>
+         *
+         * <code>repeated .obb.SessionMarket available_markets = 3;</code>
+         */
+        public Builder clearAvailableMarkets() {
+          if (availableMarketsBuilder_ == null) {
+            availableMarkets_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000002);
+            onChanged();
+          } else {
+            availableMarketsBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * Available markets for the new session with the current session selections.
+         * </pre>
+         *
+         * <code>repeated .obb.SessionMarket available_markets = 3;</code>
+         */
+        public Builder removeAvailableMarkets(int index) {
+          if (availableMarketsBuilder_ == null) {
+            ensureAvailableMarketsIsMutable();
+            availableMarkets_.remove(index);
+            onChanged();
+          } else {
+            availableMarketsBuilder_.remove(index);
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * Available markets for the new session with the current session selections.
+         * </pre>
+         *
+         * <code>repeated .obb.SessionMarket available_markets = 3;</code>
+         */
+        public com.oddin.obb.Session.SessionMarket.Builder getAvailableMarketsBuilder(
+            int index) {
+          return getAvailableMarketsFieldBuilder().getBuilder(index);
+        }
+        /**
+         * <pre>
+         * Available markets for the new session with the current session selections.
+         * </pre>
+         *
+         * <code>repeated .obb.SessionMarket available_markets = 3;</code>
+         */
+        public com.oddin.obb.Session.SessionMarketOrBuilder getAvailableMarketsOrBuilder(
+            int index) {
+          if (availableMarketsBuilder_ == null) {
+            return availableMarkets_.get(index);  } else {
+            return availableMarketsBuilder_.getMessageOrBuilder(index);
+          }
+        }
+        /**
+         * <pre>
+         * Available markets for the new session with the current session selections.
+         * </pre>
+         *
+         * <code>repeated .obb.SessionMarket available_markets = 3;</code>
+         */
+        public java.util.List<? extends com.oddin.obb.Session.SessionMarketOrBuilder> 
+             getAvailableMarketsOrBuilderList() {
+          if (availableMarketsBuilder_ != null) {
+            return availableMarketsBuilder_.getMessageOrBuilderList();
+          } else {
+            return java.util.Collections.unmodifiableList(availableMarkets_);
+          }
+        }
+        /**
+         * <pre>
+         * Available markets for the new session with the current session selections.
+         * </pre>
+         *
+         * <code>repeated .obb.SessionMarket available_markets = 3;</code>
+         */
+        public com.oddin.obb.Session.SessionMarket.Builder addAvailableMarketsBuilder() {
+          return getAvailableMarketsFieldBuilder().addBuilder(
+              com.oddin.obb.Session.SessionMarket.getDefaultInstance());
+        }
+        /**
+         * <pre>
+         * Available markets for the new session with the current session selections.
+         * </pre>
+         *
+         * <code>repeated .obb.SessionMarket available_markets = 3;</code>
+         */
+        public com.oddin.obb.Session.SessionMarket.Builder addAvailableMarketsBuilder(
+            int index) {
+          return getAvailableMarketsFieldBuilder().addBuilder(
+              index, com.oddin.obb.Session.SessionMarket.getDefaultInstance());
+        }
+        /**
+         * <pre>
+         * Available markets for the new session with the current session selections.
+         * </pre>
+         *
+         * <code>repeated .obb.SessionMarket available_markets = 3;</code>
+         */
+        public java.util.List<com.oddin.obb.Session.SessionMarket.Builder> 
+             getAvailableMarketsBuilderList() {
+          return getAvailableMarketsFieldBuilder().getBuilderList();
+        }
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.oddin.obb.Session.SessionMarket, com.oddin.obb.Session.SessionMarket.Builder, com.oddin.obb.Session.SessionMarketOrBuilder> 
+            getAvailableMarketsFieldBuilder() {
+          if (availableMarketsBuilder_ == null) {
+            availableMarketsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.oddin.obb.Session.SessionMarket, com.oddin.obb.Session.SessionMarket.Builder, com.oddin.obb.Session.SessionMarketOrBuilder>(
+                    availableMarkets_,
+                    ((bitField0_ & 0x00000002) != 0),
+                    getParentForChildren(),
+                    isClean());
+            availableMarkets_ = null;
+          }
+          return availableMarketsBuilder_;
+        }
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:obb.SessionCreateResponse.SessionCreated)
+      }
+
+      // @@protoc_insertion_point(class_scope:obb.SessionCreateResponse.SessionCreated)
+      private static final com.oddin.obb.Session.SessionCreateResponse.SessionCreated DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new com.oddin.obb.Session.SessionCreateResponse.SessionCreated();
+      }
+
+      public static com.oddin.obb.Session.SessionCreateResponse.SessionCreated getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<SessionCreated>
+          PARSER = new com.google.protobuf.AbstractParser<SessionCreated>() {
+        @java.lang.Override
+        public SessionCreated parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
+        }
+      };
+
+      public static com.google.protobuf.Parser<SessionCreated> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<SessionCreated> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.oddin.obb.Session.SessionCreateResponse.SessionCreated getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
     }
 
-    public static final int SESSION_ID_FIELD_NUMBER = 2;
+    public interface SessionRejectedOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:obb.SessionCreateResponse.SessionRejected)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <pre>
+       * Information about rejection reason.
+       * </pre>
+       *
+       * <code>.obb.SessionRejectReason reason = 1;</code>
+       * @return Whether the reason field is set.
+       */
+      boolean hasReason();
+      /**
+       * <pre>
+       * Information about rejection reason.
+       * </pre>
+       *
+       * <code>.obb.SessionRejectReason reason = 1;</code>
+       * @return The reason.
+       */
+      com.oddin.obb.Session.SessionRejectReason getReason();
+      /**
+       * <pre>
+       * Information about rejection reason.
+       * </pre>
+       *
+       * <code>.obb.SessionRejectReason reason = 1;</code>
+       */
+      com.oddin.obb.Session.SessionRejectReasonOrBuilder getReasonOrBuilder();
+    }
+    /**
+     * Protobuf type {@code obb.SessionCreateResponse.SessionRejected}
+     */
+    public static final class SessionRejected extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:obb.SessionCreateResponse.SessionRejected)
+        SessionRejectedOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use SessionRejected.newBuilder() to construct.
+      private SessionRejected(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private SessionRejected() {
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new SessionRejected();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.oddin.obb.Session.internal_static_obb_SessionCreateResponse_SessionRejected_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.oddin.obb.Session.internal_static_obb_SessionCreateResponse_SessionRejected_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.oddin.obb.Session.SessionCreateResponse.SessionRejected.class, com.oddin.obb.Session.SessionCreateResponse.SessionRejected.Builder.class);
+      }
+
+      public static final int REASON_FIELD_NUMBER = 1;
+      private com.oddin.obb.Session.SessionRejectReason reason_;
+      /**
+       * <pre>
+       * Information about rejection reason.
+       * </pre>
+       *
+       * <code>.obb.SessionRejectReason reason = 1;</code>
+       * @return Whether the reason field is set.
+       */
+      @java.lang.Override
+      public boolean hasReason() {
+        return reason_ != null;
+      }
+      /**
+       * <pre>
+       * Information about rejection reason.
+       * </pre>
+       *
+       * <code>.obb.SessionRejectReason reason = 1;</code>
+       * @return The reason.
+       */
+      @java.lang.Override
+      public com.oddin.obb.Session.SessionRejectReason getReason() {
+        return reason_ == null ? com.oddin.obb.Session.SessionRejectReason.getDefaultInstance() : reason_;
+      }
+      /**
+       * <pre>
+       * Information about rejection reason.
+       * </pre>
+       *
+       * <code>.obb.SessionRejectReason reason = 1;</code>
+       */
+      @java.lang.Override
+      public com.oddin.obb.Session.SessionRejectReasonOrBuilder getReasonOrBuilder() {
+        return getReason();
+      }
+
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (reason_ != null) {
+          output.writeMessage(1, getReason());
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (reason_ != null) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(1, getReason());
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof com.oddin.obb.Session.SessionCreateResponse.SessionRejected)) {
+          return super.equals(obj);
+        }
+        com.oddin.obb.Session.SessionCreateResponse.SessionRejected other = (com.oddin.obb.Session.SessionCreateResponse.SessionRejected) obj;
+
+        if (hasReason() != other.hasReason()) return false;
+        if (hasReason()) {
+          if (!getReason()
+              .equals(other.getReason())) return false;
+        }
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (hasReason()) {
+          hash = (37 * hash) + REASON_FIELD_NUMBER;
+          hash = (53 * hash) + getReason().hashCode();
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.oddin.obb.Session.SessionCreateResponse.SessionRejected parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.oddin.obb.Session.SessionCreateResponse.SessionRejected parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.oddin.obb.Session.SessionCreateResponse.SessionRejected parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.oddin.obb.Session.SessionCreateResponse.SessionRejected parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.oddin.obb.Session.SessionCreateResponse.SessionRejected parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.oddin.obb.Session.SessionCreateResponse.SessionRejected parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.oddin.obb.Session.SessionCreateResponse.SessionRejected parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.oddin.obb.Session.SessionCreateResponse.SessionRejected parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.oddin.obb.Session.SessionCreateResponse.SessionRejected parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static com.oddin.obb.Session.SessionCreateResponse.SessionRejected parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.oddin.obb.Session.SessionCreateResponse.SessionRejected parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.oddin.obb.Session.SessionCreateResponse.SessionRejected parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(com.oddin.obb.Session.SessionCreateResponse.SessionRejected prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code obb.SessionCreateResponse.SessionRejected}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:obb.SessionCreateResponse.SessionRejected)
+          com.oddin.obb.Session.SessionCreateResponse.SessionRejectedOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return com.oddin.obb.Session.internal_static_obb_SessionCreateResponse_SessionRejected_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.oddin.obb.Session.internal_static_obb_SessionCreateResponse_SessionRejected_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.oddin.obb.Session.SessionCreateResponse.SessionRejected.class, com.oddin.obb.Session.SessionCreateResponse.SessionRejected.Builder.class);
+        }
+
+        // Construct using com.oddin.obb.Session.SessionCreateResponse.SessionRejected.newBuilder()
+        private Builder() {
+
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          if (reasonBuilder_ == null) {
+            reason_ = null;
+          } else {
+            reason_ = null;
+            reasonBuilder_ = null;
+          }
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return com.oddin.obb.Session.internal_static_obb_SessionCreateResponse_SessionRejected_descriptor;
+        }
+
+        @java.lang.Override
+        public com.oddin.obb.Session.SessionCreateResponse.SessionRejected getDefaultInstanceForType() {
+          return com.oddin.obb.Session.SessionCreateResponse.SessionRejected.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.oddin.obb.Session.SessionCreateResponse.SessionRejected build() {
+          com.oddin.obb.Session.SessionCreateResponse.SessionRejected result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.oddin.obb.Session.SessionCreateResponse.SessionRejected buildPartial() {
+          com.oddin.obb.Session.SessionCreateResponse.SessionRejected result = new com.oddin.obb.Session.SessionCreateResponse.SessionRejected(this);
+          if (reasonBuilder_ == null) {
+            result.reason_ = reason_;
+          } else {
+            result.reason_ = reasonBuilder_.build();
+          }
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.setField(field, value);
+        }
+        @java.lang.Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+        @java.lang.Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.oddin.obb.Session.SessionCreateResponse.SessionRejected) {
+            return mergeFrom((com.oddin.obb.Session.SessionCreateResponse.SessionRejected)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(com.oddin.obb.Session.SessionCreateResponse.SessionRejected other) {
+          if (other == com.oddin.obb.Session.SessionCreateResponse.SessionRejected.getDefaultInstance()) return this;
+          if (other.hasReason()) {
+            mergeReason(other.getReason());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10: {
+                  input.readMessage(
+                      getReasonFieldBuilder().getBuilder(),
+                      extensionRegistry);
+
+                  break;
+                } // case 10
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private com.oddin.obb.Session.SessionRejectReason reason_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+            com.oddin.obb.Session.SessionRejectReason, com.oddin.obb.Session.SessionRejectReason.Builder, com.oddin.obb.Session.SessionRejectReasonOrBuilder> reasonBuilder_;
+        /**
+         * <pre>
+         * Information about rejection reason.
+         * </pre>
+         *
+         * <code>.obb.SessionRejectReason reason = 1;</code>
+         * @return Whether the reason field is set.
+         */
+        public boolean hasReason() {
+          return reasonBuilder_ != null || reason_ != null;
+        }
+        /**
+         * <pre>
+         * Information about rejection reason.
+         * </pre>
+         *
+         * <code>.obb.SessionRejectReason reason = 1;</code>
+         * @return The reason.
+         */
+        public com.oddin.obb.Session.SessionRejectReason getReason() {
+          if (reasonBuilder_ == null) {
+            return reason_ == null ? com.oddin.obb.Session.SessionRejectReason.getDefaultInstance() : reason_;
+          } else {
+            return reasonBuilder_.getMessage();
+          }
+        }
+        /**
+         * <pre>
+         * Information about rejection reason.
+         * </pre>
+         *
+         * <code>.obb.SessionRejectReason reason = 1;</code>
+         */
+        public Builder setReason(com.oddin.obb.Session.SessionRejectReason value) {
+          if (reasonBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            reason_ = value;
+            onChanged();
+          } else {
+            reasonBuilder_.setMessage(value);
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * Information about rejection reason.
+         * </pre>
+         *
+         * <code>.obb.SessionRejectReason reason = 1;</code>
+         */
+        public Builder setReason(
+            com.oddin.obb.Session.SessionRejectReason.Builder builderForValue) {
+          if (reasonBuilder_ == null) {
+            reason_ = builderForValue.build();
+            onChanged();
+          } else {
+            reasonBuilder_.setMessage(builderForValue.build());
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * Information about rejection reason.
+         * </pre>
+         *
+         * <code>.obb.SessionRejectReason reason = 1;</code>
+         */
+        public Builder mergeReason(com.oddin.obb.Session.SessionRejectReason value) {
+          if (reasonBuilder_ == null) {
+            if (reason_ != null) {
+              reason_ =
+                com.oddin.obb.Session.SessionRejectReason.newBuilder(reason_).mergeFrom(value).buildPartial();
+            } else {
+              reason_ = value;
+            }
+            onChanged();
+          } else {
+            reasonBuilder_.mergeFrom(value);
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * Information about rejection reason.
+         * </pre>
+         *
+         * <code>.obb.SessionRejectReason reason = 1;</code>
+         */
+        public Builder clearReason() {
+          if (reasonBuilder_ == null) {
+            reason_ = null;
+            onChanged();
+          } else {
+            reason_ = null;
+            reasonBuilder_ = null;
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * Information about rejection reason.
+         * </pre>
+         *
+         * <code>.obb.SessionRejectReason reason = 1;</code>
+         */
+        public com.oddin.obb.Session.SessionRejectReason.Builder getReasonBuilder() {
+          
+          onChanged();
+          return getReasonFieldBuilder().getBuilder();
+        }
+        /**
+         * <pre>
+         * Information about rejection reason.
+         * </pre>
+         *
+         * <code>.obb.SessionRejectReason reason = 1;</code>
+         */
+        public com.oddin.obb.Session.SessionRejectReasonOrBuilder getReasonOrBuilder() {
+          if (reasonBuilder_ != null) {
+            return reasonBuilder_.getMessageOrBuilder();
+          } else {
+            return reason_ == null ?
+                com.oddin.obb.Session.SessionRejectReason.getDefaultInstance() : reason_;
+          }
+        }
+        /**
+         * <pre>
+         * Information about rejection reason.
+         * </pre>
+         *
+         * <code>.obb.SessionRejectReason reason = 1;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+            com.oddin.obb.Session.SessionRejectReason, com.oddin.obb.Session.SessionRejectReason.Builder, com.oddin.obb.Session.SessionRejectReasonOrBuilder> 
+            getReasonFieldBuilder() {
+          if (reasonBuilder_ == null) {
+            reasonBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                com.oddin.obb.Session.SessionRejectReason, com.oddin.obb.Session.SessionRejectReason.Builder, com.oddin.obb.Session.SessionRejectReasonOrBuilder>(
+                    getReason(),
+                    getParentForChildren(),
+                    isClean());
+            reason_ = null;
+          }
+          return reasonBuilder_;
+        }
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:obb.SessionCreateResponse.SessionRejected)
+      }
+
+      // @@protoc_insertion_point(class_scope:obb.SessionCreateResponse.SessionRejected)
+      private static final com.oddin.obb.Session.SessionCreateResponse.SessionRejected DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new com.oddin.obb.Session.SessionCreateResponse.SessionRejected();
+      }
+
+      public static com.oddin.obb.Session.SessionCreateResponse.SessionRejected getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<SessionRejected>
+          PARSER = new com.google.protobuf.AbstractParser<SessionRejected>() {
+        @java.lang.Override
+        public SessionRejected parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
+        }
+      };
+
+      public static com.google.protobuf.Parser<SessionRejected> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<SessionRejected> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.oddin.obb.Session.SessionCreateResponse.SessionRejected getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
+    private int statusCase_ = 0;
+    private java.lang.Object status_;
+    public enum StatusCase
+        implements com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      CREATED(2),
+      REJECTED(3),
+      STATUS_NOT_SET(0);
+      private final int value;
+      private StatusCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static StatusCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static StatusCase forNumber(int value) {
+        switch (value) {
+          case 2: return CREATED;
+          case 3: return REJECTED;
+          case 0: return STATUS_NOT_SET;
+          default: return null;
+        }
+      }
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public StatusCase
+    getStatusCase() {
+      return StatusCase.forNumber(
+          statusCase_);
+    }
+
+    public static final int SESSION_ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object sessionId_;
     /**
-     * <code>string session_id = 2;</code>
+     * <pre>
+     * Session ID created by operator.
+     * </pre>
+     *
+     * <code>string session_id = 1;</code>
      * @return The sessionId.
      */
     @java.lang.Override
@@ -5466,7 +4968,11 @@ public final class Session {
       }
     }
     /**
-     * <code>string session_id = 2;</code>
+     * <pre>
+     * Session ID created by operator.
+     * </pre>
+     *
+     * <code>string session_id = 1;</code>
      * @return The bytes for sessionId.
      */
     @java.lang.Override
@@ -5484,122 +4990,90 @@ public final class Session {
       }
     }
 
-    public static final int SELECTIONS_FIELD_NUMBER = 3;
-    private java.util.List<com.oddin.obb.Session.SessionSelection> selections_;
+    public static final int CREATED_FIELD_NUMBER = 2;
     /**
-     * <code>repeated .obb.SessionSelection selections = 3;</code>
+     * <pre>
+     * Successfully created session information.
+     * </pre>
+     *
+     * <code>.obb.SessionCreateResponse.SessionCreated created = 2;</code>
+     * @return Whether the created field is set.
      */
     @java.lang.Override
-    public java.util.List<com.oddin.obb.Session.SessionSelection> getSelectionsList() {
-      return selections_;
+    public boolean hasCreated() {
+      return statusCase_ == 2;
     }
     /**
-     * <code>repeated .obb.SessionSelection selections = 3;</code>
+     * <pre>
+     * Successfully created session information.
+     * </pre>
+     *
+     * <code>.obb.SessionCreateResponse.SessionCreated created = 2;</code>
+     * @return The created.
      */
     @java.lang.Override
-    public java.util.List<? extends com.oddin.obb.Session.SessionSelectionOrBuilder> 
-        getSelectionsOrBuilderList() {
-      return selections_;
+    public com.oddin.obb.Session.SessionCreateResponse.SessionCreated getCreated() {
+      if (statusCase_ == 2) {
+         return (com.oddin.obb.Session.SessionCreateResponse.SessionCreated) status_;
+      }
+      return com.oddin.obb.Session.SessionCreateResponse.SessionCreated.getDefaultInstance();
     }
     /**
-     * <code>repeated .obb.SessionSelection selections = 3;</code>
+     * <pre>
+     * Successfully created session information.
+     * </pre>
+     *
+     * <code>.obb.SessionCreateResponse.SessionCreated created = 2;</code>
      */
     @java.lang.Override
-    public int getSelectionsCount() {
-      return selections_.size();
-    }
-    /**
-     * <code>repeated .obb.SessionSelection selections = 3;</code>
-     */
-    @java.lang.Override
-    public com.oddin.obb.Session.SessionSelection getSelections(int index) {
-      return selections_.get(index);
-    }
-    /**
-     * <code>repeated .obb.SessionSelection selections = 3;</code>
-     */
-    @java.lang.Override
-    public com.oddin.obb.Session.SessionSelectionOrBuilder getSelectionsOrBuilder(
-        int index) {
-      return selections_.get(index);
+    public com.oddin.obb.Session.SessionCreateResponse.SessionCreatedOrBuilder getCreatedOrBuilder() {
+      if (statusCase_ == 2) {
+         return (com.oddin.obb.Session.SessionCreateResponse.SessionCreated) status_;
+      }
+      return com.oddin.obb.Session.SessionCreateResponse.SessionCreated.getDefaultInstance();
     }
 
-    public static final int MARKETS_FIELD_NUMBER = 4;
-    private java.util.List<com.oddin.obb.Session.SessionMarket> markets_;
-    /**
-     * <code>repeated .obb.SessionMarket markets = 4;</code>
-     */
-    @java.lang.Override
-    public java.util.List<com.oddin.obb.Session.SessionMarket> getMarketsList() {
-      return markets_;
-    }
-    /**
-     * <code>repeated .obb.SessionMarket markets = 4;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends com.oddin.obb.Session.SessionMarketOrBuilder> 
-        getMarketsOrBuilderList() {
-      return markets_;
-    }
-    /**
-     * <code>repeated .obb.SessionMarket markets = 4;</code>
-     */
-    @java.lang.Override
-    public int getMarketsCount() {
-      return markets_.size();
-    }
-    /**
-     * <code>repeated .obb.SessionMarket markets = 4;</code>
-     */
-    @java.lang.Override
-    public com.oddin.obb.Session.SessionMarket getMarkets(int index) {
-      return markets_.get(index);
-    }
-    /**
-     * <code>repeated .obb.SessionMarket markets = 4;</code>
-     */
-    @java.lang.Override
-    public com.oddin.obb.Session.SessionMarketOrBuilder getMarketsOrBuilder(
-        int index) {
-      return markets_.get(index);
-    }
-
-    public static final int REJECT_REASON_FIELD_NUMBER = 5;
-    private com.oddin.obb.Session.SessionRejectReason rejectReason_;
+    public static final int REJECTED_FIELD_NUMBER = 3;
     /**
      * <pre>
-     * Information about rejection reason.
+     * Session creation was rejected.
      * </pre>
      *
-     * <code>.obb.SessionRejectReason reject_reason = 5;</code>
-     * @return Whether the rejectReason field is set.
+     * <code>.obb.SessionCreateResponse.SessionRejected rejected = 3;</code>
+     * @return Whether the rejected field is set.
      */
     @java.lang.Override
-    public boolean hasRejectReason() {
-      return rejectReason_ != null;
+    public boolean hasRejected() {
+      return statusCase_ == 3;
     }
     /**
      * <pre>
-     * Information about rejection reason.
+     * Session creation was rejected.
      * </pre>
      *
-     * <code>.obb.SessionRejectReason reject_reason = 5;</code>
-     * @return The rejectReason.
+     * <code>.obb.SessionCreateResponse.SessionRejected rejected = 3;</code>
+     * @return The rejected.
      */
     @java.lang.Override
-    public com.oddin.obb.Session.SessionRejectReason getRejectReason() {
-      return rejectReason_ == null ? com.oddin.obb.Session.SessionRejectReason.getDefaultInstance() : rejectReason_;
+    public com.oddin.obb.Session.SessionCreateResponse.SessionRejected getRejected() {
+      if (statusCase_ == 3) {
+         return (com.oddin.obb.Session.SessionCreateResponse.SessionRejected) status_;
+      }
+      return com.oddin.obb.Session.SessionCreateResponse.SessionRejected.getDefaultInstance();
     }
     /**
      * <pre>
-     * Information about rejection reason.
+     * Session creation was rejected.
      * </pre>
      *
-     * <code>.obb.SessionRejectReason reject_reason = 5;</code>
+     * <code>.obb.SessionCreateResponse.SessionRejected rejected = 3;</code>
      */
     @java.lang.Override
-    public com.oddin.obb.Session.SessionRejectReasonOrBuilder getRejectReasonOrBuilder() {
-      return getRejectReason();
+    public com.oddin.obb.Session.SessionCreateResponse.SessionRejectedOrBuilder getRejectedOrBuilder() {
+      if (statusCase_ == 3) {
+         return (com.oddin.obb.Session.SessionCreateResponse.SessionRejected) status_;
+      }
+      return com.oddin.obb.Session.SessionCreateResponse.SessionRejected.getDefaultInstance();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -5616,22 +5090,16 @@ public final class Session {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, requestId_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sessionId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, sessionId_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, sessionId_);
       }
-      for (int i = 0; i < selections_.size(); i++) {
-        output.writeMessage(3, selections_.get(i));
+      if (statusCase_ == 2) {
+        output.writeMessage(2, (com.oddin.obb.Session.SessionCreateResponse.SessionCreated) status_);
       }
-      for (int i = 0; i < markets_.size(); i++) {
-        output.writeMessage(4, markets_.get(i));
+      if (statusCase_ == 3) {
+        output.writeMessage(3, (com.oddin.obb.Session.SessionCreateResponse.SessionRejected) status_);
       }
-      if (rejectReason_ != null) {
-        output.writeMessage(5, getRejectReason());
-      }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -5640,25 +5108,18 @@ public final class Session {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, requestId_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sessionId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, sessionId_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, sessionId_);
       }
-      for (int i = 0; i < selections_.size(); i++) {
+      if (statusCase_ == 2) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, selections_.get(i));
+          .computeMessageSize(2, (com.oddin.obb.Session.SessionCreateResponse.SessionCreated) status_);
       }
-      for (int i = 0; i < markets_.size(); i++) {
+      if (statusCase_ == 3) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, markets_.get(i));
+          .computeMessageSize(3, (com.oddin.obb.Session.SessionCreateResponse.SessionRejected) status_);
       }
-      if (rejectReason_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, getRejectReason());
-      }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -5668,25 +5129,27 @@ public final class Session {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.oddin.obb.Session.SessionCreateState)) {
+      if (!(obj instanceof com.oddin.obb.Session.SessionCreateResponse)) {
         return super.equals(obj);
       }
-      com.oddin.obb.Session.SessionCreateState other = (com.oddin.obb.Session.SessionCreateState) obj;
+      com.oddin.obb.Session.SessionCreateResponse other = (com.oddin.obb.Session.SessionCreateResponse) obj;
 
-      if (!getRequestId()
-          .equals(other.getRequestId())) return false;
       if (!getSessionId()
           .equals(other.getSessionId())) return false;
-      if (!getSelectionsList()
-          .equals(other.getSelectionsList())) return false;
-      if (!getMarketsList()
-          .equals(other.getMarketsList())) return false;
-      if (hasRejectReason() != other.hasRejectReason()) return false;
-      if (hasRejectReason()) {
-        if (!getRejectReason()
-            .equals(other.getRejectReason())) return false;
+      if (!getStatusCase().equals(other.getStatusCase())) return false;
+      switch (statusCase_) {
+        case 2:
+          if (!getCreated()
+              .equals(other.getCreated())) return false;
+          break;
+        case 3:
+          if (!getRejected()
+              .equals(other.getRejected())) return false;
+          break;
+        case 0:
+        default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -5697,90 +5160,88 @@ public final class Session {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getRequestId().hashCode();
       hash = (37 * hash) + SESSION_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSessionId().hashCode();
-      if (getSelectionsCount() > 0) {
-        hash = (37 * hash) + SELECTIONS_FIELD_NUMBER;
-        hash = (53 * hash) + getSelectionsList().hashCode();
+      switch (statusCase_) {
+        case 2:
+          hash = (37 * hash) + CREATED_FIELD_NUMBER;
+          hash = (53 * hash) + getCreated().hashCode();
+          break;
+        case 3:
+          hash = (37 * hash) + REJECTED_FIELD_NUMBER;
+          hash = (53 * hash) + getRejected().hashCode();
+          break;
+        case 0:
+        default:
       }
-      if (getMarketsCount() > 0) {
-        hash = (37 * hash) + MARKETS_FIELD_NUMBER;
-        hash = (53 * hash) + getMarketsList().hashCode();
-      }
-      if (hasRejectReason()) {
-        hash = (37 * hash) + REJECT_REASON_FIELD_NUMBER;
-        hash = (53 * hash) + getRejectReason().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static com.oddin.obb.Session.SessionCreateState parseFrom(
+    public static com.oddin.obb.Session.SessionCreateResponse parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.obb.Session.SessionCreateState parseFrom(
+    public static com.oddin.obb.Session.SessionCreateResponse parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.obb.Session.SessionCreateState parseFrom(
+    public static com.oddin.obb.Session.SessionCreateResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.obb.Session.SessionCreateState parseFrom(
+    public static com.oddin.obb.Session.SessionCreateResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.obb.Session.SessionCreateState parseFrom(byte[] data)
+    public static com.oddin.obb.Session.SessionCreateResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.obb.Session.SessionCreateState parseFrom(
+    public static com.oddin.obb.Session.SessionCreateResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.obb.Session.SessionCreateState parseFrom(java.io.InputStream input)
+    public static com.oddin.obb.Session.SessionCreateResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.oddin.obb.Session.SessionCreateState parseFrom(
+    public static com.oddin.obb.Session.SessionCreateResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.oddin.obb.Session.SessionCreateState parseDelimitedFrom(java.io.InputStream input)
+    public static com.oddin.obb.Session.SessionCreateResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.oddin.obb.Session.SessionCreateState parseDelimitedFrom(
+    public static com.oddin.obb.Session.SessionCreateResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.oddin.obb.Session.SessionCreateState parseFrom(
+    public static com.oddin.obb.Session.SessionCreateResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.oddin.obb.Session.SessionCreateState parseFrom(
+    public static com.oddin.obb.Session.SessionCreateResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -5793,7 +5254,7 @@ public final class Session {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.oddin.obb.Session.SessionCreateState prototype) {
+    public static Builder newBuilder(com.oddin.obb.Session.SessionCreateResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -5809,84 +5270,65 @@ public final class Session {
       return builder;
     }
     /**
-     * Protobuf type {@code obb.SessionCreateState}
+     * Protobuf type {@code obb.SessionCreateResponse}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:obb.SessionCreateState)
-        com.oddin.obb.Session.SessionCreateStateOrBuilder {
+        // @@protoc_insertion_point(builder_implements:obb.SessionCreateResponse)
+        com.oddin.obb.Session.SessionCreateResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.oddin.obb.Session.internal_static_obb_SessionCreateState_descriptor;
+        return com.oddin.obb.Session.internal_static_obb_SessionCreateResponse_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.oddin.obb.Session.internal_static_obb_SessionCreateState_fieldAccessorTable
+        return com.oddin.obb.Session.internal_static_obb_SessionCreateResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.oddin.obb.Session.SessionCreateState.class, com.oddin.obb.Session.SessionCreateState.Builder.class);
+                com.oddin.obb.Session.SessionCreateResponse.class, com.oddin.obb.Session.SessionCreateResponse.Builder.class);
       }
 
-      // Construct using com.oddin.obb.Session.SessionCreateState.newBuilder()
+      // Construct using com.oddin.obb.Session.SessionCreateResponse.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getSelectionsFieldBuilder();
-          getMarketsFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        requestId_ = "";
-
         sessionId_ = "";
 
-        if (selectionsBuilder_ == null) {
-          selections_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        } else {
-          selectionsBuilder_.clear();
+        if (createdBuilder_ != null) {
+          createdBuilder_.clear();
         }
-        if (marketsBuilder_ == null) {
-          markets_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        } else {
-          marketsBuilder_.clear();
+        if (rejectedBuilder_ != null) {
+          rejectedBuilder_.clear();
         }
-        if (rejectReasonBuilder_ == null) {
-          rejectReason_ = null;
-        } else {
-          rejectReason_ = null;
-          rejectReasonBuilder_ = null;
-        }
+        statusCase_ = 0;
+        status_ = null;
         return this;
       }
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.oddin.obb.Session.internal_static_obb_SessionCreateState_descriptor;
+        return com.oddin.obb.Session.internal_static_obb_SessionCreateResponse_descriptor;
       }
 
       @java.lang.Override
-      public com.oddin.obb.Session.SessionCreateState getDefaultInstanceForType() {
-        return com.oddin.obb.Session.SessionCreateState.getDefaultInstance();
+      public com.oddin.obb.Session.SessionCreateResponse getDefaultInstanceForType() {
+        return com.oddin.obb.Session.SessionCreateResponse.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.oddin.obb.Session.SessionCreateState build() {
-        com.oddin.obb.Session.SessionCreateState result = buildPartial();
+      public com.oddin.obb.Session.SessionCreateResponse build() {
+        com.oddin.obb.Session.SessionCreateResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -5894,34 +5336,24 @@ public final class Session {
       }
 
       @java.lang.Override
-      public com.oddin.obb.Session.SessionCreateState buildPartial() {
-        com.oddin.obb.Session.SessionCreateState result = new com.oddin.obb.Session.SessionCreateState(this);
-        int from_bitField0_ = bitField0_;
-        result.requestId_ = requestId_;
+      public com.oddin.obb.Session.SessionCreateResponse buildPartial() {
+        com.oddin.obb.Session.SessionCreateResponse result = new com.oddin.obb.Session.SessionCreateResponse(this);
         result.sessionId_ = sessionId_;
-        if (selectionsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
-            selections_ = java.util.Collections.unmodifiableList(selections_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+        if (statusCase_ == 2) {
+          if (createdBuilder_ == null) {
+            result.status_ = status_;
+          } else {
+            result.status_ = createdBuilder_.build();
           }
-          result.selections_ = selections_;
-        } else {
-          result.selections_ = selectionsBuilder_.build();
         }
-        if (marketsBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
-            markets_ = java.util.Collections.unmodifiableList(markets_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+        if (statusCase_ == 3) {
+          if (rejectedBuilder_ == null) {
+            result.status_ = status_;
+          } else {
+            result.status_ = rejectedBuilder_.build();
           }
-          result.markets_ = markets_;
-        } else {
-          result.markets_ = marketsBuilder_.build();
         }
-        if (rejectReasonBuilder_ == null) {
-          result.rejectReason_ = rejectReason_;
-        } else {
-          result.rejectReason_ = rejectReasonBuilder_.build();
-        }
+        result.statusCase_ = statusCase_;
         onBuilt();
         return result;
       }
@@ -5960,80 +5392,34 @@ public final class Session {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.oddin.obb.Session.SessionCreateState) {
-          return mergeFrom((com.oddin.obb.Session.SessionCreateState)other);
+        if (other instanceof com.oddin.obb.Session.SessionCreateResponse) {
+          return mergeFrom((com.oddin.obb.Session.SessionCreateResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.oddin.obb.Session.SessionCreateState other) {
-        if (other == com.oddin.obb.Session.SessionCreateState.getDefaultInstance()) return this;
-        if (!other.getRequestId().isEmpty()) {
-          requestId_ = other.requestId_;
-          onChanged();
-        }
+      public Builder mergeFrom(com.oddin.obb.Session.SessionCreateResponse other) {
+        if (other == com.oddin.obb.Session.SessionCreateResponse.getDefaultInstance()) return this;
         if (!other.getSessionId().isEmpty()) {
           sessionId_ = other.sessionId_;
           onChanged();
         }
-        if (selectionsBuilder_ == null) {
-          if (!other.selections_.isEmpty()) {
-            if (selections_.isEmpty()) {
-              selections_ = other.selections_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-            } else {
-              ensureSelectionsIsMutable();
-              selections_.addAll(other.selections_);
-            }
-            onChanged();
+        switch (other.getStatusCase()) {
+          case CREATED: {
+            mergeCreated(other.getCreated());
+            break;
           }
-        } else {
-          if (!other.selections_.isEmpty()) {
-            if (selectionsBuilder_.isEmpty()) {
-              selectionsBuilder_.dispose();
-              selectionsBuilder_ = null;
-              selections_ = other.selections_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              selectionsBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getSelectionsFieldBuilder() : null;
-            } else {
-              selectionsBuilder_.addAllMessages(other.selections_);
-            }
+          case REJECTED: {
+            mergeRejected(other.getRejected());
+            break;
+          }
+          case STATUS_NOT_SET: {
+            break;
           }
         }
-        if (marketsBuilder_ == null) {
-          if (!other.markets_.isEmpty()) {
-            if (markets_.isEmpty()) {
-              markets_ = other.markets_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-            } else {
-              ensureMarketsIsMutable();
-              markets_.addAll(other.markets_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.markets_.isEmpty()) {
-            if (marketsBuilder_.isEmpty()) {
-              marketsBuilder_.dispose();
-              marketsBuilder_ = null;
-              markets_ = other.markets_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-              marketsBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getMarketsFieldBuilder() : null;
-            } else {
-              marketsBuilder_.addAllMessages(other.markets_);
-            }
-          }
-        }
-        if (other.hasRejectReason()) {
-          mergeRejectReason(other.getRejectReason());
-        }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -6048,100 +5434,74 @@ public final class Session {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.oddin.obb.Session.SessionCreateState parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                sessionId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+              case 18: {
+                input.readMessage(
+                    getCreatedFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                statusCase_ = 2;
+                break;
+              } // case 18
+              case 26: {
+                input.readMessage(
+                    getRejectedFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                statusCase_ = 3;
+                break;
+              } // case 26
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.oddin.obb.Session.SessionCreateState) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
-      private int bitField0_;
+      private int statusCase_ = 0;
+      private java.lang.Object status_;
+      public StatusCase
+          getStatusCase() {
+        return StatusCase.forNumber(
+            statusCase_);
+      }
 
-      private java.lang.Object requestId_ = "";
-      /**
-       * <code>string request_id = 1;</code>
-       * @return The requestId.
-       */
-      public java.lang.String getRequestId() {
-        java.lang.Object ref = requestId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          requestId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string request_id = 1;</code>
-       * @return The bytes for requestId.
-       */
-      public com.google.protobuf.ByteString
-          getRequestIdBytes() {
-        java.lang.Object ref = requestId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          requestId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string request_id = 1;</code>
-       * @param value The requestId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRequestId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        requestId_ = value;
+      public Builder clearStatus() {
+        statusCase_ = 0;
+        status_ = null;
         onChanged();
         return this;
       }
-      /**
-       * <code>string request_id = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRequestId() {
-        
-        requestId_ = getDefaultInstance().getRequestId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string request_id = 1;</code>
-       * @param value The bytes for requestId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRequestIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        requestId_ = value;
-        onChanged();
-        return this;
-      }
+
 
       private java.lang.Object sessionId_ = "";
       /**
-       * <code>string session_id = 2;</code>
+       * <pre>
+       * Session ID created by operator.
+       * </pre>
+       *
+       * <code>string session_id = 1;</code>
        * @return The sessionId.
        */
       public java.lang.String getSessionId() {
@@ -6157,7 +5517,11 @@ public final class Session {
         }
       }
       /**
-       * <code>string session_id = 2;</code>
+       * <pre>
+       * Session ID created by operator.
+       * </pre>
+       *
+       * <code>string session_id = 1;</code>
        * @return The bytes for sessionId.
        */
       public com.google.protobuf.ByteString
@@ -6174,7 +5538,11 @@ public final class Session {
         }
       }
       /**
-       * <code>string session_id = 2;</code>
+       * <pre>
+       * Session ID created by operator.
+       * </pre>
+       *
+       * <code>string session_id = 1;</code>
        * @param value The sessionId to set.
        * @return This builder for chaining.
        */
@@ -6189,7 +5557,11 @@ public final class Session {
         return this;
       }
       /**
-       * <code>string session_id = 2;</code>
+       * <pre>
+       * Session ID created by operator.
+       * </pre>
+       *
+       * <code>string session_id = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearSessionId() {
@@ -6199,7 +5571,11 @@ public final class Session {
         return this;
       }
       /**
-       * <code>string session_id = 2;</code>
+       * <pre>
+       * Session ID created by operator.
+       * </pre>
+       *
+       * <code>string session_id = 1;</code>
        * @param value The bytes for sessionId to set.
        * @return This builder for chaining.
        */
@@ -6215,639 +5591,360 @@ public final class Session {
         return this;
       }
 
-      private java.util.List<com.oddin.obb.Session.SessionSelection> selections_ =
-        java.util.Collections.emptyList();
-      private void ensureSelectionsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          selections_ = new java.util.ArrayList<com.oddin.obb.Session.SessionSelection>(selections_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.oddin.obb.Session.SessionSelection, com.oddin.obb.Session.SessionSelection.Builder, com.oddin.obb.Session.SessionSelectionOrBuilder> selectionsBuilder_;
-
-      /**
-       * <code>repeated .obb.SessionSelection selections = 3;</code>
-       */
-      public java.util.List<com.oddin.obb.Session.SessionSelection> getSelectionsList() {
-        if (selectionsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(selections_);
-        } else {
-          return selectionsBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <code>repeated .obb.SessionSelection selections = 3;</code>
-       */
-      public int getSelectionsCount() {
-        if (selectionsBuilder_ == null) {
-          return selections_.size();
-        } else {
-          return selectionsBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .obb.SessionSelection selections = 3;</code>
-       */
-      public com.oddin.obb.Session.SessionSelection getSelections(int index) {
-        if (selectionsBuilder_ == null) {
-          return selections_.get(index);
-        } else {
-          return selectionsBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .obb.SessionSelection selections = 3;</code>
-       */
-      public Builder setSelections(
-          int index, com.oddin.obb.Session.SessionSelection value) {
-        if (selectionsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureSelectionsIsMutable();
-          selections_.set(index, value);
-          onChanged();
-        } else {
-          selectionsBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .obb.SessionSelection selections = 3;</code>
-       */
-      public Builder setSelections(
-          int index, com.oddin.obb.Session.SessionSelection.Builder builderForValue) {
-        if (selectionsBuilder_ == null) {
-          ensureSelectionsIsMutable();
-          selections_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          selectionsBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .obb.SessionSelection selections = 3;</code>
-       */
-      public Builder addSelections(com.oddin.obb.Session.SessionSelection value) {
-        if (selectionsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureSelectionsIsMutable();
-          selections_.add(value);
-          onChanged();
-        } else {
-          selectionsBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .obb.SessionSelection selections = 3;</code>
-       */
-      public Builder addSelections(
-          int index, com.oddin.obb.Session.SessionSelection value) {
-        if (selectionsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureSelectionsIsMutable();
-          selections_.add(index, value);
-          onChanged();
-        } else {
-          selectionsBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .obb.SessionSelection selections = 3;</code>
-       */
-      public Builder addSelections(
-          com.oddin.obb.Session.SessionSelection.Builder builderForValue) {
-        if (selectionsBuilder_ == null) {
-          ensureSelectionsIsMutable();
-          selections_.add(builderForValue.build());
-          onChanged();
-        } else {
-          selectionsBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .obb.SessionSelection selections = 3;</code>
-       */
-      public Builder addSelections(
-          int index, com.oddin.obb.Session.SessionSelection.Builder builderForValue) {
-        if (selectionsBuilder_ == null) {
-          ensureSelectionsIsMutable();
-          selections_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          selectionsBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .obb.SessionSelection selections = 3;</code>
-       */
-      public Builder addAllSelections(
-          java.lang.Iterable<? extends com.oddin.obb.Session.SessionSelection> values) {
-        if (selectionsBuilder_ == null) {
-          ensureSelectionsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, selections_);
-          onChanged();
-        } else {
-          selectionsBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .obb.SessionSelection selections = 3;</code>
-       */
-      public Builder clearSelections() {
-        if (selectionsBuilder_ == null) {
-          selections_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-          onChanged();
-        } else {
-          selectionsBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .obb.SessionSelection selections = 3;</code>
-       */
-      public Builder removeSelections(int index) {
-        if (selectionsBuilder_ == null) {
-          ensureSelectionsIsMutable();
-          selections_.remove(index);
-          onChanged();
-        } else {
-          selectionsBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .obb.SessionSelection selections = 3;</code>
-       */
-      public com.oddin.obb.Session.SessionSelection.Builder getSelectionsBuilder(
-          int index) {
-        return getSelectionsFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .obb.SessionSelection selections = 3;</code>
-       */
-      public com.oddin.obb.Session.SessionSelectionOrBuilder getSelectionsOrBuilder(
-          int index) {
-        if (selectionsBuilder_ == null) {
-          return selections_.get(index);  } else {
-          return selectionsBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .obb.SessionSelection selections = 3;</code>
-       */
-      public java.util.List<? extends com.oddin.obb.Session.SessionSelectionOrBuilder> 
-           getSelectionsOrBuilderList() {
-        if (selectionsBuilder_ != null) {
-          return selectionsBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(selections_);
-        }
-      }
-      /**
-       * <code>repeated .obb.SessionSelection selections = 3;</code>
-       */
-      public com.oddin.obb.Session.SessionSelection.Builder addSelectionsBuilder() {
-        return getSelectionsFieldBuilder().addBuilder(
-            com.oddin.obb.Session.SessionSelection.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .obb.SessionSelection selections = 3;</code>
-       */
-      public com.oddin.obb.Session.SessionSelection.Builder addSelectionsBuilder(
-          int index) {
-        return getSelectionsFieldBuilder().addBuilder(
-            index, com.oddin.obb.Session.SessionSelection.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .obb.SessionSelection selections = 3;</code>
-       */
-      public java.util.List<com.oddin.obb.Session.SessionSelection.Builder> 
-           getSelectionsBuilderList() {
-        return getSelectionsFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.oddin.obb.Session.SessionSelection, com.oddin.obb.Session.SessionSelection.Builder, com.oddin.obb.Session.SessionSelectionOrBuilder> 
-          getSelectionsFieldBuilder() {
-        if (selectionsBuilder_ == null) {
-          selectionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.oddin.obb.Session.SessionSelection, com.oddin.obb.Session.SessionSelection.Builder, com.oddin.obb.Session.SessionSelectionOrBuilder>(
-                  selections_,
-                  ((bitField0_ & 0x00000001) != 0),
-                  getParentForChildren(),
-                  isClean());
-          selections_ = null;
-        }
-        return selectionsBuilder_;
-      }
-
-      private java.util.List<com.oddin.obb.Session.SessionMarket> markets_ =
-        java.util.Collections.emptyList();
-      private void ensureMarketsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
-          markets_ = new java.util.ArrayList<com.oddin.obb.Session.SessionMarket>(markets_);
-          bitField0_ |= 0x00000002;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.oddin.obb.Session.SessionMarket, com.oddin.obb.Session.SessionMarket.Builder, com.oddin.obb.Session.SessionMarketOrBuilder> marketsBuilder_;
-
-      /**
-       * <code>repeated .obb.SessionMarket markets = 4;</code>
-       */
-      public java.util.List<com.oddin.obb.Session.SessionMarket> getMarketsList() {
-        if (marketsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(markets_);
-        } else {
-          return marketsBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <code>repeated .obb.SessionMarket markets = 4;</code>
-       */
-      public int getMarketsCount() {
-        if (marketsBuilder_ == null) {
-          return markets_.size();
-        } else {
-          return marketsBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .obb.SessionMarket markets = 4;</code>
-       */
-      public com.oddin.obb.Session.SessionMarket getMarkets(int index) {
-        if (marketsBuilder_ == null) {
-          return markets_.get(index);
-        } else {
-          return marketsBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .obb.SessionMarket markets = 4;</code>
-       */
-      public Builder setMarkets(
-          int index, com.oddin.obb.Session.SessionMarket value) {
-        if (marketsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureMarketsIsMutable();
-          markets_.set(index, value);
-          onChanged();
-        } else {
-          marketsBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .obb.SessionMarket markets = 4;</code>
-       */
-      public Builder setMarkets(
-          int index, com.oddin.obb.Session.SessionMarket.Builder builderForValue) {
-        if (marketsBuilder_ == null) {
-          ensureMarketsIsMutable();
-          markets_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          marketsBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .obb.SessionMarket markets = 4;</code>
-       */
-      public Builder addMarkets(com.oddin.obb.Session.SessionMarket value) {
-        if (marketsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureMarketsIsMutable();
-          markets_.add(value);
-          onChanged();
-        } else {
-          marketsBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .obb.SessionMarket markets = 4;</code>
-       */
-      public Builder addMarkets(
-          int index, com.oddin.obb.Session.SessionMarket value) {
-        if (marketsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureMarketsIsMutable();
-          markets_.add(index, value);
-          onChanged();
-        } else {
-          marketsBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .obb.SessionMarket markets = 4;</code>
-       */
-      public Builder addMarkets(
-          com.oddin.obb.Session.SessionMarket.Builder builderForValue) {
-        if (marketsBuilder_ == null) {
-          ensureMarketsIsMutable();
-          markets_.add(builderForValue.build());
-          onChanged();
-        } else {
-          marketsBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .obb.SessionMarket markets = 4;</code>
-       */
-      public Builder addMarkets(
-          int index, com.oddin.obb.Session.SessionMarket.Builder builderForValue) {
-        if (marketsBuilder_ == null) {
-          ensureMarketsIsMutable();
-          markets_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          marketsBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .obb.SessionMarket markets = 4;</code>
-       */
-      public Builder addAllMarkets(
-          java.lang.Iterable<? extends com.oddin.obb.Session.SessionMarket> values) {
-        if (marketsBuilder_ == null) {
-          ensureMarketsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, markets_);
-          onChanged();
-        } else {
-          marketsBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .obb.SessionMarket markets = 4;</code>
-       */
-      public Builder clearMarkets() {
-        if (marketsBuilder_ == null) {
-          markets_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-          onChanged();
-        } else {
-          marketsBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .obb.SessionMarket markets = 4;</code>
-       */
-      public Builder removeMarkets(int index) {
-        if (marketsBuilder_ == null) {
-          ensureMarketsIsMutable();
-          markets_.remove(index);
-          onChanged();
-        } else {
-          marketsBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .obb.SessionMarket markets = 4;</code>
-       */
-      public com.oddin.obb.Session.SessionMarket.Builder getMarketsBuilder(
-          int index) {
-        return getMarketsFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .obb.SessionMarket markets = 4;</code>
-       */
-      public com.oddin.obb.Session.SessionMarketOrBuilder getMarketsOrBuilder(
-          int index) {
-        if (marketsBuilder_ == null) {
-          return markets_.get(index);  } else {
-          return marketsBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .obb.SessionMarket markets = 4;</code>
-       */
-      public java.util.List<? extends com.oddin.obb.Session.SessionMarketOrBuilder> 
-           getMarketsOrBuilderList() {
-        if (marketsBuilder_ != null) {
-          return marketsBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(markets_);
-        }
-      }
-      /**
-       * <code>repeated .obb.SessionMarket markets = 4;</code>
-       */
-      public com.oddin.obb.Session.SessionMarket.Builder addMarketsBuilder() {
-        return getMarketsFieldBuilder().addBuilder(
-            com.oddin.obb.Session.SessionMarket.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .obb.SessionMarket markets = 4;</code>
-       */
-      public com.oddin.obb.Session.SessionMarket.Builder addMarketsBuilder(
-          int index) {
-        return getMarketsFieldBuilder().addBuilder(
-            index, com.oddin.obb.Session.SessionMarket.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .obb.SessionMarket markets = 4;</code>
-       */
-      public java.util.List<com.oddin.obb.Session.SessionMarket.Builder> 
-           getMarketsBuilderList() {
-        return getMarketsFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.oddin.obb.Session.SessionMarket, com.oddin.obb.Session.SessionMarket.Builder, com.oddin.obb.Session.SessionMarketOrBuilder> 
-          getMarketsFieldBuilder() {
-        if (marketsBuilder_ == null) {
-          marketsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.oddin.obb.Session.SessionMarket, com.oddin.obb.Session.SessionMarket.Builder, com.oddin.obb.Session.SessionMarketOrBuilder>(
-                  markets_,
-                  ((bitField0_ & 0x00000002) != 0),
-                  getParentForChildren(),
-                  isClean());
-          markets_ = null;
-        }
-        return marketsBuilder_;
-      }
-
-      private com.oddin.obb.Session.SessionRejectReason rejectReason_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.oddin.obb.Session.SessionRejectReason, com.oddin.obb.Session.SessionRejectReason.Builder, com.oddin.obb.Session.SessionRejectReasonOrBuilder> rejectReasonBuilder_;
+          com.oddin.obb.Session.SessionCreateResponse.SessionCreated, com.oddin.obb.Session.SessionCreateResponse.SessionCreated.Builder, com.oddin.obb.Session.SessionCreateResponse.SessionCreatedOrBuilder> createdBuilder_;
       /**
        * <pre>
-       * Information about rejection reason.
+       * Successfully created session information.
        * </pre>
        *
-       * <code>.obb.SessionRejectReason reject_reason = 5;</code>
-       * @return Whether the rejectReason field is set.
+       * <code>.obb.SessionCreateResponse.SessionCreated created = 2;</code>
+       * @return Whether the created field is set.
        */
-      public boolean hasRejectReason() {
-        return rejectReasonBuilder_ != null || rejectReason_ != null;
+      @java.lang.Override
+      public boolean hasCreated() {
+        return statusCase_ == 2;
       }
       /**
        * <pre>
-       * Information about rejection reason.
+       * Successfully created session information.
        * </pre>
        *
-       * <code>.obb.SessionRejectReason reject_reason = 5;</code>
-       * @return The rejectReason.
+       * <code>.obb.SessionCreateResponse.SessionCreated created = 2;</code>
+       * @return The created.
        */
-      public com.oddin.obb.Session.SessionRejectReason getRejectReason() {
-        if (rejectReasonBuilder_ == null) {
-          return rejectReason_ == null ? com.oddin.obb.Session.SessionRejectReason.getDefaultInstance() : rejectReason_;
+      @java.lang.Override
+      public com.oddin.obb.Session.SessionCreateResponse.SessionCreated getCreated() {
+        if (createdBuilder_ == null) {
+          if (statusCase_ == 2) {
+            return (com.oddin.obb.Session.SessionCreateResponse.SessionCreated) status_;
+          }
+          return com.oddin.obb.Session.SessionCreateResponse.SessionCreated.getDefaultInstance();
         } else {
-          return rejectReasonBuilder_.getMessage();
+          if (statusCase_ == 2) {
+            return createdBuilder_.getMessage();
+          }
+          return com.oddin.obb.Session.SessionCreateResponse.SessionCreated.getDefaultInstance();
         }
       }
       /**
        * <pre>
-       * Information about rejection reason.
+       * Successfully created session information.
        * </pre>
        *
-       * <code>.obb.SessionRejectReason reject_reason = 5;</code>
+       * <code>.obb.SessionCreateResponse.SessionCreated created = 2;</code>
        */
-      public Builder setRejectReason(com.oddin.obb.Session.SessionRejectReason value) {
-        if (rejectReasonBuilder_ == null) {
+      public Builder setCreated(com.oddin.obb.Session.SessionCreateResponse.SessionCreated value) {
+        if (createdBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          rejectReason_ = value;
+          status_ = value;
           onChanged();
         } else {
-          rejectReasonBuilder_.setMessage(value);
+          createdBuilder_.setMessage(value);
         }
-
+        statusCase_ = 2;
         return this;
       }
       /**
        * <pre>
-       * Information about rejection reason.
+       * Successfully created session information.
        * </pre>
        *
-       * <code>.obb.SessionRejectReason reject_reason = 5;</code>
+       * <code>.obb.SessionCreateResponse.SessionCreated created = 2;</code>
        */
-      public Builder setRejectReason(
-          com.oddin.obb.Session.SessionRejectReason.Builder builderForValue) {
-        if (rejectReasonBuilder_ == null) {
-          rejectReason_ = builderForValue.build();
+      public Builder setCreated(
+          com.oddin.obb.Session.SessionCreateResponse.SessionCreated.Builder builderForValue) {
+        if (createdBuilder_ == null) {
+          status_ = builderForValue.build();
           onChanged();
         } else {
-          rejectReasonBuilder_.setMessage(builderForValue.build());
+          createdBuilder_.setMessage(builderForValue.build());
         }
-
+        statusCase_ = 2;
         return this;
       }
       /**
        * <pre>
-       * Information about rejection reason.
+       * Successfully created session information.
        * </pre>
        *
-       * <code>.obb.SessionRejectReason reject_reason = 5;</code>
+       * <code>.obb.SessionCreateResponse.SessionCreated created = 2;</code>
        */
-      public Builder mergeRejectReason(com.oddin.obb.Session.SessionRejectReason value) {
-        if (rejectReasonBuilder_ == null) {
-          if (rejectReason_ != null) {
-            rejectReason_ =
-              com.oddin.obb.Session.SessionRejectReason.newBuilder(rejectReason_).mergeFrom(value).buildPartial();
+      public Builder mergeCreated(com.oddin.obb.Session.SessionCreateResponse.SessionCreated value) {
+        if (createdBuilder_ == null) {
+          if (statusCase_ == 2 &&
+              status_ != com.oddin.obb.Session.SessionCreateResponse.SessionCreated.getDefaultInstance()) {
+            status_ = com.oddin.obb.Session.SessionCreateResponse.SessionCreated.newBuilder((com.oddin.obb.Session.SessionCreateResponse.SessionCreated) status_)
+                .mergeFrom(value).buildPartial();
           } else {
-            rejectReason_ = value;
+            status_ = value;
           }
           onChanged();
         } else {
-          rejectReasonBuilder_.mergeFrom(value);
+          if (statusCase_ == 2) {
+            createdBuilder_.mergeFrom(value);
+          } else {
+            createdBuilder_.setMessage(value);
+          }
         }
-
+        statusCase_ = 2;
         return this;
       }
       /**
        * <pre>
-       * Information about rejection reason.
+       * Successfully created session information.
        * </pre>
        *
-       * <code>.obb.SessionRejectReason reject_reason = 5;</code>
+       * <code>.obb.SessionCreateResponse.SessionCreated created = 2;</code>
        */
-      public Builder clearRejectReason() {
-        if (rejectReasonBuilder_ == null) {
-          rejectReason_ = null;
-          onChanged();
+      public Builder clearCreated() {
+        if (createdBuilder_ == null) {
+          if (statusCase_ == 2) {
+            statusCase_ = 0;
+            status_ = null;
+            onChanged();
+          }
         } else {
-          rejectReason_ = null;
-          rejectReasonBuilder_ = null;
+          if (statusCase_ == 2) {
+            statusCase_ = 0;
+            status_ = null;
+          }
+          createdBuilder_.clear();
         }
-
         return this;
       }
       /**
        * <pre>
-       * Information about rejection reason.
+       * Successfully created session information.
        * </pre>
        *
-       * <code>.obb.SessionRejectReason reject_reason = 5;</code>
+       * <code>.obb.SessionCreateResponse.SessionCreated created = 2;</code>
        */
-      public com.oddin.obb.Session.SessionRejectReason.Builder getRejectReasonBuilder() {
-        
-        onChanged();
-        return getRejectReasonFieldBuilder().getBuilder();
+      public com.oddin.obb.Session.SessionCreateResponse.SessionCreated.Builder getCreatedBuilder() {
+        return getCreatedFieldBuilder().getBuilder();
       }
       /**
        * <pre>
-       * Information about rejection reason.
+       * Successfully created session information.
        * </pre>
        *
-       * <code>.obb.SessionRejectReason reject_reason = 5;</code>
+       * <code>.obb.SessionCreateResponse.SessionCreated created = 2;</code>
        */
-      public com.oddin.obb.Session.SessionRejectReasonOrBuilder getRejectReasonOrBuilder() {
-        if (rejectReasonBuilder_ != null) {
-          return rejectReasonBuilder_.getMessageOrBuilder();
+      @java.lang.Override
+      public com.oddin.obb.Session.SessionCreateResponse.SessionCreatedOrBuilder getCreatedOrBuilder() {
+        if ((statusCase_ == 2) && (createdBuilder_ != null)) {
+          return createdBuilder_.getMessageOrBuilder();
         } else {
-          return rejectReason_ == null ?
-              com.oddin.obb.Session.SessionRejectReason.getDefaultInstance() : rejectReason_;
+          if (statusCase_ == 2) {
+            return (com.oddin.obb.Session.SessionCreateResponse.SessionCreated) status_;
+          }
+          return com.oddin.obb.Session.SessionCreateResponse.SessionCreated.getDefaultInstance();
         }
       }
       /**
        * <pre>
-       * Information about rejection reason.
+       * Successfully created session information.
        * </pre>
        *
-       * <code>.obb.SessionRejectReason reject_reason = 5;</code>
+       * <code>.obb.SessionCreateResponse.SessionCreated created = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.oddin.obb.Session.SessionRejectReason, com.oddin.obb.Session.SessionRejectReason.Builder, com.oddin.obb.Session.SessionRejectReasonOrBuilder> 
-          getRejectReasonFieldBuilder() {
-        if (rejectReasonBuilder_ == null) {
-          rejectReasonBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.oddin.obb.Session.SessionRejectReason, com.oddin.obb.Session.SessionRejectReason.Builder, com.oddin.obb.Session.SessionRejectReasonOrBuilder>(
-                  getRejectReason(),
+          com.oddin.obb.Session.SessionCreateResponse.SessionCreated, com.oddin.obb.Session.SessionCreateResponse.SessionCreated.Builder, com.oddin.obb.Session.SessionCreateResponse.SessionCreatedOrBuilder> 
+          getCreatedFieldBuilder() {
+        if (createdBuilder_ == null) {
+          if (!(statusCase_ == 2)) {
+            status_ = com.oddin.obb.Session.SessionCreateResponse.SessionCreated.getDefaultInstance();
+          }
+          createdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.oddin.obb.Session.SessionCreateResponse.SessionCreated, com.oddin.obb.Session.SessionCreateResponse.SessionCreated.Builder, com.oddin.obb.Session.SessionCreateResponse.SessionCreatedOrBuilder>(
+                  (com.oddin.obb.Session.SessionCreateResponse.SessionCreated) status_,
                   getParentForChildren(),
                   isClean());
-          rejectReason_ = null;
+          status_ = null;
         }
-        return rejectReasonBuilder_;
+        statusCase_ = 2;
+        onChanged();;
+        return createdBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.oddin.obb.Session.SessionCreateResponse.SessionRejected, com.oddin.obb.Session.SessionCreateResponse.SessionRejected.Builder, com.oddin.obb.Session.SessionCreateResponse.SessionRejectedOrBuilder> rejectedBuilder_;
+      /**
+       * <pre>
+       * Session creation was rejected.
+       * </pre>
+       *
+       * <code>.obb.SessionCreateResponse.SessionRejected rejected = 3;</code>
+       * @return Whether the rejected field is set.
+       */
+      @java.lang.Override
+      public boolean hasRejected() {
+        return statusCase_ == 3;
+      }
+      /**
+       * <pre>
+       * Session creation was rejected.
+       * </pre>
+       *
+       * <code>.obb.SessionCreateResponse.SessionRejected rejected = 3;</code>
+       * @return The rejected.
+       */
+      @java.lang.Override
+      public com.oddin.obb.Session.SessionCreateResponse.SessionRejected getRejected() {
+        if (rejectedBuilder_ == null) {
+          if (statusCase_ == 3) {
+            return (com.oddin.obb.Session.SessionCreateResponse.SessionRejected) status_;
+          }
+          return com.oddin.obb.Session.SessionCreateResponse.SessionRejected.getDefaultInstance();
+        } else {
+          if (statusCase_ == 3) {
+            return rejectedBuilder_.getMessage();
+          }
+          return com.oddin.obb.Session.SessionCreateResponse.SessionRejected.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * Session creation was rejected.
+       * </pre>
+       *
+       * <code>.obb.SessionCreateResponse.SessionRejected rejected = 3;</code>
+       */
+      public Builder setRejected(com.oddin.obb.Session.SessionCreateResponse.SessionRejected value) {
+        if (rejectedBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          status_ = value;
+          onChanged();
+        } else {
+          rejectedBuilder_.setMessage(value);
+        }
+        statusCase_ = 3;
+        return this;
+      }
+      /**
+       * <pre>
+       * Session creation was rejected.
+       * </pre>
+       *
+       * <code>.obb.SessionCreateResponse.SessionRejected rejected = 3;</code>
+       */
+      public Builder setRejected(
+          com.oddin.obb.Session.SessionCreateResponse.SessionRejected.Builder builderForValue) {
+        if (rejectedBuilder_ == null) {
+          status_ = builderForValue.build();
+          onChanged();
+        } else {
+          rejectedBuilder_.setMessage(builderForValue.build());
+        }
+        statusCase_ = 3;
+        return this;
+      }
+      /**
+       * <pre>
+       * Session creation was rejected.
+       * </pre>
+       *
+       * <code>.obb.SessionCreateResponse.SessionRejected rejected = 3;</code>
+       */
+      public Builder mergeRejected(com.oddin.obb.Session.SessionCreateResponse.SessionRejected value) {
+        if (rejectedBuilder_ == null) {
+          if (statusCase_ == 3 &&
+              status_ != com.oddin.obb.Session.SessionCreateResponse.SessionRejected.getDefaultInstance()) {
+            status_ = com.oddin.obb.Session.SessionCreateResponse.SessionRejected.newBuilder((com.oddin.obb.Session.SessionCreateResponse.SessionRejected) status_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            status_ = value;
+          }
+          onChanged();
+        } else {
+          if (statusCase_ == 3) {
+            rejectedBuilder_.mergeFrom(value);
+          } else {
+            rejectedBuilder_.setMessage(value);
+          }
+        }
+        statusCase_ = 3;
+        return this;
+      }
+      /**
+       * <pre>
+       * Session creation was rejected.
+       * </pre>
+       *
+       * <code>.obb.SessionCreateResponse.SessionRejected rejected = 3;</code>
+       */
+      public Builder clearRejected() {
+        if (rejectedBuilder_ == null) {
+          if (statusCase_ == 3) {
+            statusCase_ = 0;
+            status_ = null;
+            onChanged();
+          }
+        } else {
+          if (statusCase_ == 3) {
+            statusCase_ = 0;
+            status_ = null;
+          }
+          rejectedBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Session creation was rejected.
+       * </pre>
+       *
+       * <code>.obb.SessionCreateResponse.SessionRejected rejected = 3;</code>
+       */
+      public com.oddin.obb.Session.SessionCreateResponse.SessionRejected.Builder getRejectedBuilder() {
+        return getRejectedFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Session creation was rejected.
+       * </pre>
+       *
+       * <code>.obb.SessionCreateResponse.SessionRejected rejected = 3;</code>
+       */
+      @java.lang.Override
+      public com.oddin.obb.Session.SessionCreateResponse.SessionRejectedOrBuilder getRejectedOrBuilder() {
+        if ((statusCase_ == 3) && (rejectedBuilder_ != null)) {
+          return rejectedBuilder_.getMessageOrBuilder();
+        } else {
+          if (statusCase_ == 3) {
+            return (com.oddin.obb.Session.SessionCreateResponse.SessionRejected) status_;
+          }
+          return com.oddin.obb.Session.SessionCreateResponse.SessionRejected.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * Session creation was rejected.
+       * </pre>
+       *
+       * <code>.obb.SessionCreateResponse.SessionRejected rejected = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.oddin.obb.Session.SessionCreateResponse.SessionRejected, com.oddin.obb.Session.SessionCreateResponse.SessionRejected.Builder, com.oddin.obb.Session.SessionCreateResponse.SessionRejectedOrBuilder> 
+          getRejectedFieldBuilder() {
+        if (rejectedBuilder_ == null) {
+          if (!(statusCase_ == 3)) {
+            status_ = com.oddin.obb.Session.SessionCreateResponse.SessionRejected.getDefaultInstance();
+          }
+          rejectedBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.oddin.obb.Session.SessionCreateResponse.SessionRejected, com.oddin.obb.Session.SessionCreateResponse.SessionRejected.Builder, com.oddin.obb.Session.SessionCreateResponse.SessionRejectedOrBuilder>(
+                  (com.oddin.obb.Session.SessionCreateResponse.SessionRejected) status_,
+                  getParentForChildren(),
+                  isClean());
+          status_ = null;
+        }
+        statusCase_ = 3;
+        onChanged();;
+        return rejectedBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -6862,41 +5959,52 @@ public final class Session {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:obb.SessionCreateState)
+      // @@protoc_insertion_point(builder_scope:obb.SessionCreateResponse)
     }
 
-    // @@protoc_insertion_point(class_scope:obb.SessionCreateState)
-    private static final com.oddin.obb.Session.SessionCreateState DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:obb.SessionCreateResponse)
+    private static final com.oddin.obb.Session.SessionCreateResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.oddin.obb.Session.SessionCreateState();
+      DEFAULT_INSTANCE = new com.oddin.obb.Session.SessionCreateResponse();
     }
 
-    public static com.oddin.obb.Session.SessionCreateState getDefaultInstance() {
+    public static com.oddin.obb.Session.SessionCreateResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<SessionCreateState>
-        PARSER = new com.google.protobuf.AbstractParser<SessionCreateState>() {
+    private static final com.google.protobuf.Parser<SessionCreateResponse>
+        PARSER = new com.google.protobuf.AbstractParser<SessionCreateResponse>() {
       @java.lang.Override
-      public SessionCreateState parsePartialFrom(
+      public SessionCreateResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SessionCreateState(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
-    public static com.google.protobuf.Parser<SessionCreateState> parser() {
+    public static com.google.protobuf.Parser<SessionCreateResponse> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<SessionCreateState> getParserForType() {
+    public com.google.protobuf.Parser<SessionCreateResponse> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.oddin.obb.Session.SessionCreateState getDefaultInstanceForType() {
+    public com.oddin.obb.Session.SessionCreateResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -6907,26 +6015,26 @@ public final class Session {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
+     * e.g. “od:match:1234/1/1?map=1&amp;way=two”
+     * </pre>
+     *
      * <code>string selection_id = 1;</code>
      * @return The selectionId.
      */
     java.lang.String getSelectionId();
     /**
+     * <pre>
+     * Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
+     * e.g. “od:match:1234/1/1?map=1&amp;way=two”
+     * </pre>
+     *
      * <code>string selection_id = 1;</code>
      * @return The bytes for selectionId.
      */
     com.google.protobuf.ByteString
         getSelectionIdBytes();
-
-    /**
-     * <pre>
-     * Odds multiplied by 10000 and rounded to uint value.
-     * </pre>
-     *
-     * <code>uint64 odds = 2;</code>
-     * @return The odds.
-     */
-    long getOdds();
   }
   /**
    * Protobuf type {@code obb.SessionSelection}
@@ -6956,54 +6064,6 @@ public final class Session {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SessionSelection(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              selectionId_ = s;
-              break;
-            }
-            case 16: {
-
-              odds_ = input.readUInt64();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return com.oddin.obb.Session.internal_static_obb_SessionSelection_descriptor;
@@ -7020,6 +6080,11 @@ public final class Session {
     public static final int SELECTION_ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object selectionId_;
     /**
+     * <pre>
+     * Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
+     * e.g. “od:match:1234/1/1?map=1&amp;way=two”
+     * </pre>
+     *
      * <code>string selection_id = 1;</code>
      * @return The selectionId.
      */
@@ -7037,6 +6102,11 @@ public final class Session {
       }
     }
     /**
+     * <pre>
+     * Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
+     * e.g. “od:match:1234/1/1?map=1&amp;way=two”
+     * </pre>
+     *
      * <code>string selection_id = 1;</code>
      * @return The bytes for selectionId.
      */
@@ -7053,21 +6123,6 @@ public final class Session {
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
-    }
-
-    public static final int ODDS_FIELD_NUMBER = 2;
-    private long odds_;
-    /**
-     * <pre>
-     * Odds multiplied by 10000 and rounded to uint value.
-     * </pre>
-     *
-     * <code>uint64 odds = 2;</code>
-     * @return The odds.
-     */
-    @java.lang.Override
-    public long getOdds() {
-      return odds_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -7087,10 +6142,7 @@ public final class Session {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(selectionId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, selectionId_);
       }
-      if (odds_ != 0L) {
-        output.writeUInt64(2, odds_);
-      }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -7102,11 +6154,7 @@ public final class Session {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(selectionId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, selectionId_);
       }
-      if (odds_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(2, odds_);
-      }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -7123,9 +6171,7 @@ public final class Session {
 
       if (!getSelectionId()
           .equals(other.getSelectionId())) return false;
-      if (getOdds()
-          != other.getOdds()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -7138,10 +6184,7 @@ public final class Session {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + SELECTION_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSelectionId().hashCode();
-      hash = (37 * hash) + ODDS_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getOdds());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -7258,25 +6301,18 @@ public final class Session {
 
       // Construct using com.oddin.obb.Session.SessionSelection.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
         selectionId_ = "";
-
-        odds_ = 0L;
 
         return this;
       }
@@ -7305,7 +6341,6 @@ public final class Session {
       public com.oddin.obb.Session.SessionSelection buildPartial() {
         com.oddin.obb.Session.SessionSelection result = new com.oddin.obb.Session.SessionSelection(this);
         result.selectionId_ = selectionId_;
-        result.odds_ = odds_;
         onBuilt();
         return result;
       }
@@ -7358,10 +6393,7 @@ public final class Session {
           selectionId_ = other.selectionId_;
           onChanged();
         }
-        if (other.getOdds() != 0L) {
-          setOdds(other.getOdds());
-        }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -7376,22 +6408,45 @@ public final class Session {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.oddin.obb.Session.SessionSelection parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                selectionId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.oddin.obb.Session.SessionSelection) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
       private java.lang.Object selectionId_ = "";
       /**
+       * <pre>
+       * Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
+       * e.g. “od:match:1234/1/1?map=1&amp;way=two”
+       * </pre>
+       *
        * <code>string selection_id = 1;</code>
        * @return The selectionId.
        */
@@ -7408,6 +6463,11 @@ public final class Session {
         }
       }
       /**
+       * <pre>
+       * Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
+       * e.g. “od:match:1234/1/1?map=1&amp;way=two”
+       * </pre>
+       *
        * <code>string selection_id = 1;</code>
        * @return The bytes for selectionId.
        */
@@ -7425,6 +6485,11 @@ public final class Session {
         }
       }
       /**
+       * <pre>
+       * Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
+       * e.g. “od:match:1234/1/1?map=1&amp;way=two”
+       * </pre>
+       *
        * <code>string selection_id = 1;</code>
        * @param value The selectionId to set.
        * @return This builder for chaining.
@@ -7440,6 +6505,11 @@ public final class Session {
         return this;
       }
       /**
+       * <pre>
+       * Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
+       * e.g. “od:match:1234/1/1?map=1&amp;way=two”
+       * </pre>
+       *
        * <code>string selection_id = 1;</code>
        * @return This builder for chaining.
        */
@@ -7450,6 +6520,11 @@ public final class Session {
         return this;
       }
       /**
+       * <pre>
+       * Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
+       * e.g. “od:match:1234/1/1?map=1&amp;way=two”
+       * </pre>
+       *
        * <code>string selection_id = 1;</code>
        * @param value The bytes for selectionId to set.
        * @return This builder for chaining.
@@ -7462,49 +6537,6 @@ public final class Session {
   checkByteStringIsUtf8(value);
         
         selectionId_ = value;
-        onChanged();
-        return this;
-      }
-
-      private long odds_ ;
-      /**
-       * <pre>
-       * Odds multiplied by 10000 and rounded to uint value.
-       * </pre>
-       *
-       * <code>uint64 odds = 2;</code>
-       * @return The odds.
-       */
-      @java.lang.Override
-      public long getOdds() {
-        return odds_;
-      }
-      /**
-       * <pre>
-       * Odds multiplied by 10000 and rounded to uint value.
-       * </pre>
-       *
-       * <code>uint64 odds = 2;</code>
-       * @param value The odds to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOdds(long value) {
-        
-        odds_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Odds multiplied by 10000 and rounded to uint value.
-       * </pre>
-       *
-       * <code>uint64 odds = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearOdds() {
-        
-        odds_ = 0L;
         onChanged();
         return this;
       }
@@ -7541,7 +6573,18 @@ public final class Session {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SessionSelection(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -7566,17 +6609,31 @@ public final class Session {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * The ID using the same values as our odds feed in XML.
+     * </pre>
+     *
      * <code>uint32 market_id = 1;</code>
      * @return The marketId.
      */
     int getMarketId();
 
     /**
+     * <pre>
+     * The specifier is using the same values as our odds feed in XML.
+     * e.g. "variant=way:three|way=three|map=1"
+     * </pre>
+     *
      * <code>string specifiers = 2;</code>
      * @return The specifiers.
      */
     java.lang.String getSpecifiers();
     /**
+     * <pre>
+     * The specifier is using the same values as our odds feed in XML.
+     * e.g. "variant=way:three|way=three|map=1"
+     * </pre>
+     *
      * <code>string specifiers = 2;</code>
      * @return The bytes for specifiers.
      */
@@ -7584,24 +6641,44 @@ public final class Session {
         getSpecifiersBytes();
 
     /**
+     * <pre>
+     * List of available outcomes for the market.
+     * </pre>
+     *
      * <code>repeated .obb.SessionMarketOutcome outcomes = 3;</code>
      */
     java.util.List<com.oddin.obb.Session.SessionMarketOutcome> 
         getOutcomesList();
     /**
+     * <pre>
+     * List of available outcomes for the market.
+     * </pre>
+     *
      * <code>repeated .obb.SessionMarketOutcome outcomes = 3;</code>
      */
     com.oddin.obb.Session.SessionMarketOutcome getOutcomes(int index);
     /**
+     * <pre>
+     * List of available outcomes for the market.
+     * </pre>
+     *
      * <code>repeated .obb.SessionMarketOutcome outcomes = 3;</code>
      */
     int getOutcomesCount();
     /**
+     * <pre>
+     * List of available outcomes for the market.
+     * </pre>
+     *
      * <code>repeated .obb.SessionMarketOutcome outcomes = 3;</code>
      */
     java.util.List<? extends com.oddin.obb.Session.SessionMarketOutcomeOrBuilder> 
         getOutcomesOrBuilderList();
     /**
+     * <pre>
+     * List of available outcomes for the market.
+     * </pre>
+     *
      * <code>repeated .obb.SessionMarketOutcome outcomes = 3;</code>
      */
     com.oddin.obb.Session.SessionMarketOutcomeOrBuilder getOutcomesOrBuilder(
@@ -7636,67 +6713,6 @@ public final class Session {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SessionMarket(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              marketId_ = input.readUInt32();
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              specifiers_ = s;
-              break;
-            }
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                outcomes_ = new java.util.ArrayList<com.oddin.obb.Session.SessionMarketOutcome>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              outcomes_.add(
-                  input.readMessage(com.oddin.obb.Session.SessionMarketOutcome.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          outcomes_ = java.util.Collections.unmodifiableList(outcomes_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return com.oddin.obb.Session.internal_static_obb_SessionMarket_descriptor;
@@ -7713,6 +6729,10 @@ public final class Session {
     public static final int MARKET_ID_FIELD_NUMBER = 1;
     private int marketId_;
     /**
+     * <pre>
+     * The ID using the same values as our odds feed in XML.
+     * </pre>
+     *
      * <code>uint32 market_id = 1;</code>
      * @return The marketId.
      */
@@ -7724,6 +6744,11 @@ public final class Session {
     public static final int SPECIFIERS_FIELD_NUMBER = 2;
     private volatile java.lang.Object specifiers_;
     /**
+     * <pre>
+     * The specifier is using the same values as our odds feed in XML.
+     * e.g. "variant=way:three|way=three|map=1"
+     * </pre>
+     *
      * <code>string specifiers = 2;</code>
      * @return The specifiers.
      */
@@ -7741,6 +6766,11 @@ public final class Session {
       }
     }
     /**
+     * <pre>
+     * The specifier is using the same values as our odds feed in XML.
+     * e.g. "variant=way:three|way=three|map=1"
+     * </pre>
+     *
      * <code>string specifiers = 2;</code>
      * @return The bytes for specifiers.
      */
@@ -7762,6 +6792,10 @@ public final class Session {
     public static final int OUTCOMES_FIELD_NUMBER = 3;
     private java.util.List<com.oddin.obb.Session.SessionMarketOutcome> outcomes_;
     /**
+     * <pre>
+     * List of available outcomes for the market.
+     * </pre>
+     *
      * <code>repeated .obb.SessionMarketOutcome outcomes = 3;</code>
      */
     @java.lang.Override
@@ -7769,6 +6803,10 @@ public final class Session {
       return outcomes_;
     }
     /**
+     * <pre>
+     * List of available outcomes for the market.
+     * </pre>
+     *
      * <code>repeated .obb.SessionMarketOutcome outcomes = 3;</code>
      */
     @java.lang.Override
@@ -7777,6 +6815,10 @@ public final class Session {
       return outcomes_;
     }
     /**
+     * <pre>
+     * List of available outcomes for the market.
+     * </pre>
+     *
      * <code>repeated .obb.SessionMarketOutcome outcomes = 3;</code>
      */
     @java.lang.Override
@@ -7784,6 +6826,10 @@ public final class Session {
       return outcomes_.size();
     }
     /**
+     * <pre>
+     * List of available outcomes for the market.
+     * </pre>
+     *
      * <code>repeated .obb.SessionMarketOutcome outcomes = 3;</code>
      */
     @java.lang.Override
@@ -7791,6 +6837,10 @@ public final class Session {
       return outcomes_.get(index);
     }
     /**
+     * <pre>
+     * List of available outcomes for the market.
+     * </pre>
+     *
      * <code>repeated .obb.SessionMarketOutcome outcomes = 3;</code>
      */
     @java.lang.Override
@@ -7822,7 +6872,7 @@ public final class Session {
       for (int i = 0; i < outcomes_.size(); i++) {
         output.writeMessage(3, outcomes_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -7842,7 +6892,7 @@ public final class Session {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, outcomes_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -7863,7 +6913,7 @@ public final class Session {
           .equals(other.getSpecifiers())) return false;
       if (!getOutcomesList()
           .equals(other.getOutcomesList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -7882,7 +6932,7 @@ public final class Session {
         hash = (37 * hash) + OUTCOMES_FIELD_NUMBER;
         hash = (53 * hash) + getOutcomesList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -7999,19 +7049,13 @@ public final class Session {
 
       // Construct using com.oddin.obb.Session.SessionMarket.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getOutcomesFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -8022,10 +7066,11 @@ public final class Session {
 
         if (outcomesBuilder_ == null) {
           outcomes_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          outcomes_ = null;
           outcomesBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -8145,7 +7190,7 @@ public final class Session {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -8160,23 +7205,63 @@ public final class Session {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.oddin.obb.Session.SessionMarket parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                marketId_ = input.readUInt32();
+
+                break;
+              } // case 8
+              case 18: {
+                specifiers_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+              case 26: {
+                com.oddin.obb.Session.SessionMarketOutcome m =
+                    input.readMessage(
+                        com.oddin.obb.Session.SessionMarketOutcome.parser(),
+                        extensionRegistry);
+                if (outcomesBuilder_ == null) {
+                  ensureOutcomesIsMutable();
+                  outcomes_.add(m);
+                } else {
+                  outcomesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.oddin.obb.Session.SessionMarket) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
 
       private int marketId_ ;
       /**
+       * <pre>
+       * The ID using the same values as our odds feed in XML.
+       * </pre>
+       *
        * <code>uint32 market_id = 1;</code>
        * @return The marketId.
        */
@@ -8185,6 +7270,10 @@ public final class Session {
         return marketId_;
       }
       /**
+       * <pre>
+       * The ID using the same values as our odds feed in XML.
+       * </pre>
+       *
        * <code>uint32 market_id = 1;</code>
        * @param value The marketId to set.
        * @return This builder for chaining.
@@ -8196,6 +7285,10 @@ public final class Session {
         return this;
       }
       /**
+       * <pre>
+       * The ID using the same values as our odds feed in XML.
+       * </pre>
+       *
        * <code>uint32 market_id = 1;</code>
        * @return This builder for chaining.
        */
@@ -8208,6 +7301,11 @@ public final class Session {
 
       private java.lang.Object specifiers_ = "";
       /**
+       * <pre>
+       * The specifier is using the same values as our odds feed in XML.
+       * e.g. "variant=way:three|way=three|map=1"
+       * </pre>
+       *
        * <code>string specifiers = 2;</code>
        * @return The specifiers.
        */
@@ -8224,6 +7322,11 @@ public final class Session {
         }
       }
       /**
+       * <pre>
+       * The specifier is using the same values as our odds feed in XML.
+       * e.g. "variant=way:three|way=three|map=1"
+       * </pre>
+       *
        * <code>string specifiers = 2;</code>
        * @return The bytes for specifiers.
        */
@@ -8241,6 +7344,11 @@ public final class Session {
         }
       }
       /**
+       * <pre>
+       * The specifier is using the same values as our odds feed in XML.
+       * e.g. "variant=way:three|way=three|map=1"
+       * </pre>
+       *
        * <code>string specifiers = 2;</code>
        * @param value The specifiers to set.
        * @return This builder for chaining.
@@ -8256,6 +7364,11 @@ public final class Session {
         return this;
       }
       /**
+       * <pre>
+       * The specifier is using the same values as our odds feed in XML.
+       * e.g. "variant=way:three|way=three|map=1"
+       * </pre>
+       *
        * <code>string specifiers = 2;</code>
        * @return This builder for chaining.
        */
@@ -8266,6 +7379,11 @@ public final class Session {
         return this;
       }
       /**
+       * <pre>
+       * The specifier is using the same values as our odds feed in XML.
+       * e.g. "variant=way:three|way=three|map=1"
+       * </pre>
+       *
        * <code>string specifiers = 2;</code>
        * @param value The bytes for specifiers to set.
        * @return This builder for chaining.
@@ -8295,6 +7413,10 @@ public final class Session {
           com.oddin.obb.Session.SessionMarketOutcome, com.oddin.obb.Session.SessionMarketOutcome.Builder, com.oddin.obb.Session.SessionMarketOutcomeOrBuilder> outcomesBuilder_;
 
       /**
+       * <pre>
+       * List of available outcomes for the market.
+       * </pre>
+       *
        * <code>repeated .obb.SessionMarketOutcome outcomes = 3;</code>
        */
       public java.util.List<com.oddin.obb.Session.SessionMarketOutcome> getOutcomesList() {
@@ -8305,6 +7427,10 @@ public final class Session {
         }
       }
       /**
+       * <pre>
+       * List of available outcomes for the market.
+       * </pre>
+       *
        * <code>repeated .obb.SessionMarketOutcome outcomes = 3;</code>
        */
       public int getOutcomesCount() {
@@ -8315,6 +7441,10 @@ public final class Session {
         }
       }
       /**
+       * <pre>
+       * List of available outcomes for the market.
+       * </pre>
+       *
        * <code>repeated .obb.SessionMarketOutcome outcomes = 3;</code>
        */
       public com.oddin.obb.Session.SessionMarketOutcome getOutcomes(int index) {
@@ -8325,6 +7455,10 @@ public final class Session {
         }
       }
       /**
+       * <pre>
+       * List of available outcomes for the market.
+       * </pre>
+       *
        * <code>repeated .obb.SessionMarketOutcome outcomes = 3;</code>
        */
       public Builder setOutcomes(
@@ -8342,6 +7476,10 @@ public final class Session {
         return this;
       }
       /**
+       * <pre>
+       * List of available outcomes for the market.
+       * </pre>
+       *
        * <code>repeated .obb.SessionMarketOutcome outcomes = 3;</code>
        */
       public Builder setOutcomes(
@@ -8356,6 +7494,10 @@ public final class Session {
         return this;
       }
       /**
+       * <pre>
+       * List of available outcomes for the market.
+       * </pre>
+       *
        * <code>repeated .obb.SessionMarketOutcome outcomes = 3;</code>
        */
       public Builder addOutcomes(com.oddin.obb.Session.SessionMarketOutcome value) {
@@ -8372,6 +7514,10 @@ public final class Session {
         return this;
       }
       /**
+       * <pre>
+       * List of available outcomes for the market.
+       * </pre>
+       *
        * <code>repeated .obb.SessionMarketOutcome outcomes = 3;</code>
        */
       public Builder addOutcomes(
@@ -8389,6 +7535,10 @@ public final class Session {
         return this;
       }
       /**
+       * <pre>
+       * List of available outcomes for the market.
+       * </pre>
+       *
        * <code>repeated .obb.SessionMarketOutcome outcomes = 3;</code>
        */
       public Builder addOutcomes(
@@ -8403,6 +7553,10 @@ public final class Session {
         return this;
       }
       /**
+       * <pre>
+       * List of available outcomes for the market.
+       * </pre>
+       *
        * <code>repeated .obb.SessionMarketOutcome outcomes = 3;</code>
        */
       public Builder addOutcomes(
@@ -8417,6 +7571,10 @@ public final class Session {
         return this;
       }
       /**
+       * <pre>
+       * List of available outcomes for the market.
+       * </pre>
+       *
        * <code>repeated .obb.SessionMarketOutcome outcomes = 3;</code>
        */
       public Builder addAllOutcomes(
@@ -8432,6 +7590,10 @@ public final class Session {
         return this;
       }
       /**
+       * <pre>
+       * List of available outcomes for the market.
+       * </pre>
+       *
        * <code>repeated .obb.SessionMarketOutcome outcomes = 3;</code>
        */
       public Builder clearOutcomes() {
@@ -8445,6 +7607,10 @@ public final class Session {
         return this;
       }
       /**
+       * <pre>
+       * List of available outcomes for the market.
+       * </pre>
+       *
        * <code>repeated .obb.SessionMarketOutcome outcomes = 3;</code>
        */
       public Builder removeOutcomes(int index) {
@@ -8458,6 +7624,10 @@ public final class Session {
         return this;
       }
       /**
+       * <pre>
+       * List of available outcomes for the market.
+       * </pre>
+       *
        * <code>repeated .obb.SessionMarketOutcome outcomes = 3;</code>
        */
       public com.oddin.obb.Session.SessionMarketOutcome.Builder getOutcomesBuilder(
@@ -8465,6 +7635,10 @@ public final class Session {
         return getOutcomesFieldBuilder().getBuilder(index);
       }
       /**
+       * <pre>
+       * List of available outcomes for the market.
+       * </pre>
+       *
        * <code>repeated .obb.SessionMarketOutcome outcomes = 3;</code>
        */
       public com.oddin.obb.Session.SessionMarketOutcomeOrBuilder getOutcomesOrBuilder(
@@ -8475,6 +7649,10 @@ public final class Session {
         }
       }
       /**
+       * <pre>
+       * List of available outcomes for the market.
+       * </pre>
+       *
        * <code>repeated .obb.SessionMarketOutcome outcomes = 3;</code>
        */
       public java.util.List<? extends com.oddin.obb.Session.SessionMarketOutcomeOrBuilder> 
@@ -8486,6 +7664,10 @@ public final class Session {
         }
       }
       /**
+       * <pre>
+       * List of available outcomes for the market.
+       * </pre>
+       *
        * <code>repeated .obb.SessionMarketOutcome outcomes = 3;</code>
        */
       public com.oddin.obb.Session.SessionMarketOutcome.Builder addOutcomesBuilder() {
@@ -8493,6 +7675,10 @@ public final class Session {
             com.oddin.obb.Session.SessionMarketOutcome.getDefaultInstance());
       }
       /**
+       * <pre>
+       * List of available outcomes for the market.
+       * </pre>
+       *
        * <code>repeated .obb.SessionMarketOutcome outcomes = 3;</code>
        */
       public com.oddin.obb.Session.SessionMarketOutcome.Builder addOutcomesBuilder(
@@ -8501,6 +7687,10 @@ public final class Session {
             index, com.oddin.obb.Session.SessionMarketOutcome.getDefaultInstance());
       }
       /**
+       * <pre>
+       * List of available outcomes for the market.
+       * </pre>
+       *
        * <code>repeated .obb.SessionMarketOutcome outcomes = 3;</code>
        */
       public java.util.List<com.oddin.obb.Session.SessionMarketOutcome.Builder> 
@@ -8554,7 +7744,18 @@ public final class Session {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SessionMarket(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -8579,10 +7780,26 @@ public final class Session {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 outcome_id = 1;</code>
+     * <pre>
+     * The ID using the same values as our odds feed in &lt;outcome&gt; XML tag.
+     * e.g. "10" for classic market or "od:player:123" for dynamic markets.
+     * </pre>
+     *
+     * <code>string outcome_id = 1;</code>
      * @return The outcomeId.
      */
-    int getOutcomeId();
+    java.lang.String getOutcomeId();
+    /**
+     * <pre>
+     * The ID using the same values as our odds feed in &lt;outcome&gt; XML tag.
+     * e.g. "10" for classic market or "od:player:123" for dynamic markets.
+     * </pre>
+     *
+     * <code>string outcome_id = 1;</code>
+     * @return The bytes for outcomeId.
+     */
+    com.google.protobuf.ByteString
+        getOutcomeIdBytes();
 
     /**
      * <pre>
@@ -8607,6 +7824,7 @@ public final class Session {
       super(builder);
     }
     private SessionMarketOutcome() {
+      outcomeId_ = "";
     }
 
     @java.lang.Override
@@ -8620,53 +7838,6 @@ public final class Session {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private SessionMarketOutcome(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              outcomeId_ = input.readUInt32();
-              break;
-            }
-            case 16: {
-
-              odds_ = input.readUInt64();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -8682,14 +7853,51 @@ public final class Session {
     }
 
     public static final int OUTCOME_ID_FIELD_NUMBER = 1;
-    private int outcomeId_;
+    private volatile java.lang.Object outcomeId_;
     /**
-     * <code>uint32 outcome_id = 1;</code>
+     * <pre>
+     * The ID using the same values as our odds feed in &lt;outcome&gt; XML tag.
+     * e.g. "10" for classic market or "od:player:123" for dynamic markets.
+     * </pre>
+     *
+     * <code>string outcome_id = 1;</code>
      * @return The outcomeId.
      */
     @java.lang.Override
-    public int getOutcomeId() {
-      return outcomeId_;
+    public java.lang.String getOutcomeId() {
+      java.lang.Object ref = outcomeId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        outcomeId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The ID using the same values as our odds feed in &lt;outcome&gt; XML tag.
+     * e.g. "10" for classic market or "od:player:123" for dynamic markets.
+     * </pre>
+     *
+     * <code>string outcome_id = 1;</code>
+     * @return The bytes for outcomeId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getOutcomeIdBytes() {
+      java.lang.Object ref = outcomeId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        outcomeId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int ODDS_FIELD_NUMBER = 2;
@@ -8721,13 +7929,13 @@ public final class Session {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (outcomeId_ != 0) {
-        output.writeUInt32(1, outcomeId_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(outcomeId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, outcomeId_);
       }
       if (odds_ != 0L) {
         output.writeUInt64(2, odds_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -8736,15 +7944,14 @@ public final class Session {
       if (size != -1) return size;
 
       size = 0;
-      if (outcomeId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, outcomeId_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(outcomeId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, outcomeId_);
       }
       if (odds_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(2, odds_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -8759,11 +7966,11 @@ public final class Session {
       }
       com.oddin.obb.Session.SessionMarketOutcome other = (com.oddin.obb.Session.SessionMarketOutcome) obj;
 
-      if (getOutcomeId()
-          != other.getOutcomeId()) return false;
+      if (!getOutcomeId()
+          .equals(other.getOutcomeId())) return false;
       if (getOdds()
           != other.getOdds()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -8775,11 +7982,11 @@ public final class Session {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + OUTCOME_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getOutcomeId();
+      hash = (53 * hash) + getOutcomeId().hashCode();
       hash = (37 * hash) + ODDS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getOdds());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -8896,23 +8103,18 @@ public final class Session {
 
       // Construct using com.oddin.obb.Session.SessionMarketOutcome.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        outcomeId_ = 0;
+        outcomeId_ = "";
 
         odds_ = 0L;
 
@@ -8992,13 +8194,14 @@ public final class Session {
 
       public Builder mergeFrom(com.oddin.obb.Session.SessionMarketOutcome other) {
         if (other == com.oddin.obb.Session.SessionMarketOutcome.getDefaultInstance()) return this;
-        if (other.getOutcomeId() != 0) {
-          setOutcomeId(other.getOutcomeId());
+        if (!other.getOutcomeId().isEmpty()) {
+          outcomeId_ = other.outcomeId_;
+          onChanged();
         }
         if (other.getOdds() != 0L) {
           setOdds(other.getOdds());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -9013,47 +8216,140 @@ public final class Session {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.oddin.obb.Session.SessionMarketOutcome parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                outcomeId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+              case 16: {
+                odds_ = input.readUInt64();
+
+                break;
+              } // case 16
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.oddin.obb.Session.SessionMarketOutcome) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
-      private int outcomeId_ ;
+      private java.lang.Object outcomeId_ = "";
       /**
-       * <code>uint32 outcome_id = 1;</code>
+       * <pre>
+       * The ID using the same values as our odds feed in &lt;outcome&gt; XML tag.
+       * e.g. "10" for classic market or "od:player:123" for dynamic markets.
+       * </pre>
+       *
+       * <code>string outcome_id = 1;</code>
        * @return The outcomeId.
        */
-      @java.lang.Override
-      public int getOutcomeId() {
-        return outcomeId_;
+      public java.lang.String getOutcomeId() {
+        java.lang.Object ref = outcomeId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          outcomeId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>uint32 outcome_id = 1;</code>
+       * <pre>
+       * The ID using the same values as our odds feed in &lt;outcome&gt; XML tag.
+       * e.g. "10" for classic market or "od:player:123" for dynamic markets.
+       * </pre>
+       *
+       * <code>string outcome_id = 1;</code>
+       * @return The bytes for outcomeId.
+       */
+      public com.google.protobuf.ByteString
+          getOutcomeIdBytes() {
+        java.lang.Object ref = outcomeId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          outcomeId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The ID using the same values as our odds feed in &lt;outcome&gt; XML tag.
+       * e.g. "10" for classic market or "od:player:123" for dynamic markets.
+       * </pre>
+       *
+       * <code>string outcome_id = 1;</code>
        * @param value The outcomeId to set.
        * @return This builder for chaining.
        */
-      public Builder setOutcomeId(int value) {
-        
+      public Builder setOutcomeId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         outcomeId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 outcome_id = 1;</code>
+       * <pre>
+       * The ID using the same values as our odds feed in &lt;outcome&gt; XML tag.
+       * e.g. "10" for classic market or "od:player:123" for dynamic markets.
+       * </pre>
+       *
+       * <code>string outcome_id = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearOutcomeId() {
         
-        outcomeId_ = 0;
+        outcomeId_ = getDefaultInstance().getOutcomeId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The ID using the same values as our odds feed in &lt;outcome&gt; XML tag.
+       * e.g. "10" for classic market or "od:player:123" for dynamic markets.
+       * </pre>
+       *
+       * <code>string outcome_id = 1;</code>
+       * @param value The bytes for outcomeId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOutcomeIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        outcomeId_ = value;
         onChanged();
         return this;
       }
@@ -9133,7 +8429,18 @@ public final class Session {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SessionMarketOutcome(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -9153,72 +8460,98 @@ public final class Session {
 
   }
 
-  public interface SessionInfoOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:obb.SessionInfo)
+  public interface SessionInfoRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:obb.SessionInfoRequest)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string request_id = 1;</code>
-     * @return The requestId.
-     */
-    java.lang.String getRequestId();
-    /**
-     * <code>string request_id = 1;</code>
-     * @return The bytes for requestId.
-     */
-    com.google.protobuf.ByteString
-        getRequestIdBytes();
-
-    /**
-     * <code>string session_id = 2;</code>
+     * <pre>
+     * Session ID created by operator.
+     * </pre>
+     *
+     * <code>string session_id = 1;</code>
      * @return The sessionId.
      */
     java.lang.String getSessionId();
     /**
-     * <code>string session_id = 2;</code>
+     * <pre>
+     * Session ID created by operator.
+     * </pre>
+     *
+     * <code>string session_id = 1;</code>
      * @return The bytes for sessionId.
      */
     com.google.protobuf.ByteString
         getSessionIdBytes();
 
     /**
-     * <code>repeated .obb.SessionSelection selections = 3;</code>
+     * <pre>
+     * List of selections used for the OBB combination.
+     * </pre>
+     *
+     * <code>repeated .obb.SessionSelection selections = 2;</code>
      */
     java.util.List<com.oddin.obb.Session.SessionSelection> 
         getSelectionsList();
     /**
-     * <code>repeated .obb.SessionSelection selections = 3;</code>
+     * <pre>
+     * List of selections used for the OBB combination.
+     * </pre>
+     *
+     * <code>repeated .obb.SessionSelection selections = 2;</code>
      */
     com.oddin.obb.Session.SessionSelection getSelections(int index);
     /**
-     * <code>repeated .obb.SessionSelection selections = 3;</code>
+     * <pre>
+     * List of selections used for the OBB combination.
+     * </pre>
+     *
+     * <code>repeated .obb.SessionSelection selections = 2;</code>
      */
     int getSelectionsCount();
     /**
-     * <code>repeated .obb.SessionSelection selections = 3;</code>
+     * <pre>
+     * List of selections used for the OBB combination.
+     * </pre>
+     *
+     * <code>repeated .obb.SessionSelection selections = 2;</code>
      */
     java.util.List<? extends com.oddin.obb.Session.SessionSelectionOrBuilder> 
         getSelectionsOrBuilderList();
     /**
-     * <code>repeated .obb.SessionSelection selections = 3;</code>
+     * <pre>
+     * List of selections used for the OBB combination.
+     * </pre>
+     *
+     * <code>repeated .obb.SessionSelection selections = 2;</code>
      */
     com.oddin.obb.Session.SessionSelectionOrBuilder getSelectionsOrBuilder(
         int index);
+
+    /**
+     * <pre>
+     * Final odds for the selected combination of picks.
+     * Odds multiplied by 10000 and rounded to uint value.
+     * </pre>
+     *
+     * <code>uint64 odds = 3;</code>
+     * @return The odds.
+     */
+    long getOdds();
   }
   /**
-   * Protobuf type {@code obb.SessionInfo}
+   * Protobuf type {@code obb.SessionInfoRequest}
    */
-  public static final class SessionInfo extends
+  public static final class SessionInfoRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:obb.SessionInfo)
-      SessionInfoOrBuilder {
+      // @@protoc_insertion_point(message_implements:obb.SessionInfoRequest)
+      SessionInfoRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use SessionInfo.newBuilder() to construct.
-    private SessionInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use SessionInfoRequest.newBuilder() to construct.
+    private SessionInfoRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private SessionInfo() {
-      requestId_ = "";
+    private SessionInfoRequest() {
       sessionId_ = "";
       selections_ = java.util.Collections.emptyList();
     }
@@ -9227,7 +8560,7 @@ public final class Session {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new SessionInfo();
+      return new SessionInfoRequest();
     }
 
     @java.lang.Override
@@ -9235,123 +8568,27 @@ public final class Session {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SessionInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              requestId_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              sessionId_ = s;
-              break;
-            }
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                selections_ = new java.util.ArrayList<com.oddin.obb.Session.SessionSelection>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              selections_.add(
-                  input.readMessage(com.oddin.obb.Session.SessionSelection.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          selections_ = java.util.Collections.unmodifiableList(selections_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.oddin.obb.Session.internal_static_obb_SessionInfo_descriptor;
+      return com.oddin.obb.Session.internal_static_obb_SessionInfoRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.oddin.obb.Session.internal_static_obb_SessionInfo_fieldAccessorTable
+      return com.oddin.obb.Session.internal_static_obb_SessionInfoRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.oddin.obb.Session.SessionInfo.class, com.oddin.obb.Session.SessionInfo.Builder.class);
+              com.oddin.obb.Session.SessionInfoRequest.class, com.oddin.obb.Session.SessionInfoRequest.Builder.class);
     }
 
-    public static final int REQUEST_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object requestId_;
-    /**
-     * <code>string request_id = 1;</code>
-     * @return The requestId.
-     */
-    @java.lang.Override
-    public java.lang.String getRequestId() {
-      java.lang.Object ref = requestId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        requestId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string request_id = 1;</code>
-     * @return The bytes for requestId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getRequestIdBytes() {
-      java.lang.Object ref = requestId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        requestId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int SESSION_ID_FIELD_NUMBER = 2;
+    public static final int SESSION_ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object sessionId_;
     /**
-     * <code>string session_id = 2;</code>
+     * <pre>
+     * Session ID created by operator.
+     * </pre>
+     *
+     * <code>string session_id = 1;</code>
      * @return The sessionId.
      */
     @java.lang.Override
@@ -9368,7 +8605,11 @@ public final class Session {
       }
     }
     /**
-     * <code>string session_id = 2;</code>
+     * <pre>
+     * Session ID created by operator.
+     * </pre>
+     *
+     * <code>string session_id = 1;</code>
      * @return The bytes for sessionId.
      */
     @java.lang.Override
@@ -9386,17 +8627,25 @@ public final class Session {
       }
     }
 
-    public static final int SELECTIONS_FIELD_NUMBER = 3;
+    public static final int SELECTIONS_FIELD_NUMBER = 2;
     private java.util.List<com.oddin.obb.Session.SessionSelection> selections_;
     /**
-     * <code>repeated .obb.SessionSelection selections = 3;</code>
+     * <pre>
+     * List of selections used for the OBB combination.
+     * </pre>
+     *
+     * <code>repeated .obb.SessionSelection selections = 2;</code>
      */
     @java.lang.Override
     public java.util.List<com.oddin.obb.Session.SessionSelection> getSelectionsList() {
       return selections_;
     }
     /**
-     * <code>repeated .obb.SessionSelection selections = 3;</code>
+     * <pre>
+     * List of selections used for the OBB combination.
+     * </pre>
+     *
+     * <code>repeated .obb.SessionSelection selections = 2;</code>
      */
     @java.lang.Override
     public java.util.List<? extends com.oddin.obb.Session.SessionSelectionOrBuilder> 
@@ -9404,26 +8653,54 @@ public final class Session {
       return selections_;
     }
     /**
-     * <code>repeated .obb.SessionSelection selections = 3;</code>
+     * <pre>
+     * List of selections used for the OBB combination.
+     * </pre>
+     *
+     * <code>repeated .obb.SessionSelection selections = 2;</code>
      */
     @java.lang.Override
     public int getSelectionsCount() {
       return selections_.size();
     }
     /**
-     * <code>repeated .obb.SessionSelection selections = 3;</code>
+     * <pre>
+     * List of selections used for the OBB combination.
+     * </pre>
+     *
+     * <code>repeated .obb.SessionSelection selections = 2;</code>
      */
     @java.lang.Override
     public com.oddin.obb.Session.SessionSelection getSelections(int index) {
       return selections_.get(index);
     }
     /**
-     * <code>repeated .obb.SessionSelection selections = 3;</code>
+     * <pre>
+     * List of selections used for the OBB combination.
+     * </pre>
+     *
+     * <code>repeated .obb.SessionSelection selections = 2;</code>
      */
     @java.lang.Override
     public com.oddin.obb.Session.SessionSelectionOrBuilder getSelectionsOrBuilder(
         int index) {
       return selections_.get(index);
+    }
+
+    public static final int ODDS_FIELD_NUMBER = 3;
+    private long odds_;
+    /**
+     * <pre>
+     * Final odds for the selected combination of picks.
+     * Odds multiplied by 10000 and rounded to uint value.
+     * </pre>
+     *
+     * <code>uint64 odds = 3;</code>
+     * @return The odds.
+     */
+    @java.lang.Override
+    public long getOdds() {
+      return odds_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -9440,16 +8717,16 @@ public final class Session {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, requestId_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sessionId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, sessionId_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, sessionId_);
       }
       for (int i = 0; i < selections_.size(); i++) {
-        output.writeMessage(3, selections_.get(i));
+        output.writeMessage(2, selections_.get(i));
       }
-      unknownFields.writeTo(output);
+      if (odds_ != 0L) {
+        output.writeUInt64(3, odds_);
+      }
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -9458,17 +8735,18 @@ public final class Session {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, requestId_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sessionId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, sessionId_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, sessionId_);
       }
       for (int i = 0; i < selections_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, selections_.get(i));
+          .computeMessageSize(2, selections_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      if (odds_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(3, odds_);
+      }
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -9478,18 +8756,18 @@ public final class Session {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.oddin.obb.Session.SessionInfo)) {
+      if (!(obj instanceof com.oddin.obb.Session.SessionInfoRequest)) {
         return super.equals(obj);
       }
-      com.oddin.obb.Session.SessionInfo other = (com.oddin.obb.Session.SessionInfo) obj;
+      com.oddin.obb.Session.SessionInfoRequest other = (com.oddin.obb.Session.SessionInfoRequest) obj;
 
-      if (!getRequestId()
-          .equals(other.getRequestId())) return false;
       if (!getSessionId()
           .equals(other.getSessionId())) return false;
       if (!getSelectionsList()
           .equals(other.getSelectionsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (getOdds()
+          != other.getOdds()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -9500,82 +8778,83 @@ public final class Session {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getRequestId().hashCode();
       hash = (37 * hash) + SESSION_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSessionId().hashCode();
       if (getSelectionsCount() > 0) {
         hash = (37 * hash) + SELECTIONS_FIELD_NUMBER;
         hash = (53 * hash) + getSelectionsList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (37 * hash) + ODDS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getOdds());
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static com.oddin.obb.Session.SessionInfo parseFrom(
+    public static com.oddin.obb.Session.SessionInfoRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.obb.Session.SessionInfo parseFrom(
+    public static com.oddin.obb.Session.SessionInfoRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.obb.Session.SessionInfo parseFrom(
+    public static com.oddin.obb.Session.SessionInfoRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.obb.Session.SessionInfo parseFrom(
+    public static com.oddin.obb.Session.SessionInfoRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.obb.Session.SessionInfo parseFrom(byte[] data)
+    public static com.oddin.obb.Session.SessionInfoRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.obb.Session.SessionInfo parseFrom(
+    public static com.oddin.obb.Session.SessionInfoRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.obb.Session.SessionInfo parseFrom(java.io.InputStream input)
+    public static com.oddin.obb.Session.SessionInfoRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.oddin.obb.Session.SessionInfo parseFrom(
+    public static com.oddin.obb.Session.SessionInfoRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.oddin.obb.Session.SessionInfo parseDelimitedFrom(java.io.InputStream input)
+    public static com.oddin.obb.Session.SessionInfoRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.oddin.obb.Session.SessionInfo parseDelimitedFrom(
+    public static com.oddin.obb.Session.SessionInfoRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.oddin.obb.Session.SessionInfo parseFrom(
+    public static com.oddin.obb.Session.SessionInfoRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.oddin.obb.Session.SessionInfo parseFrom(
+    public static com.oddin.obb.Session.SessionInfoRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -9588,7 +8867,7 @@ public final class Session {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.oddin.obb.Session.SessionInfo prototype) {
+    public static Builder newBuilder(com.oddin.obb.Session.SessionInfoRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -9604,71 +8883,66 @@ public final class Session {
       return builder;
     }
     /**
-     * Protobuf type {@code obb.SessionInfo}
+     * Protobuf type {@code obb.SessionInfoRequest}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:obb.SessionInfo)
-        com.oddin.obb.Session.SessionInfoOrBuilder {
+        // @@protoc_insertion_point(builder_implements:obb.SessionInfoRequest)
+        com.oddin.obb.Session.SessionInfoRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.oddin.obb.Session.internal_static_obb_SessionInfo_descriptor;
+        return com.oddin.obb.Session.internal_static_obb_SessionInfoRequest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.oddin.obb.Session.internal_static_obb_SessionInfo_fieldAccessorTable
+        return com.oddin.obb.Session.internal_static_obb_SessionInfoRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.oddin.obb.Session.SessionInfo.class, com.oddin.obb.Session.SessionInfo.Builder.class);
+                com.oddin.obb.Session.SessionInfoRequest.class, com.oddin.obb.Session.SessionInfoRequest.Builder.class);
       }
 
-      // Construct using com.oddin.obb.Session.SessionInfo.newBuilder()
+      // Construct using com.oddin.obb.Session.SessionInfoRequest.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getSelectionsFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        requestId_ = "";
-
         sessionId_ = "";
 
         if (selectionsBuilder_ == null) {
           selections_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          selections_ = null;
           selectionsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        odds_ = 0L;
+
         return this;
       }
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.oddin.obb.Session.internal_static_obb_SessionInfo_descriptor;
+        return com.oddin.obb.Session.internal_static_obb_SessionInfoRequest_descriptor;
       }
 
       @java.lang.Override
-      public com.oddin.obb.Session.SessionInfo getDefaultInstanceForType() {
-        return com.oddin.obb.Session.SessionInfo.getDefaultInstance();
+      public com.oddin.obb.Session.SessionInfoRequest getDefaultInstanceForType() {
+        return com.oddin.obb.Session.SessionInfoRequest.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.oddin.obb.Session.SessionInfo build() {
-        com.oddin.obb.Session.SessionInfo result = buildPartial();
+      public com.oddin.obb.Session.SessionInfoRequest build() {
+        com.oddin.obb.Session.SessionInfoRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -9676,10 +8950,9 @@ public final class Session {
       }
 
       @java.lang.Override
-      public com.oddin.obb.Session.SessionInfo buildPartial() {
-        com.oddin.obb.Session.SessionInfo result = new com.oddin.obb.Session.SessionInfo(this);
+      public com.oddin.obb.Session.SessionInfoRequest buildPartial() {
+        com.oddin.obb.Session.SessionInfoRequest result = new com.oddin.obb.Session.SessionInfoRequest(this);
         int from_bitField0_ = bitField0_;
-        result.requestId_ = requestId_;
         result.sessionId_ = sessionId_;
         if (selectionsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
@@ -9690,6 +8963,7 @@ public final class Session {
         } else {
           result.selections_ = selectionsBuilder_.build();
         }
+        result.odds_ = odds_;
         onBuilt();
         return result;
       }
@@ -9728,20 +9002,16 @@ public final class Session {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.oddin.obb.Session.SessionInfo) {
-          return mergeFrom((com.oddin.obb.Session.SessionInfo)other);
+        if (other instanceof com.oddin.obb.Session.SessionInfoRequest) {
+          return mergeFrom((com.oddin.obb.Session.SessionInfoRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.oddin.obb.Session.SessionInfo other) {
-        if (other == com.oddin.obb.Session.SessionInfo.getDefaultInstance()) return this;
-        if (!other.getRequestId().isEmpty()) {
-          requestId_ = other.requestId_;
-          onChanged();
-        }
+      public Builder mergeFrom(com.oddin.obb.Session.SessionInfoRequest other) {
+        if (other == com.oddin.obb.Session.SessionInfoRequest.getDefaultInstance()) return this;
         if (!other.getSessionId().isEmpty()) {
           sessionId_ = other.sessionId_;
           onChanged();
@@ -9772,7 +9042,10 @@ public final class Session {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        if (other.getOdds() != 0L) {
+          setOdds(other.getOdds());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -9787,100 +9060,64 @@ public final class Session {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.oddin.obb.Session.SessionInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                sessionId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+              case 18: {
+                com.oddin.obb.Session.SessionSelection m =
+                    input.readMessage(
+                        com.oddin.obb.Session.SessionSelection.parser(),
+                        extensionRegistry);
+                if (selectionsBuilder_ == null) {
+                  ensureSelectionsIsMutable();
+                  selections_.add(m);
+                } else {
+                  selectionsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+              case 24: {
+                odds_ = input.readUInt64();
+
+                break;
+              } // case 24
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.oddin.obb.Session.SessionInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
 
-      private java.lang.Object requestId_ = "";
-      /**
-       * <code>string request_id = 1;</code>
-       * @return The requestId.
-       */
-      public java.lang.String getRequestId() {
-        java.lang.Object ref = requestId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          requestId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string request_id = 1;</code>
-       * @return The bytes for requestId.
-       */
-      public com.google.protobuf.ByteString
-          getRequestIdBytes() {
-        java.lang.Object ref = requestId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          requestId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string request_id = 1;</code>
-       * @param value The requestId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRequestId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        requestId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string request_id = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRequestId() {
-        
-        requestId_ = getDefaultInstance().getRequestId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string request_id = 1;</code>
-       * @param value The bytes for requestId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRequestIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        requestId_ = value;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object sessionId_ = "";
       /**
-       * <code>string session_id = 2;</code>
+       * <pre>
+       * Session ID created by operator.
+       * </pre>
+       *
+       * <code>string session_id = 1;</code>
        * @return The sessionId.
        */
       public java.lang.String getSessionId() {
@@ -9896,7 +9133,11 @@ public final class Session {
         }
       }
       /**
-       * <code>string session_id = 2;</code>
+       * <pre>
+       * Session ID created by operator.
+       * </pre>
+       *
+       * <code>string session_id = 1;</code>
        * @return The bytes for sessionId.
        */
       public com.google.protobuf.ByteString
@@ -9913,7 +9154,11 @@ public final class Session {
         }
       }
       /**
-       * <code>string session_id = 2;</code>
+       * <pre>
+       * Session ID created by operator.
+       * </pre>
+       *
+       * <code>string session_id = 1;</code>
        * @param value The sessionId to set.
        * @return This builder for chaining.
        */
@@ -9928,7 +9173,11 @@ public final class Session {
         return this;
       }
       /**
-       * <code>string session_id = 2;</code>
+       * <pre>
+       * Session ID created by operator.
+       * </pre>
+       *
+       * <code>string session_id = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearSessionId() {
@@ -9938,7 +9187,11 @@ public final class Session {
         return this;
       }
       /**
-       * <code>string session_id = 2;</code>
+       * <pre>
+       * Session ID created by operator.
+       * </pre>
+       *
+       * <code>string session_id = 1;</code>
        * @param value The bytes for sessionId to set.
        * @return This builder for chaining.
        */
@@ -9967,7 +9220,11 @@ public final class Session {
           com.oddin.obb.Session.SessionSelection, com.oddin.obb.Session.SessionSelection.Builder, com.oddin.obb.Session.SessionSelectionOrBuilder> selectionsBuilder_;
 
       /**
-       * <code>repeated .obb.SessionSelection selections = 3;</code>
+       * <pre>
+       * List of selections used for the OBB combination.
+       * </pre>
+       *
+       * <code>repeated .obb.SessionSelection selections = 2;</code>
        */
       public java.util.List<com.oddin.obb.Session.SessionSelection> getSelectionsList() {
         if (selectionsBuilder_ == null) {
@@ -9977,7 +9234,11 @@ public final class Session {
         }
       }
       /**
-       * <code>repeated .obb.SessionSelection selections = 3;</code>
+       * <pre>
+       * List of selections used for the OBB combination.
+       * </pre>
+       *
+       * <code>repeated .obb.SessionSelection selections = 2;</code>
        */
       public int getSelectionsCount() {
         if (selectionsBuilder_ == null) {
@@ -9987,7 +9248,11 @@ public final class Session {
         }
       }
       /**
-       * <code>repeated .obb.SessionSelection selections = 3;</code>
+       * <pre>
+       * List of selections used for the OBB combination.
+       * </pre>
+       *
+       * <code>repeated .obb.SessionSelection selections = 2;</code>
        */
       public com.oddin.obb.Session.SessionSelection getSelections(int index) {
         if (selectionsBuilder_ == null) {
@@ -9997,7 +9262,11 @@ public final class Session {
         }
       }
       /**
-       * <code>repeated .obb.SessionSelection selections = 3;</code>
+       * <pre>
+       * List of selections used for the OBB combination.
+       * </pre>
+       *
+       * <code>repeated .obb.SessionSelection selections = 2;</code>
        */
       public Builder setSelections(
           int index, com.oddin.obb.Session.SessionSelection value) {
@@ -10014,7 +9283,11 @@ public final class Session {
         return this;
       }
       /**
-       * <code>repeated .obb.SessionSelection selections = 3;</code>
+       * <pre>
+       * List of selections used for the OBB combination.
+       * </pre>
+       *
+       * <code>repeated .obb.SessionSelection selections = 2;</code>
        */
       public Builder setSelections(
           int index, com.oddin.obb.Session.SessionSelection.Builder builderForValue) {
@@ -10028,7 +9301,11 @@ public final class Session {
         return this;
       }
       /**
-       * <code>repeated .obb.SessionSelection selections = 3;</code>
+       * <pre>
+       * List of selections used for the OBB combination.
+       * </pre>
+       *
+       * <code>repeated .obb.SessionSelection selections = 2;</code>
        */
       public Builder addSelections(com.oddin.obb.Session.SessionSelection value) {
         if (selectionsBuilder_ == null) {
@@ -10044,7 +9321,11 @@ public final class Session {
         return this;
       }
       /**
-       * <code>repeated .obb.SessionSelection selections = 3;</code>
+       * <pre>
+       * List of selections used for the OBB combination.
+       * </pre>
+       *
+       * <code>repeated .obb.SessionSelection selections = 2;</code>
        */
       public Builder addSelections(
           int index, com.oddin.obb.Session.SessionSelection value) {
@@ -10061,7 +9342,11 @@ public final class Session {
         return this;
       }
       /**
-       * <code>repeated .obb.SessionSelection selections = 3;</code>
+       * <pre>
+       * List of selections used for the OBB combination.
+       * </pre>
+       *
+       * <code>repeated .obb.SessionSelection selections = 2;</code>
        */
       public Builder addSelections(
           com.oddin.obb.Session.SessionSelection.Builder builderForValue) {
@@ -10075,7 +9360,11 @@ public final class Session {
         return this;
       }
       /**
-       * <code>repeated .obb.SessionSelection selections = 3;</code>
+       * <pre>
+       * List of selections used for the OBB combination.
+       * </pre>
+       *
+       * <code>repeated .obb.SessionSelection selections = 2;</code>
        */
       public Builder addSelections(
           int index, com.oddin.obb.Session.SessionSelection.Builder builderForValue) {
@@ -10089,7 +9378,11 @@ public final class Session {
         return this;
       }
       /**
-       * <code>repeated .obb.SessionSelection selections = 3;</code>
+       * <pre>
+       * List of selections used for the OBB combination.
+       * </pre>
+       *
+       * <code>repeated .obb.SessionSelection selections = 2;</code>
        */
       public Builder addAllSelections(
           java.lang.Iterable<? extends com.oddin.obb.Session.SessionSelection> values) {
@@ -10104,7 +9397,11 @@ public final class Session {
         return this;
       }
       /**
-       * <code>repeated .obb.SessionSelection selections = 3;</code>
+       * <pre>
+       * List of selections used for the OBB combination.
+       * </pre>
+       *
+       * <code>repeated .obb.SessionSelection selections = 2;</code>
        */
       public Builder clearSelections() {
         if (selectionsBuilder_ == null) {
@@ -10117,7 +9414,11 @@ public final class Session {
         return this;
       }
       /**
-       * <code>repeated .obb.SessionSelection selections = 3;</code>
+       * <pre>
+       * List of selections used for the OBB combination.
+       * </pre>
+       *
+       * <code>repeated .obb.SessionSelection selections = 2;</code>
        */
       public Builder removeSelections(int index) {
         if (selectionsBuilder_ == null) {
@@ -10130,14 +9431,22 @@ public final class Session {
         return this;
       }
       /**
-       * <code>repeated .obb.SessionSelection selections = 3;</code>
+       * <pre>
+       * List of selections used for the OBB combination.
+       * </pre>
+       *
+       * <code>repeated .obb.SessionSelection selections = 2;</code>
        */
       public com.oddin.obb.Session.SessionSelection.Builder getSelectionsBuilder(
           int index) {
         return getSelectionsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .obb.SessionSelection selections = 3;</code>
+       * <pre>
+       * List of selections used for the OBB combination.
+       * </pre>
+       *
+       * <code>repeated .obb.SessionSelection selections = 2;</code>
        */
       public com.oddin.obb.Session.SessionSelectionOrBuilder getSelectionsOrBuilder(
           int index) {
@@ -10147,7 +9456,11 @@ public final class Session {
         }
       }
       /**
-       * <code>repeated .obb.SessionSelection selections = 3;</code>
+       * <pre>
+       * List of selections used for the OBB combination.
+       * </pre>
+       *
+       * <code>repeated .obb.SessionSelection selections = 2;</code>
        */
       public java.util.List<? extends com.oddin.obb.Session.SessionSelectionOrBuilder> 
            getSelectionsOrBuilderList() {
@@ -10158,14 +9471,22 @@ public final class Session {
         }
       }
       /**
-       * <code>repeated .obb.SessionSelection selections = 3;</code>
+       * <pre>
+       * List of selections used for the OBB combination.
+       * </pre>
+       *
+       * <code>repeated .obb.SessionSelection selections = 2;</code>
        */
       public com.oddin.obb.Session.SessionSelection.Builder addSelectionsBuilder() {
         return getSelectionsFieldBuilder().addBuilder(
             com.oddin.obb.Session.SessionSelection.getDefaultInstance());
       }
       /**
-       * <code>repeated .obb.SessionSelection selections = 3;</code>
+       * <pre>
+       * List of selections used for the OBB combination.
+       * </pre>
+       *
+       * <code>repeated .obb.SessionSelection selections = 2;</code>
        */
       public com.oddin.obb.Session.SessionSelection.Builder addSelectionsBuilder(
           int index) {
@@ -10173,7 +9494,11 @@ public final class Session {
             index, com.oddin.obb.Session.SessionSelection.getDefaultInstance());
       }
       /**
-       * <code>repeated .obb.SessionSelection selections = 3;</code>
+       * <pre>
+       * List of selections used for the OBB combination.
+       * </pre>
+       *
+       * <code>repeated .obb.SessionSelection selections = 2;</code>
        */
       public java.util.List<com.oddin.obb.Session.SessionSelection.Builder> 
            getSelectionsBuilderList() {
@@ -10193,6 +9518,52 @@ public final class Session {
         }
         return selectionsBuilder_;
       }
+
+      private long odds_ ;
+      /**
+       * <pre>
+       * Final odds for the selected combination of picks.
+       * Odds multiplied by 10000 and rounded to uint value.
+       * </pre>
+       *
+       * <code>uint64 odds = 3;</code>
+       * @return The odds.
+       */
+      @java.lang.Override
+      public long getOdds() {
+        return odds_;
+      }
+      /**
+       * <pre>
+       * Final odds for the selected combination of picks.
+       * Odds multiplied by 10000 and rounded to uint value.
+       * </pre>
+       *
+       * <code>uint64 odds = 3;</code>
+       * @param value The odds to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOdds(long value) {
+        
+        odds_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Final odds for the selected combination of picks.
+       * Odds multiplied by 10000 and rounded to uint value.
+       * </pre>
+       *
+       * <code>uint64 odds = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOdds() {
+        
+        odds_ = 0L;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -10206,110 +9577,158 @@ public final class Session {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:obb.SessionInfo)
+      // @@protoc_insertion_point(builder_scope:obb.SessionInfoRequest)
     }
 
-    // @@protoc_insertion_point(class_scope:obb.SessionInfo)
-    private static final com.oddin.obb.Session.SessionInfo DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:obb.SessionInfoRequest)
+    private static final com.oddin.obb.Session.SessionInfoRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.oddin.obb.Session.SessionInfo();
+      DEFAULT_INSTANCE = new com.oddin.obb.Session.SessionInfoRequest();
     }
 
-    public static com.oddin.obb.Session.SessionInfo getDefaultInstance() {
+    public static com.oddin.obb.Session.SessionInfoRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<SessionInfo>
-        PARSER = new com.google.protobuf.AbstractParser<SessionInfo>() {
+    private static final com.google.protobuf.Parser<SessionInfoRequest>
+        PARSER = new com.google.protobuf.AbstractParser<SessionInfoRequest>() {
       @java.lang.Override
-      public SessionInfo parsePartialFrom(
+      public SessionInfoRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SessionInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
-    public static com.google.protobuf.Parser<SessionInfo> parser() {
+    public static com.google.protobuf.Parser<SessionInfoRequest> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<SessionInfo> getParserForType() {
+    public com.google.protobuf.Parser<SessionInfoRequest> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.oddin.obb.Session.SessionInfo getDefaultInstanceForType() {
+    public com.oddin.obb.Session.SessionInfoRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface SessionInfoStateOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:obb.SessionInfoState)
+  public interface SessionInfoResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:obb.SessionInfoResponse)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string request_id = 1;</code>
-     * @return The requestId.
+     * <pre>
+     * Session ID created by operator.
+     * </pre>
+     *
+     * <code>string session_id = 1;</code>
+     * @return The sessionId.
      */
-    java.lang.String getRequestId();
+    java.lang.String getSessionId();
     /**
-     * <code>string request_id = 1;</code>
-     * @return The bytes for requestId.
+     * <pre>
+     * Session ID created by operator.
+     * </pre>
+     *
+     * <code>string session_id = 1;</code>
+     * @return The bytes for sessionId.
      */
     com.google.protobuf.ByteString
-        getRequestIdBytes();
+        getSessionIdBytes();
 
     /**
-     * <code>.obb.InvalidSessionReason invalid_reason = 2;</code>
-     * @return Whether the invalidReason field is set.
+     * <pre>
+     * The session is valid and can still be used.
+     * </pre>
+     *
+     * <code>.obb.SessionInfoResponse.ValidSession valid = 2;</code>
+     * @return Whether the valid field is set.
      */
-    boolean hasInvalidReason();
+    boolean hasValid();
     /**
-     * <code>.obb.InvalidSessionReason invalid_reason = 2;</code>
-     * @return The invalidReason.
+     * <pre>
+     * The session is valid and can still be used.
+     * </pre>
+     *
+     * <code>.obb.SessionInfoResponse.ValidSession valid = 2;</code>
+     * @return The valid.
      */
-    com.oddin.obb.Session.InvalidSessionReason getInvalidReason();
+    com.oddin.obb.Session.SessionInfoResponse.ValidSession getValid();
     /**
-     * <code>.obb.InvalidSessionReason invalid_reason = 2;</code>
+     * <pre>
+     * The session is valid and can still be used.
+     * </pre>
+     *
+     * <code>.obb.SessionInfoResponse.ValidSession valid = 2;</code>
      */
-    com.oddin.obb.Session.InvalidSessionReasonOrBuilder getInvalidReasonOrBuilder();
+    com.oddin.obb.Session.SessionInfoResponse.ValidSessionOrBuilder getValidOrBuilder();
 
     /**
-     * <code>.obb.SessionStatus status = 3;</code>
-     * @return The enum numeric value on the wire for status.
+     * <pre>
+     * Session is not valid anymore.
+     * </pre>
+     *
+     * <code>.obb.SessionInfoResponse.InvalidSession invalid = 3;</code>
+     * @return Whether the invalid field is set.
      */
-    int getStatusValue();
+    boolean hasInvalid();
     /**
-     * <code>.obb.SessionStatus status = 3;</code>
-     * @return The status.
+     * <pre>
+     * Session is not valid anymore.
+     * </pre>
+     *
+     * <code>.obb.SessionInfoResponse.InvalidSession invalid = 3;</code>
+     * @return The invalid.
      */
-    com.oddin.obb.Session.SessionStatus getStatus();
+    com.oddin.obb.Session.SessionInfoResponse.InvalidSession getInvalid();
+    /**
+     * <pre>
+     * Session is not valid anymore.
+     * </pre>
+     *
+     * <code>.obb.SessionInfoResponse.InvalidSession invalid = 3;</code>
+     */
+    com.oddin.obb.Session.SessionInfoResponse.InvalidSessionOrBuilder getInvalidOrBuilder();
+
+    public com.oddin.obb.Session.SessionInfoResponse.StatusCase getStatusCase();
   }
   /**
-   * Protobuf type {@code obb.SessionInfoState}
+   * Protobuf type {@code obb.SessionInfoResponse}
    */
-  public static final class SessionInfoState extends
+  public static final class SessionInfoResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:obb.SessionInfoState)
-      SessionInfoStateOrBuilder {
+      // @@protoc_insertion_point(message_implements:obb.SessionInfoResponse)
+      SessionInfoResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use SessionInfoState.newBuilder() to construct.
-    private SessionInfoState(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use SessionInfoResponse.newBuilder() to construct.
+    private SessionInfoResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private SessionInfoState() {
-      requestId_ = "";
-      status_ = 0;
+    private SessionInfoResponse() {
+      sessionId_ = "";
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new SessionInfoState();
+      return new SessionInfoResponse();
     }
 
     @java.lang.Override
@@ -10317,162 +9736,1247 @@ public final class Session {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SessionInfoState(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              requestId_ = s;
-              break;
-            }
-            case 18: {
-              com.oddin.obb.Session.InvalidSessionReason.Builder subBuilder = null;
-              if (invalidReason_ != null) {
-                subBuilder = invalidReason_.toBuilder();
-              }
-              invalidReason_ = input.readMessage(com.oddin.obb.Session.InvalidSessionReason.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(invalidReason_);
-                invalidReason_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 24: {
-              int rawValue = input.readEnum();
-
-              status_ = rawValue;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.oddin.obb.Session.internal_static_obb_SessionInfoState_descriptor;
+      return com.oddin.obb.Session.internal_static_obb_SessionInfoResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.oddin.obb.Session.internal_static_obb_SessionInfoState_fieldAccessorTable
+      return com.oddin.obb.Session.internal_static_obb_SessionInfoResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.oddin.obb.Session.SessionInfoState.class, com.oddin.obb.Session.SessionInfoState.Builder.class);
+              com.oddin.obb.Session.SessionInfoResponse.class, com.oddin.obb.Session.SessionInfoResponse.Builder.class);
     }
 
-    public static final int REQUEST_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object requestId_;
+    public interface ValidSessionOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:obb.SessionInfoResponse.ValidSession)
+        com.google.protobuf.MessageOrBuilder {
+    }
     /**
-     * <code>string request_id = 1;</code>
-     * @return The requestId.
+     * Protobuf type {@code obb.SessionInfoResponse.ValidSession}
+     */
+    public static final class ValidSession extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:obb.SessionInfoResponse.ValidSession)
+        ValidSessionOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use ValidSession.newBuilder() to construct.
+      private ValidSession(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private ValidSession() {
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new ValidSession();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.oddin.obb.Session.internal_static_obb_SessionInfoResponse_ValidSession_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.oddin.obb.Session.internal_static_obb_SessionInfoResponse_ValidSession_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.oddin.obb.Session.SessionInfoResponse.ValidSession.class, com.oddin.obb.Session.SessionInfoResponse.ValidSession.Builder.class);
+      }
+
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof com.oddin.obb.Session.SessionInfoResponse.ValidSession)) {
+          return super.equals(obj);
+        }
+        com.oddin.obb.Session.SessionInfoResponse.ValidSession other = (com.oddin.obb.Session.SessionInfoResponse.ValidSession) obj;
+
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.oddin.obb.Session.SessionInfoResponse.ValidSession parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.oddin.obb.Session.SessionInfoResponse.ValidSession parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.oddin.obb.Session.SessionInfoResponse.ValidSession parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.oddin.obb.Session.SessionInfoResponse.ValidSession parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.oddin.obb.Session.SessionInfoResponse.ValidSession parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.oddin.obb.Session.SessionInfoResponse.ValidSession parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.oddin.obb.Session.SessionInfoResponse.ValidSession parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.oddin.obb.Session.SessionInfoResponse.ValidSession parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.oddin.obb.Session.SessionInfoResponse.ValidSession parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static com.oddin.obb.Session.SessionInfoResponse.ValidSession parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.oddin.obb.Session.SessionInfoResponse.ValidSession parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.oddin.obb.Session.SessionInfoResponse.ValidSession parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(com.oddin.obb.Session.SessionInfoResponse.ValidSession prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code obb.SessionInfoResponse.ValidSession}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:obb.SessionInfoResponse.ValidSession)
+          com.oddin.obb.Session.SessionInfoResponse.ValidSessionOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return com.oddin.obb.Session.internal_static_obb_SessionInfoResponse_ValidSession_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.oddin.obb.Session.internal_static_obb_SessionInfoResponse_ValidSession_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.oddin.obb.Session.SessionInfoResponse.ValidSession.class, com.oddin.obb.Session.SessionInfoResponse.ValidSession.Builder.class);
+        }
+
+        // Construct using com.oddin.obb.Session.SessionInfoResponse.ValidSession.newBuilder()
+        private Builder() {
+
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return com.oddin.obb.Session.internal_static_obb_SessionInfoResponse_ValidSession_descriptor;
+        }
+
+        @java.lang.Override
+        public com.oddin.obb.Session.SessionInfoResponse.ValidSession getDefaultInstanceForType() {
+          return com.oddin.obb.Session.SessionInfoResponse.ValidSession.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.oddin.obb.Session.SessionInfoResponse.ValidSession build() {
+          com.oddin.obb.Session.SessionInfoResponse.ValidSession result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.oddin.obb.Session.SessionInfoResponse.ValidSession buildPartial() {
+          com.oddin.obb.Session.SessionInfoResponse.ValidSession result = new com.oddin.obb.Session.SessionInfoResponse.ValidSession(this);
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.setField(field, value);
+        }
+        @java.lang.Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+        @java.lang.Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.oddin.obb.Session.SessionInfoResponse.ValidSession) {
+            return mergeFrom((com.oddin.obb.Session.SessionInfoResponse.ValidSession)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(com.oddin.obb.Session.SessionInfoResponse.ValidSession other) {
+          if (other == com.oddin.obb.Session.SessionInfoResponse.ValidSession.getDefaultInstance()) return this;
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:obb.SessionInfoResponse.ValidSession)
+      }
+
+      // @@protoc_insertion_point(class_scope:obb.SessionInfoResponse.ValidSession)
+      private static final com.oddin.obb.Session.SessionInfoResponse.ValidSession DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new com.oddin.obb.Session.SessionInfoResponse.ValidSession();
+      }
+
+      public static com.oddin.obb.Session.SessionInfoResponse.ValidSession getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<ValidSession>
+          PARSER = new com.google.protobuf.AbstractParser<ValidSession>() {
+        @java.lang.Override
+        public ValidSession parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
+        }
+      };
+
+      public static com.google.protobuf.Parser<ValidSession> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<ValidSession> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.oddin.obb.Session.SessionInfoResponse.ValidSession getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
+    public interface InvalidSessionOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:obb.SessionInfoResponse.InvalidSession)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <pre>
+       * It will provide more detailed information about why the session is no longer valid.
+       * </pre>
+       *
+       * <code>.obb.InvalidSessionReason reason = 1;</code>
+       * @return Whether the reason field is set.
+       */
+      boolean hasReason();
+      /**
+       * <pre>
+       * It will provide more detailed information about why the session is no longer valid.
+       * </pre>
+       *
+       * <code>.obb.InvalidSessionReason reason = 1;</code>
+       * @return The reason.
+       */
+      com.oddin.obb.Session.InvalidSessionReason getReason();
+      /**
+       * <pre>
+       * It will provide more detailed information about why the session is no longer valid.
+       * </pre>
+       *
+       * <code>.obb.InvalidSessionReason reason = 1;</code>
+       */
+      com.oddin.obb.Session.InvalidSessionReasonOrBuilder getReasonOrBuilder();
+    }
+    /**
+     * Protobuf type {@code obb.SessionInfoResponse.InvalidSession}
+     */
+    public static final class InvalidSession extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:obb.SessionInfoResponse.InvalidSession)
+        InvalidSessionOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use InvalidSession.newBuilder() to construct.
+      private InvalidSession(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private InvalidSession() {
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new InvalidSession();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.oddin.obb.Session.internal_static_obb_SessionInfoResponse_InvalidSession_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.oddin.obb.Session.internal_static_obb_SessionInfoResponse_InvalidSession_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.oddin.obb.Session.SessionInfoResponse.InvalidSession.class, com.oddin.obb.Session.SessionInfoResponse.InvalidSession.Builder.class);
+      }
+
+      public static final int REASON_FIELD_NUMBER = 1;
+      private com.oddin.obb.Session.InvalidSessionReason reason_;
+      /**
+       * <pre>
+       * It will provide more detailed information about why the session is no longer valid.
+       * </pre>
+       *
+       * <code>.obb.InvalidSessionReason reason = 1;</code>
+       * @return Whether the reason field is set.
+       */
+      @java.lang.Override
+      public boolean hasReason() {
+        return reason_ != null;
+      }
+      /**
+       * <pre>
+       * It will provide more detailed information about why the session is no longer valid.
+       * </pre>
+       *
+       * <code>.obb.InvalidSessionReason reason = 1;</code>
+       * @return The reason.
+       */
+      @java.lang.Override
+      public com.oddin.obb.Session.InvalidSessionReason getReason() {
+        return reason_ == null ? com.oddin.obb.Session.InvalidSessionReason.getDefaultInstance() : reason_;
+      }
+      /**
+       * <pre>
+       * It will provide more detailed information about why the session is no longer valid.
+       * </pre>
+       *
+       * <code>.obb.InvalidSessionReason reason = 1;</code>
+       */
+      @java.lang.Override
+      public com.oddin.obb.Session.InvalidSessionReasonOrBuilder getReasonOrBuilder() {
+        return getReason();
+      }
+
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (reason_ != null) {
+          output.writeMessage(1, getReason());
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (reason_ != null) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(1, getReason());
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof com.oddin.obb.Session.SessionInfoResponse.InvalidSession)) {
+          return super.equals(obj);
+        }
+        com.oddin.obb.Session.SessionInfoResponse.InvalidSession other = (com.oddin.obb.Session.SessionInfoResponse.InvalidSession) obj;
+
+        if (hasReason() != other.hasReason()) return false;
+        if (hasReason()) {
+          if (!getReason()
+              .equals(other.getReason())) return false;
+        }
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (hasReason()) {
+          hash = (37 * hash) + REASON_FIELD_NUMBER;
+          hash = (53 * hash) + getReason().hashCode();
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.oddin.obb.Session.SessionInfoResponse.InvalidSession parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.oddin.obb.Session.SessionInfoResponse.InvalidSession parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.oddin.obb.Session.SessionInfoResponse.InvalidSession parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.oddin.obb.Session.SessionInfoResponse.InvalidSession parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.oddin.obb.Session.SessionInfoResponse.InvalidSession parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.oddin.obb.Session.SessionInfoResponse.InvalidSession parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.oddin.obb.Session.SessionInfoResponse.InvalidSession parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.oddin.obb.Session.SessionInfoResponse.InvalidSession parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.oddin.obb.Session.SessionInfoResponse.InvalidSession parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static com.oddin.obb.Session.SessionInfoResponse.InvalidSession parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.oddin.obb.Session.SessionInfoResponse.InvalidSession parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.oddin.obb.Session.SessionInfoResponse.InvalidSession parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(com.oddin.obb.Session.SessionInfoResponse.InvalidSession prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code obb.SessionInfoResponse.InvalidSession}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:obb.SessionInfoResponse.InvalidSession)
+          com.oddin.obb.Session.SessionInfoResponse.InvalidSessionOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return com.oddin.obb.Session.internal_static_obb_SessionInfoResponse_InvalidSession_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.oddin.obb.Session.internal_static_obb_SessionInfoResponse_InvalidSession_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.oddin.obb.Session.SessionInfoResponse.InvalidSession.class, com.oddin.obb.Session.SessionInfoResponse.InvalidSession.Builder.class);
+        }
+
+        // Construct using com.oddin.obb.Session.SessionInfoResponse.InvalidSession.newBuilder()
+        private Builder() {
+
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          if (reasonBuilder_ == null) {
+            reason_ = null;
+          } else {
+            reason_ = null;
+            reasonBuilder_ = null;
+          }
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return com.oddin.obb.Session.internal_static_obb_SessionInfoResponse_InvalidSession_descriptor;
+        }
+
+        @java.lang.Override
+        public com.oddin.obb.Session.SessionInfoResponse.InvalidSession getDefaultInstanceForType() {
+          return com.oddin.obb.Session.SessionInfoResponse.InvalidSession.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.oddin.obb.Session.SessionInfoResponse.InvalidSession build() {
+          com.oddin.obb.Session.SessionInfoResponse.InvalidSession result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.oddin.obb.Session.SessionInfoResponse.InvalidSession buildPartial() {
+          com.oddin.obb.Session.SessionInfoResponse.InvalidSession result = new com.oddin.obb.Session.SessionInfoResponse.InvalidSession(this);
+          if (reasonBuilder_ == null) {
+            result.reason_ = reason_;
+          } else {
+            result.reason_ = reasonBuilder_.build();
+          }
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.setField(field, value);
+        }
+        @java.lang.Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+        @java.lang.Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.oddin.obb.Session.SessionInfoResponse.InvalidSession) {
+            return mergeFrom((com.oddin.obb.Session.SessionInfoResponse.InvalidSession)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(com.oddin.obb.Session.SessionInfoResponse.InvalidSession other) {
+          if (other == com.oddin.obb.Session.SessionInfoResponse.InvalidSession.getDefaultInstance()) return this;
+          if (other.hasReason()) {
+            mergeReason(other.getReason());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10: {
+                  input.readMessage(
+                      getReasonFieldBuilder().getBuilder(),
+                      extensionRegistry);
+
+                  break;
+                } // case 10
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private com.oddin.obb.Session.InvalidSessionReason reason_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+            com.oddin.obb.Session.InvalidSessionReason, com.oddin.obb.Session.InvalidSessionReason.Builder, com.oddin.obb.Session.InvalidSessionReasonOrBuilder> reasonBuilder_;
+        /**
+         * <pre>
+         * It will provide more detailed information about why the session is no longer valid.
+         * </pre>
+         *
+         * <code>.obb.InvalidSessionReason reason = 1;</code>
+         * @return Whether the reason field is set.
+         */
+        public boolean hasReason() {
+          return reasonBuilder_ != null || reason_ != null;
+        }
+        /**
+         * <pre>
+         * It will provide more detailed information about why the session is no longer valid.
+         * </pre>
+         *
+         * <code>.obb.InvalidSessionReason reason = 1;</code>
+         * @return The reason.
+         */
+        public com.oddin.obb.Session.InvalidSessionReason getReason() {
+          if (reasonBuilder_ == null) {
+            return reason_ == null ? com.oddin.obb.Session.InvalidSessionReason.getDefaultInstance() : reason_;
+          } else {
+            return reasonBuilder_.getMessage();
+          }
+        }
+        /**
+         * <pre>
+         * It will provide more detailed information about why the session is no longer valid.
+         * </pre>
+         *
+         * <code>.obb.InvalidSessionReason reason = 1;</code>
+         */
+        public Builder setReason(com.oddin.obb.Session.InvalidSessionReason value) {
+          if (reasonBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            reason_ = value;
+            onChanged();
+          } else {
+            reasonBuilder_.setMessage(value);
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * It will provide more detailed information about why the session is no longer valid.
+         * </pre>
+         *
+         * <code>.obb.InvalidSessionReason reason = 1;</code>
+         */
+        public Builder setReason(
+            com.oddin.obb.Session.InvalidSessionReason.Builder builderForValue) {
+          if (reasonBuilder_ == null) {
+            reason_ = builderForValue.build();
+            onChanged();
+          } else {
+            reasonBuilder_.setMessage(builderForValue.build());
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * It will provide more detailed information about why the session is no longer valid.
+         * </pre>
+         *
+         * <code>.obb.InvalidSessionReason reason = 1;</code>
+         */
+        public Builder mergeReason(com.oddin.obb.Session.InvalidSessionReason value) {
+          if (reasonBuilder_ == null) {
+            if (reason_ != null) {
+              reason_ =
+                com.oddin.obb.Session.InvalidSessionReason.newBuilder(reason_).mergeFrom(value).buildPartial();
+            } else {
+              reason_ = value;
+            }
+            onChanged();
+          } else {
+            reasonBuilder_.mergeFrom(value);
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * It will provide more detailed information about why the session is no longer valid.
+         * </pre>
+         *
+         * <code>.obb.InvalidSessionReason reason = 1;</code>
+         */
+        public Builder clearReason() {
+          if (reasonBuilder_ == null) {
+            reason_ = null;
+            onChanged();
+          } else {
+            reason_ = null;
+            reasonBuilder_ = null;
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * It will provide more detailed information about why the session is no longer valid.
+         * </pre>
+         *
+         * <code>.obb.InvalidSessionReason reason = 1;</code>
+         */
+        public com.oddin.obb.Session.InvalidSessionReason.Builder getReasonBuilder() {
+          
+          onChanged();
+          return getReasonFieldBuilder().getBuilder();
+        }
+        /**
+         * <pre>
+         * It will provide more detailed information about why the session is no longer valid.
+         * </pre>
+         *
+         * <code>.obb.InvalidSessionReason reason = 1;</code>
+         */
+        public com.oddin.obb.Session.InvalidSessionReasonOrBuilder getReasonOrBuilder() {
+          if (reasonBuilder_ != null) {
+            return reasonBuilder_.getMessageOrBuilder();
+          } else {
+            return reason_ == null ?
+                com.oddin.obb.Session.InvalidSessionReason.getDefaultInstance() : reason_;
+          }
+        }
+        /**
+         * <pre>
+         * It will provide more detailed information about why the session is no longer valid.
+         * </pre>
+         *
+         * <code>.obb.InvalidSessionReason reason = 1;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+            com.oddin.obb.Session.InvalidSessionReason, com.oddin.obb.Session.InvalidSessionReason.Builder, com.oddin.obb.Session.InvalidSessionReasonOrBuilder> 
+            getReasonFieldBuilder() {
+          if (reasonBuilder_ == null) {
+            reasonBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                com.oddin.obb.Session.InvalidSessionReason, com.oddin.obb.Session.InvalidSessionReason.Builder, com.oddin.obb.Session.InvalidSessionReasonOrBuilder>(
+                    getReason(),
+                    getParentForChildren(),
+                    isClean());
+            reason_ = null;
+          }
+          return reasonBuilder_;
+        }
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:obb.SessionInfoResponse.InvalidSession)
+      }
+
+      // @@protoc_insertion_point(class_scope:obb.SessionInfoResponse.InvalidSession)
+      private static final com.oddin.obb.Session.SessionInfoResponse.InvalidSession DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new com.oddin.obb.Session.SessionInfoResponse.InvalidSession();
+      }
+
+      public static com.oddin.obb.Session.SessionInfoResponse.InvalidSession getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<InvalidSession>
+          PARSER = new com.google.protobuf.AbstractParser<InvalidSession>() {
+        @java.lang.Override
+        public InvalidSession parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
+        }
+      };
+
+      public static com.google.protobuf.Parser<InvalidSession> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<InvalidSession> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.oddin.obb.Session.SessionInfoResponse.InvalidSession getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
+    private int statusCase_ = 0;
+    private java.lang.Object status_;
+    public enum StatusCase
+        implements com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      VALID(2),
+      INVALID(3),
+      STATUS_NOT_SET(0);
+      private final int value;
+      private StatusCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static StatusCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static StatusCase forNumber(int value) {
+        switch (value) {
+          case 2: return VALID;
+          case 3: return INVALID;
+          case 0: return STATUS_NOT_SET;
+          default: return null;
+        }
+      }
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public StatusCase
+    getStatusCase() {
+      return StatusCase.forNumber(
+          statusCase_);
+    }
+
+    public static final int SESSION_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object sessionId_;
+    /**
+     * <pre>
+     * Session ID created by operator.
+     * </pre>
+     *
+     * <code>string session_id = 1;</code>
+     * @return The sessionId.
      */
     @java.lang.Override
-    public java.lang.String getRequestId() {
-      java.lang.Object ref = requestId_;
+    public java.lang.String getSessionId() {
+      java.lang.Object ref = sessionId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        requestId_ = s;
+        sessionId_ = s;
         return s;
       }
     }
     /**
-     * <code>string request_id = 1;</code>
-     * @return The bytes for requestId.
+     * <pre>
+     * Session ID created by operator.
+     * </pre>
+     *
+     * <code>string session_id = 1;</code>
+     * @return The bytes for sessionId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getRequestIdBytes() {
-      java.lang.Object ref = requestId_;
+        getSessionIdBytes() {
+      java.lang.Object ref = sessionId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        requestId_ = b;
+        sessionId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int INVALID_REASON_FIELD_NUMBER = 2;
-    private com.oddin.obb.Session.InvalidSessionReason invalidReason_;
+    public static final int VALID_FIELD_NUMBER = 2;
     /**
-     * <code>.obb.InvalidSessionReason invalid_reason = 2;</code>
-     * @return Whether the invalidReason field is set.
+     * <pre>
+     * The session is valid and can still be used.
+     * </pre>
+     *
+     * <code>.obb.SessionInfoResponse.ValidSession valid = 2;</code>
+     * @return Whether the valid field is set.
      */
     @java.lang.Override
-    public boolean hasInvalidReason() {
-      return invalidReason_ != null;
+    public boolean hasValid() {
+      return statusCase_ == 2;
     }
     /**
-     * <code>.obb.InvalidSessionReason invalid_reason = 2;</code>
-     * @return The invalidReason.
+     * <pre>
+     * The session is valid and can still be used.
+     * </pre>
+     *
+     * <code>.obb.SessionInfoResponse.ValidSession valid = 2;</code>
+     * @return The valid.
      */
     @java.lang.Override
-    public com.oddin.obb.Session.InvalidSessionReason getInvalidReason() {
-      return invalidReason_ == null ? com.oddin.obb.Session.InvalidSessionReason.getDefaultInstance() : invalidReason_;
+    public com.oddin.obb.Session.SessionInfoResponse.ValidSession getValid() {
+      if (statusCase_ == 2) {
+         return (com.oddin.obb.Session.SessionInfoResponse.ValidSession) status_;
+      }
+      return com.oddin.obb.Session.SessionInfoResponse.ValidSession.getDefaultInstance();
     }
     /**
-     * <code>.obb.InvalidSessionReason invalid_reason = 2;</code>
+     * <pre>
+     * The session is valid and can still be used.
+     * </pre>
+     *
+     * <code>.obb.SessionInfoResponse.ValidSession valid = 2;</code>
      */
     @java.lang.Override
-    public com.oddin.obb.Session.InvalidSessionReasonOrBuilder getInvalidReasonOrBuilder() {
-      return getInvalidReason();
+    public com.oddin.obb.Session.SessionInfoResponse.ValidSessionOrBuilder getValidOrBuilder() {
+      if (statusCase_ == 2) {
+         return (com.oddin.obb.Session.SessionInfoResponse.ValidSession) status_;
+      }
+      return com.oddin.obb.Session.SessionInfoResponse.ValidSession.getDefaultInstance();
     }
 
-    public static final int STATUS_FIELD_NUMBER = 3;
-    private int status_;
+    public static final int INVALID_FIELD_NUMBER = 3;
     /**
-     * <code>.obb.SessionStatus status = 3;</code>
-     * @return The enum numeric value on the wire for status.
+     * <pre>
+     * Session is not valid anymore.
+     * </pre>
+     *
+     * <code>.obb.SessionInfoResponse.InvalidSession invalid = 3;</code>
+     * @return Whether the invalid field is set.
      */
-    @java.lang.Override public int getStatusValue() {
-      return status_;
+    @java.lang.Override
+    public boolean hasInvalid() {
+      return statusCase_ == 3;
     }
     /**
-     * <code>.obb.SessionStatus status = 3;</code>
-     * @return The status.
+     * <pre>
+     * Session is not valid anymore.
+     * </pre>
+     *
+     * <code>.obb.SessionInfoResponse.InvalidSession invalid = 3;</code>
+     * @return The invalid.
      */
-    @java.lang.Override public com.oddin.obb.Session.SessionStatus getStatus() {
-      @SuppressWarnings("deprecation")
-      com.oddin.obb.Session.SessionStatus result = com.oddin.obb.Session.SessionStatus.valueOf(status_);
-      return result == null ? com.oddin.obb.Session.SessionStatus.UNRECOGNIZED : result;
+    @java.lang.Override
+    public com.oddin.obb.Session.SessionInfoResponse.InvalidSession getInvalid() {
+      if (statusCase_ == 3) {
+         return (com.oddin.obb.Session.SessionInfoResponse.InvalidSession) status_;
+      }
+      return com.oddin.obb.Session.SessionInfoResponse.InvalidSession.getDefaultInstance();
+    }
+    /**
+     * <pre>
+     * Session is not valid anymore.
+     * </pre>
+     *
+     * <code>.obb.SessionInfoResponse.InvalidSession invalid = 3;</code>
+     */
+    @java.lang.Override
+    public com.oddin.obb.Session.SessionInfoResponse.InvalidSessionOrBuilder getInvalidOrBuilder() {
+      if (statusCase_ == 3) {
+         return (com.oddin.obb.Session.SessionInfoResponse.InvalidSession) status_;
+      }
+      return com.oddin.obb.Session.SessionInfoResponse.InvalidSession.getDefaultInstance();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -10489,16 +10993,16 @@ public final class Session {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, requestId_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sessionId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, sessionId_);
       }
-      if (invalidReason_ != null) {
-        output.writeMessage(2, getInvalidReason());
+      if (statusCase_ == 2) {
+        output.writeMessage(2, (com.oddin.obb.Session.SessionInfoResponse.ValidSession) status_);
       }
-      if (status_ != com.oddin.obb.Session.SessionStatus.SESSION_STATUS_UNSPECIFIED.getNumber()) {
-        output.writeEnum(3, status_);
+      if (statusCase_ == 3) {
+        output.writeMessage(3, (com.oddin.obb.Session.SessionInfoResponse.InvalidSession) status_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -10507,18 +11011,18 @@ public final class Session {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, requestId_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sessionId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, sessionId_);
       }
-      if (invalidReason_ != null) {
+      if (statusCase_ == 2) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getInvalidReason());
+          .computeMessageSize(2, (com.oddin.obb.Session.SessionInfoResponse.ValidSession) status_);
       }
-      if (status_ != com.oddin.obb.Session.SessionStatus.SESSION_STATUS_UNSPECIFIED.getNumber()) {
+      if (statusCase_ == 3) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(3, status_);
+          .computeMessageSize(3, (com.oddin.obb.Session.SessionInfoResponse.InvalidSession) status_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -10528,20 +11032,27 @@ public final class Session {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.oddin.obb.Session.SessionInfoState)) {
+      if (!(obj instanceof com.oddin.obb.Session.SessionInfoResponse)) {
         return super.equals(obj);
       }
-      com.oddin.obb.Session.SessionInfoState other = (com.oddin.obb.Session.SessionInfoState) obj;
+      com.oddin.obb.Session.SessionInfoResponse other = (com.oddin.obb.Session.SessionInfoResponse) obj;
 
-      if (!getRequestId()
-          .equals(other.getRequestId())) return false;
-      if (hasInvalidReason() != other.hasInvalidReason()) return false;
-      if (hasInvalidReason()) {
-        if (!getInvalidReason()
-            .equals(other.getInvalidReason())) return false;
+      if (!getSessionId()
+          .equals(other.getSessionId())) return false;
+      if (!getStatusCase().equals(other.getStatusCase())) return false;
+      switch (statusCase_) {
+        case 2:
+          if (!getValid()
+              .equals(other.getValid())) return false;
+          break;
+        case 3:
+          if (!getInvalid()
+              .equals(other.getInvalid())) return false;
+          break;
+        case 0:
+        default:
       }
-      if (status_ != other.status_) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -10552,82 +11063,88 @@ public final class Session {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getRequestId().hashCode();
-      if (hasInvalidReason()) {
-        hash = (37 * hash) + INVALID_REASON_FIELD_NUMBER;
-        hash = (53 * hash) + getInvalidReason().hashCode();
+      hash = (37 * hash) + SESSION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSessionId().hashCode();
+      switch (statusCase_) {
+        case 2:
+          hash = (37 * hash) + VALID_FIELD_NUMBER;
+          hash = (53 * hash) + getValid().hashCode();
+          break;
+        case 3:
+          hash = (37 * hash) + INVALID_FIELD_NUMBER;
+          hash = (53 * hash) + getInvalid().hashCode();
+          break;
+        case 0:
+        default:
       }
-      hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + status_;
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static com.oddin.obb.Session.SessionInfoState parseFrom(
+    public static com.oddin.obb.Session.SessionInfoResponse parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.obb.Session.SessionInfoState parseFrom(
+    public static com.oddin.obb.Session.SessionInfoResponse parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.obb.Session.SessionInfoState parseFrom(
+    public static com.oddin.obb.Session.SessionInfoResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.obb.Session.SessionInfoState parseFrom(
+    public static com.oddin.obb.Session.SessionInfoResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.obb.Session.SessionInfoState parseFrom(byte[] data)
+    public static com.oddin.obb.Session.SessionInfoResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.obb.Session.SessionInfoState parseFrom(
+    public static com.oddin.obb.Session.SessionInfoResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.obb.Session.SessionInfoState parseFrom(java.io.InputStream input)
+    public static com.oddin.obb.Session.SessionInfoResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.oddin.obb.Session.SessionInfoState parseFrom(
+    public static com.oddin.obb.Session.SessionInfoResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.oddin.obb.Session.SessionInfoState parseDelimitedFrom(java.io.InputStream input)
+    public static com.oddin.obb.Session.SessionInfoResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.oddin.obb.Session.SessionInfoState parseDelimitedFrom(
+    public static com.oddin.obb.Session.SessionInfoResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.oddin.obb.Session.SessionInfoState parseFrom(
+    public static com.oddin.obb.Session.SessionInfoResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.oddin.obb.Session.SessionInfoState parseFrom(
+    public static com.oddin.obb.Session.SessionInfoResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -10640,7 +11157,7 @@ public final class Session {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.oddin.obb.Session.SessionInfoState prototype) {
+    public static Builder newBuilder(com.oddin.obb.Session.SessionInfoResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -10656,70 +11173,65 @@ public final class Session {
       return builder;
     }
     /**
-     * Protobuf type {@code obb.SessionInfoState}
+     * Protobuf type {@code obb.SessionInfoResponse}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:obb.SessionInfoState)
-        com.oddin.obb.Session.SessionInfoStateOrBuilder {
+        // @@protoc_insertion_point(builder_implements:obb.SessionInfoResponse)
+        com.oddin.obb.Session.SessionInfoResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.oddin.obb.Session.internal_static_obb_SessionInfoState_descriptor;
+        return com.oddin.obb.Session.internal_static_obb_SessionInfoResponse_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.oddin.obb.Session.internal_static_obb_SessionInfoState_fieldAccessorTable
+        return com.oddin.obb.Session.internal_static_obb_SessionInfoResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.oddin.obb.Session.SessionInfoState.class, com.oddin.obb.Session.SessionInfoState.Builder.class);
+                com.oddin.obb.Session.SessionInfoResponse.class, com.oddin.obb.Session.SessionInfoResponse.Builder.class);
       }
 
-      // Construct using com.oddin.obb.Session.SessionInfoState.newBuilder()
+      // Construct using com.oddin.obb.Session.SessionInfoResponse.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        requestId_ = "";
+        sessionId_ = "";
 
-        if (invalidReasonBuilder_ == null) {
-          invalidReason_ = null;
-        } else {
-          invalidReason_ = null;
-          invalidReasonBuilder_ = null;
+        if (validBuilder_ != null) {
+          validBuilder_.clear();
         }
-        status_ = 0;
-
+        if (invalidBuilder_ != null) {
+          invalidBuilder_.clear();
+        }
+        statusCase_ = 0;
+        status_ = null;
         return this;
       }
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.oddin.obb.Session.internal_static_obb_SessionInfoState_descriptor;
+        return com.oddin.obb.Session.internal_static_obb_SessionInfoResponse_descriptor;
       }
 
       @java.lang.Override
-      public com.oddin.obb.Session.SessionInfoState getDefaultInstanceForType() {
-        return com.oddin.obb.Session.SessionInfoState.getDefaultInstance();
+      public com.oddin.obb.Session.SessionInfoResponse getDefaultInstanceForType() {
+        return com.oddin.obb.Session.SessionInfoResponse.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.oddin.obb.Session.SessionInfoState build() {
-        com.oddin.obb.Session.SessionInfoState result = buildPartial();
+      public com.oddin.obb.Session.SessionInfoResponse build() {
+        com.oddin.obb.Session.SessionInfoResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -10727,15 +11239,24 @@ public final class Session {
       }
 
       @java.lang.Override
-      public com.oddin.obb.Session.SessionInfoState buildPartial() {
-        com.oddin.obb.Session.SessionInfoState result = new com.oddin.obb.Session.SessionInfoState(this);
-        result.requestId_ = requestId_;
-        if (invalidReasonBuilder_ == null) {
-          result.invalidReason_ = invalidReason_;
-        } else {
-          result.invalidReason_ = invalidReasonBuilder_.build();
+      public com.oddin.obb.Session.SessionInfoResponse buildPartial() {
+        com.oddin.obb.Session.SessionInfoResponse result = new com.oddin.obb.Session.SessionInfoResponse(this);
+        result.sessionId_ = sessionId_;
+        if (statusCase_ == 2) {
+          if (validBuilder_ == null) {
+            result.status_ = status_;
+          } else {
+            result.status_ = validBuilder_.build();
+          }
         }
-        result.status_ = status_;
+        if (statusCase_ == 3) {
+          if (invalidBuilder_ == null) {
+            result.status_ = status_;
+          } else {
+            result.status_ = invalidBuilder_.build();
+          }
+        }
+        result.statusCase_ = statusCase_;
         onBuilt();
         return result;
       }
@@ -10774,27 +11295,34 @@ public final class Session {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.oddin.obb.Session.SessionInfoState) {
-          return mergeFrom((com.oddin.obb.Session.SessionInfoState)other);
+        if (other instanceof com.oddin.obb.Session.SessionInfoResponse) {
+          return mergeFrom((com.oddin.obb.Session.SessionInfoResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.oddin.obb.Session.SessionInfoState other) {
-        if (other == com.oddin.obb.Session.SessionInfoState.getDefaultInstance()) return this;
-        if (!other.getRequestId().isEmpty()) {
-          requestId_ = other.requestId_;
+      public Builder mergeFrom(com.oddin.obb.Session.SessionInfoResponse other) {
+        if (other == com.oddin.obb.Session.SessionInfoResponse.getDefaultInstance()) return this;
+        if (!other.getSessionId().isEmpty()) {
+          sessionId_ = other.sessionId_;
           onChanged();
         }
-        if (other.hasInvalidReason()) {
-          mergeInvalidReason(other.getInvalidReason());
+        switch (other.getStatusCase()) {
+          case VALID: {
+            mergeValid(other.getValid());
+            break;
+          }
+          case INVALID: {
+            mergeInvalid(other.getInvalid());
+            break;
+          }
+          case STATUS_NOT_SET: {
+            break;
+          }
         }
-        if (other.status_ != 0) {
-          setStatusValue(other.getStatusValue());
-        }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -10809,267 +11337,517 @@ public final class Session {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.oddin.obb.Session.SessionInfoState parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                sessionId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+              case 18: {
+                input.readMessage(
+                    getValidFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                statusCase_ = 2;
+                break;
+              } // case 18
+              case 26: {
+                input.readMessage(
+                    getInvalidFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                statusCase_ = 3;
+                break;
+              } // case 26
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.oddin.obb.Session.SessionInfoState) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int statusCase_ = 0;
+      private java.lang.Object status_;
+      public StatusCase
+          getStatusCase() {
+        return StatusCase.forNumber(
+            statusCase_);
+      }
+
+      public Builder clearStatus() {
+        statusCase_ = 0;
+        status_ = null;
+        onChanged();
         return this;
       }
 
-      private java.lang.Object requestId_ = "";
+
+      private java.lang.Object sessionId_ = "";
       /**
-       * <code>string request_id = 1;</code>
-       * @return The requestId.
+       * <pre>
+       * Session ID created by operator.
+       * </pre>
+       *
+       * <code>string session_id = 1;</code>
+       * @return The sessionId.
        */
-      public java.lang.String getRequestId() {
-        java.lang.Object ref = requestId_;
+      public java.lang.String getSessionId() {
+        java.lang.Object ref = sessionId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          requestId_ = s;
+          sessionId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string request_id = 1;</code>
-       * @return The bytes for requestId.
+       * <pre>
+       * Session ID created by operator.
+       * </pre>
+       *
+       * <code>string session_id = 1;</code>
+       * @return The bytes for sessionId.
        */
       public com.google.protobuf.ByteString
-          getRequestIdBytes() {
-        java.lang.Object ref = requestId_;
+          getSessionIdBytes() {
+        java.lang.Object ref = sessionId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          requestId_ = b;
+          sessionId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string request_id = 1;</code>
-       * @param value The requestId to set.
+       * <pre>
+       * Session ID created by operator.
+       * </pre>
+       *
+       * <code>string session_id = 1;</code>
+       * @param value The sessionId to set.
        * @return This builder for chaining.
        */
-      public Builder setRequestId(
+      public Builder setSessionId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        requestId_ = value;
+        sessionId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string request_id = 1;</code>
+       * <pre>
+       * Session ID created by operator.
+       * </pre>
+       *
+       * <code>string session_id = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearRequestId() {
+      public Builder clearSessionId() {
         
-        requestId_ = getDefaultInstance().getRequestId();
+        sessionId_ = getDefaultInstance().getSessionId();
         onChanged();
         return this;
       }
       /**
-       * <code>string request_id = 1;</code>
-       * @param value The bytes for requestId to set.
+       * <pre>
+       * Session ID created by operator.
+       * </pre>
+       *
+       * <code>string session_id = 1;</code>
+       * @param value The bytes for sessionId to set.
        * @return This builder for chaining.
        */
-      public Builder setRequestIdBytes(
+      public Builder setSessionIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        requestId_ = value;
+        sessionId_ = value;
         onChanged();
         return this;
       }
 
-      private com.oddin.obb.Session.InvalidSessionReason invalidReason_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.oddin.obb.Session.InvalidSessionReason, com.oddin.obb.Session.InvalidSessionReason.Builder, com.oddin.obb.Session.InvalidSessionReasonOrBuilder> invalidReasonBuilder_;
+          com.oddin.obb.Session.SessionInfoResponse.ValidSession, com.oddin.obb.Session.SessionInfoResponse.ValidSession.Builder, com.oddin.obb.Session.SessionInfoResponse.ValidSessionOrBuilder> validBuilder_;
       /**
-       * <code>.obb.InvalidSessionReason invalid_reason = 2;</code>
-       * @return Whether the invalidReason field is set.
+       * <pre>
+       * The session is valid and can still be used.
+       * </pre>
+       *
+       * <code>.obb.SessionInfoResponse.ValidSession valid = 2;</code>
+       * @return Whether the valid field is set.
        */
-      public boolean hasInvalidReason() {
-        return invalidReasonBuilder_ != null || invalidReason_ != null;
+      @java.lang.Override
+      public boolean hasValid() {
+        return statusCase_ == 2;
       }
       /**
-       * <code>.obb.InvalidSessionReason invalid_reason = 2;</code>
-       * @return The invalidReason.
+       * <pre>
+       * The session is valid and can still be used.
+       * </pre>
+       *
+       * <code>.obb.SessionInfoResponse.ValidSession valid = 2;</code>
+       * @return The valid.
        */
-      public com.oddin.obb.Session.InvalidSessionReason getInvalidReason() {
-        if (invalidReasonBuilder_ == null) {
-          return invalidReason_ == null ? com.oddin.obb.Session.InvalidSessionReason.getDefaultInstance() : invalidReason_;
+      @java.lang.Override
+      public com.oddin.obb.Session.SessionInfoResponse.ValidSession getValid() {
+        if (validBuilder_ == null) {
+          if (statusCase_ == 2) {
+            return (com.oddin.obb.Session.SessionInfoResponse.ValidSession) status_;
+          }
+          return com.oddin.obb.Session.SessionInfoResponse.ValidSession.getDefaultInstance();
         } else {
-          return invalidReasonBuilder_.getMessage();
+          if (statusCase_ == 2) {
+            return validBuilder_.getMessage();
+          }
+          return com.oddin.obb.Session.SessionInfoResponse.ValidSession.getDefaultInstance();
         }
       }
       /**
-       * <code>.obb.InvalidSessionReason invalid_reason = 2;</code>
+       * <pre>
+       * The session is valid and can still be used.
+       * </pre>
+       *
+       * <code>.obb.SessionInfoResponse.ValidSession valid = 2;</code>
        */
-      public Builder setInvalidReason(com.oddin.obb.Session.InvalidSessionReason value) {
-        if (invalidReasonBuilder_ == null) {
+      public Builder setValid(com.oddin.obb.Session.SessionInfoResponse.ValidSession value) {
+        if (validBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          invalidReason_ = value;
+          status_ = value;
           onChanged();
         } else {
-          invalidReasonBuilder_.setMessage(value);
+          validBuilder_.setMessage(value);
         }
-
+        statusCase_ = 2;
         return this;
       }
       /**
-       * <code>.obb.InvalidSessionReason invalid_reason = 2;</code>
+       * <pre>
+       * The session is valid and can still be used.
+       * </pre>
+       *
+       * <code>.obb.SessionInfoResponse.ValidSession valid = 2;</code>
        */
-      public Builder setInvalidReason(
-          com.oddin.obb.Session.InvalidSessionReason.Builder builderForValue) {
-        if (invalidReasonBuilder_ == null) {
-          invalidReason_ = builderForValue.build();
+      public Builder setValid(
+          com.oddin.obb.Session.SessionInfoResponse.ValidSession.Builder builderForValue) {
+        if (validBuilder_ == null) {
+          status_ = builderForValue.build();
           onChanged();
         } else {
-          invalidReasonBuilder_.setMessage(builderForValue.build());
+          validBuilder_.setMessage(builderForValue.build());
         }
-
+        statusCase_ = 2;
         return this;
       }
       /**
-       * <code>.obb.InvalidSessionReason invalid_reason = 2;</code>
+       * <pre>
+       * The session is valid and can still be used.
+       * </pre>
+       *
+       * <code>.obb.SessionInfoResponse.ValidSession valid = 2;</code>
        */
-      public Builder mergeInvalidReason(com.oddin.obb.Session.InvalidSessionReason value) {
-        if (invalidReasonBuilder_ == null) {
-          if (invalidReason_ != null) {
-            invalidReason_ =
-              com.oddin.obb.Session.InvalidSessionReason.newBuilder(invalidReason_).mergeFrom(value).buildPartial();
+      public Builder mergeValid(com.oddin.obb.Session.SessionInfoResponse.ValidSession value) {
+        if (validBuilder_ == null) {
+          if (statusCase_ == 2 &&
+              status_ != com.oddin.obb.Session.SessionInfoResponse.ValidSession.getDefaultInstance()) {
+            status_ = com.oddin.obb.Session.SessionInfoResponse.ValidSession.newBuilder((com.oddin.obb.Session.SessionInfoResponse.ValidSession) status_)
+                .mergeFrom(value).buildPartial();
           } else {
-            invalidReason_ = value;
+            status_ = value;
           }
           onChanged();
         } else {
-          invalidReasonBuilder_.mergeFrom(value);
+          if (statusCase_ == 2) {
+            validBuilder_.mergeFrom(value);
+          } else {
+            validBuilder_.setMessage(value);
+          }
         }
-
+        statusCase_ = 2;
         return this;
       }
       /**
-       * <code>.obb.InvalidSessionReason invalid_reason = 2;</code>
+       * <pre>
+       * The session is valid and can still be used.
+       * </pre>
+       *
+       * <code>.obb.SessionInfoResponse.ValidSession valid = 2;</code>
        */
-      public Builder clearInvalidReason() {
-        if (invalidReasonBuilder_ == null) {
-          invalidReason_ = null;
-          onChanged();
+      public Builder clearValid() {
+        if (validBuilder_ == null) {
+          if (statusCase_ == 2) {
+            statusCase_ = 0;
+            status_ = null;
+            onChanged();
+          }
         } else {
-          invalidReason_ = null;
-          invalidReasonBuilder_ = null;
+          if (statusCase_ == 2) {
+            statusCase_ = 0;
+            status_ = null;
+          }
+          validBuilder_.clear();
         }
-
         return this;
       }
       /**
-       * <code>.obb.InvalidSessionReason invalid_reason = 2;</code>
+       * <pre>
+       * The session is valid and can still be used.
+       * </pre>
+       *
+       * <code>.obb.SessionInfoResponse.ValidSession valid = 2;</code>
        */
-      public com.oddin.obb.Session.InvalidSessionReason.Builder getInvalidReasonBuilder() {
-        
-        onChanged();
-        return getInvalidReasonFieldBuilder().getBuilder();
+      public com.oddin.obb.Session.SessionInfoResponse.ValidSession.Builder getValidBuilder() {
+        return getValidFieldBuilder().getBuilder();
       }
       /**
-       * <code>.obb.InvalidSessionReason invalid_reason = 2;</code>
-       */
-      public com.oddin.obb.Session.InvalidSessionReasonOrBuilder getInvalidReasonOrBuilder() {
-        if (invalidReasonBuilder_ != null) {
-          return invalidReasonBuilder_.getMessageOrBuilder();
-        } else {
-          return invalidReason_ == null ?
-              com.oddin.obb.Session.InvalidSessionReason.getDefaultInstance() : invalidReason_;
-        }
-      }
-      /**
-       * <code>.obb.InvalidSessionReason invalid_reason = 2;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.oddin.obb.Session.InvalidSessionReason, com.oddin.obb.Session.InvalidSessionReason.Builder, com.oddin.obb.Session.InvalidSessionReasonOrBuilder> 
-          getInvalidReasonFieldBuilder() {
-        if (invalidReasonBuilder_ == null) {
-          invalidReasonBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.oddin.obb.Session.InvalidSessionReason, com.oddin.obb.Session.InvalidSessionReason.Builder, com.oddin.obb.Session.InvalidSessionReasonOrBuilder>(
-                  getInvalidReason(),
-                  getParentForChildren(),
-                  isClean());
-          invalidReason_ = null;
-        }
-        return invalidReasonBuilder_;
-      }
-
-      private int status_ = 0;
-      /**
-       * <code>.obb.SessionStatus status = 3;</code>
-       * @return The enum numeric value on the wire for status.
-       */
-      @java.lang.Override public int getStatusValue() {
-        return status_;
-      }
-      /**
-       * <code>.obb.SessionStatus status = 3;</code>
-       * @param value The enum numeric value on the wire for status to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStatusValue(int value) {
-        
-        status_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.obb.SessionStatus status = 3;</code>
-       * @return The status.
+       * <pre>
+       * The session is valid and can still be used.
+       * </pre>
+       *
+       * <code>.obb.SessionInfoResponse.ValidSession valid = 2;</code>
        */
       @java.lang.Override
-      public com.oddin.obb.Session.SessionStatus getStatus() {
-        @SuppressWarnings("deprecation")
-        com.oddin.obb.Session.SessionStatus result = com.oddin.obb.Session.SessionStatus.valueOf(status_);
-        return result == null ? com.oddin.obb.Session.SessionStatus.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>.obb.SessionStatus status = 3;</code>
-       * @param value The status to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStatus(com.oddin.obb.Session.SessionStatus value) {
-        if (value == null) {
-          throw new NullPointerException();
+      public com.oddin.obb.Session.SessionInfoResponse.ValidSessionOrBuilder getValidOrBuilder() {
+        if ((statusCase_ == 2) && (validBuilder_ != null)) {
+          return validBuilder_.getMessageOrBuilder();
+        } else {
+          if (statusCase_ == 2) {
+            return (com.oddin.obb.Session.SessionInfoResponse.ValidSession) status_;
+          }
+          return com.oddin.obb.Session.SessionInfoResponse.ValidSession.getDefaultInstance();
         }
-        
-        status_ = value.getNumber();
-        onChanged();
+      }
+      /**
+       * <pre>
+       * The session is valid and can still be used.
+       * </pre>
+       *
+       * <code>.obb.SessionInfoResponse.ValidSession valid = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.oddin.obb.Session.SessionInfoResponse.ValidSession, com.oddin.obb.Session.SessionInfoResponse.ValidSession.Builder, com.oddin.obb.Session.SessionInfoResponse.ValidSessionOrBuilder> 
+          getValidFieldBuilder() {
+        if (validBuilder_ == null) {
+          if (!(statusCase_ == 2)) {
+            status_ = com.oddin.obb.Session.SessionInfoResponse.ValidSession.getDefaultInstance();
+          }
+          validBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.oddin.obb.Session.SessionInfoResponse.ValidSession, com.oddin.obb.Session.SessionInfoResponse.ValidSession.Builder, com.oddin.obb.Session.SessionInfoResponse.ValidSessionOrBuilder>(
+                  (com.oddin.obb.Session.SessionInfoResponse.ValidSession) status_,
+                  getParentForChildren(),
+                  isClean());
+          status_ = null;
+        }
+        statusCase_ = 2;
+        onChanged();;
+        return validBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.oddin.obb.Session.SessionInfoResponse.InvalidSession, com.oddin.obb.Session.SessionInfoResponse.InvalidSession.Builder, com.oddin.obb.Session.SessionInfoResponse.InvalidSessionOrBuilder> invalidBuilder_;
+      /**
+       * <pre>
+       * Session is not valid anymore.
+       * </pre>
+       *
+       * <code>.obb.SessionInfoResponse.InvalidSession invalid = 3;</code>
+       * @return Whether the invalid field is set.
+       */
+      @java.lang.Override
+      public boolean hasInvalid() {
+        return statusCase_ == 3;
+      }
+      /**
+       * <pre>
+       * Session is not valid anymore.
+       * </pre>
+       *
+       * <code>.obb.SessionInfoResponse.InvalidSession invalid = 3;</code>
+       * @return The invalid.
+       */
+      @java.lang.Override
+      public com.oddin.obb.Session.SessionInfoResponse.InvalidSession getInvalid() {
+        if (invalidBuilder_ == null) {
+          if (statusCase_ == 3) {
+            return (com.oddin.obb.Session.SessionInfoResponse.InvalidSession) status_;
+          }
+          return com.oddin.obb.Session.SessionInfoResponse.InvalidSession.getDefaultInstance();
+        } else {
+          if (statusCase_ == 3) {
+            return invalidBuilder_.getMessage();
+          }
+          return com.oddin.obb.Session.SessionInfoResponse.InvalidSession.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * Session is not valid anymore.
+       * </pre>
+       *
+       * <code>.obb.SessionInfoResponse.InvalidSession invalid = 3;</code>
+       */
+      public Builder setInvalid(com.oddin.obb.Session.SessionInfoResponse.InvalidSession value) {
+        if (invalidBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          status_ = value;
+          onChanged();
+        } else {
+          invalidBuilder_.setMessage(value);
+        }
+        statusCase_ = 3;
         return this;
       }
       /**
-       * <code>.obb.SessionStatus status = 3;</code>
-       * @return This builder for chaining.
+       * <pre>
+       * Session is not valid anymore.
+       * </pre>
+       *
+       * <code>.obb.SessionInfoResponse.InvalidSession invalid = 3;</code>
        */
-      public Builder clearStatus() {
-        
-        status_ = 0;
-        onChanged();
+      public Builder setInvalid(
+          com.oddin.obb.Session.SessionInfoResponse.InvalidSession.Builder builderForValue) {
+        if (invalidBuilder_ == null) {
+          status_ = builderForValue.build();
+          onChanged();
+        } else {
+          invalidBuilder_.setMessage(builderForValue.build());
+        }
+        statusCase_ = 3;
         return this;
+      }
+      /**
+       * <pre>
+       * Session is not valid anymore.
+       * </pre>
+       *
+       * <code>.obb.SessionInfoResponse.InvalidSession invalid = 3;</code>
+       */
+      public Builder mergeInvalid(com.oddin.obb.Session.SessionInfoResponse.InvalidSession value) {
+        if (invalidBuilder_ == null) {
+          if (statusCase_ == 3 &&
+              status_ != com.oddin.obb.Session.SessionInfoResponse.InvalidSession.getDefaultInstance()) {
+            status_ = com.oddin.obb.Session.SessionInfoResponse.InvalidSession.newBuilder((com.oddin.obb.Session.SessionInfoResponse.InvalidSession) status_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            status_ = value;
+          }
+          onChanged();
+        } else {
+          if (statusCase_ == 3) {
+            invalidBuilder_.mergeFrom(value);
+          } else {
+            invalidBuilder_.setMessage(value);
+          }
+        }
+        statusCase_ = 3;
+        return this;
+      }
+      /**
+       * <pre>
+       * Session is not valid anymore.
+       * </pre>
+       *
+       * <code>.obb.SessionInfoResponse.InvalidSession invalid = 3;</code>
+       */
+      public Builder clearInvalid() {
+        if (invalidBuilder_ == null) {
+          if (statusCase_ == 3) {
+            statusCase_ = 0;
+            status_ = null;
+            onChanged();
+          }
+        } else {
+          if (statusCase_ == 3) {
+            statusCase_ = 0;
+            status_ = null;
+          }
+          invalidBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Session is not valid anymore.
+       * </pre>
+       *
+       * <code>.obb.SessionInfoResponse.InvalidSession invalid = 3;</code>
+       */
+      public com.oddin.obb.Session.SessionInfoResponse.InvalidSession.Builder getInvalidBuilder() {
+        return getInvalidFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Session is not valid anymore.
+       * </pre>
+       *
+       * <code>.obb.SessionInfoResponse.InvalidSession invalid = 3;</code>
+       */
+      @java.lang.Override
+      public com.oddin.obb.Session.SessionInfoResponse.InvalidSessionOrBuilder getInvalidOrBuilder() {
+        if ((statusCase_ == 3) && (invalidBuilder_ != null)) {
+          return invalidBuilder_.getMessageOrBuilder();
+        } else {
+          if (statusCase_ == 3) {
+            return (com.oddin.obb.Session.SessionInfoResponse.InvalidSession) status_;
+          }
+          return com.oddin.obb.Session.SessionInfoResponse.InvalidSession.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * Session is not valid anymore.
+       * </pre>
+       *
+       * <code>.obb.SessionInfoResponse.InvalidSession invalid = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.oddin.obb.Session.SessionInfoResponse.InvalidSession, com.oddin.obb.Session.SessionInfoResponse.InvalidSession.Builder, com.oddin.obb.Session.SessionInfoResponse.InvalidSessionOrBuilder> 
+          getInvalidFieldBuilder() {
+        if (invalidBuilder_ == null) {
+          if (!(statusCase_ == 3)) {
+            status_ = com.oddin.obb.Session.SessionInfoResponse.InvalidSession.getDefaultInstance();
+          }
+          invalidBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.oddin.obb.Session.SessionInfoResponse.InvalidSession, com.oddin.obb.Session.SessionInfoResponse.InvalidSession.Builder, com.oddin.obb.Session.SessionInfoResponse.InvalidSessionOrBuilder>(
+                  (com.oddin.obb.Session.SessionInfoResponse.InvalidSession) status_,
+                  getParentForChildren(),
+                  isClean());
+          status_ = null;
+        }
+        statusCase_ = 3;
+        onChanged();;
+        return invalidBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -11084,41 +11862,52 @@ public final class Session {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:obb.SessionInfoState)
+      // @@protoc_insertion_point(builder_scope:obb.SessionInfoResponse)
     }
 
-    // @@protoc_insertion_point(class_scope:obb.SessionInfoState)
-    private static final com.oddin.obb.Session.SessionInfoState DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:obb.SessionInfoResponse)
+    private static final com.oddin.obb.Session.SessionInfoResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.oddin.obb.Session.SessionInfoState();
+      DEFAULT_INSTANCE = new com.oddin.obb.Session.SessionInfoResponse();
     }
 
-    public static com.oddin.obb.Session.SessionInfoState getDefaultInstance() {
+    public static com.oddin.obb.Session.SessionInfoResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<SessionInfoState>
-        PARSER = new com.google.protobuf.AbstractParser<SessionInfoState>() {
+    private static final com.google.protobuf.Parser<SessionInfoResponse>
+        PARSER = new com.google.protobuf.AbstractParser<SessionInfoResponse>() {
       @java.lang.Override
-      public SessionInfoState parsePartialFrom(
+      public SessionInfoResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SessionInfoState(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
-    public static com.google.protobuf.Parser<SessionInfoState> parser() {
+    public static com.google.protobuf.Parser<SessionInfoResponse> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<SessionInfoState> getParserForType() {
+    public com.google.protobuf.Parser<SessionInfoResponse> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.oddin.obb.Session.SessionInfoState getDefaultInstanceForType() {
+    public com.oddin.obb.Session.SessionInfoResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -11135,25 +11924,25 @@ public final class Session {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_obb_InvalidSessionReason_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_obb_SessionRequest_descriptor;
+    internal_static_obb_SessionCreateRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_obb_SessionRequest_fieldAccessorTable;
+      internal_static_obb_SessionCreateRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_obb_SessionResponse_descriptor;
+    internal_static_obb_SessionCreateResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_obb_SessionResponse_fieldAccessorTable;
+      internal_static_obb_SessionCreateResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_obb_SessionCreate_descriptor;
+    internal_static_obb_SessionCreateResponse_SessionCreated_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_obb_SessionCreate_fieldAccessorTable;
+      internal_static_obb_SessionCreateResponse_SessionCreated_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_obb_SessionCreateState_descriptor;
+    internal_static_obb_SessionCreateResponse_SessionRejected_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_obb_SessionCreateState_fieldAccessorTable;
+      internal_static_obb_SessionCreateResponse_SessionRejected_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_obb_SessionSelection_descriptor;
   private static final 
@@ -11170,15 +11959,25 @@ public final class Session {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_obb_SessionMarketOutcome_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_obb_SessionInfo_descriptor;
+    internal_static_obb_SessionInfoRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_obb_SessionInfo_fieldAccessorTable;
+      internal_static_obb_SessionInfoRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_obb_SessionInfoState_descriptor;
+    internal_static_obb_SessionInfoResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_obb_SessionInfoState_fieldAccessorTable;
+      internal_static_obb_SessionInfoResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_obb_SessionInfoResponse_ValidSession_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_obb_SessionInfoResponse_ValidSession_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_obb_SessionInfoResponse_InvalidSession_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_obb_SessionInfoResponse_InvalidSession_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -11188,51 +11987,49 @@ public final class Session {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021obb/session.proto\022\003obb\032\021obb/commons.pr" +
-      "oto\"\304\001\n\023SessionRejectReason\022+\n\004code\030\001 \001(" +
-      "\0162\035.obb.SessionRejectReason.Code\022\017\n\007mess" +
-      "age\030\002 \001(\t\"o\n\004Code\022\024\n\020CODE_UNSPECIFIED\020\000\022" +
-      "\021\n\rCODE_INTERNAL\020\001\022\031\n\025CODE_INVALID_ARGUM" +
-      "ENT\020\002\022#\n\037CODE_INVALID_MARKET_COMBINATION" +
-      "\020\003\"\307\001\n\024InvalidSessionReason\022,\n\004code\030\001 \001(" +
-      "\0162\036.obb.InvalidSessionReason.Code\022\017\n\007mes" +
-      "sage\030\002 \001(\t\"p\n\004Code\022\024\n\020CODE_UNSPECIFIED\020\000" +
-      "\022\021\n\rCODE_INTERNAL\020\001\022\031\n\025CODE_INVALID_ARGU" +
-      "MENT\020\002\022\020\n\014CODE_EXPIRED\020\003\022\022\n\016CODE_NOT_FOU" +
-      "ND\020\004\"\213\001\n\016SessionRequest\022$\n\006create\030\001 \001(\0132" +
-      "\022.obb.SessionCreateH\000\022)\n\tkeepalive\030\002 \001(\013" +
-      "2\024.obb.StreamKeepaliveH\000\022 \n\004info\030\003 \001(\0132\020" +
-      ".obb.SessionInfoH\000B\006\n\004data\"\226\001\n\017SessionRe" +
-      "sponse\022)\n\006create\030\001 \001(\0132\027.obb.SessionCrea" +
-      "teStateH\000\022)\n\tkeepalive\030\002 \001(\0132\024.obb.Strea" +
-      "mKeepaliveH\000\022%\n\004info\030\003 \001(\0132\025.obb.Session" +
-      "InfoStateH\000B\006\n\004data\":\n\rSessionCreate\022\022\n\n" +
-      "request_id\030\001 \001(\t\022\025\n\rselection_ids\030\002 \003(\t\"" +
-      "\275\001\n\022SessionCreateState\022\022\n\nrequest_id\030\001 \001" +
-      "(\t\022\022\n\nsession_id\030\002 \001(\t\022)\n\nselections\030\003 \003" +
-      "(\0132\025.obb.SessionSelection\022#\n\007markets\030\004 \003" +
-      "(\0132\022.obb.SessionMarket\022/\n\rreject_reason\030" +
-      "\005 \001(\0132\030.obb.SessionRejectReason\"6\n\020Sessi" +
-      "onSelection\022\024\n\014selection_id\030\001 \001(\t\022\014\n\004odd" +
-      "s\030\002 \001(\004\"c\n\rSessionMarket\022\021\n\tmarket_id\030\001 " +
-      "\001(\r\022\022\n\nspecifiers\030\002 \001(\t\022+\n\010outcomes\030\003 \003(" +
-      "\0132\031.obb.SessionMarketOutcome\"8\n\024SessionM" +
-      "arketOutcome\022\022\n\noutcome_id\030\001 \001(\r\022\014\n\004odds" +
-      "\030\002 \001(\004\"`\n\013SessionInfo\022\022\n\nrequest_id\030\001 \001(" +
-      "\t\022\022\n\nsession_id\030\002 \001(\t\022)\n\nselections\030\003 \003(" +
-      "\0132\025.obb.SessionSelection\"}\n\020SessionInfoS" +
-      "tate\022\022\n\nrequest_id\030\001 \001(\t\0221\n\016invalid_reas" +
-      "on\030\002 \001(\0132\031.obb.InvalidSessionReason\022\"\n\006s" +
-      "tatus\030\003 \001(\0162\022.obb.SessionStatus*e\n\rSessi" +
-      "onStatus\022\036\n\032SESSION_STATUS_UNSPECIFIED\020\000" +
-      "\022\030\n\024SESSION_STATUS_VALID\020\001\022\032\n\026SESSION_ST" +
-      "ATUS_INVALID\020\002B\035\n\rcom.oddin.obbZ\014oddin.g" +
-      "g/obbb\006proto3"
+      "\n\021obb/session.proto\022\003obb\"\304\001\n\023SessionReje" +
+      "ctReason\022+\n\004code\030\001 \001(\0162\035.obb.SessionReje" +
+      "ctReason.Code\022\017\n\007message\030\002 \001(\t\"o\n\004Code\022\024" +
+      "\n\020CODE_UNSPECIFIED\020\000\022\021\n\rCODE_INTERNAL\020\001\022" +
+      "\031\n\025CODE_INVALID_ARGUMENT\020\002\022#\n\037CODE_INVAL" +
+      "ID_MARKET_COMBINATION\020\003\"\307\001\n\024InvalidSessi" +
+      "onReason\022,\n\004code\030\001 \001(\0162\036.obb.InvalidSess" +
+      "ionReason.Code\022\017\n\007message\030\002 \001(\t\"p\n\004Code\022" +
+      "\024\n\020CODE_UNSPECIFIED\020\000\022\021\n\rCODE_INTERNAL\020\001" +
+      "\022\031\n\025CODE_INVALID_ARGUMENT\020\002\022\020\n\014CODE_EXPI" +
+      "RED\020\003\022\022\n\016CODE_NOT_FOUND\020\004\"-\n\024SessionCrea" +
+      "teRequest\022\025\n\rselection_ids\030\002 \003(\t\"\352\002\n\025Ses" +
+      "sionCreateResponse\022\022\n\nsession_id\030\001 \001(\t\022<" +
+      "\n\007created\030\002 \001(\0132).obb.SessionCreateRespo" +
+      "nse.SessionCreatedH\000\022>\n\010rejected\030\003 \001(\0132*" +
+      ".obb.SessionCreateResponse.SessionReject" +
+      "edH\000\032x\n\016SessionCreated\022)\n\nselections\030\001 \003" +
+      "(\0132\025.obb.SessionSelection\022\014\n\004odds\030\002 \001(\004\022" +
+      "-\n\021available_markets\030\003 \003(\0132\022.obb.Session" +
+      "Market\032;\n\017SessionRejected\022(\n\006reason\030\001 \001(" +
+      "\0132\030.obb.SessionRejectReasonB\010\n\006status\"(\n" +
+      "\020SessionSelection\022\024\n\014selection_id\030\001 \001(\t\"" +
+      "c\n\rSessionMarket\022\021\n\tmarket_id\030\001 \001(\r\022\022\n\ns" +
+      "pecifiers\030\002 \001(\t\022+\n\010outcomes\030\003 \003(\0132\031.obb." +
+      "SessionMarketOutcome\"8\n\024SessionMarketOut" +
+      "come\022\022\n\noutcome_id\030\001 \001(\t\022\014\n\004odds\030\002 \001(\004\"a" +
+      "\n\022SessionInfoRequest\022\022\n\nsession_id\030\001 \001(\t" +
+      "\022)\n\nselections\030\002 \003(\0132\025.obb.SessionSelect" +
+      "ion\022\014\n\004odds\030\003 \001(\004\"\364\001\n\023SessionInfoRespons" +
+      "e\022\022\n\nsession_id\030\001 \001(\t\0226\n\005valid\030\002 \001(\0132%.o" +
+      "bb.SessionInfoResponse.ValidSessionH\000\022:\n" +
+      "\007invalid\030\003 \001(\0132\'.obb.SessionInfoResponse" +
+      ".InvalidSessionH\000\032\016\n\014ValidSession\032;\n\016Inv" +
+      "alidSession\022)\n\006reason\030\001 \001(\0132\031.obb.Invali" +
+      "dSessionReasonB\010\n\006status*e\n\rSessionStatu" +
+      "s\022\036\n\032SESSION_STATUS_UNSPECIFIED\020\000\022\030\n\024SES" +
+      "SION_STATUS_VALID\020\001\022\032\n\026SESSION_STATUS_IN" +
+      "VALID\020\002B\035\n\rcom.oddin.obbZ\014oddin.gg/obbb\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.oddin.obb.Commons.getDescriptor(),
         });
     internal_static_obb_SessionRejectReason_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -11246,61 +12043,72 @@ public final class Session {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_obb_InvalidSessionReason_descriptor,
         new java.lang.String[] { "Code", "Message", });
-    internal_static_obb_SessionRequest_descriptor =
+    internal_static_obb_SessionCreateRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_obb_SessionRequest_fieldAccessorTable = new
+    internal_static_obb_SessionCreateRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_obb_SessionRequest_descriptor,
-        new java.lang.String[] { "Create", "Keepalive", "Info", "Data", });
-    internal_static_obb_SessionResponse_descriptor =
+        internal_static_obb_SessionCreateRequest_descriptor,
+        new java.lang.String[] { "SelectionIds", });
+    internal_static_obb_SessionCreateResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
-    internal_static_obb_SessionResponse_fieldAccessorTable = new
+    internal_static_obb_SessionCreateResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_obb_SessionResponse_descriptor,
-        new java.lang.String[] { "Create", "Keepalive", "Info", "Data", });
-    internal_static_obb_SessionCreate_descriptor =
-      getDescriptor().getMessageTypes().get(4);
-    internal_static_obb_SessionCreate_fieldAccessorTable = new
+        internal_static_obb_SessionCreateResponse_descriptor,
+        new java.lang.String[] { "SessionId", "Created", "Rejected", "Status", });
+    internal_static_obb_SessionCreateResponse_SessionCreated_descriptor =
+      internal_static_obb_SessionCreateResponse_descriptor.getNestedTypes().get(0);
+    internal_static_obb_SessionCreateResponse_SessionCreated_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_obb_SessionCreate_descriptor,
-        new java.lang.String[] { "RequestId", "SelectionIds", });
-    internal_static_obb_SessionCreateState_descriptor =
-      getDescriptor().getMessageTypes().get(5);
-    internal_static_obb_SessionCreateState_fieldAccessorTable = new
+        internal_static_obb_SessionCreateResponse_SessionCreated_descriptor,
+        new java.lang.String[] { "Selections", "Odds", "AvailableMarkets", });
+    internal_static_obb_SessionCreateResponse_SessionRejected_descriptor =
+      internal_static_obb_SessionCreateResponse_descriptor.getNestedTypes().get(1);
+    internal_static_obb_SessionCreateResponse_SessionRejected_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_obb_SessionCreateState_descriptor,
-        new java.lang.String[] { "RequestId", "SessionId", "Selections", "Markets", "RejectReason", });
+        internal_static_obb_SessionCreateResponse_SessionRejected_descriptor,
+        new java.lang.String[] { "Reason", });
     internal_static_obb_SessionSelection_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_obb_SessionSelection_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_obb_SessionSelection_descriptor,
-        new java.lang.String[] { "SelectionId", "Odds", });
+        new java.lang.String[] { "SelectionId", });
     internal_static_obb_SessionMarket_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_obb_SessionMarket_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_obb_SessionMarket_descriptor,
         new java.lang.String[] { "MarketId", "Specifiers", "Outcomes", });
     internal_static_obb_SessionMarketOutcome_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_obb_SessionMarketOutcome_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_obb_SessionMarketOutcome_descriptor,
         new java.lang.String[] { "OutcomeId", "Odds", });
-    internal_static_obb_SessionInfo_descriptor =
-      getDescriptor().getMessageTypes().get(9);
-    internal_static_obb_SessionInfo_fieldAccessorTable = new
+    internal_static_obb_SessionInfoRequest_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_obb_SessionInfoRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_obb_SessionInfo_descriptor,
-        new java.lang.String[] { "RequestId", "SessionId", "Selections", });
-    internal_static_obb_SessionInfoState_descriptor =
-      getDescriptor().getMessageTypes().get(10);
-    internal_static_obb_SessionInfoState_fieldAccessorTable = new
+        internal_static_obb_SessionInfoRequest_descriptor,
+        new java.lang.String[] { "SessionId", "Selections", "Odds", });
+    internal_static_obb_SessionInfoResponse_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_obb_SessionInfoResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_obb_SessionInfoState_descriptor,
-        new java.lang.String[] { "RequestId", "InvalidReason", "Status", });
-    com.oddin.obb.Commons.getDescriptor();
+        internal_static_obb_SessionInfoResponse_descriptor,
+        new java.lang.String[] { "SessionId", "Valid", "Invalid", "Status", });
+    internal_static_obb_SessionInfoResponse_ValidSession_descriptor =
+      internal_static_obb_SessionInfoResponse_descriptor.getNestedTypes().get(0);
+    internal_static_obb_SessionInfoResponse_ValidSession_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_obb_SessionInfoResponse_ValidSession_descriptor,
+        new java.lang.String[] { });
+    internal_static_obb_SessionInfoResponse_InvalidSession_descriptor =
+      internal_static_obb_SessionInfoResponse_descriptor.getNestedTypes().get(1);
+    internal_static_obb_SessionInfoResponse_InvalidSession_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_obb_SessionInfoResponse_InvalidSession_descriptor,
+        new java.lang.String[] { "Reason", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

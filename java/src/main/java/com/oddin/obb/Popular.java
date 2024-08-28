@@ -66,49 +66,6 @@ public final class Popular {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private PopularCombinationRequest(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              eventId_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return com.oddin.obb.Popular.internal_static_obb_PopularCombinationRequest_descriptor;
@@ -185,7 +142,7 @@ public final class Popular {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(eventId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, eventId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -197,7 +154,7 @@ public final class Popular {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(eventId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, eventId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -214,7 +171,7 @@ public final class Popular {
 
       if (!getEventId()
           .equals(other.getEventId())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -227,7 +184,7 @@ public final class Popular {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + EVENT_ID_FIELD_NUMBER;
       hash = (53 * hash) + getEventId().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -344,18 +301,13 @@ public final class Popular {
 
       // Construct using com.oddin.obb.Popular.PopularCombinationRequest.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -441,7 +393,7 @@ public final class Popular {
           eventId_ = other.eventId_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -456,17 +408,35 @@ public final class Popular {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.oddin.obb.Popular.PopularCombinationRequest parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                eventId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.oddin.obb.Popular.PopularCombinationRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -598,7 +568,18 @@ public final class Popular {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PopularCombinationRequest(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -623,24 +604,44 @@ public final class Popular {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * List of popular markets for OBB combinations.
+     * </pre>
+     *
      * <code>repeated .obb.PopularCombinationMarket markets = 1;</code>
      */
     java.util.List<com.oddin.obb.Popular.PopularCombinationMarket> 
         getMarketsList();
     /**
+     * <pre>
+     * List of popular markets for OBB combinations.
+     * </pre>
+     *
      * <code>repeated .obb.PopularCombinationMarket markets = 1;</code>
      */
     com.oddin.obb.Popular.PopularCombinationMarket getMarkets(int index);
     /**
+     * <pre>
+     * List of popular markets for OBB combinations.
+     * </pre>
+     *
      * <code>repeated .obb.PopularCombinationMarket markets = 1;</code>
      */
     int getMarketsCount();
     /**
+     * <pre>
+     * List of popular markets for OBB combinations.
+     * </pre>
+     *
      * <code>repeated .obb.PopularCombinationMarket markets = 1;</code>
      */
     java.util.List<? extends com.oddin.obb.Popular.PopularCombinationMarketOrBuilder> 
         getMarketsOrBuilderList();
     /**
+     * <pre>
+     * List of popular markets for OBB combinations.
+     * </pre>
+     *
      * <code>repeated .obb.PopularCombinationMarket markets = 1;</code>
      */
     com.oddin.obb.Popular.PopularCombinationMarketOrBuilder getMarketsOrBuilder(
@@ -674,56 +675,6 @@ public final class Popular {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private PopularCombinationResponse(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                markets_ = new java.util.ArrayList<com.oddin.obb.Popular.PopularCombinationMarket>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              markets_.add(
-                  input.readMessage(com.oddin.obb.Popular.PopularCombinationMarket.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          markets_ = java.util.Collections.unmodifiableList(markets_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return com.oddin.obb.Popular.internal_static_obb_PopularCombinationResponse_descriptor;
@@ -740,6 +691,10 @@ public final class Popular {
     public static final int MARKETS_FIELD_NUMBER = 1;
     private java.util.List<com.oddin.obb.Popular.PopularCombinationMarket> markets_;
     /**
+     * <pre>
+     * List of popular markets for OBB combinations.
+     * </pre>
+     *
      * <code>repeated .obb.PopularCombinationMarket markets = 1;</code>
      */
     @java.lang.Override
@@ -747,6 +702,10 @@ public final class Popular {
       return markets_;
     }
     /**
+     * <pre>
+     * List of popular markets for OBB combinations.
+     * </pre>
+     *
      * <code>repeated .obb.PopularCombinationMarket markets = 1;</code>
      */
     @java.lang.Override
@@ -755,6 +714,10 @@ public final class Popular {
       return markets_;
     }
     /**
+     * <pre>
+     * List of popular markets for OBB combinations.
+     * </pre>
+     *
      * <code>repeated .obb.PopularCombinationMarket markets = 1;</code>
      */
     @java.lang.Override
@@ -762,6 +725,10 @@ public final class Popular {
       return markets_.size();
     }
     /**
+     * <pre>
+     * List of popular markets for OBB combinations.
+     * </pre>
+     *
      * <code>repeated .obb.PopularCombinationMarket markets = 1;</code>
      */
     @java.lang.Override
@@ -769,6 +736,10 @@ public final class Popular {
       return markets_.get(index);
     }
     /**
+     * <pre>
+     * List of popular markets for OBB combinations.
+     * </pre>
+     *
      * <code>repeated .obb.PopularCombinationMarket markets = 1;</code>
      */
     @java.lang.Override
@@ -794,7 +765,7 @@ public final class Popular {
       for (int i = 0; i < markets_.size(); i++) {
         output.writeMessage(1, markets_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -807,7 +778,7 @@ public final class Popular {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, markets_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -824,7 +795,7 @@ public final class Popular {
 
       if (!getMarketsList()
           .equals(other.getMarketsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -839,7 +810,7 @@ public final class Popular {
         hash = (37 * hash) + MARKETS_FIELD_NUMBER;
         hash = (53 * hash) + getMarketsList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -956,29 +927,24 @@ public final class Popular {
 
       // Construct using com.oddin.obb.Popular.PopularCombinationResponse.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getMarketsFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
         if (marketsBuilder_ == null) {
           markets_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          markets_ = null;
           marketsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -1089,7 +1055,7 @@ public final class Popular {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1104,17 +1070,43 @@ public final class Popular {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.oddin.obb.Popular.PopularCombinationResponse parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                com.oddin.obb.Popular.PopularCombinationMarket m =
+                    input.readMessage(
+                        com.oddin.obb.Popular.PopularCombinationMarket.parser(),
+                        extensionRegistry);
+                if (marketsBuilder_ == null) {
+                  ensureMarketsIsMutable();
+                  markets_.add(m);
+                } else {
+                  marketsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.oddin.obb.Popular.PopularCombinationResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -1132,6 +1124,10 @@ public final class Popular {
           com.oddin.obb.Popular.PopularCombinationMarket, com.oddin.obb.Popular.PopularCombinationMarket.Builder, com.oddin.obb.Popular.PopularCombinationMarketOrBuilder> marketsBuilder_;
 
       /**
+       * <pre>
+       * List of popular markets for OBB combinations.
+       * </pre>
+       *
        * <code>repeated .obb.PopularCombinationMarket markets = 1;</code>
        */
       public java.util.List<com.oddin.obb.Popular.PopularCombinationMarket> getMarketsList() {
@@ -1142,6 +1138,10 @@ public final class Popular {
         }
       }
       /**
+       * <pre>
+       * List of popular markets for OBB combinations.
+       * </pre>
+       *
        * <code>repeated .obb.PopularCombinationMarket markets = 1;</code>
        */
       public int getMarketsCount() {
@@ -1152,6 +1152,10 @@ public final class Popular {
         }
       }
       /**
+       * <pre>
+       * List of popular markets for OBB combinations.
+       * </pre>
+       *
        * <code>repeated .obb.PopularCombinationMarket markets = 1;</code>
        */
       public com.oddin.obb.Popular.PopularCombinationMarket getMarkets(int index) {
@@ -1162,6 +1166,10 @@ public final class Popular {
         }
       }
       /**
+       * <pre>
+       * List of popular markets for OBB combinations.
+       * </pre>
+       *
        * <code>repeated .obb.PopularCombinationMarket markets = 1;</code>
        */
       public Builder setMarkets(
@@ -1179,6 +1187,10 @@ public final class Popular {
         return this;
       }
       /**
+       * <pre>
+       * List of popular markets for OBB combinations.
+       * </pre>
+       *
        * <code>repeated .obb.PopularCombinationMarket markets = 1;</code>
        */
       public Builder setMarkets(
@@ -1193,6 +1205,10 @@ public final class Popular {
         return this;
       }
       /**
+       * <pre>
+       * List of popular markets for OBB combinations.
+       * </pre>
+       *
        * <code>repeated .obb.PopularCombinationMarket markets = 1;</code>
        */
       public Builder addMarkets(com.oddin.obb.Popular.PopularCombinationMarket value) {
@@ -1209,6 +1225,10 @@ public final class Popular {
         return this;
       }
       /**
+       * <pre>
+       * List of popular markets for OBB combinations.
+       * </pre>
+       *
        * <code>repeated .obb.PopularCombinationMarket markets = 1;</code>
        */
       public Builder addMarkets(
@@ -1226,6 +1246,10 @@ public final class Popular {
         return this;
       }
       /**
+       * <pre>
+       * List of popular markets for OBB combinations.
+       * </pre>
+       *
        * <code>repeated .obb.PopularCombinationMarket markets = 1;</code>
        */
       public Builder addMarkets(
@@ -1240,6 +1264,10 @@ public final class Popular {
         return this;
       }
       /**
+       * <pre>
+       * List of popular markets for OBB combinations.
+       * </pre>
+       *
        * <code>repeated .obb.PopularCombinationMarket markets = 1;</code>
        */
       public Builder addMarkets(
@@ -1254,6 +1282,10 @@ public final class Popular {
         return this;
       }
       /**
+       * <pre>
+       * List of popular markets for OBB combinations.
+       * </pre>
+       *
        * <code>repeated .obb.PopularCombinationMarket markets = 1;</code>
        */
       public Builder addAllMarkets(
@@ -1269,6 +1301,10 @@ public final class Popular {
         return this;
       }
       /**
+       * <pre>
+       * List of popular markets for OBB combinations.
+       * </pre>
+       *
        * <code>repeated .obb.PopularCombinationMarket markets = 1;</code>
        */
       public Builder clearMarkets() {
@@ -1282,6 +1318,10 @@ public final class Popular {
         return this;
       }
       /**
+       * <pre>
+       * List of popular markets for OBB combinations.
+       * </pre>
+       *
        * <code>repeated .obb.PopularCombinationMarket markets = 1;</code>
        */
       public Builder removeMarkets(int index) {
@@ -1295,6 +1335,10 @@ public final class Popular {
         return this;
       }
       /**
+       * <pre>
+       * List of popular markets for OBB combinations.
+       * </pre>
+       *
        * <code>repeated .obb.PopularCombinationMarket markets = 1;</code>
        */
       public com.oddin.obb.Popular.PopularCombinationMarket.Builder getMarketsBuilder(
@@ -1302,6 +1346,10 @@ public final class Popular {
         return getMarketsFieldBuilder().getBuilder(index);
       }
       /**
+       * <pre>
+       * List of popular markets for OBB combinations.
+       * </pre>
+       *
        * <code>repeated .obb.PopularCombinationMarket markets = 1;</code>
        */
       public com.oddin.obb.Popular.PopularCombinationMarketOrBuilder getMarketsOrBuilder(
@@ -1312,6 +1360,10 @@ public final class Popular {
         }
       }
       /**
+       * <pre>
+       * List of popular markets for OBB combinations.
+       * </pre>
+       *
        * <code>repeated .obb.PopularCombinationMarket markets = 1;</code>
        */
       public java.util.List<? extends com.oddin.obb.Popular.PopularCombinationMarketOrBuilder> 
@@ -1323,6 +1375,10 @@ public final class Popular {
         }
       }
       /**
+       * <pre>
+       * List of popular markets for OBB combinations.
+       * </pre>
+       *
        * <code>repeated .obb.PopularCombinationMarket markets = 1;</code>
        */
       public com.oddin.obb.Popular.PopularCombinationMarket.Builder addMarketsBuilder() {
@@ -1330,6 +1386,10 @@ public final class Popular {
             com.oddin.obb.Popular.PopularCombinationMarket.getDefaultInstance());
       }
       /**
+       * <pre>
+       * List of popular markets for OBB combinations.
+       * </pre>
+       *
        * <code>repeated .obb.PopularCombinationMarket markets = 1;</code>
        */
       public com.oddin.obb.Popular.PopularCombinationMarket.Builder addMarketsBuilder(
@@ -1338,6 +1398,10 @@ public final class Popular {
             index, com.oddin.obb.Popular.PopularCombinationMarket.getDefaultInstance());
       }
       /**
+       * <pre>
+       * List of popular markets for OBB combinations.
+       * </pre>
+       *
        * <code>repeated .obb.PopularCombinationMarket markets = 1;</code>
        */
       public java.util.List<com.oddin.obb.Popular.PopularCombinationMarket.Builder> 
@@ -1391,7 +1455,18 @@ public final class Popular {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PopularCombinationResponse(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1416,17 +1491,31 @@ public final class Popular {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * The ID using the same values as our odds feed in XML.
+     * </pre>
+     *
      * <code>uint32 market_id = 1;</code>
      * @return The marketId.
      */
     int getMarketId();
 
     /**
+     * <pre>
+     * The specifier is using the same values as our odds feed in XML.
+     * Example: "variant=way:three|way=three|map=1"
+     * </pre>
+     *
      * <code>string specifiers = 2;</code>
      * @return The specifiers.
      */
     java.lang.String getSpecifiers();
     /**
+     * <pre>
+     * The specifier is using the same values as our odds feed in XML.
+     * Example: "variant=way:three|way=three|map=1"
+     * </pre>
+     *
      * <code>string specifiers = 2;</code>
      * @return The bytes for specifiers.
      */
@@ -1461,54 +1550,6 @@ public final class Popular {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private PopularCombinationMarket(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              marketId_ = input.readUInt32();
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              specifiers_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return com.oddin.obb.Popular.internal_static_obb_PopularCombinationMarket_descriptor;
@@ -1525,6 +1566,10 @@ public final class Popular {
     public static final int MARKET_ID_FIELD_NUMBER = 1;
     private int marketId_;
     /**
+     * <pre>
+     * The ID using the same values as our odds feed in XML.
+     * </pre>
+     *
      * <code>uint32 market_id = 1;</code>
      * @return The marketId.
      */
@@ -1536,6 +1581,11 @@ public final class Popular {
     public static final int SPECIFIERS_FIELD_NUMBER = 2;
     private volatile java.lang.Object specifiers_;
     /**
+     * <pre>
+     * The specifier is using the same values as our odds feed in XML.
+     * Example: "variant=way:three|way=three|map=1"
+     * </pre>
+     *
      * <code>string specifiers = 2;</code>
      * @return The specifiers.
      */
@@ -1553,6 +1603,11 @@ public final class Popular {
       }
     }
     /**
+     * <pre>
+     * The specifier is using the same values as our odds feed in XML.
+     * Example: "variant=way:three|way=three|map=1"
+     * </pre>
+     *
      * <code>string specifiers = 2;</code>
      * @return The bytes for specifiers.
      */
@@ -1591,7 +1646,7 @@ public final class Popular {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(specifiers_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, specifiers_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1607,7 +1662,7 @@ public final class Popular {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(specifiers_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, specifiers_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1626,7 +1681,7 @@ public final class Popular {
           != other.getMarketId()) return false;
       if (!getSpecifiers()
           .equals(other.getSpecifiers())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1641,7 +1696,7 @@ public final class Popular {
       hash = (53 * hash) + getMarketId();
       hash = (37 * hash) + SPECIFIERS_FIELD_NUMBER;
       hash = (53 * hash) + getSpecifiers().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1758,18 +1813,13 @@ public final class Popular {
 
       // Construct using com.oddin.obb.Popular.PopularCombinationMarket.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -1861,7 +1911,7 @@ public final class Popular {
           specifiers_ = other.specifiers_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1876,22 +1926,49 @@ public final class Popular {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.oddin.obb.Popular.PopularCombinationMarket parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                marketId_ = input.readUInt32();
+
+                break;
+              } // case 8
+              case 18: {
+                specifiers_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.oddin.obb.Popular.PopularCombinationMarket) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
       private int marketId_ ;
       /**
+       * <pre>
+       * The ID using the same values as our odds feed in XML.
+       * </pre>
+       *
        * <code>uint32 market_id = 1;</code>
        * @return The marketId.
        */
@@ -1900,6 +1977,10 @@ public final class Popular {
         return marketId_;
       }
       /**
+       * <pre>
+       * The ID using the same values as our odds feed in XML.
+       * </pre>
+       *
        * <code>uint32 market_id = 1;</code>
        * @param value The marketId to set.
        * @return This builder for chaining.
@@ -1911,6 +1992,10 @@ public final class Popular {
         return this;
       }
       /**
+       * <pre>
+       * The ID using the same values as our odds feed in XML.
+       * </pre>
+       *
        * <code>uint32 market_id = 1;</code>
        * @return This builder for chaining.
        */
@@ -1923,6 +2008,11 @@ public final class Popular {
 
       private java.lang.Object specifiers_ = "";
       /**
+       * <pre>
+       * The specifier is using the same values as our odds feed in XML.
+       * Example: "variant=way:three|way=three|map=1"
+       * </pre>
+       *
        * <code>string specifiers = 2;</code>
        * @return The specifiers.
        */
@@ -1939,6 +2029,11 @@ public final class Popular {
         }
       }
       /**
+       * <pre>
+       * The specifier is using the same values as our odds feed in XML.
+       * Example: "variant=way:three|way=three|map=1"
+       * </pre>
+       *
        * <code>string specifiers = 2;</code>
        * @return The bytes for specifiers.
        */
@@ -1956,6 +2051,11 @@ public final class Popular {
         }
       }
       /**
+       * <pre>
+       * The specifier is using the same values as our odds feed in XML.
+       * Example: "variant=way:three|way=three|map=1"
+       * </pre>
+       *
        * <code>string specifiers = 2;</code>
        * @param value The specifiers to set.
        * @return This builder for chaining.
@@ -1971,6 +2071,11 @@ public final class Popular {
         return this;
       }
       /**
+       * <pre>
+       * The specifier is using the same values as our odds feed in XML.
+       * Example: "variant=way:three|way=three|map=1"
+       * </pre>
+       *
        * <code>string specifiers = 2;</code>
        * @return This builder for chaining.
        */
@@ -1981,6 +2086,11 @@ public final class Popular {
         return this;
       }
       /**
+       * <pre>
+       * The specifier is using the same values as our odds feed in XML.
+       * Example: "variant=way:three|way=three|map=1"
+       * </pre>
+       *
        * <code>string specifiers = 2;</code>
        * @param value The bytes for specifiers to set.
        * @return This builder for chaining.
@@ -2029,7 +2139,18 @@ public final class Popular {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PopularCombinationMarket(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 

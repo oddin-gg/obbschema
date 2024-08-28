@@ -2,7 +2,6 @@
 // file: obb/session.proto
 
 import * as jspb from "google-protobuf";
-import * as obb_commons_pb from "../obb/commons_pb";
 
 export class SessionRejectReason extends jspb.Message {
   getCode(): SessionRejectReason.CodeMap[keyof SessionRejectReason.CodeMap];
@@ -71,164 +70,124 @@ export namespace InvalidSessionReason {
   export const Code: CodeMap;
 }
 
-export class SessionRequest extends jspb.Message {
-  hasCreate(): boolean;
-  clearCreate(): void;
-  getCreate(): SessionCreate | undefined;
-  setCreate(value?: SessionCreate): void;
-
-  hasKeepalive(): boolean;
-  clearKeepalive(): void;
-  getKeepalive(): obb_commons_pb.StreamKeepalive | undefined;
-  setKeepalive(value?: obb_commons_pb.StreamKeepalive): void;
-
-  hasInfo(): boolean;
-  clearInfo(): void;
-  getInfo(): SessionInfo | undefined;
-  setInfo(value?: SessionInfo): void;
-
-  getDataCase(): SessionRequest.DataCase;
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): SessionRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: SessionRequest): SessionRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: SessionRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): SessionRequest;
-  static deserializeBinaryFromReader(message: SessionRequest, reader: jspb.BinaryReader): SessionRequest;
-}
-
-export namespace SessionRequest {
-  export type AsObject = {
-    create?: SessionCreate.AsObject,
-    keepalive?: obb_commons_pb.StreamKeepalive.AsObject,
-    info?: SessionInfo.AsObject,
-  }
-
-  export enum DataCase {
-    DATA_NOT_SET = 0,
-    CREATE = 1,
-    KEEPALIVE = 2,
-    INFO = 3,
-  }
-}
-
-export class SessionResponse extends jspb.Message {
-  hasCreate(): boolean;
-  clearCreate(): void;
-  getCreate(): SessionCreateState | undefined;
-  setCreate(value?: SessionCreateState): void;
-
-  hasKeepalive(): boolean;
-  clearKeepalive(): void;
-  getKeepalive(): obb_commons_pb.StreamKeepalive | undefined;
-  setKeepalive(value?: obb_commons_pb.StreamKeepalive): void;
-
-  hasInfo(): boolean;
-  clearInfo(): void;
-  getInfo(): SessionInfoState | undefined;
-  setInfo(value?: SessionInfoState): void;
-
-  getDataCase(): SessionResponse.DataCase;
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): SessionResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: SessionResponse): SessionResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: SessionResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): SessionResponse;
-  static deserializeBinaryFromReader(message: SessionResponse, reader: jspb.BinaryReader): SessionResponse;
-}
-
-export namespace SessionResponse {
-  export type AsObject = {
-    create?: SessionCreateState.AsObject,
-    keepalive?: obb_commons_pb.StreamKeepalive.AsObject,
-    info?: SessionInfoState.AsObject,
-  }
-
-  export enum DataCase {
-    DATA_NOT_SET = 0,
-    CREATE = 1,
-    KEEPALIVE = 2,
-    INFO = 3,
-  }
-}
-
-export class SessionCreate extends jspb.Message {
-  getRequestId(): string;
-  setRequestId(value: string): void;
-
+export class SessionCreateRequest extends jspb.Message {
   clearSelectionIdsList(): void;
   getSelectionIdsList(): Array<string>;
   setSelectionIdsList(value: Array<string>): void;
   addSelectionIds(value: string, index?: number): string;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): SessionCreate.AsObject;
-  static toObject(includeInstance: boolean, msg: SessionCreate): SessionCreate.AsObject;
+  toObject(includeInstance?: boolean): SessionCreateRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: SessionCreateRequest): SessionCreateRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: SessionCreate, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): SessionCreate;
-  static deserializeBinaryFromReader(message: SessionCreate, reader: jspb.BinaryReader): SessionCreate;
+  static serializeBinaryToWriter(message: SessionCreateRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SessionCreateRequest;
+  static deserializeBinaryFromReader(message: SessionCreateRequest, reader: jspb.BinaryReader): SessionCreateRequest;
 }
 
-export namespace SessionCreate {
+export namespace SessionCreateRequest {
   export type AsObject = {
-    requestId: string,
     selectionIdsList: Array<string>,
   }
 }
 
-export class SessionCreateState extends jspb.Message {
-  getRequestId(): string;
-  setRequestId(value: string): void;
-
+export class SessionCreateResponse extends jspb.Message {
   getSessionId(): string;
   setSessionId(value: string): void;
 
-  clearSelectionsList(): void;
-  getSelectionsList(): Array<SessionSelection>;
-  setSelectionsList(value: Array<SessionSelection>): void;
-  addSelections(value?: SessionSelection, index?: number): SessionSelection;
+  hasCreated(): boolean;
+  clearCreated(): void;
+  getCreated(): SessionCreateResponse.SessionCreated | undefined;
+  setCreated(value?: SessionCreateResponse.SessionCreated): void;
 
-  clearMarketsList(): void;
-  getMarketsList(): Array<SessionMarket>;
-  setMarketsList(value: Array<SessionMarket>): void;
-  addMarkets(value?: SessionMarket, index?: number): SessionMarket;
+  hasRejected(): boolean;
+  clearRejected(): void;
+  getRejected(): SessionCreateResponse.SessionRejected | undefined;
+  setRejected(value?: SessionCreateResponse.SessionRejected): void;
 
-  hasRejectReason(): boolean;
-  clearRejectReason(): void;
-  getRejectReason(): SessionRejectReason | undefined;
-  setRejectReason(value?: SessionRejectReason): void;
-
+  getStatusCase(): SessionCreateResponse.StatusCase;
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): SessionCreateState.AsObject;
-  static toObject(includeInstance: boolean, msg: SessionCreateState): SessionCreateState.AsObject;
+  toObject(includeInstance?: boolean): SessionCreateResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SessionCreateResponse): SessionCreateResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: SessionCreateState, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): SessionCreateState;
-  static deserializeBinaryFromReader(message: SessionCreateState, reader: jspb.BinaryReader): SessionCreateState;
+  static serializeBinaryToWriter(message: SessionCreateResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SessionCreateResponse;
+  static deserializeBinaryFromReader(message: SessionCreateResponse, reader: jspb.BinaryReader): SessionCreateResponse;
 }
 
-export namespace SessionCreateState {
+export namespace SessionCreateResponse {
   export type AsObject = {
-    requestId: string,
     sessionId: string,
-    selectionsList: Array<SessionSelection.AsObject>,
-    marketsList: Array<SessionMarket.AsObject>,
-    rejectReason?: SessionRejectReason.AsObject,
+    created?: SessionCreateResponse.SessionCreated.AsObject,
+    rejected?: SessionCreateResponse.SessionRejected.AsObject,
+  }
+
+  export class SessionCreated extends jspb.Message {
+    clearSelectionsList(): void;
+    getSelectionsList(): Array<SessionSelection>;
+    setSelectionsList(value: Array<SessionSelection>): void;
+    addSelections(value?: SessionSelection, index?: number): SessionSelection;
+
+    getOdds(): number;
+    setOdds(value: number): void;
+
+    clearAvailableMarketsList(): void;
+    getAvailableMarketsList(): Array<SessionMarket>;
+    setAvailableMarketsList(value: Array<SessionMarket>): void;
+    addAvailableMarkets(value?: SessionMarket, index?: number): SessionMarket;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): SessionCreated.AsObject;
+    static toObject(includeInstance: boolean, msg: SessionCreated): SessionCreated.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: SessionCreated, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): SessionCreated;
+    static deserializeBinaryFromReader(message: SessionCreated, reader: jspb.BinaryReader): SessionCreated;
+  }
+
+  export namespace SessionCreated {
+    export type AsObject = {
+      selectionsList: Array<SessionSelection.AsObject>,
+      odds: number,
+      availableMarketsList: Array<SessionMarket.AsObject>,
+    }
+  }
+
+  export class SessionRejected extends jspb.Message {
+    hasReason(): boolean;
+    clearReason(): void;
+    getReason(): SessionRejectReason | undefined;
+    setReason(value?: SessionRejectReason): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): SessionRejected.AsObject;
+    static toObject(includeInstance: boolean, msg: SessionRejected): SessionRejected.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: SessionRejected, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): SessionRejected;
+    static deserializeBinaryFromReader(message: SessionRejected, reader: jspb.BinaryReader): SessionRejected;
+  }
+
+  export namespace SessionRejected {
+    export type AsObject = {
+      reason?: SessionRejectReason.AsObject,
+    }
+  }
+
+  export enum StatusCase {
+    STATUS_NOT_SET = 0,
+    CREATED = 2,
+    REJECTED = 3,
   }
 }
 
 export class SessionSelection extends jspb.Message {
   getSelectionId(): string;
   setSelectionId(value: string): void;
-
-  getOdds(): number;
-  setOdds(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SessionSelection.AsObject;
@@ -243,7 +202,6 @@ export class SessionSelection extends jspb.Message {
 export namespace SessionSelection {
   export type AsObject = {
     selectionId: string,
-    odds: number,
   }
 }
 
@@ -278,8 +236,8 @@ export namespace SessionMarket {
 }
 
 export class SessionMarketOutcome extends jspb.Message {
-  getOutcomeId(): number;
-  setOutcomeId(value: number): void;
+  getOutcomeId(): string;
+  setOutcomeId(value: string): void;
 
   getOdds(): number;
   setOdds(value: number): void;
@@ -296,15 +254,12 @@ export class SessionMarketOutcome extends jspb.Message {
 
 export namespace SessionMarketOutcome {
   export type AsObject = {
-    outcomeId: number,
+    outcomeId: string,
     odds: number,
   }
 }
 
-export class SessionInfo extends jspb.Message {
-  getRequestId(): string;
-  setRequestId(value: string): void;
-
+export class SessionInfoRequest extends jspb.Message {
   getSessionId(): string;
   setSessionId(value: string): void;
 
@@ -313,51 +268,101 @@ export class SessionInfo extends jspb.Message {
   setSelectionsList(value: Array<SessionSelection>): void;
   addSelections(value?: SessionSelection, index?: number): SessionSelection;
 
+  getOdds(): number;
+  setOdds(value: number): void;
+
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): SessionInfo.AsObject;
-  static toObject(includeInstance: boolean, msg: SessionInfo): SessionInfo.AsObject;
+  toObject(includeInstance?: boolean): SessionInfoRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: SessionInfoRequest): SessionInfoRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: SessionInfo, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): SessionInfo;
-  static deserializeBinaryFromReader(message: SessionInfo, reader: jspb.BinaryReader): SessionInfo;
+  static serializeBinaryToWriter(message: SessionInfoRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SessionInfoRequest;
+  static deserializeBinaryFromReader(message: SessionInfoRequest, reader: jspb.BinaryReader): SessionInfoRequest;
 }
 
-export namespace SessionInfo {
+export namespace SessionInfoRequest {
   export type AsObject = {
-    requestId: string,
     sessionId: string,
     selectionsList: Array<SessionSelection.AsObject>,
+    odds: number,
   }
 }
 
-export class SessionInfoState extends jspb.Message {
-  getRequestId(): string;
-  setRequestId(value: string): void;
+export class SessionInfoResponse extends jspb.Message {
+  getSessionId(): string;
+  setSessionId(value: string): void;
 
-  hasInvalidReason(): boolean;
-  clearInvalidReason(): void;
-  getInvalidReason(): InvalidSessionReason | undefined;
-  setInvalidReason(value?: InvalidSessionReason): void;
+  hasValid(): boolean;
+  clearValid(): void;
+  getValid(): SessionInfoResponse.ValidSession | undefined;
+  setValid(value?: SessionInfoResponse.ValidSession): void;
 
-  getStatus(): SessionStatusMap[keyof SessionStatusMap];
-  setStatus(value: SessionStatusMap[keyof SessionStatusMap]): void;
+  hasInvalid(): boolean;
+  clearInvalid(): void;
+  getInvalid(): SessionInfoResponse.InvalidSession | undefined;
+  setInvalid(value?: SessionInfoResponse.InvalidSession): void;
 
+  getStatusCase(): SessionInfoResponse.StatusCase;
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): SessionInfoState.AsObject;
-  static toObject(includeInstance: boolean, msg: SessionInfoState): SessionInfoState.AsObject;
+  toObject(includeInstance?: boolean): SessionInfoResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SessionInfoResponse): SessionInfoResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: SessionInfoState, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): SessionInfoState;
-  static deserializeBinaryFromReader(message: SessionInfoState, reader: jspb.BinaryReader): SessionInfoState;
+  static serializeBinaryToWriter(message: SessionInfoResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SessionInfoResponse;
+  static deserializeBinaryFromReader(message: SessionInfoResponse, reader: jspb.BinaryReader): SessionInfoResponse;
 }
 
-export namespace SessionInfoState {
+export namespace SessionInfoResponse {
   export type AsObject = {
-    requestId: string,
-    invalidReason?: InvalidSessionReason.AsObject,
-    status: SessionStatusMap[keyof SessionStatusMap],
+    sessionId: string,
+    valid?: SessionInfoResponse.ValidSession.AsObject,
+    invalid?: SessionInfoResponse.InvalidSession.AsObject,
+  }
+
+  export class ValidSession extends jspb.Message {
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ValidSession.AsObject;
+    static toObject(includeInstance: boolean, msg: ValidSession): ValidSession.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ValidSession, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ValidSession;
+    static deserializeBinaryFromReader(message: ValidSession, reader: jspb.BinaryReader): ValidSession;
+  }
+
+  export namespace ValidSession {
+    export type AsObject = {
+    }
+  }
+
+  export class InvalidSession extends jspb.Message {
+    hasReason(): boolean;
+    clearReason(): void;
+    getReason(): InvalidSessionReason | undefined;
+    setReason(value?: InvalidSessionReason): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): InvalidSession.AsObject;
+    static toObject(includeInstance: boolean, msg: InvalidSession): InvalidSession.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: InvalidSession, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): InvalidSession;
+    static deserializeBinaryFromReader(message: InvalidSession, reader: jspb.BinaryReader): InvalidSession;
+  }
+
+  export namespace InvalidSession {
+    export type AsObject = {
+      reason?: InvalidSessionReason.AsObject,
+    }
+  }
+
+  export enum StatusCase {
+    STATUS_NOT_SET = 0,
+    VALID = 2,
+    INVALID = 3,
   }
 }
 
