@@ -2199,8 +2199,8 @@ public final class Popular {
       "arCombinationResponse\022.\n\007markets\030\001 \003(\0132\035" +
       ".obb.PopularCombinationMarket\"A\n\030Popular" +
       "CombinationMarket\022\021\n\tmarket_id\030\001 \001(\r\022\022\n\n" +
-      "specifiers\030\002 \001(\tB\035\n\rcom.oddin.obbZ\014oddin" +
-      ".gg/obbb\006proto3"
+      "specifiers\030\002 \001(\tB5\n\rcom.oddin.obbZ$githu" +
+      "b.com/oddin-gg/obbschema/go/obbb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

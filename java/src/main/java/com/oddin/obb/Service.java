@@ -24,7 +24,7 @@ public final class Service {
   static {
     java.lang.String[] descriptorData = {
       "\n\021obb/service.proto\022\003obb\032\021obb/markets.pr" +
-      "oto\032\021obb/session.proto\032\021obb/popular.prot" +
+      "oto\032\021obb/popular.proto\032\021obb/session.prot" +
       "o2\267\002\n\003obb\022O\n\020AvailableMarkets\022\034.obb.Avai" +
       "lableMarketsRequest\032\035.obb.AvailableMarke" +
       "tsResponse\022F\n\rSessionCreate\022\031.obb.Sessio" +
@@ -32,19 +32,20 @@ public final class Service {
       "se\022@\n\013SessionInfo\022\027.obb.SessionInfoReque" +
       "st\032\030.obb.SessionInfoResponse\022U\n\022PopularC" +
       "ombination\022\036.obb.PopularCombinationReque" +
-      "st\032\037.obb.PopularCombinationResponseB\035\n\rc" +
-      "om.oddin.obbZ\014oddin.gg/obbb\006proto3"
+      "st\032\037.obb.PopularCombinationResponseB5\n\rc" +
+      "om.oddin.obbZ$github.com/oddin-gg/obbsch" +
+      "ema/go/obbb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.oddin.obb.Markets.getDescriptor(),
-          com.oddin.obb.Session.getDescriptor(),
           com.oddin.obb.Popular.getDescriptor(),
+          com.oddin.obb.Session.getDescriptor(),
         });
     com.oddin.obb.Markets.getDescriptor();
-    com.oddin.obb.Session.getDescriptor();
     com.oddin.obb.Popular.getDescriptor();
+    com.oddin.obb.Session.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

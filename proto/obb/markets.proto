@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package obb;
 
-option go_package = "oddin.gg/obb";
+option go_package = "github.com/oddin-gg/obbschema/go/obb";
 option java_package = "com.oddin.obb";
 
 // AvailableMarketsRequest is used as request for Markets RPC call

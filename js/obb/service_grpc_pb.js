@@ -3,8 +3,8 @@
 'use strict';
 var grpc = require('grpc');
 var obb_markets_pb = require('../obb/markets_pb.js');
-var obb_session_pb = require('../obb/session_pb.js');
 var obb_popular_pb = require('../obb/popular_pb.js');
+var obb_session_pb = require('../obb/session_pb.js');
 
 function serialize_obb_AvailableMarketsRequest(arg) {
   if (!(arg instanceof obb_markets_pb.AvailableMarketsRequest)) {

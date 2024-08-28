@@ -12024,8 +12024,8 @@ public final class Session {
       "dSessionReasonB\010\n\006status*e\n\rSessionStatu" +
       "s\022\036\n\032SESSION_STATUS_UNSPECIFIED\020\000\022\030\n\024SES" +
       "SION_STATUS_VALID\020\001\022\032\n\026SESSION_STATUS_IN" +
-      "VALID\020\002B\035\n\rcom.oddin.obbZ\014oddin.gg/obbb\006" +
-      "proto3"
+      "VALID\020\002B5\n\rcom.oddin.obbZ$github.com/odd" +
+      "in-gg/obbschema/go/obbb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

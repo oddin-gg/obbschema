@@ -14,6 +14,10 @@ if [[ ! -x ${GO_PROTOC_GEN} ]]; then
   exit 1
 fi
 
-protoc ./proto/obb/*.proto -I ./proto --go_out=./go --go-grpc_out=./go
+protoc ./proto/obb/*.proto -I ./proto  \
+  --go_out=./go \
+  --go-grpc_out=./go  \
+  --go_opt=paths=source_relative  \
+  --go-grpc_opt=paths=source_relative
 
 echo "GO DONE"
