@@ -2214,8 +2214,9 @@ public final class Markets {
       "ketsRequest\022\021\n\tevent_urn\030\001 \001(\t\"A\n\030Availa" +
       "bleMarketsResponse\022%\n\007markets\030\001 \003(\0132\024.ob" +
       "b.AvailableMarket\"8\n\017AvailableMarket\022\021\n\t" +
-      "market_id\030\001 \001(\r\022\022\n\nspecifiers\030\002 \001(\tB\035\n\rc" +
-      "om.oddin.obbZ\014oddin.gg/obbb\006proto3"
+      "market_id\030\001 \001(\r\022\022\n\nspecifiers\030\002 \001(\tB5\n\rc" +
+      "om.oddin.obbZ$github.com/oddin-gg/obbsch" +
+      "ema/go/obbb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -17,7 +17,7 @@ var global = (function() { return this || window || global || self || Function('
 
 var obb_markets_pb = require('../obb/markets_pb.js');
 goog.object.extend(proto, obb_markets_pb);
-var obb_session_pb = require('../obb/session_pb.js');
-goog.object.extend(proto, obb_session_pb);
 var obb_popular_pb = require('../obb/popular_pb.js');
 goog.object.extend(proto, obb_popular_pb);
+var obb_session_pb = require('../obb/session_pb.js');
+goog.object.extend(proto, obb_session_pb);

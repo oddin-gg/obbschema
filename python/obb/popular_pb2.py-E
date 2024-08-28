@@ -24,14 +24,14 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x11obb/popular.proto\x12\x03obb\"-\n\x19PopularCombinationRequest\x12\x10\n\x08\x65vent_id\x18\x01 \x01(\t\"L\n\x1aPopularCombinationResponse\x12.\n\x07markets\x18\x01 \x03(\x0b\x32\x1d.obb.PopularCombinationMarket\"A\n\x18PopularCombinationMarket\x12\x11\n\tmarket_id\x18\x01 \x01(\r\x12\x12\n\nspecifiers\x18\x02 \x01(\tB\x1d\n\rcom.oddin.obbZ\x0coddin.gg/obbb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x11obb/popular.proto\x12\x03obb\"-\n\x19PopularCombinationRequest\x12\x10\n\x08\x65vent_id\x18\x01 \x01(\t\"L\n\x1aPopularCombinationResponse\x12.\n\x07markets\x18\x01 \x03(\x0b\x32\x1d.obb.PopularCombinationMarket\"A\n\x18PopularCombinationMarket\x12\x11\n\tmarket_id\x18\x01 \x01(\r\x12\x12\n\nspecifiers\x18\x02 \x01(\tB5\n\rcom.oddin.obbZ$github.com/oddin-gg/obbschema/go/obbb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'obb.popular_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
-  _globals['DESCRIPTOR']._serialized_options = b'\n\rcom.oddin.obbZ\014oddin.gg/obb'
+  _globals['DESCRIPTOR']._serialized_options = b'\n\rcom.oddin.obbZ$github.com/oddin-gg/obbschema/go/obb'
   _globals['_POPULARCOMBINATIONREQUEST']._serialized_start=26
   _globals['_POPULARCOMBINATIONREQUEST']._serialized_end=71
   _globals['_POPULARCOMBINATIONRESPONSE']._serialized_start=73

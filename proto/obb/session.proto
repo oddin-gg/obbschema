@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package obb;
 
-option go_package = "oddin.gg/obb";
+option go_package = "github.com/oddin-gg/obbschema/go/obb";
 option java_package = "com.oddin.obb";
 
 message SessionRejectReason {
@@ -140,8 +140,7 @@ message SessionInfoRequest {
 }
 
 message SessionInfoResponse {
-  message ValidSession {
-  }
+  message ValidSession {}
 
   message InvalidSession {
     // It will provide more detailed information about why the session is no longer valid.
