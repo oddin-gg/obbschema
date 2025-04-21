@@ -13,7 +13,7 @@ message SessionRejectReason {
     // We are having internal problems.
     CODE_INTERNAL = 1;
 
-    // Session is not valid.
+    // Session is invalid due to incorrect or malformed arguments
     CODE_INVALID_ARGUMENT = 2;
 
     // Session contains invalid market combination.
@@ -35,7 +35,7 @@ message InvalidSessionReason {
     // We are having internal problems.
     CODE_INTERNAL = 1;
 
-    // Session is not valid.
+    // Session is invalid due to incorrect or malformed arguments
     CODE_INVALID_ARGUMENT = 2;
 
     // Session is expired.
