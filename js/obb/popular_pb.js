@@ -13,13 +13,7 @@
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global =
-    (typeof globalThis !== 'undefined' && globalThis) ||
-    (typeof window !== 'undefined' && window) ||
-    (typeof global !== 'undefined' && global) ||
-    (typeof self !== 'undefined' && self) ||
-    (function () { return this; }).call(null) ||
-    Function('return this')();
+var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
 
 goog.exportSymbol('proto.obb.PopularCombinationMarket', null, global);
 goog.exportSymbol('proto.obb.PopularCombinationRequest', null, global);
@@ -119,7 +113,7 @@ proto.obb.PopularCombinationRequest.prototype.toObject = function(opt_includeIns
  */
 proto.obb.PopularCombinationRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-eventId: jspb.Message.getFieldWithDefault(msg, 1, "")
+    eventId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -256,7 +250,7 @@ proto.obb.PopularCombinationResponse.prototype.toObject = function(opt_includeIn
  */
 proto.obb.PopularCombinationResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-marketsList: jspb.Message.toObjectList(msg.getMarketsList(),
+    marketsList: jspb.Message.toObjectList(msg.getMarketsList(),
     proto.obb.PopularCombinationMarket.toObject, includeInstance)
   };
 
@@ -409,8 +403,8 @@ proto.obb.PopularCombinationMarket.prototype.toObject = function(opt_includeInst
  */
 proto.obb.PopularCombinationMarket.toObject = function(includeInstance, msg) {
   var f, obj = {
-marketId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-specifiers: jspb.Message.getFieldWithDefault(msg, 2, "")
+    marketId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    specifiers: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
