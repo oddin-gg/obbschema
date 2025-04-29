@@ -7,7 +7,7 @@ from obb import markets_pb2 as obb_dot_markets__pb2
 from obb import popular_pb2 as obb_dot_popular__pb2
 from obb import session_pb2 as obb_dot_session__pb2
 
-GRPC_GENERATED_VERSION = '1.71.0'
+GRPC_GENERATED_VERSION = '1.66.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 

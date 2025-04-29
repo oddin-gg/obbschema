@@ -13,13 +13,7 @@
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global =
-    (typeof globalThis !== 'undefined' && globalThis) ||
-    (typeof window !== 'undefined' && window) ||
-    (typeof global !== 'undefined' && global) ||
-    (typeof self !== 'undefined' && self) ||
-    (function () { return this; }).call(null) ||
-    Function('return this')();
+var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
 
 goog.exportSymbol('proto.obb.InvalidSessionReason', null, global);
 goog.exportSymbol('proto.obb.InvalidSessionReason.Code', null, global);
@@ -344,8 +338,8 @@ proto.obb.SessionRejectReason.prototype.toObject = function(opt_includeInstance)
  */
 proto.obb.SessionRejectReason.toObject = function(includeInstance, msg) {
   var f, obj = {
-code: jspb.Message.getFieldWithDefault(msg, 1, 0),
-message: jspb.Message.getFieldWithDefault(msg, 2, "")
+    code: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    message: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -514,8 +508,8 @@ proto.obb.InvalidSessionReason.prototype.toObject = function(opt_includeInstance
  */
 proto.obb.InvalidSessionReason.toObject = function(includeInstance, msg) {
   var f, obj = {
-code: jspb.Message.getFieldWithDefault(msg, 1, 0),
-message: jspb.Message.getFieldWithDefault(msg, 2, "")
+    code: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    message: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -692,7 +686,7 @@ proto.obb.SessionCreateRequest.prototype.toObject = function(opt_includeInstance
  */
 proto.obb.SessionCreateRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-selectionIdsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
+    selectionIdsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -867,9 +861,9 @@ proto.obb.SessionCreateResponse.prototype.toObject = function(opt_includeInstanc
  */
 proto.obb.SessionCreateResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-sessionId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-created: (f = msg.getCreated()) && proto.obb.SessionCreateResponse.SessionCreated.toObject(includeInstance, f),
-rejected: (f = msg.getRejected()) && proto.obb.SessionCreateResponse.SessionRejected.toObject(includeInstance, f)
+    sessionId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    created: (f = msg.getCreated()) && proto.obb.SessionCreateResponse.SessionCreated.toObject(includeInstance, f),
+    rejected: (f = msg.getRejected()) && proto.obb.SessionCreateResponse.SessionRejected.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1014,10 +1008,10 @@ proto.obb.SessionCreateResponse.SessionCreated.prototype.toObject = function(opt
  */
 proto.obb.SessionCreateResponse.SessionCreated.toObject = function(includeInstance, msg) {
   var f, obj = {
-selectionsList: jspb.Message.toObjectList(msg.getSelectionsList(),
+    selectionsList: jspb.Message.toObjectList(msg.getSelectionsList(),
     proto.obb.SessionSelection.toObject, includeInstance),
-odds: jspb.Message.getFieldWithDefault(msg, 2, 0),
-availableMarketsList: jspb.Message.toObjectList(msg.getAvailableMarketsList(),
+    odds: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    availableMarketsList: jspb.Message.toObjectList(msg.getAvailableMarketsList(),
     proto.obb.SessionMarket.toObject, includeInstance)
   };
 
@@ -1250,7 +1244,7 @@ proto.obb.SessionCreateResponse.SessionRejected.prototype.toObject = function(op
  */
 proto.obb.SessionCreateResponse.SessionRejected.toObject = function(includeInstance, msg) {
   var f, obj = {
-reason: (f = msg.getReason()) && proto.obb.SessionRejectReason.toObject(includeInstance, f)
+    reason: (f = msg.getReason()) && proto.obb.SessionRejectReason.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1493,7 +1487,7 @@ proto.obb.SessionSelection.prototype.toObject = function(opt_includeInstance) {
  */
 proto.obb.SessionSelection.toObject = function(includeInstance, msg) {
   var f, obj = {
-selectionId: jspb.Message.getFieldWithDefault(msg, 1, "")
+    selectionId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1630,9 +1624,9 @@ proto.obb.SessionMarket.prototype.toObject = function(opt_includeInstance) {
  */
 proto.obb.SessionMarket.toObject = function(includeInstance, msg) {
   var f, obj = {
-marketId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-specifiers: jspb.Message.getFieldWithDefault(msg, 2, ""),
-outcomesList: jspb.Message.toObjectList(msg.getOutcomesList(),
+    marketId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    specifiers: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    outcomesList: jspb.Message.toObjectList(msg.getOutcomesList(),
     proto.obb.SessionMarketOutcome.toObject, includeInstance)
   };
 
@@ -1843,8 +1837,8 @@ proto.obb.SessionMarketOutcome.prototype.toObject = function(opt_includeInstance
  */
 proto.obb.SessionMarketOutcome.toObject = function(includeInstance, msg) {
   var f, obj = {
-outcomeId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-odds: jspb.Message.getFieldWithDefault(msg, 2, 0)
+    outcomeId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    odds: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -2010,10 +2004,10 @@ proto.obb.SessionInfoRequest.prototype.toObject = function(opt_includeInstance) 
  */
 proto.obb.SessionInfoRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-sessionId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-selectionsList: jspb.Message.toObjectList(msg.getSelectionsList(),
+    sessionId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    selectionsList: jspb.Message.toObjectList(msg.getSelectionsList(),
     proto.obb.SessionSelection.toObject, includeInstance),
-odds: jspb.Message.getFieldWithDefault(msg, 3, 0)
+    odds: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -2249,9 +2243,9 @@ proto.obb.SessionInfoResponse.prototype.toObject = function(opt_includeInstance)
  */
 proto.obb.SessionInfoResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-sessionId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-valid: (f = msg.getValid()) && proto.obb.SessionInfoResponse.ValidSession.toObject(includeInstance, f),
-invalid: (f = msg.getInvalid()) && proto.obb.SessionInfoResponse.InvalidSession.toObject(includeInstance, f)
+    sessionId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    valid: (f = msg.getValid()) && proto.obb.SessionInfoResponse.ValidSession.toObject(includeInstance, f),
+    invalid: (f = msg.getInvalid()) && proto.obb.SessionInfoResponse.InvalidSession.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2490,7 +2484,7 @@ proto.obb.SessionInfoResponse.InvalidSession.prototype.toObject = function(opt_i
  */
 proto.obb.SessionInfoResponse.InvalidSession.toObject = function(includeInstance, msg) {
   var f, obj = {
-reason: (f = msg.getReason()) && proto.obb.InvalidSessionReason.toObject(includeInstance, f)
+    reason: (f = msg.getReason()) && proto.obb.InvalidSessionReason.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
