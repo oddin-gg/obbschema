@@ -10,13 +10,13 @@ message SessionRejectReason {
     // Not a valid value. Used for blocking 0 as invalid state.
     CODE_UNSPECIFIED = 0;
 
-    // We are having internal problems.
+    // Session rejected due to internal server problems.
     CODE_INTERNAL = 1;
 
-    // Session is not valid.
+    // Session rejected due to incorrect or malformed arguments.
     CODE_INVALID_ARGUMENT = 2;
 
-    // Session contains invalid market combination.
+    // Session rejected due to invalid market combination.
     CODE_INVALID_MARKET_COMBINATION = 3;
   }
 
@@ -32,10 +32,10 @@ message InvalidSessionReason {
     // Not a valid value. Used for blocking 0 as invalid state.
     CODE_UNSPECIFIED = 0;
 
-    // We are having internal problems.
+    // Session invalid due to internal server problems.
     CODE_INTERNAL = 1;
 
-    // Session is not valid.
+    // Session invalid due to incorrect or malformed arguments.
     CODE_INVALID_ARGUMENT = 2;
 
     // Session is expired.
@@ -59,14 +59,15 @@ enum SessionStatus {
   // The session is valid and can still be used.
   SESSION_STATUS_VALID = 1;
 
-  // Session is not valid anymore.
+  // Session is no longer valid.
+  // Example: expired, not found or invalidated
   SESSION_STATUS_INVALID = 2;
 }
 
 message SessionCreateRequest {
   // List of desired selections to include in the new session.
   // Format: "<event_id>/<market_id>/<outcome_id>?<market_specifier>"
-  // e.g. “od:match:1234/1/1?map=1&way=two”
+  // Example: “od:match:1234/1/1?map=1&way=two”
   repeated string selection_ids = 2;
 }
 
@@ -102,7 +103,7 @@ message SessionCreateResponse {
 
 message SessionSelection {
   // Format: "<event_id>/<market_id>/<outcome_id>?<market_specifier>"
-  // e.g. “od:match:1234/1/1?map=1&way=two”
+  // Example: “od:match:1234/1/1?map=1&way=two”
   string selection_id = 1;
 }
 
@@ -111,7 +112,7 @@ message SessionMarket {
   uint32 market_id = 1;
 
   // The specifier is using the same values as our odds feed in XML.
-  // e.g. "variant=way:three|way=three|map=1"
+  // Example: "variant=way:three|way=three|map=1"
   string specifiers = 2;
 
   // List of available outcomes for the market.
@@ -120,7 +121,7 @@ message SessionMarket {
 
 message SessionMarketOutcome {
   // The ID using the same values as our odds feed in <outcome> XML tag.
-  // e.g. "10" for classic market or "od:player:123" for dynamic markets.
+  // Example: "10" for classic market or "od:player:123" for dynamic markets.
   string outcome_id = 1;
 
   // Odds multiplied by 10000 and rounded to uint value.

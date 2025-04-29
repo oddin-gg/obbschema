@@ -22,6 +22,6 @@ message AvailableMarket {
   uint32 market_id = 1;
 
   // The specifier is using the same values as our odds feed in XML.
-  // e.g. "variant=way:three|way=three|map=1"
+  // Example: "variant=way:three|way=three|map=1"
   string specifiers = 2;
 }

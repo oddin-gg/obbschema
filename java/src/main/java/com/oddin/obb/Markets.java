@@ -1519,7 +1519,7 @@ public final class Markets {
     /**
      * <pre>
      * The specifier is using the same values as our odds feed in XML.
-     * e.g. "variant=way:three|way=three|map=1"
+     * Example: "variant=way:three|way=three|map=1"
      * </pre>
      *
      * <code>string specifiers = 2;</code>
@@ -1529,7 +1529,7 @@ public final class Markets {
     /**
      * <pre>
      * The specifier is using the same values as our odds feed in XML.
-     * e.g. "variant=way:three|way=three|map=1"
+     * Example: "variant=way:three|way=three|map=1"
      * </pre>
      *
      * <code>string specifiers = 2;</code>
@@ -1599,7 +1599,7 @@ public final class Markets {
     /**
      * <pre>
      * The specifier is using the same values as our odds feed in XML.
-     * e.g. "variant=way:three|way=three|map=1"
+     * Example: "variant=way:three|way=three|map=1"
      * </pre>
      *
      * <code>string specifiers = 2;</code>
@@ -1621,7 +1621,7 @@ public final class Markets {
     /**
      * <pre>
      * The specifier is using the same values as our odds feed in XML.
-     * e.g. "variant=way:three|way=three|map=1"
+     * Example: "variant=way:three|way=three|map=1"
      * </pre>
      *
      * <code>string specifiers = 2;</code>
@@ -2026,7 +2026,7 @@ public final class Markets {
       /**
        * <pre>
        * The specifier is using the same values as our odds feed in XML.
-       * e.g. "variant=way:three|way=three|map=1"
+       * Example: "variant=way:three|way=three|map=1"
        * </pre>
        *
        * <code>string specifiers = 2;</code>
@@ -2047,7 +2047,7 @@ public final class Markets {
       /**
        * <pre>
        * The specifier is using the same values as our odds feed in XML.
-       * e.g. "variant=way:three|way=three|map=1"
+       * Example: "variant=way:three|way=three|map=1"
        * </pre>
        *
        * <code>string specifiers = 2;</code>
@@ -2069,7 +2069,7 @@ public final class Markets {
       /**
        * <pre>
        * The specifier is using the same values as our odds feed in XML.
-       * e.g. "variant=way:three|way=three|map=1"
+       * Example: "variant=way:three|way=three|map=1"
        * </pre>
        *
        * <code>string specifiers = 2;</code>
@@ -2089,7 +2089,7 @@ public final class Markets {
       /**
        * <pre>
        * The specifier is using the same values as our odds feed in XML.
-       * e.g. "variant=way:three|way=three|map=1"
+       * Example: "variant=way:three|way=three|map=1"
        * </pre>
        *
        * <code>string specifiers = 2;</code>
@@ -2104,7 +2104,7 @@ public final class Markets {
       /**
        * <pre>
        * The specifier is using the same values as our odds feed in XML.
-       * e.g. "variant=way:three|way=three|map=1"
+       * Example: "variant=way:three|way=three|map=1"
        * </pre>
        *
        * <code>string specifiers = 2;</code>

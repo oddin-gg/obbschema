@@ -126,7 +126,7 @@ type AvailableMarket struct {
 	// The ID using the same values as our odds feed in XML.
 	MarketId uint32 `protobuf:"varint,1,opt,name=market_id,json=marketId,proto3" json:"market_id,omitempty"`
 	// The specifier is using the same values as our odds feed in XML.
-	// e.g. "variant=way:three|way=three|map=1"
+	// Example: "variant=way:three|way=three|map=1"
 	Specifiers string `protobuf:"bytes,2,opt,name=specifiers,proto3" json:"specifiers,omitempty"`
 }
 

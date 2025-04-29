@@ -27,7 +27,8 @@ const (
 	SessionStatus_SESSION_STATUS_UNSPECIFIED SessionStatus = 0
 	// The session is valid and can still be used.
 	SessionStatus_SESSION_STATUS_VALID SessionStatus = 1
-	// Session is not valid anymore.
+	// Session is no longer valid.
+	// Example: expired, not found or invalidated
 	SessionStatus_SESSION_STATUS_INVALID SessionStatus = 2
 )
 
@@ -77,11 +78,11 @@ type SessionRejectReason_Code int32
 const (
 	// Not a valid value. Used for blocking 0 as invalid state.
 	SessionRejectReason_CODE_UNSPECIFIED SessionRejectReason_Code = 0
-	// We are having internal problems.
+	// Session rejected due to internal server problems.
 	SessionRejectReason_CODE_INTERNAL SessionRejectReason_Code = 1
-	// Session is not valid.
+	// Session rejected due to incorrect or malformed arguments.
 	SessionRejectReason_CODE_INVALID_ARGUMENT SessionRejectReason_Code = 2
-	// Session contains invalid market combination.
+	// Session rejected due to invalid market combination.
 	SessionRejectReason_CODE_INVALID_MARKET_COMBINATION SessionRejectReason_Code = 3
 )
 
@@ -133,9 +134,9 @@ type InvalidSessionReason_Code int32
 const (
 	// Not a valid value. Used for blocking 0 as invalid state.
 	InvalidSessionReason_CODE_UNSPECIFIED InvalidSessionReason_Code = 0
-	// We are having internal problems.
+	// Session invalid due to internal server problems.
 	InvalidSessionReason_CODE_INTERNAL InvalidSessionReason_Code = 1
-	// Session is not valid.
+	// Session invalid due to incorrect or malformed arguments.
 	InvalidSessionReason_CODE_INVALID_ARGUMENT InvalidSessionReason_Code = 2
 	// Session is expired.
 	InvalidSessionReason_CODE_EXPIRED InvalidSessionReason_Code = 3
@@ -309,7 +310,7 @@ type SessionCreateRequest struct {
 
 	// List of desired selections to include in the new session.
 	// Format: "<event_id>/<market_id>/<outcome_id>?<market_specifier>"
-	// e.g. “od:match:1234/1/1?map=1&way=two”
+	// Example: “od:match:1234/1/1?map=1&way=two”
 	SelectionIds []string `protobuf:"bytes,2,rep,name=selection_ids,json=selectionIds,proto3" json:"selection_ids,omitempty"`
 }
 
@@ -449,7 +450,7 @@ type SessionSelection struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Format: "<event_id>/<market_id>/<outcome_id>?<market_specifier>"
-	// e.g. “od:match:1234/1/1?map=1&way=two”
+	// Example: “od:match:1234/1/1?map=1&way=two”
 	SelectionId string `protobuf:"bytes,1,opt,name=selection_id,json=selectionId,proto3" json:"selection_id,omitempty"`
 }
 
@@ -500,7 +501,7 @@ type SessionMarket struct {
 	// The ID using the same values as our odds feed in XML.
 	MarketId uint32 `protobuf:"varint,1,opt,name=market_id,json=marketId,proto3" json:"market_id,omitempty"`
 	// The specifier is using the same values as our odds feed in XML.
-	// e.g. "variant=way:three|way=three|map=1"
+	// Example: "variant=way:three|way=three|map=1"
 	Specifiers string `protobuf:"bytes,2,opt,name=specifiers,proto3" json:"specifiers,omitempty"`
 	// List of available outcomes for the market.
 	Outcomes []*SessionMarketOutcome `protobuf:"bytes,3,rep,name=outcomes,proto3" json:"outcomes,omitempty"`
@@ -565,7 +566,7 @@ type SessionMarketOutcome struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The ID using the same values as our odds feed in <outcome> XML tag.
-	// e.g. "10" for classic market or "od:player:123" for dynamic markets.
+	// Example: "10" for classic market or "od:player:123" for dynamic markets.
 	OutcomeId string `protobuf:"bytes,1,opt,name=outcome_id,json=outcomeId,proto3" json:"outcome_id,omitempty"`
 	// Odds multiplied by 10000 and rounded to uint value.
 	Odds uint64 `protobuf:"varint,2,opt,name=odds,proto3" json:"odds,omitempty"`

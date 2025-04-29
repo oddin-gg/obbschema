@@ -37,7 +37,8 @@ public final class Session {
     SESSION_STATUS_VALID(1),
     /**
      * <pre>
-     * Session is not valid anymore.
+     * Session is no longer valid.
+     * Example: expired, not found or invalidated
      * </pre>
      *
      * <code>SESSION_STATUS_INVALID = 2;</code>
@@ -64,7 +65,8 @@ public final class Session {
     public static final int SESSION_STATUS_VALID_VALUE = 1;
     /**
      * <pre>
-     * Session is not valid anymore.
+     * Session is no longer valid.
+     * Example: expired, not found or invalidated
      * </pre>
      *
      * <code>SESSION_STATUS_INVALID = 2;</code>
@@ -255,7 +257,7 @@ public final class Session {
       CODE_UNSPECIFIED(0),
       /**
        * <pre>
-       * We are having internal problems.
+       * Session rejected due to internal server problems.
        * </pre>
        *
        * <code>CODE_INTERNAL = 1;</code>
@@ -263,7 +265,7 @@ public final class Session {
       CODE_INTERNAL(1),
       /**
        * <pre>
-       * Session is not valid.
+       * Session rejected due to incorrect or malformed arguments.
        * </pre>
        *
        * <code>CODE_INVALID_ARGUMENT = 2;</code>
@@ -271,7 +273,7 @@ public final class Session {
       CODE_INVALID_ARGUMENT(2),
       /**
        * <pre>
-       * Session contains invalid market combination.
+       * Session rejected due to invalid market combination.
        * </pre>
        *
        * <code>CODE_INVALID_MARKET_COMBINATION = 3;</code>
@@ -290,7 +292,7 @@ public final class Session {
       public static final int CODE_UNSPECIFIED_VALUE = 0;
       /**
        * <pre>
-       * We are having internal problems.
+       * Session rejected due to internal server problems.
        * </pre>
        *
        * <code>CODE_INTERNAL = 1;</code>
@@ -298,7 +300,7 @@ public final class Session {
       public static final int CODE_INTERNAL_VALUE = 1;
       /**
        * <pre>
-       * Session is not valid.
+       * Session rejected due to incorrect or malformed arguments.
        * </pre>
        *
        * <code>CODE_INVALID_ARGUMENT = 2;</code>
@@ -306,7 +308,7 @@ public final class Session {
       public static final int CODE_INVALID_ARGUMENT_VALUE = 2;
       /**
        * <pre>
-       * Session contains invalid market combination.
+       * Session rejected due to invalid market combination.
        * </pre>
        *
        * <code>CODE_INVALID_MARKET_COMBINATION = 3;</code>
@@ -1140,7 +1142,7 @@ public final class Session {
       CODE_UNSPECIFIED(0),
       /**
        * <pre>
-       * We are having internal problems.
+       * Session invalid due to internal server problems.
        * </pre>
        *
        * <code>CODE_INTERNAL = 1;</code>
@@ -1148,7 +1150,7 @@ public final class Session {
       CODE_INTERNAL(1),
       /**
        * <pre>
-       * Session is not valid.
+       * Session invalid due to incorrect or malformed arguments.
        * </pre>
        *
        * <code>CODE_INVALID_ARGUMENT = 2;</code>
@@ -1183,7 +1185,7 @@ public final class Session {
       public static final int CODE_UNSPECIFIED_VALUE = 0;
       /**
        * <pre>
-       * We are having internal problems.
+       * Session invalid due to internal server problems.
        * </pre>
        *
        * <code>CODE_INTERNAL = 1;</code>
@@ -1191,7 +1193,7 @@ public final class Session {
       public static final int CODE_INTERNAL_VALUE = 1;
       /**
        * <pre>
-       * Session is not valid.
+       * Session invalid due to incorrect or malformed arguments.
        * </pre>
        *
        * <code>CODE_INVALID_ARGUMENT = 2;</code>
@@ -1950,7 +1952,7 @@ public final class Session {
      * <pre>
      * List of desired selections to include in the new session.
      * Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
-     * e.g. “od:match:1234/1/1?map=1&amp;way=two”
+     * Example: “od:match:1234/1/1?map=1&amp;way=two”
      * </pre>
      *
      * <code>repeated string selection_ids = 2;</code>
@@ -1962,7 +1964,7 @@ public final class Session {
      * <pre>
      * List of desired selections to include in the new session.
      * Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
-     * e.g. “od:match:1234/1/1?map=1&amp;way=two”
+     * Example: “od:match:1234/1/1?map=1&amp;way=two”
      * </pre>
      *
      * <code>repeated string selection_ids = 2;</code>
@@ -1973,7 +1975,7 @@ public final class Session {
      * <pre>
      * List of desired selections to include in the new session.
      * Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
-     * e.g. “od:match:1234/1/1?map=1&amp;way=two”
+     * Example: “od:match:1234/1/1?map=1&amp;way=two”
      * </pre>
      *
      * <code>repeated string selection_ids = 2;</code>
@@ -1985,7 +1987,7 @@ public final class Session {
      * <pre>
      * List of desired selections to include in the new session.
      * Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
-     * e.g. “od:match:1234/1/1?map=1&amp;way=two”
+     * Example: “od:match:1234/1/1?map=1&amp;way=two”
      * </pre>
      *
      * <code>repeated string selection_ids = 2;</code>
@@ -2042,7 +2044,7 @@ public final class Session {
      * <pre>
      * List of desired selections to include in the new session.
      * Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
-     * e.g. “od:match:1234/1/1?map=1&amp;way=two”
+     * Example: “od:match:1234/1/1?map=1&amp;way=two”
      * </pre>
      *
      * <code>repeated string selection_ids = 2;</code>
@@ -2056,7 +2058,7 @@ public final class Session {
      * <pre>
      * List of desired selections to include in the new session.
      * Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
-     * e.g. “od:match:1234/1/1?map=1&amp;way=two”
+     * Example: “od:match:1234/1/1?map=1&amp;way=two”
      * </pre>
      *
      * <code>repeated string selection_ids = 2;</code>
@@ -2069,7 +2071,7 @@ public final class Session {
      * <pre>
      * List of desired selections to include in the new session.
      * Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
-     * e.g. “od:match:1234/1/1?map=1&amp;way=two”
+     * Example: “od:match:1234/1/1?map=1&amp;way=two”
      * </pre>
      *
      * <code>repeated string selection_ids = 2;</code>
@@ -2083,7 +2085,7 @@ public final class Session {
      * <pre>
      * List of desired selections to include in the new session.
      * Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
-     * e.g. “od:match:1234/1/1?map=1&amp;way=two”
+     * Example: “od:match:1234/1/1?map=1&amp;way=two”
      * </pre>
      *
      * <code>repeated string selection_ids = 2;</code>
@@ -2441,7 +2443,7 @@ public final class Session {
        * <pre>
        * List of desired selections to include in the new session.
        * Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
-       * e.g. “od:match:1234/1/1?map=1&amp;way=two”
+       * Example: “od:match:1234/1/1?map=1&amp;way=two”
        * </pre>
        *
        * <code>repeated string selection_ids = 2;</code>
@@ -2455,7 +2457,7 @@ public final class Session {
        * <pre>
        * List of desired selections to include in the new session.
        * Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
-       * e.g. “od:match:1234/1/1?map=1&amp;way=two”
+       * Example: “od:match:1234/1/1?map=1&amp;way=two”
        * </pre>
        *
        * <code>repeated string selection_ids = 2;</code>
@@ -2468,7 +2470,7 @@ public final class Session {
        * <pre>
        * List of desired selections to include in the new session.
        * Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
-       * e.g. “od:match:1234/1/1?map=1&amp;way=two”
+       * Example: “od:match:1234/1/1?map=1&amp;way=two”
        * </pre>
        *
        * <code>repeated string selection_ids = 2;</code>
@@ -2482,7 +2484,7 @@ public final class Session {
        * <pre>
        * List of desired selections to include in the new session.
        * Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
-       * e.g. “od:match:1234/1/1?map=1&amp;way=two”
+       * Example: “od:match:1234/1/1?map=1&amp;way=two”
        * </pre>
        *
        * <code>repeated string selection_ids = 2;</code>
@@ -2497,7 +2499,7 @@ public final class Session {
        * <pre>
        * List of desired selections to include in the new session.
        * Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
-       * e.g. “od:match:1234/1/1?map=1&amp;way=two”
+       * Example: “od:match:1234/1/1?map=1&amp;way=two”
        * </pre>
        *
        * <code>repeated string selection_ids = 2;</code>
@@ -2519,7 +2521,7 @@ public final class Session {
        * <pre>
        * List of desired selections to include in the new session.
        * Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
-       * e.g. “od:match:1234/1/1?map=1&amp;way=two”
+       * Example: “od:match:1234/1/1?map=1&amp;way=two”
        * </pre>
        *
        * <code>repeated string selection_ids = 2;</code>
@@ -2540,7 +2542,7 @@ public final class Session {
        * <pre>
        * List of desired selections to include in the new session.
        * Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
-       * e.g. “od:match:1234/1/1?map=1&amp;way=two”
+       * Example: “od:match:1234/1/1?map=1&amp;way=two”
        * </pre>
        *
        * <code>repeated string selection_ids = 2;</code>
@@ -2559,7 +2561,7 @@ public final class Session {
        * <pre>
        * List of desired selections to include in the new session.
        * Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
-       * e.g. “od:match:1234/1/1?map=1&amp;way=two”
+       * Example: “od:match:1234/1/1?map=1&amp;way=two”
        * </pre>
        *
        * <code>repeated string selection_ids = 2;</code>
@@ -2575,7 +2577,7 @@ public final class Session {
        * <pre>
        * List of desired selections to include in the new session.
        * Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
-       * e.g. “od:match:1234/1/1?map=1&amp;way=two”
+       * Example: “od:match:1234/1/1?map=1&amp;way=two”
        * </pre>
        *
        * <code>repeated string selection_ids = 2;</code>
@@ -6017,7 +6019,7 @@ public final class Session {
     /**
      * <pre>
      * Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
-     * e.g. “od:match:1234/1/1?map=1&amp;way=two”
+     * Example: “od:match:1234/1/1?map=1&amp;way=two”
      * </pre>
      *
      * <code>string selection_id = 1;</code>
@@ -6027,7 +6029,7 @@ public final class Session {
     /**
      * <pre>
      * Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
-     * e.g. “od:match:1234/1/1?map=1&amp;way=two”
+     * Example: “od:match:1234/1/1?map=1&amp;way=two”
      * </pre>
      *
      * <code>string selection_id = 1;</code>
@@ -6082,7 +6084,7 @@ public final class Session {
     /**
      * <pre>
      * Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
-     * e.g. “od:match:1234/1/1?map=1&amp;way=two”
+     * Example: “od:match:1234/1/1?map=1&amp;way=two”
      * </pre>
      *
      * <code>string selection_id = 1;</code>
@@ -6104,7 +6106,7 @@ public final class Session {
     /**
      * <pre>
      * Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
-     * e.g. “od:match:1234/1/1?map=1&amp;way=two”
+     * Example: “od:match:1234/1/1?map=1&amp;way=two”
      * </pre>
      *
      * <code>string selection_id = 1;</code>
@@ -6444,7 +6446,7 @@ public final class Session {
       /**
        * <pre>
        * Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
-       * e.g. “od:match:1234/1/1?map=1&amp;way=two”
+       * Example: “od:match:1234/1/1?map=1&amp;way=two”
        * </pre>
        *
        * <code>string selection_id = 1;</code>
@@ -6465,7 +6467,7 @@ public final class Session {
       /**
        * <pre>
        * Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
-       * e.g. “od:match:1234/1/1?map=1&amp;way=two”
+       * Example: “od:match:1234/1/1?map=1&amp;way=two”
        * </pre>
        *
        * <code>string selection_id = 1;</code>
@@ -6487,7 +6489,7 @@ public final class Session {
       /**
        * <pre>
        * Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
-       * e.g. “od:match:1234/1/1?map=1&amp;way=two”
+       * Example: “od:match:1234/1/1?map=1&amp;way=two”
        * </pre>
        *
        * <code>string selection_id = 1;</code>
@@ -6507,7 +6509,7 @@ public final class Session {
       /**
        * <pre>
        * Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
-       * e.g. “od:match:1234/1/1?map=1&amp;way=two”
+       * Example: “od:match:1234/1/1?map=1&amp;way=two”
        * </pre>
        *
        * <code>string selection_id = 1;</code>
@@ -6522,7 +6524,7 @@ public final class Session {
       /**
        * <pre>
        * Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
-       * e.g. “od:match:1234/1/1?map=1&amp;way=two”
+       * Example: “od:match:1234/1/1?map=1&amp;way=two”
        * </pre>
        *
        * <code>string selection_id = 1;</code>
@@ -6621,7 +6623,7 @@ public final class Session {
     /**
      * <pre>
      * The specifier is using the same values as our odds feed in XML.
-     * e.g. "variant=way:three|way=three|map=1"
+     * Example: "variant=way:three|way=three|map=1"
      * </pre>
      *
      * <code>string specifiers = 2;</code>
@@ -6631,7 +6633,7 @@ public final class Session {
     /**
      * <pre>
      * The specifier is using the same values as our odds feed in XML.
-     * e.g. "variant=way:three|way=three|map=1"
+     * Example: "variant=way:three|way=three|map=1"
      * </pre>
      *
      * <code>string specifiers = 2;</code>
@@ -6746,7 +6748,7 @@ public final class Session {
     /**
      * <pre>
      * The specifier is using the same values as our odds feed in XML.
-     * e.g. "variant=way:three|way=three|map=1"
+     * Example: "variant=way:three|way=three|map=1"
      * </pre>
      *
      * <code>string specifiers = 2;</code>
@@ -6768,7 +6770,7 @@ public final class Session {
     /**
      * <pre>
      * The specifier is using the same values as our odds feed in XML.
-     * e.g. "variant=way:three|way=three|map=1"
+     * Example: "variant=way:three|way=three|map=1"
      * </pre>
      *
      * <code>string specifiers = 2;</code>
@@ -7303,7 +7305,7 @@ public final class Session {
       /**
        * <pre>
        * The specifier is using the same values as our odds feed in XML.
-       * e.g. "variant=way:three|way=three|map=1"
+       * Example: "variant=way:three|way=three|map=1"
        * </pre>
        *
        * <code>string specifiers = 2;</code>
@@ -7324,7 +7326,7 @@ public final class Session {
       /**
        * <pre>
        * The specifier is using the same values as our odds feed in XML.
-       * e.g. "variant=way:three|way=three|map=1"
+       * Example: "variant=way:three|way=three|map=1"
        * </pre>
        *
        * <code>string specifiers = 2;</code>
@@ -7346,7 +7348,7 @@ public final class Session {
       /**
        * <pre>
        * The specifier is using the same values as our odds feed in XML.
-       * e.g. "variant=way:three|way=three|map=1"
+       * Example: "variant=way:three|way=three|map=1"
        * </pre>
        *
        * <code>string specifiers = 2;</code>
@@ -7366,7 +7368,7 @@ public final class Session {
       /**
        * <pre>
        * The specifier is using the same values as our odds feed in XML.
-       * e.g. "variant=way:three|way=three|map=1"
+       * Example: "variant=way:three|way=three|map=1"
        * </pre>
        *
        * <code>string specifiers = 2;</code>
@@ -7381,7 +7383,7 @@ public final class Session {
       /**
        * <pre>
        * The specifier is using the same values as our odds feed in XML.
-       * e.g. "variant=way:three|way=three|map=1"
+       * Example: "variant=way:three|way=three|map=1"
        * </pre>
        *
        * <code>string specifiers = 2;</code>
@@ -7782,7 +7784,7 @@ public final class Session {
     /**
      * <pre>
      * The ID using the same values as our odds feed in &lt;outcome&gt; XML tag.
-     * e.g. "10" for classic market or "od:player:123" for dynamic markets.
+     * Example: "10" for classic market or "od:player:123" for dynamic markets.
      * </pre>
      *
      * <code>string outcome_id = 1;</code>
@@ -7792,7 +7794,7 @@ public final class Session {
     /**
      * <pre>
      * The ID using the same values as our odds feed in &lt;outcome&gt; XML tag.
-     * e.g. "10" for classic market or "od:player:123" for dynamic markets.
+     * Example: "10" for classic market or "od:player:123" for dynamic markets.
      * </pre>
      *
      * <code>string outcome_id = 1;</code>
@@ -7857,7 +7859,7 @@ public final class Session {
     /**
      * <pre>
      * The ID using the same values as our odds feed in &lt;outcome&gt; XML tag.
-     * e.g. "10" for classic market or "od:player:123" for dynamic markets.
+     * Example: "10" for classic market or "od:player:123" for dynamic markets.
      * </pre>
      *
      * <code>string outcome_id = 1;</code>
@@ -7879,7 +7881,7 @@ public final class Session {
     /**
      * <pre>
      * The ID using the same values as our odds feed in &lt;outcome&gt; XML tag.
-     * e.g. "10" for classic market or "od:player:123" for dynamic markets.
+     * Example: "10" for classic market or "od:player:123" for dynamic markets.
      * </pre>
      *
      * <code>string outcome_id = 1;</code>
@@ -8257,7 +8259,7 @@ public final class Session {
       /**
        * <pre>
        * The ID using the same values as our odds feed in &lt;outcome&gt; XML tag.
-       * e.g. "10" for classic market or "od:player:123" for dynamic markets.
+       * Example: "10" for classic market or "od:player:123" for dynamic markets.
        * </pre>
        *
        * <code>string outcome_id = 1;</code>
@@ -8278,7 +8280,7 @@ public final class Session {
       /**
        * <pre>
        * The ID using the same values as our odds feed in &lt;outcome&gt; XML tag.
-       * e.g. "10" for classic market or "od:player:123" for dynamic markets.
+       * Example: "10" for classic market or "od:player:123" for dynamic markets.
        * </pre>
        *
        * <code>string outcome_id = 1;</code>
@@ -8300,7 +8302,7 @@ public final class Session {
       /**
        * <pre>
        * The ID using the same values as our odds feed in &lt;outcome&gt; XML tag.
-       * e.g. "10" for classic market or "od:player:123" for dynamic markets.
+       * Example: "10" for classic market or "od:player:123" for dynamic markets.
        * </pre>
        *
        * <code>string outcome_id = 1;</code>
@@ -8320,7 +8322,7 @@ public final class Session {
       /**
        * <pre>
        * The ID using the same values as our odds feed in &lt;outcome&gt; XML tag.
-       * e.g. "10" for classic market or "od:player:123" for dynamic markets.
+       * Example: "10" for classic market or "od:player:123" for dynamic markets.
        * </pre>
        *
        * <code>string outcome_id = 1;</code>
@@ -8335,7 +8337,7 @@ public final class Session {
       /**
        * <pre>
        * The ID using the same values as our odds feed in &lt;outcome&gt; XML tag.
-       * e.g. "10" for classic market or "od:player:123" for dynamic markets.
+       * Example: "10" for classic market or "od:player:123" for dynamic markets.
        * </pre>
        *
        * <code>string outcome_id = 1;</code>
