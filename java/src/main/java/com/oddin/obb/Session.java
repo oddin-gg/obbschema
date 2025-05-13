@@ -279,6 +279,14 @@ public final class Session {
        * <code>CODE_INVALID_MARKET_COMBINATION = 3;</code>
        */
       CODE_INVALID_MARKET_COMBINATION(3),
+      /**
+       * <pre>
+       * Session rejected due to inactive market.
+       * </pre>
+       *
+       * <code>CODE_INACTIVE_MARKET = 4;</code>
+       */
+      CODE_INACTIVE_MARKET(4),
       UNRECOGNIZED(-1),
       ;
 
@@ -314,6 +322,14 @@ public final class Session {
        * <code>CODE_INVALID_MARKET_COMBINATION = 3;</code>
        */
       public static final int CODE_INVALID_MARKET_COMBINATION_VALUE = 3;
+      /**
+       * <pre>
+       * Session rejected due to inactive market.
+       * </pre>
+       *
+       * <code>CODE_INACTIVE_MARKET = 4;</code>
+       */
+      public static final int CODE_INACTIVE_MARKET_VALUE = 4;
 
 
       public final int getNumber() {
@@ -344,6 +360,7 @@ public final class Session {
           case 1: return CODE_INTERNAL;
           case 2: return CODE_INVALID_ARGUMENT;
           case 3: return CODE_INVALID_MARKET_COMBINATION;
+          case 4: return CODE_INACTIVE_MARKET;
           default: return null;
         }
       }
@@ -11989,45 +12006,46 @@ public final class Session {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021obb/session.proto\022\003obb\"\304\001\n\023SessionReje" +
+      "\n\021obb/session.proto\022\003obb\"\337\001\n\023SessionReje" +
       "ctReason\022+\n\004code\030\001 \001(\0162\035.obb.SessionReje" +
-      "ctReason.Code\022\017\n\007message\030\002 \001(\t\"o\n\004Code\022\024" +
-      "\n\020CODE_UNSPECIFIED\020\000\022\021\n\rCODE_INTERNAL\020\001\022" +
-      "\031\n\025CODE_INVALID_ARGUMENT\020\002\022#\n\037CODE_INVAL" +
-      "ID_MARKET_COMBINATION\020\003\"\307\001\n\024InvalidSessi" +
-      "onReason\022,\n\004code\030\001 \001(\0162\036.obb.InvalidSess" +
-      "ionReason.Code\022\017\n\007message\030\002 \001(\t\"p\n\004Code\022" +
+      "ctReason.Code\022\017\n\007message\030\002 \001(\t\"\211\001\n\004Code\022" +
       "\024\n\020CODE_UNSPECIFIED\020\000\022\021\n\rCODE_INTERNAL\020\001" +
-      "\022\031\n\025CODE_INVALID_ARGUMENT\020\002\022\020\n\014CODE_EXPI" +
-      "RED\020\003\022\022\n\016CODE_NOT_FOUND\020\004\"-\n\024SessionCrea" +
-      "teRequest\022\025\n\rselection_ids\030\002 \003(\t\"\352\002\n\025Ses" +
-      "sionCreateResponse\022\022\n\nsession_id\030\001 \001(\t\022<" +
-      "\n\007created\030\002 \001(\0132).obb.SessionCreateRespo" +
-      "nse.SessionCreatedH\000\022>\n\010rejected\030\003 \001(\0132*" +
-      ".obb.SessionCreateResponse.SessionReject" +
-      "edH\000\032x\n\016SessionCreated\022)\n\nselections\030\001 \003" +
-      "(\0132\025.obb.SessionSelection\022\014\n\004odds\030\002 \001(\004\022" +
-      "-\n\021available_markets\030\003 \003(\0132\022.obb.Session" +
-      "Market\032;\n\017SessionRejected\022(\n\006reason\030\001 \001(" +
-      "\0132\030.obb.SessionRejectReasonB\010\n\006status\"(\n" +
-      "\020SessionSelection\022\024\n\014selection_id\030\001 \001(\t\"" +
-      "c\n\rSessionMarket\022\021\n\tmarket_id\030\001 \001(\r\022\022\n\ns" +
-      "pecifiers\030\002 \001(\t\022+\n\010outcomes\030\003 \003(\0132\031.obb." +
-      "SessionMarketOutcome\"8\n\024SessionMarketOut" +
-      "come\022\022\n\noutcome_id\030\001 \001(\t\022\014\n\004odds\030\002 \001(\004\"a" +
-      "\n\022SessionInfoRequest\022\022\n\nsession_id\030\001 \001(\t" +
-      "\022)\n\nselections\030\002 \003(\0132\025.obb.SessionSelect" +
-      "ion\022\014\n\004odds\030\003 \001(\004\"\364\001\n\023SessionInfoRespons" +
-      "e\022\022\n\nsession_id\030\001 \001(\t\0226\n\005valid\030\002 \001(\0132%.o" +
-      "bb.SessionInfoResponse.ValidSessionH\000\022:\n" +
-      "\007invalid\030\003 \001(\0132\'.obb.SessionInfoResponse" +
-      ".InvalidSessionH\000\032\016\n\014ValidSession\032;\n\016Inv" +
-      "alidSession\022)\n\006reason\030\001 \001(\0132\031.obb.Invali" +
-      "dSessionReasonB\010\n\006status*e\n\rSessionStatu" +
-      "s\022\036\n\032SESSION_STATUS_UNSPECIFIED\020\000\022\030\n\024SES" +
-      "SION_STATUS_VALID\020\001\022\032\n\026SESSION_STATUS_IN" +
-      "VALID\020\002B5\n\rcom.oddin.obbZ$github.com/odd" +
-      "in-gg/obbschema/go/obbb\006proto3"
+      "\022\031\n\025CODE_INVALID_ARGUMENT\020\002\022#\n\037CODE_INVA" +
+      "LID_MARKET_COMBINATION\020\003\022\030\n\024CODE_INACTIV" +
+      "E_MARKET\020\004\"\307\001\n\024InvalidSessionReason\022,\n\004c" +
+      "ode\030\001 \001(\0162\036.obb.InvalidSessionReason.Cod" +
+      "e\022\017\n\007message\030\002 \001(\t\"p\n\004Code\022\024\n\020CODE_UNSPE" +
+      "CIFIED\020\000\022\021\n\rCODE_INTERNAL\020\001\022\031\n\025CODE_INVA" +
+      "LID_ARGUMENT\020\002\022\020\n\014CODE_EXPIRED\020\003\022\022\n\016CODE" +
+      "_NOT_FOUND\020\004\"-\n\024SessionCreateRequest\022\025\n\r" +
+      "selection_ids\030\002 \003(\t\"\352\002\n\025SessionCreateRes" +
+      "ponse\022\022\n\nsession_id\030\001 \001(\t\022<\n\007created\030\002 \001" +
+      "(\0132).obb.SessionCreateResponse.SessionCr" +
+      "eatedH\000\022>\n\010rejected\030\003 \001(\0132*.obb.SessionC" +
+      "reateResponse.SessionRejectedH\000\032x\n\016Sessi" +
+      "onCreated\022)\n\nselections\030\001 \003(\0132\025.obb.Sess" +
+      "ionSelection\022\014\n\004odds\030\002 \001(\004\022-\n\021available_" +
+      "markets\030\003 \003(\0132\022.obb.SessionMarket\032;\n\017Ses" +
+      "sionRejected\022(\n\006reason\030\001 \001(\0132\030.obb.Sessi" +
+      "onRejectReasonB\010\n\006status\"(\n\020SessionSelec" +
+      "tion\022\024\n\014selection_id\030\001 \001(\t\"c\n\rSessionMar" +
+      "ket\022\021\n\tmarket_id\030\001 \001(\r\022\022\n\nspecifiers\030\002 \001" +
+      "(\t\022+\n\010outcomes\030\003 \003(\0132\031.obb.SessionMarket" +
+      "Outcome\"8\n\024SessionMarketOutcome\022\022\n\noutco" +
+      "me_id\030\001 \001(\t\022\014\n\004odds\030\002 \001(\004\"a\n\022SessionInfo" +
+      "Request\022\022\n\nsession_id\030\001 \001(\t\022)\n\nselection" +
+      "s\030\002 \003(\0132\025.obb.SessionSelection\022\014\n\004odds\030\003" +
+      " \001(\004\"\364\001\n\023SessionInfoResponse\022\022\n\nsession_" +
+      "id\030\001 \001(\t\0226\n\005valid\030\002 \001(\0132%.obb.SessionInf" +
+      "oResponse.ValidSessionH\000\022:\n\007invalid\030\003 \001(" +
+      "\0132\'.obb.SessionInfoResponse.InvalidSessi" +
+      "onH\000\032\016\n\014ValidSession\032;\n\016InvalidSession\022)" +
+      "\n\006reason\030\001 \001(\0132\031.obb.InvalidSessionReaso" +
+      "nB\010\n\006status*e\n\rSessionStatus\022\036\n\032SESSION_" +
+      "STATUS_UNSPECIFIED\020\000\022\030\n\024SESSION_STATUS_V" +
+      "ALID\020\001\022\032\n\026SESSION_STATUS_INVALID\020\002B5\n\rco" +
+      "m.oddin.obbZ$github.com/oddin-gg/obbsche" +
+      "ma/go/obbb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
