@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x11obb/session.proto\x12\x03obb\"\xc4\x01\n\x13SessionRejectReason\x12+\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x1d.obb.SessionRejectReason.Code\x12\x0f\n\x07message\x18\x02 \x01(\t\"o\n\x04\x43ode\x12\x14\n\x10\x43ODE_UNSPECIFIED\x10\x00\x12\x11\n\rCODE_INTERNAL\x10\x01\x12\x19\n\x15\x43ODE_INVALID_ARGUMENT\x10\x02\x12#\n\x1f\x43ODE_INVALID_MARKET_COMBINATION\x10\x03\"\xc7\x01\n\x14InvalidSessionReason\x12,\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x1e.obb.InvalidSessionReason.Code\x12\x0f\n\x07message\x18\x02 \x01(\t\"p\n\x04\x43ode\x12\x14\n\x10\x43ODE_UNSPECIFIED\x10\x00\x12\x11\n\rCODE_INTERNAL\x10\x01\x12\x19\n\x15\x43ODE_INVALID_ARGUMENT\x10\x02\x12\x10\n\x0c\x43ODE_EXPIRED\x10\x03\x12\x12\n\x0e\x43ODE_NOT_FOUND\x10\x04\"-\n\x14SessionCreateRequest\x12\x15\n\rselection_ids\x18\x02 \x03(\t\"\xea\x02\n\x15SessionCreateResponse\x12\x12\n\nsession_id\x18\x01 \x01(\t\x12<\n\x07\x63reated\x18\x02 \x01(\x0b\x32).obb.SessionCreateResponse.SessionCreatedH\x00\x12>\n\x08rejected\x18\x03 \x01(\x0b\x32*.obb.SessionCreateResponse.SessionRejectedH\x00\x1ax\n\x0eSessionCreated\x12)\n\nselections\x18\x01 \x03(\x0b\x32\x15.obb.SessionSelection\x12\x0c\n\x04odds\x18\x02 \x01(\x04\x12-\n\x11\x61vailable_markets\x18\x03 \x03(\x0b\x32\x12.obb.SessionMarket\x1a;\n\x0fSessionRejected\x12(\n\x06reason\x18\x01 \x01(\x0b\x32\x18.obb.SessionRejectReasonB\x08\n\x06status\"(\n\x10SessionSelection\x12\x14\n\x0cselection_id\x18\x01 \x01(\t\"c\n\rSessionMarket\x12\x11\n\tmarket_id\x18\x01 \x01(\r\x12\x12\n\nspecifiers\x18\x02 \x01(\t\x12+\n\x08outcomes\x18\x03 \x03(\x0b\x32\x19.obb.SessionMarketOutcome\"8\n\x14SessionMarketOutcome\x12\x12\n\noutcome_id\x18\x01 \x01(\t\x12\x0c\n\x04odds\x18\x02 \x01(\x04\"a\n\x12SessionInfoRequest\x12\x12\n\nsession_id\x18\x01 \x01(\t\x12)\n\nselections\x18\x02 \x03(\x0b\x32\x15.obb.SessionSelection\x12\x0c\n\x04odds\x18\x03 \x01(\x04\"\xf4\x01\n\x13SessionInfoResponse\x12\x12\n\nsession_id\x18\x01 \x01(\t\x12\x36\n\x05valid\x18\x02 \x01(\x0b\x32%.obb.SessionInfoResponse.ValidSessionH\x00\x12:\n\x07invalid\x18\x03 \x01(\x0b\x32\'.obb.SessionInfoResponse.InvalidSessionH\x00\x1a\x0e\n\x0cValidSession\x1a;\n\x0eInvalidSession\x12)\n\x06reason\x18\x01 \x01(\x0b\x32\x19.obb.InvalidSessionReasonB\x08\n\x06status*e\n\rSessionStatus\x12\x1e\n\x1aSESSION_STATUS_UNSPECIFIED\x10\x00\x12\x18\n\x14SESSION_STATUS_VALID\x10\x01\x12\x1a\n\x16SESSION_STATUS_INVALID\x10\x02\x42\x35\n\rcom.oddin.obbZ$github.com/oddin-gg/obbschema/go/obbb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x11obb/session.proto\x12\x03obb\"\xdf\x01\n\x13SessionRejectReason\x12+\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x1d.obb.SessionRejectReason.Code\x12\x0f\n\x07message\x18\x02 \x01(\t\"\x89\x01\n\x04\x43ode\x12\x14\n\x10\x43ODE_UNSPECIFIED\x10\x00\x12\x11\n\rCODE_INTERNAL\x10\x01\x12\x19\n\x15\x43ODE_INVALID_ARGUMENT\x10\x02\x12#\n\x1f\x43ODE_INVALID_MARKET_COMBINATION\x10\x03\x12\x18\n\x14\x43ODE_INACTIVE_MARKET\x10\x04\"\xc7\x01\n\x14InvalidSessionReason\x12,\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x1e.obb.InvalidSessionReason.Code\x12\x0f\n\x07message\x18\x02 \x01(\t\"p\n\x04\x43ode\x12\x14\n\x10\x43ODE_UNSPECIFIED\x10\x00\x12\x11\n\rCODE_INTERNAL\x10\x01\x12\x19\n\x15\x43ODE_INVALID_ARGUMENT\x10\x02\x12\x10\n\x0c\x43ODE_EXPIRED\x10\x03\x12\x12\n\x0e\x43ODE_NOT_FOUND\x10\x04\"-\n\x14SessionCreateRequest\x12\x15\n\rselection_ids\x18\x02 \x03(\t\"\xea\x02\n\x15SessionCreateResponse\x12\x12\n\nsession_id\x18\x01 \x01(\t\x12<\n\x07\x63reated\x18\x02 \x01(\x0b\x32).obb.SessionCreateResponse.SessionCreatedH\x00\x12>\n\x08rejected\x18\x03 \x01(\x0b\x32*.obb.SessionCreateResponse.SessionRejectedH\x00\x1ax\n\x0eSessionCreated\x12)\n\nselections\x18\x01 \x03(\x0b\x32\x15.obb.SessionSelection\x12\x0c\n\x04odds\x18\x02 \x01(\x04\x12-\n\x11\x61vailable_markets\x18\x03 \x03(\x0b\x32\x12.obb.SessionMarket\x1a;\n\x0fSessionRejected\x12(\n\x06reason\x18\x01 \x01(\x0b\x32\x18.obb.SessionRejectReasonB\x08\n\x06status\"(\n\x10SessionSelection\x12\x14\n\x0cselection_id\x18\x01 \x01(\t\"c\n\rSessionMarket\x12\x11\n\tmarket_id\x18\x01 \x01(\r\x12\x12\n\nspecifiers\x18\x02 \x01(\t\x12+\n\x08outcomes\x18\x03 \x03(\x0b\x32\x19.obb.SessionMarketOutcome\"8\n\x14SessionMarketOutcome\x12\x12\n\noutcome_id\x18\x01 \x01(\t\x12\x0c\n\x04odds\x18\x02 \x01(\x04\"a\n\x12SessionInfoRequest\x12\x12\n\nsession_id\x18\x01 \x01(\t\x12)\n\nselections\x18\x02 \x03(\x0b\x32\x15.obb.SessionSelection\x12\x0c\n\x04odds\x18\x03 \x01(\x04\"\xf4\x01\n\x13SessionInfoResponse\x12\x12\n\nsession_id\x18\x01 \x01(\t\x12\x36\n\x05valid\x18\x02 \x01(\x0b\x32%.obb.SessionInfoResponse.ValidSessionH\x00\x12:\n\x07invalid\x18\x03 \x01(\x0b\x32\'.obb.SessionInfoResponse.InvalidSessionH\x00\x1a\x0e\n\x0cValidSession\x1a;\n\x0eInvalidSession\x12)\n\x06reason\x18\x01 \x01(\x0b\x32\x19.obb.InvalidSessionReasonB\x08\n\x06status*e\n\rSessionStatus\x12\x1e\n\x1aSESSION_STATUS_UNSPECIFIED\x10\x00\x12\x18\n\x14SESSION_STATUS_VALID\x10\x01\x12\x1a\n\x16SESSION_STATUS_INVALID\x10\x02\x42\x35\n\rcom.oddin.obbZ$github.com/oddin-gg/obbschema/go/obbb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,36 +32,36 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'obb.session_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\rcom.oddin.obbZ$github.com/oddin-gg/obbschema/go/obb'
-  _globals['_SESSIONSTATUS']._serialized_start=1386
-  _globals['_SESSIONSTATUS']._serialized_end=1487
+  _globals['_SESSIONSTATUS']._serialized_start=1413
+  _globals['_SESSIONSTATUS']._serialized_end=1514
   _globals['_SESSIONREJECTREASON']._serialized_start=27
-  _globals['_SESSIONREJECTREASON']._serialized_end=223
-  _globals['_SESSIONREJECTREASON_CODE']._serialized_start=112
-  _globals['_SESSIONREJECTREASON_CODE']._serialized_end=223
-  _globals['_INVALIDSESSIONREASON']._serialized_start=226
-  _globals['_INVALIDSESSIONREASON']._serialized_end=425
-  _globals['_INVALIDSESSIONREASON_CODE']._serialized_start=313
-  _globals['_INVALIDSESSIONREASON_CODE']._serialized_end=425
-  _globals['_SESSIONCREATEREQUEST']._serialized_start=427
-  _globals['_SESSIONCREATEREQUEST']._serialized_end=472
-  _globals['_SESSIONCREATERESPONSE']._serialized_start=475
-  _globals['_SESSIONCREATERESPONSE']._serialized_end=837
-  _globals['_SESSIONCREATERESPONSE_SESSIONCREATED']._serialized_start=646
-  _globals['_SESSIONCREATERESPONSE_SESSIONCREATED']._serialized_end=766
-  _globals['_SESSIONCREATERESPONSE_SESSIONREJECTED']._serialized_start=768
-  _globals['_SESSIONCREATERESPONSE_SESSIONREJECTED']._serialized_end=827
-  _globals['_SESSIONSELECTION']._serialized_start=839
-  _globals['_SESSIONSELECTION']._serialized_end=879
-  _globals['_SESSIONMARKET']._serialized_start=881
-  _globals['_SESSIONMARKET']._serialized_end=980
-  _globals['_SESSIONMARKETOUTCOME']._serialized_start=982
-  _globals['_SESSIONMARKETOUTCOME']._serialized_end=1038
-  _globals['_SESSIONINFOREQUEST']._serialized_start=1040
-  _globals['_SESSIONINFOREQUEST']._serialized_end=1137
-  _globals['_SESSIONINFORESPONSE']._serialized_start=1140
-  _globals['_SESSIONINFORESPONSE']._serialized_end=1384
-  _globals['_SESSIONINFORESPONSE_VALIDSESSION']._serialized_start=1299
-  _globals['_SESSIONINFORESPONSE_VALIDSESSION']._serialized_end=1313
-  _globals['_SESSIONINFORESPONSE_INVALIDSESSION']._serialized_start=1315
-  _globals['_SESSIONINFORESPONSE_INVALIDSESSION']._serialized_end=1374
+  _globals['_SESSIONREJECTREASON']._serialized_end=250
+  _globals['_SESSIONREJECTREASON_CODE']._serialized_start=113
+  _globals['_SESSIONREJECTREASON_CODE']._serialized_end=250
+  _globals['_INVALIDSESSIONREASON']._serialized_start=253
+  _globals['_INVALIDSESSIONREASON']._serialized_end=452
+  _globals['_INVALIDSESSIONREASON_CODE']._serialized_start=340
+  _globals['_INVALIDSESSIONREASON_CODE']._serialized_end=452
+  _globals['_SESSIONCREATEREQUEST']._serialized_start=454
+  _globals['_SESSIONCREATEREQUEST']._serialized_end=499
+  _globals['_SESSIONCREATERESPONSE']._serialized_start=502
+  _globals['_SESSIONCREATERESPONSE']._serialized_end=864
+  _globals['_SESSIONCREATERESPONSE_SESSIONCREATED']._serialized_start=673
+  _globals['_SESSIONCREATERESPONSE_SESSIONCREATED']._serialized_end=793
+  _globals['_SESSIONCREATERESPONSE_SESSIONREJECTED']._serialized_start=795
+  _globals['_SESSIONCREATERESPONSE_SESSIONREJECTED']._serialized_end=854
+  _globals['_SESSIONSELECTION']._serialized_start=866
+  _globals['_SESSIONSELECTION']._serialized_end=906
+  _globals['_SESSIONMARKET']._serialized_start=908
+  _globals['_SESSIONMARKET']._serialized_end=1007
+  _globals['_SESSIONMARKETOUTCOME']._serialized_start=1009
+  _globals['_SESSIONMARKETOUTCOME']._serialized_end=1065
+  _globals['_SESSIONINFOREQUEST']._serialized_start=1067
+  _globals['_SESSIONINFOREQUEST']._serialized_end=1164
+  _globals['_SESSIONINFORESPONSE']._serialized_start=1167
+  _globals['_SESSIONINFORESPONSE']._serialized_end=1411
+  _globals['_SESSIONINFORESPONSE_VALIDSESSION']._serialized_start=1326
+  _globals['_SESSIONINFORESPONSE_VALIDSESSION']._serialized_end=1340
+  _globals['_SESSIONINFORESPONSE_INVALIDSESSION']._serialized_start=1342
+  _globals['_SESSIONINFORESPONSE_INVALIDSESSION']._serialized_end=1401
 # @@protoc_insertion_point(module_scope)

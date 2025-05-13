@@ -18,6 +18,9 @@ message SessionRejectReason {
 
     // Session rejected due to invalid market combination.
     CODE_INVALID_MARKET_COMBINATION = 3;
+
+    // Session rejected due to inactive market.
+    CODE_INACTIVE_MARKET = 4;
   }
 
   // Reason code.
