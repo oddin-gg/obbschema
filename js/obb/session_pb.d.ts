@@ -31,6 +31,7 @@ export namespace SessionRejectReason {
     CODE_INTERNAL: 1;
     CODE_INVALID_ARGUMENT: 2;
     CODE_INVALID_MARKET_COMBINATION: 3;
+    CODE_INACTIVE_MARKET: 4;
   }
 
   export const Code: CodeMap;
