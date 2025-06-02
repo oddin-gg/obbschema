@@ -88,8 +88,25 @@ message SessionCreateResponse {
   }
 
   message SessionRejected {
+    message SelectionRejectedReason {
+      enum Code {
+        // Not a valid value. Used for blocking 0 as invalid state.
+        CODE_UNSPECIFIED = 0;
+
+        // Selection is invalid because the market is not active.
+        CODE_INACTIVE_MARKET = 1;
+      }
+
+      Code code = 1;
+      string message = 2;
+    }
+
     // Information about rejection reason.
     SessionRejectReason reason = 1;
+
+    // Rejected selections.
+    // Key is SelectionID, Format: "<event_id>/<market_id>/<outcome_id>?<market_specifier>"
+    map<string, SelectionRejectedReason> selections_rejected = 2;
   }
 
   // Session ID created by operator.
