@@ -1,0 +1,47 @@
+# Documentation for this file at https://buf.build/docs/configuration/v2/buf-gen-yaml/
+version: v2
+
+clean: true
+
+managed:
+  enabled: false
+
+# List of all plugins at https://buf.build/plugins
+plugins:
+  # GO plugins
+  - remote: buf.build/protocolbuffers/go:v1.36.6
+    out: go
+    opt: paths=source_relative
+
+  - remote: buf.build/grpc/go:v1.5.1
+    out: go
+    opt: paths=source_relative
+
+  # Python plugins
+  - remote: buf.build/protocolbuffers/python:v27.2
+    out: python
+
+  - remote: buf.build/grpc/python:v1.66.0
+    out: python
+
+  # Java plugins
+  - remote: buf.build/protocolbuffers/java:v21.7
+    out: java/src/main/java/
+
+  - remote: buf.build/grpc/java:v1.54.0
+    out: java/src/main/java
+
+  # JS plugins
+  - protoc_builtin: js
+    out: js
+    opt: import_style=commonjs,binary
+
+    # this is defined in dockerfile
+  - local: grpc_node_plugin
+    out: js
+    opt: import_style=commonjs,binary
+
+    # this is defined in dockerfile
+  - local: protoc-gen-ts
+    out: js
+
