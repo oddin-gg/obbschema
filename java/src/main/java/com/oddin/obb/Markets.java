@@ -23,7 +23,7 @@ public final class Markets {
      * Event ID URN - e.g "od:match:xx"
      * </pre>
      *
-     * <code>string event_urn = 1;</code>
+     * <code>string event_urn = 1 [json_name = "eventUrn"];</code>
      * @return The eventUrn.
      */
     java.lang.String getEventUrn();
@@ -32,7 +32,7 @@ public final class Markets {
      * Event ID URN - e.g "od:match:xx"
      * </pre>
      *
-     * <code>string event_urn = 1;</code>
+     * <code>string event_urn = 1 [json_name = "eventUrn"];</code>
      * @return The bytes for eventUrn.
      */
     com.google.protobuf.ByteString
@@ -90,7 +90,7 @@ public final class Markets {
      * Event ID URN - e.g "od:match:xx"
      * </pre>
      *
-     * <code>string event_urn = 1;</code>
+     * <code>string event_urn = 1 [json_name = "eventUrn"];</code>
      * @return The eventUrn.
      */
     @java.lang.Override
@@ -111,7 +111,7 @@ public final class Markets {
      * Event ID URN - e.g "od:match:xx"
      * </pre>
      *
-     * <code>string event_urn = 1;</code>
+     * <code>string event_urn = 1 [json_name = "eventUrn"];</code>
      * @return The bytes for eventUrn.
      */
     @java.lang.Override
@@ -454,7 +454,7 @@ public final class Markets {
        * Event ID URN - e.g "od:match:xx"
        * </pre>
        *
-       * <code>string event_urn = 1;</code>
+       * <code>string event_urn = 1 [json_name = "eventUrn"];</code>
        * @return The eventUrn.
        */
       public java.lang.String getEventUrn() {
@@ -474,7 +474,7 @@ public final class Markets {
        * Event ID URN - e.g "od:match:xx"
        * </pre>
        *
-       * <code>string event_urn = 1;</code>
+       * <code>string event_urn = 1 [json_name = "eventUrn"];</code>
        * @return The bytes for eventUrn.
        */
       public com.google.protobuf.ByteString
@@ -495,7 +495,7 @@ public final class Markets {
        * Event ID URN - e.g "od:match:xx"
        * </pre>
        *
-       * <code>string event_urn = 1;</code>
+       * <code>string event_urn = 1 [json_name = "eventUrn"];</code>
        * @param value The eventUrn to set.
        * @return This builder for chaining.
        */
@@ -514,7 +514,7 @@ public final class Markets {
        * Event ID URN - e.g "od:match:xx"
        * </pre>
        *
-       * <code>string event_urn = 1;</code>
+       * <code>string event_urn = 1 [json_name = "eventUrn"];</code>
        * @return This builder for chaining.
        */
       public Builder clearEventUrn() {
@@ -528,7 +528,7 @@ public final class Markets {
        * Event ID URN - e.g "od:match:xx"
        * </pre>
        *
-       * <code>string event_urn = 1;</code>
+       * <code>string event_urn = 1 [json_name = "eventUrn"];</code>
        * @param value The bytes for eventUrn to set.
        * @return This builder for chaining.
        */
@@ -616,7 +616,7 @@ public final class Markets {
      * List of available markets
      * </pre>
      *
-     * <code>repeated .obb.AvailableMarket markets = 1;</code>
+     * <code>repeated .obb.AvailableMarket markets = 1 [json_name = "markets"];</code>
      */
     java.util.List<com.oddin.obb.Markets.AvailableMarket> 
         getMarketsList();
@@ -625,7 +625,7 @@ public final class Markets {
      * List of available markets
      * </pre>
      *
-     * <code>repeated .obb.AvailableMarket markets = 1;</code>
+     * <code>repeated .obb.AvailableMarket markets = 1 [json_name = "markets"];</code>
      */
     com.oddin.obb.Markets.AvailableMarket getMarkets(int index);
     /**
@@ -633,7 +633,7 @@ public final class Markets {
      * List of available markets
      * </pre>
      *
-     * <code>repeated .obb.AvailableMarket markets = 1;</code>
+     * <code>repeated .obb.AvailableMarket markets = 1 [json_name = "markets"];</code>
      */
     int getMarketsCount();
     /**
@@ -641,7 +641,7 @@ public final class Markets {
      * List of available markets
      * </pre>
      *
-     * <code>repeated .obb.AvailableMarket markets = 1;</code>
+     * <code>repeated .obb.AvailableMarket markets = 1 [json_name = "markets"];</code>
      */
     java.util.List<? extends com.oddin.obb.Markets.AvailableMarketOrBuilder> 
         getMarketsOrBuilderList();
@@ -650,7 +650,7 @@ public final class Markets {
      * List of available markets
      * </pre>
      *
-     * <code>repeated .obb.AvailableMarket markets = 1;</code>
+     * <code>repeated .obb.AvailableMarket markets = 1 [json_name = "markets"];</code>
      */
     com.oddin.obb.Markets.AvailableMarketOrBuilder getMarketsOrBuilder(
         int index);
@@ -707,7 +707,7 @@ public final class Markets {
      * List of available markets
      * </pre>
      *
-     * <code>repeated .obb.AvailableMarket markets = 1;</code>
+     * <code>repeated .obb.AvailableMarket markets = 1 [json_name = "markets"];</code>
      */
     @java.lang.Override
     public java.util.List<com.oddin.obb.Markets.AvailableMarket> getMarketsList() {
@@ -718,7 +718,7 @@ public final class Markets {
      * List of available markets
      * </pre>
      *
-     * <code>repeated .obb.AvailableMarket markets = 1;</code>
+     * <code>repeated .obb.AvailableMarket markets = 1 [json_name = "markets"];</code>
      */
     @java.lang.Override
     public java.util.List<? extends com.oddin.obb.Markets.AvailableMarketOrBuilder> 
@@ -730,7 +730,7 @@ public final class Markets {
      * List of available markets
      * </pre>
      *
-     * <code>repeated .obb.AvailableMarket markets = 1;</code>
+     * <code>repeated .obb.AvailableMarket markets = 1 [json_name = "markets"];</code>
      */
     @java.lang.Override
     public int getMarketsCount() {
@@ -741,7 +741,7 @@ public final class Markets {
      * List of available markets
      * </pre>
      *
-     * <code>repeated .obb.AvailableMarket markets = 1;</code>
+     * <code>repeated .obb.AvailableMarket markets = 1 [json_name = "markets"];</code>
      */
     @java.lang.Override
     public com.oddin.obb.Markets.AvailableMarket getMarkets(int index) {
@@ -752,7 +752,7 @@ public final class Markets {
      * List of available markets
      * </pre>
      *
-     * <code>repeated .obb.AvailableMarket markets = 1;</code>
+     * <code>repeated .obb.AvailableMarket markets = 1 [json_name = "markets"];</code>
      */
     @java.lang.Override
     public com.oddin.obb.Markets.AvailableMarketOrBuilder getMarketsOrBuilder(
@@ -1144,7 +1144,7 @@ public final class Markets {
        * List of available markets
        * </pre>
        *
-       * <code>repeated .obb.AvailableMarket markets = 1;</code>
+       * <code>repeated .obb.AvailableMarket markets = 1 [json_name = "markets"];</code>
        */
       public java.util.List<com.oddin.obb.Markets.AvailableMarket> getMarketsList() {
         if (marketsBuilder_ == null) {
@@ -1158,7 +1158,7 @@ public final class Markets {
        * List of available markets
        * </pre>
        *
-       * <code>repeated .obb.AvailableMarket markets = 1;</code>
+       * <code>repeated .obb.AvailableMarket markets = 1 [json_name = "markets"];</code>
        */
       public int getMarketsCount() {
         if (marketsBuilder_ == null) {
@@ -1172,7 +1172,7 @@ public final class Markets {
        * List of available markets
        * </pre>
        *
-       * <code>repeated .obb.AvailableMarket markets = 1;</code>
+       * <code>repeated .obb.AvailableMarket markets = 1 [json_name = "markets"];</code>
        */
       public com.oddin.obb.Markets.AvailableMarket getMarkets(int index) {
         if (marketsBuilder_ == null) {
@@ -1186,7 +1186,7 @@ public final class Markets {
        * List of available markets
        * </pre>
        *
-       * <code>repeated .obb.AvailableMarket markets = 1;</code>
+       * <code>repeated .obb.AvailableMarket markets = 1 [json_name = "markets"];</code>
        */
       public Builder setMarkets(
           int index, com.oddin.obb.Markets.AvailableMarket value) {
@@ -1207,7 +1207,7 @@ public final class Markets {
        * List of available markets
        * </pre>
        *
-       * <code>repeated .obb.AvailableMarket markets = 1;</code>
+       * <code>repeated .obb.AvailableMarket markets = 1 [json_name = "markets"];</code>
        */
       public Builder setMarkets(
           int index, com.oddin.obb.Markets.AvailableMarket.Builder builderForValue) {
@@ -1225,7 +1225,7 @@ public final class Markets {
        * List of available markets
        * </pre>
        *
-       * <code>repeated .obb.AvailableMarket markets = 1;</code>
+       * <code>repeated .obb.AvailableMarket markets = 1 [json_name = "markets"];</code>
        */
       public Builder addMarkets(com.oddin.obb.Markets.AvailableMarket value) {
         if (marketsBuilder_ == null) {
@@ -1245,7 +1245,7 @@ public final class Markets {
        * List of available markets
        * </pre>
        *
-       * <code>repeated .obb.AvailableMarket markets = 1;</code>
+       * <code>repeated .obb.AvailableMarket markets = 1 [json_name = "markets"];</code>
        */
       public Builder addMarkets(
           int index, com.oddin.obb.Markets.AvailableMarket value) {
@@ -1266,7 +1266,7 @@ public final class Markets {
        * List of available markets
        * </pre>
        *
-       * <code>repeated .obb.AvailableMarket markets = 1;</code>
+       * <code>repeated .obb.AvailableMarket markets = 1 [json_name = "markets"];</code>
        */
       public Builder addMarkets(
           com.oddin.obb.Markets.AvailableMarket.Builder builderForValue) {
@@ -1284,7 +1284,7 @@ public final class Markets {
        * List of available markets
        * </pre>
        *
-       * <code>repeated .obb.AvailableMarket markets = 1;</code>
+       * <code>repeated .obb.AvailableMarket markets = 1 [json_name = "markets"];</code>
        */
       public Builder addMarkets(
           int index, com.oddin.obb.Markets.AvailableMarket.Builder builderForValue) {
@@ -1302,7 +1302,7 @@ public final class Markets {
        * List of available markets
        * </pre>
        *
-       * <code>repeated .obb.AvailableMarket markets = 1;</code>
+       * <code>repeated .obb.AvailableMarket markets = 1 [json_name = "markets"];</code>
        */
       public Builder addAllMarkets(
           java.lang.Iterable<? extends com.oddin.obb.Markets.AvailableMarket> values) {
@@ -1321,7 +1321,7 @@ public final class Markets {
        * List of available markets
        * </pre>
        *
-       * <code>repeated .obb.AvailableMarket markets = 1;</code>
+       * <code>repeated .obb.AvailableMarket markets = 1 [json_name = "markets"];</code>
        */
       public Builder clearMarkets() {
         if (marketsBuilder_ == null) {
@@ -1338,7 +1338,7 @@ public final class Markets {
        * List of available markets
        * </pre>
        *
-       * <code>repeated .obb.AvailableMarket markets = 1;</code>
+       * <code>repeated .obb.AvailableMarket markets = 1 [json_name = "markets"];</code>
        */
       public Builder removeMarkets(int index) {
         if (marketsBuilder_ == null) {
@@ -1355,7 +1355,7 @@ public final class Markets {
        * List of available markets
        * </pre>
        *
-       * <code>repeated .obb.AvailableMarket markets = 1;</code>
+       * <code>repeated .obb.AvailableMarket markets = 1 [json_name = "markets"];</code>
        */
       public com.oddin.obb.Markets.AvailableMarket.Builder getMarketsBuilder(
           int index) {
@@ -1366,7 +1366,7 @@ public final class Markets {
        * List of available markets
        * </pre>
        *
-       * <code>repeated .obb.AvailableMarket markets = 1;</code>
+       * <code>repeated .obb.AvailableMarket markets = 1 [json_name = "markets"];</code>
        */
       public com.oddin.obb.Markets.AvailableMarketOrBuilder getMarketsOrBuilder(
           int index) {
@@ -1380,7 +1380,7 @@ public final class Markets {
        * List of available markets
        * </pre>
        *
-       * <code>repeated .obb.AvailableMarket markets = 1;</code>
+       * <code>repeated .obb.AvailableMarket markets = 1 [json_name = "markets"];</code>
        */
       public java.util.List<? extends com.oddin.obb.Markets.AvailableMarketOrBuilder> 
            getMarketsOrBuilderList() {
@@ -1395,7 +1395,7 @@ public final class Markets {
        * List of available markets
        * </pre>
        *
-       * <code>repeated .obb.AvailableMarket markets = 1;</code>
+       * <code>repeated .obb.AvailableMarket markets = 1 [json_name = "markets"];</code>
        */
       public com.oddin.obb.Markets.AvailableMarket.Builder addMarketsBuilder() {
         return getMarketsFieldBuilder().addBuilder(
@@ -1406,7 +1406,7 @@ public final class Markets {
        * List of available markets
        * </pre>
        *
-       * <code>repeated .obb.AvailableMarket markets = 1;</code>
+       * <code>repeated .obb.AvailableMarket markets = 1 [json_name = "markets"];</code>
        */
       public com.oddin.obb.Markets.AvailableMarket.Builder addMarketsBuilder(
           int index) {
@@ -1418,7 +1418,7 @@ public final class Markets {
        * List of available markets
        * </pre>
        *
-       * <code>repeated .obb.AvailableMarket markets = 1;</code>
+       * <code>repeated .obb.AvailableMarket markets = 1 [json_name = "markets"];</code>
        */
       public java.util.List<com.oddin.obb.Markets.AvailableMarket.Builder> 
            getMarketsBuilderList() {
@@ -1511,7 +1511,7 @@ public final class Markets {
      * The ID using the same values as our odds feed in XML.
      * </pre>
      *
-     * <code>uint32 market_id = 1;</code>
+     * <code>uint32 market_id = 1 [json_name = "marketId"];</code>
      * @return The marketId.
      */
     int getMarketId();
@@ -1522,7 +1522,7 @@ public final class Markets {
      * Example: "variant=way:three|way=three|map=1"
      * </pre>
      *
-     * <code>string specifiers = 2;</code>
+     * <code>string specifiers = 2 [json_name = "specifiers"];</code>
      * @return The specifiers.
      */
     java.lang.String getSpecifiers();
@@ -1532,7 +1532,7 @@ public final class Markets {
      * Example: "variant=way:three|way=three|map=1"
      * </pre>
      *
-     * <code>string specifiers = 2;</code>
+     * <code>string specifiers = 2 [json_name = "specifiers"];</code>
      * @return The bytes for specifiers.
      */
     com.google.protobuf.ByteString
@@ -1586,7 +1586,7 @@ public final class Markets {
      * The ID using the same values as our odds feed in XML.
      * </pre>
      *
-     * <code>uint32 market_id = 1;</code>
+     * <code>uint32 market_id = 1 [json_name = "marketId"];</code>
      * @return The marketId.
      */
     @java.lang.Override
@@ -1602,7 +1602,7 @@ public final class Markets {
      * Example: "variant=way:three|way=three|map=1"
      * </pre>
      *
-     * <code>string specifiers = 2;</code>
+     * <code>string specifiers = 2 [json_name = "specifiers"];</code>
      * @return The specifiers.
      */
     @java.lang.Override
@@ -1624,7 +1624,7 @@ public final class Markets {
      * Example: "variant=way:three|way=three|map=1"
      * </pre>
      *
-     * <code>string specifiers = 2;</code>
+     * <code>string specifiers = 2 [json_name = "specifiers"];</code>
      * @return The bytes for specifiers.
      */
     @java.lang.Override
@@ -1985,7 +1985,7 @@ public final class Markets {
        * The ID using the same values as our odds feed in XML.
        * </pre>
        *
-       * <code>uint32 market_id = 1;</code>
+       * <code>uint32 market_id = 1 [json_name = "marketId"];</code>
        * @return The marketId.
        */
       @java.lang.Override
@@ -1997,7 +1997,7 @@ public final class Markets {
        * The ID using the same values as our odds feed in XML.
        * </pre>
        *
-       * <code>uint32 market_id = 1;</code>
+       * <code>uint32 market_id = 1 [json_name = "marketId"];</code>
        * @param value The marketId to set.
        * @return This builder for chaining.
        */
@@ -2012,7 +2012,7 @@ public final class Markets {
        * The ID using the same values as our odds feed in XML.
        * </pre>
        *
-       * <code>uint32 market_id = 1;</code>
+       * <code>uint32 market_id = 1 [json_name = "marketId"];</code>
        * @return This builder for chaining.
        */
       public Builder clearMarketId() {
@@ -2029,7 +2029,7 @@ public final class Markets {
        * Example: "variant=way:three|way=three|map=1"
        * </pre>
        *
-       * <code>string specifiers = 2;</code>
+       * <code>string specifiers = 2 [json_name = "specifiers"];</code>
        * @return The specifiers.
        */
       public java.lang.String getSpecifiers() {
@@ -2050,7 +2050,7 @@ public final class Markets {
        * Example: "variant=way:three|way=three|map=1"
        * </pre>
        *
-       * <code>string specifiers = 2;</code>
+       * <code>string specifiers = 2 [json_name = "specifiers"];</code>
        * @return The bytes for specifiers.
        */
       public com.google.protobuf.ByteString
@@ -2072,7 +2072,7 @@ public final class Markets {
        * Example: "variant=way:three|way=three|map=1"
        * </pre>
        *
-       * <code>string specifiers = 2;</code>
+       * <code>string specifiers = 2 [json_name = "specifiers"];</code>
        * @param value The specifiers to set.
        * @return This builder for chaining.
        */
@@ -2092,7 +2092,7 @@ public final class Markets {
        * Example: "variant=way:three|way=three|map=1"
        * </pre>
        *
-       * <code>string specifiers = 2;</code>
+       * <code>string specifiers = 2 [json_name = "specifiers"];</code>
        * @return This builder for chaining.
        */
       public Builder clearSpecifiers() {
@@ -2107,7 +2107,7 @@ public final class Markets {
        * Example: "variant=way:three|way=three|map=1"
        * </pre>
        *
-       * <code>string specifiers = 2;</code>
+       * <code>string specifiers = 2 [json_name = "specifiers"];</code>
        * @param value The bytes for specifiers to set.
        * @return This builder for chaining.
        */
@@ -2210,13 +2210,14 @@ public final class Markets {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021obb/markets.proto\022\003obb\",\n\027AvailableMar" +
-      "ketsRequest\022\021\n\tevent_urn\030\001 \001(\t\"A\n\030Availa" +
-      "bleMarketsResponse\022%\n\007markets\030\001 \003(\0132\024.ob" +
-      "b.AvailableMarket\"8\n\017AvailableMarket\022\021\n\t" +
-      "market_id\030\001 \001(\r\022\022\n\nspecifiers\030\002 \001(\tB5\n\rc" +
-      "om.oddin.obbZ$github.com/oddin-gg/obbsch" +
-      "ema/go/obbb\006proto3"
+      "\n\021obb/markets.proto\022\003obb\"6\n\027AvailableMar" +
+      "ketsRequest\022\033\n\tevent_urn\030\001 \001(\tR\010eventUrn" +
+      "\"J\n\030AvailableMarketsResponse\022.\n\007markets\030" +
+      "\001 \003(\0132\024.obb.AvailableMarketR\007markets\"N\n\017" +
+      "AvailableMarket\022\033\n\tmarket_id\030\001 \001(\rR\010mark" +
+      "etId\022\036\n\nspecifiers\030\002 \001(\tR\nspecifiersB5\n\r" +
+      "com.oddin.obbZ$github.com/oddin-gg/obbsc" +
+      "hema/go/obbb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

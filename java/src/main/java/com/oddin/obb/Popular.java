@@ -23,7 +23,7 @@ public final class Popular {
      * Event ID URN - e.g "od:match:xx"
      * </pre>
      *
-     * <code>string event_id = 1;</code>
+     * <code>string event_id = 1 [json_name = "eventId"];</code>
      * @return The eventId.
      */
     java.lang.String getEventId();
@@ -32,7 +32,7 @@ public final class Popular {
      * Event ID URN - e.g "od:match:xx"
      * </pre>
      *
-     * <code>string event_id = 1;</code>
+     * <code>string event_id = 1 [json_name = "eventId"];</code>
      * @return The bytes for eventId.
      */
     com.google.protobuf.ByteString
@@ -86,7 +86,7 @@ public final class Popular {
      * Event ID URN - e.g "od:match:xx"
      * </pre>
      *
-     * <code>string event_id = 1;</code>
+     * <code>string event_id = 1 [json_name = "eventId"];</code>
      * @return The eventId.
      */
     @java.lang.Override
@@ -107,7 +107,7 @@ public final class Popular {
      * Event ID URN - e.g "od:match:xx"
      * </pre>
      *
-     * <code>string event_id = 1;</code>
+     * <code>string event_id = 1 [json_name = "eventId"];</code>
      * @return The bytes for eventId.
      */
     @java.lang.Override
@@ -446,7 +446,7 @@ public final class Popular {
        * Event ID URN - e.g "od:match:xx"
        * </pre>
        *
-       * <code>string event_id = 1;</code>
+       * <code>string event_id = 1 [json_name = "eventId"];</code>
        * @return The eventId.
        */
       public java.lang.String getEventId() {
@@ -466,7 +466,7 @@ public final class Popular {
        * Event ID URN - e.g "od:match:xx"
        * </pre>
        *
-       * <code>string event_id = 1;</code>
+       * <code>string event_id = 1 [json_name = "eventId"];</code>
        * @return The bytes for eventId.
        */
       public com.google.protobuf.ByteString
@@ -487,7 +487,7 @@ public final class Popular {
        * Event ID URN - e.g "od:match:xx"
        * </pre>
        *
-       * <code>string event_id = 1;</code>
+       * <code>string event_id = 1 [json_name = "eventId"];</code>
        * @param value The eventId to set.
        * @return This builder for chaining.
        */
@@ -506,7 +506,7 @@ public final class Popular {
        * Event ID URN - e.g "od:match:xx"
        * </pre>
        *
-       * <code>string event_id = 1;</code>
+       * <code>string event_id = 1 [json_name = "eventId"];</code>
        * @return This builder for chaining.
        */
       public Builder clearEventId() {
@@ -520,7 +520,7 @@ public final class Popular {
        * Event ID URN - e.g "od:match:xx"
        * </pre>
        *
-       * <code>string event_id = 1;</code>
+       * <code>string event_id = 1 [json_name = "eventId"];</code>
        * @param value The bytes for eventId to set.
        * @return This builder for chaining.
        */
@@ -608,7 +608,7 @@ public final class Popular {
      * List of popular markets for OBB combinations.
      * </pre>
      *
-     * <code>repeated .obb.PopularCombinationMarket markets = 1;</code>
+     * <code>repeated .obb.PopularCombinationMarket markets = 1 [json_name = "markets"];</code>
      */
     java.util.List<com.oddin.obb.Popular.PopularCombinationMarket> 
         getMarketsList();
@@ -617,7 +617,7 @@ public final class Popular {
      * List of popular markets for OBB combinations.
      * </pre>
      *
-     * <code>repeated .obb.PopularCombinationMarket markets = 1;</code>
+     * <code>repeated .obb.PopularCombinationMarket markets = 1 [json_name = "markets"];</code>
      */
     com.oddin.obb.Popular.PopularCombinationMarket getMarkets(int index);
     /**
@@ -625,7 +625,7 @@ public final class Popular {
      * List of popular markets for OBB combinations.
      * </pre>
      *
-     * <code>repeated .obb.PopularCombinationMarket markets = 1;</code>
+     * <code>repeated .obb.PopularCombinationMarket markets = 1 [json_name = "markets"];</code>
      */
     int getMarketsCount();
     /**
@@ -633,7 +633,7 @@ public final class Popular {
      * List of popular markets for OBB combinations.
      * </pre>
      *
-     * <code>repeated .obb.PopularCombinationMarket markets = 1;</code>
+     * <code>repeated .obb.PopularCombinationMarket markets = 1 [json_name = "markets"];</code>
      */
     java.util.List<? extends com.oddin.obb.Popular.PopularCombinationMarketOrBuilder> 
         getMarketsOrBuilderList();
@@ -642,7 +642,7 @@ public final class Popular {
      * List of popular markets for OBB combinations.
      * </pre>
      *
-     * <code>repeated .obb.PopularCombinationMarket markets = 1;</code>
+     * <code>repeated .obb.PopularCombinationMarket markets = 1 [json_name = "markets"];</code>
      */
     com.oddin.obb.Popular.PopularCombinationMarketOrBuilder getMarketsOrBuilder(
         int index);
@@ -695,7 +695,7 @@ public final class Popular {
      * List of popular markets for OBB combinations.
      * </pre>
      *
-     * <code>repeated .obb.PopularCombinationMarket markets = 1;</code>
+     * <code>repeated .obb.PopularCombinationMarket markets = 1 [json_name = "markets"];</code>
      */
     @java.lang.Override
     public java.util.List<com.oddin.obb.Popular.PopularCombinationMarket> getMarketsList() {
@@ -706,7 +706,7 @@ public final class Popular {
      * List of popular markets for OBB combinations.
      * </pre>
      *
-     * <code>repeated .obb.PopularCombinationMarket markets = 1;</code>
+     * <code>repeated .obb.PopularCombinationMarket markets = 1 [json_name = "markets"];</code>
      */
     @java.lang.Override
     public java.util.List<? extends com.oddin.obb.Popular.PopularCombinationMarketOrBuilder> 
@@ -718,7 +718,7 @@ public final class Popular {
      * List of popular markets for OBB combinations.
      * </pre>
      *
-     * <code>repeated .obb.PopularCombinationMarket markets = 1;</code>
+     * <code>repeated .obb.PopularCombinationMarket markets = 1 [json_name = "markets"];</code>
      */
     @java.lang.Override
     public int getMarketsCount() {
@@ -729,7 +729,7 @@ public final class Popular {
      * List of popular markets for OBB combinations.
      * </pre>
      *
-     * <code>repeated .obb.PopularCombinationMarket markets = 1;</code>
+     * <code>repeated .obb.PopularCombinationMarket markets = 1 [json_name = "markets"];</code>
      */
     @java.lang.Override
     public com.oddin.obb.Popular.PopularCombinationMarket getMarkets(int index) {
@@ -740,7 +740,7 @@ public final class Popular {
      * List of popular markets for OBB combinations.
      * </pre>
      *
-     * <code>repeated .obb.PopularCombinationMarket markets = 1;</code>
+     * <code>repeated .obb.PopularCombinationMarket markets = 1 [json_name = "markets"];</code>
      */
     @java.lang.Override
     public com.oddin.obb.Popular.PopularCombinationMarketOrBuilder getMarketsOrBuilder(
@@ -1128,7 +1128,7 @@ public final class Popular {
        * List of popular markets for OBB combinations.
        * </pre>
        *
-       * <code>repeated .obb.PopularCombinationMarket markets = 1;</code>
+       * <code>repeated .obb.PopularCombinationMarket markets = 1 [json_name = "markets"];</code>
        */
       public java.util.List<com.oddin.obb.Popular.PopularCombinationMarket> getMarketsList() {
         if (marketsBuilder_ == null) {
@@ -1142,7 +1142,7 @@ public final class Popular {
        * List of popular markets for OBB combinations.
        * </pre>
        *
-       * <code>repeated .obb.PopularCombinationMarket markets = 1;</code>
+       * <code>repeated .obb.PopularCombinationMarket markets = 1 [json_name = "markets"];</code>
        */
       public int getMarketsCount() {
         if (marketsBuilder_ == null) {
@@ -1156,7 +1156,7 @@ public final class Popular {
        * List of popular markets for OBB combinations.
        * </pre>
        *
-       * <code>repeated .obb.PopularCombinationMarket markets = 1;</code>
+       * <code>repeated .obb.PopularCombinationMarket markets = 1 [json_name = "markets"];</code>
        */
       public com.oddin.obb.Popular.PopularCombinationMarket getMarkets(int index) {
         if (marketsBuilder_ == null) {
@@ -1170,7 +1170,7 @@ public final class Popular {
        * List of popular markets for OBB combinations.
        * </pre>
        *
-       * <code>repeated .obb.PopularCombinationMarket markets = 1;</code>
+       * <code>repeated .obb.PopularCombinationMarket markets = 1 [json_name = "markets"];</code>
        */
       public Builder setMarkets(
           int index, com.oddin.obb.Popular.PopularCombinationMarket value) {
@@ -1191,7 +1191,7 @@ public final class Popular {
        * List of popular markets for OBB combinations.
        * </pre>
        *
-       * <code>repeated .obb.PopularCombinationMarket markets = 1;</code>
+       * <code>repeated .obb.PopularCombinationMarket markets = 1 [json_name = "markets"];</code>
        */
       public Builder setMarkets(
           int index, com.oddin.obb.Popular.PopularCombinationMarket.Builder builderForValue) {
@@ -1209,7 +1209,7 @@ public final class Popular {
        * List of popular markets for OBB combinations.
        * </pre>
        *
-       * <code>repeated .obb.PopularCombinationMarket markets = 1;</code>
+       * <code>repeated .obb.PopularCombinationMarket markets = 1 [json_name = "markets"];</code>
        */
       public Builder addMarkets(com.oddin.obb.Popular.PopularCombinationMarket value) {
         if (marketsBuilder_ == null) {
@@ -1229,7 +1229,7 @@ public final class Popular {
        * List of popular markets for OBB combinations.
        * </pre>
        *
-       * <code>repeated .obb.PopularCombinationMarket markets = 1;</code>
+       * <code>repeated .obb.PopularCombinationMarket markets = 1 [json_name = "markets"];</code>
        */
       public Builder addMarkets(
           int index, com.oddin.obb.Popular.PopularCombinationMarket value) {
@@ -1250,7 +1250,7 @@ public final class Popular {
        * List of popular markets for OBB combinations.
        * </pre>
        *
-       * <code>repeated .obb.PopularCombinationMarket markets = 1;</code>
+       * <code>repeated .obb.PopularCombinationMarket markets = 1 [json_name = "markets"];</code>
        */
       public Builder addMarkets(
           com.oddin.obb.Popular.PopularCombinationMarket.Builder builderForValue) {
@@ -1268,7 +1268,7 @@ public final class Popular {
        * List of popular markets for OBB combinations.
        * </pre>
        *
-       * <code>repeated .obb.PopularCombinationMarket markets = 1;</code>
+       * <code>repeated .obb.PopularCombinationMarket markets = 1 [json_name = "markets"];</code>
        */
       public Builder addMarkets(
           int index, com.oddin.obb.Popular.PopularCombinationMarket.Builder builderForValue) {
@@ -1286,7 +1286,7 @@ public final class Popular {
        * List of popular markets for OBB combinations.
        * </pre>
        *
-       * <code>repeated .obb.PopularCombinationMarket markets = 1;</code>
+       * <code>repeated .obb.PopularCombinationMarket markets = 1 [json_name = "markets"];</code>
        */
       public Builder addAllMarkets(
           java.lang.Iterable<? extends com.oddin.obb.Popular.PopularCombinationMarket> values) {
@@ -1305,7 +1305,7 @@ public final class Popular {
        * List of popular markets for OBB combinations.
        * </pre>
        *
-       * <code>repeated .obb.PopularCombinationMarket markets = 1;</code>
+       * <code>repeated .obb.PopularCombinationMarket markets = 1 [json_name = "markets"];</code>
        */
       public Builder clearMarkets() {
         if (marketsBuilder_ == null) {
@@ -1322,7 +1322,7 @@ public final class Popular {
        * List of popular markets for OBB combinations.
        * </pre>
        *
-       * <code>repeated .obb.PopularCombinationMarket markets = 1;</code>
+       * <code>repeated .obb.PopularCombinationMarket markets = 1 [json_name = "markets"];</code>
        */
       public Builder removeMarkets(int index) {
         if (marketsBuilder_ == null) {
@@ -1339,7 +1339,7 @@ public final class Popular {
        * List of popular markets for OBB combinations.
        * </pre>
        *
-       * <code>repeated .obb.PopularCombinationMarket markets = 1;</code>
+       * <code>repeated .obb.PopularCombinationMarket markets = 1 [json_name = "markets"];</code>
        */
       public com.oddin.obb.Popular.PopularCombinationMarket.Builder getMarketsBuilder(
           int index) {
@@ -1350,7 +1350,7 @@ public final class Popular {
        * List of popular markets for OBB combinations.
        * </pre>
        *
-       * <code>repeated .obb.PopularCombinationMarket markets = 1;</code>
+       * <code>repeated .obb.PopularCombinationMarket markets = 1 [json_name = "markets"];</code>
        */
       public com.oddin.obb.Popular.PopularCombinationMarketOrBuilder getMarketsOrBuilder(
           int index) {
@@ -1364,7 +1364,7 @@ public final class Popular {
        * List of popular markets for OBB combinations.
        * </pre>
        *
-       * <code>repeated .obb.PopularCombinationMarket markets = 1;</code>
+       * <code>repeated .obb.PopularCombinationMarket markets = 1 [json_name = "markets"];</code>
        */
       public java.util.List<? extends com.oddin.obb.Popular.PopularCombinationMarketOrBuilder> 
            getMarketsOrBuilderList() {
@@ -1379,7 +1379,7 @@ public final class Popular {
        * List of popular markets for OBB combinations.
        * </pre>
        *
-       * <code>repeated .obb.PopularCombinationMarket markets = 1;</code>
+       * <code>repeated .obb.PopularCombinationMarket markets = 1 [json_name = "markets"];</code>
        */
       public com.oddin.obb.Popular.PopularCombinationMarket.Builder addMarketsBuilder() {
         return getMarketsFieldBuilder().addBuilder(
@@ -1390,7 +1390,7 @@ public final class Popular {
        * List of popular markets for OBB combinations.
        * </pre>
        *
-       * <code>repeated .obb.PopularCombinationMarket markets = 1;</code>
+       * <code>repeated .obb.PopularCombinationMarket markets = 1 [json_name = "markets"];</code>
        */
       public com.oddin.obb.Popular.PopularCombinationMarket.Builder addMarketsBuilder(
           int index) {
@@ -1402,7 +1402,7 @@ public final class Popular {
        * List of popular markets for OBB combinations.
        * </pre>
        *
-       * <code>repeated .obb.PopularCombinationMarket markets = 1;</code>
+       * <code>repeated .obb.PopularCombinationMarket markets = 1 [json_name = "markets"];</code>
        */
       public java.util.List<com.oddin.obb.Popular.PopularCombinationMarket.Builder> 
            getMarketsBuilderList() {
@@ -1495,7 +1495,7 @@ public final class Popular {
      * The ID using the same values as our odds feed in XML.
      * </pre>
      *
-     * <code>uint32 market_id = 1;</code>
+     * <code>uint32 market_id = 1 [json_name = "marketId"];</code>
      * @return The marketId.
      */
     int getMarketId();
@@ -1506,7 +1506,7 @@ public final class Popular {
      * Example: "variant=way:three|way=three|map=1"
      * </pre>
      *
-     * <code>string specifiers = 2;</code>
+     * <code>string specifiers = 2 [json_name = "specifiers"];</code>
      * @return The specifiers.
      */
     java.lang.String getSpecifiers();
@@ -1516,7 +1516,7 @@ public final class Popular {
      * Example: "variant=way:three|way=three|map=1"
      * </pre>
      *
-     * <code>string specifiers = 2;</code>
+     * <code>string specifiers = 2 [json_name = "specifiers"];</code>
      * @return The bytes for specifiers.
      */
     com.google.protobuf.ByteString
@@ -1570,7 +1570,7 @@ public final class Popular {
      * The ID using the same values as our odds feed in XML.
      * </pre>
      *
-     * <code>uint32 market_id = 1;</code>
+     * <code>uint32 market_id = 1 [json_name = "marketId"];</code>
      * @return The marketId.
      */
     @java.lang.Override
@@ -1586,7 +1586,7 @@ public final class Popular {
      * Example: "variant=way:three|way=three|map=1"
      * </pre>
      *
-     * <code>string specifiers = 2;</code>
+     * <code>string specifiers = 2 [json_name = "specifiers"];</code>
      * @return The specifiers.
      */
     @java.lang.Override
@@ -1608,7 +1608,7 @@ public final class Popular {
      * Example: "variant=way:three|way=three|map=1"
      * </pre>
      *
-     * <code>string specifiers = 2;</code>
+     * <code>string specifiers = 2 [json_name = "specifiers"];</code>
      * @return The bytes for specifiers.
      */
     @java.lang.Override
@@ -1969,7 +1969,7 @@ public final class Popular {
        * The ID using the same values as our odds feed in XML.
        * </pre>
        *
-       * <code>uint32 market_id = 1;</code>
+       * <code>uint32 market_id = 1 [json_name = "marketId"];</code>
        * @return The marketId.
        */
       @java.lang.Override
@@ -1981,7 +1981,7 @@ public final class Popular {
        * The ID using the same values as our odds feed in XML.
        * </pre>
        *
-       * <code>uint32 market_id = 1;</code>
+       * <code>uint32 market_id = 1 [json_name = "marketId"];</code>
        * @param value The marketId to set.
        * @return This builder for chaining.
        */
@@ -1996,7 +1996,7 @@ public final class Popular {
        * The ID using the same values as our odds feed in XML.
        * </pre>
        *
-       * <code>uint32 market_id = 1;</code>
+       * <code>uint32 market_id = 1 [json_name = "marketId"];</code>
        * @return This builder for chaining.
        */
       public Builder clearMarketId() {
@@ -2013,7 +2013,7 @@ public final class Popular {
        * Example: "variant=way:three|way=three|map=1"
        * </pre>
        *
-       * <code>string specifiers = 2;</code>
+       * <code>string specifiers = 2 [json_name = "specifiers"];</code>
        * @return The specifiers.
        */
       public java.lang.String getSpecifiers() {
@@ -2034,7 +2034,7 @@ public final class Popular {
        * Example: "variant=way:three|way=three|map=1"
        * </pre>
        *
-       * <code>string specifiers = 2;</code>
+       * <code>string specifiers = 2 [json_name = "specifiers"];</code>
        * @return The bytes for specifiers.
        */
       public com.google.protobuf.ByteString
@@ -2056,7 +2056,7 @@ public final class Popular {
        * Example: "variant=way:three|way=three|map=1"
        * </pre>
        *
-       * <code>string specifiers = 2;</code>
+       * <code>string specifiers = 2 [json_name = "specifiers"];</code>
        * @param value The specifiers to set.
        * @return This builder for chaining.
        */
@@ -2076,7 +2076,7 @@ public final class Popular {
        * Example: "variant=way:three|way=three|map=1"
        * </pre>
        *
-       * <code>string specifiers = 2;</code>
+       * <code>string specifiers = 2 [json_name = "specifiers"];</code>
        * @return This builder for chaining.
        */
       public Builder clearSpecifiers() {
@@ -2091,7 +2091,7 @@ public final class Popular {
        * Example: "variant=way:three|way=three|map=1"
        * </pre>
        *
-       * <code>string specifiers = 2;</code>
+       * <code>string specifiers = 2 [json_name = "specifiers"];</code>
        * @param value The bytes for specifiers to set.
        * @return This builder for chaining.
        */
@@ -2194,12 +2194,13 @@ public final class Popular {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021obb/popular.proto\022\003obb\"-\n\031PopularCombi" +
-      "nationRequest\022\020\n\010event_id\030\001 \001(\t\"L\n\032Popul" +
-      "arCombinationResponse\022.\n\007markets\030\001 \003(\0132\035" +
-      ".obb.PopularCombinationMarket\"A\n\030Popular" +
-      "CombinationMarket\022\021\n\tmarket_id\030\001 \001(\r\022\022\n\n" +
-      "specifiers\030\002 \001(\tB5\n\rcom.oddin.obbZ$githu" +
+      "\n\021obb/popular.proto\022\003obb\"6\n\031PopularCombi" +
+      "nationRequest\022\031\n\010event_id\030\001 \001(\tR\007eventId" +
+      "\"U\n\032PopularCombinationResponse\0227\n\007market" +
+      "s\030\001 \003(\0132\035.obb.PopularCombinationMarketR\007" +
+      "markets\"W\n\030PopularCombinationMarket\022\033\n\tm" +
+      "arket_id\030\001 \001(\rR\010marketId\022\036\n\nspecifiers\030\002" +
+      " \001(\tR\nspecifiersB5\n\rcom.oddin.obbZ$githu" +
       "b.com/oddin-gg/obbschema/go/obbb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
