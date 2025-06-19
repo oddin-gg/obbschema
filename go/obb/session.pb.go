@@ -194,6 +194,54 @@ func (InvalidSessionReason_Code) EnumDescriptor() ([]byte, []int) {
 	return file_obb_session_proto_rawDescGZIP(), []int{1, 0}
 }
 
+type SessionCreateResponse_SessionRejected_SelectionRejectedReason_Code int32
+
+const (
+	// Not a valid value. Used for blocking 0 as invalid state.
+	SessionCreateResponse_SessionRejected_SelectionRejectedReason_CODE_UNSPECIFIED SessionCreateResponse_SessionRejected_SelectionRejectedReason_Code = 0
+	// Selection is invalid because the market is not active.
+	SessionCreateResponse_SessionRejected_SelectionRejectedReason_CODE_INACTIVE_MARKET SessionCreateResponse_SessionRejected_SelectionRejectedReason_Code = 1
+)
+
+// Enum value maps for SessionCreateResponse_SessionRejected_SelectionRejectedReason_Code.
+var (
+	SessionCreateResponse_SessionRejected_SelectionRejectedReason_Code_name = map[int32]string{
+		0: "CODE_UNSPECIFIED",
+		1: "CODE_INACTIVE_MARKET",
+	}
+	SessionCreateResponse_SessionRejected_SelectionRejectedReason_Code_value = map[string]int32{
+		"CODE_UNSPECIFIED":     0,
+		"CODE_INACTIVE_MARKET": 1,
+	}
+)
+
+func (x SessionCreateResponse_SessionRejected_SelectionRejectedReason_Code) Enum() *SessionCreateResponse_SessionRejected_SelectionRejectedReason_Code {
+	p := new(SessionCreateResponse_SessionRejected_SelectionRejectedReason_Code)
+	*p = x
+	return p
+}
+
+func (x SessionCreateResponse_SessionRejected_SelectionRejectedReason_Code) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (SessionCreateResponse_SessionRejected_SelectionRejectedReason_Code) Descriptor() protoreflect.EnumDescriptor {
+	return file_obb_session_proto_enumTypes[3].Descriptor()
+}
+
+func (SessionCreateResponse_SessionRejected_SelectionRejectedReason_Code) Type() protoreflect.EnumType {
+	return &file_obb_session_proto_enumTypes[3]
+}
+
+func (x SessionCreateResponse_SessionRejected_SelectionRejectedReason_Code) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use SessionCreateResponse_SessionRejected_SelectionRejectedReason_Code.Descriptor instead.
+func (SessionCreateResponse_SessionRejected_SelectionRejectedReason_Code) EnumDescriptor() ([]byte, []int) {
+	return file_obb_session_proto_rawDescGZIP(), []int{3, 1, 0, 0}
+}
+
 type SessionRejectReason struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Reason code.
@@ -831,9 +879,12 @@ func (x *SessionCreateResponse_SessionCreated) GetAvailableMarkets() []*SessionM
 type SessionCreateResponse_SessionRejected struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Information about rejection reason.
-	Reason        *SessionRejectReason `protobuf:"bytes,1,opt,name=reason,proto3" json:"reason,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	Reason *SessionRejectReason `protobuf:"bytes,1,opt,name=reason,proto3" json:"reason,omitempty"`
+	// Rejected selections.
+	// Key is SelectionID, Format: "<event_id>/<market_id>/<outcome_id>?<market_specifier>"
+	SelectionsRejected map[string]*SessionCreateResponse_SessionRejected_SelectionRejectedReason `protobuf:"bytes,2,rep,name=selections_rejected,json=selectionsRejected,proto3" json:"selections_rejected,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	unknownFields      protoimpl.UnknownFields
+	sizeCache          protoimpl.SizeCache
 }
 
 func (x *SessionCreateResponse_SessionRejected) Reset() {
@@ -873,6 +924,65 @@ func (x *SessionCreateResponse_SessionRejected) GetReason() *SessionRejectReason
 	return nil
 }
 
+func (x *SessionCreateResponse_SessionRejected) GetSelectionsRejected() map[string]*SessionCreateResponse_SessionRejected_SelectionRejectedReason {
+	if x != nil {
+		return x.SelectionsRejected
+	}
+	return nil
+}
+
+type SessionCreateResponse_SessionRejected_SelectionRejectedReason struct {
+	state         protoimpl.MessageState                                             `protogen:"open.v1"`
+	Code          SessionCreateResponse_SessionRejected_SelectionRejectedReason_Code `protobuf:"varint,1,opt,name=code,proto3,enum=obb.SessionCreateResponse_SessionRejected_SelectionRejectedReason_Code" json:"code,omitempty"`
+	Message       string                                                             `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SessionCreateResponse_SessionRejected_SelectionRejectedReason) Reset() {
+	*x = SessionCreateResponse_SessionRejected_SelectionRejectedReason{}
+	mi := &file_obb_session_proto_msgTypes[11]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SessionCreateResponse_SessionRejected_SelectionRejectedReason) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SessionCreateResponse_SessionRejected_SelectionRejectedReason) ProtoMessage() {}
+
+func (x *SessionCreateResponse_SessionRejected_SelectionRejectedReason) ProtoReflect() protoreflect.Message {
+	mi := &file_obb_session_proto_msgTypes[11]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SessionCreateResponse_SessionRejected_SelectionRejectedReason.ProtoReflect.Descriptor instead.
+func (*SessionCreateResponse_SessionRejected_SelectionRejectedReason) Descriptor() ([]byte, []int) {
+	return file_obb_session_proto_rawDescGZIP(), []int{3, 1, 0}
+}
+
+func (x *SessionCreateResponse_SessionRejected_SelectionRejectedReason) GetCode() SessionCreateResponse_SessionRejected_SelectionRejectedReason_Code {
+	if x != nil {
+		return x.Code
+	}
+	return SessionCreateResponse_SessionRejected_SelectionRejectedReason_CODE_UNSPECIFIED
+}
+
+func (x *SessionCreateResponse_SessionRejected_SelectionRejectedReason) GetMessage() string {
+	if x != nil {
+		return x.Message
+	}
+	return ""
+}
+
 type SessionInfoResponse_ValidSession struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	unknownFields protoimpl.UnknownFields
@@ -881,7 +991,7 @@ type SessionInfoResponse_ValidSession struct {
 
 func (x *SessionInfoResponse_ValidSession) Reset() {
 	*x = SessionInfoResponse_ValidSession{}
-	mi := &file_obb_session_proto_msgTypes[11]
+	mi := &file_obb_session_proto_msgTypes[13]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -893,7 +1003,7 @@ func (x *SessionInfoResponse_ValidSession) String() string {
 func (*SessionInfoResponse_ValidSession) ProtoMessage() {}
 
 func (x *SessionInfoResponse_ValidSession) ProtoReflect() protoreflect.Message {
-	mi := &file_obb_session_proto_msgTypes[11]
+	mi := &file_obb_session_proto_msgTypes[13]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -919,7 +1029,7 @@ type SessionInfoResponse_InvalidSession struct {
 
 func (x *SessionInfoResponse_InvalidSession) Reset() {
 	*x = SessionInfoResponse_InvalidSession{}
-	mi := &file_obb_session_proto_msgTypes[12]
+	mi := &file_obb_session_proto_msgTypes[14]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -931,7 +1041,7 @@ func (x *SessionInfoResponse_InvalidSession) String() string {
 func (*SessionInfoResponse_InvalidSession) ProtoMessage() {}
 
 func (x *SessionInfoResponse_InvalidSession) ProtoReflect() protoreflect.Message {
-	mi := &file_obb_session_proto_msgTypes[12]
+	mi := &file_obb_session_proto_msgTypes[14]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -978,7 +1088,7 @@ const file_obb_session_proto_rawDesc = "" +
 	"\fCODE_EXPIRED\x10\x03\x12\x12\n" +
 	"\x0eCODE_NOT_FOUND\x10\x04\";\n" +
 	"\x14SessionCreateRequest\x12#\n" +
-	"\rselection_ids\x18\x02 \x03(\tR\fselectionIds\"\xb5\x03\n" +
+	"\rselection_ids\x18\x02 \x03(\tR\fselectionIds\"\x82\a\n" +
 	"\x15SessionCreateResponse\x12\x1d\n" +
 	"\n" +
 	"session_id\x18\x01 \x01(\tR\tsessionId\x12E\n" +
@@ -989,9 +1099,19 @@ const file_obb_session_proto_rawDesc = "" +
 	"selections\x18\x01 \x03(\v2\x15.obb.SessionSelectionR\n" +
 	"selections\x12\x12\n" +
 	"\x04odds\x18\x02 \x01(\x04R\x04odds\x12?\n" +
-	"\x11available_markets\x18\x03 \x03(\v2\x12.obb.SessionMarketR\x10availableMarkets\x1aC\n" +
+	"\x11available_markets\x18\x03 \x03(\v2\x12.obb.SessionMarketR\x10availableMarkets\x1a\x8f\x04\n" +
 	"\x0fSessionRejected\x120\n" +
-	"\x06reason\x18\x01 \x01(\v2\x18.obb.SessionRejectReasonR\x06reasonB\b\n" +
+	"\x06reason\x18\x01 \x01(\v2\x18.obb.SessionRejectReasonR\x06reason\x12s\n" +
+	"\x13selections_rejected\x18\x02 \x03(\v2B.obb.SessionCreateResponse.SessionRejected.SelectionsRejectedEntryR\x12selectionsRejected\x1a\xc8\x01\n" +
+	"\x17SelectionRejectedReason\x12[\n" +
+	"\x04code\x18\x01 \x01(\x0e2G.obb.SessionCreateResponse.SessionRejected.SelectionRejectedReason.CodeR\x04code\x12\x18\n" +
+	"\amessage\x18\x02 \x01(\tR\amessage\"6\n" +
+	"\x04Code\x12\x14\n" +
+	"\x10CODE_UNSPECIFIED\x10\x00\x12\x18\n" +
+	"\x14CODE_INACTIVE_MARKET\x10\x01\x1a\x89\x01\n" +
+	"\x17SelectionsRejectedEntry\x12\x10\n" +
+	"\x03key\x18\x01 \x01(\tR\x03key\x12X\n" +
+	"\x05value\x18\x02 \x01(\v2B.obb.SessionCreateResponse.SessionRejected.SelectionRejectedReasonR\x05value:\x028\x01B\b\n" +
 	"\x06status\"5\n" +
 	"\x10SessionSelection\x12!\n" +
 	"\fselection_id\x18\x01 \x01(\tR\vselectionId\"\x83\x01\n" +
@@ -1039,44 +1159,50 @@ func file_obb_session_proto_rawDescGZIP() []byte {
 	return file_obb_session_proto_rawDescData
 }
 
-var file_obb_session_proto_enumTypes = make([]protoimpl.EnumInfo, 3)
-var file_obb_session_proto_msgTypes = make([]protoimpl.MessageInfo, 13)
+var file_obb_session_proto_enumTypes = make([]protoimpl.EnumInfo, 4)
+var file_obb_session_proto_msgTypes = make([]protoimpl.MessageInfo, 15)
 var file_obb_session_proto_goTypes = []any{
-	(SessionStatus)(0),                            // 0: obb.SessionStatus
-	(SessionRejectReason_Code)(0),                 // 1: obb.SessionRejectReason.Code
-	(InvalidSessionReason_Code)(0),                // 2: obb.InvalidSessionReason.Code
-	(*SessionRejectReason)(nil),                   // 3: obb.SessionRejectReason
-	(*InvalidSessionReason)(nil),                  // 4: obb.InvalidSessionReason
-	(*SessionCreateRequest)(nil),                  // 5: obb.SessionCreateRequest
-	(*SessionCreateResponse)(nil),                 // 6: obb.SessionCreateResponse
-	(*SessionSelection)(nil),                      // 7: obb.SessionSelection
-	(*SessionMarket)(nil),                         // 8: obb.SessionMarket
-	(*SessionMarketOutcome)(nil),                  // 9: obb.SessionMarketOutcome
-	(*SessionInfoRequest)(nil),                    // 10: obb.SessionInfoRequest
-	(*SessionInfoResponse)(nil),                   // 11: obb.SessionInfoResponse
-	(*SessionCreateResponse_SessionCreated)(nil),  // 12: obb.SessionCreateResponse.SessionCreated
-	(*SessionCreateResponse_SessionRejected)(nil), // 13: obb.SessionCreateResponse.SessionRejected
-	(*SessionInfoResponse_ValidSession)(nil),      // 14: obb.SessionInfoResponse.ValidSession
-	(*SessionInfoResponse_InvalidSession)(nil),    // 15: obb.SessionInfoResponse.InvalidSession
+	(SessionStatus)(0),             // 0: obb.SessionStatus
+	(SessionRejectReason_Code)(0),  // 1: obb.SessionRejectReason.Code
+	(InvalidSessionReason_Code)(0), // 2: obb.InvalidSessionReason.Code
+	(SessionCreateResponse_SessionRejected_SelectionRejectedReason_Code)(0), // 3: obb.SessionCreateResponse.SessionRejected.SelectionRejectedReason.Code
+	(*SessionRejectReason)(nil),                                           // 4: obb.SessionRejectReason
+	(*InvalidSessionReason)(nil),                                          // 5: obb.InvalidSessionReason
+	(*SessionCreateRequest)(nil),                                          // 6: obb.SessionCreateRequest
+	(*SessionCreateResponse)(nil),                                         // 7: obb.SessionCreateResponse
+	(*SessionSelection)(nil),                                              // 8: obb.SessionSelection
+	(*SessionMarket)(nil),                                                 // 9: obb.SessionMarket
+	(*SessionMarketOutcome)(nil),                                          // 10: obb.SessionMarketOutcome
+	(*SessionInfoRequest)(nil),                                            // 11: obb.SessionInfoRequest
+	(*SessionInfoResponse)(nil),                                           // 12: obb.SessionInfoResponse
+	(*SessionCreateResponse_SessionCreated)(nil),                          // 13: obb.SessionCreateResponse.SessionCreated
+	(*SessionCreateResponse_SessionRejected)(nil),                         // 14: obb.SessionCreateResponse.SessionRejected
+	(*SessionCreateResponse_SessionRejected_SelectionRejectedReason)(nil), // 15: obb.SessionCreateResponse.SessionRejected.SelectionRejectedReason
+	nil,                                      // 16: obb.SessionCreateResponse.SessionRejected.SelectionsRejectedEntry
+	(*SessionInfoResponse_ValidSession)(nil), // 17: obb.SessionInfoResponse.ValidSession
+	(*SessionInfoResponse_InvalidSession)(nil), // 18: obb.SessionInfoResponse.InvalidSession
 }
 var file_obb_session_proto_depIdxs = []int32{
 	1,  // 0: obb.SessionRejectReason.code:type_name -> obb.SessionRejectReason.Code
 	2,  // 1: obb.InvalidSessionReason.code:type_name -> obb.InvalidSessionReason.Code
-	12, // 2: obb.SessionCreateResponse.created:type_name -> obb.SessionCreateResponse.SessionCreated
-	13, // 3: obb.SessionCreateResponse.rejected:type_name -> obb.SessionCreateResponse.SessionRejected
-	9,  // 4: obb.SessionMarket.outcomes:type_name -> obb.SessionMarketOutcome
-	7,  // 5: obb.SessionInfoRequest.selections:type_name -> obb.SessionSelection
-	14, // 6: obb.SessionInfoResponse.valid:type_name -> obb.SessionInfoResponse.ValidSession
-	15, // 7: obb.SessionInfoResponse.invalid:type_name -> obb.SessionInfoResponse.InvalidSession
-	7,  // 8: obb.SessionCreateResponse.SessionCreated.selections:type_name -> obb.SessionSelection
-	8,  // 9: obb.SessionCreateResponse.SessionCreated.available_markets:type_name -> obb.SessionMarket
-	3,  // 10: obb.SessionCreateResponse.SessionRejected.reason:type_name -> obb.SessionRejectReason
-	4,  // 11: obb.SessionInfoResponse.InvalidSession.reason:type_name -> obb.InvalidSessionReason
-	12, // [12:12] is the sub-list for method output_type
-	12, // [12:12] is the sub-list for method input_type
-	12, // [12:12] is the sub-list for extension type_name
-	12, // [12:12] is the sub-list for extension extendee
-	0,  // [0:12] is the sub-list for field type_name
+	13, // 2: obb.SessionCreateResponse.created:type_name -> obb.SessionCreateResponse.SessionCreated
+	14, // 3: obb.SessionCreateResponse.rejected:type_name -> obb.SessionCreateResponse.SessionRejected
+	10, // 4: obb.SessionMarket.outcomes:type_name -> obb.SessionMarketOutcome
+	8,  // 5: obb.SessionInfoRequest.selections:type_name -> obb.SessionSelection
+	17, // 6: obb.SessionInfoResponse.valid:type_name -> obb.SessionInfoResponse.ValidSession
+	18, // 7: obb.SessionInfoResponse.invalid:type_name -> obb.SessionInfoResponse.InvalidSession
+	8,  // 8: obb.SessionCreateResponse.SessionCreated.selections:type_name -> obb.SessionSelection
+	9,  // 9: obb.SessionCreateResponse.SessionCreated.available_markets:type_name -> obb.SessionMarket
+	4,  // 10: obb.SessionCreateResponse.SessionRejected.reason:type_name -> obb.SessionRejectReason
+	16, // 11: obb.SessionCreateResponse.SessionRejected.selections_rejected:type_name -> obb.SessionCreateResponse.SessionRejected.SelectionsRejectedEntry
+	3,  // 12: obb.SessionCreateResponse.SessionRejected.SelectionRejectedReason.code:type_name -> obb.SessionCreateResponse.SessionRejected.SelectionRejectedReason.Code
+	15, // 13: obb.SessionCreateResponse.SessionRejected.SelectionsRejectedEntry.value:type_name -> obb.SessionCreateResponse.SessionRejected.SelectionRejectedReason
+	5,  // 14: obb.SessionInfoResponse.InvalidSession.reason:type_name -> obb.InvalidSessionReason
+	15, // [15:15] is the sub-list for method output_type
+	15, // [15:15] is the sub-list for method input_type
+	15, // [15:15] is the sub-list for extension type_name
+	15, // [15:15] is the sub-list for extension extendee
+	0,  // [0:15] is the sub-list for field type_name
 }
 
 func init() { file_obb_session_proto_init() }
@@ -1097,8 +1223,8 @@ func file_obb_session_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_obb_session_proto_rawDesc), len(file_obb_session_proto_rawDesc)),
-			NumEnums:      3,
-			NumMessages:   13,
+			NumEnums:      4,
+			NumMessages:   15,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

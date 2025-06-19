@@ -163,6 +163,8 @@ export namespace SessionCreateResponse {
     getReason(): SessionRejectReason | undefined;
     setReason(value?: SessionRejectReason): void;
 
+    getSelectionsRejectedMap(): jspb.Map<string, SessionCreateResponse.SessionRejected.SelectionRejectedReason>;
+    clearSelectionsRejectedMap(): void;
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): SessionRejected.AsObject;
     static toObject(includeInstance: boolean, msg: SessionRejected): SessionRejected.AsObject;
@@ -176,6 +178,38 @@ export namespace SessionCreateResponse {
   export namespace SessionRejected {
     export type AsObject = {
       reason?: SessionRejectReason.AsObject,
+      selectionsRejectedMap: Array<[string, SessionCreateResponse.SessionRejected.SelectionRejectedReason.AsObject]>,
+    }
+
+    export class SelectionRejectedReason extends jspb.Message {
+      getCode(): SessionCreateResponse.SessionRejected.SelectionRejectedReason.CodeMap[keyof SessionCreateResponse.SessionRejected.SelectionRejectedReason.CodeMap];
+      setCode(value: SessionCreateResponse.SessionRejected.SelectionRejectedReason.CodeMap[keyof SessionCreateResponse.SessionRejected.SelectionRejectedReason.CodeMap]): void;
+
+      getMessage(): string;
+      setMessage(value: string): void;
+
+      serializeBinary(): Uint8Array;
+      toObject(includeInstance?: boolean): SelectionRejectedReason.AsObject;
+      static toObject(includeInstance: boolean, msg: SelectionRejectedReason): SelectionRejectedReason.AsObject;
+      static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+      static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+      static serializeBinaryToWriter(message: SelectionRejectedReason, writer: jspb.BinaryWriter): void;
+      static deserializeBinary(bytes: Uint8Array): SelectionRejectedReason;
+      static deserializeBinaryFromReader(message: SelectionRejectedReason, reader: jspb.BinaryReader): SelectionRejectedReason;
+    }
+
+    export namespace SelectionRejectedReason {
+      export type AsObject = {
+        code: SessionCreateResponse.SessionRejected.SelectionRejectedReason.CodeMap[keyof SessionCreateResponse.SessionRejected.SelectionRejectedReason.CodeMap],
+        message: string,
+      }
+
+      export interface CodeMap {
+        CODE_UNSPECIFIED: 0;
+        CODE_INACTIVE_MARKET: 1;
+      }
+
+      export const Code: CodeMap;
     }
   }
 
