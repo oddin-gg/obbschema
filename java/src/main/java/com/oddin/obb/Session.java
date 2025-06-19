@@ -166,7 +166,7 @@ public final class Session {
      * Reason code.
      * </pre>
      *
-     * <code>.obb.SessionRejectReason.Code code = 1;</code>
+     * <code>.obb.SessionRejectReason.Code code = 1 [json_name = "code"];</code>
      * @return The enum numeric value on the wire for code.
      */
     int getCodeValue();
@@ -175,7 +175,7 @@ public final class Session {
      * Reason code.
      * </pre>
      *
-     * <code>.obb.SessionRejectReason.Code code = 1;</code>
+     * <code>.obb.SessionRejectReason.Code code = 1 [json_name = "code"];</code>
      * @return The code.
      */
     com.oddin.obb.Session.SessionRejectReason.Code getCode();
@@ -185,7 +185,7 @@ public final class Session {
      * Message describing a reason.
      * </pre>
      *
-     * <code>string message = 2;</code>
+     * <code>string message = 2 [json_name = "message"];</code>
      * @return The message.
      */
     java.lang.String getMessage();
@@ -194,7 +194,7 @@ public final class Session {
      * Message describing a reason.
      * </pre>
      *
-     * <code>string message = 2;</code>
+     * <code>string message = 2 [json_name = "message"];</code>
      * @return The bytes for message.
      */
     com.google.protobuf.ByteString
@@ -424,7 +424,7 @@ public final class Session {
      * Reason code.
      * </pre>
      *
-     * <code>.obb.SessionRejectReason.Code code = 1;</code>
+     * <code>.obb.SessionRejectReason.Code code = 1 [json_name = "code"];</code>
      * @return The enum numeric value on the wire for code.
      */
     @java.lang.Override public int getCodeValue() {
@@ -435,7 +435,7 @@ public final class Session {
      * Reason code.
      * </pre>
      *
-     * <code>.obb.SessionRejectReason.Code code = 1;</code>
+     * <code>.obb.SessionRejectReason.Code code = 1 [json_name = "code"];</code>
      * @return The code.
      */
     @java.lang.Override public com.oddin.obb.Session.SessionRejectReason.Code getCode() {
@@ -451,7 +451,7 @@ public final class Session {
      * Message describing a reason.
      * </pre>
      *
-     * <code>string message = 2;</code>
+     * <code>string message = 2 [json_name = "message"];</code>
      * @return The message.
      */
     @java.lang.Override
@@ -472,7 +472,7 @@ public final class Session {
      * Message describing a reason.
      * </pre>
      *
-     * <code>string message = 2;</code>
+     * <code>string message = 2 [json_name = "message"];</code>
      * @return The bytes for message.
      */
     @java.lang.Override
@@ -832,7 +832,7 @@ public final class Session {
        * Reason code.
        * </pre>
        *
-       * <code>.obb.SessionRejectReason.Code code = 1;</code>
+       * <code>.obb.SessionRejectReason.Code code = 1 [json_name = "code"];</code>
        * @return The enum numeric value on the wire for code.
        */
       @java.lang.Override public int getCodeValue() {
@@ -843,7 +843,7 @@ public final class Session {
        * Reason code.
        * </pre>
        *
-       * <code>.obb.SessionRejectReason.Code code = 1;</code>
+       * <code>.obb.SessionRejectReason.Code code = 1 [json_name = "code"];</code>
        * @param value The enum numeric value on the wire for code to set.
        * @return This builder for chaining.
        */
@@ -858,7 +858,7 @@ public final class Session {
        * Reason code.
        * </pre>
        *
-       * <code>.obb.SessionRejectReason.Code code = 1;</code>
+       * <code>.obb.SessionRejectReason.Code code = 1 [json_name = "code"];</code>
        * @return The code.
        */
       @java.lang.Override
@@ -872,7 +872,7 @@ public final class Session {
        * Reason code.
        * </pre>
        *
-       * <code>.obb.SessionRejectReason.Code code = 1;</code>
+       * <code>.obb.SessionRejectReason.Code code = 1 [json_name = "code"];</code>
        * @param value The code to set.
        * @return This builder for chaining.
        */
@@ -890,7 +890,7 @@ public final class Session {
        * Reason code.
        * </pre>
        *
-       * <code>.obb.SessionRejectReason.Code code = 1;</code>
+       * <code>.obb.SessionRejectReason.Code code = 1 [json_name = "code"];</code>
        * @return This builder for chaining.
        */
       public Builder clearCode() {
@@ -906,7 +906,7 @@ public final class Session {
        * Message describing a reason.
        * </pre>
        *
-       * <code>string message = 2;</code>
+       * <code>string message = 2 [json_name = "message"];</code>
        * @return The message.
        */
       public java.lang.String getMessage() {
@@ -926,7 +926,7 @@ public final class Session {
        * Message describing a reason.
        * </pre>
        *
-       * <code>string message = 2;</code>
+       * <code>string message = 2 [json_name = "message"];</code>
        * @return The bytes for message.
        */
       public com.google.protobuf.ByteString
@@ -947,7 +947,7 @@ public final class Session {
        * Message describing a reason.
        * </pre>
        *
-       * <code>string message = 2;</code>
+       * <code>string message = 2 [json_name = "message"];</code>
        * @param value The message to set.
        * @return This builder for chaining.
        */
@@ -966,7 +966,7 @@ public final class Session {
        * Message describing a reason.
        * </pre>
        *
-       * <code>string message = 2;</code>
+       * <code>string message = 2 [json_name = "message"];</code>
        * @return This builder for chaining.
        */
       public Builder clearMessage() {
@@ -980,7 +980,7 @@ public final class Session {
        * Message describing a reason.
        * </pre>
        *
-       * <code>string message = 2;</code>
+       * <code>string message = 2 [json_name = "message"];</code>
        * @param value The bytes for message to set.
        * @return This builder for chaining.
        */
@@ -1068,7 +1068,7 @@ public final class Session {
      * Reason code.
      * </pre>
      *
-     * <code>.obb.InvalidSessionReason.Code code = 1;</code>
+     * <code>.obb.InvalidSessionReason.Code code = 1 [json_name = "code"];</code>
      * @return The enum numeric value on the wire for code.
      */
     int getCodeValue();
@@ -1077,7 +1077,7 @@ public final class Session {
      * Reason code.
      * </pre>
      *
-     * <code>.obb.InvalidSessionReason.Code code = 1;</code>
+     * <code>.obb.InvalidSessionReason.Code code = 1 [json_name = "code"];</code>
      * @return The code.
      */
     com.oddin.obb.Session.InvalidSessionReason.Code getCode();
@@ -1087,7 +1087,7 @@ public final class Session {
      * Message describing a reason.
      * </pre>
      *
-     * <code>string message = 2;</code>
+     * <code>string message = 2 [json_name = "message"];</code>
      * @return The message.
      */
     java.lang.String getMessage();
@@ -1096,7 +1096,7 @@ public final class Session {
      * Message describing a reason.
      * </pre>
      *
-     * <code>string message = 2;</code>
+     * <code>string message = 2 [json_name = "message"];</code>
      * @return The bytes for message.
      */
     com.google.protobuf.ByteString
@@ -1326,7 +1326,7 @@ public final class Session {
      * Reason code.
      * </pre>
      *
-     * <code>.obb.InvalidSessionReason.Code code = 1;</code>
+     * <code>.obb.InvalidSessionReason.Code code = 1 [json_name = "code"];</code>
      * @return The enum numeric value on the wire for code.
      */
     @java.lang.Override public int getCodeValue() {
@@ -1337,7 +1337,7 @@ public final class Session {
      * Reason code.
      * </pre>
      *
-     * <code>.obb.InvalidSessionReason.Code code = 1;</code>
+     * <code>.obb.InvalidSessionReason.Code code = 1 [json_name = "code"];</code>
      * @return The code.
      */
     @java.lang.Override public com.oddin.obb.Session.InvalidSessionReason.Code getCode() {
@@ -1353,7 +1353,7 @@ public final class Session {
      * Message describing a reason.
      * </pre>
      *
-     * <code>string message = 2;</code>
+     * <code>string message = 2 [json_name = "message"];</code>
      * @return The message.
      */
     @java.lang.Override
@@ -1374,7 +1374,7 @@ public final class Session {
      * Message describing a reason.
      * </pre>
      *
-     * <code>string message = 2;</code>
+     * <code>string message = 2 [json_name = "message"];</code>
      * @return The bytes for message.
      */
     @java.lang.Override
@@ -1734,7 +1734,7 @@ public final class Session {
        * Reason code.
        * </pre>
        *
-       * <code>.obb.InvalidSessionReason.Code code = 1;</code>
+       * <code>.obb.InvalidSessionReason.Code code = 1 [json_name = "code"];</code>
        * @return The enum numeric value on the wire for code.
        */
       @java.lang.Override public int getCodeValue() {
@@ -1745,7 +1745,7 @@ public final class Session {
        * Reason code.
        * </pre>
        *
-       * <code>.obb.InvalidSessionReason.Code code = 1;</code>
+       * <code>.obb.InvalidSessionReason.Code code = 1 [json_name = "code"];</code>
        * @param value The enum numeric value on the wire for code to set.
        * @return This builder for chaining.
        */
@@ -1760,7 +1760,7 @@ public final class Session {
        * Reason code.
        * </pre>
        *
-       * <code>.obb.InvalidSessionReason.Code code = 1;</code>
+       * <code>.obb.InvalidSessionReason.Code code = 1 [json_name = "code"];</code>
        * @return The code.
        */
       @java.lang.Override
@@ -1774,7 +1774,7 @@ public final class Session {
        * Reason code.
        * </pre>
        *
-       * <code>.obb.InvalidSessionReason.Code code = 1;</code>
+       * <code>.obb.InvalidSessionReason.Code code = 1 [json_name = "code"];</code>
        * @param value The code to set.
        * @return This builder for chaining.
        */
@@ -1792,7 +1792,7 @@ public final class Session {
        * Reason code.
        * </pre>
        *
-       * <code>.obb.InvalidSessionReason.Code code = 1;</code>
+       * <code>.obb.InvalidSessionReason.Code code = 1 [json_name = "code"];</code>
        * @return This builder for chaining.
        */
       public Builder clearCode() {
@@ -1808,7 +1808,7 @@ public final class Session {
        * Message describing a reason.
        * </pre>
        *
-       * <code>string message = 2;</code>
+       * <code>string message = 2 [json_name = "message"];</code>
        * @return The message.
        */
       public java.lang.String getMessage() {
@@ -1828,7 +1828,7 @@ public final class Session {
        * Message describing a reason.
        * </pre>
        *
-       * <code>string message = 2;</code>
+       * <code>string message = 2 [json_name = "message"];</code>
        * @return The bytes for message.
        */
       public com.google.protobuf.ByteString
@@ -1849,7 +1849,7 @@ public final class Session {
        * Message describing a reason.
        * </pre>
        *
-       * <code>string message = 2;</code>
+       * <code>string message = 2 [json_name = "message"];</code>
        * @param value The message to set.
        * @return This builder for chaining.
        */
@@ -1868,7 +1868,7 @@ public final class Session {
        * Message describing a reason.
        * </pre>
        *
-       * <code>string message = 2;</code>
+       * <code>string message = 2 [json_name = "message"];</code>
        * @return This builder for chaining.
        */
       public Builder clearMessage() {
@@ -1882,7 +1882,7 @@ public final class Session {
        * Message describing a reason.
        * </pre>
        *
-       * <code>string message = 2;</code>
+       * <code>string message = 2 [json_name = "message"];</code>
        * @param value The bytes for message to set.
        * @return This builder for chaining.
        */
@@ -1972,7 +1972,7 @@ public final class Session {
      * Example: “od:match:1234/1/1?map=1&amp;way=two”
      * </pre>
      *
-     * <code>repeated string selection_ids = 2;</code>
+     * <code>repeated string selection_ids = 2 [json_name = "selectionIds"];</code>
      * @return A list containing the selectionIds.
      */
     java.util.List<java.lang.String>
@@ -1984,7 +1984,7 @@ public final class Session {
      * Example: “od:match:1234/1/1?map=1&amp;way=two”
      * </pre>
      *
-     * <code>repeated string selection_ids = 2;</code>
+     * <code>repeated string selection_ids = 2 [json_name = "selectionIds"];</code>
      * @return The count of selectionIds.
      */
     int getSelectionIdsCount();
@@ -1995,7 +1995,7 @@ public final class Session {
      * Example: “od:match:1234/1/1?map=1&amp;way=two”
      * </pre>
      *
-     * <code>repeated string selection_ids = 2;</code>
+     * <code>repeated string selection_ids = 2 [json_name = "selectionIds"];</code>
      * @param index The index of the element to return.
      * @return The selectionIds at the given index.
      */
@@ -2007,7 +2007,7 @@ public final class Session {
      * Example: “od:match:1234/1/1?map=1&amp;way=two”
      * </pre>
      *
-     * <code>repeated string selection_ids = 2;</code>
+     * <code>repeated string selection_ids = 2 [json_name = "selectionIds"];</code>
      * @param index The index of the value to return.
      * @return The bytes of the selectionIds at the given index.
      */
@@ -2064,7 +2064,7 @@ public final class Session {
      * Example: “od:match:1234/1/1?map=1&amp;way=two”
      * </pre>
      *
-     * <code>repeated string selection_ids = 2;</code>
+     * <code>repeated string selection_ids = 2 [json_name = "selectionIds"];</code>
      * @return A list containing the selectionIds.
      */
     public com.google.protobuf.ProtocolStringList
@@ -2078,7 +2078,7 @@ public final class Session {
      * Example: “od:match:1234/1/1?map=1&amp;way=two”
      * </pre>
      *
-     * <code>repeated string selection_ids = 2;</code>
+     * <code>repeated string selection_ids = 2 [json_name = "selectionIds"];</code>
      * @return The count of selectionIds.
      */
     public int getSelectionIdsCount() {
@@ -2091,7 +2091,7 @@ public final class Session {
      * Example: “od:match:1234/1/1?map=1&amp;way=two”
      * </pre>
      *
-     * <code>repeated string selection_ids = 2;</code>
+     * <code>repeated string selection_ids = 2 [json_name = "selectionIds"];</code>
      * @param index The index of the element to return.
      * @return The selectionIds at the given index.
      */
@@ -2105,7 +2105,7 @@ public final class Session {
      * Example: “od:match:1234/1/1?map=1&amp;way=two”
      * </pre>
      *
-     * <code>repeated string selection_ids = 2;</code>
+     * <code>repeated string selection_ids = 2 [json_name = "selectionIds"];</code>
      * @param index The index of the value to return.
      * @return The bytes of the selectionIds at the given index.
      */
@@ -2463,7 +2463,7 @@ public final class Session {
        * Example: “od:match:1234/1/1?map=1&amp;way=two”
        * </pre>
        *
-       * <code>repeated string selection_ids = 2;</code>
+       * <code>repeated string selection_ids = 2 [json_name = "selectionIds"];</code>
        * @return A list containing the selectionIds.
        */
       public com.google.protobuf.ProtocolStringList
@@ -2477,7 +2477,7 @@ public final class Session {
        * Example: “od:match:1234/1/1?map=1&amp;way=two”
        * </pre>
        *
-       * <code>repeated string selection_ids = 2;</code>
+       * <code>repeated string selection_ids = 2 [json_name = "selectionIds"];</code>
        * @return The count of selectionIds.
        */
       public int getSelectionIdsCount() {
@@ -2490,7 +2490,7 @@ public final class Session {
        * Example: “od:match:1234/1/1?map=1&amp;way=two”
        * </pre>
        *
-       * <code>repeated string selection_ids = 2;</code>
+       * <code>repeated string selection_ids = 2 [json_name = "selectionIds"];</code>
        * @param index The index of the element to return.
        * @return The selectionIds at the given index.
        */
@@ -2504,7 +2504,7 @@ public final class Session {
        * Example: “od:match:1234/1/1?map=1&amp;way=two”
        * </pre>
        *
-       * <code>repeated string selection_ids = 2;</code>
+       * <code>repeated string selection_ids = 2 [json_name = "selectionIds"];</code>
        * @param index The index of the value to return.
        * @return The bytes of the selectionIds at the given index.
        */
@@ -2519,7 +2519,7 @@ public final class Session {
        * Example: “od:match:1234/1/1?map=1&amp;way=two”
        * </pre>
        *
-       * <code>repeated string selection_ids = 2;</code>
+       * <code>repeated string selection_ids = 2 [json_name = "selectionIds"];</code>
        * @param index The index to set the value at.
        * @param value The selectionIds to set.
        * @return This builder for chaining.
@@ -2541,7 +2541,7 @@ public final class Session {
        * Example: “od:match:1234/1/1?map=1&amp;way=two”
        * </pre>
        *
-       * <code>repeated string selection_ids = 2;</code>
+       * <code>repeated string selection_ids = 2 [json_name = "selectionIds"];</code>
        * @param value The selectionIds to add.
        * @return This builder for chaining.
        */
@@ -2562,7 +2562,7 @@ public final class Session {
        * Example: “od:match:1234/1/1?map=1&amp;way=two”
        * </pre>
        *
-       * <code>repeated string selection_ids = 2;</code>
+       * <code>repeated string selection_ids = 2 [json_name = "selectionIds"];</code>
        * @param values The selectionIds to add.
        * @return This builder for chaining.
        */
@@ -2581,7 +2581,7 @@ public final class Session {
        * Example: “od:match:1234/1/1?map=1&amp;way=two”
        * </pre>
        *
-       * <code>repeated string selection_ids = 2;</code>
+       * <code>repeated string selection_ids = 2 [json_name = "selectionIds"];</code>
        * @return This builder for chaining.
        */
       public Builder clearSelectionIds() {
@@ -2597,7 +2597,7 @@ public final class Session {
        * Example: “od:match:1234/1/1?map=1&amp;way=two”
        * </pre>
        *
-       * <code>repeated string selection_ids = 2;</code>
+       * <code>repeated string selection_ids = 2 [json_name = "selectionIds"];</code>
        * @param value The bytes of the selectionIds to add.
        * @return This builder for chaining.
        */
@@ -2685,7 +2685,7 @@ public final class Session {
      * Session ID created by operator.
      * </pre>
      *
-     * <code>string session_id = 1;</code>
+     * <code>string session_id = 1 [json_name = "sessionId"];</code>
      * @return The sessionId.
      */
     java.lang.String getSessionId();
@@ -2694,7 +2694,7 @@ public final class Session {
      * Session ID created by operator.
      * </pre>
      *
-     * <code>string session_id = 1;</code>
+     * <code>string session_id = 1 [json_name = "sessionId"];</code>
      * @return The bytes for sessionId.
      */
     com.google.protobuf.ByteString
@@ -2705,7 +2705,7 @@ public final class Session {
      * Successfully created session information.
      * </pre>
      *
-     * <code>.obb.SessionCreateResponse.SessionCreated created = 2;</code>
+     * <code>.obb.SessionCreateResponse.SessionCreated created = 2 [json_name = "created"];</code>
      * @return Whether the created field is set.
      */
     boolean hasCreated();
@@ -2714,7 +2714,7 @@ public final class Session {
      * Successfully created session information.
      * </pre>
      *
-     * <code>.obb.SessionCreateResponse.SessionCreated created = 2;</code>
+     * <code>.obb.SessionCreateResponse.SessionCreated created = 2 [json_name = "created"];</code>
      * @return The created.
      */
     com.oddin.obb.Session.SessionCreateResponse.SessionCreated getCreated();
@@ -2723,7 +2723,7 @@ public final class Session {
      * Successfully created session information.
      * </pre>
      *
-     * <code>.obb.SessionCreateResponse.SessionCreated created = 2;</code>
+     * <code>.obb.SessionCreateResponse.SessionCreated created = 2 [json_name = "created"];</code>
      */
     com.oddin.obb.Session.SessionCreateResponse.SessionCreatedOrBuilder getCreatedOrBuilder();
 
@@ -2732,7 +2732,7 @@ public final class Session {
      * Session creation was rejected.
      * </pre>
      *
-     * <code>.obb.SessionCreateResponse.SessionRejected rejected = 3;</code>
+     * <code>.obb.SessionCreateResponse.SessionRejected rejected = 3 [json_name = "rejected"];</code>
      * @return Whether the rejected field is set.
      */
     boolean hasRejected();
@@ -2741,7 +2741,7 @@ public final class Session {
      * Session creation was rejected.
      * </pre>
      *
-     * <code>.obb.SessionCreateResponse.SessionRejected rejected = 3;</code>
+     * <code>.obb.SessionCreateResponse.SessionRejected rejected = 3 [json_name = "rejected"];</code>
      * @return The rejected.
      */
     com.oddin.obb.Session.SessionCreateResponse.SessionRejected getRejected();
@@ -2750,7 +2750,7 @@ public final class Session {
      * Session creation was rejected.
      * </pre>
      *
-     * <code>.obb.SessionCreateResponse.SessionRejected rejected = 3;</code>
+     * <code>.obb.SessionCreateResponse.SessionRejected rejected = 3 [json_name = "rejected"];</code>
      */
     com.oddin.obb.Session.SessionCreateResponse.SessionRejectedOrBuilder getRejectedOrBuilder();
 
@@ -2806,7 +2806,7 @@ public final class Session {
        * List of selections used in the current session.
        * </pre>
        *
-       * <code>repeated .obb.SessionSelection selections = 1;</code>
+       * <code>repeated .obb.SessionSelection selections = 1 [json_name = "selections"];</code>
        */
       java.util.List<com.oddin.obb.Session.SessionSelection> 
           getSelectionsList();
@@ -2815,7 +2815,7 @@ public final class Session {
        * List of selections used in the current session.
        * </pre>
        *
-       * <code>repeated .obb.SessionSelection selections = 1;</code>
+       * <code>repeated .obb.SessionSelection selections = 1 [json_name = "selections"];</code>
        */
       com.oddin.obb.Session.SessionSelection getSelections(int index);
       /**
@@ -2823,7 +2823,7 @@ public final class Session {
        * List of selections used in the current session.
        * </pre>
        *
-       * <code>repeated .obb.SessionSelection selections = 1;</code>
+       * <code>repeated .obb.SessionSelection selections = 1 [json_name = "selections"];</code>
        */
       int getSelectionsCount();
       /**
@@ -2831,7 +2831,7 @@ public final class Session {
        * List of selections used in the current session.
        * </pre>
        *
-       * <code>repeated .obb.SessionSelection selections = 1;</code>
+       * <code>repeated .obb.SessionSelection selections = 1 [json_name = "selections"];</code>
        */
       java.util.List<? extends com.oddin.obb.Session.SessionSelectionOrBuilder> 
           getSelectionsOrBuilderList();
@@ -2840,7 +2840,7 @@ public final class Session {
        * List of selections used in the current session.
        * </pre>
        *
-       * <code>repeated .obb.SessionSelection selections = 1;</code>
+       * <code>repeated .obb.SessionSelection selections = 1 [json_name = "selections"];</code>
        */
       com.oddin.obb.Session.SessionSelectionOrBuilder getSelectionsOrBuilder(
           int index);
@@ -2851,7 +2851,7 @@ public final class Session {
        * Odds multiplied by 10000 and rounded to uint value.
        * </pre>
        *
-       * <code>uint64 odds = 2;</code>
+       * <code>uint64 odds = 2 [json_name = "odds"];</code>
        * @return The odds.
        */
       long getOdds();
@@ -2861,7 +2861,7 @@ public final class Session {
        * Available markets for the new session with the current session selections.
        * </pre>
        *
-       * <code>repeated .obb.SessionMarket available_markets = 3;</code>
+       * <code>repeated .obb.SessionMarket available_markets = 3 [json_name = "availableMarkets"];</code>
        */
       java.util.List<com.oddin.obb.Session.SessionMarket> 
           getAvailableMarketsList();
@@ -2870,7 +2870,7 @@ public final class Session {
        * Available markets for the new session with the current session selections.
        * </pre>
        *
-       * <code>repeated .obb.SessionMarket available_markets = 3;</code>
+       * <code>repeated .obb.SessionMarket available_markets = 3 [json_name = "availableMarkets"];</code>
        */
       com.oddin.obb.Session.SessionMarket getAvailableMarkets(int index);
       /**
@@ -2878,7 +2878,7 @@ public final class Session {
        * Available markets for the new session with the current session selections.
        * </pre>
        *
-       * <code>repeated .obb.SessionMarket available_markets = 3;</code>
+       * <code>repeated .obb.SessionMarket available_markets = 3 [json_name = "availableMarkets"];</code>
        */
       int getAvailableMarketsCount();
       /**
@@ -2886,7 +2886,7 @@ public final class Session {
        * Available markets for the new session with the current session selections.
        * </pre>
        *
-       * <code>repeated .obb.SessionMarket available_markets = 3;</code>
+       * <code>repeated .obb.SessionMarket available_markets = 3 [json_name = "availableMarkets"];</code>
        */
       java.util.List<? extends com.oddin.obb.Session.SessionMarketOrBuilder> 
           getAvailableMarketsOrBuilderList();
@@ -2895,7 +2895,7 @@ public final class Session {
        * Available markets for the new session with the current session selections.
        * </pre>
        *
-       * <code>repeated .obb.SessionMarket available_markets = 3;</code>
+       * <code>repeated .obb.SessionMarket available_markets = 3 [json_name = "availableMarkets"];</code>
        */
       com.oddin.obb.Session.SessionMarketOrBuilder getAvailableMarketsOrBuilder(
           int index);
@@ -2949,7 +2949,7 @@ public final class Session {
        * List of selections used in the current session.
        * </pre>
        *
-       * <code>repeated .obb.SessionSelection selections = 1;</code>
+       * <code>repeated .obb.SessionSelection selections = 1 [json_name = "selections"];</code>
        */
       @java.lang.Override
       public java.util.List<com.oddin.obb.Session.SessionSelection> getSelectionsList() {
@@ -2960,7 +2960,7 @@ public final class Session {
        * List of selections used in the current session.
        * </pre>
        *
-       * <code>repeated .obb.SessionSelection selections = 1;</code>
+       * <code>repeated .obb.SessionSelection selections = 1 [json_name = "selections"];</code>
        */
       @java.lang.Override
       public java.util.List<? extends com.oddin.obb.Session.SessionSelectionOrBuilder> 
@@ -2972,7 +2972,7 @@ public final class Session {
        * List of selections used in the current session.
        * </pre>
        *
-       * <code>repeated .obb.SessionSelection selections = 1;</code>
+       * <code>repeated .obb.SessionSelection selections = 1 [json_name = "selections"];</code>
        */
       @java.lang.Override
       public int getSelectionsCount() {
@@ -2983,7 +2983,7 @@ public final class Session {
        * List of selections used in the current session.
        * </pre>
        *
-       * <code>repeated .obb.SessionSelection selections = 1;</code>
+       * <code>repeated .obb.SessionSelection selections = 1 [json_name = "selections"];</code>
        */
       @java.lang.Override
       public com.oddin.obb.Session.SessionSelection getSelections(int index) {
@@ -2994,7 +2994,7 @@ public final class Session {
        * List of selections used in the current session.
        * </pre>
        *
-       * <code>repeated .obb.SessionSelection selections = 1;</code>
+       * <code>repeated .obb.SessionSelection selections = 1 [json_name = "selections"];</code>
        */
       @java.lang.Override
       public com.oddin.obb.Session.SessionSelectionOrBuilder getSelectionsOrBuilder(
@@ -3010,7 +3010,7 @@ public final class Session {
        * Odds multiplied by 10000 and rounded to uint value.
        * </pre>
        *
-       * <code>uint64 odds = 2;</code>
+       * <code>uint64 odds = 2 [json_name = "odds"];</code>
        * @return The odds.
        */
       @java.lang.Override
@@ -3025,7 +3025,7 @@ public final class Session {
        * Available markets for the new session with the current session selections.
        * </pre>
        *
-       * <code>repeated .obb.SessionMarket available_markets = 3;</code>
+       * <code>repeated .obb.SessionMarket available_markets = 3 [json_name = "availableMarkets"];</code>
        */
       @java.lang.Override
       public java.util.List<com.oddin.obb.Session.SessionMarket> getAvailableMarketsList() {
@@ -3036,7 +3036,7 @@ public final class Session {
        * Available markets for the new session with the current session selections.
        * </pre>
        *
-       * <code>repeated .obb.SessionMarket available_markets = 3;</code>
+       * <code>repeated .obb.SessionMarket available_markets = 3 [json_name = "availableMarkets"];</code>
        */
       @java.lang.Override
       public java.util.List<? extends com.oddin.obb.Session.SessionMarketOrBuilder> 
@@ -3048,7 +3048,7 @@ public final class Session {
        * Available markets for the new session with the current session selections.
        * </pre>
        *
-       * <code>repeated .obb.SessionMarket available_markets = 3;</code>
+       * <code>repeated .obb.SessionMarket available_markets = 3 [json_name = "availableMarkets"];</code>
        */
       @java.lang.Override
       public int getAvailableMarketsCount() {
@@ -3059,7 +3059,7 @@ public final class Session {
        * Available markets for the new session with the current session selections.
        * </pre>
        *
-       * <code>repeated .obb.SessionMarket available_markets = 3;</code>
+       * <code>repeated .obb.SessionMarket available_markets = 3 [json_name = "availableMarkets"];</code>
        */
       @java.lang.Override
       public com.oddin.obb.Session.SessionMarket getAvailableMarkets(int index) {
@@ -3070,7 +3070,7 @@ public final class Session {
        * Available markets for the new session with the current session selections.
        * </pre>
        *
-       * <code>repeated .obb.SessionMarket available_markets = 3;</code>
+       * <code>repeated .obb.SessionMarket available_markets = 3 [json_name = "availableMarkets"];</code>
        */
       @java.lang.Override
       public com.oddin.obb.Session.SessionMarketOrBuilder getAvailableMarketsOrBuilder(
@@ -3549,7 +3549,7 @@ public final class Session {
          * List of selections used in the current session.
          * </pre>
          *
-         * <code>repeated .obb.SessionSelection selections = 1;</code>
+         * <code>repeated .obb.SessionSelection selections = 1 [json_name = "selections"];</code>
          */
         public java.util.List<com.oddin.obb.Session.SessionSelection> getSelectionsList() {
           if (selectionsBuilder_ == null) {
@@ -3563,7 +3563,7 @@ public final class Session {
          * List of selections used in the current session.
          * </pre>
          *
-         * <code>repeated .obb.SessionSelection selections = 1;</code>
+         * <code>repeated .obb.SessionSelection selections = 1 [json_name = "selections"];</code>
          */
         public int getSelectionsCount() {
           if (selectionsBuilder_ == null) {
@@ -3577,7 +3577,7 @@ public final class Session {
          * List of selections used in the current session.
          * </pre>
          *
-         * <code>repeated .obb.SessionSelection selections = 1;</code>
+         * <code>repeated .obb.SessionSelection selections = 1 [json_name = "selections"];</code>
          */
         public com.oddin.obb.Session.SessionSelection getSelections(int index) {
           if (selectionsBuilder_ == null) {
@@ -3591,7 +3591,7 @@ public final class Session {
          * List of selections used in the current session.
          * </pre>
          *
-         * <code>repeated .obb.SessionSelection selections = 1;</code>
+         * <code>repeated .obb.SessionSelection selections = 1 [json_name = "selections"];</code>
          */
         public Builder setSelections(
             int index, com.oddin.obb.Session.SessionSelection value) {
@@ -3612,7 +3612,7 @@ public final class Session {
          * List of selections used in the current session.
          * </pre>
          *
-         * <code>repeated .obb.SessionSelection selections = 1;</code>
+         * <code>repeated .obb.SessionSelection selections = 1 [json_name = "selections"];</code>
          */
         public Builder setSelections(
             int index, com.oddin.obb.Session.SessionSelection.Builder builderForValue) {
@@ -3630,7 +3630,7 @@ public final class Session {
          * List of selections used in the current session.
          * </pre>
          *
-         * <code>repeated .obb.SessionSelection selections = 1;</code>
+         * <code>repeated .obb.SessionSelection selections = 1 [json_name = "selections"];</code>
          */
         public Builder addSelections(com.oddin.obb.Session.SessionSelection value) {
           if (selectionsBuilder_ == null) {
@@ -3650,7 +3650,7 @@ public final class Session {
          * List of selections used in the current session.
          * </pre>
          *
-         * <code>repeated .obb.SessionSelection selections = 1;</code>
+         * <code>repeated .obb.SessionSelection selections = 1 [json_name = "selections"];</code>
          */
         public Builder addSelections(
             int index, com.oddin.obb.Session.SessionSelection value) {
@@ -3671,7 +3671,7 @@ public final class Session {
          * List of selections used in the current session.
          * </pre>
          *
-         * <code>repeated .obb.SessionSelection selections = 1;</code>
+         * <code>repeated .obb.SessionSelection selections = 1 [json_name = "selections"];</code>
          */
         public Builder addSelections(
             com.oddin.obb.Session.SessionSelection.Builder builderForValue) {
@@ -3689,7 +3689,7 @@ public final class Session {
          * List of selections used in the current session.
          * </pre>
          *
-         * <code>repeated .obb.SessionSelection selections = 1;</code>
+         * <code>repeated .obb.SessionSelection selections = 1 [json_name = "selections"];</code>
          */
         public Builder addSelections(
             int index, com.oddin.obb.Session.SessionSelection.Builder builderForValue) {
@@ -3707,7 +3707,7 @@ public final class Session {
          * List of selections used in the current session.
          * </pre>
          *
-         * <code>repeated .obb.SessionSelection selections = 1;</code>
+         * <code>repeated .obb.SessionSelection selections = 1 [json_name = "selections"];</code>
          */
         public Builder addAllSelections(
             java.lang.Iterable<? extends com.oddin.obb.Session.SessionSelection> values) {
@@ -3726,7 +3726,7 @@ public final class Session {
          * List of selections used in the current session.
          * </pre>
          *
-         * <code>repeated .obb.SessionSelection selections = 1;</code>
+         * <code>repeated .obb.SessionSelection selections = 1 [json_name = "selections"];</code>
          */
         public Builder clearSelections() {
           if (selectionsBuilder_ == null) {
@@ -3743,7 +3743,7 @@ public final class Session {
          * List of selections used in the current session.
          * </pre>
          *
-         * <code>repeated .obb.SessionSelection selections = 1;</code>
+         * <code>repeated .obb.SessionSelection selections = 1 [json_name = "selections"];</code>
          */
         public Builder removeSelections(int index) {
           if (selectionsBuilder_ == null) {
@@ -3760,7 +3760,7 @@ public final class Session {
          * List of selections used in the current session.
          * </pre>
          *
-         * <code>repeated .obb.SessionSelection selections = 1;</code>
+         * <code>repeated .obb.SessionSelection selections = 1 [json_name = "selections"];</code>
          */
         public com.oddin.obb.Session.SessionSelection.Builder getSelectionsBuilder(
             int index) {
@@ -3771,7 +3771,7 @@ public final class Session {
          * List of selections used in the current session.
          * </pre>
          *
-         * <code>repeated .obb.SessionSelection selections = 1;</code>
+         * <code>repeated .obb.SessionSelection selections = 1 [json_name = "selections"];</code>
          */
         public com.oddin.obb.Session.SessionSelectionOrBuilder getSelectionsOrBuilder(
             int index) {
@@ -3785,7 +3785,7 @@ public final class Session {
          * List of selections used in the current session.
          * </pre>
          *
-         * <code>repeated .obb.SessionSelection selections = 1;</code>
+         * <code>repeated .obb.SessionSelection selections = 1 [json_name = "selections"];</code>
          */
         public java.util.List<? extends com.oddin.obb.Session.SessionSelectionOrBuilder> 
              getSelectionsOrBuilderList() {
@@ -3800,7 +3800,7 @@ public final class Session {
          * List of selections used in the current session.
          * </pre>
          *
-         * <code>repeated .obb.SessionSelection selections = 1;</code>
+         * <code>repeated .obb.SessionSelection selections = 1 [json_name = "selections"];</code>
          */
         public com.oddin.obb.Session.SessionSelection.Builder addSelectionsBuilder() {
           return getSelectionsFieldBuilder().addBuilder(
@@ -3811,7 +3811,7 @@ public final class Session {
          * List of selections used in the current session.
          * </pre>
          *
-         * <code>repeated .obb.SessionSelection selections = 1;</code>
+         * <code>repeated .obb.SessionSelection selections = 1 [json_name = "selections"];</code>
          */
         public com.oddin.obb.Session.SessionSelection.Builder addSelectionsBuilder(
             int index) {
@@ -3823,7 +3823,7 @@ public final class Session {
          * List of selections used in the current session.
          * </pre>
          *
-         * <code>repeated .obb.SessionSelection selections = 1;</code>
+         * <code>repeated .obb.SessionSelection selections = 1 [json_name = "selections"];</code>
          */
         public java.util.List<com.oddin.obb.Session.SessionSelection.Builder> 
              getSelectionsBuilderList() {
@@ -3851,7 +3851,7 @@ public final class Session {
          * Odds multiplied by 10000 and rounded to uint value.
          * </pre>
          *
-         * <code>uint64 odds = 2;</code>
+         * <code>uint64 odds = 2 [json_name = "odds"];</code>
          * @return The odds.
          */
         @java.lang.Override
@@ -3864,7 +3864,7 @@ public final class Session {
          * Odds multiplied by 10000 and rounded to uint value.
          * </pre>
          *
-         * <code>uint64 odds = 2;</code>
+         * <code>uint64 odds = 2 [json_name = "odds"];</code>
          * @param value The odds to set.
          * @return This builder for chaining.
          */
@@ -3880,7 +3880,7 @@ public final class Session {
          * Odds multiplied by 10000 and rounded to uint value.
          * </pre>
          *
-         * <code>uint64 odds = 2;</code>
+         * <code>uint64 odds = 2 [json_name = "odds"];</code>
          * @return This builder for chaining.
          */
         public Builder clearOdds() {
@@ -3907,7 +3907,7 @@ public final class Session {
          * Available markets for the new session with the current session selections.
          * </pre>
          *
-         * <code>repeated .obb.SessionMarket available_markets = 3;</code>
+         * <code>repeated .obb.SessionMarket available_markets = 3 [json_name = "availableMarkets"];</code>
          */
         public java.util.List<com.oddin.obb.Session.SessionMarket> getAvailableMarketsList() {
           if (availableMarketsBuilder_ == null) {
@@ -3921,7 +3921,7 @@ public final class Session {
          * Available markets for the new session with the current session selections.
          * </pre>
          *
-         * <code>repeated .obb.SessionMarket available_markets = 3;</code>
+         * <code>repeated .obb.SessionMarket available_markets = 3 [json_name = "availableMarkets"];</code>
          */
         public int getAvailableMarketsCount() {
           if (availableMarketsBuilder_ == null) {
@@ -3935,7 +3935,7 @@ public final class Session {
          * Available markets for the new session with the current session selections.
          * </pre>
          *
-         * <code>repeated .obb.SessionMarket available_markets = 3;</code>
+         * <code>repeated .obb.SessionMarket available_markets = 3 [json_name = "availableMarkets"];</code>
          */
         public com.oddin.obb.Session.SessionMarket getAvailableMarkets(int index) {
           if (availableMarketsBuilder_ == null) {
@@ -3949,7 +3949,7 @@ public final class Session {
          * Available markets for the new session with the current session selections.
          * </pre>
          *
-         * <code>repeated .obb.SessionMarket available_markets = 3;</code>
+         * <code>repeated .obb.SessionMarket available_markets = 3 [json_name = "availableMarkets"];</code>
          */
         public Builder setAvailableMarkets(
             int index, com.oddin.obb.Session.SessionMarket value) {
@@ -3970,7 +3970,7 @@ public final class Session {
          * Available markets for the new session with the current session selections.
          * </pre>
          *
-         * <code>repeated .obb.SessionMarket available_markets = 3;</code>
+         * <code>repeated .obb.SessionMarket available_markets = 3 [json_name = "availableMarkets"];</code>
          */
         public Builder setAvailableMarkets(
             int index, com.oddin.obb.Session.SessionMarket.Builder builderForValue) {
@@ -3988,7 +3988,7 @@ public final class Session {
          * Available markets for the new session with the current session selections.
          * </pre>
          *
-         * <code>repeated .obb.SessionMarket available_markets = 3;</code>
+         * <code>repeated .obb.SessionMarket available_markets = 3 [json_name = "availableMarkets"];</code>
          */
         public Builder addAvailableMarkets(com.oddin.obb.Session.SessionMarket value) {
           if (availableMarketsBuilder_ == null) {
@@ -4008,7 +4008,7 @@ public final class Session {
          * Available markets for the new session with the current session selections.
          * </pre>
          *
-         * <code>repeated .obb.SessionMarket available_markets = 3;</code>
+         * <code>repeated .obb.SessionMarket available_markets = 3 [json_name = "availableMarkets"];</code>
          */
         public Builder addAvailableMarkets(
             int index, com.oddin.obb.Session.SessionMarket value) {
@@ -4029,7 +4029,7 @@ public final class Session {
          * Available markets for the new session with the current session selections.
          * </pre>
          *
-         * <code>repeated .obb.SessionMarket available_markets = 3;</code>
+         * <code>repeated .obb.SessionMarket available_markets = 3 [json_name = "availableMarkets"];</code>
          */
         public Builder addAvailableMarkets(
             com.oddin.obb.Session.SessionMarket.Builder builderForValue) {
@@ -4047,7 +4047,7 @@ public final class Session {
          * Available markets for the new session with the current session selections.
          * </pre>
          *
-         * <code>repeated .obb.SessionMarket available_markets = 3;</code>
+         * <code>repeated .obb.SessionMarket available_markets = 3 [json_name = "availableMarkets"];</code>
          */
         public Builder addAvailableMarkets(
             int index, com.oddin.obb.Session.SessionMarket.Builder builderForValue) {
@@ -4065,7 +4065,7 @@ public final class Session {
          * Available markets for the new session with the current session selections.
          * </pre>
          *
-         * <code>repeated .obb.SessionMarket available_markets = 3;</code>
+         * <code>repeated .obb.SessionMarket available_markets = 3 [json_name = "availableMarkets"];</code>
          */
         public Builder addAllAvailableMarkets(
             java.lang.Iterable<? extends com.oddin.obb.Session.SessionMarket> values) {
@@ -4084,7 +4084,7 @@ public final class Session {
          * Available markets for the new session with the current session selections.
          * </pre>
          *
-         * <code>repeated .obb.SessionMarket available_markets = 3;</code>
+         * <code>repeated .obb.SessionMarket available_markets = 3 [json_name = "availableMarkets"];</code>
          */
         public Builder clearAvailableMarkets() {
           if (availableMarketsBuilder_ == null) {
@@ -4101,7 +4101,7 @@ public final class Session {
          * Available markets for the new session with the current session selections.
          * </pre>
          *
-         * <code>repeated .obb.SessionMarket available_markets = 3;</code>
+         * <code>repeated .obb.SessionMarket available_markets = 3 [json_name = "availableMarkets"];</code>
          */
         public Builder removeAvailableMarkets(int index) {
           if (availableMarketsBuilder_ == null) {
@@ -4118,7 +4118,7 @@ public final class Session {
          * Available markets for the new session with the current session selections.
          * </pre>
          *
-         * <code>repeated .obb.SessionMarket available_markets = 3;</code>
+         * <code>repeated .obb.SessionMarket available_markets = 3 [json_name = "availableMarkets"];</code>
          */
         public com.oddin.obb.Session.SessionMarket.Builder getAvailableMarketsBuilder(
             int index) {
@@ -4129,7 +4129,7 @@ public final class Session {
          * Available markets for the new session with the current session selections.
          * </pre>
          *
-         * <code>repeated .obb.SessionMarket available_markets = 3;</code>
+         * <code>repeated .obb.SessionMarket available_markets = 3 [json_name = "availableMarkets"];</code>
          */
         public com.oddin.obb.Session.SessionMarketOrBuilder getAvailableMarketsOrBuilder(
             int index) {
@@ -4143,7 +4143,7 @@ public final class Session {
          * Available markets for the new session with the current session selections.
          * </pre>
          *
-         * <code>repeated .obb.SessionMarket available_markets = 3;</code>
+         * <code>repeated .obb.SessionMarket available_markets = 3 [json_name = "availableMarkets"];</code>
          */
         public java.util.List<? extends com.oddin.obb.Session.SessionMarketOrBuilder> 
              getAvailableMarketsOrBuilderList() {
@@ -4158,7 +4158,7 @@ public final class Session {
          * Available markets for the new session with the current session selections.
          * </pre>
          *
-         * <code>repeated .obb.SessionMarket available_markets = 3;</code>
+         * <code>repeated .obb.SessionMarket available_markets = 3 [json_name = "availableMarkets"];</code>
          */
         public com.oddin.obb.Session.SessionMarket.Builder addAvailableMarketsBuilder() {
           return getAvailableMarketsFieldBuilder().addBuilder(
@@ -4169,7 +4169,7 @@ public final class Session {
          * Available markets for the new session with the current session selections.
          * </pre>
          *
-         * <code>repeated .obb.SessionMarket available_markets = 3;</code>
+         * <code>repeated .obb.SessionMarket available_markets = 3 [json_name = "availableMarkets"];</code>
          */
         public com.oddin.obb.Session.SessionMarket.Builder addAvailableMarketsBuilder(
             int index) {
@@ -4181,7 +4181,7 @@ public final class Session {
          * Available markets for the new session with the current session selections.
          * </pre>
          *
-         * <code>repeated .obb.SessionMarket available_markets = 3;</code>
+         * <code>repeated .obb.SessionMarket available_markets = 3 [json_name = "availableMarkets"];</code>
          */
         public java.util.List<com.oddin.obb.Session.SessionMarket.Builder> 
              getAvailableMarketsBuilderList() {
@@ -4274,7 +4274,7 @@ public final class Session {
        * Information about rejection reason.
        * </pre>
        *
-       * <code>.obb.SessionRejectReason reason = 1;</code>
+       * <code>.obb.SessionRejectReason reason = 1 [json_name = "reason"];</code>
        * @return Whether the reason field is set.
        */
       boolean hasReason();
@@ -4283,7 +4283,7 @@ public final class Session {
        * Information about rejection reason.
        * </pre>
        *
-       * <code>.obb.SessionRejectReason reason = 1;</code>
+       * <code>.obb.SessionRejectReason reason = 1 [json_name = "reason"];</code>
        * @return The reason.
        */
       com.oddin.obb.Session.SessionRejectReason getReason();
@@ -4292,7 +4292,7 @@ public final class Session {
        * Information about rejection reason.
        * </pre>
        *
-       * <code>.obb.SessionRejectReason reason = 1;</code>
+       * <code>.obb.SessionRejectReason reason = 1 [json_name = "reason"];</code>
        */
       com.oddin.obb.Session.SessionRejectReasonOrBuilder getReasonOrBuilder();
     }
@@ -4343,7 +4343,7 @@ public final class Session {
        * Information about rejection reason.
        * </pre>
        *
-       * <code>.obb.SessionRejectReason reason = 1;</code>
+       * <code>.obb.SessionRejectReason reason = 1 [json_name = "reason"];</code>
        * @return Whether the reason field is set.
        */
       @java.lang.Override
@@ -4355,7 +4355,7 @@ public final class Session {
        * Information about rejection reason.
        * </pre>
        *
-       * <code>.obb.SessionRejectReason reason = 1;</code>
+       * <code>.obb.SessionRejectReason reason = 1 [json_name = "reason"];</code>
        * @return The reason.
        */
       @java.lang.Override
@@ -4367,7 +4367,7 @@ public final class Session {
        * Information about rejection reason.
        * </pre>
        *
-       * <code>.obb.SessionRejectReason reason = 1;</code>
+       * <code>.obb.SessionRejectReason reason = 1 [json_name = "reason"];</code>
        */
       @java.lang.Override
       public com.oddin.obb.Session.SessionRejectReasonOrBuilder getReasonOrBuilder() {
@@ -4712,7 +4712,7 @@ public final class Session {
          * Information about rejection reason.
          * </pre>
          *
-         * <code>.obb.SessionRejectReason reason = 1;</code>
+         * <code>.obb.SessionRejectReason reason = 1 [json_name = "reason"];</code>
          * @return Whether the reason field is set.
          */
         public boolean hasReason() {
@@ -4723,7 +4723,7 @@ public final class Session {
          * Information about rejection reason.
          * </pre>
          *
-         * <code>.obb.SessionRejectReason reason = 1;</code>
+         * <code>.obb.SessionRejectReason reason = 1 [json_name = "reason"];</code>
          * @return The reason.
          */
         public com.oddin.obb.Session.SessionRejectReason getReason() {
@@ -4738,7 +4738,7 @@ public final class Session {
          * Information about rejection reason.
          * </pre>
          *
-         * <code>.obb.SessionRejectReason reason = 1;</code>
+         * <code>.obb.SessionRejectReason reason = 1 [json_name = "reason"];</code>
          */
         public Builder setReason(com.oddin.obb.Session.SessionRejectReason value) {
           if (reasonBuilder_ == null) {
@@ -4758,7 +4758,7 @@ public final class Session {
          * Information about rejection reason.
          * </pre>
          *
-         * <code>.obb.SessionRejectReason reason = 1;</code>
+         * <code>.obb.SessionRejectReason reason = 1 [json_name = "reason"];</code>
          */
         public Builder setReason(
             com.oddin.obb.Session.SessionRejectReason.Builder builderForValue) {
@@ -4776,7 +4776,7 @@ public final class Session {
          * Information about rejection reason.
          * </pre>
          *
-         * <code>.obb.SessionRejectReason reason = 1;</code>
+         * <code>.obb.SessionRejectReason reason = 1 [json_name = "reason"];</code>
          */
         public Builder mergeReason(com.oddin.obb.Session.SessionRejectReason value) {
           if (reasonBuilder_ == null) {
@@ -4798,7 +4798,7 @@ public final class Session {
          * Information about rejection reason.
          * </pre>
          *
-         * <code>.obb.SessionRejectReason reason = 1;</code>
+         * <code>.obb.SessionRejectReason reason = 1 [json_name = "reason"];</code>
          */
         public Builder clearReason() {
           if (reasonBuilder_ == null) {
@@ -4816,7 +4816,7 @@ public final class Session {
          * Information about rejection reason.
          * </pre>
          *
-         * <code>.obb.SessionRejectReason reason = 1;</code>
+         * <code>.obb.SessionRejectReason reason = 1 [json_name = "reason"];</code>
          */
         public com.oddin.obb.Session.SessionRejectReason.Builder getReasonBuilder() {
           
@@ -4828,7 +4828,7 @@ public final class Session {
          * Information about rejection reason.
          * </pre>
          *
-         * <code>.obb.SessionRejectReason reason = 1;</code>
+         * <code>.obb.SessionRejectReason reason = 1 [json_name = "reason"];</code>
          */
         public com.oddin.obb.Session.SessionRejectReasonOrBuilder getReasonOrBuilder() {
           if (reasonBuilder_ != null) {
@@ -4843,7 +4843,7 @@ public final class Session {
          * Information about rejection reason.
          * </pre>
          *
-         * <code>.obb.SessionRejectReason reason = 1;</code>
+         * <code>.obb.SessionRejectReason reason = 1 [json_name = "reason"];</code>
          */
         private com.google.protobuf.SingleFieldBuilderV3<
             com.oddin.obb.Session.SessionRejectReason, com.oddin.obb.Session.SessionRejectReason.Builder, com.oddin.obb.Session.SessionRejectReasonOrBuilder> 
@@ -4970,7 +4970,7 @@ public final class Session {
      * Session ID created by operator.
      * </pre>
      *
-     * <code>string session_id = 1;</code>
+     * <code>string session_id = 1 [json_name = "sessionId"];</code>
      * @return The sessionId.
      */
     @java.lang.Override
@@ -4991,7 +4991,7 @@ public final class Session {
      * Session ID created by operator.
      * </pre>
      *
-     * <code>string session_id = 1;</code>
+     * <code>string session_id = 1 [json_name = "sessionId"];</code>
      * @return The bytes for sessionId.
      */
     @java.lang.Override
@@ -5015,7 +5015,7 @@ public final class Session {
      * Successfully created session information.
      * </pre>
      *
-     * <code>.obb.SessionCreateResponse.SessionCreated created = 2;</code>
+     * <code>.obb.SessionCreateResponse.SessionCreated created = 2 [json_name = "created"];</code>
      * @return Whether the created field is set.
      */
     @java.lang.Override
@@ -5027,7 +5027,7 @@ public final class Session {
      * Successfully created session information.
      * </pre>
      *
-     * <code>.obb.SessionCreateResponse.SessionCreated created = 2;</code>
+     * <code>.obb.SessionCreateResponse.SessionCreated created = 2 [json_name = "created"];</code>
      * @return The created.
      */
     @java.lang.Override
@@ -5042,7 +5042,7 @@ public final class Session {
      * Successfully created session information.
      * </pre>
      *
-     * <code>.obb.SessionCreateResponse.SessionCreated created = 2;</code>
+     * <code>.obb.SessionCreateResponse.SessionCreated created = 2 [json_name = "created"];</code>
      */
     @java.lang.Override
     public com.oddin.obb.Session.SessionCreateResponse.SessionCreatedOrBuilder getCreatedOrBuilder() {
@@ -5058,7 +5058,7 @@ public final class Session {
      * Session creation was rejected.
      * </pre>
      *
-     * <code>.obb.SessionCreateResponse.SessionRejected rejected = 3;</code>
+     * <code>.obb.SessionCreateResponse.SessionRejected rejected = 3 [json_name = "rejected"];</code>
      * @return Whether the rejected field is set.
      */
     @java.lang.Override
@@ -5070,7 +5070,7 @@ public final class Session {
      * Session creation was rejected.
      * </pre>
      *
-     * <code>.obb.SessionCreateResponse.SessionRejected rejected = 3;</code>
+     * <code>.obb.SessionCreateResponse.SessionRejected rejected = 3 [json_name = "rejected"];</code>
      * @return The rejected.
      */
     @java.lang.Override
@@ -5085,7 +5085,7 @@ public final class Session {
      * Session creation was rejected.
      * </pre>
      *
-     * <code>.obb.SessionCreateResponse.SessionRejected rejected = 3;</code>
+     * <code>.obb.SessionCreateResponse.SessionRejected rejected = 3 [json_name = "rejected"];</code>
      */
     @java.lang.Override
     public com.oddin.obb.Session.SessionCreateResponse.SessionRejectedOrBuilder getRejectedOrBuilder() {
@@ -5520,7 +5520,7 @@ public final class Session {
        * Session ID created by operator.
        * </pre>
        *
-       * <code>string session_id = 1;</code>
+       * <code>string session_id = 1 [json_name = "sessionId"];</code>
        * @return The sessionId.
        */
       public java.lang.String getSessionId() {
@@ -5540,7 +5540,7 @@ public final class Session {
        * Session ID created by operator.
        * </pre>
        *
-       * <code>string session_id = 1;</code>
+       * <code>string session_id = 1 [json_name = "sessionId"];</code>
        * @return The bytes for sessionId.
        */
       public com.google.protobuf.ByteString
@@ -5561,7 +5561,7 @@ public final class Session {
        * Session ID created by operator.
        * </pre>
        *
-       * <code>string session_id = 1;</code>
+       * <code>string session_id = 1 [json_name = "sessionId"];</code>
        * @param value The sessionId to set.
        * @return This builder for chaining.
        */
@@ -5580,7 +5580,7 @@ public final class Session {
        * Session ID created by operator.
        * </pre>
        *
-       * <code>string session_id = 1;</code>
+       * <code>string session_id = 1 [json_name = "sessionId"];</code>
        * @return This builder for chaining.
        */
       public Builder clearSessionId() {
@@ -5594,7 +5594,7 @@ public final class Session {
        * Session ID created by operator.
        * </pre>
        *
-       * <code>string session_id = 1;</code>
+       * <code>string session_id = 1 [json_name = "sessionId"];</code>
        * @param value The bytes for sessionId to set.
        * @return This builder for chaining.
        */
@@ -5617,7 +5617,7 @@ public final class Session {
        * Successfully created session information.
        * </pre>
        *
-       * <code>.obb.SessionCreateResponse.SessionCreated created = 2;</code>
+       * <code>.obb.SessionCreateResponse.SessionCreated created = 2 [json_name = "created"];</code>
        * @return Whether the created field is set.
        */
       @java.lang.Override
@@ -5629,7 +5629,7 @@ public final class Session {
        * Successfully created session information.
        * </pre>
        *
-       * <code>.obb.SessionCreateResponse.SessionCreated created = 2;</code>
+       * <code>.obb.SessionCreateResponse.SessionCreated created = 2 [json_name = "created"];</code>
        * @return The created.
        */
       @java.lang.Override
@@ -5651,7 +5651,7 @@ public final class Session {
        * Successfully created session information.
        * </pre>
        *
-       * <code>.obb.SessionCreateResponse.SessionCreated created = 2;</code>
+       * <code>.obb.SessionCreateResponse.SessionCreated created = 2 [json_name = "created"];</code>
        */
       public Builder setCreated(com.oddin.obb.Session.SessionCreateResponse.SessionCreated value) {
         if (createdBuilder_ == null) {
@@ -5671,7 +5671,7 @@ public final class Session {
        * Successfully created session information.
        * </pre>
        *
-       * <code>.obb.SessionCreateResponse.SessionCreated created = 2;</code>
+       * <code>.obb.SessionCreateResponse.SessionCreated created = 2 [json_name = "created"];</code>
        */
       public Builder setCreated(
           com.oddin.obb.Session.SessionCreateResponse.SessionCreated.Builder builderForValue) {
@@ -5689,7 +5689,7 @@ public final class Session {
        * Successfully created session information.
        * </pre>
        *
-       * <code>.obb.SessionCreateResponse.SessionCreated created = 2;</code>
+       * <code>.obb.SessionCreateResponse.SessionCreated created = 2 [json_name = "created"];</code>
        */
       public Builder mergeCreated(com.oddin.obb.Session.SessionCreateResponse.SessionCreated value) {
         if (createdBuilder_ == null) {
@@ -5716,7 +5716,7 @@ public final class Session {
        * Successfully created session information.
        * </pre>
        *
-       * <code>.obb.SessionCreateResponse.SessionCreated created = 2;</code>
+       * <code>.obb.SessionCreateResponse.SessionCreated created = 2 [json_name = "created"];</code>
        */
       public Builder clearCreated() {
         if (createdBuilder_ == null) {
@@ -5739,7 +5739,7 @@ public final class Session {
        * Successfully created session information.
        * </pre>
        *
-       * <code>.obb.SessionCreateResponse.SessionCreated created = 2;</code>
+       * <code>.obb.SessionCreateResponse.SessionCreated created = 2 [json_name = "created"];</code>
        */
       public com.oddin.obb.Session.SessionCreateResponse.SessionCreated.Builder getCreatedBuilder() {
         return getCreatedFieldBuilder().getBuilder();
@@ -5749,7 +5749,7 @@ public final class Session {
        * Successfully created session information.
        * </pre>
        *
-       * <code>.obb.SessionCreateResponse.SessionCreated created = 2;</code>
+       * <code>.obb.SessionCreateResponse.SessionCreated created = 2 [json_name = "created"];</code>
        */
       @java.lang.Override
       public com.oddin.obb.Session.SessionCreateResponse.SessionCreatedOrBuilder getCreatedOrBuilder() {
@@ -5767,7 +5767,7 @@ public final class Session {
        * Successfully created session information.
        * </pre>
        *
-       * <code>.obb.SessionCreateResponse.SessionCreated created = 2;</code>
+       * <code>.obb.SessionCreateResponse.SessionCreated created = 2 [json_name = "created"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.oddin.obb.Session.SessionCreateResponse.SessionCreated, com.oddin.obb.Session.SessionCreateResponse.SessionCreated.Builder, com.oddin.obb.Session.SessionCreateResponse.SessionCreatedOrBuilder> 
@@ -5795,7 +5795,7 @@ public final class Session {
        * Session creation was rejected.
        * </pre>
        *
-       * <code>.obb.SessionCreateResponse.SessionRejected rejected = 3;</code>
+       * <code>.obb.SessionCreateResponse.SessionRejected rejected = 3 [json_name = "rejected"];</code>
        * @return Whether the rejected field is set.
        */
       @java.lang.Override
@@ -5807,7 +5807,7 @@ public final class Session {
        * Session creation was rejected.
        * </pre>
        *
-       * <code>.obb.SessionCreateResponse.SessionRejected rejected = 3;</code>
+       * <code>.obb.SessionCreateResponse.SessionRejected rejected = 3 [json_name = "rejected"];</code>
        * @return The rejected.
        */
       @java.lang.Override
@@ -5829,7 +5829,7 @@ public final class Session {
        * Session creation was rejected.
        * </pre>
        *
-       * <code>.obb.SessionCreateResponse.SessionRejected rejected = 3;</code>
+       * <code>.obb.SessionCreateResponse.SessionRejected rejected = 3 [json_name = "rejected"];</code>
        */
       public Builder setRejected(com.oddin.obb.Session.SessionCreateResponse.SessionRejected value) {
         if (rejectedBuilder_ == null) {
@@ -5849,7 +5849,7 @@ public final class Session {
        * Session creation was rejected.
        * </pre>
        *
-       * <code>.obb.SessionCreateResponse.SessionRejected rejected = 3;</code>
+       * <code>.obb.SessionCreateResponse.SessionRejected rejected = 3 [json_name = "rejected"];</code>
        */
       public Builder setRejected(
           com.oddin.obb.Session.SessionCreateResponse.SessionRejected.Builder builderForValue) {
@@ -5867,7 +5867,7 @@ public final class Session {
        * Session creation was rejected.
        * </pre>
        *
-       * <code>.obb.SessionCreateResponse.SessionRejected rejected = 3;</code>
+       * <code>.obb.SessionCreateResponse.SessionRejected rejected = 3 [json_name = "rejected"];</code>
        */
       public Builder mergeRejected(com.oddin.obb.Session.SessionCreateResponse.SessionRejected value) {
         if (rejectedBuilder_ == null) {
@@ -5894,7 +5894,7 @@ public final class Session {
        * Session creation was rejected.
        * </pre>
        *
-       * <code>.obb.SessionCreateResponse.SessionRejected rejected = 3;</code>
+       * <code>.obb.SessionCreateResponse.SessionRejected rejected = 3 [json_name = "rejected"];</code>
        */
       public Builder clearRejected() {
         if (rejectedBuilder_ == null) {
@@ -5917,7 +5917,7 @@ public final class Session {
        * Session creation was rejected.
        * </pre>
        *
-       * <code>.obb.SessionCreateResponse.SessionRejected rejected = 3;</code>
+       * <code>.obb.SessionCreateResponse.SessionRejected rejected = 3 [json_name = "rejected"];</code>
        */
       public com.oddin.obb.Session.SessionCreateResponse.SessionRejected.Builder getRejectedBuilder() {
         return getRejectedFieldBuilder().getBuilder();
@@ -5927,7 +5927,7 @@ public final class Session {
        * Session creation was rejected.
        * </pre>
        *
-       * <code>.obb.SessionCreateResponse.SessionRejected rejected = 3;</code>
+       * <code>.obb.SessionCreateResponse.SessionRejected rejected = 3 [json_name = "rejected"];</code>
        */
       @java.lang.Override
       public com.oddin.obb.Session.SessionCreateResponse.SessionRejectedOrBuilder getRejectedOrBuilder() {
@@ -5945,7 +5945,7 @@ public final class Session {
        * Session creation was rejected.
        * </pre>
        *
-       * <code>.obb.SessionCreateResponse.SessionRejected rejected = 3;</code>
+       * <code>.obb.SessionCreateResponse.SessionRejected rejected = 3 [json_name = "rejected"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.oddin.obb.Session.SessionCreateResponse.SessionRejected, com.oddin.obb.Session.SessionCreateResponse.SessionRejected.Builder, com.oddin.obb.Session.SessionCreateResponse.SessionRejectedOrBuilder> 
@@ -6039,7 +6039,7 @@ public final class Session {
      * Example: “od:match:1234/1/1?map=1&amp;way=two”
      * </pre>
      *
-     * <code>string selection_id = 1;</code>
+     * <code>string selection_id = 1 [json_name = "selectionId"];</code>
      * @return The selectionId.
      */
     java.lang.String getSelectionId();
@@ -6049,7 +6049,7 @@ public final class Session {
      * Example: “od:match:1234/1/1?map=1&amp;way=two”
      * </pre>
      *
-     * <code>string selection_id = 1;</code>
+     * <code>string selection_id = 1 [json_name = "selectionId"];</code>
      * @return The bytes for selectionId.
      */
     com.google.protobuf.ByteString
@@ -6104,7 +6104,7 @@ public final class Session {
      * Example: “od:match:1234/1/1?map=1&amp;way=two”
      * </pre>
      *
-     * <code>string selection_id = 1;</code>
+     * <code>string selection_id = 1 [json_name = "selectionId"];</code>
      * @return The selectionId.
      */
     @java.lang.Override
@@ -6126,7 +6126,7 @@ public final class Session {
      * Example: “od:match:1234/1/1?map=1&amp;way=two”
      * </pre>
      *
-     * <code>string selection_id = 1;</code>
+     * <code>string selection_id = 1 [json_name = "selectionId"];</code>
      * @return The bytes for selectionId.
      */
     @java.lang.Override
@@ -6466,7 +6466,7 @@ public final class Session {
        * Example: “od:match:1234/1/1?map=1&amp;way=two”
        * </pre>
        *
-       * <code>string selection_id = 1;</code>
+       * <code>string selection_id = 1 [json_name = "selectionId"];</code>
        * @return The selectionId.
        */
       public java.lang.String getSelectionId() {
@@ -6487,7 +6487,7 @@ public final class Session {
        * Example: “od:match:1234/1/1?map=1&amp;way=two”
        * </pre>
        *
-       * <code>string selection_id = 1;</code>
+       * <code>string selection_id = 1 [json_name = "selectionId"];</code>
        * @return The bytes for selectionId.
        */
       public com.google.protobuf.ByteString
@@ -6509,7 +6509,7 @@ public final class Session {
        * Example: “od:match:1234/1/1?map=1&amp;way=two”
        * </pre>
        *
-       * <code>string selection_id = 1;</code>
+       * <code>string selection_id = 1 [json_name = "selectionId"];</code>
        * @param value The selectionId to set.
        * @return This builder for chaining.
        */
@@ -6529,7 +6529,7 @@ public final class Session {
        * Example: “od:match:1234/1/1?map=1&amp;way=two”
        * </pre>
        *
-       * <code>string selection_id = 1;</code>
+       * <code>string selection_id = 1 [json_name = "selectionId"];</code>
        * @return This builder for chaining.
        */
       public Builder clearSelectionId() {
@@ -6544,7 +6544,7 @@ public final class Session {
        * Example: “od:match:1234/1/1?map=1&amp;way=two”
        * </pre>
        *
-       * <code>string selection_id = 1;</code>
+       * <code>string selection_id = 1 [json_name = "selectionId"];</code>
        * @param value The bytes for selectionId to set.
        * @return This builder for chaining.
        */
@@ -6632,7 +6632,7 @@ public final class Session {
      * The ID using the same values as our odds feed in XML.
      * </pre>
      *
-     * <code>uint32 market_id = 1;</code>
+     * <code>uint32 market_id = 1 [json_name = "marketId"];</code>
      * @return The marketId.
      */
     int getMarketId();
@@ -6643,7 +6643,7 @@ public final class Session {
      * Example: "variant=way:three|way=three|map=1"
      * </pre>
      *
-     * <code>string specifiers = 2;</code>
+     * <code>string specifiers = 2 [json_name = "specifiers"];</code>
      * @return The specifiers.
      */
     java.lang.String getSpecifiers();
@@ -6653,7 +6653,7 @@ public final class Session {
      * Example: "variant=way:three|way=three|map=1"
      * </pre>
      *
-     * <code>string specifiers = 2;</code>
+     * <code>string specifiers = 2 [json_name = "specifiers"];</code>
      * @return The bytes for specifiers.
      */
     com.google.protobuf.ByteString
@@ -6664,7 +6664,7 @@ public final class Session {
      * List of available outcomes for the market.
      * </pre>
      *
-     * <code>repeated .obb.SessionMarketOutcome outcomes = 3;</code>
+     * <code>repeated .obb.SessionMarketOutcome outcomes = 3 [json_name = "outcomes"];</code>
      */
     java.util.List<com.oddin.obb.Session.SessionMarketOutcome> 
         getOutcomesList();
@@ -6673,7 +6673,7 @@ public final class Session {
      * List of available outcomes for the market.
      * </pre>
      *
-     * <code>repeated .obb.SessionMarketOutcome outcomes = 3;</code>
+     * <code>repeated .obb.SessionMarketOutcome outcomes = 3 [json_name = "outcomes"];</code>
      */
     com.oddin.obb.Session.SessionMarketOutcome getOutcomes(int index);
     /**
@@ -6681,7 +6681,7 @@ public final class Session {
      * List of available outcomes for the market.
      * </pre>
      *
-     * <code>repeated .obb.SessionMarketOutcome outcomes = 3;</code>
+     * <code>repeated .obb.SessionMarketOutcome outcomes = 3 [json_name = "outcomes"];</code>
      */
     int getOutcomesCount();
     /**
@@ -6689,7 +6689,7 @@ public final class Session {
      * List of available outcomes for the market.
      * </pre>
      *
-     * <code>repeated .obb.SessionMarketOutcome outcomes = 3;</code>
+     * <code>repeated .obb.SessionMarketOutcome outcomes = 3 [json_name = "outcomes"];</code>
      */
     java.util.List<? extends com.oddin.obb.Session.SessionMarketOutcomeOrBuilder> 
         getOutcomesOrBuilderList();
@@ -6698,7 +6698,7 @@ public final class Session {
      * List of available outcomes for the market.
      * </pre>
      *
-     * <code>repeated .obb.SessionMarketOutcome outcomes = 3;</code>
+     * <code>repeated .obb.SessionMarketOutcome outcomes = 3 [json_name = "outcomes"];</code>
      */
     com.oddin.obb.Session.SessionMarketOutcomeOrBuilder getOutcomesOrBuilder(
         int index);
@@ -6752,7 +6752,7 @@ public final class Session {
      * The ID using the same values as our odds feed in XML.
      * </pre>
      *
-     * <code>uint32 market_id = 1;</code>
+     * <code>uint32 market_id = 1 [json_name = "marketId"];</code>
      * @return The marketId.
      */
     @java.lang.Override
@@ -6768,7 +6768,7 @@ public final class Session {
      * Example: "variant=way:three|way=three|map=1"
      * </pre>
      *
-     * <code>string specifiers = 2;</code>
+     * <code>string specifiers = 2 [json_name = "specifiers"];</code>
      * @return The specifiers.
      */
     @java.lang.Override
@@ -6790,7 +6790,7 @@ public final class Session {
      * Example: "variant=way:three|way=three|map=1"
      * </pre>
      *
-     * <code>string specifiers = 2;</code>
+     * <code>string specifiers = 2 [json_name = "specifiers"];</code>
      * @return The bytes for specifiers.
      */
     @java.lang.Override
@@ -6815,7 +6815,7 @@ public final class Session {
      * List of available outcomes for the market.
      * </pre>
      *
-     * <code>repeated .obb.SessionMarketOutcome outcomes = 3;</code>
+     * <code>repeated .obb.SessionMarketOutcome outcomes = 3 [json_name = "outcomes"];</code>
      */
     @java.lang.Override
     public java.util.List<com.oddin.obb.Session.SessionMarketOutcome> getOutcomesList() {
@@ -6826,7 +6826,7 @@ public final class Session {
      * List of available outcomes for the market.
      * </pre>
      *
-     * <code>repeated .obb.SessionMarketOutcome outcomes = 3;</code>
+     * <code>repeated .obb.SessionMarketOutcome outcomes = 3 [json_name = "outcomes"];</code>
      */
     @java.lang.Override
     public java.util.List<? extends com.oddin.obb.Session.SessionMarketOutcomeOrBuilder> 
@@ -6838,7 +6838,7 @@ public final class Session {
      * List of available outcomes for the market.
      * </pre>
      *
-     * <code>repeated .obb.SessionMarketOutcome outcomes = 3;</code>
+     * <code>repeated .obb.SessionMarketOutcome outcomes = 3 [json_name = "outcomes"];</code>
      */
     @java.lang.Override
     public int getOutcomesCount() {
@@ -6849,7 +6849,7 @@ public final class Session {
      * List of available outcomes for the market.
      * </pre>
      *
-     * <code>repeated .obb.SessionMarketOutcome outcomes = 3;</code>
+     * <code>repeated .obb.SessionMarketOutcome outcomes = 3 [json_name = "outcomes"];</code>
      */
     @java.lang.Override
     public com.oddin.obb.Session.SessionMarketOutcome getOutcomes(int index) {
@@ -6860,7 +6860,7 @@ public final class Session {
      * List of available outcomes for the market.
      * </pre>
      *
-     * <code>repeated .obb.SessionMarketOutcome outcomes = 3;</code>
+     * <code>repeated .obb.SessionMarketOutcome outcomes = 3 [json_name = "outcomes"];</code>
      */
     @java.lang.Override
     public com.oddin.obb.Session.SessionMarketOutcomeOrBuilder getOutcomesOrBuilder(
@@ -7281,7 +7281,7 @@ public final class Session {
        * The ID using the same values as our odds feed in XML.
        * </pre>
        *
-       * <code>uint32 market_id = 1;</code>
+       * <code>uint32 market_id = 1 [json_name = "marketId"];</code>
        * @return The marketId.
        */
       @java.lang.Override
@@ -7293,7 +7293,7 @@ public final class Session {
        * The ID using the same values as our odds feed in XML.
        * </pre>
        *
-       * <code>uint32 market_id = 1;</code>
+       * <code>uint32 market_id = 1 [json_name = "marketId"];</code>
        * @param value The marketId to set.
        * @return This builder for chaining.
        */
@@ -7308,7 +7308,7 @@ public final class Session {
        * The ID using the same values as our odds feed in XML.
        * </pre>
        *
-       * <code>uint32 market_id = 1;</code>
+       * <code>uint32 market_id = 1 [json_name = "marketId"];</code>
        * @return This builder for chaining.
        */
       public Builder clearMarketId() {
@@ -7325,7 +7325,7 @@ public final class Session {
        * Example: "variant=way:three|way=three|map=1"
        * </pre>
        *
-       * <code>string specifiers = 2;</code>
+       * <code>string specifiers = 2 [json_name = "specifiers"];</code>
        * @return The specifiers.
        */
       public java.lang.String getSpecifiers() {
@@ -7346,7 +7346,7 @@ public final class Session {
        * Example: "variant=way:three|way=three|map=1"
        * </pre>
        *
-       * <code>string specifiers = 2;</code>
+       * <code>string specifiers = 2 [json_name = "specifiers"];</code>
        * @return The bytes for specifiers.
        */
       public com.google.protobuf.ByteString
@@ -7368,7 +7368,7 @@ public final class Session {
        * Example: "variant=way:three|way=three|map=1"
        * </pre>
        *
-       * <code>string specifiers = 2;</code>
+       * <code>string specifiers = 2 [json_name = "specifiers"];</code>
        * @param value The specifiers to set.
        * @return This builder for chaining.
        */
@@ -7388,7 +7388,7 @@ public final class Session {
        * Example: "variant=way:three|way=three|map=1"
        * </pre>
        *
-       * <code>string specifiers = 2;</code>
+       * <code>string specifiers = 2 [json_name = "specifiers"];</code>
        * @return This builder for chaining.
        */
       public Builder clearSpecifiers() {
@@ -7403,7 +7403,7 @@ public final class Session {
        * Example: "variant=way:three|way=three|map=1"
        * </pre>
        *
-       * <code>string specifiers = 2;</code>
+       * <code>string specifiers = 2 [json_name = "specifiers"];</code>
        * @param value The bytes for specifiers to set.
        * @return This builder for chaining.
        */
@@ -7436,7 +7436,7 @@ public final class Session {
        * List of available outcomes for the market.
        * </pre>
        *
-       * <code>repeated .obb.SessionMarketOutcome outcomes = 3;</code>
+       * <code>repeated .obb.SessionMarketOutcome outcomes = 3 [json_name = "outcomes"];</code>
        */
       public java.util.List<com.oddin.obb.Session.SessionMarketOutcome> getOutcomesList() {
         if (outcomesBuilder_ == null) {
@@ -7450,7 +7450,7 @@ public final class Session {
        * List of available outcomes for the market.
        * </pre>
        *
-       * <code>repeated .obb.SessionMarketOutcome outcomes = 3;</code>
+       * <code>repeated .obb.SessionMarketOutcome outcomes = 3 [json_name = "outcomes"];</code>
        */
       public int getOutcomesCount() {
         if (outcomesBuilder_ == null) {
@@ -7464,7 +7464,7 @@ public final class Session {
        * List of available outcomes for the market.
        * </pre>
        *
-       * <code>repeated .obb.SessionMarketOutcome outcomes = 3;</code>
+       * <code>repeated .obb.SessionMarketOutcome outcomes = 3 [json_name = "outcomes"];</code>
        */
       public com.oddin.obb.Session.SessionMarketOutcome getOutcomes(int index) {
         if (outcomesBuilder_ == null) {
@@ -7478,7 +7478,7 @@ public final class Session {
        * List of available outcomes for the market.
        * </pre>
        *
-       * <code>repeated .obb.SessionMarketOutcome outcomes = 3;</code>
+       * <code>repeated .obb.SessionMarketOutcome outcomes = 3 [json_name = "outcomes"];</code>
        */
       public Builder setOutcomes(
           int index, com.oddin.obb.Session.SessionMarketOutcome value) {
@@ -7499,7 +7499,7 @@ public final class Session {
        * List of available outcomes for the market.
        * </pre>
        *
-       * <code>repeated .obb.SessionMarketOutcome outcomes = 3;</code>
+       * <code>repeated .obb.SessionMarketOutcome outcomes = 3 [json_name = "outcomes"];</code>
        */
       public Builder setOutcomes(
           int index, com.oddin.obb.Session.SessionMarketOutcome.Builder builderForValue) {
@@ -7517,7 +7517,7 @@ public final class Session {
        * List of available outcomes for the market.
        * </pre>
        *
-       * <code>repeated .obb.SessionMarketOutcome outcomes = 3;</code>
+       * <code>repeated .obb.SessionMarketOutcome outcomes = 3 [json_name = "outcomes"];</code>
        */
       public Builder addOutcomes(com.oddin.obb.Session.SessionMarketOutcome value) {
         if (outcomesBuilder_ == null) {
@@ -7537,7 +7537,7 @@ public final class Session {
        * List of available outcomes for the market.
        * </pre>
        *
-       * <code>repeated .obb.SessionMarketOutcome outcomes = 3;</code>
+       * <code>repeated .obb.SessionMarketOutcome outcomes = 3 [json_name = "outcomes"];</code>
        */
       public Builder addOutcomes(
           int index, com.oddin.obb.Session.SessionMarketOutcome value) {
@@ -7558,7 +7558,7 @@ public final class Session {
        * List of available outcomes for the market.
        * </pre>
        *
-       * <code>repeated .obb.SessionMarketOutcome outcomes = 3;</code>
+       * <code>repeated .obb.SessionMarketOutcome outcomes = 3 [json_name = "outcomes"];</code>
        */
       public Builder addOutcomes(
           com.oddin.obb.Session.SessionMarketOutcome.Builder builderForValue) {
@@ -7576,7 +7576,7 @@ public final class Session {
        * List of available outcomes for the market.
        * </pre>
        *
-       * <code>repeated .obb.SessionMarketOutcome outcomes = 3;</code>
+       * <code>repeated .obb.SessionMarketOutcome outcomes = 3 [json_name = "outcomes"];</code>
        */
       public Builder addOutcomes(
           int index, com.oddin.obb.Session.SessionMarketOutcome.Builder builderForValue) {
@@ -7594,7 +7594,7 @@ public final class Session {
        * List of available outcomes for the market.
        * </pre>
        *
-       * <code>repeated .obb.SessionMarketOutcome outcomes = 3;</code>
+       * <code>repeated .obb.SessionMarketOutcome outcomes = 3 [json_name = "outcomes"];</code>
        */
       public Builder addAllOutcomes(
           java.lang.Iterable<? extends com.oddin.obb.Session.SessionMarketOutcome> values) {
@@ -7613,7 +7613,7 @@ public final class Session {
        * List of available outcomes for the market.
        * </pre>
        *
-       * <code>repeated .obb.SessionMarketOutcome outcomes = 3;</code>
+       * <code>repeated .obb.SessionMarketOutcome outcomes = 3 [json_name = "outcomes"];</code>
        */
       public Builder clearOutcomes() {
         if (outcomesBuilder_ == null) {
@@ -7630,7 +7630,7 @@ public final class Session {
        * List of available outcomes for the market.
        * </pre>
        *
-       * <code>repeated .obb.SessionMarketOutcome outcomes = 3;</code>
+       * <code>repeated .obb.SessionMarketOutcome outcomes = 3 [json_name = "outcomes"];</code>
        */
       public Builder removeOutcomes(int index) {
         if (outcomesBuilder_ == null) {
@@ -7647,7 +7647,7 @@ public final class Session {
        * List of available outcomes for the market.
        * </pre>
        *
-       * <code>repeated .obb.SessionMarketOutcome outcomes = 3;</code>
+       * <code>repeated .obb.SessionMarketOutcome outcomes = 3 [json_name = "outcomes"];</code>
        */
       public com.oddin.obb.Session.SessionMarketOutcome.Builder getOutcomesBuilder(
           int index) {
@@ -7658,7 +7658,7 @@ public final class Session {
        * List of available outcomes for the market.
        * </pre>
        *
-       * <code>repeated .obb.SessionMarketOutcome outcomes = 3;</code>
+       * <code>repeated .obb.SessionMarketOutcome outcomes = 3 [json_name = "outcomes"];</code>
        */
       public com.oddin.obb.Session.SessionMarketOutcomeOrBuilder getOutcomesOrBuilder(
           int index) {
@@ -7672,7 +7672,7 @@ public final class Session {
        * List of available outcomes for the market.
        * </pre>
        *
-       * <code>repeated .obb.SessionMarketOutcome outcomes = 3;</code>
+       * <code>repeated .obb.SessionMarketOutcome outcomes = 3 [json_name = "outcomes"];</code>
        */
       public java.util.List<? extends com.oddin.obb.Session.SessionMarketOutcomeOrBuilder> 
            getOutcomesOrBuilderList() {
@@ -7687,7 +7687,7 @@ public final class Session {
        * List of available outcomes for the market.
        * </pre>
        *
-       * <code>repeated .obb.SessionMarketOutcome outcomes = 3;</code>
+       * <code>repeated .obb.SessionMarketOutcome outcomes = 3 [json_name = "outcomes"];</code>
        */
       public com.oddin.obb.Session.SessionMarketOutcome.Builder addOutcomesBuilder() {
         return getOutcomesFieldBuilder().addBuilder(
@@ -7698,7 +7698,7 @@ public final class Session {
        * List of available outcomes for the market.
        * </pre>
        *
-       * <code>repeated .obb.SessionMarketOutcome outcomes = 3;</code>
+       * <code>repeated .obb.SessionMarketOutcome outcomes = 3 [json_name = "outcomes"];</code>
        */
       public com.oddin.obb.Session.SessionMarketOutcome.Builder addOutcomesBuilder(
           int index) {
@@ -7710,7 +7710,7 @@ public final class Session {
        * List of available outcomes for the market.
        * </pre>
        *
-       * <code>repeated .obb.SessionMarketOutcome outcomes = 3;</code>
+       * <code>repeated .obb.SessionMarketOutcome outcomes = 3 [json_name = "outcomes"];</code>
        */
       public java.util.List<com.oddin.obb.Session.SessionMarketOutcome.Builder> 
            getOutcomesBuilderList() {
@@ -7804,7 +7804,7 @@ public final class Session {
      * Example: "10" for classic market or "od:player:123" for dynamic markets.
      * </pre>
      *
-     * <code>string outcome_id = 1;</code>
+     * <code>string outcome_id = 1 [json_name = "outcomeId"];</code>
      * @return The outcomeId.
      */
     java.lang.String getOutcomeId();
@@ -7814,7 +7814,7 @@ public final class Session {
      * Example: "10" for classic market or "od:player:123" for dynamic markets.
      * </pre>
      *
-     * <code>string outcome_id = 1;</code>
+     * <code>string outcome_id = 1 [json_name = "outcomeId"];</code>
      * @return The bytes for outcomeId.
      */
     com.google.protobuf.ByteString
@@ -7825,7 +7825,7 @@ public final class Session {
      * Odds multiplied by 10000 and rounded to uint value.
      * </pre>
      *
-     * <code>uint64 odds = 2;</code>
+     * <code>uint64 odds = 2 [json_name = "odds"];</code>
      * @return The odds.
      */
     long getOdds();
@@ -7879,7 +7879,7 @@ public final class Session {
      * Example: "10" for classic market or "od:player:123" for dynamic markets.
      * </pre>
      *
-     * <code>string outcome_id = 1;</code>
+     * <code>string outcome_id = 1 [json_name = "outcomeId"];</code>
      * @return The outcomeId.
      */
     @java.lang.Override
@@ -7901,7 +7901,7 @@ public final class Session {
      * Example: "10" for classic market or "od:player:123" for dynamic markets.
      * </pre>
      *
-     * <code>string outcome_id = 1;</code>
+     * <code>string outcome_id = 1 [json_name = "outcomeId"];</code>
      * @return The bytes for outcomeId.
      */
     @java.lang.Override
@@ -7926,7 +7926,7 @@ public final class Session {
      * Odds multiplied by 10000 and rounded to uint value.
      * </pre>
      *
-     * <code>uint64 odds = 2;</code>
+     * <code>uint64 odds = 2 [json_name = "odds"];</code>
      * @return The odds.
      */
     @java.lang.Override
@@ -8279,7 +8279,7 @@ public final class Session {
        * Example: "10" for classic market or "od:player:123" for dynamic markets.
        * </pre>
        *
-       * <code>string outcome_id = 1;</code>
+       * <code>string outcome_id = 1 [json_name = "outcomeId"];</code>
        * @return The outcomeId.
        */
       public java.lang.String getOutcomeId() {
@@ -8300,7 +8300,7 @@ public final class Session {
        * Example: "10" for classic market or "od:player:123" for dynamic markets.
        * </pre>
        *
-       * <code>string outcome_id = 1;</code>
+       * <code>string outcome_id = 1 [json_name = "outcomeId"];</code>
        * @return The bytes for outcomeId.
        */
       public com.google.protobuf.ByteString
@@ -8322,7 +8322,7 @@ public final class Session {
        * Example: "10" for classic market or "od:player:123" for dynamic markets.
        * </pre>
        *
-       * <code>string outcome_id = 1;</code>
+       * <code>string outcome_id = 1 [json_name = "outcomeId"];</code>
        * @param value The outcomeId to set.
        * @return This builder for chaining.
        */
@@ -8342,7 +8342,7 @@ public final class Session {
        * Example: "10" for classic market or "od:player:123" for dynamic markets.
        * </pre>
        *
-       * <code>string outcome_id = 1;</code>
+       * <code>string outcome_id = 1 [json_name = "outcomeId"];</code>
        * @return This builder for chaining.
        */
       public Builder clearOutcomeId() {
@@ -8357,7 +8357,7 @@ public final class Session {
        * Example: "10" for classic market or "od:player:123" for dynamic markets.
        * </pre>
        *
-       * <code>string outcome_id = 1;</code>
+       * <code>string outcome_id = 1 [json_name = "outcomeId"];</code>
        * @param value The bytes for outcomeId to set.
        * @return This builder for chaining.
        */
@@ -8379,7 +8379,7 @@ public final class Session {
        * Odds multiplied by 10000 and rounded to uint value.
        * </pre>
        *
-       * <code>uint64 odds = 2;</code>
+       * <code>uint64 odds = 2 [json_name = "odds"];</code>
        * @return The odds.
        */
       @java.lang.Override
@@ -8391,7 +8391,7 @@ public final class Session {
        * Odds multiplied by 10000 and rounded to uint value.
        * </pre>
        *
-       * <code>uint64 odds = 2;</code>
+       * <code>uint64 odds = 2 [json_name = "odds"];</code>
        * @param value The odds to set.
        * @return This builder for chaining.
        */
@@ -8406,7 +8406,7 @@ public final class Session {
        * Odds multiplied by 10000 and rounded to uint value.
        * </pre>
        *
-       * <code>uint64 odds = 2;</code>
+       * <code>uint64 odds = 2 [json_name = "odds"];</code>
        * @return This builder for chaining.
        */
       public Builder clearOdds() {
@@ -8488,7 +8488,7 @@ public final class Session {
      * Session ID created by operator.
      * </pre>
      *
-     * <code>string session_id = 1;</code>
+     * <code>string session_id = 1 [json_name = "sessionId"];</code>
      * @return The sessionId.
      */
     java.lang.String getSessionId();
@@ -8497,7 +8497,7 @@ public final class Session {
      * Session ID created by operator.
      * </pre>
      *
-     * <code>string session_id = 1;</code>
+     * <code>string session_id = 1 [json_name = "sessionId"];</code>
      * @return The bytes for sessionId.
      */
     com.google.protobuf.ByteString
@@ -8508,7 +8508,7 @@ public final class Session {
      * List of selections used for the OBB combination.
      * </pre>
      *
-     * <code>repeated .obb.SessionSelection selections = 2;</code>
+     * <code>repeated .obb.SessionSelection selections = 2 [json_name = "selections"];</code>
      */
     java.util.List<com.oddin.obb.Session.SessionSelection> 
         getSelectionsList();
@@ -8517,7 +8517,7 @@ public final class Session {
      * List of selections used for the OBB combination.
      * </pre>
      *
-     * <code>repeated .obb.SessionSelection selections = 2;</code>
+     * <code>repeated .obb.SessionSelection selections = 2 [json_name = "selections"];</code>
      */
     com.oddin.obb.Session.SessionSelection getSelections(int index);
     /**
@@ -8525,7 +8525,7 @@ public final class Session {
      * List of selections used for the OBB combination.
      * </pre>
      *
-     * <code>repeated .obb.SessionSelection selections = 2;</code>
+     * <code>repeated .obb.SessionSelection selections = 2 [json_name = "selections"];</code>
      */
     int getSelectionsCount();
     /**
@@ -8533,7 +8533,7 @@ public final class Session {
      * List of selections used for the OBB combination.
      * </pre>
      *
-     * <code>repeated .obb.SessionSelection selections = 2;</code>
+     * <code>repeated .obb.SessionSelection selections = 2 [json_name = "selections"];</code>
      */
     java.util.List<? extends com.oddin.obb.Session.SessionSelectionOrBuilder> 
         getSelectionsOrBuilderList();
@@ -8542,7 +8542,7 @@ public final class Session {
      * List of selections used for the OBB combination.
      * </pre>
      *
-     * <code>repeated .obb.SessionSelection selections = 2;</code>
+     * <code>repeated .obb.SessionSelection selections = 2 [json_name = "selections"];</code>
      */
     com.oddin.obb.Session.SessionSelectionOrBuilder getSelectionsOrBuilder(
         int index);
@@ -8553,7 +8553,7 @@ public final class Session {
      * Odds multiplied by 10000 and rounded to uint value.
      * </pre>
      *
-     * <code>uint64 odds = 3;</code>
+     * <code>uint64 odds = 3 [json_name = "odds"];</code>
      * @return The odds.
      */
     long getOdds();
@@ -8607,7 +8607,7 @@ public final class Session {
      * Session ID created by operator.
      * </pre>
      *
-     * <code>string session_id = 1;</code>
+     * <code>string session_id = 1 [json_name = "sessionId"];</code>
      * @return The sessionId.
      */
     @java.lang.Override
@@ -8628,7 +8628,7 @@ public final class Session {
      * Session ID created by operator.
      * </pre>
      *
-     * <code>string session_id = 1;</code>
+     * <code>string session_id = 1 [json_name = "sessionId"];</code>
      * @return The bytes for sessionId.
      */
     @java.lang.Override
@@ -8653,7 +8653,7 @@ public final class Session {
      * List of selections used for the OBB combination.
      * </pre>
      *
-     * <code>repeated .obb.SessionSelection selections = 2;</code>
+     * <code>repeated .obb.SessionSelection selections = 2 [json_name = "selections"];</code>
      */
     @java.lang.Override
     public java.util.List<com.oddin.obb.Session.SessionSelection> getSelectionsList() {
@@ -8664,7 +8664,7 @@ public final class Session {
      * List of selections used for the OBB combination.
      * </pre>
      *
-     * <code>repeated .obb.SessionSelection selections = 2;</code>
+     * <code>repeated .obb.SessionSelection selections = 2 [json_name = "selections"];</code>
      */
     @java.lang.Override
     public java.util.List<? extends com.oddin.obb.Session.SessionSelectionOrBuilder> 
@@ -8676,7 +8676,7 @@ public final class Session {
      * List of selections used for the OBB combination.
      * </pre>
      *
-     * <code>repeated .obb.SessionSelection selections = 2;</code>
+     * <code>repeated .obb.SessionSelection selections = 2 [json_name = "selections"];</code>
      */
     @java.lang.Override
     public int getSelectionsCount() {
@@ -8687,7 +8687,7 @@ public final class Session {
      * List of selections used for the OBB combination.
      * </pre>
      *
-     * <code>repeated .obb.SessionSelection selections = 2;</code>
+     * <code>repeated .obb.SessionSelection selections = 2 [json_name = "selections"];</code>
      */
     @java.lang.Override
     public com.oddin.obb.Session.SessionSelection getSelections(int index) {
@@ -8698,7 +8698,7 @@ public final class Session {
      * List of selections used for the OBB combination.
      * </pre>
      *
-     * <code>repeated .obb.SessionSelection selections = 2;</code>
+     * <code>repeated .obb.SessionSelection selections = 2 [json_name = "selections"];</code>
      */
     @java.lang.Override
     public com.oddin.obb.Session.SessionSelectionOrBuilder getSelectionsOrBuilder(
@@ -8714,7 +8714,7 @@ public final class Session {
      * Odds multiplied by 10000 and rounded to uint value.
      * </pre>
      *
-     * <code>uint64 odds = 3;</code>
+     * <code>uint64 odds = 3 [json_name = "odds"];</code>
      * @return The odds.
      */
     @java.lang.Override
@@ -9136,7 +9136,7 @@ public final class Session {
        * Session ID created by operator.
        * </pre>
        *
-       * <code>string session_id = 1;</code>
+       * <code>string session_id = 1 [json_name = "sessionId"];</code>
        * @return The sessionId.
        */
       public java.lang.String getSessionId() {
@@ -9156,7 +9156,7 @@ public final class Session {
        * Session ID created by operator.
        * </pre>
        *
-       * <code>string session_id = 1;</code>
+       * <code>string session_id = 1 [json_name = "sessionId"];</code>
        * @return The bytes for sessionId.
        */
       public com.google.protobuf.ByteString
@@ -9177,7 +9177,7 @@ public final class Session {
        * Session ID created by operator.
        * </pre>
        *
-       * <code>string session_id = 1;</code>
+       * <code>string session_id = 1 [json_name = "sessionId"];</code>
        * @param value The sessionId to set.
        * @return This builder for chaining.
        */
@@ -9196,7 +9196,7 @@ public final class Session {
        * Session ID created by operator.
        * </pre>
        *
-       * <code>string session_id = 1;</code>
+       * <code>string session_id = 1 [json_name = "sessionId"];</code>
        * @return This builder for chaining.
        */
       public Builder clearSessionId() {
@@ -9210,7 +9210,7 @@ public final class Session {
        * Session ID created by operator.
        * </pre>
        *
-       * <code>string session_id = 1;</code>
+       * <code>string session_id = 1 [json_name = "sessionId"];</code>
        * @param value The bytes for sessionId to set.
        * @return This builder for chaining.
        */
@@ -9243,7 +9243,7 @@ public final class Session {
        * List of selections used for the OBB combination.
        * </pre>
        *
-       * <code>repeated .obb.SessionSelection selections = 2;</code>
+       * <code>repeated .obb.SessionSelection selections = 2 [json_name = "selections"];</code>
        */
       public java.util.List<com.oddin.obb.Session.SessionSelection> getSelectionsList() {
         if (selectionsBuilder_ == null) {
@@ -9257,7 +9257,7 @@ public final class Session {
        * List of selections used for the OBB combination.
        * </pre>
        *
-       * <code>repeated .obb.SessionSelection selections = 2;</code>
+       * <code>repeated .obb.SessionSelection selections = 2 [json_name = "selections"];</code>
        */
       public int getSelectionsCount() {
         if (selectionsBuilder_ == null) {
@@ -9271,7 +9271,7 @@ public final class Session {
        * List of selections used for the OBB combination.
        * </pre>
        *
-       * <code>repeated .obb.SessionSelection selections = 2;</code>
+       * <code>repeated .obb.SessionSelection selections = 2 [json_name = "selections"];</code>
        */
       public com.oddin.obb.Session.SessionSelection getSelections(int index) {
         if (selectionsBuilder_ == null) {
@@ -9285,7 +9285,7 @@ public final class Session {
        * List of selections used for the OBB combination.
        * </pre>
        *
-       * <code>repeated .obb.SessionSelection selections = 2;</code>
+       * <code>repeated .obb.SessionSelection selections = 2 [json_name = "selections"];</code>
        */
       public Builder setSelections(
           int index, com.oddin.obb.Session.SessionSelection value) {
@@ -9306,7 +9306,7 @@ public final class Session {
        * List of selections used for the OBB combination.
        * </pre>
        *
-       * <code>repeated .obb.SessionSelection selections = 2;</code>
+       * <code>repeated .obb.SessionSelection selections = 2 [json_name = "selections"];</code>
        */
       public Builder setSelections(
           int index, com.oddin.obb.Session.SessionSelection.Builder builderForValue) {
@@ -9324,7 +9324,7 @@ public final class Session {
        * List of selections used for the OBB combination.
        * </pre>
        *
-       * <code>repeated .obb.SessionSelection selections = 2;</code>
+       * <code>repeated .obb.SessionSelection selections = 2 [json_name = "selections"];</code>
        */
       public Builder addSelections(com.oddin.obb.Session.SessionSelection value) {
         if (selectionsBuilder_ == null) {
@@ -9344,7 +9344,7 @@ public final class Session {
        * List of selections used for the OBB combination.
        * </pre>
        *
-       * <code>repeated .obb.SessionSelection selections = 2;</code>
+       * <code>repeated .obb.SessionSelection selections = 2 [json_name = "selections"];</code>
        */
       public Builder addSelections(
           int index, com.oddin.obb.Session.SessionSelection value) {
@@ -9365,7 +9365,7 @@ public final class Session {
        * List of selections used for the OBB combination.
        * </pre>
        *
-       * <code>repeated .obb.SessionSelection selections = 2;</code>
+       * <code>repeated .obb.SessionSelection selections = 2 [json_name = "selections"];</code>
        */
       public Builder addSelections(
           com.oddin.obb.Session.SessionSelection.Builder builderForValue) {
@@ -9383,7 +9383,7 @@ public final class Session {
        * List of selections used for the OBB combination.
        * </pre>
        *
-       * <code>repeated .obb.SessionSelection selections = 2;</code>
+       * <code>repeated .obb.SessionSelection selections = 2 [json_name = "selections"];</code>
        */
       public Builder addSelections(
           int index, com.oddin.obb.Session.SessionSelection.Builder builderForValue) {
@@ -9401,7 +9401,7 @@ public final class Session {
        * List of selections used for the OBB combination.
        * </pre>
        *
-       * <code>repeated .obb.SessionSelection selections = 2;</code>
+       * <code>repeated .obb.SessionSelection selections = 2 [json_name = "selections"];</code>
        */
       public Builder addAllSelections(
           java.lang.Iterable<? extends com.oddin.obb.Session.SessionSelection> values) {
@@ -9420,7 +9420,7 @@ public final class Session {
        * List of selections used for the OBB combination.
        * </pre>
        *
-       * <code>repeated .obb.SessionSelection selections = 2;</code>
+       * <code>repeated .obb.SessionSelection selections = 2 [json_name = "selections"];</code>
        */
       public Builder clearSelections() {
         if (selectionsBuilder_ == null) {
@@ -9437,7 +9437,7 @@ public final class Session {
        * List of selections used for the OBB combination.
        * </pre>
        *
-       * <code>repeated .obb.SessionSelection selections = 2;</code>
+       * <code>repeated .obb.SessionSelection selections = 2 [json_name = "selections"];</code>
        */
       public Builder removeSelections(int index) {
         if (selectionsBuilder_ == null) {
@@ -9454,7 +9454,7 @@ public final class Session {
        * List of selections used for the OBB combination.
        * </pre>
        *
-       * <code>repeated .obb.SessionSelection selections = 2;</code>
+       * <code>repeated .obb.SessionSelection selections = 2 [json_name = "selections"];</code>
        */
       public com.oddin.obb.Session.SessionSelection.Builder getSelectionsBuilder(
           int index) {
@@ -9465,7 +9465,7 @@ public final class Session {
        * List of selections used for the OBB combination.
        * </pre>
        *
-       * <code>repeated .obb.SessionSelection selections = 2;</code>
+       * <code>repeated .obb.SessionSelection selections = 2 [json_name = "selections"];</code>
        */
       public com.oddin.obb.Session.SessionSelectionOrBuilder getSelectionsOrBuilder(
           int index) {
@@ -9479,7 +9479,7 @@ public final class Session {
        * List of selections used for the OBB combination.
        * </pre>
        *
-       * <code>repeated .obb.SessionSelection selections = 2;</code>
+       * <code>repeated .obb.SessionSelection selections = 2 [json_name = "selections"];</code>
        */
       public java.util.List<? extends com.oddin.obb.Session.SessionSelectionOrBuilder> 
            getSelectionsOrBuilderList() {
@@ -9494,7 +9494,7 @@ public final class Session {
        * List of selections used for the OBB combination.
        * </pre>
        *
-       * <code>repeated .obb.SessionSelection selections = 2;</code>
+       * <code>repeated .obb.SessionSelection selections = 2 [json_name = "selections"];</code>
        */
       public com.oddin.obb.Session.SessionSelection.Builder addSelectionsBuilder() {
         return getSelectionsFieldBuilder().addBuilder(
@@ -9505,7 +9505,7 @@ public final class Session {
        * List of selections used for the OBB combination.
        * </pre>
        *
-       * <code>repeated .obb.SessionSelection selections = 2;</code>
+       * <code>repeated .obb.SessionSelection selections = 2 [json_name = "selections"];</code>
        */
       public com.oddin.obb.Session.SessionSelection.Builder addSelectionsBuilder(
           int index) {
@@ -9517,7 +9517,7 @@ public final class Session {
        * List of selections used for the OBB combination.
        * </pre>
        *
-       * <code>repeated .obb.SessionSelection selections = 2;</code>
+       * <code>repeated .obb.SessionSelection selections = 2 [json_name = "selections"];</code>
        */
       public java.util.List<com.oddin.obb.Session.SessionSelection.Builder> 
            getSelectionsBuilderList() {
@@ -9545,7 +9545,7 @@ public final class Session {
        * Odds multiplied by 10000 and rounded to uint value.
        * </pre>
        *
-       * <code>uint64 odds = 3;</code>
+       * <code>uint64 odds = 3 [json_name = "odds"];</code>
        * @return The odds.
        */
       @java.lang.Override
@@ -9558,7 +9558,7 @@ public final class Session {
        * Odds multiplied by 10000 and rounded to uint value.
        * </pre>
        *
-       * <code>uint64 odds = 3;</code>
+       * <code>uint64 odds = 3 [json_name = "odds"];</code>
        * @param value The odds to set.
        * @return This builder for chaining.
        */
@@ -9574,7 +9574,7 @@ public final class Session {
        * Odds multiplied by 10000 and rounded to uint value.
        * </pre>
        *
-       * <code>uint64 odds = 3;</code>
+       * <code>uint64 odds = 3 [json_name = "odds"];</code>
        * @return This builder for chaining.
        */
       public Builder clearOdds() {
@@ -9656,7 +9656,7 @@ public final class Session {
      * Session ID created by operator.
      * </pre>
      *
-     * <code>string session_id = 1;</code>
+     * <code>string session_id = 1 [json_name = "sessionId"];</code>
      * @return The sessionId.
      */
     java.lang.String getSessionId();
@@ -9665,7 +9665,7 @@ public final class Session {
      * Session ID created by operator.
      * </pre>
      *
-     * <code>string session_id = 1;</code>
+     * <code>string session_id = 1 [json_name = "sessionId"];</code>
      * @return The bytes for sessionId.
      */
     com.google.protobuf.ByteString
@@ -9676,7 +9676,7 @@ public final class Session {
      * The session is valid and can still be used.
      * </pre>
      *
-     * <code>.obb.SessionInfoResponse.ValidSession valid = 2;</code>
+     * <code>.obb.SessionInfoResponse.ValidSession valid = 2 [json_name = "valid"];</code>
      * @return Whether the valid field is set.
      */
     boolean hasValid();
@@ -9685,7 +9685,7 @@ public final class Session {
      * The session is valid and can still be used.
      * </pre>
      *
-     * <code>.obb.SessionInfoResponse.ValidSession valid = 2;</code>
+     * <code>.obb.SessionInfoResponse.ValidSession valid = 2 [json_name = "valid"];</code>
      * @return The valid.
      */
     com.oddin.obb.Session.SessionInfoResponse.ValidSession getValid();
@@ -9694,7 +9694,7 @@ public final class Session {
      * The session is valid and can still be used.
      * </pre>
      *
-     * <code>.obb.SessionInfoResponse.ValidSession valid = 2;</code>
+     * <code>.obb.SessionInfoResponse.ValidSession valid = 2 [json_name = "valid"];</code>
      */
     com.oddin.obb.Session.SessionInfoResponse.ValidSessionOrBuilder getValidOrBuilder();
 
@@ -9703,7 +9703,7 @@ public final class Session {
      * Session is not valid anymore.
      * </pre>
      *
-     * <code>.obb.SessionInfoResponse.InvalidSession invalid = 3;</code>
+     * <code>.obb.SessionInfoResponse.InvalidSession invalid = 3 [json_name = "invalid"];</code>
      * @return Whether the invalid field is set.
      */
     boolean hasInvalid();
@@ -9712,7 +9712,7 @@ public final class Session {
      * Session is not valid anymore.
      * </pre>
      *
-     * <code>.obb.SessionInfoResponse.InvalidSession invalid = 3;</code>
+     * <code>.obb.SessionInfoResponse.InvalidSession invalid = 3 [json_name = "invalid"];</code>
      * @return The invalid.
      */
     com.oddin.obb.Session.SessionInfoResponse.InvalidSession getInvalid();
@@ -9721,7 +9721,7 @@ public final class Session {
      * Session is not valid anymore.
      * </pre>
      *
-     * <code>.obb.SessionInfoResponse.InvalidSession invalid = 3;</code>
+     * <code>.obb.SessionInfoResponse.InvalidSession invalid = 3 [json_name = "invalid"];</code>
      */
     com.oddin.obb.Session.SessionInfoResponse.InvalidSessionOrBuilder getInvalidOrBuilder();
 
@@ -10177,7 +10177,7 @@ public final class Session {
        * It will provide more detailed information about why the session is no longer valid.
        * </pre>
        *
-       * <code>.obb.InvalidSessionReason reason = 1;</code>
+       * <code>.obb.InvalidSessionReason reason = 1 [json_name = "reason"];</code>
        * @return Whether the reason field is set.
        */
       boolean hasReason();
@@ -10186,7 +10186,7 @@ public final class Session {
        * It will provide more detailed information about why the session is no longer valid.
        * </pre>
        *
-       * <code>.obb.InvalidSessionReason reason = 1;</code>
+       * <code>.obb.InvalidSessionReason reason = 1 [json_name = "reason"];</code>
        * @return The reason.
        */
       com.oddin.obb.Session.InvalidSessionReason getReason();
@@ -10195,7 +10195,7 @@ public final class Session {
        * It will provide more detailed information about why the session is no longer valid.
        * </pre>
        *
-       * <code>.obb.InvalidSessionReason reason = 1;</code>
+       * <code>.obb.InvalidSessionReason reason = 1 [json_name = "reason"];</code>
        */
       com.oddin.obb.Session.InvalidSessionReasonOrBuilder getReasonOrBuilder();
     }
@@ -10246,7 +10246,7 @@ public final class Session {
        * It will provide more detailed information about why the session is no longer valid.
        * </pre>
        *
-       * <code>.obb.InvalidSessionReason reason = 1;</code>
+       * <code>.obb.InvalidSessionReason reason = 1 [json_name = "reason"];</code>
        * @return Whether the reason field is set.
        */
       @java.lang.Override
@@ -10258,7 +10258,7 @@ public final class Session {
        * It will provide more detailed information about why the session is no longer valid.
        * </pre>
        *
-       * <code>.obb.InvalidSessionReason reason = 1;</code>
+       * <code>.obb.InvalidSessionReason reason = 1 [json_name = "reason"];</code>
        * @return The reason.
        */
       @java.lang.Override
@@ -10270,7 +10270,7 @@ public final class Session {
        * It will provide more detailed information about why the session is no longer valid.
        * </pre>
        *
-       * <code>.obb.InvalidSessionReason reason = 1;</code>
+       * <code>.obb.InvalidSessionReason reason = 1 [json_name = "reason"];</code>
        */
       @java.lang.Override
       public com.oddin.obb.Session.InvalidSessionReasonOrBuilder getReasonOrBuilder() {
@@ -10615,7 +10615,7 @@ public final class Session {
          * It will provide more detailed information about why the session is no longer valid.
          * </pre>
          *
-         * <code>.obb.InvalidSessionReason reason = 1;</code>
+         * <code>.obb.InvalidSessionReason reason = 1 [json_name = "reason"];</code>
          * @return Whether the reason field is set.
          */
         public boolean hasReason() {
@@ -10626,7 +10626,7 @@ public final class Session {
          * It will provide more detailed information about why the session is no longer valid.
          * </pre>
          *
-         * <code>.obb.InvalidSessionReason reason = 1;</code>
+         * <code>.obb.InvalidSessionReason reason = 1 [json_name = "reason"];</code>
          * @return The reason.
          */
         public com.oddin.obb.Session.InvalidSessionReason getReason() {
@@ -10641,7 +10641,7 @@ public final class Session {
          * It will provide more detailed information about why the session is no longer valid.
          * </pre>
          *
-         * <code>.obb.InvalidSessionReason reason = 1;</code>
+         * <code>.obb.InvalidSessionReason reason = 1 [json_name = "reason"];</code>
          */
         public Builder setReason(com.oddin.obb.Session.InvalidSessionReason value) {
           if (reasonBuilder_ == null) {
@@ -10661,7 +10661,7 @@ public final class Session {
          * It will provide more detailed information about why the session is no longer valid.
          * </pre>
          *
-         * <code>.obb.InvalidSessionReason reason = 1;</code>
+         * <code>.obb.InvalidSessionReason reason = 1 [json_name = "reason"];</code>
          */
         public Builder setReason(
             com.oddin.obb.Session.InvalidSessionReason.Builder builderForValue) {
@@ -10679,7 +10679,7 @@ public final class Session {
          * It will provide more detailed information about why the session is no longer valid.
          * </pre>
          *
-         * <code>.obb.InvalidSessionReason reason = 1;</code>
+         * <code>.obb.InvalidSessionReason reason = 1 [json_name = "reason"];</code>
          */
         public Builder mergeReason(com.oddin.obb.Session.InvalidSessionReason value) {
           if (reasonBuilder_ == null) {
@@ -10701,7 +10701,7 @@ public final class Session {
          * It will provide more detailed information about why the session is no longer valid.
          * </pre>
          *
-         * <code>.obb.InvalidSessionReason reason = 1;</code>
+         * <code>.obb.InvalidSessionReason reason = 1 [json_name = "reason"];</code>
          */
         public Builder clearReason() {
           if (reasonBuilder_ == null) {
@@ -10719,7 +10719,7 @@ public final class Session {
          * It will provide more detailed information about why the session is no longer valid.
          * </pre>
          *
-         * <code>.obb.InvalidSessionReason reason = 1;</code>
+         * <code>.obb.InvalidSessionReason reason = 1 [json_name = "reason"];</code>
          */
         public com.oddin.obb.Session.InvalidSessionReason.Builder getReasonBuilder() {
           
@@ -10731,7 +10731,7 @@ public final class Session {
          * It will provide more detailed information about why the session is no longer valid.
          * </pre>
          *
-         * <code>.obb.InvalidSessionReason reason = 1;</code>
+         * <code>.obb.InvalidSessionReason reason = 1 [json_name = "reason"];</code>
          */
         public com.oddin.obb.Session.InvalidSessionReasonOrBuilder getReasonOrBuilder() {
           if (reasonBuilder_ != null) {
@@ -10746,7 +10746,7 @@ public final class Session {
          * It will provide more detailed information about why the session is no longer valid.
          * </pre>
          *
-         * <code>.obb.InvalidSessionReason reason = 1;</code>
+         * <code>.obb.InvalidSessionReason reason = 1 [json_name = "reason"];</code>
          */
         private com.google.protobuf.SingleFieldBuilderV3<
             com.oddin.obb.Session.InvalidSessionReason, com.oddin.obb.Session.InvalidSessionReason.Builder, com.oddin.obb.Session.InvalidSessionReasonOrBuilder> 
@@ -10873,7 +10873,7 @@ public final class Session {
      * Session ID created by operator.
      * </pre>
      *
-     * <code>string session_id = 1;</code>
+     * <code>string session_id = 1 [json_name = "sessionId"];</code>
      * @return The sessionId.
      */
     @java.lang.Override
@@ -10894,7 +10894,7 @@ public final class Session {
      * Session ID created by operator.
      * </pre>
      *
-     * <code>string session_id = 1;</code>
+     * <code>string session_id = 1 [json_name = "sessionId"];</code>
      * @return The bytes for sessionId.
      */
     @java.lang.Override
@@ -10918,7 +10918,7 @@ public final class Session {
      * The session is valid and can still be used.
      * </pre>
      *
-     * <code>.obb.SessionInfoResponse.ValidSession valid = 2;</code>
+     * <code>.obb.SessionInfoResponse.ValidSession valid = 2 [json_name = "valid"];</code>
      * @return Whether the valid field is set.
      */
     @java.lang.Override
@@ -10930,7 +10930,7 @@ public final class Session {
      * The session is valid and can still be used.
      * </pre>
      *
-     * <code>.obb.SessionInfoResponse.ValidSession valid = 2;</code>
+     * <code>.obb.SessionInfoResponse.ValidSession valid = 2 [json_name = "valid"];</code>
      * @return The valid.
      */
     @java.lang.Override
@@ -10945,7 +10945,7 @@ public final class Session {
      * The session is valid and can still be used.
      * </pre>
      *
-     * <code>.obb.SessionInfoResponse.ValidSession valid = 2;</code>
+     * <code>.obb.SessionInfoResponse.ValidSession valid = 2 [json_name = "valid"];</code>
      */
     @java.lang.Override
     public com.oddin.obb.Session.SessionInfoResponse.ValidSessionOrBuilder getValidOrBuilder() {
@@ -10961,7 +10961,7 @@ public final class Session {
      * Session is not valid anymore.
      * </pre>
      *
-     * <code>.obb.SessionInfoResponse.InvalidSession invalid = 3;</code>
+     * <code>.obb.SessionInfoResponse.InvalidSession invalid = 3 [json_name = "invalid"];</code>
      * @return Whether the invalid field is set.
      */
     @java.lang.Override
@@ -10973,7 +10973,7 @@ public final class Session {
      * Session is not valid anymore.
      * </pre>
      *
-     * <code>.obb.SessionInfoResponse.InvalidSession invalid = 3;</code>
+     * <code>.obb.SessionInfoResponse.InvalidSession invalid = 3 [json_name = "invalid"];</code>
      * @return The invalid.
      */
     @java.lang.Override
@@ -10988,7 +10988,7 @@ public final class Session {
      * Session is not valid anymore.
      * </pre>
      *
-     * <code>.obb.SessionInfoResponse.InvalidSession invalid = 3;</code>
+     * <code>.obb.SessionInfoResponse.InvalidSession invalid = 3 [json_name = "invalid"];</code>
      */
     @java.lang.Override
     public com.oddin.obb.Session.SessionInfoResponse.InvalidSessionOrBuilder getInvalidOrBuilder() {
@@ -11423,7 +11423,7 @@ public final class Session {
        * Session ID created by operator.
        * </pre>
        *
-       * <code>string session_id = 1;</code>
+       * <code>string session_id = 1 [json_name = "sessionId"];</code>
        * @return The sessionId.
        */
       public java.lang.String getSessionId() {
@@ -11443,7 +11443,7 @@ public final class Session {
        * Session ID created by operator.
        * </pre>
        *
-       * <code>string session_id = 1;</code>
+       * <code>string session_id = 1 [json_name = "sessionId"];</code>
        * @return The bytes for sessionId.
        */
       public com.google.protobuf.ByteString
@@ -11464,7 +11464,7 @@ public final class Session {
        * Session ID created by operator.
        * </pre>
        *
-       * <code>string session_id = 1;</code>
+       * <code>string session_id = 1 [json_name = "sessionId"];</code>
        * @param value The sessionId to set.
        * @return This builder for chaining.
        */
@@ -11483,7 +11483,7 @@ public final class Session {
        * Session ID created by operator.
        * </pre>
        *
-       * <code>string session_id = 1;</code>
+       * <code>string session_id = 1 [json_name = "sessionId"];</code>
        * @return This builder for chaining.
        */
       public Builder clearSessionId() {
@@ -11497,7 +11497,7 @@ public final class Session {
        * Session ID created by operator.
        * </pre>
        *
-       * <code>string session_id = 1;</code>
+       * <code>string session_id = 1 [json_name = "sessionId"];</code>
        * @param value The bytes for sessionId to set.
        * @return This builder for chaining.
        */
@@ -11520,7 +11520,7 @@ public final class Session {
        * The session is valid and can still be used.
        * </pre>
        *
-       * <code>.obb.SessionInfoResponse.ValidSession valid = 2;</code>
+       * <code>.obb.SessionInfoResponse.ValidSession valid = 2 [json_name = "valid"];</code>
        * @return Whether the valid field is set.
        */
       @java.lang.Override
@@ -11532,7 +11532,7 @@ public final class Session {
        * The session is valid and can still be used.
        * </pre>
        *
-       * <code>.obb.SessionInfoResponse.ValidSession valid = 2;</code>
+       * <code>.obb.SessionInfoResponse.ValidSession valid = 2 [json_name = "valid"];</code>
        * @return The valid.
        */
       @java.lang.Override
@@ -11554,7 +11554,7 @@ public final class Session {
        * The session is valid and can still be used.
        * </pre>
        *
-       * <code>.obb.SessionInfoResponse.ValidSession valid = 2;</code>
+       * <code>.obb.SessionInfoResponse.ValidSession valid = 2 [json_name = "valid"];</code>
        */
       public Builder setValid(com.oddin.obb.Session.SessionInfoResponse.ValidSession value) {
         if (validBuilder_ == null) {
@@ -11574,7 +11574,7 @@ public final class Session {
        * The session is valid and can still be used.
        * </pre>
        *
-       * <code>.obb.SessionInfoResponse.ValidSession valid = 2;</code>
+       * <code>.obb.SessionInfoResponse.ValidSession valid = 2 [json_name = "valid"];</code>
        */
       public Builder setValid(
           com.oddin.obb.Session.SessionInfoResponse.ValidSession.Builder builderForValue) {
@@ -11592,7 +11592,7 @@ public final class Session {
        * The session is valid and can still be used.
        * </pre>
        *
-       * <code>.obb.SessionInfoResponse.ValidSession valid = 2;</code>
+       * <code>.obb.SessionInfoResponse.ValidSession valid = 2 [json_name = "valid"];</code>
        */
       public Builder mergeValid(com.oddin.obb.Session.SessionInfoResponse.ValidSession value) {
         if (validBuilder_ == null) {
@@ -11619,7 +11619,7 @@ public final class Session {
        * The session is valid and can still be used.
        * </pre>
        *
-       * <code>.obb.SessionInfoResponse.ValidSession valid = 2;</code>
+       * <code>.obb.SessionInfoResponse.ValidSession valid = 2 [json_name = "valid"];</code>
        */
       public Builder clearValid() {
         if (validBuilder_ == null) {
@@ -11642,7 +11642,7 @@ public final class Session {
        * The session is valid and can still be used.
        * </pre>
        *
-       * <code>.obb.SessionInfoResponse.ValidSession valid = 2;</code>
+       * <code>.obb.SessionInfoResponse.ValidSession valid = 2 [json_name = "valid"];</code>
        */
       public com.oddin.obb.Session.SessionInfoResponse.ValidSession.Builder getValidBuilder() {
         return getValidFieldBuilder().getBuilder();
@@ -11652,7 +11652,7 @@ public final class Session {
        * The session is valid and can still be used.
        * </pre>
        *
-       * <code>.obb.SessionInfoResponse.ValidSession valid = 2;</code>
+       * <code>.obb.SessionInfoResponse.ValidSession valid = 2 [json_name = "valid"];</code>
        */
       @java.lang.Override
       public com.oddin.obb.Session.SessionInfoResponse.ValidSessionOrBuilder getValidOrBuilder() {
@@ -11670,7 +11670,7 @@ public final class Session {
        * The session is valid and can still be used.
        * </pre>
        *
-       * <code>.obb.SessionInfoResponse.ValidSession valid = 2;</code>
+       * <code>.obb.SessionInfoResponse.ValidSession valid = 2 [json_name = "valid"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.oddin.obb.Session.SessionInfoResponse.ValidSession, com.oddin.obb.Session.SessionInfoResponse.ValidSession.Builder, com.oddin.obb.Session.SessionInfoResponse.ValidSessionOrBuilder> 
@@ -11698,7 +11698,7 @@ public final class Session {
        * Session is not valid anymore.
        * </pre>
        *
-       * <code>.obb.SessionInfoResponse.InvalidSession invalid = 3;</code>
+       * <code>.obb.SessionInfoResponse.InvalidSession invalid = 3 [json_name = "invalid"];</code>
        * @return Whether the invalid field is set.
        */
       @java.lang.Override
@@ -11710,7 +11710,7 @@ public final class Session {
        * Session is not valid anymore.
        * </pre>
        *
-       * <code>.obb.SessionInfoResponse.InvalidSession invalid = 3;</code>
+       * <code>.obb.SessionInfoResponse.InvalidSession invalid = 3 [json_name = "invalid"];</code>
        * @return The invalid.
        */
       @java.lang.Override
@@ -11732,7 +11732,7 @@ public final class Session {
        * Session is not valid anymore.
        * </pre>
        *
-       * <code>.obb.SessionInfoResponse.InvalidSession invalid = 3;</code>
+       * <code>.obb.SessionInfoResponse.InvalidSession invalid = 3 [json_name = "invalid"];</code>
        */
       public Builder setInvalid(com.oddin.obb.Session.SessionInfoResponse.InvalidSession value) {
         if (invalidBuilder_ == null) {
@@ -11752,7 +11752,7 @@ public final class Session {
        * Session is not valid anymore.
        * </pre>
        *
-       * <code>.obb.SessionInfoResponse.InvalidSession invalid = 3;</code>
+       * <code>.obb.SessionInfoResponse.InvalidSession invalid = 3 [json_name = "invalid"];</code>
        */
       public Builder setInvalid(
           com.oddin.obb.Session.SessionInfoResponse.InvalidSession.Builder builderForValue) {
@@ -11770,7 +11770,7 @@ public final class Session {
        * Session is not valid anymore.
        * </pre>
        *
-       * <code>.obb.SessionInfoResponse.InvalidSession invalid = 3;</code>
+       * <code>.obb.SessionInfoResponse.InvalidSession invalid = 3 [json_name = "invalid"];</code>
        */
       public Builder mergeInvalid(com.oddin.obb.Session.SessionInfoResponse.InvalidSession value) {
         if (invalidBuilder_ == null) {
@@ -11797,7 +11797,7 @@ public final class Session {
        * Session is not valid anymore.
        * </pre>
        *
-       * <code>.obb.SessionInfoResponse.InvalidSession invalid = 3;</code>
+       * <code>.obb.SessionInfoResponse.InvalidSession invalid = 3 [json_name = "invalid"];</code>
        */
       public Builder clearInvalid() {
         if (invalidBuilder_ == null) {
@@ -11820,7 +11820,7 @@ public final class Session {
        * Session is not valid anymore.
        * </pre>
        *
-       * <code>.obb.SessionInfoResponse.InvalidSession invalid = 3;</code>
+       * <code>.obb.SessionInfoResponse.InvalidSession invalid = 3 [json_name = "invalid"];</code>
        */
       public com.oddin.obb.Session.SessionInfoResponse.InvalidSession.Builder getInvalidBuilder() {
         return getInvalidFieldBuilder().getBuilder();
@@ -11830,7 +11830,7 @@ public final class Session {
        * Session is not valid anymore.
        * </pre>
        *
-       * <code>.obb.SessionInfoResponse.InvalidSession invalid = 3;</code>
+       * <code>.obb.SessionInfoResponse.InvalidSession invalid = 3 [json_name = "invalid"];</code>
        */
       @java.lang.Override
       public com.oddin.obb.Session.SessionInfoResponse.InvalidSessionOrBuilder getInvalidOrBuilder() {
@@ -11848,7 +11848,7 @@ public final class Session {
        * Session is not valid anymore.
        * </pre>
        *
-       * <code>.obb.SessionInfoResponse.InvalidSession invalid = 3;</code>
+       * <code>.obb.SessionInfoResponse.InvalidSession invalid = 3 [json_name = "invalid"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.oddin.obb.Session.SessionInfoResponse.InvalidSession, com.oddin.obb.Session.SessionInfoResponse.InvalidSession.Builder, com.oddin.obb.Session.SessionInfoResponse.InvalidSessionOrBuilder> 
@@ -12006,46 +12006,52 @@ public final class Session {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021obb/session.proto\022\003obb\"\337\001\n\023SessionReje" +
-      "ctReason\022+\n\004code\030\001 \001(\0162\035.obb.SessionReje" +
-      "ctReason.Code\022\017\n\007message\030\002 \001(\t\"\211\001\n\004Code\022" +
-      "\024\n\020CODE_UNSPECIFIED\020\000\022\021\n\rCODE_INTERNAL\020\001" +
-      "\022\031\n\025CODE_INVALID_ARGUMENT\020\002\022#\n\037CODE_INVA" +
-      "LID_MARKET_COMBINATION\020\003\022\030\n\024CODE_INACTIV" +
-      "E_MARKET\020\004\"\307\001\n\024InvalidSessionReason\022,\n\004c" +
-      "ode\030\001 \001(\0162\036.obb.InvalidSessionReason.Cod" +
-      "e\022\017\n\007message\030\002 \001(\t\"p\n\004Code\022\024\n\020CODE_UNSPE" +
-      "CIFIED\020\000\022\021\n\rCODE_INTERNAL\020\001\022\031\n\025CODE_INVA" +
-      "LID_ARGUMENT\020\002\022\020\n\014CODE_EXPIRED\020\003\022\022\n\016CODE" +
-      "_NOT_FOUND\020\004\"-\n\024SessionCreateRequest\022\025\n\r" +
-      "selection_ids\030\002 \003(\t\"\352\002\n\025SessionCreateRes" +
-      "ponse\022\022\n\nsession_id\030\001 \001(\t\022<\n\007created\030\002 \001" +
-      "(\0132).obb.SessionCreateResponse.SessionCr" +
-      "eatedH\000\022>\n\010rejected\030\003 \001(\0132*.obb.SessionC" +
-      "reateResponse.SessionRejectedH\000\032x\n\016Sessi" +
-      "onCreated\022)\n\nselections\030\001 \003(\0132\025.obb.Sess" +
-      "ionSelection\022\014\n\004odds\030\002 \001(\004\022-\n\021available_" +
-      "markets\030\003 \003(\0132\022.obb.SessionMarket\032;\n\017Ses" +
-      "sionRejected\022(\n\006reason\030\001 \001(\0132\030.obb.Sessi" +
-      "onRejectReasonB\010\n\006status\"(\n\020SessionSelec" +
-      "tion\022\024\n\014selection_id\030\001 \001(\t\"c\n\rSessionMar" +
-      "ket\022\021\n\tmarket_id\030\001 \001(\r\022\022\n\nspecifiers\030\002 \001" +
-      "(\t\022+\n\010outcomes\030\003 \003(\0132\031.obb.SessionMarket" +
-      "Outcome\"8\n\024SessionMarketOutcome\022\022\n\noutco" +
-      "me_id\030\001 \001(\t\022\014\n\004odds\030\002 \001(\004\"a\n\022SessionInfo" +
-      "Request\022\022\n\nsession_id\030\001 \001(\t\022)\n\nselection" +
-      "s\030\002 \003(\0132\025.obb.SessionSelection\022\014\n\004odds\030\003" +
-      " \001(\004\"\364\001\n\023SessionInfoResponse\022\022\n\nsession_" +
-      "id\030\001 \001(\t\0226\n\005valid\030\002 \001(\0132%.obb.SessionInf" +
-      "oResponse.ValidSessionH\000\022:\n\007invalid\030\003 \001(" +
-      "\0132\'.obb.SessionInfoResponse.InvalidSessi" +
-      "onH\000\032\016\n\014ValidSession\032;\n\016InvalidSession\022)" +
-      "\n\006reason\030\001 \001(\0132\031.obb.InvalidSessionReaso" +
-      "nB\010\n\006status*e\n\rSessionStatus\022\036\n\032SESSION_" +
-      "STATUS_UNSPECIFIED\020\000\022\030\n\024SESSION_STATUS_V" +
-      "ALID\020\001\022\032\n\026SESSION_STATUS_INVALID\020\002B5\n\rco" +
-      "m.oddin.obbZ$github.com/oddin-gg/obbsche" +
-      "ma/go/obbb\006proto3"
+      "\n\021obb/session.proto\022\003obb\"\356\001\n\023SessionReje" +
+      "ctReason\0221\n\004code\030\001 \001(\0162\035.obb.SessionReje" +
+      "ctReason.CodeR\004code\022\030\n\007message\030\002 \001(\tR\007me" +
+      "ssage\"\211\001\n\004Code\022\024\n\020CODE_UNSPECIFIED\020\000\022\021\n\r" +
+      "CODE_INTERNAL\020\001\022\031\n\025CODE_INVALID_ARGUMENT" +
+      "\020\002\022#\n\037CODE_INVALID_MARKET_COMBINATION\020\003\022" +
+      "\030\n\024CODE_INACTIVE_MARKET\020\004\"\326\001\n\024InvalidSes" +
+      "sionReason\0222\n\004code\030\001 \001(\0162\036.obb.InvalidSe" +
+      "ssionReason.CodeR\004code\022\030\n\007message\030\002 \001(\tR" +
+      "\007message\"p\n\004Code\022\024\n\020CODE_UNSPECIFIED\020\000\022\021" +
+      "\n\rCODE_INTERNAL\020\001\022\031\n\025CODE_INVALID_ARGUME" +
+      "NT\020\002\022\020\n\014CODE_EXPIRED\020\003\022\022\n\016CODE_NOT_FOUND" +
+      "\020\004\";\n\024SessionCreateRequest\022#\n\rselection_" +
+      "ids\030\002 \003(\tR\014selectionIds\"\265\003\n\025SessionCreat" +
+      "eResponse\022\035\n\nsession_id\030\001 \001(\tR\tsessionId" +
+      "\022E\n\007created\030\002 \001(\0132).obb.SessionCreateRes" +
+      "ponse.SessionCreatedH\000R\007created\022H\n\010rejec" +
+      "ted\030\003 \001(\0132*.obb.SessionCreateResponse.Se" +
+      "ssionRejectedH\000R\010rejected\032\234\001\n\016SessionCre" +
+      "ated\0225\n\nselections\030\001 \003(\0132\025.obb.SessionSe" +
+      "lectionR\nselections\022\022\n\004odds\030\002 \001(\004R\004odds\022" +
+      "?\n\021available_markets\030\003 \003(\0132\022.obb.Session" +
+      "MarketR\020availableMarkets\032C\n\017SessionRejec" +
+      "ted\0220\n\006reason\030\001 \001(\0132\030.obb.SessionRejectR" +
+      "easonR\006reasonB\010\n\006status\"5\n\020SessionSelect" +
+      "ion\022!\n\014selection_id\030\001 \001(\tR\013selectionId\"\203" +
+      "\001\n\rSessionMarket\022\033\n\tmarket_id\030\001 \001(\rR\010mar" +
+      "ketId\022\036\n\nspecifiers\030\002 \001(\tR\nspecifiers\0225\n" +
+      "\010outcomes\030\003 \003(\0132\031.obb.SessionMarketOutco" +
+      "meR\010outcomes\"I\n\024SessionMarketOutcome\022\035\n\n" +
+      "outcome_id\030\001 \001(\tR\toutcomeId\022\022\n\004odds\030\002 \001(" +
+      "\004R\004odds\"~\n\022SessionInfoRequest\022\035\n\nsession" +
+      "_id\030\001 \001(\tR\tsessionId\0225\n\nselections\030\002 \003(\013" +
+      "2\025.obb.SessionSelectionR\nselections\022\022\n\004o" +
+      "dds\030\003 \001(\004R\004odds\"\227\002\n\023SessionInfoResponse\022" +
+      "\035\n\nsession_id\030\001 \001(\tR\tsessionId\022=\n\005valid\030" +
+      "\002 \001(\0132%.obb.SessionInfoResponse.ValidSes" +
+      "sionH\000R\005valid\022C\n\007invalid\030\003 \001(\0132\'.obb.Ses" +
+      "sionInfoResponse.InvalidSessionH\000R\007inval" +
+      "id\032\016\n\014ValidSession\032C\n\016InvalidSession\0221\n\006" +
+      "reason\030\001 \001(\0132\031.obb.InvalidSessionReasonR" +
+      "\006reasonB\010\n\006status*e\n\rSessionStatus\022\036\n\032SE" +
+      "SSION_STATUS_UNSPECIFIED\020\000\022\030\n\024SESSION_ST" +
+      "ATUS_VALID\020\001\022\032\n\026SESSION_STATUS_INVALID\020\002" +
+      "B5\n\rcom.oddin.obbZ$github.com/oddin-gg/o" +
+      "bbschema/go/obbb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

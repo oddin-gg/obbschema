@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x11obb/popular.proto\x12\x03obb\"-\n\x19PopularCombinationRequest\x12\x10\n\x08\x65vent_id\x18\x01 \x01(\t\"L\n\x1aPopularCombinationResponse\x12.\n\x07markets\x18\x01 \x03(\x0b\x32\x1d.obb.PopularCombinationMarket\"A\n\x18PopularCombinationMarket\x12\x11\n\tmarket_id\x18\x01 \x01(\r\x12\x12\n\nspecifiers\x18\x02 \x01(\tB5\n\rcom.oddin.obbZ$github.com/oddin-gg/obbschema/go/obbb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x11obb/popular.proto\x12\x03obb\"6\n\x19PopularCombinationRequest\x12\x19\n\x08\x65vent_id\x18\x01 \x01(\tR\x07\x65ventId\"U\n\x1aPopularCombinationResponse\x12\x37\n\x07markets\x18\x01 \x03(\x0b\x32\x1d.obb.PopularCombinationMarketR\x07markets\"W\n\x18PopularCombinationMarket\x12\x1b\n\tmarket_id\x18\x01 \x01(\rR\x08marketId\x12\x1e\n\nspecifiers\x18\x02 \x01(\tR\nspecifiersB5\n\rcom.oddin.obbZ$github.com/oddin-gg/obbschema/go/obbb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,9 +33,9 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\rcom.oddin.obbZ$github.com/oddin-gg/obbschema/go/obb'
   _globals['_POPULARCOMBINATIONREQUEST']._serialized_start=26
-  _globals['_POPULARCOMBINATIONREQUEST']._serialized_end=71
-  _globals['_POPULARCOMBINATIONRESPONSE']._serialized_start=73
-  _globals['_POPULARCOMBINATIONRESPONSE']._serialized_end=149
-  _globals['_POPULARCOMBINATIONMARKET']._serialized_start=151
-  _globals['_POPULARCOMBINATIONMARKET']._serialized_end=216
+  _globals['_POPULARCOMBINATIONREQUEST']._serialized_end=80
+  _globals['_POPULARCOMBINATIONRESPONSE']._serialized_start=82
+  _globals['_POPULARCOMBINATIONRESPONSE']._serialized_end=167
+  _globals['_POPULARCOMBINATIONMARKET']._serialized_start=169
+  _globals['_POPULARCOMBINATIONMARKET']._serialized_end=256
 # @@protoc_insertion_point(module_scope)
