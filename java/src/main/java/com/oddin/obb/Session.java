@@ -4295,6 +4295,67 @@ public final class Session {
        * <code>.obb.SessionRejectReason reason = 1 [json_name = "reason"];</code>
        */
       com.oddin.obb.Session.SessionRejectReasonOrBuilder getReasonOrBuilder();
+
+      /**
+       * <pre>
+       * Rejected selections.
+       * Key is SelectionID, Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
+       * </pre>
+       *
+       * <code>map&lt;string, .obb.SessionCreateResponse.SessionRejected.SelectionRejectedReason&gt; selections_rejected = 2 [json_name = "selectionsRejected"];</code>
+       */
+      int getSelectionsRejectedCount();
+      /**
+       * <pre>
+       * Rejected selections.
+       * Key is SelectionID, Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
+       * </pre>
+       *
+       * <code>map&lt;string, .obb.SessionCreateResponse.SessionRejected.SelectionRejectedReason&gt; selections_rejected = 2 [json_name = "selectionsRejected"];</code>
+       */
+      boolean containsSelectionsRejected(
+          java.lang.String key);
+      /**
+       * Use {@link #getSelectionsRejectedMap()} instead.
+       */
+      @java.lang.Deprecated
+      java.util.Map<java.lang.String, com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason>
+      getSelectionsRejected();
+      /**
+       * <pre>
+       * Rejected selections.
+       * Key is SelectionID, Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
+       * </pre>
+       *
+       * <code>map&lt;string, .obb.SessionCreateResponse.SessionRejected.SelectionRejectedReason&gt; selections_rejected = 2 [json_name = "selectionsRejected"];</code>
+       */
+      java.util.Map<java.lang.String, com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason>
+      getSelectionsRejectedMap();
+      /**
+       * <pre>
+       * Rejected selections.
+       * Key is SelectionID, Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
+       * </pre>
+       *
+       * <code>map&lt;string, .obb.SessionCreateResponse.SessionRejected.SelectionRejectedReason&gt; selections_rejected = 2 [json_name = "selectionsRejected"];</code>
+       */
+
+      /* nullable */
+com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason getSelectionsRejectedOrDefault(
+          java.lang.String key,
+          /* nullable */
+com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason defaultValue);
+      /**
+       * <pre>
+       * Rejected selections.
+       * Key is SelectionID, Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
+       * </pre>
+       *
+       * <code>map&lt;string, .obb.SessionCreateResponse.SessionRejected.SelectionRejectedReason&gt; selections_rejected = 2 [json_name = "selectionsRejected"];</code>
+       */
+
+      com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason getSelectionsRejectedOrThrow(
+          java.lang.String key);
     }
     /**
      * Protobuf type {@code obb.SessionCreateResponse.SessionRejected}
@@ -4328,12 +4389,803 @@ public final class Session {
         return com.oddin.obb.Session.internal_static_obb_SessionCreateResponse_SessionRejected_descriptor;
       }
 
+      @SuppressWarnings({"rawtypes"})
+      @java.lang.Override
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 2:
+            return internalGetSelectionsRejected();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.oddin.obb.Session.internal_static_obb_SessionCreateResponse_SessionRejected_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.oddin.obb.Session.SessionCreateResponse.SessionRejected.class, com.oddin.obb.Session.SessionCreateResponse.SessionRejected.Builder.class);
+      }
+
+      public interface SelectionRejectedReasonOrBuilder extends
+          // @@protoc_insertion_point(interface_extends:obb.SessionCreateResponse.SessionRejected.SelectionRejectedReason)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         * <code>.obb.SessionCreateResponse.SessionRejected.SelectionRejectedReason.Code code = 1 [json_name = "code"];</code>
+         * @return The enum numeric value on the wire for code.
+         */
+        int getCodeValue();
+        /**
+         * <code>.obb.SessionCreateResponse.SessionRejected.SelectionRejectedReason.Code code = 1 [json_name = "code"];</code>
+         * @return The code.
+         */
+        com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason.Code getCode();
+
+        /**
+         * <code>string message = 2 [json_name = "message"];</code>
+         * @return The message.
+         */
+        java.lang.String getMessage();
+        /**
+         * <code>string message = 2 [json_name = "message"];</code>
+         * @return The bytes for message.
+         */
+        com.google.protobuf.ByteString
+            getMessageBytes();
+      }
+      /**
+       * Protobuf type {@code obb.SessionCreateResponse.SessionRejected.SelectionRejectedReason}
+       */
+      public static final class SelectionRejectedReason extends
+          com.google.protobuf.GeneratedMessageV3 implements
+          // @@protoc_insertion_point(message_implements:obb.SessionCreateResponse.SessionRejected.SelectionRejectedReason)
+          SelectionRejectedReasonOrBuilder {
+      private static final long serialVersionUID = 0L;
+        // Use SelectionRejectedReason.newBuilder() to construct.
+        private SelectionRejectedReason(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+        private SelectionRejectedReason() {
+          code_ = 0;
+          message_ = "";
+        }
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(
+            UnusedPrivateParameter unused) {
+          return new SelectionRejectedReason();
+        }
+
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+          return this.unknownFields;
+        }
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return com.oddin.obb.Session.internal_static_obb_SessionCreateResponse_SessionRejected_SelectionRejectedReason_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.oddin.obb.Session.internal_static_obb_SessionCreateResponse_SessionRejected_SelectionRejectedReason_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason.class, com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason.Builder.class);
+        }
+
+        /**
+         * Protobuf enum {@code obb.SessionCreateResponse.SessionRejected.SelectionRejectedReason.Code}
+         */
+        public enum Code
+            implements com.google.protobuf.ProtocolMessageEnum {
+          /**
+           * <pre>
+           * Not a valid value. Used for blocking 0 as invalid state.
+           * </pre>
+           *
+           * <code>CODE_UNSPECIFIED = 0;</code>
+           */
+          CODE_UNSPECIFIED(0),
+          /**
+           * <pre>
+           * Selection is invalid because the market is not active.
+           * </pre>
+           *
+           * <code>CODE_INACTIVE_MARKET = 1;</code>
+           */
+          CODE_INACTIVE_MARKET(1),
+          UNRECOGNIZED(-1),
+          ;
+
+          /**
+           * <pre>
+           * Not a valid value. Used for blocking 0 as invalid state.
+           * </pre>
+           *
+           * <code>CODE_UNSPECIFIED = 0;</code>
+           */
+          public static final int CODE_UNSPECIFIED_VALUE = 0;
+          /**
+           * <pre>
+           * Selection is invalid because the market is not active.
+           * </pre>
+           *
+           * <code>CODE_INACTIVE_MARKET = 1;</code>
+           */
+          public static final int CODE_INACTIVE_MARKET_VALUE = 1;
+
+
+          public final int getNumber() {
+            if (this == UNRECOGNIZED) {
+              throw new java.lang.IllegalArgumentException(
+                  "Can't get the number of an unknown enum value.");
+            }
+            return value;
+          }
+
+          /**
+           * @param value The numeric wire value of the corresponding enum entry.
+           * @return The enum associated with the given numeric wire value.
+           * @deprecated Use {@link #forNumber(int)} instead.
+           */
+          @java.lang.Deprecated
+          public static Code valueOf(int value) {
+            return forNumber(value);
+          }
+
+          /**
+           * @param value The numeric wire value of the corresponding enum entry.
+           * @return The enum associated with the given numeric wire value.
+           */
+          public static Code forNumber(int value) {
+            switch (value) {
+              case 0: return CODE_UNSPECIFIED;
+              case 1: return CODE_INACTIVE_MARKET;
+              default: return null;
+            }
+          }
+
+          public static com.google.protobuf.Internal.EnumLiteMap<Code>
+              internalGetValueMap() {
+            return internalValueMap;
+          }
+          private static final com.google.protobuf.Internal.EnumLiteMap<
+              Code> internalValueMap =
+                new com.google.protobuf.Internal.EnumLiteMap<Code>() {
+                  public Code findValueByNumber(int number) {
+                    return Code.forNumber(number);
+                  }
+                };
+
+          public final com.google.protobuf.Descriptors.EnumValueDescriptor
+              getValueDescriptor() {
+            if (this == UNRECOGNIZED) {
+              throw new java.lang.IllegalStateException(
+                  "Can't get the descriptor of an unrecognized enum value.");
+            }
+            return getDescriptor().getValues().get(ordinal());
+          }
+          public final com.google.protobuf.Descriptors.EnumDescriptor
+              getDescriptorForType() {
+            return getDescriptor();
+          }
+          public static final com.google.protobuf.Descriptors.EnumDescriptor
+              getDescriptor() {
+            return com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason.getDescriptor().getEnumTypes().get(0);
+          }
+
+          private static final Code[] VALUES = values();
+
+          public static Code valueOf(
+              com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+            if (desc.getType() != getDescriptor()) {
+              throw new java.lang.IllegalArgumentException(
+                "EnumValueDescriptor is not for this type.");
+            }
+            if (desc.getIndex() == -1) {
+              return UNRECOGNIZED;
+            }
+            return VALUES[desc.getIndex()];
+          }
+
+          private final int value;
+
+          private Code(int value) {
+            this.value = value;
+          }
+
+          // @@protoc_insertion_point(enum_scope:obb.SessionCreateResponse.SessionRejected.SelectionRejectedReason.Code)
+        }
+
+        public static final int CODE_FIELD_NUMBER = 1;
+        private int code_;
+        /**
+         * <code>.obb.SessionCreateResponse.SessionRejected.SelectionRejectedReason.Code code = 1 [json_name = "code"];</code>
+         * @return The enum numeric value on the wire for code.
+         */
+        @java.lang.Override public int getCodeValue() {
+          return code_;
+        }
+        /**
+         * <code>.obb.SessionCreateResponse.SessionRejected.SelectionRejectedReason.Code code = 1 [json_name = "code"];</code>
+         * @return The code.
+         */
+        @java.lang.Override public com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason.Code getCode() {
+          @SuppressWarnings("deprecation")
+          com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason.Code result = com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason.Code.valueOf(code_);
+          return result == null ? com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason.Code.UNRECOGNIZED : result;
+        }
+
+        public static final int MESSAGE_FIELD_NUMBER = 2;
+        private volatile java.lang.Object message_;
+        /**
+         * <code>string message = 2 [json_name = "message"];</code>
+         * @return The message.
+         */
+        @java.lang.Override
+        public java.lang.String getMessage() {
+          java.lang.Object ref = message_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = 
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            message_ = s;
+            return s;
+          }
+        }
+        /**
+         * <code>string message = 2 [json_name = "message"];</code>
+         * @return The bytes for message.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString
+            getMessageBytes() {
+          java.lang.Object ref = message_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            message_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        private byte memoizedIsInitialized = -1;
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+                            throws java.io.IOException {
+          if (code_ != com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason.Code.CODE_UNSPECIFIED.getNumber()) {
+            output.writeEnum(1, code_);
+          }
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
+          }
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          if (code_ != com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason.Code.CODE_UNSPECIFIED.getNumber()) {
+            size += com.google.protobuf.CodedOutputStream
+              .computeEnumSize(1, code_);
+          }
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
+          }
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+           return true;
+          }
+          if (!(obj instanceof com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason)) {
+            return super.equals(obj);
+          }
+          com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason other = (com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason) obj;
+
+          if (code_ != other.code_) return false;
+          if (!getMessage()
+              .equals(other.getMessage())) return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          hash = (37 * hash) + CODE_FIELD_NUMBER;
+          hash = (53 * hash) + code_;
+          hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
+          hash = (53 * hash) + getMessage().hashCode();
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason parseFrom(
+            java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+        public static com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason parseFrom(
+            java.nio.ByteBuffer data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+        public static com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason parseFrom(
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+        public static com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+        public static com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason parseFrom(byte[] data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+        public static com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason parseFrom(
+            byte[] data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+        public static com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason parseFrom(java.io.InputStream input)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3
+              .parseWithIOException(PARSER, input);
+        }
+        public static com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason parseFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3
+              .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+        public static com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason parseDelimitedFrom(java.io.InputStream input)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3
+              .parseDelimitedWithIOException(PARSER, input);
+        }
+        public static com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason parseDelimitedFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3
+              .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+        public static com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason parseFrom(
+            com.google.protobuf.CodedInputStream input)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3
+              .parseWithIOException(PARSER, input);
+        }
+        public static com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3
+              .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() { return newBuilder(); }
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+        public static Builder newBuilder(com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE
+              ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+        /**
+         * Protobuf type {@code obb.SessionCreateResponse.SessionRejected.SelectionRejectedReason}
+         */
+        public static final class Builder extends
+            com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:obb.SessionCreateResponse.SessionRejected.SelectionRejectedReason)
+            com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReasonOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor
+              getDescriptor() {
+            return com.oddin.obb.Session.internal_static_obb_SessionCreateResponse_SessionRejected_SelectionRejectedReason_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.oddin.obb.Session.internal_static_obb_SessionCreateResponse_SessionRejected_SelectionRejectedReason_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason.class, com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason.Builder.class);
+          }
+
+          // Construct using com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason.newBuilder()
+          private Builder() {
+
+          }
+
+          private Builder(
+              com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+
+          }
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            code_ = 0;
+
+            message_ = "";
+
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor
+              getDescriptorForType() {
+            return com.oddin.obb.Session.internal_static_obb_SessionCreateResponse_SessionRejected_SelectionRejectedReason_descriptor;
+          }
+
+          @java.lang.Override
+          public com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason getDefaultInstanceForType() {
+            return com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason.getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason build() {
+            com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason buildPartial() {
+            com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason result = new com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason(this);
+            result.code_ = code_;
+            result.message_ = message_;
+            onBuilt();
+            return result;
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return super.clone();
+          }
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              java.lang.Object value) {
+            return super.setField(field, value);
+          }
+          @java.lang.Override
+          public Builder clearField(
+              com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+          }
+          @java.lang.Override
+          public Builder clearOneof(
+              com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+          }
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index, java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+          }
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+          }
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other instanceof com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason) {
+              return mergeFrom((com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason)other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason other) {
+            if (other == com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason.getDefaultInstance()) return this;
+            if (other.code_ != 0) {
+              setCodeValue(other.getCodeValue());
+            }
+            if (!other.getMessage().isEmpty()) {
+              message_ = other.message_;
+              onChanged();
+            }
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 8: {
+                    code_ = input.readEnum();
+
+                    break;
+                  } // case 8
+                  case 18: {
+                    message_ = input.readStringRequireUtf8();
+
+                    break;
+                  } // case 18
+                  default: {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          private int code_ = 0;
+          /**
+           * <code>.obb.SessionCreateResponse.SessionRejected.SelectionRejectedReason.Code code = 1 [json_name = "code"];</code>
+           * @return The enum numeric value on the wire for code.
+           */
+          @java.lang.Override public int getCodeValue() {
+            return code_;
+          }
+          /**
+           * <code>.obb.SessionCreateResponse.SessionRejected.SelectionRejectedReason.Code code = 1 [json_name = "code"];</code>
+           * @param value The enum numeric value on the wire for code to set.
+           * @return This builder for chaining.
+           */
+          public Builder setCodeValue(int value) {
+            
+            code_ = value;
+            onChanged();
+            return this;
+          }
+          /**
+           * <code>.obb.SessionCreateResponse.SessionRejected.SelectionRejectedReason.Code code = 1 [json_name = "code"];</code>
+           * @return The code.
+           */
+          @java.lang.Override
+          public com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason.Code getCode() {
+            @SuppressWarnings("deprecation")
+            com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason.Code result = com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason.Code.valueOf(code_);
+            return result == null ? com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason.Code.UNRECOGNIZED : result;
+          }
+          /**
+           * <code>.obb.SessionCreateResponse.SessionRejected.SelectionRejectedReason.Code code = 1 [json_name = "code"];</code>
+           * @param value The code to set.
+           * @return This builder for chaining.
+           */
+          public Builder setCode(com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason.Code value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            
+            code_ = value.getNumber();
+            onChanged();
+            return this;
+          }
+          /**
+           * <code>.obb.SessionCreateResponse.SessionRejected.SelectionRejectedReason.Code code = 1 [json_name = "code"];</code>
+           * @return This builder for chaining.
+           */
+          public Builder clearCode() {
+            
+            code_ = 0;
+            onChanged();
+            return this;
+          }
+
+          private java.lang.Object message_ = "";
+          /**
+           * <code>string message = 2 [json_name = "message"];</code>
+           * @return The message.
+           */
+          public java.lang.String getMessage() {
+            java.lang.Object ref = message_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs =
+                  (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              message_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+          /**
+           * <code>string message = 2 [json_name = "message"];</code>
+           * @return The bytes for message.
+           */
+          public com.google.protobuf.ByteString
+              getMessageBytes() {
+            java.lang.Object ref = message_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b = 
+                  com.google.protobuf.ByteString.copyFromUtf8(
+                      (java.lang.String) ref);
+              message_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+          /**
+           * <code>string message = 2 [json_name = "message"];</code>
+           * @param value The message to set.
+           * @return This builder for chaining.
+           */
+          public Builder setMessage(
+              java.lang.String value) {
+            if (value == null) {
+    throw new NullPointerException();
+  }
+  
+            message_ = value;
+            onChanged();
+            return this;
+          }
+          /**
+           * <code>string message = 2 [json_name = "message"];</code>
+           * @return This builder for chaining.
+           */
+          public Builder clearMessage() {
+            
+            message_ = getDefaultInstance().getMessage();
+            onChanged();
+            return this;
+          }
+          /**
+           * <code>string message = 2 [json_name = "message"];</code>
+           * @param value The bytes for message to set.
+           * @return This builder for chaining.
+           */
+          public Builder setMessageBytes(
+              com.google.protobuf.ByteString value) {
+            if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+            
+            message_ = value;
+            onChanged();
+            return this;
+          }
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
+
+          // @@protoc_insertion_point(builder_scope:obb.SessionCreateResponse.SessionRejected.SelectionRejectedReason)
+        }
+
+        // @@protoc_insertion_point(class_scope:obb.SessionCreateResponse.SessionRejected.SelectionRejectedReason)
+        private static final com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason DEFAULT_INSTANCE;
+        static {
+          DEFAULT_INSTANCE = new com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason();
+        }
+
+        public static com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<SelectionRejectedReason>
+            PARSER = new com.google.protobuf.AbstractParser<SelectionRejectedReason>() {
+          @java.lang.Override
+          public SelectionRejectedReason parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+        public static com.google.protobuf.Parser<SelectionRejectedReason> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<SelectionRejectedReason> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+
       }
 
       public static final int REASON_FIELD_NUMBER = 1;
@@ -4374,6 +5226,107 @@ public final class Session {
         return getReason();
       }
 
+      public static final int SELECTIONS_REJECTED_FIELD_NUMBER = 2;
+      private static final class SelectionsRejectedDefaultEntryHolder {
+        static final com.google.protobuf.MapEntry<
+            java.lang.String, com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason> defaultEntry =
+                com.google.protobuf.MapEntry
+                .<java.lang.String, com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason>newDefaultInstance(
+                    com.oddin.obb.Session.internal_static_obb_SessionCreateResponse_SessionRejected_SelectionsRejectedEntry_descriptor, 
+                    com.google.protobuf.WireFormat.FieldType.STRING,
+                    "",
+                    com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                    com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason.getDefaultInstance());
+      }
+      private com.google.protobuf.MapField<
+          java.lang.String, com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason> selectionsRejected_;
+      private com.google.protobuf.MapField<java.lang.String, com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason>
+      internalGetSelectionsRejected() {
+        if (selectionsRejected_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              SelectionsRejectedDefaultEntryHolder.defaultEntry);
+        }
+        return selectionsRejected_;
+      }
+
+      public int getSelectionsRejectedCount() {
+        return internalGetSelectionsRejected().getMap().size();
+      }
+      /**
+       * <pre>
+       * Rejected selections.
+       * Key is SelectionID, Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
+       * </pre>
+       *
+       * <code>map&lt;string, .obb.SessionCreateResponse.SessionRejected.SelectionRejectedReason&gt; selections_rejected = 2 [json_name = "selectionsRejected"];</code>
+       */
+
+      @java.lang.Override
+      public boolean containsSelectionsRejected(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        return internalGetSelectionsRejected().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getSelectionsRejectedMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason> getSelectionsRejected() {
+        return getSelectionsRejectedMap();
+      }
+      /**
+       * <pre>
+       * Rejected selections.
+       * Key is SelectionID, Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
+       * </pre>
+       *
+       * <code>map&lt;string, .obb.SessionCreateResponse.SessionRejected.SelectionRejectedReason&gt; selections_rejected = 2 [json_name = "selectionsRejected"];</code>
+       */
+      @java.lang.Override
+
+      public java.util.Map<java.lang.String, com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason> getSelectionsRejectedMap() {
+        return internalGetSelectionsRejected().getMap();
+      }
+      /**
+       * <pre>
+       * Rejected selections.
+       * Key is SelectionID, Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
+       * </pre>
+       *
+       * <code>map&lt;string, .obb.SessionCreateResponse.SessionRejected.SelectionRejectedReason&gt; selections_rejected = 2 [json_name = "selectionsRejected"];</code>
+       */
+      @java.lang.Override
+
+      public com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason getSelectionsRejectedOrDefault(
+          java.lang.String key,
+          com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason defaultValue) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason> map =
+            internalGetSelectionsRejected().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <pre>
+       * Rejected selections.
+       * Key is SelectionID, Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
+       * </pre>
+       *
+       * <code>map&lt;string, .obb.SessionCreateResponse.SessionRejected.SelectionRejectedReason&gt; selections_rejected = 2 [json_name = "selectionsRejected"];</code>
+       */
+      @java.lang.Override
+
+      public com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason getSelectionsRejectedOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason> map =
+            internalGetSelectionsRejected().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
       private byte memoizedIsInitialized = -1;
       @java.lang.Override
       public final boolean isInitialized() {
@@ -4391,6 +5344,12 @@ public final class Session {
         if (reason_ != null) {
           output.writeMessage(1, getReason());
         }
+        com.google.protobuf.GeneratedMessageV3
+          .serializeStringMapTo(
+            output,
+            internalGetSelectionsRejected(),
+            SelectionsRejectedDefaultEntryHolder.defaultEntry,
+            2);
         getUnknownFields().writeTo(output);
       }
 
@@ -4403,6 +5362,16 @@ public final class Session {
         if (reason_ != null) {
           size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(1, getReason());
+        }
+        for (java.util.Map.Entry<java.lang.String, com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason> entry
+             : internalGetSelectionsRejected().getMap().entrySet()) {
+          com.google.protobuf.MapEntry<java.lang.String, com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason>
+          selectionsRejected__ = SelectionsRejectedDefaultEntryHolder.defaultEntry.newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+          size += com.google.protobuf.CodedOutputStream
+              .computeMessageSize(2, selectionsRejected__);
         }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
@@ -4424,6 +5393,8 @@ public final class Session {
           if (!getReason()
               .equals(other.getReason())) return false;
         }
+        if (!internalGetSelectionsRejected().equals(
+            other.internalGetSelectionsRejected())) return false;
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
@@ -4438,6 +5409,10 @@ public final class Session {
         if (hasReason()) {
           hash = (37 * hash) + REASON_FIELD_NUMBER;
           hash = (53 * hash) + getReason().hashCode();
+        }
+        if (!internalGetSelectionsRejected().getMap().isEmpty()) {
+          hash = (37 * hash) + SELECTIONS_REJECTED_FIELD_NUMBER;
+          hash = (53 * hash) + internalGetSelectionsRejected().hashCode();
         }
         hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
@@ -4546,6 +5521,28 @@ public final class Session {
           return com.oddin.obb.Session.internal_static_obb_SessionCreateResponse_SessionRejected_descriptor;
         }
 
+        @SuppressWarnings({"rawtypes"})
+        protected com.google.protobuf.MapField internalGetMapField(
+            int number) {
+          switch (number) {
+            case 2:
+              return internalGetSelectionsRejected();
+            default:
+              throw new RuntimeException(
+                  "Invalid map field number: " + number);
+          }
+        }
+        @SuppressWarnings({"rawtypes"})
+        protected com.google.protobuf.MapField internalGetMutableMapField(
+            int number) {
+          switch (number) {
+            case 2:
+              return internalGetMutableSelectionsRejected();
+            default:
+              throw new RuntimeException(
+                  "Invalid map field number: " + number);
+          }
+        }
         @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
@@ -4573,6 +5570,7 @@ public final class Session {
             reason_ = null;
             reasonBuilder_ = null;
           }
+          internalGetMutableSelectionsRejected().clear();
           return this;
         }
 
@@ -4599,11 +5597,14 @@ public final class Session {
         @java.lang.Override
         public com.oddin.obb.Session.SessionCreateResponse.SessionRejected buildPartial() {
           com.oddin.obb.Session.SessionCreateResponse.SessionRejected result = new com.oddin.obb.Session.SessionCreateResponse.SessionRejected(this);
+          int from_bitField0_ = bitField0_;
           if (reasonBuilder_ == null) {
             result.reason_ = reason_;
           } else {
             result.reason_ = reasonBuilder_.build();
           }
+          result.selectionsRejected_ = internalGetSelectionsRejected();
+          result.selectionsRejected_.makeImmutable();
           onBuilt();
           return result;
         }
@@ -4655,6 +5656,8 @@ public final class Session {
           if (other.hasReason()) {
             mergeReason(other.getReason());
           }
+          internalGetMutableSelectionsRejected().mergeFrom(
+              other.internalGetSelectionsRejected());
           this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
@@ -4688,6 +5691,14 @@ public final class Session {
 
                   break;
                 } // case 10
+                case 18: {
+                  com.google.protobuf.MapEntry<java.lang.String, com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason>
+                  selectionsRejected__ = input.readMessage(
+                      SelectionsRejectedDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                  internalGetMutableSelectionsRejected().getMutableMap().put(
+                      selectionsRejected__.getKey(), selectionsRejected__.getValue());
+                  break;
+                } // case 18
                 default: {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                     done = true; // was an endgroup tag
@@ -4703,6 +5714,7 @@ public final class Session {
           } // finally
           return this;
         }
+        private int bitField0_;
 
         private com.oddin.obb.Session.SessionRejectReason reason_;
         private com.google.protobuf.SingleFieldBuilderV3<
@@ -4857,6 +5869,172 @@ public final class Session {
             reason_ = null;
           }
           return reasonBuilder_;
+        }
+
+        private com.google.protobuf.MapField<
+            java.lang.String, com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason> selectionsRejected_;
+        private com.google.protobuf.MapField<java.lang.String, com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason>
+        internalGetSelectionsRejected() {
+          if (selectionsRejected_ == null) {
+            return com.google.protobuf.MapField.emptyMapField(
+                SelectionsRejectedDefaultEntryHolder.defaultEntry);
+          }
+          return selectionsRejected_;
+        }
+        private com.google.protobuf.MapField<java.lang.String, com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason>
+        internalGetMutableSelectionsRejected() {
+          onChanged();;
+          if (selectionsRejected_ == null) {
+            selectionsRejected_ = com.google.protobuf.MapField.newMapField(
+                SelectionsRejectedDefaultEntryHolder.defaultEntry);
+          }
+          if (!selectionsRejected_.isMutable()) {
+            selectionsRejected_ = selectionsRejected_.copy();
+          }
+          return selectionsRejected_;
+        }
+
+        public int getSelectionsRejectedCount() {
+          return internalGetSelectionsRejected().getMap().size();
+        }
+        /**
+         * <pre>
+         * Rejected selections.
+         * Key is SelectionID, Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
+         * </pre>
+         *
+         * <code>map&lt;string, .obb.SessionCreateResponse.SessionRejected.SelectionRejectedReason&gt; selections_rejected = 2 [json_name = "selectionsRejected"];</code>
+         */
+
+        @java.lang.Override
+        public boolean containsSelectionsRejected(
+            java.lang.String key) {
+          if (key == null) { throw new NullPointerException("map key"); }
+          return internalGetSelectionsRejected().getMap().containsKey(key);
+        }
+        /**
+         * Use {@link #getSelectionsRejectedMap()} instead.
+         */
+        @java.lang.Override
+        @java.lang.Deprecated
+        public java.util.Map<java.lang.String, com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason> getSelectionsRejected() {
+          return getSelectionsRejectedMap();
+        }
+        /**
+         * <pre>
+         * Rejected selections.
+         * Key is SelectionID, Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
+         * </pre>
+         *
+         * <code>map&lt;string, .obb.SessionCreateResponse.SessionRejected.SelectionRejectedReason&gt; selections_rejected = 2 [json_name = "selectionsRejected"];</code>
+         */
+        @java.lang.Override
+
+        public java.util.Map<java.lang.String, com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason> getSelectionsRejectedMap() {
+          return internalGetSelectionsRejected().getMap();
+        }
+        /**
+         * <pre>
+         * Rejected selections.
+         * Key is SelectionID, Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
+         * </pre>
+         *
+         * <code>map&lt;string, .obb.SessionCreateResponse.SessionRejected.SelectionRejectedReason&gt; selections_rejected = 2 [json_name = "selectionsRejected"];</code>
+         */
+        @java.lang.Override
+
+        public com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason getSelectionsRejectedOrDefault(
+            java.lang.String key,
+            com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason defaultValue) {
+          if (key == null) { throw new NullPointerException("map key"); }
+          java.util.Map<java.lang.String, com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason> map =
+              internalGetSelectionsRejected().getMap();
+          return map.containsKey(key) ? map.get(key) : defaultValue;
+        }
+        /**
+         * <pre>
+         * Rejected selections.
+         * Key is SelectionID, Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
+         * </pre>
+         *
+         * <code>map&lt;string, .obb.SessionCreateResponse.SessionRejected.SelectionRejectedReason&gt; selections_rejected = 2 [json_name = "selectionsRejected"];</code>
+         */
+        @java.lang.Override
+
+        public com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason getSelectionsRejectedOrThrow(
+            java.lang.String key) {
+          if (key == null) { throw new NullPointerException("map key"); }
+          java.util.Map<java.lang.String, com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason> map =
+              internalGetSelectionsRejected().getMap();
+          if (!map.containsKey(key)) {
+            throw new java.lang.IllegalArgumentException();
+          }
+          return map.get(key);
+        }
+
+        public Builder clearSelectionsRejected() {
+          internalGetMutableSelectionsRejected().getMutableMap()
+              .clear();
+          return this;
+        }
+        /**
+         * <pre>
+         * Rejected selections.
+         * Key is SelectionID, Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
+         * </pre>
+         *
+         * <code>map&lt;string, .obb.SessionCreateResponse.SessionRejected.SelectionRejectedReason&gt; selections_rejected = 2 [json_name = "selectionsRejected"];</code>
+         */
+
+        public Builder removeSelectionsRejected(
+            java.lang.String key) {
+          if (key == null) { throw new NullPointerException("map key"); }
+          internalGetMutableSelectionsRejected().getMutableMap()
+              .remove(key);
+          return this;
+        }
+        /**
+         * Use alternate mutation accessors instead.
+         */
+        @java.lang.Deprecated
+        public java.util.Map<java.lang.String, com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason>
+        getMutableSelectionsRejected() {
+          return internalGetMutableSelectionsRejected().getMutableMap();
+        }
+        /**
+         * <pre>
+         * Rejected selections.
+         * Key is SelectionID, Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
+         * </pre>
+         *
+         * <code>map&lt;string, .obb.SessionCreateResponse.SessionRejected.SelectionRejectedReason&gt; selections_rejected = 2 [json_name = "selectionsRejected"];</code>
+         */
+        public Builder putSelectionsRejected(
+            java.lang.String key,
+            com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason value) {
+          if (key == null) { throw new NullPointerException("map key"); }
+          if (value == null) {
+  throw new NullPointerException("map value");
+}
+
+          internalGetMutableSelectionsRejected().getMutableMap()
+              .put(key, value);
+          return this;
+        }
+        /**
+         * <pre>
+         * Rejected selections.
+         * Key is SelectionID, Format: "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
+         * </pre>
+         *
+         * <code>map&lt;string, .obb.SessionCreateResponse.SessionRejected.SelectionRejectedReason&gt; selections_rejected = 2 [json_name = "selectionsRejected"];</code>
+         */
+
+        public Builder putAllSelectionsRejected(
+            java.util.Map<java.lang.String, com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedReason> values) {
+          internalGetMutableSelectionsRejected().getMutableMap()
+              .putAll(values);
+          return this;
         }
         @java.lang.Override
         public final Builder setUnknownFields(
@@ -11963,6 +13141,16 @@ public final class Session {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_obb_SessionCreateResponse_SessionRejected_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_obb_SessionCreateResponse_SessionRejected_SelectionRejectedReason_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_obb_SessionCreateResponse_SessionRejected_SelectionRejectedReason_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_obb_SessionCreateResponse_SessionRejected_SelectionsRejectedEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_obb_SessionCreateResponse_SessionRejected_SelectionsRejectedEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_obb_SessionSelection_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -12019,7 +13207,7 @@ public final class Session {
       "\n\rCODE_INTERNAL\020\001\022\031\n\025CODE_INVALID_ARGUME" +
       "NT\020\002\022\020\n\014CODE_EXPIRED\020\003\022\022\n\016CODE_NOT_FOUND" +
       "\020\004\";\n\024SessionCreateRequest\022#\n\rselection_" +
-      "ids\030\002 \003(\tR\014selectionIds\"\265\003\n\025SessionCreat" +
+      "ids\030\002 \003(\tR\014selectionIds\"\202\007\n\025SessionCreat" +
       "eResponse\022\035\n\nsession_id\030\001 \001(\tR\tsessionId" +
       "\022E\n\007created\030\002 \001(\0132).obb.SessionCreateRes" +
       "ponse.SessionCreatedH\000R\007created\022H\n\010rejec" +
@@ -12028,30 +13216,42 @@ public final class Session {
       "ated\0225\n\nselections\030\001 \003(\0132\025.obb.SessionSe" +
       "lectionR\nselections\022\022\n\004odds\030\002 \001(\004R\004odds\022" +
       "?\n\021available_markets\030\003 \003(\0132\022.obb.Session" +
-      "MarketR\020availableMarkets\032C\n\017SessionRejec" +
-      "ted\0220\n\006reason\030\001 \001(\0132\030.obb.SessionRejectR" +
-      "easonR\006reasonB\010\n\006status\"5\n\020SessionSelect" +
-      "ion\022!\n\014selection_id\030\001 \001(\tR\013selectionId\"\203" +
-      "\001\n\rSessionMarket\022\033\n\tmarket_id\030\001 \001(\rR\010mar" +
-      "ketId\022\036\n\nspecifiers\030\002 \001(\tR\nspecifiers\0225\n" +
-      "\010outcomes\030\003 \003(\0132\031.obb.SessionMarketOutco" +
-      "meR\010outcomes\"I\n\024SessionMarketOutcome\022\035\n\n" +
-      "outcome_id\030\001 \001(\tR\toutcomeId\022\022\n\004odds\030\002 \001(" +
-      "\004R\004odds\"~\n\022SessionInfoRequest\022\035\n\nsession" +
-      "_id\030\001 \001(\tR\tsessionId\0225\n\nselections\030\002 \003(\013" +
-      "2\025.obb.SessionSelectionR\nselections\022\022\n\004o" +
-      "dds\030\003 \001(\004R\004odds\"\227\002\n\023SessionInfoResponse\022" +
-      "\035\n\nsession_id\030\001 \001(\tR\tsessionId\022=\n\005valid\030" +
-      "\002 \001(\0132%.obb.SessionInfoResponse.ValidSes" +
-      "sionH\000R\005valid\022C\n\007invalid\030\003 \001(\0132\'.obb.Ses" +
-      "sionInfoResponse.InvalidSessionH\000R\007inval" +
-      "id\032\016\n\014ValidSession\032C\n\016InvalidSession\0221\n\006" +
-      "reason\030\001 \001(\0132\031.obb.InvalidSessionReasonR" +
-      "\006reasonB\010\n\006status*e\n\rSessionStatus\022\036\n\032SE" +
-      "SSION_STATUS_UNSPECIFIED\020\000\022\030\n\024SESSION_ST" +
-      "ATUS_VALID\020\001\022\032\n\026SESSION_STATUS_INVALID\020\002" +
-      "B5\n\rcom.oddin.obbZ$github.com/oddin-gg/o" +
-      "bbschema/go/obbb\006proto3"
+      "MarketR\020availableMarkets\032\217\004\n\017SessionReje" +
+      "cted\0220\n\006reason\030\001 \001(\0132\030.obb.SessionReject" +
+      "ReasonR\006reason\022s\n\023selections_rejected\030\002 " +
+      "\003(\0132B.obb.SessionCreateResponse.SessionR" +
+      "ejected.SelectionsRejectedEntryR\022selecti" +
+      "onsRejected\032\310\001\n\027SelectionRejectedReason\022" +
+      "[\n\004code\030\001 \001(\0162G.obb.SessionCreateRespons" +
+      "e.SessionRejected.SelectionRejectedReaso" +
+      "n.CodeR\004code\022\030\n\007message\030\002 \001(\tR\007message\"6" +
+      "\n\004Code\022\024\n\020CODE_UNSPECIFIED\020\000\022\030\n\024CODE_INA" +
+      "CTIVE_MARKET\020\001\032\211\001\n\027SelectionsRejectedEnt" +
+      "ry\022\020\n\003key\030\001 \001(\tR\003key\022X\n\005value\030\002 \001(\0132B.ob" +
+      "b.SessionCreateResponse.SessionRejected." +
+      "SelectionRejectedReasonR\005value:\0028\001B\010\n\006st" +
+      "atus\"5\n\020SessionSelection\022!\n\014selection_id" +
+      "\030\001 \001(\tR\013selectionId\"\203\001\n\rSessionMarket\022\033\n" +
+      "\tmarket_id\030\001 \001(\rR\010marketId\022\036\n\nspecifiers" +
+      "\030\002 \001(\tR\nspecifiers\0225\n\010outcomes\030\003 \003(\0132\031.o" +
+      "bb.SessionMarketOutcomeR\010outcomes\"I\n\024Ses" +
+      "sionMarketOutcome\022\035\n\noutcome_id\030\001 \001(\tR\to" +
+      "utcomeId\022\022\n\004odds\030\002 \001(\004R\004odds\"~\n\022SessionI" +
+      "nfoRequest\022\035\n\nsession_id\030\001 \001(\tR\tsessionI" +
+      "d\0225\n\nselections\030\002 \003(\0132\025.obb.SessionSelec" +
+      "tionR\nselections\022\022\n\004odds\030\003 \001(\004R\004odds\"\227\002\n" +
+      "\023SessionInfoResponse\022\035\n\nsession_id\030\001 \001(\t" +
+      "R\tsessionId\022=\n\005valid\030\002 \001(\0132%.obb.Session" +
+      "InfoResponse.ValidSessionH\000R\005valid\022C\n\007in" +
+      "valid\030\003 \001(\0132\'.obb.SessionInfoResponse.In" +
+      "validSessionH\000R\007invalid\032\016\n\014ValidSession\032" +
+      "C\n\016InvalidSession\0221\n\006reason\030\001 \001(\0132\031.obb." +
+      "InvalidSessionReasonR\006reasonB\010\n\006status*e" +
+      "\n\rSessionStatus\022\036\n\032SESSION_STATUS_UNSPEC" +
+      "IFIED\020\000\022\030\n\024SESSION_STATUS_VALID\020\001\022\032\n\026SES" +
+      "SION_STATUS_INVALID\020\002B5\n\rcom.oddin.obbZ$" +
+      "github.com/oddin-gg/obbschema/go/obbb\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -12092,7 +13292,19 @@ public final class Session {
     internal_static_obb_SessionCreateResponse_SessionRejected_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_obb_SessionCreateResponse_SessionRejected_descriptor,
-        new java.lang.String[] { "Reason", });
+        new java.lang.String[] { "Reason", "SelectionsRejected", });
+    internal_static_obb_SessionCreateResponse_SessionRejected_SelectionRejectedReason_descriptor =
+      internal_static_obb_SessionCreateResponse_SessionRejected_descriptor.getNestedTypes().get(0);
+    internal_static_obb_SessionCreateResponse_SessionRejected_SelectionRejectedReason_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_obb_SessionCreateResponse_SessionRejected_SelectionRejectedReason_descriptor,
+        new java.lang.String[] { "Code", "Message", });
+    internal_static_obb_SessionCreateResponse_SessionRejected_SelectionsRejectedEntry_descriptor =
+      internal_static_obb_SessionCreateResponse_SessionRejected_descriptor.getNestedTypes().get(1);
+    internal_static_obb_SessionCreateResponse_SessionRejected_SelectionsRejectedEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_obb_SessionCreateResponse_SessionRejected_SelectionsRejectedEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
     internal_static_obb_SessionSelection_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_obb_SessionSelection_fieldAccessorTable = new
