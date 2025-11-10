@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package obb;
+
+option go_package = "github.com/oddin-gg/obbschema/go/obb";
+option java_package = "com.oddin.obb";
+
+message ClientSettings {
+    // Whether OBB is enabled for the client.
+    bool ObbEnabled = 1;
+}
+
+message GetClientSettingsRequest {
+    uint32 client_id = 1;
+}
+
+message GetClientSettingsResponse {
+    uint32 client_id = 1;
+    ClientSettings settings = 2;
+}
+
+message SetClientSettingsRequest {
+    uint32 client_id = 1;
+    ClientSettings settings = 2;
+}
+
+message SetClientSettingsResponse {
+    uint32 client_id = 1;
+    ClientSettings settings = 2;
+}
+
+message ListClientSettingsRequest {
+    // If set, only clients with OBB enabled will be returned.
+    bool filter_obb_enabled_only = 1;
+}
+
+message ListClientSettingsResponse {
+    // Pair of client ID and their settings.
+    message ClientSettingsPair {
+        uint32 client_id = 1;
+        ClientSettings settings = 2;
+    }
+
+    repeated ClientSettingsPair client_settings = 1;
+}

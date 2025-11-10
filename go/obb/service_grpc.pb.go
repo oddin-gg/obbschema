@@ -23,6 +23,9 @@ const (
 	Obb_SessionCreate_FullMethodName      = "/obb.obb/SessionCreate"
 	Obb_SessionInfo_FullMethodName        = "/obb.obb/SessionInfo"
 	Obb_PopularCombination_FullMethodName = "/obb.obb/PopularCombination"
+	Obb_GetClientSettings_FullMethodName  = "/obb.obb/GetClientSettings"
+	Obb_SetClientSettings_FullMethodName  = "/obb.obb/SetClientSettings"
+	Obb_ListClientSettings_FullMethodName = "/obb.obb/ListClientSettings"
 )
 
 // ObbClient is the client API for Obb service.
@@ -37,6 +40,12 @@ type ObbClient interface {
 	SessionInfo(ctx context.Context, in *SessionInfoRequest, opts ...grpc.CallOption) (*SessionInfoResponse, error)
 	// Used to get popular combinations of selections.
 	PopularCombination(ctx context.Context, in *PopularCombinationRequest, opts ...grpc.CallOption) (*PopularCombinationResponse, error)
+	// Used to get client OBB settings.
+	GetClientSettings(ctx context.Context, in *GetClientSettingsRequest, opts ...grpc.CallOption) (*GetClientSettingsResponse, error)
+	// Used to set client OBB settings.
+	SetClientSettings(ctx context.Context, in *SetClientSettingsRequest, opts ...grpc.CallOption) (*SetClientSettingsResponse, error)
+	// Used to list all client OBB settings.
+	ListClientSettings(ctx context.Context, in *ListClientSettingsRequest, opts ...grpc.CallOption) (*ListClientSettingsResponse, error)
 }
 
 type obbClient struct {
@@ -87,6 +96,36 @@ func (c *obbClient) PopularCombination(ctx context.Context, in *PopularCombinati
 	return out, nil
 }
 
+func (c *obbClient) GetClientSettings(ctx context.Context, in *GetClientSettingsRequest, opts ...grpc.CallOption) (*GetClientSettingsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetClientSettingsResponse)
+	err := c.cc.Invoke(ctx, Obb_GetClientSettings_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *obbClient) SetClientSettings(ctx context.Context, in *SetClientSettingsRequest, opts ...grpc.CallOption) (*SetClientSettingsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SetClientSettingsResponse)
+	err := c.cc.Invoke(ctx, Obb_SetClientSettings_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *obbClient) ListClientSettings(ctx context.Context, in *ListClientSettingsRequest, opts ...grpc.CallOption) (*ListClientSettingsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListClientSettingsResponse)
+	err := c.cc.Invoke(ctx, Obb_ListClientSettings_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ObbServer is the server API for Obb service.
 // All implementations must embed UnimplementedObbServer
 // for forward compatibility.
@@ -99,6 +138,12 @@ type ObbServer interface {
 	SessionInfo(context.Context, *SessionInfoRequest) (*SessionInfoResponse, error)
 	// Used to get popular combinations of selections.
 	PopularCombination(context.Context, *PopularCombinationRequest) (*PopularCombinationResponse, error)
+	// Used to get client OBB settings.
+	GetClientSettings(context.Context, *GetClientSettingsRequest) (*GetClientSettingsResponse, error)
+	// Used to set client OBB settings.
+	SetClientSettings(context.Context, *SetClientSettingsRequest) (*SetClientSettingsResponse, error)
+	// Used to list all client OBB settings.
+	ListClientSettings(context.Context, *ListClientSettingsRequest) (*ListClientSettingsResponse, error)
 	mustEmbedUnimplementedObbServer()
 }
 
@@ -120,6 +165,15 @@ func (UnimplementedObbServer) SessionInfo(context.Context, *SessionInfoRequest) 
 }
 func (UnimplementedObbServer) PopularCombination(context.Context, *PopularCombinationRequest) (*PopularCombinationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method PopularCombination not implemented")
+}
+func (UnimplementedObbServer) GetClientSettings(context.Context, *GetClientSettingsRequest) (*GetClientSettingsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetClientSettings not implemented")
+}
+func (UnimplementedObbServer) SetClientSettings(context.Context, *SetClientSettingsRequest) (*SetClientSettingsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SetClientSettings not implemented")
+}
+func (UnimplementedObbServer) ListClientSettings(context.Context, *ListClientSettingsRequest) (*ListClientSettingsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListClientSettings not implemented")
 }
 func (UnimplementedObbServer) mustEmbedUnimplementedObbServer() {}
 func (UnimplementedObbServer) testEmbeddedByValue()             {}
@@ -214,6 +268,60 @@ func _Obb_PopularCombination_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Obb_GetClientSettings_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetClientSettingsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ObbServer).GetClientSettings(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Obb_GetClientSettings_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ObbServer).GetClientSettings(ctx, req.(*GetClientSettingsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Obb_SetClientSettings_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SetClientSettingsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ObbServer).SetClientSettings(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Obb_SetClientSettings_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ObbServer).SetClientSettings(ctx, req.(*SetClientSettingsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Obb_ListClientSettings_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListClientSettingsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ObbServer).ListClientSettings(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Obb_ListClientSettings_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ObbServer).ListClientSettings(ctx, req.(*ListClientSettingsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Obb_ServiceDesc is the grpc.ServiceDesc for Obb service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -236,6 +344,18 @@ var Obb_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "PopularCombination",
 			Handler:    _Obb_PopularCombination_Handler,
+		},
+		{
+			MethodName: "GetClientSettings",
+			Handler:    _Obb_GetClientSettings_Handler,
+		},
+		{
+			MethodName: "SetClientSettings",
+			Handler:    _Obb_SetClientSettings_Handler,
+		},
+		{
+			MethodName: "ListClientSettings",
+			Handler:    _Obb_ListClientSettings_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

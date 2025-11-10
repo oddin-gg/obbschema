@@ -25,16 +25,23 @@ public final class Service {
     java.lang.String[] descriptorData = {
       "\n\021obb/service.proto\022\003obb\032\021obb/markets.pr" +
       "oto\032\021obb/popular.proto\032\021obb/session.prot" +
-      "o2\267\002\n\003obb\022O\n\020AvailableMarkets\022\034.obb.Avai" +
-      "lableMarketsRequest\032\035.obb.AvailableMarke" +
-      "tsResponse\022F\n\rSessionCreate\022\031.obb.Sessio" +
-      "nCreateRequest\032\032.obb.SessionCreateRespon" +
-      "se\022@\n\013SessionInfo\022\027.obb.SessionInfoReque" +
-      "st\032\030.obb.SessionInfoResponse\022U\n\022PopularC" +
-      "ombination\022\036.obb.PopularCombinationReque" +
-      "st\032\037.obb.PopularCombinationResponseB5\n\rc" +
-      "om.oddin.obbZ$github.com/oddin-gg/obbsch" +
-      "ema/go/obbb\006proto3"
+      "o\032\022obb/settings.proto2\266\004\n\003obb\022O\n\020Availab" +
+      "leMarkets\022\034.obb.AvailableMarketsRequest\032" +
+      "\035.obb.AvailableMarketsResponse\022F\n\rSessio" +
+      "nCreate\022\031.obb.SessionCreateRequest\032\032.obb" +
+      ".SessionCreateResponse\022@\n\013SessionInfo\022\027." +
+      "obb.SessionInfoRequest\032\030.obb.SessionInfo" +
+      "Response\022U\n\022PopularCombination\022\036.obb.Pop" +
+      "ularCombinationRequest\032\037.obb.PopularComb" +
+      "inationResponse\022R\n\021GetClientSettings\022\035.o" +
+      "bb.GetClientSettingsRequest\032\036.obb.GetCli" +
+      "entSettingsResponse\022R\n\021SetClientSettings" +
+      "\022\035.obb.SetClientSettingsRequest\032\036.obb.Se" +
+      "tClientSettingsResponse\022U\n\022ListClientSet" +
+      "tings\022\036.obb.ListClientSettingsRequest\032\037." +
+      "obb.ListClientSettingsResponseB5\n\rcom.od" +
+      "din.obbZ$github.com/oddin-gg/obbschema/g" +
+      "o/obbb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -42,10 +49,12 @@ public final class Service {
           com.oddin.obb.Markets.getDescriptor(),
           com.oddin.obb.Popular.getDescriptor(),
           com.oddin.obb.Session.getDescriptor(),
+          com.oddin.obb.Settings.getDescriptor(),
         });
     com.oddin.obb.Markets.getDescriptor();
     com.oddin.obb.Popular.getDescriptor();
     com.oddin.obb.Session.getDescriptor();
+    com.oddin.obb.Settings.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

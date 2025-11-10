@@ -5,6 +5,7 @@ var grpc = require('grpc');
 var obb_markets_pb = require('../obb/markets_pb.js');
 var obb_popular_pb = require('../obb/popular_pb.js');
 var obb_session_pb = require('../obb/session_pb.js');
+var obb_settings_pb = require('../obb/settings_pb.js');
 
 function serialize_obb_AvailableMarketsRequest(arg) {
   if (!(arg instanceof obb_markets_pb.AvailableMarketsRequest)) {
@@ -26,6 +27,50 @@ function serialize_obb_AvailableMarketsResponse(arg) {
 
 function deserialize_obb_AvailableMarketsResponse(buffer_arg) {
   return obb_markets_pb.AvailableMarketsResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_obb_GetClientSettingsRequest(arg) {
+  if (!(arg instanceof obb_settings_pb.GetClientSettingsRequest)) {
+    throw new Error('Expected argument of type obb.GetClientSettingsRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_obb_GetClientSettingsRequest(buffer_arg) {
+  return obb_settings_pb.GetClientSettingsRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_obb_GetClientSettingsResponse(arg) {
+  if (!(arg instanceof obb_settings_pb.GetClientSettingsResponse)) {
+    throw new Error('Expected argument of type obb.GetClientSettingsResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_obb_GetClientSettingsResponse(buffer_arg) {
+  return obb_settings_pb.GetClientSettingsResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_obb_ListClientSettingsRequest(arg) {
+  if (!(arg instanceof obb_settings_pb.ListClientSettingsRequest)) {
+    throw new Error('Expected argument of type obb.ListClientSettingsRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_obb_ListClientSettingsRequest(buffer_arg) {
+  return obb_settings_pb.ListClientSettingsRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_obb_ListClientSettingsResponse(arg) {
+  if (!(arg instanceof obb_settings_pb.ListClientSettingsResponse)) {
+    throw new Error('Expected argument of type obb.ListClientSettingsResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_obb_ListClientSettingsResponse(buffer_arg) {
+  return obb_settings_pb.ListClientSettingsResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_obb_PopularCombinationRequest(arg) {
@@ -94,6 +139,28 @@ function deserialize_obb_SessionInfoResponse(buffer_arg) {
   return obb_session_pb.SessionInfoResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_obb_SetClientSettingsRequest(arg) {
+  if (!(arg instanceof obb_settings_pb.SetClientSettingsRequest)) {
+    throw new Error('Expected argument of type obb.SetClientSettingsRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_obb_SetClientSettingsRequest(buffer_arg) {
+  return obb_settings_pb.SetClientSettingsRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_obb_SetClientSettingsResponse(arg) {
+  if (!(arg instanceof obb_settings_pb.SetClientSettingsResponse)) {
+    throw new Error('Expected argument of type obb.SetClientSettingsResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_obb_SetClientSettingsResponse(buffer_arg) {
+  return obb_settings_pb.SetClientSettingsResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 
 var obbService = exports.obbService = {
   // Used to retrieve a list of available markets for a given event.
@@ -143,6 +210,42 @@ popularCombination: {
     requestDeserialize: deserialize_obb_PopularCombinationRequest,
     responseSerialize: serialize_obb_PopularCombinationResponse,
     responseDeserialize: deserialize_obb_PopularCombinationResponse,
+  },
+  // Used to get client OBB settings.
+getClientSettings: {
+    path: '/obb.obb/GetClientSettings',
+    requestStream: false,
+    responseStream: false,
+    requestType: obb_settings_pb.GetClientSettingsRequest,
+    responseType: obb_settings_pb.GetClientSettingsResponse,
+    requestSerialize: serialize_obb_GetClientSettingsRequest,
+    requestDeserialize: deserialize_obb_GetClientSettingsRequest,
+    responseSerialize: serialize_obb_GetClientSettingsResponse,
+    responseDeserialize: deserialize_obb_GetClientSettingsResponse,
+  },
+  // Used to set client OBB settings.
+setClientSettings: {
+    path: '/obb.obb/SetClientSettings',
+    requestStream: false,
+    responseStream: false,
+    requestType: obb_settings_pb.SetClientSettingsRequest,
+    responseType: obb_settings_pb.SetClientSettingsResponse,
+    requestSerialize: serialize_obb_SetClientSettingsRequest,
+    requestDeserialize: deserialize_obb_SetClientSettingsRequest,
+    responseSerialize: serialize_obb_SetClientSettingsResponse,
+    responseDeserialize: deserialize_obb_SetClientSettingsResponse,
+  },
+  // Used to list all client OBB settings.
+listClientSettings: {
+    path: '/obb.obb/ListClientSettings',
+    requestStream: false,
+    responseStream: false,
+    requestType: obb_settings_pb.ListClientSettingsRequest,
+    responseType: obb_settings_pb.ListClientSettingsResponse,
+    requestSerialize: serialize_obb_ListClientSettingsRequest,
+    requestDeserialize: deserialize_obb_ListClientSettingsRequest,
+    responseSerialize: serialize_obb_ListClientSettingsResponse,
+    responseDeserialize: deserialize_obb_ListClientSettingsResponse,
   },
 };
 

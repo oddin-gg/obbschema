@@ -5,6 +5,7 @@ import grpc
 from obb_schema.obb import markets_pb2 as obb_dot_markets__pb2
 from obb_schema.obb import popular_pb2 as obb_dot_popular__pb2
 from obb_schema.obb import session_pb2 as obb_dot_session__pb2
+from obb_schema.obb import settings_pb2 as obb_dot_settings__pb2
 
 
 class obbStub(object):
@@ -35,6 +36,21 @@ class obbStub(object):
                 '/obb.obb/PopularCombination',
                 request_serializer=obb_dot_popular__pb2.PopularCombinationRequest.SerializeToString,
                 response_deserializer=obb_dot_popular__pb2.PopularCombinationResponse.FromString,
+                _registered_method=True)
+        self.GetClientSettings = channel.unary_unary(
+                '/obb.obb/GetClientSettings',
+                request_serializer=obb_dot_settings__pb2.GetClientSettingsRequest.SerializeToString,
+                response_deserializer=obb_dot_settings__pb2.GetClientSettingsResponse.FromString,
+                _registered_method=True)
+        self.SetClientSettings = channel.unary_unary(
+                '/obb.obb/SetClientSettings',
+                request_serializer=obb_dot_settings__pb2.SetClientSettingsRequest.SerializeToString,
+                response_deserializer=obb_dot_settings__pb2.SetClientSettingsResponse.FromString,
+                _registered_method=True)
+        self.ListClientSettings = channel.unary_unary(
+                '/obb.obb/ListClientSettings',
+                request_serializer=obb_dot_settings__pb2.ListClientSettingsRequest.SerializeToString,
+                response_deserializer=obb_dot_settings__pb2.ListClientSettingsResponse.FromString,
                 _registered_method=True)
 
 
@@ -69,6 +85,27 @@ class obbServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetClientSettings(self, request, context):
+        """Used to get client OBB settings.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SetClientSettings(self, request, context):
+        """Used to set client OBB settings.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListClientSettings(self, request, context):
+        """Used to list all client OBB settings.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_obbServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -91,6 +128,21 @@ def add_obbServicer_to_server(servicer, server):
                     servicer.PopularCombination,
                     request_deserializer=obb_dot_popular__pb2.PopularCombinationRequest.FromString,
                     response_serializer=obb_dot_popular__pb2.PopularCombinationResponse.SerializeToString,
+            ),
+            'GetClientSettings': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetClientSettings,
+                    request_deserializer=obb_dot_settings__pb2.GetClientSettingsRequest.FromString,
+                    response_serializer=obb_dot_settings__pb2.GetClientSettingsResponse.SerializeToString,
+            ),
+            'SetClientSettings': grpc.unary_unary_rpc_method_handler(
+                    servicer.SetClientSettings,
+                    request_deserializer=obb_dot_settings__pb2.SetClientSettingsRequest.FromString,
+                    response_serializer=obb_dot_settings__pb2.SetClientSettingsResponse.SerializeToString,
+            ),
+            'ListClientSettings': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListClientSettings,
+                    request_deserializer=obb_dot_settings__pb2.ListClientSettingsRequest.FromString,
+                    response_serializer=obb_dot_settings__pb2.ListClientSettingsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -201,6 +253,87 @@ class obb(object):
             '/obb.obb/PopularCombination',
             obb_dot_popular__pb2.PopularCombinationRequest.SerializeToString,
             obb_dot_popular__pb2.PopularCombinationResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetClientSettings(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/obb.obb/GetClientSettings',
+            obb_dot_settings__pb2.GetClientSettingsRequest.SerializeToString,
+            obb_dot_settings__pb2.GetClientSettingsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def SetClientSettings(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/obb.obb/SetClientSettings',
+            obb_dot_settings__pb2.SetClientSettingsRequest.SerializeToString,
+            obb_dot_settings__pb2.SetClientSettingsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListClientSettings(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/obb.obb/ListClientSettings',
+            obb_dot_settings__pb2.ListClientSettingsRequest.SerializeToString,
+            obb_dot_settings__pb2.ListClientSettingsResponse.FromString,
             options,
             channel_credentials,
             insecure,

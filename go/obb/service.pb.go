@@ -24,12 +24,15 @@ var File_obb_service_proto protoreflect.FileDescriptor
 
 const file_obb_service_proto_rawDesc = "" +
 	"\n" +
-	"\x11obb/service.proto\x12\x03obb\x1a\x11obb/markets.proto\x1a\x11obb/popular.proto\x1a\x11obb/session.proto2\xb7\x02\n" +
+	"\x11obb/service.proto\x12\x03obb\x1a\x11obb/markets.proto\x1a\x11obb/popular.proto\x1a\x11obb/session.proto\x1a\x12obb/settings.proto2\xb6\x04\n" +
 	"\x03obb\x12O\n" +
 	"\x10AvailableMarkets\x12\x1c.obb.AvailableMarketsRequest\x1a\x1d.obb.AvailableMarketsResponse\x12F\n" +
 	"\rSessionCreate\x12\x19.obb.SessionCreateRequest\x1a\x1a.obb.SessionCreateResponse\x12@\n" +
 	"\vSessionInfo\x12\x17.obb.SessionInfoRequest\x1a\x18.obb.SessionInfoResponse\x12U\n" +
-	"\x12PopularCombination\x12\x1e.obb.PopularCombinationRequest\x1a\x1f.obb.PopularCombinationResponseB5\n" +
+	"\x12PopularCombination\x12\x1e.obb.PopularCombinationRequest\x1a\x1f.obb.PopularCombinationResponse\x12R\n" +
+	"\x11GetClientSettings\x12\x1d.obb.GetClientSettingsRequest\x1a\x1e.obb.GetClientSettingsResponse\x12R\n" +
+	"\x11SetClientSettings\x12\x1d.obb.SetClientSettingsRequest\x1a\x1e.obb.SetClientSettingsResponse\x12U\n" +
+	"\x12ListClientSettings\x12\x1e.obb.ListClientSettingsRequest\x1a\x1f.obb.ListClientSettingsResponseB5\n" +
 	"\rcom.oddin.obbZ$github.com/oddin-gg/obbschema/go/obbb\x06proto3"
 
 var file_obb_service_proto_goTypes = []any{
@@ -37,25 +40,37 @@ var file_obb_service_proto_goTypes = []any{
 	(*SessionCreateRequest)(nil),       // 1: obb.SessionCreateRequest
 	(*SessionInfoRequest)(nil),         // 2: obb.SessionInfoRequest
 	(*PopularCombinationRequest)(nil),  // 3: obb.PopularCombinationRequest
-	(*AvailableMarketsResponse)(nil),   // 4: obb.AvailableMarketsResponse
-	(*SessionCreateResponse)(nil),      // 5: obb.SessionCreateResponse
-	(*SessionInfoResponse)(nil),        // 6: obb.SessionInfoResponse
-	(*PopularCombinationResponse)(nil), // 7: obb.PopularCombinationResponse
+	(*GetClientSettingsRequest)(nil),   // 4: obb.GetClientSettingsRequest
+	(*SetClientSettingsRequest)(nil),   // 5: obb.SetClientSettingsRequest
+	(*ListClientSettingsRequest)(nil),  // 6: obb.ListClientSettingsRequest
+	(*AvailableMarketsResponse)(nil),   // 7: obb.AvailableMarketsResponse
+	(*SessionCreateResponse)(nil),      // 8: obb.SessionCreateResponse
+	(*SessionInfoResponse)(nil),        // 9: obb.SessionInfoResponse
+	(*PopularCombinationResponse)(nil), // 10: obb.PopularCombinationResponse
+	(*GetClientSettingsResponse)(nil),  // 11: obb.GetClientSettingsResponse
+	(*SetClientSettingsResponse)(nil),  // 12: obb.SetClientSettingsResponse
+	(*ListClientSettingsResponse)(nil), // 13: obb.ListClientSettingsResponse
 }
 var file_obb_service_proto_depIdxs = []int32{
-	0, // 0: obb.obb.AvailableMarkets:input_type -> obb.AvailableMarketsRequest
-	1, // 1: obb.obb.SessionCreate:input_type -> obb.SessionCreateRequest
-	2, // 2: obb.obb.SessionInfo:input_type -> obb.SessionInfoRequest
-	3, // 3: obb.obb.PopularCombination:input_type -> obb.PopularCombinationRequest
-	4, // 4: obb.obb.AvailableMarkets:output_type -> obb.AvailableMarketsResponse
-	5, // 5: obb.obb.SessionCreate:output_type -> obb.SessionCreateResponse
-	6, // 6: obb.obb.SessionInfo:output_type -> obb.SessionInfoResponse
-	7, // 7: obb.obb.PopularCombination:output_type -> obb.PopularCombinationResponse
-	4, // [4:8] is the sub-list for method output_type
-	0, // [0:4] is the sub-list for method input_type
-	0, // [0:0] is the sub-list for extension type_name
-	0, // [0:0] is the sub-list for extension extendee
-	0, // [0:0] is the sub-list for field type_name
+	0,  // 0: obb.obb.AvailableMarkets:input_type -> obb.AvailableMarketsRequest
+	1,  // 1: obb.obb.SessionCreate:input_type -> obb.SessionCreateRequest
+	2,  // 2: obb.obb.SessionInfo:input_type -> obb.SessionInfoRequest
+	3,  // 3: obb.obb.PopularCombination:input_type -> obb.PopularCombinationRequest
+	4,  // 4: obb.obb.GetClientSettings:input_type -> obb.GetClientSettingsRequest
+	5,  // 5: obb.obb.SetClientSettings:input_type -> obb.SetClientSettingsRequest
+	6,  // 6: obb.obb.ListClientSettings:input_type -> obb.ListClientSettingsRequest
+	7,  // 7: obb.obb.AvailableMarkets:output_type -> obb.AvailableMarketsResponse
+	8,  // 8: obb.obb.SessionCreate:output_type -> obb.SessionCreateResponse
+	9,  // 9: obb.obb.SessionInfo:output_type -> obb.SessionInfoResponse
+	10, // 10: obb.obb.PopularCombination:output_type -> obb.PopularCombinationResponse
+	11, // 11: obb.obb.GetClientSettings:output_type -> obb.GetClientSettingsResponse
+	12, // 12: obb.obb.SetClientSettings:output_type -> obb.SetClientSettingsResponse
+	13, // 13: obb.obb.ListClientSettings:output_type -> obb.ListClientSettingsResponse
+	7,  // [7:14] is the sub-list for method output_type
+	0,  // [0:7] is the sub-list for method input_type
+	0,  // [0:0] is the sub-list for extension type_name
+	0,  // [0:0] is the sub-list for extension extendee
+	0,  // [0:0] is the sub-list for field type_name
 }
 
 func init() { file_obb_service_proto_init() }
@@ -66,6 +81,7 @@ func file_obb_service_proto_init() {
 	file_obb_markets_proto_init()
 	file_obb_popular_proto_init()
 	file_obb_session_proto_init()
+	file_obb_settings_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

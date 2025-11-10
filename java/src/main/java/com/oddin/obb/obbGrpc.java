@@ -139,6 +139,99 @@ public final class obbGrpc {
     return getPopularCombinationMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.oddin.obb.Settings.GetClientSettingsRequest,
+      com.oddin.obb.Settings.GetClientSettingsResponse> getGetClientSettingsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetClientSettings",
+      requestType = com.oddin.obb.Settings.GetClientSettingsRequest.class,
+      responseType = com.oddin.obb.Settings.GetClientSettingsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.oddin.obb.Settings.GetClientSettingsRequest,
+      com.oddin.obb.Settings.GetClientSettingsResponse> getGetClientSettingsMethod() {
+    io.grpc.MethodDescriptor<com.oddin.obb.Settings.GetClientSettingsRequest, com.oddin.obb.Settings.GetClientSettingsResponse> getGetClientSettingsMethod;
+    if ((getGetClientSettingsMethod = obbGrpc.getGetClientSettingsMethod) == null) {
+      synchronized (obbGrpc.class) {
+        if ((getGetClientSettingsMethod = obbGrpc.getGetClientSettingsMethod) == null) {
+          obbGrpc.getGetClientSettingsMethod = getGetClientSettingsMethod =
+              io.grpc.MethodDescriptor.<com.oddin.obb.Settings.GetClientSettingsRequest, com.oddin.obb.Settings.GetClientSettingsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetClientSettings"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.oddin.obb.Settings.GetClientSettingsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.oddin.obb.Settings.GetClientSettingsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new obbMethodDescriptorSupplier("GetClientSettings"))
+              .build();
+        }
+      }
+    }
+    return getGetClientSettingsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.oddin.obb.Settings.SetClientSettingsRequest,
+      com.oddin.obb.Settings.SetClientSettingsResponse> getSetClientSettingsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SetClientSettings",
+      requestType = com.oddin.obb.Settings.SetClientSettingsRequest.class,
+      responseType = com.oddin.obb.Settings.SetClientSettingsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.oddin.obb.Settings.SetClientSettingsRequest,
+      com.oddin.obb.Settings.SetClientSettingsResponse> getSetClientSettingsMethod() {
+    io.grpc.MethodDescriptor<com.oddin.obb.Settings.SetClientSettingsRequest, com.oddin.obb.Settings.SetClientSettingsResponse> getSetClientSettingsMethod;
+    if ((getSetClientSettingsMethod = obbGrpc.getSetClientSettingsMethod) == null) {
+      synchronized (obbGrpc.class) {
+        if ((getSetClientSettingsMethod = obbGrpc.getSetClientSettingsMethod) == null) {
+          obbGrpc.getSetClientSettingsMethod = getSetClientSettingsMethod =
+              io.grpc.MethodDescriptor.<com.oddin.obb.Settings.SetClientSettingsRequest, com.oddin.obb.Settings.SetClientSettingsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SetClientSettings"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.oddin.obb.Settings.SetClientSettingsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.oddin.obb.Settings.SetClientSettingsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new obbMethodDescriptorSupplier("SetClientSettings"))
+              .build();
+        }
+      }
+    }
+    return getSetClientSettingsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.oddin.obb.Settings.ListClientSettingsRequest,
+      com.oddin.obb.Settings.ListClientSettingsResponse> getListClientSettingsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListClientSettings",
+      requestType = com.oddin.obb.Settings.ListClientSettingsRequest.class,
+      responseType = com.oddin.obb.Settings.ListClientSettingsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.oddin.obb.Settings.ListClientSettingsRequest,
+      com.oddin.obb.Settings.ListClientSettingsResponse> getListClientSettingsMethod() {
+    io.grpc.MethodDescriptor<com.oddin.obb.Settings.ListClientSettingsRequest, com.oddin.obb.Settings.ListClientSettingsResponse> getListClientSettingsMethod;
+    if ((getListClientSettingsMethod = obbGrpc.getListClientSettingsMethod) == null) {
+      synchronized (obbGrpc.class) {
+        if ((getListClientSettingsMethod = obbGrpc.getListClientSettingsMethod) == null) {
+          obbGrpc.getListClientSettingsMethod = getListClientSettingsMethod =
+              io.grpc.MethodDescriptor.<com.oddin.obb.Settings.ListClientSettingsRequest, com.oddin.obb.Settings.ListClientSettingsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListClientSettings"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.oddin.obb.Settings.ListClientSettingsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.oddin.obb.Settings.ListClientSettingsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new obbMethodDescriptorSupplier("ListClientSettings"))
+              .build();
+        }
+      }
+    }
+    return getListClientSettingsMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -226,6 +319,36 @@ public final class obbGrpc {
         io.grpc.stub.StreamObserver<com.oddin.obb.Popular.PopularCombinationResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPopularCombinationMethod(), responseObserver);
     }
+
+    /**
+     * <pre>
+     * Used to get client OBB settings.
+     * </pre>
+     */
+    default void getClientSettings(com.oddin.obb.Settings.GetClientSettingsRequest request,
+        io.grpc.stub.StreamObserver<com.oddin.obb.Settings.GetClientSettingsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetClientSettingsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Used to set client OBB settings.
+     * </pre>
+     */
+    default void setClientSettings(com.oddin.obb.Settings.SetClientSettingsRequest request,
+        io.grpc.stub.StreamObserver<com.oddin.obb.Settings.SetClientSettingsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSetClientSettingsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Used to list all client OBB settings.
+     * </pre>
+     */
+    default void listClientSettings(com.oddin.obb.Settings.ListClientSettingsRequest request,
+        io.grpc.stub.StreamObserver<com.oddin.obb.Settings.ListClientSettingsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListClientSettingsMethod(), responseObserver);
+    }
   }
 
   /**
@@ -298,6 +421,39 @@ public final class obbGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getPopularCombinationMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * Used to get client OBB settings.
+     * </pre>
+     */
+    public void getClientSettings(com.oddin.obb.Settings.GetClientSettingsRequest request,
+        io.grpc.stub.StreamObserver<com.oddin.obb.Settings.GetClientSettingsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetClientSettingsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Used to set client OBB settings.
+     * </pre>
+     */
+    public void setClientSettings(com.oddin.obb.Settings.SetClientSettingsRequest request,
+        io.grpc.stub.StreamObserver<com.oddin.obb.Settings.SetClientSettingsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSetClientSettingsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Used to list all client OBB settings.
+     * </pre>
+     */
+    public void listClientSettings(com.oddin.obb.Settings.ListClientSettingsRequest request,
+        io.grpc.stub.StreamObserver<com.oddin.obb.Settings.ListClientSettingsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListClientSettingsMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -354,6 +510,36 @@ public final class obbGrpc {
     public com.oddin.obb.Popular.PopularCombinationResponse popularCombination(com.oddin.obb.Popular.PopularCombinationRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getPopularCombinationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Used to get client OBB settings.
+     * </pre>
+     */
+    public com.oddin.obb.Settings.GetClientSettingsResponse getClientSettings(com.oddin.obb.Settings.GetClientSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetClientSettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Used to set client OBB settings.
+     * </pre>
+     */
+    public com.oddin.obb.Settings.SetClientSettingsResponse setClientSettings(com.oddin.obb.Settings.SetClientSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetClientSettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Used to list all client OBB settings.
+     * </pre>
+     */
+    public com.oddin.obb.Settings.ListClientSettingsResponse listClientSettings(com.oddin.obb.Settings.ListClientSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListClientSettingsMethod(), getCallOptions(), request);
     }
   }
 
@@ -416,12 +602,48 @@ public final class obbGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getPopularCombinationMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * Used to get client OBB settings.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.oddin.obb.Settings.GetClientSettingsResponse> getClientSettings(
+        com.oddin.obb.Settings.GetClientSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetClientSettingsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Used to set client OBB settings.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.oddin.obb.Settings.SetClientSettingsResponse> setClientSettings(
+        com.oddin.obb.Settings.SetClientSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSetClientSettingsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Used to list all client OBB settings.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.oddin.obb.Settings.ListClientSettingsResponse> listClientSettings(
+        com.oddin.obb.Settings.ListClientSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListClientSettingsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_AVAILABLE_MARKETS = 0;
   private static final int METHODID_SESSION_CREATE = 1;
   private static final int METHODID_SESSION_INFO = 2;
   private static final int METHODID_POPULAR_COMBINATION = 3;
+  private static final int METHODID_GET_CLIENT_SETTINGS = 4;
+  private static final int METHODID_SET_CLIENT_SETTINGS = 5;
+  private static final int METHODID_LIST_CLIENT_SETTINGS = 6;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -455,6 +677,18 @@ public final class obbGrpc {
         case METHODID_POPULAR_COMBINATION:
           serviceImpl.popularCombination((com.oddin.obb.Popular.PopularCombinationRequest) request,
               (io.grpc.stub.StreamObserver<com.oddin.obb.Popular.PopularCombinationResponse>) responseObserver);
+          break;
+        case METHODID_GET_CLIENT_SETTINGS:
+          serviceImpl.getClientSettings((com.oddin.obb.Settings.GetClientSettingsRequest) request,
+              (io.grpc.stub.StreamObserver<com.oddin.obb.Settings.GetClientSettingsResponse>) responseObserver);
+          break;
+        case METHODID_SET_CLIENT_SETTINGS:
+          serviceImpl.setClientSettings((com.oddin.obb.Settings.SetClientSettingsRequest) request,
+              (io.grpc.stub.StreamObserver<com.oddin.obb.Settings.SetClientSettingsResponse>) responseObserver);
+          break;
+        case METHODID_LIST_CLIENT_SETTINGS:
+          serviceImpl.listClientSettings((com.oddin.obb.Settings.ListClientSettingsRequest) request,
+              (io.grpc.stub.StreamObserver<com.oddin.obb.Settings.ListClientSettingsResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -502,6 +736,27 @@ public final class obbGrpc {
               com.oddin.obb.Popular.PopularCombinationRequest,
               com.oddin.obb.Popular.PopularCombinationResponse>(
                 service, METHODID_POPULAR_COMBINATION)))
+        .addMethod(
+          getGetClientSettingsMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.oddin.obb.Settings.GetClientSettingsRequest,
+              com.oddin.obb.Settings.GetClientSettingsResponse>(
+                service, METHODID_GET_CLIENT_SETTINGS)))
+        .addMethod(
+          getSetClientSettingsMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.oddin.obb.Settings.SetClientSettingsRequest,
+              com.oddin.obb.Settings.SetClientSettingsResponse>(
+                service, METHODID_SET_CLIENT_SETTINGS)))
+        .addMethod(
+          getListClientSettingsMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.oddin.obb.Settings.ListClientSettingsRequest,
+              com.oddin.obb.Settings.ListClientSettingsResponse>(
+                service, METHODID_LIST_CLIENT_SETTINGS)))
         .build();
   }
 
@@ -554,6 +809,9 @@ public final class obbGrpc {
               .addMethod(getSessionCreateMethod())
               .addMethod(getSessionInfoMethod())
               .addMethod(getPopularCombinationMethod())
+              .addMethod(getGetClientSettingsMethod())
+              .addMethod(getSetClientSettingsMethod())
+              .addMethod(getListClientSettingsMethod())
               .build();
         }
       }

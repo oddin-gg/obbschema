@@ -27,3 +27,5 @@ var obb_popular_pb = require('../obb/popular_pb.js');
 goog.object.extend(proto, obb_popular_pb);
 var obb_session_pb = require('../obb/session_pb.js');
 goog.object.extend(proto, obb_session_pb);
+var obb_settings_pb = require('../obb/settings_pb.js');
+goog.object.extend(proto, obb_settings_pb);

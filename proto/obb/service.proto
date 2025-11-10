@@ -5,6 +5,7 @@ package obb;
 import "obb/markets.proto";
 import "obb/popular.proto";
 import "obb/session.proto";
+import "obb/settings.proto";
 
 option go_package = "github.com/oddin-gg/obbschema/go/obb";
 option java_package = "com.oddin.obb";
@@ -21,4 +22,13 @@ service obb {
 
   // Used to get popular combinations of selections.
   rpc PopularCombination(PopularCombinationRequest) returns (PopularCombinationResponse);
+
+  // Used to get client OBB settings.
+  rpc GetClientSettings(GetClientSettingsRequest) returns (GetClientSettingsResponse);
+
+  // Used to set client OBB settings.
+  rpc SetClientSettings(SetClientSettingsRequest) returns (SetClientSettingsResponse);
+
+  // Used to list all client OBB settings.
+  rpc ListClientSettings(ListClientSettingsRequest) returns (ListClientSettingsResponse);
 }

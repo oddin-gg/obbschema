@@ -25,9 +25,10 @@ _sym_db = _symbol_database.Default()
 from obb_schema.obb import markets_pb2 as obb_dot_markets__pb2
 from obb_schema.obb import popular_pb2 as obb_dot_popular__pb2
 from obb_schema.obb import session_pb2 as obb_dot_session__pb2
+from obb_schema.obb import settings_pb2 as obb_dot_settings__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x11obb/service.proto\x12\x03obb\x1a\x11obb/markets.proto\x1a\x11obb/popular.proto\x1a\x11obb/session.proto2\xb7\x02\n\x03obb\x12O\n\x10\x41vailableMarkets\x12\x1c.obb.AvailableMarketsRequest\x1a\x1d.obb.AvailableMarketsResponse\x12\x46\n\rSessionCreate\x12\x19.obb.SessionCreateRequest\x1a\x1a.obb.SessionCreateResponse\x12@\n\x0bSessionInfo\x12\x17.obb.SessionInfoRequest\x1a\x18.obb.SessionInfoResponse\x12U\n\x12PopularCombination\x12\x1e.obb.PopularCombinationRequest\x1a\x1f.obb.PopularCombinationResponseB5\n\rcom.oddin.obbZ$github.com/oddin-gg/obbschema/go/obbb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x11obb/service.proto\x12\x03obb\x1a\x11obb/markets.proto\x1a\x11obb/popular.proto\x1a\x11obb/session.proto\x1a\x12obb/settings.proto2\xb6\x04\n\x03obb\x12O\n\x10\x41vailableMarkets\x12\x1c.obb.AvailableMarketsRequest\x1a\x1d.obb.AvailableMarketsResponse\x12\x46\n\rSessionCreate\x12\x19.obb.SessionCreateRequest\x1a\x1a.obb.SessionCreateResponse\x12@\n\x0bSessionInfo\x12\x17.obb.SessionInfoRequest\x1a\x18.obb.SessionInfoResponse\x12U\n\x12PopularCombination\x12\x1e.obb.PopularCombinationRequest\x1a\x1f.obb.PopularCombinationResponse\x12R\n\x11GetClientSettings\x12\x1d.obb.GetClientSettingsRequest\x1a\x1e.obb.GetClientSettingsResponse\x12R\n\x11SetClientSettings\x12\x1d.obb.SetClientSettingsRequest\x1a\x1e.obb.SetClientSettingsResponse\x12U\n\x12ListClientSettings\x12\x1e.obb.ListClientSettingsRequest\x1a\x1f.obb.ListClientSettingsResponseB5\n\rcom.oddin.obbZ$github.com/oddin-gg/obbschema/go/obbb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -35,6 +36,6 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'obb.service_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\rcom.oddin.obbZ$github.com/oddin-gg/obbschema/go/obb'
-  _globals['_OBB']._serialized_start=84
-  _globals['_OBB']._serialized_end=395
+  _globals['_OBB']._serialized_start=104
+  _globals['_OBB']._serialized_end=670
 # @@protoc_insertion_point(module_scope)
