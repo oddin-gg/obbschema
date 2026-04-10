@@ -1042,7 +1042,8 @@ proto.obb.SessionCreateResponse.SessionCreated.toObject = function(includeInstan
     proto.obb.SessionSelection.toObject, includeInstance),
     odds: jspb.Message.getFieldWithDefault(msg, 2, 0),
     availableMarketsList: jspb.Message.toObjectList(msg.getAvailableMarketsList(),
-    proto.obb.SessionMarket.toObject, includeInstance)
+    proto.obb.SessionMarket.toObject, includeInstance),
+    rawProbability: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0)
   };
 
   if (includeInstance) {
@@ -1092,6 +1093,10 @@ proto.obb.SessionCreateResponse.SessionCreated.deserializeBinaryFromReader = fun
       var value = new proto.obb.SessionMarket;
       reader.readMessage(value,proto.obb.SessionMarket.deserializeBinaryFromReader);
       msg.addAvailableMarkets(value);
+      break;
+    case 4:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setRawProbability(value);
       break;
     default:
       reader.skipField();
@@ -1143,6 +1148,13 @@ proto.obb.SessionCreateResponse.SessionCreated.serializeBinaryToWriter = functio
       3,
       f,
       proto.obb.SessionMarket.serializeBinaryToWriter
+    );
+  }
+  f = message.getRawProbability();
+  if (f !== 0.0) {
+    writer.writeDouble(
+      4,
+      f
     );
   }
 };
@@ -1239,6 +1251,24 @@ proto.obb.SessionCreateResponse.SessionCreated.prototype.addAvailableMarkets = f
  */
 proto.obb.SessionCreateResponse.SessionCreated.prototype.clearAvailableMarketsList = function() {
   return this.setAvailableMarketsList([]);
+};
+
+
+/**
+ * optional double raw_probability = 4;
+ * @return {number}
+ */
+proto.obb.SessionCreateResponse.SessionCreated.prototype.getRawProbability = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 4, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.obb.SessionCreateResponse.SessionCreated} returns this
+ */
+proto.obb.SessionCreateResponse.SessionCreated.prototype.setRawProbability = function(value) {
+  return jspb.Message.setProto3FloatField(this, 4, value);
 };
 
 
@@ -2069,7 +2099,8 @@ proto.obb.SessionMarketOutcome.prototype.toObject = function(opt_includeInstance
 proto.obb.SessionMarketOutcome.toObject = function(includeInstance, msg) {
   var f, obj = {
     outcomeId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    odds: jspb.Message.getFieldWithDefault(msg, 2, 0)
+    odds: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    rawProbability: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0)
   };
 
   if (includeInstance) {
@@ -2114,6 +2145,10 @@ proto.obb.SessionMarketOutcome.deserializeBinaryFromReader = function(msg, reade
       var value = /** @type {number} */ (reader.readUint64());
       msg.setOdds(value);
       break;
+    case 3:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setRawProbability(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -2157,6 +2192,13 @@ proto.obb.SessionMarketOutcome.serializeBinaryToWriter = function(message, write
       f
     );
   }
+  f = message.getRawProbability();
+  if (f !== 0.0) {
+    writer.writeDouble(
+      3,
+      f
+    );
+  }
 };
 
 
@@ -2193,6 +2235,24 @@ proto.obb.SessionMarketOutcome.prototype.getOdds = function() {
  */
 proto.obb.SessionMarketOutcome.prototype.setOdds = function(value) {
   return jspb.Message.setProto3IntField(this, 2, value);
+};
+
+
+/**
+ * optional double raw_probability = 3;
+ * @return {number}
+ */
+proto.obb.SessionMarketOutcome.prototype.getRawProbability = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 3, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.obb.SessionMarketOutcome} returns this
+ */
+proto.obb.SessionMarketOutcome.prototype.setRawProbability = function(value) {
+  return jspb.Message.setProto3FloatField(this, 3, value);
 };
 
 

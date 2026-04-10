@@ -606,9 +606,12 @@ type SessionMarketOutcome struct {
 	// Example: "10" for classic market or "od:player:123" for dynamic markets.
 	OutcomeId string `protobuf:"bytes,1,opt,name=outcome_id,json=outcomeId,proto3" json:"outcome_id,omitempty"`
 	// Odds multiplied by 10000 and rounded to uint value.
-	Odds          uint64 `protobuf:"varint,2,opt,name=odds,proto3" json:"odds,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	Odds uint64 `protobuf:"varint,2,opt,name=odds,proto3" json:"odds,omitempty"`
+	// Raw probability for this outcome (value between 0.0 and 1.0).
+	// This is the probability of this selection before margin is applied.
+	RawProbability float64 `protobuf:"fixed64,3,opt,name=raw_probability,json=rawProbability,proto3" json:"raw_probability,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
 }
 
 func (x *SessionMarketOutcome) Reset() {
@@ -651,6 +654,13 @@ func (x *SessionMarketOutcome) GetOutcomeId() string {
 func (x *SessionMarketOutcome) GetOdds() uint64 {
 	if x != nil {
 		return x.Odds
+	}
+	return 0
+}
+
+func (x *SessionMarketOutcome) GetRawProbability() float64 {
+	if x != nil {
+		return x.RawProbability
 	}
 	return 0
 }
@@ -821,8 +831,11 @@ type SessionCreateResponse_SessionCreated struct {
 	Odds uint64 `protobuf:"varint,2,opt,name=odds,proto3" json:"odds,omitempty"`
 	// Available markets for the new session with the current session selections.
 	AvailableMarkets []*SessionMarket `protobuf:"bytes,3,rep,name=available_markets,json=availableMarkets,proto3" json:"available_markets,omitempty"`
-	unknownFields    protoimpl.UnknownFields
-	sizeCache        protoimpl.SizeCache
+	// Raw probability of the selected combination (value between 0.0 and 1.0).
+	// This is the combined probability of all selections in the session before margin is applied.
+	RawProbability float64 `protobuf:"fixed64,4,opt,name=raw_probability,json=rawProbability,proto3" json:"raw_probability,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
 }
 
 func (x *SessionCreateResponse_SessionCreated) Reset() {
@@ -874,6 +887,13 @@ func (x *SessionCreateResponse_SessionCreated) GetAvailableMarkets() []*SessionM
 		return x.AvailableMarkets
 	}
 	return nil
+}
+
+func (x *SessionCreateResponse_SessionCreated) GetRawProbability() float64 {
+	if x != nil {
+		return x.RawProbability
+	}
+	return 0
 }
 
 type SessionCreateResponse_SessionRejected struct {
@@ -1088,18 +1108,19 @@ const file_obb_session_proto_rawDesc = "" +
 	"\fCODE_EXPIRED\x10\x03\x12\x12\n" +
 	"\x0eCODE_NOT_FOUND\x10\x04\";\n" +
 	"\x14SessionCreateRequest\x12#\n" +
-	"\rselection_ids\x18\x02 \x03(\tR\fselectionIds\"\x82\a\n" +
+	"\rselection_ids\x18\x02 \x03(\tR\fselectionIds\"\xab\a\n" +
 	"\x15SessionCreateResponse\x12\x1d\n" +
 	"\n" +
 	"session_id\x18\x01 \x01(\tR\tsessionId\x12E\n" +
 	"\acreated\x18\x02 \x01(\v2).obb.SessionCreateResponse.SessionCreatedH\x00R\acreated\x12H\n" +
-	"\brejected\x18\x03 \x01(\v2*.obb.SessionCreateResponse.SessionRejectedH\x00R\brejected\x1a\x9c\x01\n" +
+	"\brejected\x18\x03 \x01(\v2*.obb.SessionCreateResponse.SessionRejectedH\x00R\brejected\x1a\xc5\x01\n" +
 	"\x0eSessionCreated\x125\n" +
 	"\n" +
 	"selections\x18\x01 \x03(\v2\x15.obb.SessionSelectionR\n" +
 	"selections\x12\x12\n" +
 	"\x04odds\x18\x02 \x01(\x04R\x04odds\x12?\n" +
-	"\x11available_markets\x18\x03 \x03(\v2\x12.obb.SessionMarketR\x10availableMarkets\x1a\x8f\x04\n" +
+	"\x11available_markets\x18\x03 \x03(\v2\x12.obb.SessionMarketR\x10availableMarkets\x12'\n" +
+	"\x0fraw_probability\x18\x04 \x01(\x01R\x0erawProbability\x1a\x8f\x04\n" +
 	"\x0fSessionRejected\x120\n" +
 	"\x06reason\x18\x01 \x01(\v2\x18.obb.SessionRejectReasonR\x06reason\x12s\n" +
 	"\x13selections_rejected\x18\x02 \x03(\v2B.obb.SessionCreateResponse.SessionRejected.SelectionsRejectedEntryR\x12selectionsRejected\x1a\xc8\x01\n" +
@@ -1120,11 +1141,12 @@ const file_obb_session_proto_rawDesc = "" +
 	"\n" +
 	"specifiers\x18\x02 \x01(\tR\n" +
 	"specifiers\x125\n" +
-	"\boutcomes\x18\x03 \x03(\v2\x19.obb.SessionMarketOutcomeR\boutcomes\"I\n" +
+	"\boutcomes\x18\x03 \x03(\v2\x19.obb.SessionMarketOutcomeR\boutcomes\"r\n" +
 	"\x14SessionMarketOutcome\x12\x1d\n" +
 	"\n" +
 	"outcome_id\x18\x01 \x01(\tR\toutcomeId\x12\x12\n" +
-	"\x04odds\x18\x02 \x01(\x04R\x04odds\"~\n" +
+	"\x04odds\x18\x02 \x01(\x04R\x04odds\x12'\n" +
+	"\x0fraw_probability\x18\x03 \x01(\x01R\x0erawProbability\"~\n" +
 	"\x12SessionInfoRequest\x12\x1d\n" +
 	"\n" +
 	"session_id\x18\x01 \x01(\tR\tsessionId\x125\n" +

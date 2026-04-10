@@ -139,6 +139,9 @@ export namespace SessionCreateResponse {
     setAvailableMarketsList(value: Array<SessionMarket>): void;
     addAvailableMarkets(value?: SessionMarket, index?: number): SessionMarket;
 
+    getRawProbability(): number;
+    setRawProbability(value: number): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): SessionCreated.AsObject;
     static toObject(includeInstance: boolean, msg: SessionCreated): SessionCreated.AsObject;
@@ -154,6 +157,7 @@ export namespace SessionCreateResponse {
       selectionsList: Array<SessionSelection.AsObject>,
       odds: number,
       availableMarketsList: Array<SessionMarket.AsObject>,
+      rawProbability: number,
     }
   }
 
@@ -277,6 +281,9 @@ export class SessionMarketOutcome extends jspb.Message {
   getOdds(): number;
   setOdds(value: number): void;
 
+  getRawProbability(): number;
+  setRawProbability(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SessionMarketOutcome.AsObject;
   static toObject(includeInstance: boolean, msg: SessionMarketOutcome): SessionMarketOutcome.AsObject;
@@ -291,6 +298,7 @@ export namespace SessionMarketOutcome {
   export type AsObject = {
     outcomeId: string,
     odds: number,
+    rawProbability: number,
   }
 }
 
