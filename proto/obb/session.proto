@@ -85,6 +85,10 @@ message SessionCreateResponse {
 
     // Available markets for the new session with the current session selections.
     repeated SessionMarket available_markets = 3;
+
+    // Raw probability of the selected combination (value between 0.0 and 1.0).
+    // This is the combined probability of all selections in the session before margin is applied.
+    double raw_probability = 4;
   }
 
   message SessionRejected {
@@ -146,6 +150,10 @@ message SessionMarketOutcome {
 
   // Odds multiplied by 10000 and rounded to uint value.
   uint64 odds = 2;
+
+  // Raw probability for this outcome (value between 0.0 and 1.0).
+  // This is the probability of this selection before margin is applied.
+  double raw_probability = 3;
 }
 
 message SessionInfoRequest {

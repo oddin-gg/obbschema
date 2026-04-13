@@ -2899,6 +2899,17 @@ public final class Session {
        */
       com.oddin.obb.Session.SessionMarketOrBuilder getAvailableMarketsOrBuilder(
           int index);
+
+      /**
+       * <pre>
+       * Raw probability of the selected combination (value between 0.0 and 1.0).
+       * This is the combined probability of all selections in the session before margin is applied.
+       * </pre>
+       *
+       * <code>double raw_probability = 4 [json_name = "rawProbability"];</code>
+       * @return The rawProbability.
+       */
+      double getRawProbability();
     }
     /**
      * Protobuf type {@code obb.SessionCreateResponse.SessionCreated}
@@ -3078,6 +3089,22 @@ public final class Session {
         return availableMarkets_.get(index);
       }
 
+      public static final int RAW_PROBABILITY_FIELD_NUMBER = 4;
+      private double rawProbability_;
+      /**
+       * <pre>
+       * Raw probability of the selected combination (value between 0.0 and 1.0).
+       * This is the combined probability of all selections in the session before margin is applied.
+       * </pre>
+       *
+       * <code>double raw_probability = 4 [json_name = "rawProbability"];</code>
+       * @return The rawProbability.
+       */
+      @java.lang.Override
+      public double getRawProbability() {
+        return rawProbability_;
+      }
+
       private byte memoizedIsInitialized = -1;
       @java.lang.Override
       public final boolean isInitialized() {
@@ -3101,6 +3128,9 @@ public final class Session {
         for (int i = 0; i < availableMarkets_.size(); i++) {
           output.writeMessage(3, availableMarkets_.get(i));
         }
+        if (java.lang.Double.doubleToRawLongBits(rawProbability_) != 0) {
+          output.writeDouble(4, rawProbability_);
+        }
         getUnknownFields().writeTo(output);
       }
 
@@ -3121,6 +3151,10 @@ public final class Session {
         for (int i = 0; i < availableMarkets_.size(); i++) {
           size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(3, availableMarkets_.get(i));
+        }
+        if (java.lang.Double.doubleToRawLongBits(rawProbability_) != 0) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeDoubleSize(4, rawProbability_);
         }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
@@ -3143,6 +3177,9 @@ public final class Session {
             != other.getOdds()) return false;
         if (!getAvailableMarketsList()
             .equals(other.getAvailableMarketsList())) return false;
+        if (java.lang.Double.doubleToLongBits(getRawProbability())
+            != java.lang.Double.doubleToLongBits(
+                other.getRawProbability())) return false;
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
@@ -3165,6 +3202,9 @@ public final class Session {
           hash = (37 * hash) + AVAILABLE_MARKETS_FIELD_NUMBER;
           hash = (53 * hash) + getAvailableMarketsList().hashCode();
         }
+        hash = (37 * hash) + RAW_PROBABILITY_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            java.lang.Double.doubleToLongBits(getRawProbability()));
         hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -3309,6 +3349,8 @@ public final class Session {
             availableMarketsBuilder_.clear();
           }
           bitField0_ = (bitField0_ & ~0x00000002);
+          rawProbability_ = 0D;
+
           return this;
         }
 
@@ -3355,6 +3397,7 @@ public final class Session {
           } else {
             result.availableMarkets_ = availableMarketsBuilder_.build();
           }
+          result.rawProbability_ = rawProbability_;
           onBuilt();
           return result;
         }
@@ -3458,6 +3501,9 @@ public final class Session {
               }
             }
           }
+          if (other.getRawProbability() != 0D) {
+            setRawProbability(other.getRawProbability());
+          }
           this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
@@ -3515,6 +3561,11 @@ public final class Session {
                   }
                   break;
                 } // case 26
+                case 33: {
+                  rawProbability_ = input.readDouble();
+
+                  break;
+                } // case 33
                 default: {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                     done = true; // was an endgroup tag
@@ -4200,6 +4251,52 @@ public final class Session {
             availableMarkets_ = null;
           }
           return availableMarketsBuilder_;
+        }
+
+        private double rawProbability_ ;
+        /**
+         * <pre>
+         * Raw probability of the selected combination (value between 0.0 and 1.0).
+         * This is the combined probability of all selections in the session before margin is applied.
+         * </pre>
+         *
+         * <code>double raw_probability = 4 [json_name = "rawProbability"];</code>
+         * @return The rawProbability.
+         */
+        @java.lang.Override
+        public double getRawProbability() {
+          return rawProbability_;
+        }
+        /**
+         * <pre>
+         * Raw probability of the selected combination (value between 0.0 and 1.0).
+         * This is the combined probability of all selections in the session before margin is applied.
+         * </pre>
+         *
+         * <code>double raw_probability = 4 [json_name = "rawProbability"];</code>
+         * @param value The rawProbability to set.
+         * @return This builder for chaining.
+         */
+        public Builder setRawProbability(double value) {
+          
+          rawProbability_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Raw probability of the selected combination (value between 0.0 and 1.0).
+         * This is the combined probability of all selections in the session before margin is applied.
+         * </pre>
+         *
+         * <code>double raw_probability = 4 [json_name = "rawProbability"];</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearRawProbability() {
+          
+          rawProbability_ = 0D;
+          onChanged();
+          return this;
         }
         @java.lang.Override
         public final Builder setUnknownFields(
@@ -9007,6 +9104,17 @@ com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedRea
      * @return The odds.
      */
     long getOdds();
+
+    /**
+     * <pre>
+     * Raw probability for this outcome (value between 0.0 and 1.0).
+     * This is the probability of this selection before margin is applied.
+     * </pre>
+     *
+     * <code>double raw_probability = 3 [json_name = "rawProbability"];</code>
+     * @return The rawProbability.
+     */
+    double getRawProbability();
   }
   /**
    * Protobuf type {@code obb.SessionMarketOutcome}
@@ -9112,6 +9220,22 @@ com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedRea
       return odds_;
     }
 
+    public static final int RAW_PROBABILITY_FIELD_NUMBER = 3;
+    private double rawProbability_;
+    /**
+     * <pre>
+     * Raw probability for this outcome (value between 0.0 and 1.0).
+     * This is the probability of this selection before margin is applied.
+     * </pre>
+     *
+     * <code>double raw_probability = 3 [json_name = "rawProbability"];</code>
+     * @return The rawProbability.
+     */
+    @java.lang.Override
+    public double getRawProbability() {
+      return rawProbability_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -9132,6 +9256,9 @@ com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedRea
       if (odds_ != 0L) {
         output.writeUInt64(2, odds_);
       }
+      if (java.lang.Double.doubleToRawLongBits(rawProbability_) != 0) {
+        output.writeDouble(3, rawProbability_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -9147,6 +9274,10 @@ com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedRea
       if (odds_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(2, odds_);
+      }
+      if (java.lang.Double.doubleToRawLongBits(rawProbability_) != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(3, rawProbability_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -9167,6 +9298,9 @@ com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedRea
           .equals(other.getOutcomeId())) return false;
       if (getOdds()
           != other.getOdds()) return false;
+      if (java.lang.Double.doubleToLongBits(getRawProbability())
+          != java.lang.Double.doubleToLongBits(
+              other.getRawProbability())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -9183,6 +9317,9 @@ com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedRea
       hash = (37 * hash) + ODDS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getOdds());
+      hash = (37 * hash) + RAW_PROBABILITY_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getRawProbability()));
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -9315,6 +9452,8 @@ com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedRea
 
         odds_ = 0L;
 
+        rawProbability_ = 0D;
+
         return this;
       }
 
@@ -9343,6 +9482,7 @@ com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedRea
         com.oddin.obb.Session.SessionMarketOutcome result = new com.oddin.obb.Session.SessionMarketOutcome(this);
         result.outcomeId_ = outcomeId_;
         result.odds_ = odds_;
+        result.rawProbability_ = rawProbability_;
         onBuilt();
         return result;
       }
@@ -9398,6 +9538,9 @@ com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedRea
         if (other.getOdds() != 0L) {
           setOdds(other.getOdds());
         }
+        if (other.getRawProbability() != 0D) {
+          setRawProbability(other.getRawProbability());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -9434,6 +9577,11 @@ com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedRea
 
                 break;
               } // case 16
+              case 25: {
+                rawProbability_ = input.readDouble();
+
+                break;
+              } // case 25
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -9590,6 +9738,52 @@ com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedRea
       public Builder clearOdds() {
         
         odds_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private double rawProbability_ ;
+      /**
+       * <pre>
+       * Raw probability for this outcome (value between 0.0 and 1.0).
+       * This is the probability of this selection before margin is applied.
+       * </pre>
+       *
+       * <code>double raw_probability = 3 [json_name = "rawProbability"];</code>
+       * @return The rawProbability.
+       */
+      @java.lang.Override
+      public double getRawProbability() {
+        return rawProbability_;
+      }
+      /**
+       * <pre>
+       * Raw probability for this outcome (value between 0.0 and 1.0).
+       * This is the probability of this selection before margin is applied.
+       * </pre>
+       *
+       * <code>double raw_probability = 3 [json_name = "rawProbability"];</code>
+       * @param value The rawProbability to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRawProbability(double value) {
+        
+        rawProbability_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Raw probability for this outcome (value between 0.0 and 1.0).
+       * This is the probability of this selection before margin is applied.
+       * </pre>
+       *
+       * <code>double raw_probability = 3 [json_name = "rawProbability"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRawProbability() {
+        
+        rawProbability_ = 0D;
         onChanged();
         return this;
       }
@@ -13207,51 +13401,53 @@ com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedRea
       "\n\rCODE_INTERNAL\020\001\022\031\n\025CODE_INVALID_ARGUME" +
       "NT\020\002\022\020\n\014CODE_EXPIRED\020\003\022\022\n\016CODE_NOT_FOUND" +
       "\020\004\";\n\024SessionCreateRequest\022#\n\rselection_" +
-      "ids\030\002 \003(\tR\014selectionIds\"\202\007\n\025SessionCreat" +
+      "ids\030\002 \003(\tR\014selectionIds\"\253\007\n\025SessionCreat" +
       "eResponse\022\035\n\nsession_id\030\001 \001(\tR\tsessionId" +
       "\022E\n\007created\030\002 \001(\0132).obb.SessionCreateRes" +
       "ponse.SessionCreatedH\000R\007created\022H\n\010rejec" +
       "ted\030\003 \001(\0132*.obb.SessionCreateResponse.Se" +
-      "ssionRejectedH\000R\010rejected\032\234\001\n\016SessionCre" +
+      "ssionRejectedH\000R\010rejected\032\305\001\n\016SessionCre" +
       "ated\0225\n\nselections\030\001 \003(\0132\025.obb.SessionSe" +
       "lectionR\nselections\022\022\n\004odds\030\002 \001(\004R\004odds\022" +
       "?\n\021available_markets\030\003 \003(\0132\022.obb.Session" +
-      "MarketR\020availableMarkets\032\217\004\n\017SessionReje" +
-      "cted\0220\n\006reason\030\001 \001(\0132\030.obb.SessionReject" +
-      "ReasonR\006reason\022s\n\023selections_rejected\030\002 " +
-      "\003(\0132B.obb.SessionCreateResponse.SessionR" +
-      "ejected.SelectionsRejectedEntryR\022selecti" +
-      "onsRejected\032\310\001\n\027SelectionRejectedReason\022" +
-      "[\n\004code\030\001 \001(\0162G.obb.SessionCreateRespons" +
-      "e.SessionRejected.SelectionRejectedReaso" +
-      "n.CodeR\004code\022\030\n\007message\030\002 \001(\tR\007message\"6" +
-      "\n\004Code\022\024\n\020CODE_UNSPECIFIED\020\000\022\030\n\024CODE_INA" +
-      "CTIVE_MARKET\020\001\032\211\001\n\027SelectionsRejectedEnt" +
-      "ry\022\020\n\003key\030\001 \001(\tR\003key\022X\n\005value\030\002 \001(\0132B.ob" +
-      "b.SessionCreateResponse.SessionRejected." +
-      "SelectionRejectedReasonR\005value:\0028\001B\010\n\006st" +
-      "atus\"5\n\020SessionSelection\022!\n\014selection_id" +
-      "\030\001 \001(\tR\013selectionId\"\203\001\n\rSessionMarket\022\033\n" +
-      "\tmarket_id\030\001 \001(\rR\010marketId\022\036\n\nspecifiers" +
-      "\030\002 \001(\tR\nspecifiers\0225\n\010outcomes\030\003 \003(\0132\031.o" +
-      "bb.SessionMarketOutcomeR\010outcomes\"I\n\024Ses" +
-      "sionMarketOutcome\022\035\n\noutcome_id\030\001 \001(\tR\to" +
-      "utcomeId\022\022\n\004odds\030\002 \001(\004R\004odds\"~\n\022SessionI" +
-      "nfoRequest\022\035\n\nsession_id\030\001 \001(\tR\tsessionI" +
-      "d\0225\n\nselections\030\002 \003(\0132\025.obb.SessionSelec" +
-      "tionR\nselections\022\022\n\004odds\030\003 \001(\004R\004odds\"\227\002\n" +
-      "\023SessionInfoResponse\022\035\n\nsession_id\030\001 \001(\t" +
-      "R\tsessionId\022=\n\005valid\030\002 \001(\0132%.obb.Session" +
-      "InfoResponse.ValidSessionH\000R\005valid\022C\n\007in" +
-      "valid\030\003 \001(\0132\'.obb.SessionInfoResponse.In" +
-      "validSessionH\000R\007invalid\032\016\n\014ValidSession\032" +
-      "C\n\016InvalidSession\0221\n\006reason\030\001 \001(\0132\031.obb." +
-      "InvalidSessionReasonR\006reasonB\010\n\006status*e" +
-      "\n\rSessionStatus\022\036\n\032SESSION_STATUS_UNSPEC" +
-      "IFIED\020\000\022\030\n\024SESSION_STATUS_VALID\020\001\022\032\n\026SES" +
-      "SION_STATUS_INVALID\020\002B5\n\rcom.oddin.obbZ$" +
-      "github.com/oddin-gg/obbschema/go/obbb\006pr" +
-      "oto3"
+      "MarketR\020availableMarkets\022\'\n\017raw_probabil" +
+      "ity\030\004 \001(\001R\016rawProbability\032\217\004\n\017SessionRej" +
+      "ected\0220\n\006reason\030\001 \001(\0132\030.obb.SessionRejec" +
+      "tReasonR\006reason\022s\n\023selections_rejected\030\002" +
+      " \003(\0132B.obb.SessionCreateResponse.Session" +
+      "Rejected.SelectionsRejectedEntryR\022select" +
+      "ionsRejected\032\310\001\n\027SelectionRejectedReason" +
+      "\022[\n\004code\030\001 \001(\0162G.obb.SessionCreateRespon" +
+      "se.SessionRejected.SelectionRejectedReas" +
+      "on.CodeR\004code\022\030\n\007message\030\002 \001(\tR\007message\"" +
+      "6\n\004Code\022\024\n\020CODE_UNSPECIFIED\020\000\022\030\n\024CODE_IN" +
+      "ACTIVE_MARKET\020\001\032\211\001\n\027SelectionsRejectedEn" +
+      "try\022\020\n\003key\030\001 \001(\tR\003key\022X\n\005value\030\002 \001(\0132B.o" +
+      "bb.SessionCreateResponse.SessionRejected" +
+      ".SelectionRejectedReasonR\005value:\0028\001B\010\n\006s" +
+      "tatus\"5\n\020SessionSelection\022!\n\014selection_i" +
+      "d\030\001 \001(\tR\013selectionId\"\203\001\n\rSessionMarket\022\033" +
+      "\n\tmarket_id\030\001 \001(\rR\010marketId\022\036\n\nspecifier" +
+      "s\030\002 \001(\tR\nspecifiers\0225\n\010outcomes\030\003 \003(\0132\031." +
+      "obb.SessionMarketOutcomeR\010outcomes\"r\n\024Se" +
+      "ssionMarketOutcome\022\035\n\noutcome_id\030\001 \001(\tR\t" +
+      "outcomeId\022\022\n\004odds\030\002 \001(\004R\004odds\022\'\n\017raw_pro" +
+      "bability\030\003 \001(\001R\016rawProbability\"~\n\022Sessio" +
+      "nInfoRequest\022\035\n\nsession_id\030\001 \001(\tR\tsessio" +
+      "nId\0225\n\nselections\030\002 \003(\0132\025.obb.SessionSel" +
+      "ectionR\nselections\022\022\n\004odds\030\003 \001(\004R\004odds\"\227" +
+      "\002\n\023SessionInfoResponse\022\035\n\nsession_id\030\001 \001" +
+      "(\tR\tsessionId\022=\n\005valid\030\002 \001(\0132%.obb.Sessi" +
+      "onInfoResponse.ValidSessionH\000R\005valid\022C\n\007" +
+      "invalid\030\003 \001(\0132\'.obb.SessionInfoResponse." +
+      "InvalidSessionH\000R\007invalid\032\016\n\014ValidSessio" +
+      "n\032C\n\016InvalidSession\0221\n\006reason\030\001 \001(\0132\031.ob" +
+      "b.InvalidSessionReasonR\006reasonB\010\n\006status" +
+      "*e\n\rSessionStatus\022\036\n\032SESSION_STATUS_UNSP" +
+      "ECIFIED\020\000\022\030\n\024SESSION_STATUS_VALID\020\001\022\032\n\026S" +
+      "ESSION_STATUS_INVALID\020\002B5\n\rcom.oddin.obb" +
+      "Z$github.com/oddin-gg/obbschema/go/obbb\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -13286,7 +13482,7 @@ com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedRea
     internal_static_obb_SessionCreateResponse_SessionCreated_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_obb_SessionCreateResponse_SessionCreated_descriptor,
-        new java.lang.String[] { "Selections", "Odds", "AvailableMarkets", });
+        new java.lang.String[] { "Selections", "Odds", "AvailableMarkets", "RawProbability", });
     internal_static_obb_SessionCreateResponse_SessionRejected_descriptor =
       internal_static_obb_SessionCreateResponse_descriptor.getNestedTypes().get(1);
     internal_static_obb_SessionCreateResponse_SessionRejected_fieldAccessorTable = new
@@ -13322,7 +13518,7 @@ com.oddin.obb.Session.SessionCreateResponse.SessionRejected.SelectionRejectedRea
     internal_static_obb_SessionMarketOutcome_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_obb_SessionMarketOutcome_descriptor,
-        new java.lang.String[] { "OutcomeId", "Odds", });
+        new java.lang.String[] { "OutcomeId", "Odds", "RawProbability", });
     internal_static_obb_SessionInfoRequest_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_obb_SessionInfoRequest_fieldAccessorTable = new
