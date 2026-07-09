@@ -68,8 +68,9 @@ func (x *PopularCombinationRequest) GetEventId() string {
 
 type PopularCombinationResponse struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
-	// List of popular markets for OBB combinations.
-	Markets       []*PopularCombinationMarket `protobuf:"bytes,1,rep,name=markets,proto3" json:"markets,omitempty"`
+	// Popular selection combinations for the event, ready to be used
+	// in SessionCreateRequest without further processing.
+	Combinations  []*PopularCombination `protobuf:"bytes,2,rep,name=combinations,proto3" json:"combinations,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -104,38 +105,44 @@ func (*PopularCombinationResponse) Descriptor() ([]byte, []int) {
 	return file_obb_popular_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *PopularCombinationResponse) GetMarkets() []*PopularCombinationMarket {
+func (x *PopularCombinationResponse) GetCombinations() []*PopularCombination {
 	if x != nil {
-		return x.Markets
+		return x.Combinations
 	}
 	return nil
 }
 
-type PopularCombinationMarket struct {
+type PopularCombination struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
-	// The ID using the same values as our odds feed in XML.
-	MarketId uint32 `protobuf:"varint,1,opt,name=market_id,json=marketId,proto3" json:"market_id,omitempty"`
-	// The specifier is using the same values as our odds feed in XML.
-	// Example: "variant=way:three|way=three|map=1"
-	Specifiers    string `protobuf:"bytes,2,opt,name=specifiers,proto3" json:"specifiers,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	// Selections forming the combination, in the same format as
+	// SessionCreateRequest.selection_ids:
+	// "<event_id>/<market_id>/<outcome_id>?<market_specifier>"
+	// Example: "od:match:1234/1/1?map=1&way=two"
+	SelectionIds []string `protobuf:"bytes,1,rep,name=selection_ids,json=selectionIds,proto3" json:"selection_ids,omitempty"`
+	// Total odds for the whole combination.
+	// Odds multiplied by 10000 and rounded to uint value.
+	Odds uint64 `protobuf:"varint,2,opt,name=odds,proto3" json:"odds,omitempty"`
+	// Raw probability of the combination (value between 0.0 and 1.0).
+	// This is the combined probability of all selections before margin is applied.
+	RawProbability float64 `protobuf:"fixed64,3,opt,name=raw_probability,json=rawProbability,proto3" json:"raw_probability,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
 }
 
-func (x *PopularCombinationMarket) Reset() {
-	*x = PopularCombinationMarket{}
+func (x *PopularCombination) Reset() {
+	*x = PopularCombination{}
 	mi := &file_obb_popular_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *PopularCombinationMarket) String() string {
+func (x *PopularCombination) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*PopularCombinationMarket) ProtoMessage() {}
+func (*PopularCombination) ProtoMessage() {}
 
-func (x *PopularCombinationMarket) ProtoReflect() protoreflect.Message {
+func (x *PopularCombination) ProtoReflect() protoreflect.Message {
 	mi := &file_obb_popular_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -147,23 +154,30 @@ func (x *PopularCombinationMarket) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use PopularCombinationMarket.ProtoReflect.Descriptor instead.
-func (*PopularCombinationMarket) Descriptor() ([]byte, []int) {
+// Deprecated: Use PopularCombination.ProtoReflect.Descriptor instead.
+func (*PopularCombination) Descriptor() ([]byte, []int) {
 	return file_obb_popular_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *PopularCombinationMarket) GetMarketId() uint32 {
+func (x *PopularCombination) GetSelectionIds() []string {
 	if x != nil {
-		return x.MarketId
+		return x.SelectionIds
+	}
+	return nil
+}
+
+func (x *PopularCombination) GetOdds() uint64 {
+	if x != nil {
+		return x.Odds
 	}
 	return 0
 }
 
-func (x *PopularCombinationMarket) GetSpecifiers() string {
+func (x *PopularCombination) GetRawProbability() float64 {
 	if x != nil {
-		return x.Specifiers
+		return x.RawProbability
 	}
-	return ""
+	return 0
 }
 
 var File_obb_popular_proto protoreflect.FileDescriptor
@@ -172,14 +186,13 @@ const file_obb_popular_proto_rawDesc = "" +
 	"\n" +
 	"\x11obb/popular.proto\x12\x03obb\"6\n" +
 	"\x19PopularCombinationRequest\x12\x19\n" +
-	"\bevent_id\x18\x01 \x01(\tR\aeventId\"U\n" +
-	"\x1aPopularCombinationResponse\x127\n" +
-	"\amarkets\x18\x01 \x03(\v2\x1d.obb.PopularCombinationMarketR\amarkets\"W\n" +
-	"\x18PopularCombinationMarket\x12\x1b\n" +
-	"\tmarket_id\x18\x01 \x01(\rR\bmarketId\x12\x1e\n" +
-	"\n" +
-	"specifiers\x18\x02 \x01(\tR\n" +
-	"specifiersB5\n" +
+	"\bevent_id\x18\x01 \x01(\tR\aeventId\"h\n" +
+	"\x1aPopularCombinationResponse\x12;\n" +
+	"\fcombinations\x18\x02 \x03(\v2\x17.obb.PopularCombinationR\fcombinationsJ\x04\b\x01\x10\x02R\amarkets\"v\n" +
+	"\x12PopularCombination\x12#\n" +
+	"\rselection_ids\x18\x01 \x03(\tR\fselectionIds\x12\x12\n" +
+	"\x04odds\x18\x02 \x01(\x04R\x04odds\x12'\n" +
+	"\x0fraw_probability\x18\x03 \x01(\x01R\x0erawProbabilityB5\n" +
 	"\rcom.oddin.obbZ$github.com/oddin-gg/obbschema/go/obbb\x06proto3"
 
 var (
@@ -198,10 +211,10 @@ var file_obb_popular_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
 var file_obb_popular_proto_goTypes = []any{
 	(*PopularCombinationRequest)(nil),  // 0: obb.PopularCombinationRequest
 	(*PopularCombinationResponse)(nil), // 1: obb.PopularCombinationResponse
-	(*PopularCombinationMarket)(nil),   // 2: obb.PopularCombinationMarket
+	(*PopularCombination)(nil),         // 2: obb.PopularCombination
 }
 var file_obb_popular_proto_depIdxs = []int32{
-	2, // 0: obb.PopularCombinationResponse.markets:type_name -> obb.PopularCombinationMarket
+	2, // 0: obb.PopularCombinationResponse.combinations:type_name -> obb.PopularCombination
 	1, // [1:1] is the sub-list for method output_type
 	1, // [1:1] is the sub-list for method input_type
 	1, // [1:1] is the sub-list for extension type_name

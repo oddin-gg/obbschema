@@ -605,46 +605,51 @@ public final class Popular {
 
     /**
      * <pre>
-     * List of popular markets for OBB combinations.
+     * Popular selection combinations for the event, ready to be used
+     * in SessionCreateRequest without further processing.
      * </pre>
      *
-     * <code>repeated .obb.PopularCombinationMarket markets = 1 [json_name = "markets"];</code>
+     * <code>repeated .obb.PopularCombination combinations = 2 [json_name = "combinations"];</code>
      */
-    java.util.List<com.oddin.obb.Popular.PopularCombinationMarket> 
-        getMarketsList();
+    java.util.List<com.oddin.obb.Popular.PopularCombination> 
+        getCombinationsList();
     /**
      * <pre>
-     * List of popular markets for OBB combinations.
+     * Popular selection combinations for the event, ready to be used
+     * in SessionCreateRequest without further processing.
      * </pre>
      *
-     * <code>repeated .obb.PopularCombinationMarket markets = 1 [json_name = "markets"];</code>
+     * <code>repeated .obb.PopularCombination combinations = 2 [json_name = "combinations"];</code>
      */
-    com.oddin.obb.Popular.PopularCombinationMarket getMarkets(int index);
+    com.oddin.obb.Popular.PopularCombination getCombinations(int index);
     /**
      * <pre>
-     * List of popular markets for OBB combinations.
+     * Popular selection combinations for the event, ready to be used
+     * in SessionCreateRequest without further processing.
      * </pre>
      *
-     * <code>repeated .obb.PopularCombinationMarket markets = 1 [json_name = "markets"];</code>
+     * <code>repeated .obb.PopularCombination combinations = 2 [json_name = "combinations"];</code>
      */
-    int getMarketsCount();
+    int getCombinationsCount();
     /**
      * <pre>
-     * List of popular markets for OBB combinations.
+     * Popular selection combinations for the event, ready to be used
+     * in SessionCreateRequest without further processing.
      * </pre>
      *
-     * <code>repeated .obb.PopularCombinationMarket markets = 1 [json_name = "markets"];</code>
+     * <code>repeated .obb.PopularCombination combinations = 2 [json_name = "combinations"];</code>
      */
-    java.util.List<? extends com.oddin.obb.Popular.PopularCombinationMarketOrBuilder> 
-        getMarketsOrBuilderList();
+    java.util.List<? extends com.oddin.obb.Popular.PopularCombinationOrBuilder> 
+        getCombinationsOrBuilderList();
     /**
      * <pre>
-     * List of popular markets for OBB combinations.
+     * Popular selection combinations for the event, ready to be used
+     * in SessionCreateRequest without further processing.
      * </pre>
      *
-     * <code>repeated .obb.PopularCombinationMarket markets = 1 [json_name = "markets"];</code>
+     * <code>repeated .obb.PopularCombination combinations = 2 [json_name = "combinations"];</code>
      */
-    com.oddin.obb.Popular.PopularCombinationMarketOrBuilder getMarketsOrBuilder(
+    com.oddin.obb.Popular.PopularCombinationOrBuilder getCombinationsOrBuilder(
         int index);
   }
   /**
@@ -660,7 +665,7 @@ public final class Popular {
       super(builder);
     }
     private PopularCombinationResponse() {
-      markets_ = java.util.Collections.emptyList();
+      combinations_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -688,64 +693,69 @@ public final class Popular {
               com.oddin.obb.Popular.PopularCombinationResponse.class, com.oddin.obb.Popular.PopularCombinationResponse.Builder.class);
     }
 
-    public static final int MARKETS_FIELD_NUMBER = 1;
-    private java.util.List<com.oddin.obb.Popular.PopularCombinationMarket> markets_;
+    public static final int COMBINATIONS_FIELD_NUMBER = 2;
+    private java.util.List<com.oddin.obb.Popular.PopularCombination> combinations_;
     /**
      * <pre>
-     * List of popular markets for OBB combinations.
+     * Popular selection combinations for the event, ready to be used
+     * in SessionCreateRequest without further processing.
      * </pre>
      *
-     * <code>repeated .obb.PopularCombinationMarket markets = 1 [json_name = "markets"];</code>
+     * <code>repeated .obb.PopularCombination combinations = 2 [json_name = "combinations"];</code>
      */
     @java.lang.Override
-    public java.util.List<com.oddin.obb.Popular.PopularCombinationMarket> getMarketsList() {
-      return markets_;
+    public java.util.List<com.oddin.obb.Popular.PopularCombination> getCombinationsList() {
+      return combinations_;
     }
     /**
      * <pre>
-     * List of popular markets for OBB combinations.
+     * Popular selection combinations for the event, ready to be used
+     * in SessionCreateRequest without further processing.
      * </pre>
      *
-     * <code>repeated .obb.PopularCombinationMarket markets = 1 [json_name = "markets"];</code>
+     * <code>repeated .obb.PopularCombination combinations = 2 [json_name = "combinations"];</code>
      */
     @java.lang.Override
-    public java.util.List<? extends com.oddin.obb.Popular.PopularCombinationMarketOrBuilder> 
-        getMarketsOrBuilderList() {
-      return markets_;
+    public java.util.List<? extends com.oddin.obb.Popular.PopularCombinationOrBuilder> 
+        getCombinationsOrBuilderList() {
+      return combinations_;
     }
     /**
      * <pre>
-     * List of popular markets for OBB combinations.
+     * Popular selection combinations for the event, ready to be used
+     * in SessionCreateRequest without further processing.
      * </pre>
      *
-     * <code>repeated .obb.PopularCombinationMarket markets = 1 [json_name = "markets"];</code>
+     * <code>repeated .obb.PopularCombination combinations = 2 [json_name = "combinations"];</code>
      */
     @java.lang.Override
-    public int getMarketsCount() {
-      return markets_.size();
+    public int getCombinationsCount() {
+      return combinations_.size();
     }
     /**
      * <pre>
-     * List of popular markets for OBB combinations.
+     * Popular selection combinations for the event, ready to be used
+     * in SessionCreateRequest without further processing.
      * </pre>
      *
-     * <code>repeated .obb.PopularCombinationMarket markets = 1 [json_name = "markets"];</code>
+     * <code>repeated .obb.PopularCombination combinations = 2 [json_name = "combinations"];</code>
      */
     @java.lang.Override
-    public com.oddin.obb.Popular.PopularCombinationMarket getMarkets(int index) {
-      return markets_.get(index);
+    public com.oddin.obb.Popular.PopularCombination getCombinations(int index) {
+      return combinations_.get(index);
     }
     /**
      * <pre>
-     * List of popular markets for OBB combinations.
+     * Popular selection combinations for the event, ready to be used
+     * in SessionCreateRequest without further processing.
      * </pre>
      *
-     * <code>repeated .obb.PopularCombinationMarket markets = 1 [json_name = "markets"];</code>
+     * <code>repeated .obb.PopularCombination combinations = 2 [json_name = "combinations"];</code>
      */
     @java.lang.Override
-    public com.oddin.obb.Popular.PopularCombinationMarketOrBuilder getMarketsOrBuilder(
+    public com.oddin.obb.Popular.PopularCombinationOrBuilder getCombinationsOrBuilder(
         int index) {
-      return markets_.get(index);
+      return combinations_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -762,8 +772,8 @@ public final class Popular {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < markets_.size(); i++) {
-        output.writeMessage(1, markets_.get(i));
+      for (int i = 0; i < combinations_.size(); i++) {
+        output.writeMessage(2, combinations_.get(i));
       }
       getUnknownFields().writeTo(output);
     }
@@ -774,9 +784,9 @@ public final class Popular {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < markets_.size(); i++) {
+      for (int i = 0; i < combinations_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, markets_.get(i));
+          .computeMessageSize(2, combinations_.get(i));
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -793,8 +803,8 @@ public final class Popular {
       }
       com.oddin.obb.Popular.PopularCombinationResponse other = (com.oddin.obb.Popular.PopularCombinationResponse) obj;
 
-      if (!getMarketsList()
-          .equals(other.getMarketsList())) return false;
+      if (!getCombinationsList()
+          .equals(other.getCombinationsList())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -806,9 +816,9 @@ public final class Popular {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getMarketsCount() > 0) {
-        hash = (37 * hash) + MARKETS_FIELD_NUMBER;
-        hash = (53 * hash) + getMarketsList().hashCode();
+      if (getCombinationsCount() > 0) {
+        hash = (37 * hash) + COMBINATIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getCombinationsList().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -938,11 +948,11 @@ public final class Popular {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (marketsBuilder_ == null) {
-          markets_ = java.util.Collections.emptyList();
+        if (combinationsBuilder_ == null) {
+          combinations_ = java.util.Collections.emptyList();
         } else {
-          markets_ = null;
-          marketsBuilder_.clear();
+          combinations_ = null;
+          combinationsBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
@@ -972,14 +982,14 @@ public final class Popular {
       public com.oddin.obb.Popular.PopularCombinationResponse buildPartial() {
         com.oddin.obb.Popular.PopularCombinationResponse result = new com.oddin.obb.Popular.PopularCombinationResponse(this);
         int from_bitField0_ = bitField0_;
-        if (marketsBuilder_ == null) {
+        if (combinationsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
-            markets_ = java.util.Collections.unmodifiableList(markets_);
+            combinations_ = java.util.Collections.unmodifiableList(combinations_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
-          result.markets_ = markets_;
+          result.combinations_ = combinations_;
         } else {
-          result.markets_ = marketsBuilder_.build();
+          result.combinations_ = combinationsBuilder_.build();
         }
         onBuilt();
         return result;
@@ -1029,29 +1039,29 @@ public final class Popular {
 
       public Builder mergeFrom(com.oddin.obb.Popular.PopularCombinationResponse other) {
         if (other == com.oddin.obb.Popular.PopularCombinationResponse.getDefaultInstance()) return this;
-        if (marketsBuilder_ == null) {
-          if (!other.markets_.isEmpty()) {
-            if (markets_.isEmpty()) {
-              markets_ = other.markets_;
+        if (combinationsBuilder_ == null) {
+          if (!other.combinations_.isEmpty()) {
+            if (combinations_.isEmpty()) {
+              combinations_ = other.combinations_;
               bitField0_ = (bitField0_ & ~0x00000001);
             } else {
-              ensureMarketsIsMutable();
-              markets_.addAll(other.markets_);
+              ensureCombinationsIsMutable();
+              combinations_.addAll(other.combinations_);
             }
             onChanged();
           }
         } else {
-          if (!other.markets_.isEmpty()) {
-            if (marketsBuilder_.isEmpty()) {
-              marketsBuilder_.dispose();
-              marketsBuilder_ = null;
-              markets_ = other.markets_;
+          if (!other.combinations_.isEmpty()) {
+            if (combinationsBuilder_.isEmpty()) {
+              combinationsBuilder_.dispose();
+              combinationsBuilder_ = null;
+              combinations_ = other.combinations_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              marketsBuilder_ = 
+              combinationsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getMarketsFieldBuilder() : null;
+                   getCombinationsFieldBuilder() : null;
             } else {
-              marketsBuilder_.addAllMessages(other.markets_);
+              combinationsBuilder_.addAllMessages(other.combinations_);
             }
           }
         }
@@ -1081,19 +1091,19 @@ public final class Popular {
               case 0:
                 done = true;
                 break;
-              case 10: {
-                com.oddin.obb.Popular.PopularCombinationMarket m =
+              case 18: {
+                com.oddin.obb.Popular.PopularCombination m =
                     input.readMessage(
-                        com.oddin.obb.Popular.PopularCombinationMarket.parser(),
+                        com.oddin.obb.Popular.PopularCombination.parser(),
                         extensionRegistry);
-                if (marketsBuilder_ == null) {
-                  ensureMarketsIsMutable();
-                  markets_.add(m);
+                if (combinationsBuilder_ == null) {
+                  ensureCombinationsIsMutable();
+                  combinations_.add(m);
                 } else {
-                  marketsBuilder_.addMessage(m);
+                  combinationsBuilder_.addMessage(m);
                 }
                 break;
-              } // case 10
+              } // case 18
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -1111,316 +1121,334 @@ public final class Popular {
       }
       private int bitField0_;
 
-      private java.util.List<com.oddin.obb.Popular.PopularCombinationMarket> markets_ =
+      private java.util.List<com.oddin.obb.Popular.PopularCombination> combinations_ =
         java.util.Collections.emptyList();
-      private void ensureMarketsIsMutable() {
+      private void ensureCombinationsIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          markets_ = new java.util.ArrayList<com.oddin.obb.Popular.PopularCombinationMarket>(markets_);
+          combinations_ = new java.util.ArrayList<com.oddin.obb.Popular.PopularCombination>(combinations_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.oddin.obb.Popular.PopularCombinationMarket, com.oddin.obb.Popular.PopularCombinationMarket.Builder, com.oddin.obb.Popular.PopularCombinationMarketOrBuilder> marketsBuilder_;
+          com.oddin.obb.Popular.PopularCombination, com.oddin.obb.Popular.PopularCombination.Builder, com.oddin.obb.Popular.PopularCombinationOrBuilder> combinationsBuilder_;
 
       /**
        * <pre>
-       * List of popular markets for OBB combinations.
+       * Popular selection combinations for the event, ready to be used
+       * in SessionCreateRequest without further processing.
        * </pre>
        *
-       * <code>repeated .obb.PopularCombinationMarket markets = 1 [json_name = "markets"];</code>
+       * <code>repeated .obb.PopularCombination combinations = 2 [json_name = "combinations"];</code>
        */
-      public java.util.List<com.oddin.obb.Popular.PopularCombinationMarket> getMarketsList() {
-        if (marketsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(markets_);
+      public java.util.List<com.oddin.obb.Popular.PopularCombination> getCombinationsList() {
+        if (combinationsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(combinations_);
         } else {
-          return marketsBuilder_.getMessageList();
+          return combinationsBuilder_.getMessageList();
         }
       }
       /**
        * <pre>
-       * List of popular markets for OBB combinations.
+       * Popular selection combinations for the event, ready to be used
+       * in SessionCreateRequest without further processing.
        * </pre>
        *
-       * <code>repeated .obb.PopularCombinationMarket markets = 1 [json_name = "markets"];</code>
+       * <code>repeated .obb.PopularCombination combinations = 2 [json_name = "combinations"];</code>
        */
-      public int getMarketsCount() {
-        if (marketsBuilder_ == null) {
-          return markets_.size();
+      public int getCombinationsCount() {
+        if (combinationsBuilder_ == null) {
+          return combinations_.size();
         } else {
-          return marketsBuilder_.getCount();
+          return combinationsBuilder_.getCount();
         }
       }
       /**
        * <pre>
-       * List of popular markets for OBB combinations.
+       * Popular selection combinations for the event, ready to be used
+       * in SessionCreateRequest without further processing.
        * </pre>
        *
-       * <code>repeated .obb.PopularCombinationMarket markets = 1 [json_name = "markets"];</code>
+       * <code>repeated .obb.PopularCombination combinations = 2 [json_name = "combinations"];</code>
        */
-      public com.oddin.obb.Popular.PopularCombinationMarket getMarkets(int index) {
-        if (marketsBuilder_ == null) {
-          return markets_.get(index);
+      public com.oddin.obb.Popular.PopularCombination getCombinations(int index) {
+        if (combinationsBuilder_ == null) {
+          return combinations_.get(index);
         } else {
-          return marketsBuilder_.getMessage(index);
+          return combinationsBuilder_.getMessage(index);
         }
       }
       /**
        * <pre>
-       * List of popular markets for OBB combinations.
+       * Popular selection combinations for the event, ready to be used
+       * in SessionCreateRequest without further processing.
        * </pre>
        *
-       * <code>repeated .obb.PopularCombinationMarket markets = 1 [json_name = "markets"];</code>
+       * <code>repeated .obb.PopularCombination combinations = 2 [json_name = "combinations"];</code>
        */
-      public Builder setMarkets(
-          int index, com.oddin.obb.Popular.PopularCombinationMarket value) {
-        if (marketsBuilder_ == null) {
+      public Builder setCombinations(
+          int index, com.oddin.obb.Popular.PopularCombination value) {
+        if (combinationsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureMarketsIsMutable();
-          markets_.set(index, value);
+          ensureCombinationsIsMutable();
+          combinations_.set(index, value);
           onChanged();
         } else {
-          marketsBuilder_.setMessage(index, value);
+          combinationsBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
        * <pre>
-       * List of popular markets for OBB combinations.
+       * Popular selection combinations for the event, ready to be used
+       * in SessionCreateRequest without further processing.
        * </pre>
        *
-       * <code>repeated .obb.PopularCombinationMarket markets = 1 [json_name = "markets"];</code>
+       * <code>repeated .obb.PopularCombination combinations = 2 [json_name = "combinations"];</code>
        */
-      public Builder setMarkets(
-          int index, com.oddin.obb.Popular.PopularCombinationMarket.Builder builderForValue) {
-        if (marketsBuilder_ == null) {
-          ensureMarketsIsMutable();
-          markets_.set(index, builderForValue.build());
+      public Builder setCombinations(
+          int index, com.oddin.obb.Popular.PopularCombination.Builder builderForValue) {
+        if (combinationsBuilder_ == null) {
+          ensureCombinationsIsMutable();
+          combinations_.set(index, builderForValue.build());
           onChanged();
         } else {
-          marketsBuilder_.setMessage(index, builderForValue.build());
+          combinationsBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
        * <pre>
-       * List of popular markets for OBB combinations.
+       * Popular selection combinations for the event, ready to be used
+       * in SessionCreateRequest without further processing.
        * </pre>
        *
-       * <code>repeated .obb.PopularCombinationMarket markets = 1 [json_name = "markets"];</code>
+       * <code>repeated .obb.PopularCombination combinations = 2 [json_name = "combinations"];</code>
        */
-      public Builder addMarkets(com.oddin.obb.Popular.PopularCombinationMarket value) {
-        if (marketsBuilder_ == null) {
+      public Builder addCombinations(com.oddin.obb.Popular.PopularCombination value) {
+        if (combinationsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureMarketsIsMutable();
-          markets_.add(value);
+          ensureCombinationsIsMutable();
+          combinations_.add(value);
           onChanged();
         } else {
-          marketsBuilder_.addMessage(value);
+          combinationsBuilder_.addMessage(value);
         }
         return this;
       }
       /**
        * <pre>
-       * List of popular markets for OBB combinations.
+       * Popular selection combinations for the event, ready to be used
+       * in SessionCreateRequest without further processing.
        * </pre>
        *
-       * <code>repeated .obb.PopularCombinationMarket markets = 1 [json_name = "markets"];</code>
+       * <code>repeated .obb.PopularCombination combinations = 2 [json_name = "combinations"];</code>
        */
-      public Builder addMarkets(
-          int index, com.oddin.obb.Popular.PopularCombinationMarket value) {
-        if (marketsBuilder_ == null) {
+      public Builder addCombinations(
+          int index, com.oddin.obb.Popular.PopularCombination value) {
+        if (combinationsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureMarketsIsMutable();
-          markets_.add(index, value);
+          ensureCombinationsIsMutable();
+          combinations_.add(index, value);
           onChanged();
         } else {
-          marketsBuilder_.addMessage(index, value);
+          combinationsBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
        * <pre>
-       * List of popular markets for OBB combinations.
+       * Popular selection combinations for the event, ready to be used
+       * in SessionCreateRequest without further processing.
        * </pre>
        *
-       * <code>repeated .obb.PopularCombinationMarket markets = 1 [json_name = "markets"];</code>
+       * <code>repeated .obb.PopularCombination combinations = 2 [json_name = "combinations"];</code>
        */
-      public Builder addMarkets(
-          com.oddin.obb.Popular.PopularCombinationMarket.Builder builderForValue) {
-        if (marketsBuilder_ == null) {
-          ensureMarketsIsMutable();
-          markets_.add(builderForValue.build());
+      public Builder addCombinations(
+          com.oddin.obb.Popular.PopularCombination.Builder builderForValue) {
+        if (combinationsBuilder_ == null) {
+          ensureCombinationsIsMutable();
+          combinations_.add(builderForValue.build());
           onChanged();
         } else {
-          marketsBuilder_.addMessage(builderForValue.build());
+          combinationsBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
        * <pre>
-       * List of popular markets for OBB combinations.
+       * Popular selection combinations for the event, ready to be used
+       * in SessionCreateRequest without further processing.
        * </pre>
        *
-       * <code>repeated .obb.PopularCombinationMarket markets = 1 [json_name = "markets"];</code>
+       * <code>repeated .obb.PopularCombination combinations = 2 [json_name = "combinations"];</code>
        */
-      public Builder addMarkets(
-          int index, com.oddin.obb.Popular.PopularCombinationMarket.Builder builderForValue) {
-        if (marketsBuilder_ == null) {
-          ensureMarketsIsMutable();
-          markets_.add(index, builderForValue.build());
+      public Builder addCombinations(
+          int index, com.oddin.obb.Popular.PopularCombination.Builder builderForValue) {
+        if (combinationsBuilder_ == null) {
+          ensureCombinationsIsMutable();
+          combinations_.add(index, builderForValue.build());
           onChanged();
         } else {
-          marketsBuilder_.addMessage(index, builderForValue.build());
+          combinationsBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
        * <pre>
-       * List of popular markets for OBB combinations.
+       * Popular selection combinations for the event, ready to be used
+       * in SessionCreateRequest without further processing.
        * </pre>
        *
-       * <code>repeated .obb.PopularCombinationMarket markets = 1 [json_name = "markets"];</code>
+       * <code>repeated .obb.PopularCombination combinations = 2 [json_name = "combinations"];</code>
        */
-      public Builder addAllMarkets(
-          java.lang.Iterable<? extends com.oddin.obb.Popular.PopularCombinationMarket> values) {
-        if (marketsBuilder_ == null) {
-          ensureMarketsIsMutable();
+      public Builder addAllCombinations(
+          java.lang.Iterable<? extends com.oddin.obb.Popular.PopularCombination> values) {
+        if (combinationsBuilder_ == null) {
+          ensureCombinationsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, markets_);
+              values, combinations_);
           onChanged();
         } else {
-          marketsBuilder_.addAllMessages(values);
+          combinationsBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
        * <pre>
-       * List of popular markets for OBB combinations.
+       * Popular selection combinations for the event, ready to be used
+       * in SessionCreateRequest without further processing.
        * </pre>
        *
-       * <code>repeated .obb.PopularCombinationMarket markets = 1 [json_name = "markets"];</code>
+       * <code>repeated .obb.PopularCombination combinations = 2 [json_name = "combinations"];</code>
        */
-      public Builder clearMarkets() {
-        if (marketsBuilder_ == null) {
-          markets_ = java.util.Collections.emptyList();
+      public Builder clearCombinations() {
+        if (combinationsBuilder_ == null) {
+          combinations_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
-          marketsBuilder_.clear();
+          combinationsBuilder_.clear();
         }
         return this;
       }
       /**
        * <pre>
-       * List of popular markets for OBB combinations.
+       * Popular selection combinations for the event, ready to be used
+       * in SessionCreateRequest without further processing.
        * </pre>
        *
-       * <code>repeated .obb.PopularCombinationMarket markets = 1 [json_name = "markets"];</code>
+       * <code>repeated .obb.PopularCombination combinations = 2 [json_name = "combinations"];</code>
        */
-      public Builder removeMarkets(int index) {
-        if (marketsBuilder_ == null) {
-          ensureMarketsIsMutable();
-          markets_.remove(index);
+      public Builder removeCombinations(int index) {
+        if (combinationsBuilder_ == null) {
+          ensureCombinationsIsMutable();
+          combinations_.remove(index);
           onChanged();
         } else {
-          marketsBuilder_.remove(index);
+          combinationsBuilder_.remove(index);
         }
         return this;
       }
       /**
        * <pre>
-       * List of popular markets for OBB combinations.
+       * Popular selection combinations for the event, ready to be used
+       * in SessionCreateRequest without further processing.
        * </pre>
        *
-       * <code>repeated .obb.PopularCombinationMarket markets = 1 [json_name = "markets"];</code>
+       * <code>repeated .obb.PopularCombination combinations = 2 [json_name = "combinations"];</code>
        */
-      public com.oddin.obb.Popular.PopularCombinationMarket.Builder getMarketsBuilder(
+      public com.oddin.obb.Popular.PopularCombination.Builder getCombinationsBuilder(
           int index) {
-        return getMarketsFieldBuilder().getBuilder(index);
+        return getCombinationsFieldBuilder().getBuilder(index);
       }
       /**
        * <pre>
-       * List of popular markets for OBB combinations.
+       * Popular selection combinations for the event, ready to be used
+       * in SessionCreateRequest without further processing.
        * </pre>
        *
-       * <code>repeated .obb.PopularCombinationMarket markets = 1 [json_name = "markets"];</code>
+       * <code>repeated .obb.PopularCombination combinations = 2 [json_name = "combinations"];</code>
        */
-      public com.oddin.obb.Popular.PopularCombinationMarketOrBuilder getMarketsOrBuilder(
+      public com.oddin.obb.Popular.PopularCombinationOrBuilder getCombinationsOrBuilder(
           int index) {
-        if (marketsBuilder_ == null) {
-          return markets_.get(index);  } else {
-          return marketsBuilder_.getMessageOrBuilder(index);
+        if (combinationsBuilder_ == null) {
+          return combinations_.get(index);  } else {
+          return combinationsBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
        * <pre>
-       * List of popular markets for OBB combinations.
+       * Popular selection combinations for the event, ready to be used
+       * in SessionCreateRequest without further processing.
        * </pre>
        *
-       * <code>repeated .obb.PopularCombinationMarket markets = 1 [json_name = "markets"];</code>
+       * <code>repeated .obb.PopularCombination combinations = 2 [json_name = "combinations"];</code>
        */
-      public java.util.List<? extends com.oddin.obb.Popular.PopularCombinationMarketOrBuilder> 
-           getMarketsOrBuilderList() {
-        if (marketsBuilder_ != null) {
-          return marketsBuilder_.getMessageOrBuilderList();
+      public java.util.List<? extends com.oddin.obb.Popular.PopularCombinationOrBuilder> 
+           getCombinationsOrBuilderList() {
+        if (combinationsBuilder_ != null) {
+          return combinationsBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(markets_);
+          return java.util.Collections.unmodifiableList(combinations_);
         }
       }
       /**
        * <pre>
-       * List of popular markets for OBB combinations.
+       * Popular selection combinations for the event, ready to be used
+       * in SessionCreateRequest without further processing.
        * </pre>
        *
-       * <code>repeated .obb.PopularCombinationMarket markets = 1 [json_name = "markets"];</code>
+       * <code>repeated .obb.PopularCombination combinations = 2 [json_name = "combinations"];</code>
        */
-      public com.oddin.obb.Popular.PopularCombinationMarket.Builder addMarketsBuilder() {
-        return getMarketsFieldBuilder().addBuilder(
-            com.oddin.obb.Popular.PopularCombinationMarket.getDefaultInstance());
+      public com.oddin.obb.Popular.PopularCombination.Builder addCombinationsBuilder() {
+        return getCombinationsFieldBuilder().addBuilder(
+            com.oddin.obb.Popular.PopularCombination.getDefaultInstance());
       }
       /**
        * <pre>
-       * List of popular markets for OBB combinations.
+       * Popular selection combinations for the event, ready to be used
+       * in SessionCreateRequest without further processing.
        * </pre>
        *
-       * <code>repeated .obb.PopularCombinationMarket markets = 1 [json_name = "markets"];</code>
+       * <code>repeated .obb.PopularCombination combinations = 2 [json_name = "combinations"];</code>
        */
-      public com.oddin.obb.Popular.PopularCombinationMarket.Builder addMarketsBuilder(
+      public com.oddin.obb.Popular.PopularCombination.Builder addCombinationsBuilder(
           int index) {
-        return getMarketsFieldBuilder().addBuilder(
-            index, com.oddin.obb.Popular.PopularCombinationMarket.getDefaultInstance());
+        return getCombinationsFieldBuilder().addBuilder(
+            index, com.oddin.obb.Popular.PopularCombination.getDefaultInstance());
       }
       /**
        * <pre>
-       * List of popular markets for OBB combinations.
+       * Popular selection combinations for the event, ready to be used
+       * in SessionCreateRequest without further processing.
        * </pre>
        *
-       * <code>repeated .obb.PopularCombinationMarket markets = 1 [json_name = "markets"];</code>
+       * <code>repeated .obb.PopularCombination combinations = 2 [json_name = "combinations"];</code>
        */
-      public java.util.List<com.oddin.obb.Popular.PopularCombinationMarket.Builder> 
-           getMarketsBuilderList() {
-        return getMarketsFieldBuilder().getBuilderList();
+      public java.util.List<com.oddin.obb.Popular.PopularCombination.Builder> 
+           getCombinationsBuilderList() {
+        return getCombinationsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.oddin.obb.Popular.PopularCombinationMarket, com.oddin.obb.Popular.PopularCombinationMarket.Builder, com.oddin.obb.Popular.PopularCombinationMarketOrBuilder> 
-          getMarketsFieldBuilder() {
-        if (marketsBuilder_ == null) {
-          marketsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.oddin.obb.Popular.PopularCombinationMarket, com.oddin.obb.Popular.PopularCombinationMarket.Builder, com.oddin.obb.Popular.PopularCombinationMarketOrBuilder>(
-                  markets_,
+          com.oddin.obb.Popular.PopularCombination, com.oddin.obb.Popular.PopularCombination.Builder, com.oddin.obb.Popular.PopularCombinationOrBuilder> 
+          getCombinationsFieldBuilder() {
+        if (combinationsBuilder_ == null) {
+          combinationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.oddin.obb.Popular.PopularCombination, com.oddin.obb.Popular.PopularCombination.Builder, com.oddin.obb.Popular.PopularCombinationOrBuilder>(
+                  combinations_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
-          markets_ = null;
+          combinations_ = null;
         }
-        return marketsBuilder_;
+        return combinationsBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1486,63 +1514,106 @@ public final class Popular {
 
   }
 
-  public interface PopularCombinationMarketOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:obb.PopularCombinationMarket)
+  public interface PopularCombinationOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:obb.PopularCombination)
       com.google.protobuf.MessageOrBuilder {
 
     /**
      * <pre>
-     * The ID using the same values as our odds feed in XML.
+     * Selections forming the combination, in the same format as
+     * SessionCreateRequest.selection_ids:
+     * "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
+     * Example: "od:match:1234/1/1?map=1&amp;way=two"
      * </pre>
      *
-     * <code>uint32 market_id = 1 [json_name = "marketId"];</code>
-     * @return The marketId.
+     * <code>repeated string selection_ids = 1 [json_name = "selectionIds"];</code>
+     * @return A list containing the selectionIds.
      */
-    int getMarketId();
+    java.util.List<java.lang.String>
+        getSelectionIdsList();
+    /**
+     * <pre>
+     * Selections forming the combination, in the same format as
+     * SessionCreateRequest.selection_ids:
+     * "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
+     * Example: "od:match:1234/1/1?map=1&amp;way=two"
+     * </pre>
+     *
+     * <code>repeated string selection_ids = 1 [json_name = "selectionIds"];</code>
+     * @return The count of selectionIds.
+     */
+    int getSelectionIdsCount();
+    /**
+     * <pre>
+     * Selections forming the combination, in the same format as
+     * SessionCreateRequest.selection_ids:
+     * "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
+     * Example: "od:match:1234/1/1?map=1&amp;way=two"
+     * </pre>
+     *
+     * <code>repeated string selection_ids = 1 [json_name = "selectionIds"];</code>
+     * @param index The index of the element to return.
+     * @return The selectionIds at the given index.
+     */
+    java.lang.String getSelectionIds(int index);
+    /**
+     * <pre>
+     * Selections forming the combination, in the same format as
+     * SessionCreateRequest.selection_ids:
+     * "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
+     * Example: "od:match:1234/1/1?map=1&amp;way=two"
+     * </pre>
+     *
+     * <code>repeated string selection_ids = 1 [json_name = "selectionIds"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the selectionIds at the given index.
+     */
+    com.google.protobuf.ByteString
+        getSelectionIdsBytes(int index);
 
     /**
      * <pre>
-     * The specifier is using the same values as our odds feed in XML.
-     * Example: "variant=way:three|way=three|map=1"
+     * Total odds for the whole combination.
+     * Odds multiplied by 10000 and rounded to uint value.
      * </pre>
      *
-     * <code>string specifiers = 2 [json_name = "specifiers"];</code>
-     * @return The specifiers.
+     * <code>uint64 odds = 2 [json_name = "odds"];</code>
+     * @return The odds.
      */
-    java.lang.String getSpecifiers();
+    long getOdds();
+
     /**
      * <pre>
-     * The specifier is using the same values as our odds feed in XML.
-     * Example: "variant=way:three|way=three|map=1"
+     * Raw probability of the combination (value between 0.0 and 1.0).
+     * This is the combined probability of all selections before margin is applied.
      * </pre>
      *
-     * <code>string specifiers = 2 [json_name = "specifiers"];</code>
-     * @return The bytes for specifiers.
+     * <code>double raw_probability = 3 [json_name = "rawProbability"];</code>
+     * @return The rawProbability.
      */
-    com.google.protobuf.ByteString
-        getSpecifiersBytes();
+    double getRawProbability();
   }
   /**
-   * Protobuf type {@code obb.PopularCombinationMarket}
+   * Protobuf type {@code obb.PopularCombination}
    */
-  public static final class PopularCombinationMarket extends
+  public static final class PopularCombination extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:obb.PopularCombinationMarket)
-      PopularCombinationMarketOrBuilder {
+      // @@protoc_insertion_point(message_implements:obb.PopularCombination)
+      PopularCombinationOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use PopularCombinationMarket.newBuilder() to construct.
-    private PopularCombinationMarket(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use PopularCombination.newBuilder() to construct.
+    private PopularCombination(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private PopularCombinationMarket() {
-      specifiers_ = "";
+    private PopularCombination() {
+      selectionIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new PopularCombinationMarket();
+      return new PopularCombination();
     }
 
     @java.lang.Override
@@ -1552,78 +1623,110 @@ public final class Popular {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.oddin.obb.Popular.internal_static_obb_PopularCombinationMarket_descriptor;
+      return com.oddin.obb.Popular.internal_static_obb_PopularCombination_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.oddin.obb.Popular.internal_static_obb_PopularCombinationMarket_fieldAccessorTable
+      return com.oddin.obb.Popular.internal_static_obb_PopularCombination_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.oddin.obb.Popular.PopularCombinationMarket.class, com.oddin.obb.Popular.PopularCombinationMarket.Builder.class);
+              com.oddin.obb.Popular.PopularCombination.class, com.oddin.obb.Popular.PopularCombination.Builder.class);
     }
 
-    public static final int MARKET_ID_FIELD_NUMBER = 1;
-    private int marketId_;
+    public static final int SELECTION_IDS_FIELD_NUMBER = 1;
+    private com.google.protobuf.LazyStringList selectionIds_;
     /**
      * <pre>
-     * The ID using the same values as our odds feed in XML.
+     * Selections forming the combination, in the same format as
+     * SessionCreateRequest.selection_ids:
+     * "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
+     * Example: "od:match:1234/1/1?map=1&amp;way=two"
      * </pre>
      *
-     * <code>uint32 market_id = 1 [json_name = "marketId"];</code>
-     * @return The marketId.
+     * <code>repeated string selection_ids = 1 [json_name = "selectionIds"];</code>
+     * @return A list containing the selectionIds.
      */
-    @java.lang.Override
-    public int getMarketId() {
-      return marketId_;
-    }
-
-    public static final int SPECIFIERS_FIELD_NUMBER = 2;
-    private volatile java.lang.Object specifiers_;
-    /**
-     * <pre>
-     * The specifier is using the same values as our odds feed in XML.
-     * Example: "variant=way:three|way=three|map=1"
-     * </pre>
-     *
-     * <code>string specifiers = 2 [json_name = "specifiers"];</code>
-     * @return The specifiers.
-     */
-    @java.lang.Override
-    public java.lang.String getSpecifiers() {
-      java.lang.Object ref = specifiers_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        specifiers_ = s;
-        return s;
-      }
+    public com.google.protobuf.ProtocolStringList
+        getSelectionIdsList() {
+      return selectionIds_;
     }
     /**
      * <pre>
-     * The specifier is using the same values as our odds feed in XML.
-     * Example: "variant=way:three|way=three|map=1"
+     * Selections forming the combination, in the same format as
+     * SessionCreateRequest.selection_ids:
+     * "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
+     * Example: "od:match:1234/1/1?map=1&amp;way=two"
      * </pre>
      *
-     * <code>string specifiers = 2 [json_name = "specifiers"];</code>
-     * @return The bytes for specifiers.
+     * <code>repeated string selection_ids = 1 [json_name = "selectionIds"];</code>
+     * @return The count of selectionIds.
      */
-    @java.lang.Override
+    public int getSelectionIdsCount() {
+      return selectionIds_.size();
+    }
+    /**
+     * <pre>
+     * Selections forming the combination, in the same format as
+     * SessionCreateRequest.selection_ids:
+     * "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
+     * Example: "od:match:1234/1/1?map=1&amp;way=two"
+     * </pre>
+     *
+     * <code>repeated string selection_ids = 1 [json_name = "selectionIds"];</code>
+     * @param index The index of the element to return.
+     * @return The selectionIds at the given index.
+     */
+    public java.lang.String getSelectionIds(int index) {
+      return selectionIds_.get(index);
+    }
+    /**
+     * <pre>
+     * Selections forming the combination, in the same format as
+     * SessionCreateRequest.selection_ids:
+     * "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
+     * Example: "od:match:1234/1/1?map=1&amp;way=two"
+     * </pre>
+     *
+     * <code>repeated string selection_ids = 1 [json_name = "selectionIds"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the selectionIds at the given index.
+     */
     public com.google.protobuf.ByteString
-        getSpecifiersBytes() {
-      java.lang.Object ref = specifiers_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        specifiers_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+        getSelectionIdsBytes(int index) {
+      return selectionIds_.getByteString(index);
+    }
+
+    public static final int ODDS_FIELD_NUMBER = 2;
+    private long odds_;
+    /**
+     * <pre>
+     * Total odds for the whole combination.
+     * Odds multiplied by 10000 and rounded to uint value.
+     * </pre>
+     *
+     * <code>uint64 odds = 2 [json_name = "odds"];</code>
+     * @return The odds.
+     */
+    @java.lang.Override
+    public long getOdds() {
+      return odds_;
+    }
+
+    public static final int RAW_PROBABILITY_FIELD_NUMBER = 3;
+    private double rawProbability_;
+    /**
+     * <pre>
+     * Raw probability of the combination (value between 0.0 and 1.0).
+     * This is the combined probability of all selections before margin is applied.
+     * </pre>
+     *
+     * <code>double raw_probability = 3 [json_name = "rawProbability"];</code>
+     * @return The rawProbability.
+     */
+    @java.lang.Override
+    public double getRawProbability() {
+      return rawProbability_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1640,11 +1743,14 @@ public final class Popular {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (marketId_ != 0) {
-        output.writeUInt32(1, marketId_);
+      for (int i = 0; i < selectionIds_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, selectionIds_.getRaw(i));
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(specifiers_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, specifiers_);
+      if (odds_ != 0L) {
+        output.writeUInt64(2, odds_);
+      }
+      if (java.lang.Double.doubleToRawLongBits(rawProbability_) != 0) {
+        output.writeDouble(3, rawProbability_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -1655,12 +1761,21 @@ public final class Popular {
       if (size != -1) return size;
 
       size = 0;
-      if (marketId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, marketId_);
+      {
+        int dataSize = 0;
+        for (int i = 0; i < selectionIds_.size(); i++) {
+          dataSize += computeStringSizeNoTag(selectionIds_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getSelectionIdsList().size();
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(specifiers_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, specifiers_);
+      if (odds_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(2, odds_);
+      }
+      if (java.lang.Double.doubleToRawLongBits(rawProbability_) != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(3, rawProbability_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1672,15 +1787,18 @@ public final class Popular {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.oddin.obb.Popular.PopularCombinationMarket)) {
+      if (!(obj instanceof com.oddin.obb.Popular.PopularCombination)) {
         return super.equals(obj);
       }
-      com.oddin.obb.Popular.PopularCombinationMarket other = (com.oddin.obb.Popular.PopularCombinationMarket) obj;
+      com.oddin.obb.Popular.PopularCombination other = (com.oddin.obb.Popular.PopularCombination) obj;
 
-      if (getMarketId()
-          != other.getMarketId()) return false;
-      if (!getSpecifiers()
-          .equals(other.getSpecifiers())) return false;
+      if (!getSelectionIdsList()
+          .equals(other.getSelectionIdsList())) return false;
+      if (getOdds()
+          != other.getOdds()) return false;
+      if (java.lang.Double.doubleToLongBits(getRawProbability())
+          != java.lang.Double.doubleToLongBits(
+              other.getRawProbability())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1692,78 +1810,84 @@ public final class Popular {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MARKET_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getMarketId();
-      hash = (37 * hash) + SPECIFIERS_FIELD_NUMBER;
-      hash = (53 * hash) + getSpecifiers().hashCode();
+      if (getSelectionIdsCount() > 0) {
+        hash = (37 * hash) + SELECTION_IDS_FIELD_NUMBER;
+        hash = (53 * hash) + getSelectionIdsList().hashCode();
+      }
+      hash = (37 * hash) + ODDS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getOdds());
+      hash = (37 * hash) + RAW_PROBABILITY_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getRawProbability()));
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static com.oddin.obb.Popular.PopularCombinationMarket parseFrom(
+    public static com.oddin.obb.Popular.PopularCombination parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.obb.Popular.PopularCombinationMarket parseFrom(
+    public static com.oddin.obb.Popular.PopularCombination parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.obb.Popular.PopularCombinationMarket parseFrom(
+    public static com.oddin.obb.Popular.PopularCombination parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.obb.Popular.PopularCombinationMarket parseFrom(
+    public static com.oddin.obb.Popular.PopularCombination parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.obb.Popular.PopularCombinationMarket parseFrom(byte[] data)
+    public static com.oddin.obb.Popular.PopularCombination parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.oddin.obb.Popular.PopularCombinationMarket parseFrom(
+    public static com.oddin.obb.Popular.PopularCombination parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.oddin.obb.Popular.PopularCombinationMarket parseFrom(java.io.InputStream input)
+    public static com.oddin.obb.Popular.PopularCombination parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.oddin.obb.Popular.PopularCombinationMarket parseFrom(
+    public static com.oddin.obb.Popular.PopularCombination parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.oddin.obb.Popular.PopularCombinationMarket parseDelimitedFrom(java.io.InputStream input)
+    public static com.oddin.obb.Popular.PopularCombination parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.oddin.obb.Popular.PopularCombinationMarket parseDelimitedFrom(
+    public static com.oddin.obb.Popular.PopularCombination parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.oddin.obb.Popular.PopularCombinationMarket parseFrom(
+    public static com.oddin.obb.Popular.PopularCombination parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.oddin.obb.Popular.PopularCombinationMarket parseFrom(
+    public static com.oddin.obb.Popular.PopularCombination parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1776,7 +1900,7 @@ public final class Popular {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.oddin.obb.Popular.PopularCombinationMarket prototype) {
+    public static Builder newBuilder(com.oddin.obb.Popular.PopularCombination prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -1792,26 +1916,26 @@ public final class Popular {
       return builder;
     }
     /**
-     * Protobuf type {@code obb.PopularCombinationMarket}
+     * Protobuf type {@code obb.PopularCombination}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:obb.PopularCombinationMarket)
-        com.oddin.obb.Popular.PopularCombinationMarketOrBuilder {
+        // @@protoc_insertion_point(builder_implements:obb.PopularCombination)
+        com.oddin.obb.Popular.PopularCombinationOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.oddin.obb.Popular.internal_static_obb_PopularCombinationMarket_descriptor;
+        return com.oddin.obb.Popular.internal_static_obb_PopularCombination_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.oddin.obb.Popular.internal_static_obb_PopularCombinationMarket_fieldAccessorTable
+        return com.oddin.obb.Popular.internal_static_obb_PopularCombination_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.oddin.obb.Popular.PopularCombinationMarket.class, com.oddin.obb.Popular.PopularCombinationMarket.Builder.class);
+                com.oddin.obb.Popular.PopularCombination.class, com.oddin.obb.Popular.PopularCombination.Builder.class);
       }
 
-      // Construct using com.oddin.obb.Popular.PopularCombinationMarket.newBuilder()
+      // Construct using com.oddin.obb.Popular.PopularCombination.newBuilder()
       private Builder() {
 
       }
@@ -1824,9 +1948,11 @@ public final class Popular {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        marketId_ = 0;
+        selectionIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        odds_ = 0L;
 
-        specifiers_ = "";
+        rawProbability_ = 0D;
 
         return this;
       }
@@ -1834,17 +1960,17 @@ public final class Popular {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.oddin.obb.Popular.internal_static_obb_PopularCombinationMarket_descriptor;
+        return com.oddin.obb.Popular.internal_static_obb_PopularCombination_descriptor;
       }
 
       @java.lang.Override
-      public com.oddin.obb.Popular.PopularCombinationMarket getDefaultInstanceForType() {
-        return com.oddin.obb.Popular.PopularCombinationMarket.getDefaultInstance();
+      public com.oddin.obb.Popular.PopularCombination getDefaultInstanceForType() {
+        return com.oddin.obb.Popular.PopularCombination.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.oddin.obb.Popular.PopularCombinationMarket build() {
-        com.oddin.obb.Popular.PopularCombinationMarket result = buildPartial();
+      public com.oddin.obb.Popular.PopularCombination build() {
+        com.oddin.obb.Popular.PopularCombination result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -1852,10 +1978,16 @@ public final class Popular {
       }
 
       @java.lang.Override
-      public com.oddin.obb.Popular.PopularCombinationMarket buildPartial() {
-        com.oddin.obb.Popular.PopularCombinationMarket result = new com.oddin.obb.Popular.PopularCombinationMarket(this);
-        result.marketId_ = marketId_;
-        result.specifiers_ = specifiers_;
+      public com.oddin.obb.Popular.PopularCombination buildPartial() {
+        com.oddin.obb.Popular.PopularCombination result = new com.oddin.obb.Popular.PopularCombination(this);
+        int from_bitField0_ = bitField0_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          selectionIds_ = selectionIds_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.selectionIds_ = selectionIds_;
+        result.odds_ = odds_;
+        result.rawProbability_ = rawProbability_;
         onBuilt();
         return result;
       }
@@ -1894,22 +2026,31 @@ public final class Popular {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.oddin.obb.Popular.PopularCombinationMarket) {
-          return mergeFrom((com.oddin.obb.Popular.PopularCombinationMarket)other);
+        if (other instanceof com.oddin.obb.Popular.PopularCombination) {
+          return mergeFrom((com.oddin.obb.Popular.PopularCombination)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.oddin.obb.Popular.PopularCombinationMarket other) {
-        if (other == com.oddin.obb.Popular.PopularCombinationMarket.getDefaultInstance()) return this;
-        if (other.getMarketId() != 0) {
-          setMarketId(other.getMarketId());
-        }
-        if (!other.getSpecifiers().isEmpty()) {
-          specifiers_ = other.specifiers_;
+      public Builder mergeFrom(com.oddin.obb.Popular.PopularCombination other) {
+        if (other == com.oddin.obb.Popular.PopularCombination.getDefaultInstance()) return this;
+        if (!other.selectionIds_.isEmpty()) {
+          if (selectionIds_.isEmpty()) {
+            selectionIds_ = other.selectionIds_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureSelectionIdsIsMutable();
+            selectionIds_.addAll(other.selectionIds_);
+          }
           onChanged();
+        }
+        if (other.getOdds() != 0L) {
+          setOdds(other.getOdds());
+        }
+        if (other.getRawProbability() != 0D) {
+          setRawProbability(other.getRawProbability());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -1937,16 +2078,22 @@ public final class Popular {
               case 0:
                 done = true;
                 break;
-              case 8: {
-                marketId_ = input.readUInt32();
+              case 10: {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureSelectionIdsIsMutable();
+                selectionIds_.add(s);
+                break;
+              } // case 10
+              case 16: {
+                odds_ = input.readUInt64();
 
                 break;
-              } // case 8
-              case 18: {
-                specifiers_ = input.readStringRequireUtf8();
+              } // case 16
+              case 25: {
+                rawProbability_ = input.readDouble();
 
                 break;
-              } // case 18
+              } // case 25
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -1962,147 +2109,269 @@ public final class Popular {
         } // finally
         return this;
       }
+      private int bitField0_;
 
-      private int marketId_ ;
-      /**
-       * <pre>
-       * The ID using the same values as our odds feed in XML.
-       * </pre>
-       *
-       * <code>uint32 market_id = 1 [json_name = "marketId"];</code>
-       * @return The marketId.
-       */
-      @java.lang.Override
-      public int getMarketId() {
-        return marketId_;
+      private com.google.protobuf.LazyStringList selectionIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureSelectionIdsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          selectionIds_ = new com.google.protobuf.LazyStringArrayList(selectionIds_);
+          bitField0_ |= 0x00000001;
+         }
       }
       /**
        * <pre>
-       * The ID using the same values as our odds feed in XML.
+       * Selections forming the combination, in the same format as
+       * SessionCreateRequest.selection_ids:
+       * "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
+       * Example: "od:match:1234/1/1?map=1&amp;way=two"
        * </pre>
        *
-       * <code>uint32 market_id = 1 [json_name = "marketId"];</code>
-       * @param value The marketId to set.
-       * @return This builder for chaining.
+       * <code>repeated string selection_ids = 1 [json_name = "selectionIds"];</code>
+       * @return A list containing the selectionIds.
        */
-      public Builder setMarketId(int value) {
-        
-        marketId_ = value;
-        onChanged();
-        return this;
+      public com.google.protobuf.ProtocolStringList
+          getSelectionIdsList() {
+        return selectionIds_.getUnmodifiableView();
       }
       /**
        * <pre>
-       * The ID using the same values as our odds feed in XML.
+       * Selections forming the combination, in the same format as
+       * SessionCreateRequest.selection_ids:
+       * "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
+       * Example: "od:match:1234/1/1?map=1&amp;way=two"
        * </pre>
        *
-       * <code>uint32 market_id = 1 [json_name = "marketId"];</code>
-       * @return This builder for chaining.
+       * <code>repeated string selection_ids = 1 [json_name = "selectionIds"];</code>
+       * @return The count of selectionIds.
        */
-      public Builder clearMarketId() {
-        
-        marketId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object specifiers_ = "";
-      /**
-       * <pre>
-       * The specifier is using the same values as our odds feed in XML.
-       * Example: "variant=way:three|way=three|map=1"
-       * </pre>
-       *
-       * <code>string specifiers = 2 [json_name = "specifiers"];</code>
-       * @return The specifiers.
-       */
-      public java.lang.String getSpecifiers() {
-        java.lang.Object ref = specifiers_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          specifiers_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public int getSelectionIdsCount() {
+        return selectionIds_.size();
       }
       /**
        * <pre>
-       * The specifier is using the same values as our odds feed in XML.
-       * Example: "variant=way:three|way=three|map=1"
+       * Selections forming the combination, in the same format as
+       * SessionCreateRequest.selection_ids:
+       * "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
+       * Example: "od:match:1234/1/1?map=1&amp;way=two"
        * </pre>
        *
-       * <code>string specifiers = 2 [json_name = "specifiers"];</code>
-       * @return The bytes for specifiers.
+       * <code>repeated string selection_ids = 1 [json_name = "selectionIds"];</code>
+       * @param index The index of the element to return.
+       * @return The selectionIds at the given index.
+       */
+      public java.lang.String getSelectionIds(int index) {
+        return selectionIds_.get(index);
+      }
+      /**
+       * <pre>
+       * Selections forming the combination, in the same format as
+       * SessionCreateRequest.selection_ids:
+       * "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
+       * Example: "od:match:1234/1/1?map=1&amp;way=two"
+       * </pre>
+       *
+       * <code>repeated string selection_ids = 1 [json_name = "selectionIds"];</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the selectionIds at the given index.
        */
       public com.google.protobuf.ByteString
-          getSpecifiersBytes() {
-        java.lang.Object ref = specifiers_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          specifiers_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
+          getSelectionIdsBytes(int index) {
+        return selectionIds_.getByteString(index);
       }
       /**
        * <pre>
-       * The specifier is using the same values as our odds feed in XML.
-       * Example: "variant=way:three|way=three|map=1"
+       * Selections forming the combination, in the same format as
+       * SessionCreateRequest.selection_ids:
+       * "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
+       * Example: "od:match:1234/1/1?map=1&amp;way=two"
        * </pre>
        *
-       * <code>string specifiers = 2 [json_name = "specifiers"];</code>
-       * @param value The specifiers to set.
+       * <code>repeated string selection_ids = 1 [json_name = "selectionIds"];</code>
+       * @param index The index to set the value at.
+       * @param value The selectionIds to set.
        * @return This builder for chaining.
        */
-      public Builder setSpecifiers(
+      public Builder setSelectionIds(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureSelectionIdsIsMutable();
+        selectionIds_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Selections forming the combination, in the same format as
+       * SessionCreateRequest.selection_ids:
+       * "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
+       * Example: "od:match:1234/1/1?map=1&amp;way=two"
+       * </pre>
+       *
+       * <code>repeated string selection_ids = 1 [json_name = "selectionIds"];</code>
+       * @param value The selectionIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addSelectionIds(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  
-        specifiers_ = value;
+  ensureSelectionIdsIsMutable();
+        selectionIds_.add(value);
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * The specifier is using the same values as our odds feed in XML.
-       * Example: "variant=way:three|way=three|map=1"
+       * Selections forming the combination, in the same format as
+       * SessionCreateRequest.selection_ids:
+       * "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
+       * Example: "od:match:1234/1/1?map=1&amp;way=two"
        * </pre>
        *
-       * <code>string specifiers = 2 [json_name = "specifiers"];</code>
+       * <code>repeated string selection_ids = 1 [json_name = "selectionIds"];</code>
+       * @param values The selectionIds to add.
        * @return This builder for chaining.
        */
-      public Builder clearSpecifiers() {
-        
-        specifiers_ = getDefaultInstance().getSpecifiers();
+      public Builder addAllSelectionIds(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureSelectionIdsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, selectionIds_);
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * The specifier is using the same values as our odds feed in XML.
-       * Example: "variant=way:three|way=three|map=1"
+       * Selections forming the combination, in the same format as
+       * SessionCreateRequest.selection_ids:
+       * "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
+       * Example: "od:match:1234/1/1?map=1&amp;way=two"
        * </pre>
        *
-       * <code>string specifiers = 2 [json_name = "specifiers"];</code>
-       * @param value The bytes for specifiers to set.
+       * <code>repeated string selection_ids = 1 [json_name = "selectionIds"];</code>
        * @return This builder for chaining.
        */
-      public Builder setSpecifiersBytes(
+      public Builder clearSelectionIds() {
+        selectionIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Selections forming the combination, in the same format as
+       * SessionCreateRequest.selection_ids:
+       * "&lt;event_id&gt;/&lt;market_id&gt;/&lt;outcome_id&gt;?&lt;market_specifier&gt;"
+       * Example: "od:match:1234/1/1?map=1&amp;way=two"
+       * </pre>
+       *
+       * <code>repeated string selection_ids = 1 [json_name = "selectionIds"];</code>
+       * @param value The bytes of the selectionIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addSelectionIdsBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
+        ensureSelectionIdsIsMutable();
+        selectionIds_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private long odds_ ;
+      /**
+       * <pre>
+       * Total odds for the whole combination.
+       * Odds multiplied by 10000 and rounded to uint value.
+       * </pre>
+       *
+       * <code>uint64 odds = 2 [json_name = "odds"];</code>
+       * @return The odds.
+       */
+      @java.lang.Override
+      public long getOdds() {
+        return odds_;
+      }
+      /**
+       * <pre>
+       * Total odds for the whole combination.
+       * Odds multiplied by 10000 and rounded to uint value.
+       * </pre>
+       *
+       * <code>uint64 odds = 2 [json_name = "odds"];</code>
+       * @param value The odds to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOdds(long value) {
         
-        specifiers_ = value;
+        odds_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Total odds for the whole combination.
+       * Odds multiplied by 10000 and rounded to uint value.
+       * </pre>
+       *
+       * <code>uint64 odds = 2 [json_name = "odds"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOdds() {
+        
+        odds_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private double rawProbability_ ;
+      /**
+       * <pre>
+       * Raw probability of the combination (value between 0.0 and 1.0).
+       * This is the combined probability of all selections before margin is applied.
+       * </pre>
+       *
+       * <code>double raw_probability = 3 [json_name = "rawProbability"];</code>
+       * @return The rawProbability.
+       */
+      @java.lang.Override
+      public double getRawProbability() {
+        return rawProbability_;
+      }
+      /**
+       * <pre>
+       * Raw probability of the combination (value between 0.0 and 1.0).
+       * This is the combined probability of all selections before margin is applied.
+       * </pre>
+       *
+       * <code>double raw_probability = 3 [json_name = "rawProbability"];</code>
+       * @param value The rawProbability to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRawProbability(double value) {
+        
+        rawProbability_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Raw probability of the combination (value between 0.0 and 1.0).
+       * This is the combined probability of all selections before margin is applied.
+       * </pre>
+       *
+       * <code>double raw_probability = 3 [json_name = "rawProbability"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRawProbability() {
+        
+        rawProbability_ = 0D;
         onChanged();
         return this;
       }
@@ -2119,23 +2388,23 @@ public final class Popular {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:obb.PopularCombinationMarket)
+      // @@protoc_insertion_point(builder_scope:obb.PopularCombination)
     }
 
-    // @@protoc_insertion_point(class_scope:obb.PopularCombinationMarket)
-    private static final com.oddin.obb.Popular.PopularCombinationMarket DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:obb.PopularCombination)
+    private static final com.oddin.obb.Popular.PopularCombination DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.oddin.obb.Popular.PopularCombinationMarket();
+      DEFAULT_INSTANCE = new com.oddin.obb.Popular.PopularCombination();
     }
 
-    public static com.oddin.obb.Popular.PopularCombinationMarket getDefaultInstance() {
+    public static com.oddin.obb.Popular.PopularCombination getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<PopularCombinationMarket>
-        PARSER = new com.google.protobuf.AbstractParser<PopularCombinationMarket>() {
+    private static final com.google.protobuf.Parser<PopularCombination>
+        PARSER = new com.google.protobuf.AbstractParser<PopularCombination>() {
       @java.lang.Override
-      public PopularCombinationMarket parsePartialFrom(
+      public PopularCombination parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2154,17 +2423,17 @@ public final class Popular {
       }
     };
 
-    public static com.google.protobuf.Parser<PopularCombinationMarket> parser() {
+    public static com.google.protobuf.Parser<PopularCombination> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<PopularCombinationMarket> getParserForType() {
+    public com.google.protobuf.Parser<PopularCombination> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.oddin.obb.Popular.PopularCombinationMarket getDefaultInstanceForType() {
+    public com.oddin.obb.Popular.PopularCombination getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2181,10 +2450,10 @@ public final class Popular {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_obb_PopularCombinationResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_obb_PopularCombinationMarket_descriptor;
+    internal_static_obb_PopularCombination_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_obb_PopularCombinationMarket_fieldAccessorTable;
+      internal_static_obb_PopularCombination_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -2196,12 +2465,14 @@ public final class Popular {
     java.lang.String[] descriptorData = {
       "\n\021obb/popular.proto\022\003obb\"6\n\031PopularCombi" +
       "nationRequest\022\031\n\010event_id\030\001 \001(\tR\007eventId" +
-      "\"U\n\032PopularCombinationResponse\0227\n\007market" +
-      "s\030\001 \003(\0132\035.obb.PopularCombinationMarketR\007" +
-      "markets\"W\n\030PopularCombinationMarket\022\033\n\tm" +
-      "arket_id\030\001 \001(\rR\010marketId\022\036\n\nspecifiers\030\002" +
-      " \001(\tR\nspecifiersB5\n\rcom.oddin.obbZ$githu" +
-      "b.com/oddin-gg/obbschema/go/obbb\006proto3"
+      "\"h\n\032PopularCombinationResponse\022;\n\014combin" +
+      "ations\030\002 \003(\0132\027.obb.PopularCombinationR\014c" +
+      "ombinationsJ\004\010\001\020\002R\007markets\"v\n\022PopularCom" +
+      "bination\022#\n\rselection_ids\030\001 \003(\tR\014selecti" +
+      "onIds\022\022\n\004odds\030\002 \001(\004R\004odds\022\'\n\017raw_probabi" +
+      "lity\030\003 \001(\001R\016rawProbabilityB5\n\rcom.oddin." +
+      "obbZ$github.com/oddin-gg/obbschema/go/ob" +
+      "bb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2218,13 +2489,13 @@ public final class Popular {
     internal_static_obb_PopularCombinationResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_obb_PopularCombinationResponse_descriptor,
-        new java.lang.String[] { "Markets", });
-    internal_static_obb_PopularCombinationMarket_descriptor =
+        new java.lang.String[] { "Combinations", });
+    internal_static_obb_PopularCombination_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_obb_PopularCombinationMarket_fieldAccessorTable = new
+    internal_static_obb_PopularCombination_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_obb_PopularCombinationMarket_descriptor,
-        new java.lang.String[] { "MarketId", "Specifiers", });
+        internal_static_obb_PopularCombination_descriptor,
+        new java.lang.String[] { "SelectionIds", "Odds", "RawProbability", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
