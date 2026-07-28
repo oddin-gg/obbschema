@@ -24,10 +24,10 @@ export namespace PopularCombinationRequest {
 }
 
 export class PopularCombinationResponse extends jspb.Message {
-  clearMarketsList(): void;
-  getMarketsList(): Array<PopularCombinationMarket>;
-  setMarketsList(value: Array<PopularCombinationMarket>): void;
-  addMarkets(value?: PopularCombinationMarket, index?: number): PopularCombinationMarket;
+  clearCombinationsList(): void;
+  getCombinationsList(): Array<PopularCombination>;
+  setCombinationsList(value: Array<PopularCombination>): void;
+  addCombinations(value?: PopularCombination, index?: number): PopularCombination;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PopularCombinationResponse.AsObject;
@@ -41,31 +41,37 @@ export class PopularCombinationResponse extends jspb.Message {
 
 export namespace PopularCombinationResponse {
   export type AsObject = {
-    marketsList: Array<PopularCombinationMarket.AsObject>,
+    combinationsList: Array<PopularCombination.AsObject>,
   }
 }
 
-export class PopularCombinationMarket extends jspb.Message {
-  getMarketId(): number;
-  setMarketId(value: number): void;
+export class PopularCombination extends jspb.Message {
+  clearSelectionIdsList(): void;
+  getSelectionIdsList(): Array<string>;
+  setSelectionIdsList(value: Array<string>): void;
+  addSelectionIds(value: string, index?: number): string;
 
-  getSpecifiers(): string;
-  setSpecifiers(value: string): void;
+  getOdds(): number;
+  setOdds(value: number): void;
+
+  getRawProbability(): number;
+  setRawProbability(value: number): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PopularCombinationMarket.AsObject;
-  static toObject(includeInstance: boolean, msg: PopularCombinationMarket): PopularCombinationMarket.AsObject;
+  toObject(includeInstance?: boolean): PopularCombination.AsObject;
+  static toObject(includeInstance: boolean, msg: PopularCombination): PopularCombination.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: PopularCombinationMarket, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PopularCombinationMarket;
-  static deserializeBinaryFromReader(message: PopularCombinationMarket, reader: jspb.BinaryReader): PopularCombinationMarket;
+  static serializeBinaryToWriter(message: PopularCombination, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PopularCombination;
+  static deserializeBinaryFromReader(message: PopularCombination, reader: jspb.BinaryReader): PopularCombination;
 }
 
-export namespace PopularCombinationMarket {
+export namespace PopularCombination {
   export type AsObject = {
-    marketId: number,
-    specifiers: string,
+    selectionIdsList: Array<string>,
+    odds: number,
+    rawProbability: number,
   }
 }
 

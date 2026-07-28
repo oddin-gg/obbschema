@@ -21,7 +21,7 @@ var global = (function() {
   return Function('return this')();
 }.call(null));
 
-goog.exportSymbol('proto.obb.PopularCombinationMarket', null, global);
+goog.exportSymbol('proto.obb.PopularCombination', null, global);
 goog.exportSymbol('proto.obb.PopularCombinationRequest', null, global);
 goog.exportSymbol('proto.obb.PopularCombinationResponse', null, global);
 /**
@@ -76,16 +76,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.obb.PopularCombinationMarket = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+proto.obb.PopularCombination = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.obb.PopularCombination.repeatedFields_, null);
 };
-goog.inherits(proto.obb.PopularCombinationMarket, jspb.Message);
+goog.inherits(proto.obb.PopularCombination, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.obb.PopularCombinationMarket.displayName = 'proto.obb.PopularCombinationMarket';
+  proto.obb.PopularCombination.displayName = 'proto.obb.PopularCombination';
 }
 
 
@@ -223,7 +223,7 @@ proto.obb.PopularCombinationRequest.prototype.setEventId = function(value) {
  * @private {!Array<number>}
  * @const
  */
-proto.obb.PopularCombinationResponse.repeatedFields_ = [1];
+proto.obb.PopularCombinationResponse.repeatedFields_ = [2];
 
 
 
@@ -256,8 +256,8 @@ proto.obb.PopularCombinationResponse.prototype.toObject = function(opt_includeIn
  */
 proto.obb.PopularCombinationResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    marketsList: jspb.Message.toObjectList(msg.getMarketsList(),
-    proto.obb.PopularCombinationMarket.toObject, includeInstance)
+    combinationsList: jspb.Message.toObjectList(msg.getCombinationsList(),
+    proto.obb.PopularCombination.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -294,10 +294,10 @@ proto.obb.PopularCombinationResponse.deserializeBinaryFromReader = function(msg,
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new proto.obb.PopularCombinationMarket;
-      reader.readMessage(value,proto.obb.PopularCombinationMarket.deserializeBinaryFromReader);
-      msg.addMarkets(value);
+    case 2:
+      var value = new proto.obb.PopularCombination;
+      reader.readMessage(value,proto.obb.PopularCombination.deserializeBinaryFromReader);
+      msg.addCombinations(value);
       break;
     default:
       reader.skipField();
@@ -328,43 +328,43 @@ proto.obb.PopularCombinationResponse.prototype.serializeBinary = function() {
  */
 proto.obb.PopularCombinationResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getMarketsList();
+  f = message.getCombinationsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      1,
+      2,
       f,
-      proto.obb.PopularCombinationMarket.serializeBinaryToWriter
+      proto.obb.PopularCombination.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * repeated PopularCombinationMarket markets = 1;
- * @return {!Array<!proto.obb.PopularCombinationMarket>}
+ * repeated PopularCombination combinations = 2;
+ * @return {!Array<!proto.obb.PopularCombination>}
  */
-proto.obb.PopularCombinationResponse.prototype.getMarketsList = function() {
-  return /** @type{!Array<!proto.obb.PopularCombinationMarket>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.obb.PopularCombinationMarket, 1));
+proto.obb.PopularCombinationResponse.prototype.getCombinationsList = function() {
+  return /** @type{!Array<!proto.obb.PopularCombination>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.obb.PopularCombination, 2));
 };
 
 
 /**
- * @param {!Array<!proto.obb.PopularCombinationMarket>} value
+ * @param {!Array<!proto.obb.PopularCombination>} value
  * @return {!proto.obb.PopularCombinationResponse} returns this
 */
-proto.obb.PopularCombinationResponse.prototype.setMarketsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+proto.obb.PopularCombinationResponse.prototype.setCombinationsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
 /**
- * @param {!proto.obb.PopularCombinationMarket=} opt_value
+ * @param {!proto.obb.PopularCombination=} opt_value
  * @param {number=} opt_index
- * @return {!proto.obb.PopularCombinationMarket}
+ * @return {!proto.obb.PopularCombination}
  */
-proto.obb.PopularCombinationResponse.prototype.addMarkets = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.obb.PopularCombinationMarket, opt_index);
+proto.obb.PopularCombinationResponse.prototype.addCombinations = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.obb.PopularCombination, opt_index);
 };
 
 
@@ -372,11 +372,18 @@ proto.obb.PopularCombinationResponse.prototype.addMarkets = function(opt_value, 
  * Clears the list making it empty but non-null.
  * @return {!proto.obb.PopularCombinationResponse} returns this
  */
-proto.obb.PopularCombinationResponse.prototype.clearMarketsList = function() {
-  return this.setMarketsList([]);
+proto.obb.PopularCombinationResponse.prototype.clearCombinationsList = function() {
+  return this.setCombinationsList([]);
 };
 
 
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.obb.PopularCombination.repeatedFields_ = [1];
 
 
 
@@ -393,8 +400,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.obb.PopularCombinationMarket.prototype.toObject = function(opt_includeInstance) {
-  return proto.obb.PopularCombinationMarket.toObject(opt_includeInstance, this);
+proto.obb.PopularCombination.prototype.toObject = function(opt_includeInstance) {
+  return proto.obb.PopularCombination.toObject(opt_includeInstance, this);
 };
 
 
@@ -403,14 +410,15 @@ proto.obb.PopularCombinationMarket.prototype.toObject = function(opt_includeInst
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.obb.PopularCombinationMarket} msg The msg instance to transform.
+ * @param {!proto.obb.PopularCombination} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.obb.PopularCombinationMarket.toObject = function(includeInstance, msg) {
+proto.obb.PopularCombination.toObject = function(includeInstance, msg) {
   var f, obj = {
-    marketId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    specifiers: jspb.Message.getFieldWithDefault(msg, 2, "")
+    selectionIdsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+    odds: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    rawProbability: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0)
   };
 
   if (includeInstance) {
@@ -424,23 +432,23 @@ proto.obb.PopularCombinationMarket.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.obb.PopularCombinationMarket}
+ * @return {!proto.obb.PopularCombination}
  */
-proto.obb.PopularCombinationMarket.deserializeBinary = function(bytes) {
+proto.obb.PopularCombination.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.obb.PopularCombinationMarket;
-  return proto.obb.PopularCombinationMarket.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.obb.PopularCombination;
+  return proto.obb.PopularCombination.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.obb.PopularCombinationMarket} msg The message object to deserialize into.
+ * @param {!proto.obb.PopularCombination} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.obb.PopularCombinationMarket}
+ * @return {!proto.obb.PopularCombination}
  */
-proto.obb.PopularCombinationMarket.deserializeBinaryFromReader = function(msg, reader) {
+proto.obb.PopularCombination.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -448,12 +456,16 @@ proto.obb.PopularCombinationMarket.deserializeBinaryFromReader = function(msg, r
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readUint32());
-      msg.setMarketId(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.addSelectionIds(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setSpecifiers(value);
+      var value = /** @type {number} */ (reader.readUint64());
+      msg.setOdds(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setRawProbability(value);
       break;
     default:
       reader.skipField();
@@ -468,9 +480,9 @@ proto.obb.PopularCombinationMarket.deserializeBinaryFromReader = function(msg, r
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.obb.PopularCombinationMarket.prototype.serializeBinary = function() {
+proto.obb.PopularCombination.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.obb.PopularCombinationMarket.serializeBinaryToWriter(this, writer);
+  proto.obb.PopularCombination.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -478,23 +490,30 @@ proto.obb.PopularCombinationMarket.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.obb.PopularCombinationMarket} message
+ * @param {!proto.obb.PopularCombination} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.obb.PopularCombinationMarket.serializeBinaryToWriter = function(message, writer) {
+proto.obb.PopularCombination.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getMarketId();
-  if (f !== 0) {
-    writer.writeUint32(
+  f = message.getSelectionIdsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
       1,
       f
     );
   }
-  f = message.getSpecifiers();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getOdds();
+  if (f !== 0) {
+    writer.writeUint64(
       2,
+      f
+    );
+  }
+  f = message.getRawProbability();
+  if (f !== 0.0) {
+    writer.writeDouble(
+      3,
       f
     );
   }
@@ -502,38 +521,75 @@ proto.obb.PopularCombinationMarket.serializeBinaryToWriter = function(message, w
 
 
 /**
- * optional uint32 market_id = 1;
- * @return {number}
+ * repeated string selection_ids = 1;
+ * @return {!Array<string>}
  */
-proto.obb.PopularCombinationMarket.prototype.getMarketId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+proto.obb.PopularCombination.prototype.getSelectionIdsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 1));
 };
 
 
 /**
- * @param {number} value
- * @return {!proto.obb.PopularCombinationMarket} returns this
+ * @param {!Array<string>} value
+ * @return {!proto.obb.PopularCombination} returns this
  */
-proto.obb.PopularCombinationMarket.prototype.setMarketId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
-};
-
-
-/**
- * optional string specifiers = 2;
- * @return {string}
- */
-proto.obb.PopularCombinationMarket.prototype.getSpecifiers = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+proto.obb.PopularCombination.prototype.setSelectionIdsList = function(value) {
+  return jspb.Message.setField(this, 1, value || []);
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.obb.PopularCombinationMarket} returns this
+ * @param {number=} opt_index
+ * @return {!proto.obb.PopularCombination} returns this
  */
-proto.obb.PopularCombinationMarket.prototype.setSpecifiers = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+proto.obb.PopularCombination.prototype.addSelectionIds = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 1, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.obb.PopularCombination} returns this
+ */
+proto.obb.PopularCombination.prototype.clearSelectionIdsList = function() {
+  return this.setSelectionIdsList([]);
+};
+
+
+/**
+ * optional uint64 odds = 2;
+ * @return {number}
+ */
+proto.obb.PopularCombination.prototype.getOdds = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.obb.PopularCombination} returns this
+ */
+proto.obb.PopularCombination.prototype.setOdds = function(value) {
+  return jspb.Message.setProto3IntField(this, 2, value);
+};
+
+
+/**
+ * optional double raw_probability = 3;
+ * @return {number}
+ */
+proto.obb.PopularCombination.prototype.getRawProbability = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 3, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.obb.PopularCombination} returns this
+ */
+proto.obb.PopularCombination.prototype.setRawProbability = function(value) {
+  return jspb.Message.setProto3FloatField(this, 3, value);
 };
 
 

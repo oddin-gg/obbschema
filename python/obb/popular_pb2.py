@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x11obb/popular.proto\x12\x03obb\"6\n\x19PopularCombinationRequest\x12\x19\n\x08\x65vent_id\x18\x01 \x01(\tR\x07\x65ventId\"U\n\x1aPopularCombinationResponse\x12\x37\n\x07markets\x18\x01 \x03(\x0b\x32\x1d.obb.PopularCombinationMarketR\x07markets\"W\n\x18PopularCombinationMarket\x12\x1b\n\tmarket_id\x18\x01 \x01(\rR\x08marketId\x12\x1e\n\nspecifiers\x18\x02 \x01(\tR\nspecifiersB5\n\rcom.oddin.obbZ$github.com/oddin-gg/obbschema/go/obbb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x11obb/popular.proto\x12\x03obb\"6\n\x19PopularCombinationRequest\x12\x19\n\x08\x65vent_id\x18\x01 \x01(\tR\x07\x65ventId\"h\n\x1aPopularCombinationResponse\x12;\n\x0c\x63ombinations\x18\x02 \x03(\x0b\x32\x17.obb.PopularCombinationR\x0c\x63ombinationsJ\x04\x08\x01\x10\x02R\x07markets\"v\n\x12PopularCombination\x12#\n\rselection_ids\x18\x01 \x03(\tR\x0cselectionIds\x12\x12\n\x04odds\x18\x02 \x01(\x04R\x04odds\x12\'\n\x0fraw_probability\x18\x03 \x01(\x01R\x0erawProbabilityB5\n\rcom.oddin.obbZ$github.com/oddin-gg/obbschema/go/obbb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -35,7 +35,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_POPULARCOMBINATIONREQUEST']._serialized_start=26
   _globals['_POPULARCOMBINATIONREQUEST']._serialized_end=80
   _globals['_POPULARCOMBINATIONRESPONSE']._serialized_start=82
-  _globals['_POPULARCOMBINATIONRESPONSE']._serialized_end=167
-  _globals['_POPULARCOMBINATIONMARKET']._serialized_start=169
-  _globals['_POPULARCOMBINATIONMARKET']._serialized_end=256
+  _globals['_POPULARCOMBINATIONRESPONSE']._serialized_end=186
+  _globals['_POPULARCOMBINATION']._serialized_start=188
+  _globals['_POPULARCOMBINATION']._serialized_end=306
 # @@protoc_insertion_point(module_scope)
